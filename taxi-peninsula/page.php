@@ -12,7 +12,7 @@ while ( have_posts() ) :
 	get_template_part( 'template-parts/page-header', null, array( 'title' => get_the_title() ) );
 	?>
 	<div class="container section">
-		<article id="post-<?php the_ID(); ?>" <?php post_class( 'prose entry-content' ); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry-content page-content' ); ?>>
 			<?php if ( has_post_thumbnail() ) : ?>
 				<figure class="featured-image"><?php the_post_thumbnail( 'large' ); ?></figure>
 			<?php endif; ?>

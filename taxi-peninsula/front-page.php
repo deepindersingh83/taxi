@@ -95,22 +95,8 @@ $hero_image = (int) tp_opt( 'hero_image' );
 		<h2 id="services-title" class="section__title"><?php esc_html_e( 'Our services', 'taxi-peninsula' ); ?></h2>
 		<p class="section__lead"><?php esc_html_e( 'Reliable wheelchair accessible transport for everyday trips and important appointments.', 'taxi-peninsula' ); ?></p>
 		<div class="services">
-			<?php
-			$services = array(
-				array( 'wheelchair', __( 'Wheelchair accessible taxis', 'taxi-peninsula' ), __( 'Travel seated in your manual or power wheelchair, or transfer to a seat — your choice.', 'taxi-peninsula' ) ),
-				array( 'medical', __( 'Medical & hospital trips', 'taxi-peninsula' ), __( 'Appointments, dialysis, rehab and discharge pick-ups at hospitals across Melbourne and the Peninsula.', 'taxi-peninsula' ) ),
-				array( 'plane', __( 'Airport transfers', 'taxi-peninsula' ), __( 'Melbourne (Tullamarine) and Avalon airports, with room for luggage and mobility equipment.', 'taxi-peninsula' ) ),
-				array( 'heart', __( 'NDIS & aged care', 'taxi-peninsula' ), __( 'Regular transport for day programs, therapy and social outings. Ask us about recurring bookings.', 'taxi-peninsula' ) ),
-				array( 'users', __( 'Group & Maxi travel', 'taxi-peninsula' ), __( 'Maxi vehicles for two wheelchairs or larger groups with carers.', 'taxi-peninsula' ) ),
-				array( 'calendar', __( 'Events & day trips', 'taxi-peninsula' ), __( 'Weddings, footy, concerts and winery tours — booked ahead and on time.', 'taxi-peninsula' ) ),
-			);
-			foreach ( $services as $s ) :
-				?>
-				<article class="service">
-					<span class="service__icon"><?php tp_the_icon( $s[0] ); ?></span>
-					<h3 class="service__title"><?php echo esc_html( $s[1] ); ?></h3>
-					<p><?php echo esc_html( $s[2] ); ?></p>
-				</article>
+			<?php foreach ( tp_services_list() as $s ) : ?>
+				<?php get_template_part( 'template-parts/service-card', null, $s ); ?>
 			<?php endforeach; ?>
 		</div>
 	</div>
@@ -123,13 +109,23 @@ $hero_image = (int) tp_opt( 'hero_image' );
 		<h2 id="areas-title" class="section__title"><?php esc_html_e( 'Areas we cover', 'taxi-peninsula' ); ?></h2>
 		<p class="section__lead"><?php esc_html_e( 'Based on the Mornington Peninsula and servicing greater Melbourne. Not listed? Call us — we travel further on request.', 'taxi-peninsula' ); ?></p>
 		<ul class="chips">
+			<?php $area_links = tp_area_links(); ?>
 			<?php foreach ( $areas as $area ) : ?>
-				<li class="chip"><?php tp_the_icon( 'pin' ); ?><?php echo esc_html( $area ); ?></li>
+				<?php $link = $area_links[ strtolower( $area ) ] ?? ''; ?>
+				<li>
+					<?php if ( $link ) : ?>
+						<a class="chip" href="<?php echo esc_url( $link ); ?>"><?php tp_the_icon( 'pin' ); ?><?php echo esc_html( $area ); ?></a>
+					<?php else : ?>
+						<span class="chip"><?php tp_the_icon( 'pin' ); ?><?php echo esc_html( $area ); ?></span>
+					<?php endif; ?>
+				</li>
 			<?php endforeach; ?>
 		</ul>
 	</div>
 </section>
 <?php endif; ?>
+
+<?php get_template_part( 'template-parts/testimonials', null, array( 'limit' => 3 ) ); ?>
 
 <?php
 if ( 'page' === get_option( 'show_on_front' ) ) :

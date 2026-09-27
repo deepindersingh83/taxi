@@ -70,8 +70,22 @@
 		sync();
 	});
 
+	/* Payment method panels (account details, online deposit note). */
+	var payRadios = document.querySelectorAll('input[name="payment"]');
+	if (payRadios.length) {
+		var syncPay = function () {
+			var chosen = document.querySelector('input[name="payment"]:checked');
+			var value = chosen ? chosen.value : '';
+			document.querySelectorAll('[data-payment-panel]').forEach(function (panel) {
+				panel.hidden = panel.getAttribute('data-payment-panel') !== value;
+			});
+		};
+		payRadios.forEach(function (r) { r.addEventListener('change', syncPay); });
+		syncPay();
+	}
+
 	/* Sedan = no wheelchair; keep the numbers sensible. */
-	var form = document.querySelector('.booking-form');
+	var form = document.querySelector('form.booking-form');
 	if (form) {
 		var wheelchairs = form.querySelector('[name="wheelchairs"]');
 		form.querySelectorAll('[name="vehicle"]').forEach(function (radio) {
@@ -85,6 +99,7 @@
 		form.addEventListener('submit', function (e) {
 			var firstInvalid = null;
 			form.querySelectorAll('[required]').forEach(function (el) {
+				if (el.closest('[hidden]')) { return; }
 				var ok = el.type === 'checkbox' ? el.checked : el.value.trim() !== '' && el.checkValidity();
 				el.setAttribute('aria-invalid', ok ? 'false' : 'true');
 				if (!ok && !firstInvalid) { firstInvalid = el; }

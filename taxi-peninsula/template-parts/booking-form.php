@@ -36,10 +36,6 @@ $today       = wp_date( 'Y-m-d' );
 	<input type="hidden" name="_tp_return" value="<?php echo esc_url( $current_url ); ?>">
 	<?php wp_nonce_field( 'tp_booking', '_tp_nonce', false ); ?>
 
-	<div class="hp" aria-hidden="true">
-		<label for="tp_website">Website</label>
-		<input type="text" id="tp_website" name="tp_website" tabindex="-1" autocomplete="off">
-	</div>
 
 	<?php if ( $errors ) : ?>
 		<div class="notice notice--error" role="alert" tabindex="-1" data-focus>
@@ -93,6 +89,41 @@ $today       = wp_date( 'Y-m-d' );
 			<input id="bf-return-time" name="return_time" type="time" step="300" value="<?php echo esc_attr( $val( 'return_time' ) ); ?>"<?php $invalid( 'return_time' ); ?>>
 			<?php $err( 'return_time' ); ?>
 		</div>
+
+		<?php if ( tp_setting( 'recurring_enabled' ) ) : ?>
+			<div class="field field--wide field--check">
+				<input id="bf-repeat" name="repeat" type="checkbox" value="1" data-toggle-target="#bf-repeat-wrap" <?php checked( $val( 'repeat' ), '1' ); ?>>
+				<label for="bf-repeat"><?php esc_html_e( 'This is a regular trip (e.g. dialysis, therapy, day program)', 'taxi-peninsula' ); ?></label>
+			</div>
+
+			<div class="field field--wide repeat-box" id="bf-repeat-wrap" <?php echo $val( 'repeat' ) ? '' : 'hidden'; ?>>
+				<fieldset class="weekday-picker"<?php $invalid( 'repeat' ); ?>>
+					<legend class="field__label"><?php esc_html_e( 'Repeat every', 'taxi-peninsula' ); ?></legend>
+					<?php
+					$old_days = array_map( 'intval', (array) $val( 'repeat_days', array() ) );
+					global $wp_locale;
+					for ( $n = 1; $n <= 7; $n++ ) :
+						$full = $wp_locale->get_weekday( $n % 7 );
+						?>
+						<label class="weekday">
+							<input type="checkbox" name="repeat_days[]" value="<?php echo esc_attr( $n ); ?>" <?php checked( in_array( $n, $old_days, true ) ); ?>>
+							<span><abbr title="<?php echo esc_attr( $full ); ?>"><?php echo esc_html( $wp_locale->get_weekday_abbrev( $full ) ); ?></abbr></span>
+						</label>
+					<?php endfor; ?>
+				</fieldset>
+				<div class="field">
+					<label for="bf-repeat-until"><?php esc_html_e( 'Until', 'taxi-peninsula' ); ?></label>
+					<input id="bf-repeat-until" name="repeat_until" type="date" min="<?php echo esc_attr( $today ); ?>" max="<?php echo esc_attr( wp_date( 'Y-m-d', strtotime( '+' . (int) tp_setting( 'recurring_max_weeks' ) . ' weeks' ) ) ); ?>" value="<?php echo esc_attr( $val( 'repeat_until' ) ); ?>">
+				</div>
+				<p class="field__hint">
+					<?php
+					/* translators: %d: weeks */
+					echo esc_html( sprintf( __( 'Same times each day, for up to %d weeks. Each trip gets its own reference so it can be changed separately.', 'taxi-peninsula' ), (int) tp_setting( 'recurring_max_weeks' ) ) );
+					?>
+				</p>
+				<?php $err( 'repeat' ); ?>
+			</div>
+		<?php endif; ?>
 	</fieldset>
 
 	<fieldset class="booking-form__group">
@@ -150,8 +181,54 @@ $today       = wp_date( 'Y-m-d' );
 		</div>
 	</fieldset>
 
+	<?php $methods = tp_payment_methods(); ?>
+	<?php if ( count( $methods ) > 1 ) : ?>
 	<fieldset class="booking-form__group">
-		<legend><span class="step">3</span> <?php esc_html_e( 'Your details', 'taxi-peninsula' ); ?></legend>
+		<legend><span class="step">3</span> <?php esc_html_e( 'Payment', 'taxi-peninsula' ); ?></legend>
+
+		<div class="field field--wide">
+			<span class="field__label" id="bf-payment-label"><?php esc_html_e( 'How will you pay?', 'taxi-peninsula' ); ?></span>
+			<div class="radio-list" role="radiogroup" aria-labelledby="bf-payment-label">
+				<?php foreach ( $methods as $key => $label ) : ?>
+					<label class="radio-row">
+						<input type="radio" name="payment" value="<?php echo esc_attr( $key ); ?>" data-show-when="<?php echo esc_attr( $key ); ?>" <?php checked( $val( 'payment', 'driver' ), $key ); ?>>
+						<span><?php echo esc_html( $label ); ?></span>
+					</label>
+				<?php endforeach; ?>
+			</div>
+		</div>
+
+		<?php if ( isset( $methods['account'] ) ) : ?>
+			<div class="field field--wide account-box" data-payment-panel="account" <?php echo 'account' === $val( 'payment' ) ? '' : 'hidden'; ?>>
+				<div class="booking-form__group booking-form__group--nested">
+					<div class="field">
+						<label for="bf-invoice-name"><?php esc_html_e( 'Invoice to', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
+						<input id="bf-invoice-name" name="invoice_name" type="text" value="<?php echo esc_attr( $val( 'invoice_name' ) ); ?>" placeholder="<?php esc_attr_e( 'Plan manager, provider or company', 'taxi-peninsula' ); ?>"<?php $invalid( 'invoice_name' ); ?>>
+						<?php $err( 'invoice_name' ); ?>
+					</div>
+					<div class="field">
+						<label for="bf-invoice-email"><?php esc_html_e( 'Invoice email', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
+						<input id="bf-invoice-email" name="invoice_email" type="email" value="<?php echo esc_attr( $val( 'invoice_email' ) ); ?>"<?php $invalid( 'invoice_email' ); ?>>
+						<?php $err( 'invoice_email' ); ?>
+					</div>
+					<div class="field field--wide">
+						<label for="bf-ndis"><?php esc_html_e( 'NDIS number or purchase order (optional)', 'taxi-peninsula' ); ?></label>
+						<input id="bf-ndis" name="ndis_number" type="text" value="<?php echo esc_attr( $val( 'ndis_number' ) ); ?>">
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
+
+		<?php if ( isset( $methods['online'] ) ) : ?>
+			<p class="field field--wide field__hint" data-payment-panel="online" <?php echo 'online' === $val( 'payment' ) ? '' : 'hidden'; ?>>
+				<?php esc_html_e( 'After you submit, you will be taken to Stripe’s secure checkout to pay the deposit. The rest of the fare is paid at the end of the trip.', 'taxi-peninsula' ); ?>
+			</p>
+		<?php endif; ?>
+	</fieldset>
+	<?php endif; ?>
+
+	<fieldset class="booking-form__group">
+		<legend><span class="step"><?php echo count( $methods ) > 1 ? '4' : '3'; ?></span> <?php esc_html_e( 'Your details', 'taxi-peninsula' ); ?></legend>
 
 		<div class="field field--wide">
 			<label for="bf-name"><?php esc_html_e( 'Full name', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
@@ -177,6 +254,8 @@ $today       = wp_date( 'Y-m-d' );
 			<?php $err( 'consent' ); ?>
 		</div>
 	</fieldset>
+
+	<?php tp_spam_fields(); ?>
 
 	<div class="booking-form__submit">
 		<button type="submit" class="btn btn--accent btn--lg"><?php esc_html_e( 'Request booking', 'taxi-peninsula' ); ?> <?php tp_the_icon( 'arrow' ); ?></button>

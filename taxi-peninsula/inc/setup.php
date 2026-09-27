@@ -117,17 +117,10 @@ function tp_menu_fallback() {
 }
 
 /**
- * URL of the first page using the booking template, or the front-page booking anchor.
+ * URL of the booking page, or the front-page booking anchor.
  */
 function tp_booking_page_url() {
-	$pages = get_pages(
-		array(
-			'meta_key'   => '_wp_page_template',
-			'meta_value' => 'page-templates/booking.php',
-			'number'     => 1,
-		)
-	);
-	return $pages ? get_permalink( $pages[0] ) : home_url( '/#book' );
+	return tp_page_url_by_template( 'book', home_url( '/#book' ) );
 }
 
 add_filter( 'excerpt_length', static function () {

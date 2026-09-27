@@ -11,21 +11,10 @@ defined( 'ABSPATH' ) || exit;
 add_action( 'admin_enqueue_scripts', 'tp_admin_assets' );
 function tp_admin_assets( $hook ) {
 	$screen = get_current_screen();
-	if ( ( $screen && 'tp_booking' === $screen->post_type ) || 'index.php' === $hook ) {
+	$types  = array( 'tp_booking', 'tp_message', 'tp_fleet', 'tp_service', 'tp_testimonial', 'tp_area', 'tp_faq' );
+	if ( ( $screen && in_array( $screen->post_type, $types, true ) ) || 'index.php' === $hook || false !== strpos( $hook, 'tp-' ) ) {
 		wp_enqueue_style( 'tp-admin', TP_URI . '/assets/css/admin.css', array(), TP_VERSION );
 	}
-}
-
-/**
- * Status badge markup.
- */
-function tp_status_badge( $status ) {
-	$labels = tp_statuses();
-	return sprintf(
-		'<span class="tp-badge tp-badge--%1$s">%2$s</span>',
-		esc_attr( $status ),
-		esc_html( $labels[ $status ] ?? $status )
-	);
 }
 
 /* -------------------------------------------------------------------------
@@ -75,6 +64,7 @@ function tp_booking_columns( $cols ) {
 		'tp_route'    => __( 'Route', 'taxi-peninsula' ),
 		'tp_contact'  => __( 'Contact', 'taxi-peninsula' ),
 		'tp_vehicle'  => __( 'Vehicle', 'taxi-peninsula' ),
+		'tp_driver'   => __( 'Driver', 'taxi-peninsula' ),
 		'tp_status'   => __( 'Status', 'taxi-peninsula' ),
 		'date'        => __( 'Received', 'taxi-peninsula' ),
 	);
@@ -112,8 +102,27 @@ function tp_booking_column_content( $col, $post_id ) {
 				echo ' <small class="tp-tag">MPTP</small>';
 			}
 			break;
+		case 'tp_driver':
+			$driver = $b['driver_id'] ? get_userdata( $b['driver_id'] ) : null;
+			echo $driver ? esc_html( $driver->display_name ) : '<span aria-hidden="true">—</span><span class="screen-reader-text">' . esc_html__( 'Unassigned', 'taxi-peninsula' ) . '</span>';
+			if ( $b['fleet_id'] ) {
+				echo '<br><small>' . esc_html( tp_fleet_label( $b['fleet_id'] ) ) . '</small>';
+			}
+			break;
 		case 'tp_status':
 			echo tp_status_badge( $b['status'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper.
+			if ( ! empty( $b['request'] ) ) {
+				echo '<br><span class="tp-badge tp-badge--request">' . esc_html__( 'Customer request', 'taxi-peninsula' ) . '</span>';
+			}
+			if ( 'account' === $b['payment'] ) {
+				echo '<br><small class="tp-tag tp-tag--muted">' . esc_html__( 'Account', 'taxi-peninsula' ) . '</small>';
+			} elseif ( $b['paid'] > 0 ) {
+				/* translators: %s: amount */
+				echo '<br><small class="tp-tag tp-tag--paid">' . esc_html( sprintf( __( '%s paid', 'taxi-peninsula' ), tp_money( $b['paid'] ) ) ) . '</small>';
+			}
+			if ( $b['series'] ) {
+				printf( '<br><a href="%s"><small>%s</small></a>', esc_url( admin_url( 'edit.php?post_type=tp_booking&tp_series=' . rawurlencode( $b['series'] ) . '&orderby=tp_pickup&order=asc' ) ), esc_html__( 'Repeat series', 'taxi-peninsula' ) );
+			}
 			break;
 	}
 }
@@ -156,6 +165,14 @@ function tp_booking_filters( $post_type ) {
 	echo '<select name="tp_when">';
 	foreach ( $whens as $key => $label ) {
 		printf( '<option value="%s"%s>%s</option>', esc_attr( $key ), selected( $when, $key, false ), esc_html( $label ) );
+	}
+	echo '</select>';
+
+	$driver = isset( $_GET['tp_driver'] ) ? absint( $_GET['tp_driver'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	echo '<select name="tp_driver"><option value="0">' . esc_html__( 'All drivers', 'taxi-peninsula' ) . '</option>';
+	printf( '<option value="-1"%s>%s</option>', selected( isset( $_GET['tp_driver'] ) && '-1' === $_GET['tp_driver'], true, false ), esc_html__( 'Unassigned', 'taxi-peninsula' ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	foreach ( tp_drivers() as $d ) {
+		printf( '<option value="%d"%s>%s</option>', (int) $d->ID, selected( $driver, $d->ID, false ), esc_html( $d->display_name ) );
 	}
 	echo '</select>';
 
@@ -206,6 +223,20 @@ function tp_booking_filter_meta_query( array $req ) {
 		if ( preg_match( '/^\d{4}-\d{2}-\d{2}$/', $val ) ) {
 			$mq[] = array( 'key' => '_tp_date', 'value' => $val, 'compare' => $cmp );
 		}
+	}
+
+	if ( isset( $req['tp_driver'] ) && '-1' === (string) $req['tp_driver'] ) {
+		$mq[] = array(
+			'relation' => 'OR',
+			array( 'key' => '_tp_driver_id', 'compare' => 'NOT EXISTS' ),
+			array( 'key' => '_tp_driver_id', 'value' => '0' ),
+		);
+	} elseif ( ! empty( $req['tp_driver'] ) && absint( $req['tp_driver'] ) ) {
+		$mq[] = array( 'key' => '_tp_driver_id', 'value' => absint( $req['tp_driver'] ) );
+	}
+
+	if ( ! empty( $req['tp_series'] ) ) {
+		$mq[] = array( 'key' => '_tp_series', 'value' => sanitize_text_field( $req['tp_series'] ) );
 	}
 
 	return $mq;
@@ -272,32 +303,6 @@ add_action( 'admin_notices', static function () {
 	}
 } );
 
-/**
- * Change a booking's status and log it.
- */
-function tp_set_status( $post_id, $status, $notify ) {
-	$old = get_post_meta( $post_id, '_tp_status', true );
-	if ( $old === $status ) {
-		return;
-	}
-	update_post_meta( $post_id, '_tp_status', $status );
-
-	$log   = (array) get_post_meta( $post_id, '_tp_log', true );
-	$user  = wp_get_current_user();
-	$log[] = array(
-		'time'   => current_time( 'mysql' ),
-		'user'   => $user->exists() ? $user->display_name : '',
-		'from'   => $old,
-		'to'     => $status,
-		'notify' => (bool) $notify,
-	);
-	update_post_meta( $post_id, '_tp_log', array_filter( $log ) );
-
-	if ( $notify ) {
-		tp_send_status_email( $post_id );
-	}
-}
-
 /* -------------------------------------------------------------------------
  * Edit screen.
  * ---------------------------------------------------------------------- */
@@ -307,6 +312,7 @@ function tp_booking_meta_boxes() {
 	remove_meta_box( 'submitdiv', 'tp_booking', 'side' );
 	add_meta_box( 'tp_booking_details', __( 'Trip details', 'taxi-peninsula' ), 'tp_render_details_box', 'tp_booking', 'normal', 'high' );
 	add_meta_box( 'tp_booking_status', __( 'Status', 'taxi-peninsula' ), 'tp_render_status_box', 'tp_booking', 'side', 'high' );
+	add_meta_box( 'tp_booking_assign', __( 'Driver & vehicle', 'taxi-peninsula' ), 'tp_render_assign_box', 'tp_booking', 'side', 'high' );
 	add_meta_box( 'tp_booking_log', __( 'History', 'taxi-peninsula' ), 'tp_render_log_box', 'tp_booking', 'side', 'default' );
 }
 
@@ -326,6 +332,9 @@ function tp_render_details_box( WP_Post $post ) {
 		$id    = 'tp_' . $key;
 		$value = $b[ $key ];
 		$wide  = in_array( $key, array( 'pickup', 'dropoff', 'notes' ), true ) ? ' tp-admin-grid__wide' : '';
+		if ( in_array( $key, array( 'invoice_name', 'invoice_email', 'ndis_number' ), true ) && 'account' !== $b['payment'] ) {
+			$wide .= ' tp-admin-field--account';
+		}
 		echo '<p class="tp-admin-field' . esc_attr( $wide ) . '">';
 
 		if ( 'checkbox' === $type ) {
@@ -342,8 +351,8 @@ function tp_render_details_box( WP_Post $post ) {
 
 		printf( '<label for="%s">%s</label>', esc_attr( $id ), esc_html( $label ) );
 
-		if ( 'vehicle' === $type || 'mobility' === $type ) {
-			$options = 'vehicle' === $type ? tp_vehicle_types() : tp_mobility_aids();
+		if ( 'vehicle' === $type || 'mobility' === $type || 'payment' === $type ) {
+			$options = 'vehicle' === $type ? tp_vehicle_types() : ( 'mobility' === $type ? tp_mobility_aids() : tp_all_payment_methods() );
 			printf( '<select id="%s" name="tp[%s]">', esc_attr( $id ), esc_attr( $key ) );
 			foreach ( $options as $k => $l ) {
 				printf( '<option value="%s"%s>%s</option>', esc_attr( $k ), selected( $value, $k, false ), esc_html( $l ) );
@@ -379,8 +388,30 @@ function tp_render_status_box( WP_Post $post ) {
 		printf( '<option value="%s"%s>%s</option>', esc_attr( $key ), selected( $b['status'], $key, false ), esc_html( $label ) );
 	}
 	echo '</select></p>';
-	echo '<p><label><input type="checkbox" name="tp_notify" value="1"' . checked( (bool) tp_opt( 'customer_emails' ), true, false ) . '> ' . esc_html__( 'Email the customer if the status changes', 'taxi-peninsula' ) . '</label></p>';
+	echo '<p><label><input type="checkbox" name="tp_notify" value="1"' . checked( (bool) tp_opt( 'customer_emails' ) || tp_sms_enabled(), true, false ) . '> ' . esc_html__( 'Notify the customer (email / SMS) if the status or driver changes', 'taxi-peninsula' ) . '</label></p>';
 
+	if ( $b['series'] ) {
+		$count = count( tp_series_ids( $b['series'] ) );
+		echo '<p><label><input type="checkbox" name="tp_apply_series" value="1"> ';
+		/* translators: %d: number of trips */
+		echo esc_html( sprintf( __( 'Also apply this status to later trips in this repeat booking (%d trips in total)', 'taxi-peninsula' ), $count ) );
+		echo '</label></p>';
+	}
+
+	if ( ! empty( $b['request'] ) && is_array( $b['request'] ) ) {
+		$types = tp_request_types();
+		echo '<div class="tp-request">';
+		echo '<p><strong>' . esc_html( $types[ $b['request']['type'] ] ?? __( 'Customer request', 'taxi-peninsula' ) ) . '</strong><br><small>' . esc_html( mysql2date( 'j M Y g:i a', $b['request']['time'] ) ) . '</small></p>';
+		if ( ! empty( $b['request']['message'] ) ) {
+			echo '<p>' . esc_html( $b['request']['message'] ) . '</p>';
+		}
+		echo '<label><input type="checkbox" name="tp_request_done" value="1"> ' . esc_html__( 'Mark request as handled', 'taxi-peninsula' ) . '</label>';
+		echo '</div>';
+	}
+
+	if ( $b['reference'] ) {
+		printf( '<p><a href="%s" target="_blank" rel="noopener">%s</a></p>', esc_url( tp_booking_manage_url( $post->ID ) ), esc_html__( 'View customer booking page ↗', 'taxi-peninsula' ) );
+	}
 	echo '<div class="tp-status-actions">';
 	submit_button( 'auto-draft' === $post->post_status ? __( 'Create booking', 'taxi-peninsula' ) : __( 'Save booking', 'taxi-peninsula' ), 'primary large', 'publish', false );
 	if ( current_user_can( 'delete_post', $post->ID ) && 'auto-draft' !== $post->post_status ) {
@@ -389,17 +420,49 @@ function tp_render_status_box( WP_Post $post ) {
 	echo '</div>';
 }
 
+function tp_render_assign_box( WP_Post $post ) {
+	$b       = tp_get_booking( $post->ID );
+	$drivers = tp_drivers();
+	echo '<p><label for="tp_driver_id"><strong>' . esc_html__( 'Driver', 'taxi-peninsula' ) . '</strong></label><select id="tp_driver_id" name="tp_driver_id" class="widefat"><option value="0">' . esc_html__( '— Unassigned —', 'taxi-peninsula' ) . '</option>';
+	foreach ( $drivers as $d ) {
+		printf( '<option value="%d"%s>%s</option>', (int) $d->ID, selected( $b['driver_id'], $d->ID, false ), esc_html( $d->display_name ) );
+	}
+	echo '</select></p>';
+	if ( ! $drivers ) {
+		printf( '<p class="description">%s <a href="%s">%s</a></p>', esc_html__( 'No drivers yet.', 'taxi-peninsula' ), esc_url( admin_url( 'user-new.php' ) ), esc_html__( 'Add a user with the Driver role.', 'taxi-peninsula' ) );
+	}
+
+	echo '<p><label for="tp_fleet_id"><strong>' . esc_html__( 'Vehicle', 'taxi-peninsula' ) . '</strong></label><select id="tp_fleet_id" name="tp_fleet_id" class="widefat"><option value="0">' . esc_html__( '— Not set —', 'taxi-peninsula' ) . '</option>';
+	foreach ( tp_fleet_vehicles() as $v ) {
+		$rego = get_post_meta( $v->ID, '_tp_rego', true );
+		printf( '<option value="%d"%s>%s</option>', (int) $v->ID, selected( $b['fleet_id'], $v->ID, false ), esc_html( $v->post_title . ( $rego ? ' (' . $rego . ')' : '' ) ) );
+	}
+	echo '</select></p>';
+
+	echo '<p class="description">' . esc_html__( 'Assigning a driver sets the status to "Driver assigned" and texts the driver when SMS is set up.', 'taxi-peninsula' ) . '</p>';
+
+	if ( 'online' === $b['payment'] ) {
+		echo '<p><strong>' . esc_html__( 'Online deposit:', 'taxi-peninsula' ) . '</strong> ';
+		echo $b['paid'] > 0
+			? '<span class="tp-badge tp-badge--completed">' . esc_html( tp_money( $b['paid'] ) . ' ' . __( 'paid', 'taxi-peninsula' ) ) . '</span>'
+			: '<span class="tp-badge tp-badge--pending">' . esc_html__( 'Not paid yet', 'taxi-peninsula' ) . '</span>';
+		echo '</p>';
+	}
+}
+
 function tp_render_log_box( WP_Post $post ) {
 	$log      = array_reverse( array_filter( (array) get_post_meta( $post->ID, '_tp_log', true ) ) );
 	$statuses = tp_statuses();
 	echo '<ul class="tp-log">';
 	foreach ( $log as $entry ) {
+		$entry = array_merge( array( 'to' => '', 'note' => '', 'notify' => false, 'user' => '', 'time' => '' ), (array) $entry );
 		printf(
-			'<li><strong>%1$s</strong> %2$s<br><small>%3$s%4$s</small></li>',
-			esc_html( $statuses[ $entry['to'] ] ?? $entry['to'] ),
+			'<li%5$s><strong>%1$s</strong> %2$s<br><small>%3$s%4$s</small></li>',
+			esc_html( $entry['note'] ? $entry['note'] : ( $statuses[ $entry['to'] ] ?? $entry['to'] ) ),
 			$entry['notify'] ? '<span class="dashicons dashicons-email-alt" title="' . esc_attr__( 'Customer emailed', 'taxi-peninsula' ) . '"></span>' : '',
 			esc_html( mysql2date( 'j M Y g:i a', $entry['time'] ) ),
-			$entry['user'] ? ' · ' . esc_html( $entry['user'] ) : ''
+			$entry['user'] ? ' · ' . esc_html( $entry['user'] ) : '',
+			$entry['note'] ? ' class="tp-log__note"' : ''
 		);
 	}
 	printf( '<li><strong>%s</strong><br><small>%s</small></li>', esc_html__( 'Received', 'taxi-peninsula' ), esc_html( get_the_date( 'j M Y g:i a', $post ) ) );
@@ -431,19 +494,54 @@ function tp_save_booking_admin( $post_id, WP_Post $post ) {
 		update_post_meta( $post_id, '_tp_status', 'pending' );
 	}
 
+	$notify = ! empty( $_POST['tp_notify'] );
 	$status = isset( $_POST['tp_status'] ) ? sanitize_key( wp_unslash( $_POST['tp_status'] ) ) : 'pending';
+	$before = get_post_meta( $post_id, '_tp_status', true );
 	if ( isset( tp_statuses()[ $status ] ) ) {
-		tp_set_status( $post_id, $status, ! empty( $_POST['tp_notify'] ) );
+		tp_set_status( $post_id, $status, $notify );
+	}
+
+	// A driver change may move the status to "Driver assigned" unless staff picked a status themselves.
+	$driver_id = isset( $_POST['tp_driver_id'] ) ? absint( $_POST['tp_driver_id'] ) : 0;
+	$fleet_id  = isset( $_POST['tp_fleet_id'] ) ? absint( $_POST['tp_fleet_id'] ) : 0;
+	if ( $driver_id && ! in_array( 'tp_driver', (array) ( get_userdata( $driver_id )->roles ?? array() ), true ) ) {
+		$driver_id = 0;
+	}
+	if ( $fleet_id && 'tp_fleet' !== get_post_type( $fleet_id ) ) {
+		$fleet_id = 0;
+	}
+	if ( $status !== $before && ! in_array( $status, array( 'pending', 'confirmed' ), true ) ) {
+		// Staff chose a later status explicitly; record the assignment without changing it again.
+		update_post_meta( $post_id, '_tp_driver_id', $driver_id );
+		update_post_meta( $post_id, '_tp_fleet_id', $fleet_id );
+	} else {
+		tp_assign( $post_id, $driver_id, $fleet_id, $notify );
+	}
+
+	if ( ! empty( $_POST['tp_request_done'] ) ) {
+		delete_post_meta( $post_id, '_tp_request' );
+		tp_add_log( $post_id, array( 'note' => __( 'Customer request handled', 'taxi-peninsula' ) ) );
+	}
+
+	$series = get_post_meta( $post_id, '_tp_series', true );
+	if ( $series && ! empty( $_POST['tp_apply_series'] ) && isset( tp_statuses()[ $status ] ) ) {
+		$from = get_post_meta( $post_id, '_tp_pickup_at', true );
+		foreach ( tp_series_ids( $series ) as $sid ) {
+			if ( (int) $sid !== (int) $post_id && get_post_meta( $sid, '_tp_pickup_at', true ) > $from && current_user_can( 'edit_post', $sid ) ) {
+				tp_set_status( $sid, $status, false );
+			}
+		}
 	}
 
 	// Keep title and search text in sync without re-triggering this hook.
 	remove_action( 'save_post_tp_booking', 'tp_save_booking_admin', 10 );
 	wp_update_post(
-		array(
-			'ID'           => $post_id,
-			'post_title'   => $ref . ' — ' . $data['name'],
-			'post_excerpt' => implode( ' | ', array( $data['phone'], $data['email'], $data['pickup'], $data['dropoff'] ) ),
-			'post_status'  => 'publish',
+		array_merge(
+			array(
+				'ID'          => $post_id,
+				'post_status' => 'publish',
+			),
+			tp_booking_post_fields( $ref, $data )
 		)
 	);
 	add_action( 'save_post_tp_booking', 'tp_save_booking_admin', 10, 2 );
@@ -458,7 +556,7 @@ add_action( 'manage_posts_extra_tablenav', static function ( $which ) {
 	if ( 'top' !== $which || ! $screen || 'tp_booking' !== $screen->post_type ) {
 		return;
 	}
-	$args = array_intersect_key( wp_unslash( $_GET ), array_flip( array( 'tp_status', 'tp_when', 'tp_from', 'tp_to' ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended,WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- passed through add_query_arg & sanitized on export.
+	$args = array_intersect_key( wp_unslash( $_GET ), array_flip( array( 'tp_status', 'tp_when', 'tp_from', 'tp_to', 'tp_driver', 'tp_series' ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended,WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- passed through add_query_arg & sanitized on export.
 	$url  = wp_nonce_url( add_query_arg( array_map( 'rawurlencode', $args ), admin_url( 'admin-post.php?action=tp_export_bookings' ) ), 'tp_export' );
 	printf( '<div class="alignleft actions"><a class="button" href="%s">%s</a></div>', esc_url( $url ), esc_html__( 'Export CSV', 'taxi-peninsula' ) );
 } );
@@ -491,17 +589,23 @@ function tp_export_bookings() {
 
 	$out    = fopen( 'php://output', 'w' );
 	$fields = tp_booking_fields();
-	fputcsv( $out, array_merge( array( 'Reference', 'Status' ), wp_list_pluck( $fields, 0 ), array( 'Internal notes', 'Received' ) ), ",", "\"", "" );
+	fputcsv( $out, array_merge( array( 'Reference', 'Status' ), wp_list_pluck( $fields, 0 ), array( 'Driver', 'Assigned vehicle', 'Paid online', 'Repeat series', 'Internal notes', 'Received' ) ), ",", "\"", "" );
 
 	foreach ( $ids as $id ) {
 		$b                 = tp_get_booking( $id );
 		$b['vehicle']      = tp_vehicle_types()[ $b['vehicle'] ] ?? $b['vehicle'];
 		$b['mobility_aid'] = tp_mobility_aids()[ $b['mobility_aid'] ] ?? $b['mobility_aid'];
+		$b['payment']      = tp_all_payment_methods()[ $b['payment'] ] ?? $b['payment'];
 		$row               = array( $b['reference'], tp_statuses()[ $b['status'] ] ?? $b['status'] );
 		foreach ( array_keys( $fields ) as $key ) {
 			$row[] = $b[ $key ];
 		}
-		$row[] = $b['admin_notes'];
+		$driver = $b['driver_id'] ? get_userdata( $b['driver_id'] ) : null;
+		$row[]  = $driver ? $driver->display_name : '';
+		$row[]  = $b['fleet_id'] ? tp_fleet_label( $b['fleet_id'] ) : '';
+		$row[]  = $b['paid'] > 0 ? number_format( $b['paid'], 2, '.', '' ) : '';
+		$row[]  = $b['series'];
+		$row[]  = $b['admin_notes'];
 		$row[] = get_the_date( 'Y-m-d H:i', $id );
 		// Guard against spreadsheet formula injection.
 		$row = array_map(

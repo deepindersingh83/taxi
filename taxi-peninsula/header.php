@@ -22,6 +22,10 @@
 		<ul class="topbar__contact">
 			<li><a href="<?php echo esc_url( tp_phone_href() ); ?>"><?php tp_the_icon( 'phone' ); ?><span><?php echo esc_html( tp_opt( 'phone_display' ) ); ?></span></a></li>
 			<li class="topbar__email"><a href="<?php echo esc_attr( tp_email_href() ); ?>"><?php tp_the_icon( 'mail' ); ?><span><?php echo esc_html( antispambot( tp_opt( 'email' ) ) ); ?></span></a></li>
+			<?php $tp_lookup = tp_page_url_by_template( 'lookup' ); ?>
+			<?php if ( $tp_lookup ) : ?>
+				<li><a href="<?php echo esc_url( $tp_lookup ); ?>"><?php tp_the_icon( 'calendar' ); ?><span><?php esc_html_e( 'Manage my booking', 'taxi-peninsula' ); ?></span></a></li>
+			<?php endif; ?>
 			<li class="topbar__hours"><?php tp_the_icon( 'clock' ); ?><span><?php echo esc_html( tp_opt( 'hours' ) ); ?></span></li>
 		</ul>
 		<div class="a11y-tools" role="group" aria-label="<?php esc_attr_e( 'Display options', 'taxi-peninsula' ); ?>">

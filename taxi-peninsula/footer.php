@@ -54,10 +54,15 @@
 	</div>
 </footer>
 
-<a class="call-fab" href="<?php echo esc_url( tp_phone_href() ); ?>">
-	<?php tp_the_icon( 'phone' ); ?>
-	<span><?php esc_html_e( 'Call now', 'taxi-peninsula' ); ?></span>
-</a>
+<?php
+$tp_pages = (array) get_option( 'tp_pages', array() );
+if ( empty( $tp_pages['driver'] ) || ! is_page( $tp_pages['driver'] ) ) :
+	?>
+	<a class="call-fab" href="<?php echo esc_url( tp_phone_href() ); ?>">
+		<?php tp_the_icon( 'phone' ); ?>
+		<span><?php esc_html_e( 'Call now', 'taxi-peninsula' ); ?></span>
+	</a>
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 </body>

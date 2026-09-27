@@ -12,7 +12,9 @@ defined( 'ABSPATH' ) || exit;
 add_shortcode( 'tp_booking_form', 'tp_booking_form_shortcode' );
 function tp_booking_form_shortcode() {
 	ob_start();
+	echo '<div class="tp-component">';
 	tp_render_booking_form();
+	echo '</div>';
 	return ob_get_clean();
 }
 
@@ -31,7 +33,11 @@ function tp_render_booking_form() {
 		get_template_part(
 			'template-parts/booking',
 			'success',
-			array( 'reference' => preg_match( '/^TP-[A-Z0-9]{6}$/', $ref ) ? $ref : '' )
+			array(
+				'reference' => preg_match( '/^TP-[A-Z0-9]{6}$/', $ref ) ? $ref : '',
+				'count'     => isset( $_GET['trips'] ) ? absint( $_GET['trips'] ) : 1,
+				'pay_error' => ! empty( $_GET['pay_error'] ),
+			)
 		);
 		return;
 	}
@@ -41,6 +47,16 @@ function tp_render_booking_form() {
 		$stored = get_transient( 'tp_form_' . $key );
 		if ( is_array( $stored ) ) {
 			$state = $stored;
+		}
+	} else {
+		// Prefill from links such as area pages: ?pickup=Frankston.
+		foreach ( array( 'pickup', 'dropoff' ) as $prefill ) {
+			if ( ! empty( $_GET[ $prefill ] ) ) {
+				$state['old'][ $prefill ] = sanitize_text_field( wp_unslash( $_GET[ $prefill ] ) );
+			}
+		}
+		if ( isset( $_GET['payment'] ) ) {
+			$state['old']['payment'] = sanitize_key( wp_unslash( $_GET['payment'] ) );
 		}
 	}
 	// phpcs:enable
@@ -53,33 +69,34 @@ add_action( 'admin_post_tp_booking', 'tp_handle_booking' );
 function tp_handle_booking() {
 	$return = isset( $_POST['_tp_return'] ) ? esc_url_raw( wp_unslash( $_POST['_tp_return'] ) ) : '';
 	$return = wp_validate_redirect( $return, home_url( '/' ) );
-	$return = remove_query_arg( array( 'tp_form', 'booking', 'ref' ), $return );
+	$return = remove_query_arg( array( 'tp_form', 'booking', 'ref', 'trips', 'pay_error', 'pickup', 'dropoff', 'payment' ), $return );
 
 	if ( ! isset( $_POST['_tp_nonce'] ) || ! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['_tp_nonce'] ) ), 'tp_booking' ) ) {
 		tp_booking_fail( $return, array( 'form' => __( 'Your session expired. Please check your details and submit again.', 'taxi-peninsula' ) ), $_POST );
 	}
 
-	// Honeypot: real visitors never fill this in.
-	if ( ! empty( $_POST['tp_website'] ) ) {
+	if ( tp_is_honeypot_hit() ) {
 		wp_safe_redirect( add_query_arg( 'booking', 'received', $return ) . '#book' );
 		exit;
 	}
 
-	$ip_key = 'tp_rl_' . md5( tp_client_ip() );
-	$count  = (int) get_transient( $ip_key );
-	if ( $count >= 5 ) {
-		tp_booking_fail(
-			$return,
-			array(
-				/* translators: %s: phone number */
-				'form' => sprintf( __( 'Too many bookings from your connection. Please call us on %s.', 'taxi-peninsula' ), tp_opt( 'phone_display' ) ),
-			),
-			$_POST
-		);
+	$raw = wp_unslash( $_POST ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- sanitized in tp_sanitize_booking().
+
+	if ( ! tp_rate_limit( 'booking', 5, 10 * MINUTE_IN_SECONDS, false ) ) {
+		/* translators: %s: phone number */
+		tp_booking_fail( $return, array( 'form' => sprintf( __( 'Too many bookings from your connection. Please call us on %s.', 'taxi-peninsula' ), tp_opt( 'phone_display' ) ) ), $raw );
 	}
 
-	$raw = wp_unslash( $_POST ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- sanitized in tp_sanitize_booking().
+	if ( ! tp_verify_captcha() ) {
+		tp_booking_fail( $return, array( 'form' => tp_captcha_error_message() ), $raw );
+	}
+
 	list( $data, $errors ) = tp_sanitize_booking( $raw, true );
+
+	list( $dates, $repeat_error ) = tp_recurring_dates( $raw, $data['date'] );
+	if ( $repeat_error ) {
+		$errors['repeat'] = $repeat_error;
+	}
 
 	if ( empty( $raw['consent'] ) ) {
 		$errors['consent'] = __( 'Please agree so we can contact you about this booking.', 'taxi-peninsula' );
@@ -89,18 +106,35 @@ function tp_handle_booking() {
 		tp_booking_fail( $return, $errors, $raw );
 	}
 
-	$ref     = tp_new_reference();
-	$post_id = wp_insert_post(
-		array(
-			'post_type'    => 'tp_booking',
-			'post_status'  => 'publish',
-			'post_title'   => $ref . ' — ' . $data['name'],
-			'post_excerpt' => implode( ' | ', array( $data['phone'], $data['email'], $data['pickup'], $data['dropoff'] ) ),
-		),
-		true
-	);
+	$series = count( $dates ) > 1 ? tp_new_reference() : '';
+	$ids    = array();
+	foreach ( $dates as $date ) {
+		$trip         = $data;
+		$trip['date'] = $date;
+		$ref          = tp_new_reference();
+		$post_id      = wp_insert_post(
+			array_merge(
+				array(
+					'post_type'   => 'tp_booking',
+					'post_status' => 'publish',
+				),
+				tp_booking_post_fields( $ref, $trip )
+			),
+			true
+		);
+		if ( is_wp_error( $post_id ) ) {
+			break;
+		}
+		update_post_meta( $post_id, '_tp_reference', $ref );
+		update_post_meta( $post_id, '_tp_status', 'pending' );
+		if ( $series ) {
+			update_post_meta( $post_id, '_tp_series', $series );
+		}
+		tp_save_booking_meta( $post_id, $trip );
+		$ids[] = $post_id;
+	}
 
-	if ( is_wp_error( $post_id ) ) {
+	if ( ! $ids ) {
 		tp_booking_fail(
 			$return,
 			/* translators: %s: phone number */
@@ -109,41 +143,63 @@ function tp_handle_booking() {
 		);
 	}
 
-	update_post_meta( $post_id, '_tp_reference', $ref );
-	update_post_meta( $post_id, '_tp_status', 'pending' );
-	tp_save_booking_meta( $post_id, $data );
+	tp_rate_limit( 'booking', 5, 10 * MINUTE_IN_SECONDS, true );
 
-	set_transient( $ip_key, $count + 1, 10 * MINUTE_IN_SECONDS );
+	/**
+	 * Fires once per submission (not per repeat trip).
+	 *
+	 * @param int   $first_id First booking ID.
+	 * @param int[] $ids      All booking IDs created (more than one for repeat trips).
+	 */
+	do_action( 'tp_booking_created', $ids[0], $ids );
 
-	tp_send_new_booking_emails( $post_id );
+	$first_ref = get_post_meta( $ids[0], '_tp_reference', true );
+	$args      = array(
+		'booking' => 'received',
+		'ref'     => $first_ref,
+	);
+	if ( count( $ids ) > 1 ) {
+		$args['trips'] = count( $ids );
+	}
 
-	wp_safe_redirect( add_query_arg( array( 'booking' => 'received', 'ref' => $ref ), $return ) . '#book' );
+	if ( 'online' === $data['payment'] ) {
+		$url = tp_stripe_checkout_url( $ids[0] );
+		if ( ! is_wp_error( $url ) ) {
+			wp_redirect( $url ); // phpcs:ignore WordPress.Security.SafeRedirect.wp_redirect_wp_redirect -- Stripe-hosted checkout.
+			exit;
+		}
+		$args['pay_error'] = 1;
+	}
+
+	wp_safe_redirect( add_query_arg( $args, $return ) . '#book' );
 	exit;
 }
 
 /**
  * Store errors + input briefly and send the visitor back to the form.
  */
-function tp_booking_fail( $return, array $errors, $old ) {
-	$old = is_array( $old ) ? wp_unslash( $old ) : array();
-	unset( $old['_tp_nonce'], $old['_tp_return'], $old['action'], $old['tp_website'] );
-	$old = array_map(
-		static function ( $v ) {
-			return is_scalar( $v ) ? sanitize_textarea_field( (string) $v ) : '';
-		},
-		$old
-	);
+function tp_booking_fail( $return, array $errors, $old, $anchor = '#book' ) {
+	$old = is_array( $old ) ? $old : array();
+	unset( $old['_tp_nonce'], $old['_tp_return'], $old['action'], $old['tp_website'], $old['cf-turnstile-response'], $old['g-recaptcha-response'] );
+	$clean = array();
+	foreach ( $old as $k => $v ) {
+		if ( is_array( $v ) ) {
+			$clean[ $k ] = array_map( 'sanitize_text_field', array_filter( $v, 'is_scalar' ) );
+		} elseif ( is_scalar( $v ) ) {
+			$clean[ $k ] = sanitize_textarea_field( (string) $v );
+		}
+	}
 
 	$key = strtolower( wp_generate_password( 16, false ) );
 	set_transient(
 		'tp_form_' . $key,
 		array(
 			'errors' => $errors,
-			'old'    => $old,
+			'old'    => $clean,
 		),
 		15 * MINUTE_IN_SECONDS
 	);
-	wp_safe_redirect( add_query_arg( 'tp_form', $key, $return ) . '#book' );
+	wp_safe_redirect( add_query_arg( 'tp_form', $key, $return ) . $anchor );
 	exit;
 }
 
@@ -155,28 +211,44 @@ function tp_mail_headers( $reply_to = '' ) {
 	return $headers;
 }
 
-function tp_send_new_booking_emails( $post_id ) {
+/**
+ * List of dates for a repeat booking, for emails.
+ */
+function tp_series_dates_text( array $ids ) {
+	$out = '';
+	foreach ( $ids as $id ) {
+		$b    = tp_get_booking( $id );
+		$out .= '- ' . tp_format_pickup( $b ) . ' (' . $b['reference'] . ")\n";
+	}
+	return $out;
+}
+
+add_action( 'tp_booking_created', 'tp_send_new_booking_emails', 10, 2 );
+function tp_send_new_booking_emails( $post_id, $ids = array() ) {
+	$ids      = $ids ?: array( $post_id );
 	$b        = tp_get_booking( $post_id );
 	$site     = wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );
 	$summary  = tp_booking_summary( $b );
 	$admin_to = tp_opt( 'notify_email' ) ?: get_option( 'admin_email' );
+	$series   = count( $ids ) > 1
+		/* translators: %d: number of trips */
+		? "\n" . sprintf( __( 'Repeat booking — %d trips:', 'taxi-peninsula' ), count( $ids ) ) . "\n" . tp_series_dates_text( $ids )
+		: '';
 
 	wp_mail(
 		$admin_to,
 		/* translators: 1: reference, 2: pick-up time */
-		sprintf( __( 'New booking %1$s — %2$s', 'taxi-peninsula' ), $b['reference'], tp_format_pickup( $b ) ),
-		$summary . "\n" . __( 'Manage this booking:', 'taxi-peninsula' ) . ' ' . admin_url( 'post.php?post=' . $post_id . '&action=edit' ),
+		sprintf( __( 'New booking %1$s — %2$s', 'taxi-peninsula' ), $b['reference'], tp_format_pickup( $b ) ) . ( $series ? ' ' . __( '(repeat)', 'taxi-peninsula' ) : '' ),
+		$summary . $series . "\n" . __( 'Manage this booking:', 'taxi-peninsula' ) . ' ' . admin_url( 'post.php?post=' . $post_id . '&action=edit' ),
 		tp_mail_headers( $b['email'] )
 	);
 
 	if ( tp_opt( 'customer_emails' ) && is_email( $b['email'] ) ) {
-		$body  = sprintf(
-			/* translators: %s: passenger name */
-			__( 'Hi %s,', 'taxi-peninsula' ),
-			$b['name']
-		) . "\n\n";
+		/* translators: %s: passenger name */
+		$body  = sprintf( __( 'Hi %s,', 'taxi-peninsula' ), $b['name'] ) . "\n\n";
 		$body .= __( 'Thanks for booking with us. We have received your request and will confirm it shortly.', 'taxi-peninsula' ) . "\n\n";
-		$body .= $summary . "\n";
+		$body .= $summary . $series . "\n";
+		$body .= __( 'View or manage your booking:', 'taxi-peninsula' ) . ' ' . tp_booking_manage_url( $post_id ) . "\n\n";
 		$body .= sprintf(
 			/* translators: 1: phone, 2: email */
 			__( 'Need to change something? Call %1$s or email %2$s and quote your reference.', 'taxi-peninsula' ),
@@ -191,6 +263,13 @@ function tp_send_new_booking_emails( $post_id ) {
 			$body,
 			tp_mail_headers( tp_opt( 'email' ) )
 		);
+	}
+}
+
+add_action( 'tp_booking_status_changed', 'tp_email_on_status', 10, 4 );
+function tp_email_on_status( $post_id, $old, $status, $notify ) {
+	if ( $notify ) {
+		tp_send_status_email( $post_id );
 	}
 }
 
@@ -216,7 +295,20 @@ function tp_send_status_email( $post_id ) {
 	/* translators: %s: passenger name */
 	$body  = sprintf( __( 'Hi %s,', 'taxi-peninsula' ), $b['name'] ) . "\n\n";
 	$body .= ( $messages[ $b['status'] ] ?? '' ) . "\n\n";
+	if ( 'assigned' === $b['status'] && $b['driver_id'] ) {
+		$driver = get_userdata( $b['driver_id'] );
+		if ( $driver ) {
+			/* translators: %s: driver first name */
+			$body .= sprintf( __( 'Your driver: %s', 'taxi-peninsula' ), $driver->first_name ?: $driver->display_name ) . "\n";
+		}
+		if ( $b['fleet_id'] ) {
+			/* translators: %s: vehicle */
+			$body .= sprintf( __( 'Vehicle: %s', 'taxi-peninsula' ), tp_fleet_label( $b['fleet_id'] ) ) . "\n";
+		}
+		$body .= "\n";
+	}
 	$body .= tp_booking_summary( $b ) . "\n";
+	$body .= __( 'View or manage your booking:', 'taxi-peninsula' ) . ' ' . tp_booking_manage_url( $post_id ) . "\n\n";
 	/* translators: %s: phone number */
 	$body .= sprintf( __( 'Questions? Call %s.', 'taxi-peninsula' ), tp_opt( 'phone_display' ) ) . "\n\n" . $site . "\n";
 

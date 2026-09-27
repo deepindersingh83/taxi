@@ -26,6 +26,7 @@ function tp_defaults() {
 		'show_mptp'       => true,
 		'customer_emails' => true,
 		'min_notice'      => 60,
+		'open_247'        => true,
 	);
 }
 
@@ -138,4 +139,95 @@ function tp_the_icon( $name, $class = '' ) {
  */
 function tp_client_ip() {
 	return isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '0.0.0.0';
+}
+
+/**
+ * Shortcode that identifies each feature page.
+ */
+function tp_feature_shortcodes() {
+	return array(
+		'book'    => 'tp_booking_form',
+		'lookup'  => 'tp_booking_lookup',
+		'contact' => 'tp_contact_form',
+		'faq'     => 'tp_faq',
+		'fleet'   => 'tp_fleet',
+		'driver'  => 'tp_driver_jobs',
+		'ndis'    => 'tp_ndis',
+	);
+}
+
+/**
+ * URL of the page that provides a feature (booking form, lookup, contact…).
+ *
+ * Pages created by "Create starter content" are remembered; otherwise the first
+ * published page containing the feature's shortcode is used.
+ *
+ * @param string $key      Feature key from tp_feature_shortcodes().
+ * @param string $fallback URL to return when no page exists.
+ * @return string
+ */
+function tp_page_url_by_template( $key, $fallback = '' ) {
+	static $cache = array();
+	if ( isset( $cache[ $key ] ) ) {
+		return $cache[ $key ] ?: $fallback;
+	}
+
+	$id    = 0;
+	$pages = (array) get_option( 'tp_pages', array() );
+	if ( ! empty( $pages[ $key ] ) && 'publish' === get_post_status( $pages[ $key ] ) ) {
+		$id = (int) $pages[ $key ];
+	}
+
+	if ( ! $id && 'book' === $key ) {
+		$found = get_pages(
+			array(
+				'meta_key'   => '_wp_page_template',
+				'meta_value' => 'page-templates/booking.php',
+				'number'     => 1,
+			)
+		);
+		$id    = $found ? $found[0]->ID : 0;
+	}
+
+	$codes = tp_feature_shortcodes();
+	if ( ! $id && isset( $codes[ $key ] ) ) {
+		global $wpdb;
+		$candidates = $wpdb->get_col(
+			$wpdb->prepare(
+				"SELECT ID FROM {$wpdb->posts} WHERE post_type = 'page' AND post_status = 'publish' AND post_content LIKE %s ORDER BY ID ASC LIMIT 20",
+				'%' . $wpdb->esc_like( '[' . $codes[ $key ] ) . '%'
+			)
+		);
+		// Skip pages that belong to another feature (e.g. the NDIS page embeds [tp_faq topic="…"]).
+		$taken = array_map( 'intval', array_diff_key( $pages, array( $key => 0 ) ) );
+		foreach ( $candidates as $candidate ) {
+			if ( ! in_array( (int) $candidate, $taken, true ) ) {
+				$id = (int) $candidate;
+				break;
+			}
+		}
+	}
+
+	$cache[ $key ] = $id ? get_permalink( $id ) : '';
+	return $cache[ $key ] ?: $fallback;
+}
+
+/**
+ * Normalise an Australian number to E.164 (+614…) for SMS. Returns '' if unusable.
+ */
+function tp_e164( $phone ) {
+	$phone = preg_replace( '/[^\d+]/', '', (string) $phone );
+	if ( '' === $phone ) {
+		return '';
+	}
+	if ( '+' === $phone[0] ) {
+		return strlen( $phone ) >= 10 ? $phone : '';
+	}
+	if ( 0 === strpos( $phone, '61' ) && strlen( $phone ) === 11 ) {
+		return '+' . $phone;
+	}
+	if ( '0' === $phone[0] && strlen( $phone ) === 10 ) {
+		return '+61' . substr( $phone, 1 );
+	}
+	return '';
 }
