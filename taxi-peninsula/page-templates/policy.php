@@ -13,23 +13,7 @@ get_header();
 while ( have_posts() ) :
 	the_post();
 	$content  = apply_filters( 'the_content', get_the_content() ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
-	$toc      = array();
-	$content  = preg_replace_callback(
-		'#<h2([^>]*)>(.*?)</h2>#is',
-		static function ( $m ) use ( &$toc ) {
-			$text = wp_strip_all_tags( $m[2] );
-			if ( preg_match( '/\sid=["\']([^"\']+)["\']/', $m[1], $idm ) ) {
-				$id = $idm[1];
-				$attrs = $m[1];
-			} else {
-				$id    = 'section-' . sanitize_title( $text );
-				$attrs = $m[1] . ' id="' . esc_attr( $id ) . '"';
-			}
-			$toc[] = array( $id, $text );
-			return '<h2' . $attrs . '>' . $m[2] . '</h2>';
-		},
-		$content
-	);
+	list( $content, $toc ) = tp_heading_toc( $content );
 
 	get_template_part(
 		'template-parts/page-header',

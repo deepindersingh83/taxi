@@ -23,6 +23,8 @@ function tp_customize_register( WP_Customize_Manager $wp_customize ) {
 		'tp_contact'  => __( 'Contact details', 'taxi-peninsula' ),
 		'tp_hero'     => __( 'Home page hero', 'taxi-peninsula' ),
 		'tp_bookings' => __( 'Bookings', 'taxi-peninsula' ),
+		'tp_dynamic'  => __( 'Live numbers & hero messages', 'taxi-peninsula' ),
+		'tp_video'    => __( 'Wheelchair safety video', 'taxi-peninsula' ),
 	);
 	foreach ( $sections as $id => $title ) {
 		$wp_customize->add_section( $id, array( 'title' => $title, 'panel' => 'tp_panel' ) );
@@ -39,7 +41,16 @@ function tp_customize_register( WP_Customize_Manager $wp_customize ) {
 		'hero_eyebrow'    => array( 'tp_hero', __( 'Small heading', 'taxi-peninsula' ), 'text', 'sanitize_text_field' ),
 		'hero_title'      => array( 'tp_hero', __( 'Headline', 'taxi-peninsula' ), 'text', 'sanitize_text_field' ),
 		'hero_text'       => array( 'tp_hero', __( 'Intro text', 'taxi-peninsula' ), 'textarea', 'sanitize_textarea_field' ),
-		'service_areas'   => array( 'tp_bookings', __( 'Service areas (one per line)', 'taxi-peninsula' ), 'textarea', 'sanitize_textarea_field' ),
+		'service_areas'   => array( 'tp_bookings', __( 'Service areas (one per line). Add other names and postcodes after "|", e.g. Frankston | Frankston South | 3199', 'taxi-peninsula' ), 'textarea', 'sanitize_textarea_field' ),
+		'sms_number'      => array( 'tp_contact', __( 'Mobile for "Message us" by SMS (+61 format)', 'taxi-peninsula' ), 'text', 'sanitize_text_field' ),
+		'whatsapp_number' => array( 'tp_contact', __( 'WhatsApp number (+61 format, leave empty to hide)', 'taxi-peninsula' ), 'text', 'sanitize_text_field' ),
+		'since_year'      => array( 'tp_dynamic', __( 'Year you started (e.g. 2019) — shown as "since 2019"', 'taxi-peninsula' ), 'number', 'absint' ),
+		'trips_offset'    => array( 'tp_dynamic', __( 'Trips completed before this website (added to the live count)', 'taxi-peninsula' ), 'number', 'absint' ),
+		'stats_min'       => array( 'tp_dynamic', __( 'Only show the trip count once it reaches', 'taxi-peninsula' ), 'number', 'absint' ),
+		'hero_moments'    => array( 'tp_dynamic', __( 'Time-of-day hero messages (one per line: HH:MM-HH:MM | message)', 'taxi-peninsula' ), 'textarea', 'sanitize_textarea_field' ),
+		'video_title'     => array( 'tp_video', __( 'Video heading', 'taxi-peninsula' ), 'text', 'sanitize_text_field' ),
+		'video_url'       => array( 'tp_video', __( 'YouTube or Vimeo link (or upload a file below)', 'taxi-peninsula' ), 'url', 'esc_url_raw' ),
+		'video_transcript'=> array( 'tp_video', __( 'Transcript (strongly recommended)', 'taxi-peninsula' ), 'textarea', 'sanitize_textarea_field' ),
 		'notify_email'    => array( 'tp_bookings', __( 'Send new-booking alerts to', 'taxi-peninsula' ), 'email', 'sanitize_email' ),
 		'min_notice'      => array( 'tp_bookings', __( 'Minimum notice for online bookings (minutes)', 'taxi-peninsula' ), 'number', 'absint' ),
 		'show_mptp'       => array( 'tp_bookings', __( 'Ask about Multi Purpose Taxi Program (MPTP) membership', 'taxi-peninsula' ), 'checkbox', 'tp_sanitize_checkbox' ),
@@ -60,6 +71,25 @@ function tp_customize_register( WP_Customize_Manager $wp_customize ) {
 				'section' => $f[0],
 				'label'   => $f[1],
 				'type'    => $f[2],
+			)
+		);
+	}
+
+	foreach ( array(
+		'video_file'     => array( __( 'Video file (MP4) — optional instead of a link', 'taxi-peninsula' ), 'video' ),
+		'video_captions' => array( __( 'Captions file (.vtt) for the uploaded video', 'taxi-peninsula' ), 'text/vtt' ),
+		'video_poster'   => array( __( 'Cover image', 'taxi-peninsula' ), 'image' ),
+	) as $key => $media ) {
+		$wp_customize->add_setting( 'tp_' . $key, array( 'default' => '', 'sanitize_callback' => 'absint' ) );
+		$wp_customize->add_control(
+			new WP_Customize_Media_Control(
+				$wp_customize,
+				'tp_' . $key,
+				array(
+					'section'   => 'tp_video',
+					'label'     => $media[0],
+					'mime_type' => $media[1],
+				)
 			)
 		);
 	}

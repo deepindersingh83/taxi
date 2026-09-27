@@ -20,7 +20,7 @@ function tp_faq_schema_items( $add = null ) {
 
 add_shortcode( 'tp_faq', 'tp_faq_shortcode' );
 function tp_faq_shortcode( $atts ) {
-	$atts  = shortcode_atts( array( 'topic' => '', 'limit' => -1 ), $atts, 'tp_faq' );
+	$atts  = shortcode_atts( array( 'topic' => '', 'limit' => -1, 'search' => 'yes' ), $atts, 'tp_faq' );
 	$query = array(
 		'post_type'   => 'tp_faq',
 		'numberposts' => (int) $atts['limit'],
@@ -45,7 +45,18 @@ function tp_faq_shortcode( $atts ) {
 	}
 
 	ob_start();
-	echo '<div class="tp-component faq">';
+	echo '<div class="tp-component faq" data-faq>';
+	if ( 'no' !== $atts['search'] && count( $faqs ) >= 5 ) {
+		$sid = wp_unique_id( 'faq-search-' );
+		printf(
+			'<div class="faq__search" role="search"><label for="%1$s">%2$s</label><div class="faq__search-row">%3$s<input type="search" id="%1$s" data-faq-search autocomplete="off" placeholder="%4$s"></div><p class="faq__count" aria-live="polite" data-faq-count></p></div>',
+			esc_attr( $sid ),
+			esc_html__( 'Search the questions', 'taxi-peninsula' ),
+			tp_icon( 'search' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static icon.
+			esc_attr__( 'e.g. power wheelchair, airport, NDIS', 'taxi-peninsula' )
+		);
+		echo '<p class="faq__empty" data-faq-empty hidden>' . esc_html__( 'No questions match. Try another word, or call us — we are happy to help.', 'taxi-peninsula' ) . '</p>';
+	}
 	if ( count( $groups ) > 1 ) {
 		echo '<nav class="faq__topics" aria-label="' . esc_attr__( 'FAQ topics', 'taxi-peninsula' ) . '"><ul class="chips">';
 		foreach ( array_keys( $groups ) as $name ) {
@@ -54,6 +65,7 @@ function tp_faq_shortcode( $atts ) {
 		echo '</ul></nav>';
 	}
 	foreach ( $groups as $name => $items ) {
+		echo '<div class="faq__section" data-faq-section>';
 		if ( count( $groups ) > 1 ) {
 			printf( '<h2 class="faq__group" id="faq-%s">%s</h2>', esc_attr( sanitize_title( $name ?: 'general' ) ), esc_html( $name ?: __( 'General', 'taxi-peninsula' ) ) );
 		}
@@ -71,6 +83,7 @@ function tp_faq_shortcode( $atts ) {
 				wp_kses_post( $answer )
 			);
 		}
+		echo '</div>';
 	}
 	echo '</div>';
 	return ob_get_clean();
@@ -96,9 +109,16 @@ function tp_fleet_shortcode( $atts = array() ) {
 		$features = array_filter( array_map( 'trim', explode( "\n", (string) get_post_meta( $v->ID, '_tp_features', true ) ) ) );
 		?>
 		<article class="fleet-card">
-			<div class="fleet-card__media">
+			<?php $gallery = tp_fleet_gallery( $v->ID ); ?>
+			<div class="fleet-card__media"<?php echo $gallery ? ' data-gallery="' . esc_attr( wp_json_encode( $gallery ) ) . '"' : ''; ?>>
 				<?php if ( has_post_thumbnail( $v ) ) : ?>
-					<?php echo get_the_post_thumbnail( $v, 'tp-card', array( 'alt' => tp_thumbnail_alt( $v ) ) ); ?>
+					<button type="button" class="fleet-card__open" data-gallery-open="0">
+						<?php echo get_the_post_thumbnail( $v, 'tp-card', array( 'alt' => tp_thumbnail_alt( $v ) ) ); ?>
+						<?php if ( count( $gallery ) > 1 ) : ?>
+							<span class="fleet-card__count"><?php tp_the_icon( 'image' ); ?> <?php echo esc_html( sprintf( /* translators: %d: photos */ _n( '%d photo', '%d photos', count( $gallery ), 'taxi-peninsula' ), count( $gallery ) ) ); ?></span>
+						<?php endif; ?>
+						<span class="screen-reader-text"><?php echo esc_html( sprintf( /* translators: %s: vehicle */ __( 'Open photos of %s full screen', 'taxi-peninsula' ), get_the_title( $v ) ) ); ?></span>
+					</button>
 				<?php else : ?>
 					<div class="fleet-card__placeholder" aria-hidden="true"><?php tp_the_icon( 'wheelchair' ); ?></div>
 				<?php endif; ?>
@@ -233,4 +253,42 @@ add_shortcode( 'tp_map', static function ( $atts ) {
 		esc_attr( sprintf( __( 'Map of %s', 'taxi-peninsula' ), $place ) ),
 		esc_url( 'https://www.google.com/maps?q=' . rawurlencode( $place ) . '&output=embed' )
 	);
+} );
+
+/**
+ * "Do you cover my suburb?" checker. Works entirely in the browser from your
+ * service-area list (names, aliases and postcodes), so it's instant.
+ */
+add_shortcode( 'tp_suburb_checker', static function () {
+	$links = tp_area_links();
+	$book  = tp_booking_page_url();
+	$data  = array();
+	foreach ( tp_service_area_aliases() as $name => $aliases ) {
+		$data[] = array(
+			'name'    => $name,
+			'aliases' => $aliases,
+			'url'     => $links[ strtolower( $name ) ] ?? '',
+			'book'    => add_query_arg( 'pickup', rawurlencode( $name ), $book ),
+		);
+	}
+	$id = wp_unique_id( 'suburb-' );
+	ob_start();
+	?>
+	<div class="tp-component suburb-check" data-suburbs="<?php echo esc_attr( wp_json_encode( $data ) ); ?>" data-phone="<?php echo esc_attr( tp_opt( 'phone_display' ) ); ?>" data-phone-href="<?php echo esc_attr( tp_phone_href() ); ?>">
+		<form class="suburb-check__form" role="search" action="#" novalidate>
+			<label for="<?php echo esc_attr( $id ); ?>" class="suburb-check__label"><?php esc_html_e( 'Do you cover my suburb?', 'taxi-peninsula' ); ?></label>
+			<div class="suburb-check__row">
+				<input type="text" id="<?php echo esc_attr( $id ); ?>" list="<?php echo esc_attr( $id ); ?>-list" autocomplete="off" placeholder="<?php esc_attr_e( 'Suburb or postcode', 'taxi-peninsula' ); ?>">
+				<datalist id="<?php echo esc_attr( $id ); ?>-list">
+					<?php foreach ( $data as $d ) : ?>
+						<option value="<?php echo esc_attr( $d['name'] ); ?>"></option>
+					<?php endforeach; ?>
+				</datalist>
+				<button type="submit" class="btn btn--primary"><?php tp_the_icon( 'search' ); ?> <?php esc_html_e( 'Check', 'taxi-peninsula' ); ?></button>
+			</div>
+		</form>
+		<div class="suburb-check__result" aria-live="polite" hidden></div>
+	</div>
+	<?php
+	return ob_get_clean();
 } );

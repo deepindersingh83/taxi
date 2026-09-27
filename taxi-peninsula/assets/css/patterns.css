@@ -18,7 +18,7 @@
 .tp-cta-block .wp-block-button.is-style-outline .wp-block-button__link { color: #0b2a5b; border-color: #0b2a5b; }
 
 .tp-card-columns > .wp-block-column {
-	padding: clamp(1.25rem, 1rem + 1vw, 2rem); background: #fff; border: 1px solid #d5dcea; border-radius: 1.25rem;
+	padding: clamp(1.25rem, 1rem + 1vw, 2rem); background: var(--c-surface, #fff); border: 1px solid var(--c-border, #d5dcea); border-radius: 1.25rem;
 	box-shadow: 0 1px 2px rgb(11 42 91 / .06), 0 8px 24px rgb(11 42 91 / .08);
 }
 .tp-card-columns h3 { font-size: clamp(1.25rem, 1.15rem + .5vw, 1.6rem); }
@@ -74,3 +74,9 @@
 .breadcrumbs li + li::before { content: "/"; opacity: .6; }
 .breadcrumbs a { color: #fff; }
 .breadcrumbs [aria-current] { color: rgb(255 255 255 / .85); }
+
+/* Dark mode: keep light palette backgrounds readable. */
+:root[data-theme="dark"]:not([data-contrast="high"]) { --wp--preset--color--surface-alt: var(--c-bg-alt); --wp--preset--color--ink: var(--c-text); }
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]):not([data-contrast="high"]) { --wp--preset--color--surface-alt: var(--c-bg-alt); --wp--preset--color--ink: var(--c-text); }
+}

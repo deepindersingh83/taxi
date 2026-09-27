@@ -10,11 +10,15 @@ get_header();
 while ( have_posts() ) :
 	the_post();
 
-	$meta = sprintf(
-		'<time datetime="%1$s">%2$s</time> · %3$s',
+	// Don't reveal login names: only show the author when their display name differs from it.
+	$author = get_the_author();
+	$login  = get_the_author_meta( 'user_login' );
+	$meta   = sprintf(
+		'<time datetime="%1$s">%2$s</time>%3$s · %4$s',
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
-		esc_html( get_the_author() )
+		( $author && 0 !== strcasecmp( $author, $login ) ) ? ' · ' . esc_html( $author ) : '',
+		esc_html( tp_reading_time() )
 	);
 	$cats = get_the_category_list( ', ' );
 	if ( $cats ) {
@@ -51,6 +55,8 @@ while ( have_posts() ) :
 			if ( $tags && ! is_wp_error( $tags ) ) {
 				echo wp_kses_post( $tags );
 			}
+
+			get_template_part( 'template-parts/related-posts' );
 
 			the_post_navigation(
 				array(

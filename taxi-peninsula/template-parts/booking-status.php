@@ -78,7 +78,15 @@ $pos   = array_search( $b['status'], $order, true );
 			?>
 			· <?php echo esc_html( $aids[ $b['mobility_aid'] ] ?? '' ); ?></dd></div>
 		<?php if ( $driver ) : ?>
-			<div><dt><?php esc_html_e( 'Driver', 'taxi-peninsula' ); ?></dt><dd><?php echo esc_html( $driver->first_name ?: $driver->display_name ); ?><?php echo $b['fleet_id'] ? ' · ' . esc_html( tp_fleet_label( $b['fleet_id'] ) ) : ''; ?></dd></div>
+			<?php $public = tp_public_driver( $driver->ID ); ?>
+			<div><dt><?php esc_html_e( 'Your driver', 'taxi-peninsula' ); ?></dt><dd>
+				<?php if ( $public ) : ?>
+					<span class="driver-inline"><?php echo tp_driver_avatar( $public, 'thumbnail' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper. ?><span><strong><?php echo esc_html( $public['name'] ); ?></strong><?php echo $public['bio'] ? '<br><small>' . esc_html( wp_trim_words( $public['bio'], 18 ) ) . '</small>' : ''; ?></span></span>
+				<?php else : ?>
+					<?php echo esc_html( $driver->first_name ?: strtok( $driver->display_name, ' ' ) ); ?>
+				<?php endif; ?>
+				<?php echo $b['fleet_id'] ? '<br>' . esc_html( tp_fleet_label( $b['fleet_id'] ) ) : ''; ?>
+			</dd></div>
 		<?php endif; ?>
 		<div><dt><?php esc_html_e( 'Payment', 'taxi-peninsula' ); ?></dt><dd>
 			<?php echo esc_html( $payments[ $b['payment'] ] ?? $b['payment'] ); ?>

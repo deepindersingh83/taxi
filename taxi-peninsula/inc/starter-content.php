@@ -68,6 +68,12 @@ function tp_starter_pages() {
 			'pattern'  => 'page-terms',
 			'status'   => 'draft',
 		),
+		'careers'       => array(
+			'title'    => __( 'Drive With Us', 'taxi-peninsula' ),
+			'template' => 'page-templates/careers.php',
+			'pattern'  => 'page-careers',
+			'status'   => 'draft',
+		),
 		'accessibility' => array(
 			'title'    => __( 'Accessibility Statement', 'taxi-peninsula' ),
 			'template' => 'page-templates/policy.php',
@@ -149,7 +155,7 @@ function tp_render_setup_page() {
 		<p><?php esc_html_e( 'Create the pages and example content this theme needs in one click. Anything that already exists is left alone.', 'taxi-peninsula' ); ?></p>
 		<ul class="ul-disc">
 			<li><?php esc_html_e( 'Pages: Book a Taxi, Manage My Booking, Our Fleet, FAQ, NDIS & Aged Care, Contact Us, Driver Jobs, About Us and Our Services', 'taxi-peninsula' ); ?></li>
-			<li><?php esc_html_e( 'Draft Terms & Cancellation Policy and Accessibility Statement pages with [CONFIRM] notes for your real policies', 'taxi-peninsula' ); ?></li>
+			<li><?php esc_html_e( 'Draft Terms & Cancellation Policy, Accessibility Statement and Drive With Us pages with [CONFIRM] notes for your real policies', 'taxi-peninsula' ); ?></li>
 			<li><?php esc_html_e( 'Three draft blog posts with writing outlines', 'taxi-peninsula' ); ?></li>
 			<li><?php esc_html_e( 'Frequently asked questions, grouped by topic', 'taxi-peninsula' ); ?></li>
 			<li><?php esc_html_e( 'Service pages (airport, medical, NDIS…) and one page per service area', 'taxi-peninsula' ); ?></li>
@@ -189,7 +195,7 @@ function tp_render_setup_page() {
 		</table>
 
 		<h2><?php esc_html_e( 'Page templates & patterns', 'taxi-peninsula' ); ?></h2>
-		<p><?php esc_html_e( 'When you add a page, choose a template in the Page panel → Template: About Us, Contact Us, Services, Blog, Book a Taxi, Policy / legal page, Full width, or Blank canvas. Click the + inserter → Patterns → "Taxi Peninsula" for ready-made sections (hero, features, steps, call to action, services, areas, FAQ, contact + map, booking form) and full-page starters for About, Terms and Accessibility pages and blog posts.', 'taxi-peninsula' ); ?></p>
+		<p><?php esc_html_e( 'When you add a page, choose a template in the Page panel → Template: About Us, Contact Us, Services, Blog, Book a Taxi, Drive with us, Policy / legal page, Full width, or Blank canvas. Click the + inserter → Patterns → "Taxi Peninsula" for ready-made sections (hero, features, steps, call to action, services, areas, FAQ, contact + map, booking form) and full-page starters for About, Terms, Accessibility, Drive With Us and seasonal event pages, and blog posts. Live sections: trust numbers, suburb checker, popular destinations, drivers, safety video and partner logos.', 'taxi-peninsula' ); ?></p>
 
 		<h2><?php esc_html_e( 'Security check', 'taxi-peninsula' ); ?></h2>
 		<?php tp_render_security_status(); ?>
@@ -197,7 +203,7 @@ function tp_render_setup_page() {
 
 		<h2><?php esc_html_e( 'Shortcodes', 'taxi-peninsula' ); ?></h2>
 		<p><?php esc_html_e( 'You can also place these on any page:', 'taxi-peninsula' ); ?></p>
-		<p><code>[tp_booking_form]</code> <code>[tp_booking_lookup]</code> <code>[tp_contact_form]</code> <code>[tp_faq]</code> <code>[tp_faq topic="booking"]</code> <code>[tp_fleet]</code> <code>[tp_ndis]</code> <code>[tp_testimonials]</code> <code>[tp_driver_jobs]</code> <code>[tp_services]</code> <code>[tp_areas]</code> <code>[tp_contact_details]</code> <code>[tp_map]</code></p>
+		<p><code>[tp_booking_form]</code> <code>[tp_booking_lookup]</code> <code>[tp_contact_form]</code> <code>[tp_faq]</code> <code>[tp_faq topic="booking"]</code> <code>[tp_fleet]</code> <code>[tp_ndis]</code> <code>[tp_testimonials]</code> <code>[tp_driver_jobs]</code> <code>[tp_services]</code> <code>[tp_areas]</code> <code>[tp_contact_details]</code> <code>[tp_map]</code> <code>[tp_stats]</code> <code>[tp_suburb_checker]</code> <code>[tp_destinations]</code> <code>[tp_drivers]</code> <code>[tp_video]</code> <code>[tp_partners]</code> <code>[tp_driver_apply]</code></p>
 	</div>
 	<?php
 }

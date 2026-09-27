@@ -248,6 +248,8 @@ function tp_render_settings_page() {
 			?>
 		</form>
 
+		<?php tp_render_place_finder(); ?>
+
 		<?php if ( 'none' !== tp_setting( 'sms_provider' ) ) : ?>
 			<hr>
 			<h2><?php esc_html_e( 'Send a test SMS', 'taxi-peninsula' ); ?></h2>

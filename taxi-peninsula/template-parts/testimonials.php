@@ -17,11 +17,11 @@ $items   = get_posts(
 		'orderby'     => array( 'menu_order' => 'ASC', 'date' => 'DESC' ),
 	)
 );
-$rating  = trim( (string) tp_setting( 'google_rating' ) );
-$count   = (int) tp_setting( 'google_review_count' );
-$gurl    = tp_setting( 'google_reviews_url' );
+list( $rating, $count, $gurl ) = tp_google_rating_summary();
+$place   = tp_google_place();
+$greview = $place ? array_values( array_filter( $place['reviews'], static function ( $r ) { return '' !== trim( $r['text'] ); } ) ) : array();
 
-if ( ! $items && '' === $rating ) {
+if ( ! $items && ! $greview && '' === $rating ) {
 	return;
 }
 ?>
@@ -51,6 +51,42 @@ if ( ! $items && '' === $rating ) {
 				<?php echo $gurl ? '</a>' : '</p>'; ?>
 			<?php endif; ?>
 		</div>
+
+		<?php if ( $greview ) : ?>
+			<div class="testimonials testimonials--google">
+				<?php foreach ( array_slice( $greview, 0, $limit ) as $r ) : ?>
+					<figure class="testimonial">
+						<p class="stars" role="img" aria-label="<?php echo esc_attr( sprintf( /* translators: %d: stars */ __( '%d out of 5 stars', 'taxi-peninsula' ), $r['rating'] ) ); ?>">
+							<?php echo str_repeat( tp_icon( 'star', 'is-filled' ), max( 0, min( 5, $r['rating'] ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						</p>
+						<blockquote class="testimonial__text" data-clamp><?php echo wp_kses_post( wpautop( esc_html( $r['text'] ) ) ); ?></blockquote>
+						<figcaption>
+							<strong>
+								<?php if ( $r['author_u'] ) : ?>
+									<a href="<?php echo esc_url( $r['author_u'] ); ?>" target="_blank" rel="noopener nofollow"><?php echo esc_html( $r['author'] ); ?></a>
+								<?php else : ?>
+									<?php echo esc_html( $r['author'] ); ?>
+								<?php endif; ?>
+							</strong>
+							<span>
+								<?php echo esc_html( $r['when'] ); ?>
+								<?php if ( $r['uri'] ) : ?>
+									· <a href="<?php echo esc_url( $r['uri'] ); ?>" target="_blank" rel="noopener nofollow"><?php esc_html_e( 'View on Google', 'taxi-peninsula' ); ?></a>
+								<?php endif; ?>
+							</span>
+						</figcaption>
+					</figure>
+				<?php endforeach; ?>
+			</div>
+			<p class="google-attribution">
+				<?php if ( tp_setting( 'google_logo_url' ) ) : ?>
+					<img src="<?php echo esc_url( tp_setting( 'google_logo_url' ) ); ?>" alt="Google" width="66" height="22" loading="lazy">
+				<?php else : ?>
+					<span class="google-attribution__text">Google</span>
+				<?php endif; ?>
+				<span><?php esc_html_e( 'Reviews from Google, shown as written by reviewers.', 'taxi-peninsula' ); ?></span>
+			</p>
+		<?php endif; ?>
 
 		<?php if ( $items ) : ?>
 			<div class="testimonials">

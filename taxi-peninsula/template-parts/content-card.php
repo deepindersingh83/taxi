@@ -21,6 +21,7 @@
 				?>
 				<span aria-hidden="true">·</span> <span><?php echo esc_html( $cats[0]->name ); ?></span>
 			<?php endif; ?>
+			<span aria-hidden="true">·</span> <span><?php echo esc_html( tp_reading_time() ); ?></span>
 		</p>
 		<h3 class="post-card__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 		<div class="post-card__excerpt"><?php the_excerpt(); ?></div>

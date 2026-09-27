@@ -39,6 +39,7 @@ endwhile;
 	<div class="container contact-map">
 		<div>
 			<h2 id="contact-map" class="section__title"><?php esc_html_e( 'Where we operate', 'taxi-peninsula' ); ?></h2>
+			<?php echo do_shortcode( '[tp_suburb_checker]' ); ?>
 			<?php echo do_shortcode( '[tp_areas]' ); ?>
 		</div>
 		<?php echo do_shortcode( '[tp_map]' ); ?>

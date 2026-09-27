@@ -27,6 +27,18 @@ function tp_defaults() {
 		'customer_emails' => true,
 		'min_notice'      => 60,
 		'open_247'        => true,
+		'since_year'      => '',
+		'trips_offset'    => 0,
+		'stats_min'       => 250,
+		'hero_moments'    => "04:00-08:59 | Early flight or appointment? Book your pick-up the night before.\n09:00-14:59 | Heading to an appointment? We can have you there on time.\n15:00-18:59 | Home from the hospital? Book a pick-up in two minutes.\n19:00-03:59 | Planning tomorrow's trips? Book tonight so we can confirm early.",
+		'sms_number'      => '+61468323211',
+		'whatsapp_number' => '',
+		'video_title'     => 'How we secure your wheelchair',
+		'video_url'       => '',
+		'video_file'      => '',
+		'video_captions'  => '',
+		'video_poster'    => '',
+		'video_transcript'=> '',
 		'map_query'       => 'Mornington Peninsula VIC',
 	);
 }
@@ -55,8 +67,25 @@ function tp_email_href() {
  * Service areas as an array (one per line in the Customizer).
  */
 function tp_service_areas() {
-	$lines = preg_split( '/\r\n|\r|\n/', (string) tp_opt( 'service_areas' ) );
-	return array_values( array_filter( array_map( 'trim', $lines ) ) );
+	return array_keys( tp_service_area_aliases() );
+}
+
+/**
+ * Service areas with their aliases. Each Customizer line can list extra names
+ * and postcodes after "|", e.g. "Frankston | Frankston South | Frankston North | 3199".
+ *
+ * @return array name => string[] aliases (lower-case, including the name)
+ */
+function tp_service_area_aliases() {
+	$out = array();
+	foreach ( preg_split( '/\r\n|\r|\n/', (string) tp_opt( 'service_areas' ) ) as $line ) {
+		$parts = array_values( array_filter( array_map( 'trim', explode( '|', $line ) ) ) );
+		if ( ! $parts ) {
+			continue;
+		}
+		$out[ $parts[0] ] = array_map( 'strtolower', $parts );
+	}
+	return $out;
 }
 
 function tp_vehicle_types() {
@@ -114,6 +143,15 @@ function tp_icon( $name, $class = '' ) {
 		'text'       => '<path d="M4 7V4h16v3M9 20h6M12 4v16"/>',
 		'contrast'   => '<circle cx="12" cy="12" r="10"/><path d="M12 2v20" /><path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor"/>',
 		'star'       => '<path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/>',
+		'megaphone'  => '<path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>',
+		'message'    => '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+		'moon'       => '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>',
+		'search'     => '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+		'play'       => '<polygon points="6 3 20 12 6 21 6 3" fill="currentColor"/>',
+		'chevron-left'  => '<path d="m15 18-6-6 6-6"/>',
+		'chevron-right' => '<path d="m9 18 6-6-6-6"/>',
+		'image'      => '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/>',
+		'book'       => '<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>',
 	);
 
 	if ( ! isset( $paths[ $name ] ) ) {
@@ -168,6 +206,7 @@ function tp_feature_templates() {
 		'contact'       => 'page-templates/contact.php',
 		'services'      => 'page-templates/services.php',
 		'blog'          => 'page-templates/blog.php',
+		'careers'       => 'page-templates/careers.php',
 	);
 }
 

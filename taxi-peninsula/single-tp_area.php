@@ -88,6 +88,21 @@ while ( have_posts() ) :
 						</li>
 					<?php endforeach; ?>
 				</ul>
+				<?php $guides = tp_area_guides( get_the_ID() ); ?>
+				<?php if ( $guides ) : ?>
+					<h2>
+						<?php
+						/* translators: %s: suburb */
+						echo esc_html( sprintf( __( 'Guides for %s', 'taxi-peninsula' ), $area ) );
+						?>
+					</h2>
+					<ul class="guide-list">
+						<?php foreach ( $guides as $g ) : ?>
+							<li><?php tp_the_icon( 'book' ); ?><a href="<?php echo esc_url( get_permalink( $g ) ); ?>"><?php echo esc_html( get_the_title( $g ) ); ?></a> <span class="post-meta"><?php echo esc_html( tp_reading_time( $g ) ); ?></span></li>
+						<?php endforeach; ?>
+					</ul>
+				<?php endif; ?>
+
 				<?php if ( $local_faq ) : ?>
 					<h2>
 						<?php

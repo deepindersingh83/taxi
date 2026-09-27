@@ -59,10 +59,23 @@
 $tp_pages = (array) get_option( 'tp_pages', array() );
 if ( empty( $tp_pages['driver'] ) || ! is_page( $tp_pages['driver'] ) ) :
 	?>
-	<a class="call-fab" href="<?php echo esc_url( tp_phone_href() ); ?>">
-		<?php tp_the_icon( 'phone' ); ?>
-		<span><?php esc_html_e( 'Call now', 'taxi-peninsula' ); ?></span>
-	</a>
+	<div class="fab-group">
+		<?php if ( tp_whatsapp_href() ) : ?>
+			<a class="call-fab call-fab--alt" href="<?php echo esc_url( tp_whatsapp_href() ); ?>" target="_blank" rel="noopener">
+				<?php tp_the_icon( 'message' ); ?>
+				<span><?php esc_html_e( 'WhatsApp', 'taxi-peninsula' ); ?></span>
+			</a>
+		<?php elseif ( tp_sms_href() ) : ?>
+			<a class="call-fab call-fab--alt" href="<?php echo esc_attr( tp_sms_href() ); ?>">
+				<?php tp_the_icon( 'message' ); ?>
+				<span><?php esc_html_e( 'Text us', 'taxi-peninsula' ); ?></span>
+			</a>
+		<?php endif; ?>
+		<a class="call-fab" href="<?php echo esc_url( tp_phone_href() ); ?>">
+			<?php tp_the_icon( 'phone' ); ?>
+			<span><?php esc_html_e( 'Call now', 'taxi-peninsula' ); ?></span>
+		</a>
+	</div>
 <?php endif; ?>
 
 <?php wp_footer(); ?>

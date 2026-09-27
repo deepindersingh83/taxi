@@ -82,6 +82,33 @@ function tp_enqueue() {
 	wp_enqueue_style( 'tp-main', TP_URI . '/assets/css/main.css', array(), TP_VERSION );
 	wp_enqueue_style( 'tp-patterns', TP_URI . '/assets/css/patterns.css', array( 'tp-main' ), TP_VERSION );
 	wp_enqueue_script( 'tp-main', TP_URI . '/assets/js/main.js', array(), TP_VERSION, true );
+	wp_add_inline_script(
+		'tp-main',
+		'window.tpI18n = ' . wp_json_encode(
+			array(
+				/* translators: %s: suburb */
+				'yes'      => __( 'Yes — we cover %s.', 'taxi-peninsula' ),
+				/* translators: %s: suburb */
+				'book'     => __( 'Book a pick-up in %s', 'taxi-peninsula' ),
+				/* translators: %s: suburb */
+				'about'    => __( 'Wheelchair taxis in %s', 'taxi-peninsula' ),
+				/* translators: %s: what the visitor typed */
+				'no'       => __( '"%s" is not on our regular list, but we often travel further on request.', 'taxi-peninsula' ),
+				/* translators: %s: phone number */
+				'call'     => __( 'Call %s to check', 'taxi-peninsula' ),
+				/* translators: %d: number of questions */
+				'faqCount' => __( '%d matching questions', 'taxi-peninsula' ),
+				'close'    => __( 'Close', 'taxi-peninsula' ),
+				'more'     => __( 'Read more', 'taxi-peninsula' ),
+				'less'     => __( 'Show less', 'taxi-peninsula' ),
+				'prev'     => __( 'Previous photo', 'taxi-peninsula' ),
+				'next'     => __( 'Next photo', 'taxi-peninsula' ),
+				/* translators: 1: photo number, 2: total */
+				'of'       => __( 'Photo %1$d of %2$d', 'taxi-peninsula' ),
+			)
+		) . ';',
+		'before'
+	);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -102,7 +129,7 @@ function tp_resource_hints( $urls, $relation ) {
 add_action( 'wp_head', 'tp_prepaint_prefs', 1 );
 function tp_prepaint_prefs() {
 	?>
-	<script>try{var d=document.documentElement,s=localStorage.getItem('tp-text-size'),c=localStorage.getItem('tp-contrast');if(s)d.setAttribute('data-text-size',s);if(c==='high')d.setAttribute('data-contrast','high');}catch(e){}</script>
+	<script>try{var d=document.documentElement,s=localStorage.getItem('tp-text-size'),c=localStorage.getItem('tp-contrast'),t=localStorage.getItem('tp-theme');if(s)d.setAttribute('data-text-size',s);if(c==='high')d.setAttribute('data-contrast','high');if(t==='dark'||t==='light')d.setAttribute('data-theme',t);}catch(e){}</script>
 	<?php
 }
 

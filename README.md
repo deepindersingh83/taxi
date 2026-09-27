@@ -113,6 +113,55 @@ Each item can be switched under **Bookings → Settings → Security hardening**
 
 A **Security check** panel under Bookings → Setup flags HTTPS, error display, secrets stored in the database, an `admin` username, outdated WordPress or PHP, and recommends two-factor login and backups.
 
+### Dynamic content (v1.3)
+**Content that updates itself**
+- **Live trust numbers** under the home page hero: trips completed (counted from your bookings, plus any trips from before the website), suburbs served, vehicles, and the year you started. Figures round down (4,873 shows as "4,800+"), and the trip count stays hidden until it reaches a threshold you set.
+- **Live Google reviews**, refreshed daily through the Places API:
+  - shown exactly as Google returns them, including lower ratings, with the author's name, a link to the review and Google attribution
+  - the star rating and review count update automatically
+  - connect your listing under Bookings → Settings → *Find your Google Place ID*
+- **Announcement bar** (wp-admin → **Announcements**):
+  - three styles (information, heads-up, urgent), an optional link, and start/end dates
+  - visitors can dismiss it
+  - it still switches on and off at the right time on cached pages
+- **Popular destinations**, built from real bookings in the last 12 months:
+  - a place only appears if it looks public (hospital, airport, centre…) **and** at least 3 different passengers went there, so a home address can never show
+  - staff can hide, rename or link a guide under Bookings → **Destinations**
+  - each has a **Book** button with the destination filled in
+- **Blog that links itself:**
+  - reading time on every post
+  - an automatic contents list on posts with 3 or more sections
+  - "Keep reading" related posts
+  - **suburb guides:** tag a post with a suburb (e.g. `frankston`) and it appears on that suburb's page, and the post links back
+
+**Interactive tools**
+- **"Do you cover my suburb?" checker** on the home, Contact and Areas pages:
+  - instant answer that tolerates typos
+  - add alternative names and postcodes to each service-area line: `Frankston | Frankston South | 3199`
+- **Instant FAQ search** that filters questions as you type, with a live result count for screen readers.
+
+**People & trust**
+- **Meet the drivers** (About page and `[tp_drivers]`):
+  - each driver's first name, photo and bio appear only when "Show on the website" is ticked on their profile, which requires their consent
+  - once a driver is assigned, the passenger sees "Your driver" with their photo on Manage My Booking
+- **Fleet photo gallery:** a "Photo gallery" box on each vehicle opens a full-screen viewer. It supports the keyboard (arrows, Esc), announces "Photo 2 of 5", and reads out alt text and captions.
+- **Wheelchair safety video** (Customize → Taxi Peninsula → Wheelchair safety video):
+  - use a YouTube/Vimeo link, or upload an MP4 with a `.vtt` captions file
+  - nothing loads from YouTube until the visitor presses play (privacy-enhanced mode)
+  - includes an optional transcript
+- **Partner logos** (wp-admin → **Partners**): a logo only appears once "We have written permission to show this logo" is ticked.
+
+**Growth**
+- **Drive With Us** page template and application form. Applications are saved under Bookings → Enquiries ("Driver application") and emailed to you. Setup creates it as a draft with [CONFIRM] notes for pay and conditions.
+- **Seasonal pages:**
+  - use the *Seasonal / event landing page* pattern
+  - schedule go-live with Publish → Schedule, and set **"Unpublish automatically"** in the side panel, which moves the page to drafts on that date
+- **"Text us" / WhatsApp buttons** next to "Call now" on phones. Set the numbers in Customize → Contact details.
+
+**Look & feel**
+- **Dark mode:** follows the device setting, with a Dark mode button beside the text-size and high-contrast controls.
+- **Time-of-day hero message**, e.g. "Home from the hospital? Book a pick-up" in the afternoon. It uses Melbourne time and is edited in Customize → *Live numbers & hero messages*.
+
 ## Install
 
 1. Zip the `taxi-peninsula` folder and upload it under **Appearance → Themes → Add New → Upload**. Then activate it.
@@ -198,9 +247,11 @@ location ~* /wp-content/uploads/.*\.php$ { deny all; }
 - Don't use an account called `admin`.
 
 ## Shortcodes
-`[tp_booking_form]` `[tp_booking_lookup]` `[tp_contact_form]` `[tp_faq]` `[tp_faq topic="booking"]` `[tp_fleet]` `[tp_fleet limit="2"]` `[tp_ndis]` `[tp_testimonials]` `[tp_driver_jobs]` `[tp_services]` `[tp_areas]` `[tp_contact_details]` `[tp_map]` `[tp_map q="Frankston VIC"]`
+`[tp_booking_form]` `[tp_booking_lookup]` `[tp_contact_form]` `[tp_faq]` `[tp_faq topic="booking"]` `[tp_fleet]` `[tp_fleet limit="2"]` `[tp_ndis]` `[tp_testimonials]` `[tp_driver_jobs]` `[tp_services]` `[tp_areas]` `[tp_contact_details]` `[tp_map]` `[tp_map q="Frankston VIC"]` `[tp_stats]` `[tp_suburb_checker]` `[tp_destinations]` `[tp_drivers]` `[tp_video]` `[tp_partners]` `[tp_driver_apply]`
 
 ## Before going live
+- **Google reviews:** Google requires its logo next to reviews shown without a map. Upload the official logo from Google's brand resources and paste its URL in Bookings → Settings → Google reviews.
+- **Driver profiles and partner logos:** only tick "show" once you have the person's or organisation's permission.
 - **Terms and Accessibility pages:** replace every **[CONFIRM]** note with your real policy, have the terms checked, then publish. Customers only have to accept the terms once that page is published.
 - **Fare estimates:** switch them on only when the rates match your real fares.
 - **Check the wording against your real service.** This covers the starter FAQs and service text, and home page claims such as "24 hours", "accredited drivers" and "ramp & hoist vehicles".

@@ -16,6 +16,12 @@ $hero_image = (int) tp_opt( 'hero_image' );
 			<p class="eyebrow"><?php tp_the_icon( 'wheelchair' ); ?><?php echo esc_html( tp_opt( 'hero_eyebrow' ) ); ?></p>
 			<h1 class="hero__title"><?php echo esc_html( tp_opt( 'hero_title' ) ); ?></h1>
 			<p class="hero__lead"><?php echo esc_html( tp_opt( 'hero_text' ) ); ?></p>
+			<?php
+			$tp_moment = tp_hero_moment_for( wp_date( 'H:i' ) );
+			if ( tp_hero_moments() ) :
+				?>
+				<p class="hero__moment" data-hero-moment data-moments="<?php echo esc_attr( wp_json_encode( tp_hero_moments() ) ); ?>" data-tz="<?php echo esc_attr( wp_timezone_string() ); ?>" <?php echo $tp_moment ? '' : 'hidden'; ?>><?php tp_the_icon( 'clock' ); ?><span><?php echo esc_html( $tp_moment ); ?></span></p>
+			<?php endif; ?>
 			<div class="hero__actions">
 				<a class="btn btn--accent btn--lg" href="#book"><?php esc_html_e( 'Book online', 'taxi-peninsula' ); ?> <?php tp_the_icon( 'arrow' ); ?></a>
 				<a class="btn btn--light btn--lg" href="<?php echo esc_url( tp_phone_href() ); ?>"><?php tp_the_icon( 'phone' ); ?> <?php echo esc_html( tp_opt( 'phone_display' ) ); ?></a>
@@ -44,6 +50,8 @@ $hero_image = (int) tp_opt( 'hero_image' );
 		</div>
 	</div>
 </section>
+
+<?php get_template_part( 'template-parts/stats' ); ?>
 
 <?php get_template_part( 'template-parts/features' ); ?>
 
@@ -77,12 +85,17 @@ $hero_image = (int) tp_opt( 'hero_image' );
 	</div>
 </section>
 
+<?php get_template_part( 'template-parts/video' ); ?>
+
+<?php get_template_part( 'template-parts/destinations' ); ?>
+
 <?php $areas = tp_service_areas(); ?>
 <?php if ( $areas ) : ?>
 <section id="areas" class="section section--areas" aria-labelledby="areas-title">
 	<div class="container">
 		<h2 id="areas-title" class="section__title"><?php esc_html_e( 'Areas we cover', 'taxi-peninsula' ); ?></h2>
 		<p class="section__lead"><?php esc_html_e( 'Based on the Mornington Peninsula and servicing greater Melbourne. Not listed? Call us — we travel further on request.', 'taxi-peninsula' ); ?></p>
+		<?php echo do_shortcode( '[tp_suburb_checker]' ); ?>
 		<ul class="chips">
 			<?php $area_links = tp_area_links(); ?>
 			<?php foreach ( $areas as $area ) : ?>
@@ -149,6 +162,8 @@ if ( $latest->have_posts() ) :
 		</div>
 	</section>
 <?php endif; ?>
+
+<?php get_template_part( 'template-parts/partners' ); ?>
 
 <?php get_template_part( 'template-parts/cta' ); ?>
 

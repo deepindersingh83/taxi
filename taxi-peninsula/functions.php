@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TP_VERSION', '1.2.0' );
+define( 'TP_VERSION', '1.3.0' );
 define( 'TP_DIR', get_template_directory() );
 define( 'TP_URI', get_template_directory_uri() );
 
@@ -30,6 +30,12 @@ require TP_DIR . '/inc/drivers.php';
 require TP_DIR . '/inc/seo.php';
 require TP_DIR . '/inc/analytics.php';
 require TP_DIR . '/inc/local-seo.php';
+require TP_DIR . '/inc/dynamic.php';
+require TP_DIR . '/inc/google-reviews.php';
+require TP_DIR . '/inc/destinations.php';
+require TP_DIR . '/inc/blog.php';
+require TP_DIR . '/inc/people.php';
+require TP_DIR . '/inc/careers.php';
 
 if ( is_admin() ) {
 	require TP_DIR . '/inc/bookings-admin.php';

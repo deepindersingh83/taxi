@@ -34,6 +34,20 @@ endwhile;
 
 get_template_part( 'template-parts/features', null, array( 'title' => __( 'What makes us different', 'taxi-peninsula' ) ) );
 
+$tp_drivers = do_shortcode( '[tp_drivers]' );
+if ( $tp_drivers ) :
+	?>
+	<section class="section" aria-labelledby="about-drivers">
+		<div class="container">
+			<h2 id="about-drivers" class="section__title"><?php esc_html_e( 'Meet the drivers', 'taxi-peninsula' ); ?></h2>
+			<?php echo $tp_drivers; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in shortcode. ?>
+		</div>
+	</section>
+	<?php
+endif;
+
+get_template_part( 'template-parts/video' );
+
 if ( tp_fleet_vehicles() ) :
 	?>
 	<section class="section" aria-labelledby="about-fleet">
@@ -52,5 +66,6 @@ if ( tp_fleet_vehicles() ) :
 endif;
 
 get_template_part( 'template-parts/testimonials', null, array( 'limit' => 3 ) );
+get_template_part( 'template-parts/partners' );
 get_template_part( 'template-parts/cta' );
 get_footer();

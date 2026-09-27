@@ -18,6 +18,7 @@ $areas = get_posts( array( 'post_type' => 'tp_area', 'numberposts' => 200, 'orde
 ?>
 <section class="section">
 	<div class="container">
+		<?php echo do_shortcode( '[tp_suburb_checker]' ); ?>
 		<ul class="area-grid">
 			<?php foreach ( $areas as $a ) : ?>
 				<li>

@@ -17,11 +17,16 @@
 <?php wp_body_open(); ?>
 <a class="skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'taxi-peninsula' ); ?></a>
 
+<?php tp_render_notices(); ?>
+
 <div class="topbar">
 	<div class="container topbar__inner">
 		<ul class="topbar__contact">
 			<li><a href="<?php echo esc_url( tp_phone_href() ); ?>"><?php tp_the_icon( 'phone' ); ?><span><?php echo esc_html( tp_opt( 'phone_display' ) ); ?></span></a></li>
 			<li class="topbar__email"><a href="<?php echo esc_attr( tp_email_href() ); ?>"><?php tp_the_icon( 'mail' ); ?><span><?php echo esc_html( antispambot( tp_opt( 'email' ) ) ); ?></span></a></li>
+			<?php if ( tp_sms_href() ) : ?>
+				<li class="topbar__sms"><a href="<?php echo esc_attr( tp_sms_href() ); ?>"><?php tp_the_icon( 'message' ); ?><span><?php esc_html_e( 'Text us', 'taxi-peninsula' ); ?></span></a></li>
+			<?php endif; ?>
 			<?php $tp_lookup = tp_page_url_by_template( 'lookup' ); ?>
 			<?php if ( $tp_lookup ) : ?>
 				<li><a href="<?php echo esc_url( $tp_lookup ); ?>"><?php tp_the_icon( 'calendar' ); ?><span><?php esc_html_e( 'Manage my booking', 'taxi-peninsula' ); ?></span></a></li>
@@ -35,6 +40,7 @@
 			<button type="button" class="a11y-btn" data-text-size="lg" aria-pressed="false" aria-label="<?php esc_attr_e( 'Larger text', 'taxi-peninsula' ); ?>">A<sup>+</sup></button>
 			<button type="button" class="a11y-btn" data-text-size="xl" aria-pressed="false" aria-label="<?php esc_attr_e( 'Largest text', 'taxi-peninsula' ); ?>">A<sup>++</sup></button>
 			<button type="button" class="a11y-btn a11y-btn--contrast" data-contrast-toggle aria-pressed="false"><?php tp_the_icon( 'contrast' ); ?><span><?php esc_html_e( 'High contrast', 'taxi-peninsula' ); ?></span></button>
+			<button type="button" class="a11y-btn a11y-btn--theme" data-theme-toggle aria-pressed="false"><?php tp_the_icon( 'moon' ); ?><span><?php esc_html_e( 'Dark mode', 'taxi-peninsula' ); ?></span></button>
 		</div>
 	</div>
 </div>
