@@ -38,8 +38,18 @@ function tp_setup() {
 		)
 	);
 
-	add_editor_style( 'assets/css/editor.css' );
+	add_editor_style( array( 'assets/css/editor.css', 'assets/css/patterns.css' ) );
 }
+
+add_action( 'init', static function () {
+	register_block_pattern_category(
+		'taxi-peninsula',
+		array(
+			'label'       => __( 'Taxi Peninsula', 'taxi-peninsula' ),
+			'description' => __( 'Ready-made sections and page starters for your taxi website.', 'taxi-peninsula' ),
+		)
+	);
+} );
 
 add_action( 'widgets_init', 'tp_widgets_init' );
 function tp_widgets_init() {
@@ -70,6 +80,7 @@ function tp_enqueue() {
 	// Atkinson Hyperlegible was designed by the Braille Institute for low-vision readers.
 	wp_enqueue_style( 'tp-fonts', 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap', array(), null );
 	wp_enqueue_style( 'tp-main', TP_URI . '/assets/css/main.css', array(), TP_VERSION );
+	wp_enqueue_style( 'tp-patterns', TP_URI . '/assets/css/patterns.css', array( 'tp-main' ), TP_VERSION );
 	wp_enqueue_script( 'tp-main', TP_URI . '/assets/js/main.js', array(), TP_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

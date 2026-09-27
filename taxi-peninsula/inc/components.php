@@ -77,8 +77,12 @@ function tp_faq_shortcode( $atts ) {
 }
 
 add_shortcode( 'tp_fleet', 'tp_fleet_shortcode' );
-function tp_fleet_shortcode() {
+function tp_fleet_shortcode( $atts = array() ) {
+	$atts     = shortcode_atts( array( 'limit' => 0 ), $atts, 'tp_fleet' );
 	$vehicles = tp_fleet_vehicles();
+	if ( (int) $atts['limit'] > 0 ) {
+		$vehicles = array_slice( $vehicles, 0, (int) $atts['limit'] );
+	}
 	$access   = tp_content_fields()['tp_fleet']['access'][2];
 	ob_start();
 	echo '<div class="tp-component fleet">';
@@ -94,7 +98,7 @@ function tp_fleet_shortcode() {
 		<article class="fleet-card">
 			<div class="fleet-card__media">
 				<?php if ( has_post_thumbnail( $v ) ) : ?>
-					<?php echo get_the_post_thumbnail( $v, 'tp-card' ); ?>
+					<?php echo get_the_post_thumbnail( $v, 'tp-card', array( 'alt' => tp_thumbnail_alt( $v ) ) ); ?>
 				<?php else : ?>
 					<div class="fleet-card__placeholder" aria-hidden="true"><?php tp_the_icon( 'wheelchair' ); ?></div>
 				<?php endif; ?>
@@ -165,4 +169,68 @@ add_shortcode( 'tp_testimonials', static function ( $atts ) {
 	ob_start();
 	get_template_part( 'template-parts/testimonials', null, array( 'limit' => (int) $atts['limit'], 'heading' => false ) );
 	return ob_get_clean();
+} );
+
+/* ---- Shortcodes used by page templates and block patterns ---- */
+
+add_shortcode( 'tp_services', static function () {
+	ob_start();
+	echo '<div class="tp-component services">';
+	foreach ( tp_services_list() as $s ) {
+		get_template_part( 'template-parts/service-card', null, $s );
+	}
+	echo '</div>';
+	return ob_get_clean();
+} );
+
+add_shortcode( 'tp_areas', static function () {
+	$links = tp_area_links();
+	ob_start();
+	echo '<ul class="tp-component chips">';
+	foreach ( tp_service_areas() as $area ) {
+		$link = $links[ strtolower( $area ) ] ?? '';
+		echo '<li>';
+		if ( $link ) {
+			printf( '<a class="chip" href="%s">%s%s</a>', esc_url( $link ), tp_icon( 'pin' ), esc_html( $area ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static icon markup.
+		} else {
+			printf( '<span class="chip">%s%s</span>', tp_icon( 'pin' ), esc_html( $area ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
+		echo '</li>';
+	}
+	echo '</ul>';
+	return ob_get_clean();
+} );
+
+add_shortcode( 'tp_contact_details', static function () {
+	ob_start();
+	?>
+	<div class="tp-component contact-card contact-card--tall">
+		<p class="contact-card__label"><?php esc_html_e( 'Call us', 'taxi-peninsula' ); ?></p>
+		<a class="contact-card__phone" href="<?php echo esc_url( tp_phone_href() ); ?>"><?php tp_the_icon( 'phone' ); ?><?php echo esc_html( tp_opt( 'phone_display' ) ); ?></a>
+		<ul class="icon-list">
+			<li><?php tp_the_icon( 'mail' ); ?><a href="<?php echo esc_attr( tp_email_href() ); ?>"><?php echo esc_html( antispambot( tp_opt( 'email' ) ) ); ?></a></li>
+			<li><?php tp_the_icon( 'pin' ); ?><span><?php echo esc_html( tp_opt( 'location' ) ); ?></span></li>
+			<li><?php tp_the_icon( 'clock' ); ?><span><?php echo esc_html( tp_opt( 'hours' ) ); ?></span></li>
+		</ul>
+	</div>
+	<?php
+	return ob_get_clean();
+} );
+
+/**
+ * Google Maps embed of your service area (no API key needed). Set the place in
+ * Appearance → Customize → Taxi Peninsula → Contact details → "Map location".
+ */
+add_shortcode( 'tp_map', static function ( $atts ) {
+	$atts  = shortcode_atts( array( 'q' => '' ), $atts, 'tp_map' );
+	$place = $atts['q'] ?: tp_opt( 'map_query' );
+	if ( ! $place ) {
+		return '';
+	}
+	return sprintf(
+		'<div class="tp-component map-embed"><iframe title="%1$s" src="%2$s" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>',
+		/* translators: %s: place */
+		esc_attr( sprintf( __( 'Map of %s', 'taxi-peninsula' ), $place ) ),
+		esc_url( 'https://www.google.com/maps?q=' . rawurlencode( $place ) . '&output=embed' )
+	);
 } );

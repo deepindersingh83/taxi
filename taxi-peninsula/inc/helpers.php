@@ -27,6 +27,7 @@ function tp_defaults() {
 		'customer_emails' => true,
 		'min_notice'      => 60,
 		'open_247'        => true,
+		'map_query'       => 'Mornington Peninsula VIC',
 	);
 }
 
@@ -136,9 +137,10 @@ function tp_the_icon( $name, $class = '' ) {
 
 /**
  * Client IP used for simple rate limiting (not trusted for anything else).
+ * Uses Cloudflare's CF-Connecting-IP only for requests from Cloudflare's network.
  */
 function tp_client_ip() {
-	return isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '0.0.0.0';
+	return tp_real_ip();
 }
 
 /**
@@ -153,6 +155,19 @@ function tp_feature_shortcodes() {
 		'fleet'   => 'tp_fleet',
 		'driver'  => 'tp_driver_jobs',
 		'ndis'    => 'tp_ndis',
+	);
+}
+
+/**
+ * Page template that identifies each feature page.
+ */
+function tp_feature_templates() {
+	return array(
+		'book'          => 'page-templates/booking.php',
+		'about'         => 'page-templates/about.php',
+		'contact'       => 'page-templates/contact.php',
+		'services'      => 'page-templates/services.php',
+		'blog'          => 'page-templates/blog.php',
 	);
 }
 
@@ -178,11 +193,12 @@ function tp_page_url_by_template( $key, $fallback = '' ) {
 		$id = (int) $pages[ $key ];
 	}
 
-	if ( ! $id && 'book' === $key ) {
+	$templates = tp_feature_templates();
+	if ( ! $id && isset( $templates[ $key ] ) ) {
 		$found = get_pages(
 			array(
 				'meta_key'   => '_wp_page_template',
-				'meta_value' => 'page-templates/booking.php',
+				'meta_value' => $templates[ $key ],
 				'number'     => 1,
 			)
 		);
@@ -230,4 +246,17 @@ function tp_e164( $phone ) {
 		return '+61' . substr( $phone, 1 );
 	}
 	return '';
+}
+
+/**
+ * Terms & cancellation policy page URL (Bookings → Settings, or the page made by Setup).
+ * When set, customers must accept it to book.
+ */
+function tp_terms_url() {
+	$id = (int) tp_setting( 'terms_page_id' );
+	if ( ! $id ) {
+		$pages = (array) get_option( 'tp_pages', array() );
+		$id    = (int) ( $pages['terms'] ?? 0 );
+	}
+	return ( $id && 'publish' === get_post_status( $id ) ) ? get_permalink( $id ) : '';
 }

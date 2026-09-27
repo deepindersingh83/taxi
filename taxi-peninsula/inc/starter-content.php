@@ -44,13 +44,65 @@ function tp_starter_pages() {
 			'content' => "<!-- wp:paragraph -->\n<p>" . __( 'We provide regular, reliable wheelchair accessible transport for NDIS participants, aged-care residents and the people who support them — day programs, therapy, work, appointments and social outings.', 'taxi-peninsula' ) . "</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">" . __( 'For plan managers, coordinators and providers', 'taxi-peninsula' ) . "</h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>" . __( 'You can book on a participant’s behalf and choose to be invoiced. Add the NDIS number or your purchase order to each booking and we will include it on the invoice.', 'taxi-peninsula' ) . "</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:shortcode -->\n[tp_ndis]\n<!-- /wp:shortcode -->\n\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">" . __( 'Common questions', 'taxi-peninsula' ) . "</h2>\n<!-- /wp:heading -->\n\n<!-- wp:shortcode -->\n[tp_faq topic=\"payments-ndis\"]\n<!-- /wp:shortcode -->",
 		),
 		'contact' => array(
-			'title'   => __( 'Contact', 'taxi-peninsula' ),
-			'content' => "<!-- wp:shortcode -->\n[tp_contact_form]\n<!-- /wp:shortcode -->",
+			'title'    => __( 'Contact Us', 'taxi-peninsula' ),
+			'template' => 'page-templates/contact.php',
+			'content'  => '',
 		),
 		'driver'  => array(
 			'title'   => __( 'Driver Jobs', 'taxi-peninsula' ),
 			'content' => "<!-- wp:shortcode -->\n[tp_driver_jobs]\n<!-- /wp:shortcode -->",
 		),
+		'about'         => array(
+			'title'    => __( 'About Us', 'taxi-peninsula' ),
+			'template' => 'page-templates/about.php',
+			'pattern'  => 'page-about',
+		),
+		'services'      => array(
+			'title'    => __( 'Our Services', 'taxi-peninsula' ),
+			'template' => 'page-templates/services.php',
+			'content'  => '',
+		),
+		'terms'         => array(
+			'title'    => __( 'Terms & Cancellation Policy', 'taxi-peninsula' ),
+			'template' => 'page-templates/policy.php',
+			'pattern'  => 'page-terms',
+			'status'   => 'draft',
+		),
+		'accessibility' => array(
+			'title'    => __( 'Accessibility Statement', 'taxi-peninsula' ),
+			'template' => 'page-templates/policy.php',
+			'pattern'  => 'page-accessibility',
+			'status'   => 'draft',
+		),
+	);
+}
+
+/**
+ * Block markup from one of the theme's patterns.
+ */
+function tp_pattern_content( $slug ) {
+	$registry = WP_Block_Patterns_Registry::get_instance();
+	$pattern  = $registry->get_registered( 'taxi-peninsula/' . $slug );
+	if ( $pattern && ! empty( $pattern['content'] ) ) {
+		return $pattern['content'];
+	}
+	$file = TP_DIR . '/patterns/' . $slug . '.php';
+	if ( ! file_exists( $file ) ) {
+		return '';
+	}
+	ob_start();
+	include $file;
+	return trim( ob_get_clean() );
+}
+
+/**
+ * Draft blog posts with writing outlines: [title, pattern, category].
+ */
+function tp_starter_posts() {
+	return array(
+		array( __( 'Wheelchair taxi to Frankston Hospital: what to expect', 'taxi-peninsula' ), 'post-local-guide', __( 'Local guides', 'taxi-peninsula' ) ),
+		array( __( 'Travelling to Melbourne Airport with a power wheelchair: step by step', 'taxi-peninsula' ), 'post-travel-tips', __( 'Travel tips', 'taxi-peninsula' ) ),
+		array( __( 'Your first wheelchair taxi trip: what happens on the day', 'taxi-peninsula' ), 'post-travel-tips', __( 'Travel tips', 'taxi-peninsula' ) ),
 	);
 }
 
@@ -96,7 +148,9 @@ function tp_render_setup_page() {
 
 		<p><?php esc_html_e( 'Create the pages and example content this theme needs in one click. Anything that already exists is left alone.', 'taxi-peninsula' ); ?></p>
 		<ul class="ul-disc">
-			<li><?php esc_html_e( 'Pages: Book a Taxi, Manage My Booking, Our Fleet, NDIS & Aged Care, FAQ, Contact and Driver Jobs', 'taxi-peninsula' ); ?></li>
+			<li><?php esc_html_e( 'Pages: Book a Taxi, Manage My Booking, Our Fleet, FAQ, NDIS & Aged Care, Contact Us, Driver Jobs, About Us and Our Services', 'taxi-peninsula' ); ?></li>
+			<li><?php esc_html_e( 'Draft Terms & Cancellation Policy and Accessibility Statement pages with [CONFIRM] notes for your real policies', 'taxi-peninsula' ); ?></li>
+			<li><?php esc_html_e( 'Three draft blog posts with writing outlines', 'taxi-peninsula' ); ?></li>
 			<li><?php esc_html_e( 'Frequently asked questions, grouped by topic', 'taxi-peninsula' ); ?></li>
 			<li><?php esc_html_e( 'Service pages (airport, medical, NDIS…) and one page per service area', 'taxi-peninsula' ); ?></li>
 			<li><?php esc_html_e( 'Two example fleet vehicles, saved as drafts for you to edit and publish', 'taxi-peninsula' ); ?></li>
@@ -114,18 +168,36 @@ function tp_render_setup_page() {
 		<table class="widefat striped" style="max-width:48rem">
 			<tbody>
 				<?php foreach ( tp_starter_pages() as $key => $page ) : ?>
-					<?php $url = tp_page_url_by_template( $key ); ?>
+					<?php
+					$url   = tp_page_url_by_template( $key );
+					$draft = ! $url && ! empty( $pages[ $key ] ) && 'draft' === get_post_status( $pages[ $key ] );
+					?>
 					<tr>
 						<td><?php echo esc_html( $page['title'] ); ?></td>
-						<td><?php echo $url ? '<a href="' . esc_url( $url ) . '">' . esc_html( $url ) . '</a>' : '<em>' . esc_html__( 'Not created yet', 'taxi-peninsula' ) . '</em>'; ?></td>
+						<td>
+							<?php if ( $url ) : ?>
+								<a href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $url ); ?></a>
+							<?php elseif ( $draft ) : ?>
+								<strong><?php esc_html_e( 'Draft', 'taxi-peninsula' ); ?></strong> — <a href="<?php echo esc_url( get_edit_post_link( $pages[ $key ] ) ); ?>"><?php esc_html_e( 'review the [CONFIRM] notes and publish', 'taxi-peninsula' ); ?></a>
+							<?php else : ?>
+								<em><?php esc_html_e( 'Not created yet', 'taxi-peninsula' ); ?></em>
+							<?php endif; ?>
+						</td>
 					</tr>
 				<?php endforeach; ?>
 			</tbody>
 		</table>
 
+		<h2><?php esc_html_e( 'Page templates & patterns', 'taxi-peninsula' ); ?></h2>
+		<p><?php esc_html_e( 'When you add a page, choose a template in the Page panel → Template: About Us, Contact Us, Services, Blog, Book a Taxi, Policy / legal page, Full width, or Blank canvas. Click the + inserter → Patterns → "Taxi Peninsula" for ready-made sections (hero, features, steps, call to action, services, areas, FAQ, contact + map, booking form) and full-page starters for About, Terms and Accessibility pages and blog posts.', 'taxi-peninsula' ); ?></p>
+
+		<h2><?php esc_html_e( 'Security check', 'taxi-peninsula' ); ?></h2>
+		<?php tp_render_security_status(); ?>
+		<p class="description"><?php esc_html_e( 'Server-level steps (web server headers, wp-config.php settings, file permissions) are listed in the theme README under "Hosting hardening".', 'taxi-peninsula' ); ?></p>
+
 		<h2><?php esc_html_e( 'Shortcodes', 'taxi-peninsula' ); ?></h2>
 		<p><?php esc_html_e( 'You can also place these on any page:', 'taxi-peninsula' ); ?></p>
-		<p><code>[tp_booking_form]</code> <code>[tp_booking_lookup]</code> <code>[tp_contact_form]</code> <code>[tp_faq]</code> <code>[tp_faq topic="booking"]</code> <code>[tp_fleet]</code> <code>[tp_ndis]</code> <code>[tp_testimonials]</code> <code>[tp_driver_jobs]</code></p>
+		<p><code>[tp_booking_form]</code> <code>[tp_booking_lookup]</code> <code>[tp_contact_form]</code> <code>[tp_faq]</code> <code>[tp_faq topic="booking"]</code> <code>[tp_fleet]</code> <code>[tp_ndis]</code> <code>[tp_testimonials]</code> <code>[tp_driver_jobs]</code> <code>[tp_services]</code> <code>[tp_areas]</code> <code>[tp_contact_details]</code> <code>[tp_map]</code></p>
 	</div>
 	<?php
 }
@@ -141,15 +213,15 @@ function tp_create_starter_content() {
 	// Pages.
 	$pages = (array) get_option( 'tp_pages', array() );
 	foreach ( tp_starter_pages() as $key => $page ) {
-		if ( tp_page_url_by_template( $key ) ) {
+		if ( tp_page_url_by_template( $key ) || ( ! empty( $pages[ $key ] ) && get_post( $pages[ $key ] ) && 'trash' !== get_post_status( $pages[ $key ] ) ) ) {
 			continue;
 		}
 		$id = wp_insert_post(
 			array(
 				'post_type'    => 'page',
-				'post_status'  => 'publish',
+				'post_status'  => $page['status'] ?? 'publish',
 				'post_title'   => $page['title'],
-				'post_content' => $page['content'],
+				'post_content' => isset( $page['pattern'] ) ? tp_pattern_content( $page['pattern'] ) : $page['content'],
 				'meta_input'   => empty( $page['template'] ) ? array() : array( '_wp_page_template' => $page['template'] ),
 			)
 		);
@@ -159,6 +231,41 @@ function tp_create_starter_content() {
 		}
 	}
 	update_option( 'tp_pages', $pages );
+
+	// Static front page + blog page, if the site still shows latest posts on the home page.
+	if ( 'posts' === get_option( 'show_on_front' ) ) {
+		$home = wp_insert_post( array( 'post_type' => 'page', 'post_status' => 'publish', 'post_title' => __( 'Home', 'taxi-peninsula' ) ) );
+		$blog = wp_insert_post( array( 'post_type' => 'page', 'post_status' => 'publish', 'post_title' => __( 'Blog', 'taxi-peninsula' ) ) );
+		if ( $home && $blog && ! is_wp_error( $home ) && ! is_wp_error( $blog ) ) {
+			update_option( 'show_on_front', 'page' );
+			update_option( 'page_on_front', $home );
+			update_option( 'page_for_posts', $blog );
+			$created += 2;
+		}
+	}
+
+	// Draft blog posts with writing outlines.
+	if ( ! get_option( 'tp_starter_posts_done' ) ) {
+		foreach ( tp_starter_posts() as $post ) {
+			$cat = term_exists( $post[2], 'category' );
+			if ( ! $cat ) {
+				$cat = wp_insert_term( $post[2], 'category' );
+			}
+			$id = wp_insert_post(
+				array(
+					'post_type'     => 'post',
+					'post_status'   => 'draft',
+					'post_title'    => $post[0],
+					'post_content'  => tp_pattern_content( $post[1] ),
+					'post_category' => is_wp_error( $cat ) ? array() : array( (int) $cat['term_id'] ),
+				)
+			);
+			if ( $id && ! is_wp_error( $id ) ) {
+				$created++;
+			}
+		}
+		update_option( 'tp_starter_posts_done', 1 );
+	}
 
 	// FAQs.
 	if ( ! get_posts( array( 'post_type' => 'tp_faq', 'numberposts' => 1, 'post_status' => 'any', 'fields' => 'ids' ) ) ) {
@@ -302,10 +409,14 @@ function tp_create_starter_menus( array $pages ) {
 	if ( empty( $locations['primary'] ) && ! wp_get_nav_menu_object( 'Main menu' ) ) {
 		$menu_id = wp_create_nav_menu( 'Main menu' );
 		if ( ! is_wp_error( $menu_id ) ) {
-			$link_item( $menu_id, __( 'Services', 'taxi-peninsula' ), get_post_type_archive_link( 'tp_service' ), 1 );
-			$page_item( $menu_id, 'fleet', 2 );
-			$page_item( $menu_id, 'ndis', 3 );
-			$page_item( $menu_id, 'faq', 4 );
+			if ( ! empty( $pages['services'] ) ) {
+				$page_item( $menu_id, 'services', 1 );
+			} else {
+				$link_item( $menu_id, __( 'Services', 'taxi-peninsula' ), get_post_type_archive_link( 'tp_service' ), 1 );
+			}
+			$page_item( $menu_id, 'about', 2 );
+			$page_item( $menu_id, 'fleet', 3 );
+			$page_item( $menu_id, 'ndis', 4 );
 			$posts_page = (int) get_option( 'page_for_posts' );
 			if ( $posts_page ) {
 				$link_item( $menu_id, __( 'Blog', 'taxi-peninsula' ), get_permalink( $posts_page ), 5 );
@@ -324,6 +435,8 @@ function tp_create_starter_menus( array $pages ) {
 			$link_item( $menu_id, __( 'Areas we cover', 'taxi-peninsula' ), get_post_type_archive_link( 'tp_area' ), 3 );
 			$page_item( $menu_id, 'faq', 4 );
 			$page_item( $menu_id, 'contact', 5 );
+			$page_item( $menu_id, 'terms', 7 );
+			$page_item( $menu_id, 'accessibility', 8 );
 			$privacy = (int) get_option( 'wp_page_for_privacy_policy' );
 			if ( $privacy && 'publish' === get_post_status( $privacy ) ) {
 				$link_item( $menu_id, __( 'Privacy policy', 'taxi-peninsula' ), get_permalink( $privacy ), 6 );

@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Block patterns, page templates and editor preview (v1.2).
+   Loaded on the front end and inside the block editor.
+   ========================================================================== */
+
+.tp-hero-block {
+	padding: clamp(3rem, 2rem + 5vw, 6rem) clamp(1rem, 4vw, 3rem);
+	background-image: radial-gradient(60rem 30rem at 110% -10%, rgb(255 199 44 / .25), transparent 60%), linear-gradient(135deg, #0b2a5b 0%, #13408a 100%);
+}
+.tp-hero-block h1, .tp-hero-block h2 { color: #fff; font-size: clamp(2.5rem, 1.8rem + 3.4vw, 4.3rem); line-height: 1.1; margin-bottom: .5em; }
+.tp-eyebrow { color: #ffc72c; font-size: .95rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .5rem; }
+.tp-lead { font-size: clamp(1.25rem, 1.15rem + .5vw, 1.6rem); }
+.tp-hero-block .wp-block-button.is-style-outline .wp-block-button__link { color: #fff; border-color: #fff; }
+
+.tp-section-block { padding: clamp(2.5rem, 2rem + 2.5vw, 4.5rem) clamp(1rem, 4vw, 2rem); }
+.tp-cta-block { padding: clamp(2rem, 1.7rem + 1.5vw, 3rem) clamp(1rem, 4vw, 2rem); }
+.tp-cta-block h2 { color: #0b2a5b; margin-bottom: .25em; }
+.tp-cta-block .wp-block-button.is-style-outline .wp-block-button__link { color: #0b2a5b; border-color: #0b2a5b; }
+
+.tp-card-columns > .wp-block-column {
+	padding: clamp(1.25rem, 1rem + 1vw, 2rem); background: #fff; border: 1px solid #d5dcea; border-radius: 1.25rem;
+	box-shadow: 0 1px 2px rgb(11 42 91 / .06), 0 8px 24px rgb(11 42 91 / .08);
+}
+.tp-card-columns h3 { font-size: clamp(1.25rem, 1.15rem + .5vw, 1.6rem); }
+.tp-highlight-box { padding: 1.5rem; border-radius: 1.25rem; }
+.tp-story-columns { gap: clamp(1.5rem, 1rem + 2vw, 3rem); }
+
+.wp-block-button__link { border-radius: 999px; font-weight: 700; padding: .75em 1.4em; }
+
+/* Editing placeholders — clearly visible so drafts aren't published by accident. */
+.tp-todo {
+	padding: .75rem 1rem; background: #fffbea; border: 2px dashed #d49b00; border-radius: .75rem;
+	color: #5c4200; font-style: italic;
+}
+
+/* ---- Templates ---- */
+.page-content--wide > * { max-width: none; }
+.section__intro { margin-bottom: var(--space-xl); }
+.steps--wide .steps { grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
+
+.canvas > :not(.alignfull):not(.alignwide) { width: min(100% - 2 * var(--space-m), var(--container)); margin-inline: auto; }
+.canvas > .alignwide { width: min(100% - 2 * var(--space-m), 90rem); margin-inline: auto; }
+.canvas > * + * { margin-top: 0; }
+.canvas > .alignfull + .alignfull { margin-top: 0; }
+.canvas > p, .canvas > h2, .canvas > h3, .canvas > ul { max-width: var(--measure); }
+
+.contact-map { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: var(--space-xl); align-items: start; }
+@media (max-width: 56em) { .contact-map { grid-template-columns: 1fr; } }
+.map-embed { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--c-border); background: var(--c-bg-alt); }
+.map-embed iframe { display: block; width: 100%; aspect-ratio: 4 / 3; border: 0; }
+.tp-contact-columns { align-items: flex-start; }
+
+.policy { display: grid; grid-template-columns: 16rem minmax(0, 1fr); gap: var(--space-xl); align-items: start; }
+@media (max-width: 60em) { .policy { grid-template-columns: minmax(0, 1fr); } }
+.policy__toc { min-width: 0; overflow-wrap: anywhere; }
+.policy__print { white-space: normal; }
+.policy__toc { position: sticky; top: 7rem; padding: var(--space-m); background: var(--c-bg-alt); border-radius: var(--radius-lg); }
+@media (max-width: 60em) { .policy__toc { position: static; } }
+.policy__toc-title { font-size: var(--step-0); }
+.policy__toc ol { padding-left: 1.2em; margin: 0 0 var(--space-m); display: grid; gap: var(--space-2xs); font-size: var(--step--1); }
+.policy__body h2 { scroll-margin-top: 8rem; }
+@media print {
+	.policy { display: block; }
+	.policy__toc { display: none; }
+	.page-header { background: none; color: #000; padding: 0; }
+	.page-header__title, .page-header .post-meta { color: #000; }
+	.breadcrumbs { display: none; }
+}
+
+/* ---- Breadcrumbs (inside the navy title band) ---- */
+.breadcrumbs { margin-bottom: var(--space-s); font-size: var(--step--1); }
+.breadcrumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .25rem .5rem; }
+.breadcrumbs li { display: inline-flex; align-items: center; gap: .5rem; color: rgb(255 255 255 / .85); }
+.breadcrumbs li + li::before { content: "/"; opacity: .6; }
+.breadcrumbs a { color: #fff; }
+.breadcrumbs [aria-current] { color: rgb(255 255 255 / .85); }

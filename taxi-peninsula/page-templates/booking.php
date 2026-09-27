@@ -26,11 +26,7 @@ while ( have_posts() ) :
 				<?php if ( '' !== trim( get_the_content() ) ) : ?>
 					<div class="prose"><?php the_content(); ?></div>
 				<?php endif; ?>
-				<ol class="steps">
-					<li><strong><?php esc_html_e( 'Send your request', 'taxi-peninsula' ); ?></strong><span><?php esc_html_e( 'Takes about two minutes.', 'taxi-peninsula' ); ?></span></li>
-					<li><strong><?php esc_html_e( 'We confirm', 'taxi-peninsula' ); ?></strong><span><?php esc_html_e( 'By phone, SMS or email.', 'taxi-peninsula' ); ?></span></li>
-					<li><strong><?php esc_html_e( 'Ride in comfort', 'taxi-peninsula' ); ?></strong><span><?php esc_html_e( 'Your driver helps you in and out.', 'taxi-peninsula' ); ?></span></li>
-				</ol>
+				<?php get_template_part( 'template-parts/steps' ); ?>
 				<div class="contact-card">
 					<p><?php esc_html_e( 'Urgent or same-hour trip?', 'taxi-peninsula' ); ?></p>
 					<a class="contact-card__phone" href="<?php echo esc_url( tp_phone_href() ); ?>"><?php tp_the_icon( 'phone' ); ?><?php echo esc_html( tp_opt( 'phone_display' ) ); ?></a>

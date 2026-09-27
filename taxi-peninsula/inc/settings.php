@@ -45,6 +45,9 @@ function tp_settings_schema() {
 		'google_rating'         => array( 'reviews', __( 'Google star rating', 'taxi-peninsula' ), 'text', '', __( 'e.g. 4.9 — copy it from your Google profile. Leave empty to hide.', 'taxi-peninsula' ) ),
 		'google_review_count'   => array( 'reviews', __( 'Number of Google reviews', 'taxi-peninsula' ), 'number', '', '' ),
 
+		// Policies.
+		'terms_page_id'         => array( 'recurring', __( 'Terms & cancellation policy page', 'taxi-peninsula' ), 'page', 0, __( 'Customers must tick "I accept" before booking. Leave as "— Use the Setup page —" to use the page created by Bookings → Setup.', 'taxi-peninsula' ) ),
+
 		// Recurring.
 		'recurring_enabled'     => array( 'recurring', __( 'Allow customers to request repeat trips', 'taxi-peninsula' ), 'checkbox', true, '' ),
 		'recurring_max_weeks'   => array( 'recurring', __( 'Longest repeat period (weeks)', 'taxi-peninsula' ), 'number', 12, '' ),
@@ -160,6 +163,17 @@ function tp_render_setting_field( $args ) {
 			}
 			echo '</select>';
 			break;
+		case 'page':
+			wp_dropdown_pages(
+				array(
+					'name'              => esc_attr( $name ),
+					'id'                => esc_attr( $id ),
+					'selected'          => (int) $value,
+					'show_option_none'  => esc_html__( '— Use the Setup page —', 'taxi-peninsula' ),
+					'option_none_value' => '0',
+				)
+			);
+			break;
 		case 'secret':
 			printf(
 				'<input type="password" class="regular-text" id="%1$s" name="%2$s" value="" autocomplete="new-password" placeholder="%3$s">',
@@ -204,6 +218,9 @@ function tp_sanitize_settings( $input ) {
 				break;
 			case 'number':
 				$clean[ $key ] = ( null === $raw || '' === $raw ) ? '' : (float) $raw;
+				break;
+			case 'page':
+				$clean[ $key ] = absint( $raw );
 				break;
 			case 'url':
 				$clean[ $key ] = esc_url_raw( (string) $raw );

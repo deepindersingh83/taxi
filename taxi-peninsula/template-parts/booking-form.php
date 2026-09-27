@@ -28,6 +28,9 @@ $invalid = static function ( $key ) use ( $errors ) {
 };
 
 $current_url = ( is_singular() && ! is_front_page() ) ? get_permalink() : home_url( '/' );
+$places      = tp_places_available();
+$terms_url   = tp_terms_url();
+tp_booking_script_config();
 $areas       = tp_service_areas();
 $today       = wp_date( 'Y-m-d' );
 ?>
@@ -51,13 +54,13 @@ $today       = wp_date( 'Y-m-d' );
 
 		<div class="field field--wide">
 			<label for="bf-pickup"><?php esc_html_e( 'Pick-up address', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
-			<input id="bf-pickup" name="pickup" type="text" required autocomplete="street-address" list="tp-areas" value="<?php echo esc_attr( $val( 'pickup' ) ); ?>" placeholder="<?php esc_attr_e( 'Street address, suburb', 'taxi-peninsula' ); ?>"<?php $invalid( 'pickup' ); ?>>
+			<input id="bf-pickup" name="pickup" type="text" required autocomplete="street-address" <?php echo $places ? 'data-places' : 'list="tp-areas"'; ?> value="<?php echo esc_attr( $val( 'pickup' ) ); ?>" placeholder="<?php esc_attr_e( 'Street address, suburb', 'taxi-peninsula' ); ?>"<?php $invalid( 'pickup' ); ?>>
 			<?php $err( 'pickup' ); ?>
 		</div>
 
 		<div class="field field--wide">
 			<label for="bf-dropoff"><?php esc_html_e( 'Drop-off address', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
-			<input id="bf-dropoff" name="dropoff" type="text" required list="tp-areas" value="<?php echo esc_attr( $val( 'dropoff' ) ); ?>" placeholder="<?php esc_attr_e( 'e.g. Frankston Hospital, Melbourne Airport', 'taxi-peninsula' ); ?>"<?php $invalid( 'dropoff' ); ?>>
+			<input id="bf-dropoff" name="dropoff" type="text" required <?php echo $places ? 'data-places' : 'list="tp-areas"'; ?> value="<?php echo esc_attr( $val( 'dropoff' ) ); ?>" placeholder="<?php esc_attr_e( 'e.g. Frankston Hospital, Melbourne Airport', 'taxi-peninsula' ); ?>"<?php $invalid( 'dropoff' ); ?>>
 			<?php $err( 'dropoff' ); ?>
 		</div>
 
@@ -78,6 +81,10 @@ $today       = wp_date( 'Y-m-d' );
 			<input id="bf-time" name="time" type="time" required step="300" value="<?php echo esc_attr( $val( 'time' ) ); ?>"<?php $invalid( 'time' ); ?>>
 			<?php $err( 'time' ); ?>
 		</div>
+
+		<?php if ( tp_fare_available() ) : ?>
+			<div class="field field--wide fare-estimate" data-fare-estimate aria-live="polite" hidden data-note="<?php esc_attr_e( 'Estimate only, based on the usual driving route. The final fare depends on traffic, waiting time and route, and any MPTP subsidy is applied by the driver.', 'taxi-peninsula' ); ?>"></div>
+		<?php endif; ?>
 
 		<div class="field field--wide field--check">
 			<input id="bf-return" name="return_trip" type="checkbox" value="1" data-toggle-target="#bf-return-wrap" <?php checked( $val( 'return_trip' ), '1' ); ?>>
@@ -253,6 +260,23 @@ $today       = wp_date( 'Y-m-d' );
 			<label for="bf-consent"><?php esc_html_e( 'I agree to be contacted by phone, SMS or email about this booking.', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
 			<?php $err( 'consent' ); ?>
 		</div>
+
+		<?php if ( $terms_url ) : ?>
+			<div class="field field--wide field--check">
+				<input id="bf-terms" name="terms" type="checkbox" value="1" required <?php checked( $val( 'terms' ), '1' ); ?><?php $invalid( 'terms' ); ?>>
+				<label for="bf-terms">
+					<?php
+					printf(
+						/* translators: %s: link to the terms page */
+						esc_html__( 'I have read and accept the %s.', 'taxi-peninsula' ),
+						'<a href="' . esc_url( $terms_url ) . '" target="_blank" rel="noopener">' . esc_html__( 'terms and cancellation policy', 'taxi-peninsula' ) . '<span class="screen-reader-text"> ' . esc_html__( '(opens in a new tab)', 'taxi-peninsula' ) . '</span></a>'
+					);
+					?>
+					<span class="req" aria-hidden="true">*</span>
+				</label>
+				<?php $err( 'terms' ); ?>
+			</div>
+		<?php endif; ?>
 	</fieldset>
 
 	<?php tp_spam_fields(); ?>

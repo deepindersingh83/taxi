@@ -179,6 +179,11 @@ function tp_content_fields() {
 		'tp_service'     => array(
 			'icon' => array( __( 'Icon', 'taxi-peninsula' ), 'select', $icons ),
 		),
+		'tp_area'        => array(
+			'nearby'    => array( __( 'Places we often take passengers to or from (one per line)', 'taxi-peninsula' ), 'textarea', __( 'e.g. hospitals, dialysis and rehab centres, day programs, shopping centres, stations in or near this suburb.', 'taxi-peninsula' ) ),
+			'local'     => array( __( 'Local travel notes', 'taxi-peninsula' ), 'textarea', __( 'A paragraph only a local would write: parking and drop-off points, accessible entrances, typical travel times to the city or airport.', 'taxi-peninsula' ) ),
+			'local_faq' => array( __( 'Local questions (optional)', 'taxi-peninsula' ), 'textarea', __( 'First line is the question, following lines the answer. Leave a blank line between questions.', 'taxi-peninsula' ) ),
+		),
 		'tp_testimonial' => array(
 			'rating' => array( __( 'Stars (1–5)', 'taxi-peninsula' ), 'number', '' ),
 			'detail' => array( __( 'Detail shown under the name', 'taxi-peninsula' ), 'text', __( 'e.g. Rosebud · regular dialysis trips', 'taxi-peninsula' ) ),
@@ -459,3 +464,32 @@ function tp_render_message_box( WP_Post $post ) {
 		esc_html__( 'Move to bin', 'taxi-peninsula' )
 	);
 }
+
+/**
+ * Parse the area "Local questions" field into [question, answer] pairs.
+ *
+ * @return array[]
+ */
+function tp_parse_local_faq( $text ) {
+	$out = array();
+	foreach ( preg_split( "/\R\s*\R/", trim( (string) $text ) ) as $block ) {
+		$lines = array_values( array_filter( array_map( 'trim', preg_split( '/\R/', $block ) ) ) );
+		if ( count( $lines ) >= 2 ) {
+			$out[] = array( $lines[0], implode( "\n", array_slice( $lines, 1 ) ) );
+		}
+	}
+	return $out;
+}
+
+/**
+ * If a page uses the "Services" template, make it the one services listing.
+ */
+add_action( 'template_redirect', static function () {
+	if ( is_post_type_archive( 'tp_service' ) && ! is_feed() ) {
+		$page = tp_page_url_by_template( 'services' );
+		if ( $page ) {
+			wp_safe_redirect( $page, 301 );
+			exit;
+		}
+	}
+} );

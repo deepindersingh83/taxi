@@ -34,6 +34,7 @@ function tp_customize_register( WP_Customize_Manager $wp_customize ) {
 		'email'           => array( 'tp_contact', __( 'Email', 'taxi-peninsula' ), 'email', 'sanitize_email' ),
 		'location'        => array( 'tp_contact', __( 'Location', 'taxi-peninsula' ), 'text', 'sanitize_text_field' ),
 		'hours'           => array( 'tp_contact', __( 'Opening hours', 'taxi-peninsula' ), 'text', 'sanitize_text_field' ),
+		'map_query'       => array( 'tp_contact', __( 'Map location (shown on the Contact page)', 'taxi-peninsula' ), 'text', 'sanitize_text_field' ),
 		'open_247'        => array( 'tp_contact', __( 'Open 24 hours, 7 days (tells Google your hours)', 'taxi-peninsula' ), 'checkbox', 'tp_sanitize_checkbox' ),
 		'hero_eyebrow'    => array( 'tp_hero', __( 'Small heading', 'taxi-peninsula' ), 'text', 'sanitize_text_field' ),
 		'hero_title'      => array( 'tp_hero', __( 'Headline', 'taxi-peninsula' ), 'text', 'sanitize_text_field' ),

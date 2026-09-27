@@ -45,39 +45,14 @@ $hero_image = (int) tp_opt( 'hero_image' );
 	</div>
 </section>
 
-<section class="section section--features" aria-labelledby="why-title">
-	<div class="container">
-		<h2 id="why-title" class="section__title"><?php esc_html_e( 'Why passengers choose us', 'taxi-peninsula' ); ?></h2>
-		<div class="features">
-			<?php
-			$features = array(
-				array( 'wheelchair', __( 'Purpose-built vehicles', 'taxi-peninsula' ), __( 'Rear-entry ramps or hoists and four-point restraints, so you can stay in your own chair.', 'taxi-peninsula' ) ),
-				array( 'shield', __( 'Trained, accredited drivers', 'taxi-peninsula' ), __( 'Our drivers are experienced in loading, securing and assisting passengers with a disability.', 'taxi-peninsula' ) ),
-				array( 'clock', __( 'Punctual, 24/7', 'taxi-peninsula' ), __( 'Book ahead for appointments and flights, or call us for a same-day pick-up.', 'taxi-peninsula' ) ),
-				array( 'heart', __( 'Carers welcome', 'taxi-peninsula' ), __( 'Family members and support workers can travel with you at no extra hassle.', 'taxi-peninsula' ) ),
-			);
-			foreach ( $features as $f ) :
-				?>
-				<div class="feature">
-					<span class="feature__icon"><?php tp_the_icon( $f[0] ); ?></span>
-					<h3 class="feature__title"><?php echo esc_html( $f[1] ); ?></h3>
-					<p><?php echo esc_html( $f[2] ); ?></p>
-				</div>
-			<?php endforeach; ?>
-		</div>
-	</div>
-</section>
+<?php get_template_part( 'template-parts/features' ); ?>
 
 <section id="book" class="section section--book" aria-labelledby="book-title">
 	<div class="container book-layout">
 		<div class="book-layout__intro">
 			<h2 id="book-title" class="section__title"><?php esc_html_e( 'Book your accessible taxi', 'taxi-peninsula' ); ?></h2>
 			<p><?php esc_html_e( 'Tell us where you are going and what you need. We will confirm your booking and let you know when your driver is on the way.', 'taxi-peninsula' ); ?></p>
-			<ol class="steps">
-				<li><strong><?php esc_html_e( 'Send your request', 'taxi-peninsula' ); ?></strong><span><?php esc_html_e( 'Takes about two minutes.', 'taxi-peninsula' ); ?></span></li>
-				<li><strong><?php esc_html_e( 'We confirm', 'taxi-peninsula' ); ?></strong><span><?php esc_html_e( 'By phone, SMS or email.', 'taxi-peninsula' ); ?></span></li>
-				<li><strong><?php esc_html_e( 'Ride in comfort', 'taxi-peninsula' ); ?></strong><span><?php esc_html_e( 'Your driver helps you in and out.', 'taxi-peninsula' ); ?></span></li>
-			</ol>
+			<?php get_template_part( 'template-parts/steps' ); ?>
 			<div class="contact-card">
 				<p><?php esc_html_e( 'Prefer to talk to someone?', 'taxi-peninsula' ); ?></p>
 				<a class="contact-card__phone" href="<?php echo esc_url( tp_phone_href() ); ?>"><?php tp_the_icon( 'phone' ); ?><?php echo esc_html( tp_opt( 'phone_display' ) ); ?></a>

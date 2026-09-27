@@ -64,6 +64,55 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 - Honeypot fields and per-IP rate limits on every public form.
 - Optional **Cloudflare Turnstile** or **Google reCAPTCHA v2** on the booking, lookup and contact forms.
 
+### Page templates & block patterns (v1.2)
+- **Page templates** (Page panel → Template):
+  - **About Us:** your story, "what makes us different", the fleet, testimonials and a call to action.
+  - **Contact Us:** the form, your contact details, the areas you cover and a map.
+  - **Services:** an intro plus every service. When this page exists, `/services/` redirects to it.
+  - **Blog:** a post listing with an optional intro.
+  - **Book a Taxi**
+  - **Policy / legal page:** an automatic table of contents, a "last updated" date and a print button.
+  - **Full width**
+  - **Blank canvas (no title band):** for landing pages built from patterns.
+- **Block patterns** (+ inserter → Patterns → *Taxi Peninsula*):
+  - sections: hero banner, feature cards, how it works, call-to-action band, our story, values, services grid, areas, testimonials, FAQ, contact details + map, booking form
+  - **page starters** offered when you create a new page: About Us, Terms & Cancellation Policy, Accessibility Statement
+  - **blog outlines** offered when you create a new post: local destination guide, travel tips
+- Placeholder text you must replace is shown in **dashed yellow boxes** and marked **[CONFIRM]**.
+
+### Address suggestions & fare estimates (v1.2)
+- As passengers type an address, suggestions appear (Google Places API (New)). The dropdown works with keyboard and screen readers, and is biased to Melbourne and the Peninsula.
+- An optional **fare estimate** appears once both addresses are filled in (Google Routes API). It uses your rates: flagfall, per km, per minute, booking fee, airport fee, minimum fare, and a night or weekend surcharge. It is shown as a range and labelled "estimate only".
+  - The estimate, distance and drive time are saved with the booking and shown to staff, drivers and the customer.
+  - It stays **off until you enter your real rates** under Bookings → Settings.
+- Google is only ever called from the server, so **the API key is never exposed in the browser**. Results are cached to keep Google costs down.
+
+### Terms, accessibility & cookies (v1.2)
+- If a Terms & Cancellation Policy page exists, customers must tick **"I accept the terms and cancellation policy"** before booking. The time they accepted is stored on the booking.
+- Setup creates **draft** Terms and Accessibility Statement pages. They stay drafts until you replace the [CONFIRM] notes and publish.
+- **Google Analytics 4 with a consent banner:**
+  - Nothing loads from Google until the visitor clicks **Accept**, and **Reject** is just as prominent.
+  - Visitors can change their choice later via "Cookie settings" in the footer.
+  - Staff visits are not tracked.
+
+### Local SEO (v1.2)
+- **Breadcrumbs**, with matching `BreadcrumbList` structured data, on pages, services, suburb pages and blog posts.
+- **Suburb pages** get "Local details" fields: places you often travel to, local travel notes, and local questions (these also become FAQ structured data). Fill them in with real local knowledge.
+- **Google Business Profile:** add your profile link (included in the structured data). After a completed trip, customers get a one-time **"Leave a review"** email and SMS.
+- **Images:** featured images fall back to a descriptive alt text, and editors are warned when alt text is missing. Uploaded file names are tidied, e.g. `IMG_1234 (1).JPG` becomes `img-1234-1.jpg`.
+- The WordPress sitemap excludes Manage My Booking, Driver Jobs and user archives. Submit `https://YOUR-SITE/wp-sitemap.xml` in Google Search Console.
+
+### Security hardening (v1.2)
+Each item can be switched under **Bookings → Settings → Security hardening**:
+- security headers (`X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`), plus optional HSTS
+- theme and plugin **file editors disabled**
+- **XML-RPC blocked**
+- **usernames hidden**: `?author=` scans, author archives, the public users API, the users sitemap and "unknown username" login messages
+- WordPress version number hidden
+- **Cloudflare-aware rate limits:** the visitor's real IP is used only when the request really comes from Cloudflare's network
+
+A **Security check** panel under Bookings → Setup flags HTTPS, error display, secrets stored in the database, an `admin` username, outdated WordPress or PHP, and recommends two-factor login and backups.
+
 ## Install
 
 1. Zip the `taxi-peninsula` folder and upload it under **Appearance → Themes → Add New → Upload**. Then activate it.
@@ -87,18 +136,73 @@ Create an account with either provider and paste its credentials into **Bookings
 
 Payments happen on Stripe's hosted checkout, so card details never touch your site.
 
-### Keys in wp-config.php (optional)
-Any setting can be fixed in `wp-config.php` instead of the database. For example:
+### Google Maps (address suggestions & fare estimates)
+1. In Google Cloud, create a project with billing, and enable **Places API (New)** and **Routes API**.
+2. Create an API key and **restrict it** to those two APIs and to your server's IP address. The key is only used server-side.
+3. Paste the key in Bookings → Settings (or use `TP_GOOGLE_MAPS_KEY` in wp-config.php).
+4. Enter your fare rates, then tick **Show a fare estimate**.
 
+### Google Analytics
+Paste your GA4 measurement ID (`G-…`) in Bookings → Settings → Analytics & cookies. The consent banner appears automatically.
+
+## Hosting hardening
+A theme can only do part of this; the rest belongs in your server settings.
+
+**1. wp-config.php** (above the "stop editing" line):
 ```php
+// Keep API secrets out of the database.
 define( 'TP_STRIPE_SECRET_KEY', 'sk_live_...' );
-define( 'TP_CLICKSEND_API_KEY', '...' );
+define( 'TP_STRIPE_WEBHOOK_SECRET', 'whsec_...' );
+define( 'TP_CLICKSEND_API_KEY', '...' );      // or TP_TWILIO_AUTH_TOKEN
+define( 'TP_CAPTCHA_SECRET_KEY', '...' );
+define( 'TP_GOOGLE_MAPS_KEY', '...' );
+
+define( 'DISALLOW_FILE_EDIT', true );          // no code editing from wp-admin
+define( 'FORCE_SSL_ADMIN', true );
+define( 'WP_DEBUG', false );
+define( 'WP_DEBUG_DISPLAY', false );
+define( 'WP_AUTO_UPDATE_CORE', 'minor' );
 ```
 
+**2. Security headers at the server.** These also cover images and files that WordPress doesn't serve. For Apache (`.htaccess`):
+```apache
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+<Files wp-config.php>
+  Require all denied
+</Files>
+<Files xmlrpc.php>
+  Require all denied
+</Files>
+```
+For nginx:
+```nginx
+add_header X-Content-Type-Options "nosniff" always;
+add_header X-Frame-Options "SAMEORIGIN" always;
+add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+location = /xmlrpc.php { deny all; }
+location ~* /wp-content/uploads/.*\.php$ { deny all; }
+```
+
+**3. Everything else:**
+- Use HTTPS everywhere.
+- Enable **two-factor login** (the "Two Factor" plugin) for every administrator and Booking Manager.
+- Keep daily **off-site backups**.
+- Keep WordPress, PHP (8.1+) and plugins updated.
+- File permissions: 644 for files, 755 for folders, 600 for `wp-config.php`.
+- Don't use an account called `admin`.
+
 ## Shortcodes
-`[tp_booking_form]` `[tp_booking_lookup]` `[tp_contact_form]` `[tp_faq]` `[tp_faq topic="booking"]` `[tp_fleet]` `[tp_ndis]` `[tp_testimonials]` `[tp_driver_jobs]`
+`[tp_booking_form]` `[tp_booking_lookup]` `[tp_contact_form]` `[tp_faq]` `[tp_faq topic="booking"]` `[tp_fleet]` `[tp_fleet limit="2"]` `[tp_ndis]` `[tp_testimonials]` `[tp_driver_jobs]` `[tp_services]` `[tp_areas]` `[tp_contact_details]` `[tp_map]` `[tp_map q="Frankston VIC"]`
 
 ## Before going live
+- **Terms and Accessibility pages:** replace every **[CONFIRM]** note with your real policy, have the terms checked, then publish. Customers only have to accept the terms once that page is published.
+- **Fare estimates:** switch them on only when the rates match your real fares.
 - **Check the wording against your real service.** This covers the starter FAQs and service text, and home page claims such as "24 hours", "accredited drivers" and "ramp & hoist vehicles".
 - **Add local detail to suburb pages** (nearby hospitals, landmarks). Pages that only use the default text are thin content for Google.
 - **Exclude the booking, Manage My Booking and Contact pages from page caching.** Their forms use security tokens that go stale when cached.

@@ -439,6 +439,16 @@ function tp_render_assign_box( WP_Post $post ) {
 	}
 	echo '</select></p>';
 
+	if ( $b['distance_km'] > 0 ) {
+		echo '<p><strong>' . esc_html__( 'Trip:', 'taxi-peninsula' ) . '</strong> ';
+		/* translators: 1: km, 2: minutes */
+		echo esc_html( sprintf( __( '%1$s km, about %2$d min', 'taxi-peninsula' ), number_format_i18n( $b['distance_km'], 1 ), $b['duration'] ) );
+		if ( $b['estimate'] ) {
+			echo '<br><strong>' . esc_html__( 'Estimate given:', 'taxi-peninsula' ) . '</strong> ' . esc_html( $b['estimate'] );
+		}
+		echo '</p>';
+	}
+
 	echo '<p class="description">' . esc_html__( 'Assigning a driver sets the status to "Driver assigned" and texts the driver when SMS is set up.', 'taxi-peninsula' ) . '</p>';
 
 	if ( 'online' === $b['payment'] ) {

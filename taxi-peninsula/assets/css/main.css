@@ -703,3 +703,39 @@ a.chip:hover { border-color: var(--c-primary); color: var(--c-primary); }
 .job__actions form { margin: 0; }
 .driver-jobs .login-username label, .driver-jobs .login-password label { display: block; font-weight: 700; }
 .driver-jobs #wp-submit { font: inherit; font-weight: 700; padding: .7em 1.4em; border: 0; border-radius: 999px; background: var(--c-primary); color: #fff; cursor: pointer; min-height: 3rem; }
+
+/* Address combobox + fare estimate (v1.2) */
+.combo { position: relative; }
+.combo__list {
+	position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + 4px); margin: 0; padding: var(--space-2xs);
+	list-style: none; background: var(--c-surface); border: 2px solid var(--c-primary); border-radius: var(--radius);
+	box-shadow: var(--shadow); max-height: 20rem; overflow-y: auto;
+}
+.combo__option { display: grid; padding: .6rem .75rem; border-radius: calc(var(--radius) - 4px); cursor: pointer; }
+.combo__option:hover, .combo__option[aria-selected="true"] { background: var(--c-bg-alt); outline: 2px solid var(--c-primary); outline-offset: -2px; }
+.combo__main { font-weight: 700; }
+.combo__secondary { font-size: var(--step--1); color: var(--c-muted); }
+.combo__credit { padding: .35rem .75rem 0; font-size: .75rem; color: var(--c-muted); text-align: right; }
+.fare-estimate { padding: var(--space-s) var(--space-m); background: #fff8e1; border-left: 5px solid var(--c-accent); border-radius: var(--radius); }
+.fare-estimate strong { color: var(--c-primary); font-size: var(--step-1); }
+.fare-estimate .field__hint { margin-top: var(--space-2xs); }
+html[data-contrast="high"] .fare-estimate { background: #fff; border-color: #000; }
+
+/* Cookie consent */
+.consent { position: fixed; left: var(--space-s); right: var(--space-s); bottom: var(--space-s); z-index: 90; }
+.consent__inner {
+	max-width: 60rem; margin-inline: auto; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-m);
+	padding: var(--space-m) var(--space-l); background: var(--c-primary); color: #fff; border-radius: var(--radius-lg);
+	box-shadow: 0 12px 40px rgb(0 0 0 / .35);
+}
+.consent__text { flex: 1 1 28rem; }
+.consent__title { color: #fff; font-size: var(--step-1); margin-bottom: var(--space-2xs); }
+.consent p { margin: 0; }
+.consent a { color: #fff; }
+.consent__actions { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+.link-button { font: inherit; color: inherit; background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
+.site-footer__bottom .link-button { color: #fff; }
+.fare-estimate__detail { display: block; color: var(--c-muted); }
+.contact-card .btn--accent, .contact-card .btn--accent:hover { color: var(--c-on-accent); }
+.page-content > .wp-block-columns, .page-content > .wp-block-group, .page-content > .wp-block-cover { max-width: none; }
+.prose, .entry-content, .page-content, .card { overflow-wrap: break-word; }

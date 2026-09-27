@@ -176,6 +176,9 @@ function tp_get_booking( $post_id ) {
 		'series'      => get_post_meta( $post_id, '_tp_series', true ),
 		'paid'        => (float) get_post_meta( $post_id, '_tp_paid', true ),
 		'request'     => get_post_meta( $post_id, '_tp_request', true ),
+		'estimate'    => get_post_meta( $post_id, '_tp_estimate', true ),
+		'distance_km' => (float) get_post_meta( $post_id, '_tp_distance_km', true ),
+		'duration'    => (int) get_post_meta( $post_id, '_tp_duration_min', true ),
 	);
 	foreach ( array_keys( tp_booking_fields() ) as $key ) {
 		$data[ $key ] = get_post_meta( $post_id, '_tp_' . $key, true );
@@ -520,6 +523,9 @@ function tp_booking_summary( array $b ) {
 		if ( $b['ndis_number'] ) {
 			$lines[ __( 'NDIS number / reference', 'taxi-peninsula' ) ] = $b['ndis_number'];
 		}
+	}
+	if ( $b['estimate'] ) {
+		$lines[ __( 'Estimated fare', 'taxi-peninsula' ) ] = $b['estimate'] . ' ' . __( '(estimate only)', 'taxi-peninsula' );
 	}
 	if ( $b['paid'] > 0 ) {
 		$lines[ __( 'Paid online', 'taxi-peninsula' ) ] = tp_money( $b['paid'] );

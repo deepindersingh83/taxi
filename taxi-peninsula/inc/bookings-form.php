@@ -101,6 +101,9 @@ function tp_handle_booking() {
 	if ( empty( $raw['consent'] ) ) {
 		$errors['consent'] = __( 'Please agree so we can contact you about this booking.', 'taxi-peninsula' );
 	}
+	if ( tp_terms_url() && empty( $raw['terms'] ) ) {
+		$errors['terms'] = __( 'Please accept the terms and cancellation policy.', 'taxi-peninsula' );
+	}
 
 	if ( $errors ) {
 		tp_booking_fail( $return, $errors, $raw );
@@ -131,6 +134,9 @@ function tp_handle_booking() {
 			update_post_meta( $post_id, '_tp_series', $series );
 		}
 		tp_save_booking_meta( $post_id, $trip );
+		if ( tp_terms_url() ) {
+			update_post_meta( $post_id, '_tp_terms_accepted', current_time( 'mysql' ) );
+		}
 		$ids[] = $post_id;
 	}
 

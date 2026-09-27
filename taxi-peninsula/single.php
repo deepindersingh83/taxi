@@ -33,7 +33,7 @@ while ( have_posts() ) :
 	<div class="container layout-sidebar section">
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'layout-sidebar__main' ); ?>>
 			<?php if ( has_post_thumbnail() ) : ?>
-				<figure class="featured-image"><?php the_post_thumbnail( 'large' ); ?></figure>
+				<figure class="featured-image"><?php the_post_thumbnail( 'large', array( 'alt' => tp_thumbnail_alt( get_post() ) ) ); ?></figure>
 			<?php endif; ?>
 			<div class="prose entry-content">
 				<?php

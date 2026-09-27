@@ -91,6 +91,9 @@ $pos   = array_search( $b['status'], $order, true );
 				</span>
 			<?php endif; ?>
 		</dd></div>
+		<?php if ( $b['estimate'] ) : ?>
+			<div><dt><?php esc_html_e( 'Estimated fare', 'taxi-peninsula' ); ?></dt><dd><?php echo esc_html( $b['estimate'] ); ?> <small>(<?php esc_html_e( 'estimate only', 'taxi-peninsula' ); ?>)</small></dd></div>
+		<?php endif; ?>
 		<?php if ( $b['notes'] ) : ?>
 			<div><dt><?php esc_html_e( 'Your notes', 'taxi-peninsula' ); ?></dt><dd><?php echo esc_html( $b['notes'] ); ?></dd></div>
 		<?php endif; ?>

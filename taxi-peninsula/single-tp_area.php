@@ -41,6 +41,35 @@ while ( have_posts() ) :
 					</p>
 				<?php endif; ?>
 
+				<?php
+				$nearby    = array_filter( array_map( 'trim', explode( "\n", (string) get_post_meta( get_the_ID(), '_tp_nearby', true ) ) ) );
+				$local     = trim( (string) get_post_meta( get_the_ID(), '_tp_local', true ) );
+				$local_faq = tp_parse_local_faq( get_post_meta( get_the_ID(), '_tp_local_faq', true ) );
+				?>
+				<?php if ( $nearby ) : ?>
+					<h2>
+						<?php
+						/* translators: %s: suburb */
+						echo esc_html( sprintf( __( 'Places we often travel to around %s', 'taxi-peninsula' ), $area ) );
+						?>
+					</h2>
+					<ul class="tick-list">
+						<?php foreach ( $nearby as $place ) : ?>
+							<li><?php tp_the_icon( 'pin' ); ?><?php echo esc_html( $place ); ?></li>
+						<?php endforeach; ?>
+					</ul>
+				<?php endif; ?>
+
+				<?php if ( $local ) : ?>
+					<h2>
+						<?php
+						/* translators: %s: suburb */
+						echo esc_html( sprintf( __( 'Getting around %s', 'taxi-peninsula' ), $area ) );
+						?>
+					</h2>
+					<?php echo wp_kses_post( wpautop( esc_html( $local ) ) ); ?>
+				<?php endif; ?>
+
 				<h2>
 					<?php
 					/* translators: %s: suburb */
@@ -59,6 +88,20 @@ while ( have_posts() ) :
 						</li>
 					<?php endforeach; ?>
 				</ul>
+				<?php if ( $local_faq ) : ?>
+					<h2>
+						<?php
+						/* translators: %s: suburb */
+						echo esc_html( sprintf( __( 'Questions about travelling in %s', 'taxi-peninsula' ), $area ) );
+						?>
+					</h2>
+					<div class="faq">
+						<?php foreach ( $local_faq as $qa ) : ?>
+							<?php tp_faq_schema_items( array( 'q' => $qa[0], 'a' => $qa[1] ) ); ?>
+							<details class="faq__item"><summary><?php echo esc_html( $qa[0] ); ?></summary><div class="faq__answer prose"><?php echo wp_kses_post( wpautop( esc_html( $qa[1] ) ) ); ?></div></details>
+						<?php endforeach; ?>
+					</div>
+				<?php endif; ?>
 			</div>
 			<p class="cta-inline">
 				<a class="btn btn--accent btn--lg" href="<?php echo esc_url( $book ); ?>">

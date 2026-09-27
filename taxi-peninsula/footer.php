@@ -51,6 +51,7 @@
 		<?php if ( function_exists( 'the_privacy_policy_link' ) ) : ?>
 			<p><?php the_privacy_policy_link(); ?></p>
 		<?php endif; ?>
+		<?php tp_cookie_settings_link(); ?>
 	</div>
 </footer>
 

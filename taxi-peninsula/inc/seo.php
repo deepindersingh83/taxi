@@ -147,8 +147,9 @@ function tp_business_schema() {
 	if ( $logo ) {
 		$node['logo'] = wp_get_attachment_image_url( $logo, 'full' );
 	}
-	if ( tp_setting( 'google_reviews_url' ) ) {
-		$node['sameAs'] = array( tp_setting( 'google_reviews_url' ) );
+	$same_as = array_values( array_filter( array( tp_setting( 'gbp_url' ), tp_setting( 'google_reviews_url' ) ) ) );
+	if ( $same_as ) {
+		$node['sameAs'] = array_values( array_unique( $same_as ) );
 	}
 	return $node;
 }
@@ -174,6 +175,11 @@ function tp_output_schema() {
 			$service['areaServed'] = array( '@type' => 'Place', 'name' => $post->post_title . ', VIC' );
 		}
 		$graph[] = $service;
+	}
+
+	$crumbs = tp_breadcrumb_schema();
+	if ( $crumbs ) {
+		$graph[] = $crumbs;
 	}
 
 	$faqs = tp_faq_schema_items();
