@@ -34,7 +34,7 @@ tp_booking_script_config();
 $areas       = tp_service_areas();
 $today       = wp_date( 'Y-m-d' );
 ?>
-<form class="booking-form" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" novalidate>
+<form class="booking-form" method="post"<?php echo ! empty( $args['quickbook'] ) ? ' data-from-quickbook' : ''; ?> action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" novalidate>
 	<input type="hidden" name="action" value="tp_booking">
 	<input type="hidden" name="_tp_return" value="<?php echo esc_url( $current_url ); ?>">
 	<?php wp_nonce_field( 'tp_booking', '_tp_nonce', false ); ?>

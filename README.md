@@ -162,6 +162,26 @@ A **Security check** panel under Bookings → Setup flags HTTPS, error display, 
 - **Dark mode:** follows the device setting, with a Dark mode button beside the text-size and high-contrast controls.
 - **Time-of-day hero message**, e.g. "Home from the hospital? Book a pick-up" in the afternoon. It uses Melbourne time and is edited in Customize → *Live numbers & hero messages*.
 
+### Home & contact page upgrades (v1.4)
+- **Home page builder** (Customize → Taxi Peninsula → *Home page layout*): tick to show or hide each of the 14 sections, and reorder them with ▲ ▼. It works with the keyboard and screen readers. The hero always stays on top. Edit every section's heading and intro under *Home page headings & text*; leave a field empty to keep the default wording.
+- **Quick-book bar in the hero:** From, To and Date, with Google address suggestions if they're switched on. "Continue" opens the booking form with those details filled in and focuses the next empty field. It can be switched off in *Home page layout*.
+- **Seasonal hero photos** (Appearance → **Hero photos**): add a photo with From and Until dates, optionally repeating every year (e.g. every December). It replaces the normal hero image during those dates.
+- **"Who we help" panels:** four audiences (passengers, family & carers, NDIS coordinators, hospitals & aged care). Each has an editable heading, text and link under Customize → *Who we help panels*. Clear a heading to hide that panel.
+- **Top-questions FAQ strip:** tick "Show on the home page" on any FAQ. If fewer than four are ticked, the first FAQs fill the gap. It links to "See all FAQs".
+- **Live "Open now" status:** in Customize → Contact details, untick "Open 24 hours, 7 days" and enter hours like `Mon-Fri 06:00-22:00` / `Sat 07:00-20:00` / `Sun closed`.
+  - The top bar, contact card and footer then show e.g. "Open now · phones answered until 10pm" or "Closed now · we open tomorrow at 7am".
+  - It's calculated in Melbourne time, so it stays correct on cached pages.
+  - The contact page shows the weekly table, and the hours are added to your Google business data.
+- **"What can we help with?" chooser** at the top of the Contact page. It sends each enquiry to the right place:
+  - booking a trip → the booking form
+  - changing a booking → Manage My Booking
+  - NDIS accounts → the NDIS page
+  - feedback / complaints → the complaints page
+  - lost property → the contact form with "Lost property" pre-selected
+  - driver jobs → Drive With Us
+- **Complaints process:** Setup creates a draft *Complaints & Feedback* page. It covers how to complain, the steps and timeframes, and escalation to Commercial Passenger Vehicles Victoria and the NDIS Quality and Safeguards Commission. Response times and the regulators' contact details are marked [CONFIRM].
+- **Enquiry auto-reply:** every contact form enquiry now gets an acknowledgement email. Complaints also get a link to the complaints process. Set a reply time (e.g. "within one business day") in Customize → Contact details, or leave it empty to not promise one.
+
 ## Install
 
 1. Zip the `taxi-peninsula` folder and upload it under **Appearance → Themes → Add New → Upload**. Then activate it.
@@ -247,9 +267,11 @@ location ~* /wp-content/uploads/.*\.php$ { deny all; }
 - Don't use an account called `admin`.
 
 ## Shortcodes
-`[tp_booking_form]` `[tp_booking_lookup]` `[tp_contact_form]` `[tp_faq]` `[tp_faq topic="booking"]` `[tp_fleet]` `[tp_fleet limit="2"]` `[tp_ndis]` `[tp_testimonials]` `[tp_driver_jobs]` `[tp_services]` `[tp_areas]` `[tp_contact_details]` `[tp_map]` `[tp_map q="Frankston VIC"]` `[tp_stats]` `[tp_suburb_checker]` `[tp_destinations]` `[tp_drivers]` `[tp_video]` `[tp_partners]` `[tp_driver_apply]`
+`[tp_booking_form]` `[tp_booking_lookup]` `[tp_contact_form]` `[tp_faq]` `[tp_faq topic="booking"]` `[tp_fleet]` `[tp_fleet limit="2"]` `[tp_ndis]` `[tp_testimonials]` `[tp_driver_jobs]` `[tp_services]` `[tp_areas]` `[tp_contact_details]` `[tp_map]` `[tp_map q="Frankston VIC"]` `[tp_stats]` `[tp_suburb_checker]` `[tp_destinations]` `[tp_drivers]` `[tp_video]` `[tp_partners]` `[tp_driver_apply]` `[tp_contact_chooser]` `[tp_faq featured="yes" limit="4" search="no"]`
 
 ## Before going live
+- **Complaints page:** replace the [CONFIRM] response times and add the regulators' current contact details, then publish it. The chooser and the auto-reply link to it once it's published.
+- **Opening hours:** if you're not truly 24/7, untick "Open 24 hours" and enter real hours. The live status, contact page and Google data all use them.
 - **Google reviews:** Google requires its logo next to reviews shown without a map. Upload the official logo from Google's brand resources and paste its URL in Bookings → Settings → Google reviews.
 - **Driver profiles and partner logos:** only tick "show" once you have the person's or organisation's permission.
 - **Terms and Accessibility pages:** replace every **[CONFIRM]** note with your real policy, have the terms checked, then publish. Customers only have to accept the terms once that page is published.

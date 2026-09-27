@@ -12,8 +12,8 @@ if ( count( $destinations ) < 3 ) {
 ?>
 <section class="section section--destinations" aria-labelledby="dest-title">
 	<div class="container">
-		<h2 id="dest-title" class="section__title"><?php esc_html_e( 'Where our passengers go', 'taxi-peninsula' ); ?></h2>
-		<p class="section__lead"><?php esc_html_e( 'Our most-booked destinations this year. Tap one to book a trip there.', 'taxi-peninsula' ); ?></p>
+		<h2 id="dest-title" class="section__title"><?php echo esc_html( $args['title'] ?? __( 'Where our passengers go', 'taxi-peninsula' ) ); ?></h2>
+		<p class="section__lead"><?php echo esc_html( $args['text'] ?? __( 'Our most-booked destinations this year. Tap one to book a trip there.', 'taxi-peninsula' ) ); ?></p>
 		<ul class="destinations">
 			<?php foreach ( $destinations as $d ) : ?>
 				<li class="destination">

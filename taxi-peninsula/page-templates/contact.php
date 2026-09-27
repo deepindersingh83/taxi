@@ -22,6 +22,11 @@ while ( have_posts() ) :
 	);
 	?>
 	<div class="container section">
+		<?php
+		if ( ! has_shortcode( get_the_content(), 'tp_contact_chooser' ) ) {
+			echo tp_contact_chooser(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in the shortcode.
+		}
+		?>
 		<?php if ( '' !== trim( get_the_content() ) ) : ?>
 			<div class="entry-content page-content"><?php the_content(); ?></div>
 		<?php endif; ?>

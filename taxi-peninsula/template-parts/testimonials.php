@@ -28,7 +28,7 @@ if ( ! $items && ! $greview && '' === $rating ) {
 <section class="section section--reviews" aria-labelledby="reviews-title">
 	<div class="container">
 		<div class="section__head">
-			<h2 id="reviews-title" class="section__title"><?php esc_html_e( 'What our passengers say', 'taxi-peninsula' ); ?></h2>
+			<h2 id="reviews-title" class="section__title"><?php echo esc_html( $args['title'] ?? __( 'What our passengers say', 'taxi-peninsula' ) ); ?></h2>
 			<?php if ( '' !== $rating ) : ?>
 				<?php if ( $gurl ) : ?>
 					<a class="google-rating" href="<?php echo esc_url( $gurl ); ?>" target="_blank" rel="noopener">

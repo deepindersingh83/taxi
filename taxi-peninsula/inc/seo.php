@@ -147,6 +147,8 @@ function tp_business_schema() {
 	if ( $logo ) {
 		$node['logo'] = wp_get_attachment_image_url( $logo, 'full' );
 	}
+	$node = apply_filters( 'tp_business_schema', $node );
+
 	$same_as = array_values( array_filter( array( tp_setting( 'gbp_url' ), tp_setting( 'google_reviews_url' ) ) ) );
 	if ( $same_as ) {
 		$node['sameAs'] = array_values( array_unique( $same_as ) );

@@ -20,7 +20,7 @@ function tp_faq_schema_items( $add = null ) {
 
 add_shortcode( 'tp_faq', 'tp_faq_shortcode' );
 function tp_faq_shortcode( $atts ) {
-	$atts  = shortcode_atts( array( 'topic' => '', 'limit' => -1, 'search' => 'yes' ), $atts, 'tp_faq' );
+	$atts  = shortcode_atts( array( 'topic' => '', 'limit' => -1, 'search' => 'yes', 'featured' => '' ), $atts, 'tp_faq' );
 	$query = array(
 		'post_type'   => 'tp_faq',
 		'numberposts' => (int) $atts['limit'],
@@ -31,7 +31,19 @@ function tp_faq_shortcode( $atts ) {
 			array( 'taxonomy' => 'tp_faq_topic', 'field' => 'slug', 'terms' => sanitize_title( $atts['topic'] ) ),
 		);
 	}
-	$faqs = get_posts( $query );
+	if ( 'yes' === $atts['featured'] ) {
+		// Questions ticked "Show on home page" first; top up with the rest in order.
+		$featured = get_posts( array_merge( $query, array( 'meta_key' => '_tp_featured', 'meta_value' => '1' ) ) );
+		$limit    = (int) $atts['limit'] > 0 ? (int) $atts['limit'] : 4;
+		if ( count( $featured ) < $limit ) {
+			$more     = get_posts( array_merge( $query, array( 'numberposts' => $limit - count( $featured ), 'post__not_in' => wp_list_pluck( $featured, 'ID' ) ) ) );
+			$featured = array_merge( $featured, $more );
+		}
+		$faqs = array_slice( $featured, 0, $limit );
+		$atts['topic'] = 'single'; // One flat list, no topic headings.
+	} else {
+		$faqs = get_posts( $query );
+	}
 	if ( ! $faqs ) {
 		return '';
 	}
@@ -230,7 +242,7 @@ add_shortcode( 'tp_contact_details', static function () {
 		<ul class="icon-list">
 			<li><?php tp_the_icon( 'mail' ); ?><a href="<?php echo esc_attr( tp_email_href() ); ?>"><?php echo esc_html( antispambot( tp_opt( 'email' ) ) ); ?></a></li>
 			<li><?php tp_the_icon( 'pin' ); ?><span><?php echo esc_html( tp_opt( 'location' ) ); ?></span></li>
-			<li><?php tp_the_icon( 'clock' ); ?><span><?php echo esc_html( tp_opt( 'hours' ) ); ?></span></li>
+			<li><?php tp_the_icon( 'clock' ); ?><?php tp_the_hours_badge(); ?></li>
 		</ul>
 	</div>
 	<?php

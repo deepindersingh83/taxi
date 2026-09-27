@@ -14,8 +14,22 @@ function tp_contact_topics() {
 		__( 'Quote for a trip', 'taxi-peninsula' ),
 		__( 'NDIS / aged-care account', 'taxi-peninsula' ),
 		__( 'Feedback', 'taxi-peninsula' ),
+		__( 'Complaint', 'taxi-peninsula' ),
 		__( 'Lost property', 'taxi-peninsula' ),
 	);
+}
+
+/**
+ * Topic chosen via ?topic=lost-property (from the "Best way to reach us" chooser).
+ */
+function tp_contact_topic_from_url() {
+	$want = isset( $_GET['topic'] ) ? sanitize_title( wp_unslash( $_GET['topic'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	foreach ( tp_contact_topics() as $topic ) {
+		if ( $want && sanitize_title( $topic ) === $want ) {
+			return $topic;
+		}
+	}
+	return '';
 }
 
 add_shortcode( 'tp_contact_form', 'tp_contact_shortcode' );
@@ -80,9 +94,13 @@ function tp_contact_shortcode() {
 								<label for="ct-topic"><?php esc_html_e( 'Topic', 'taxi-peninsula' ); ?></label>
 								<select id="ct-topic" name="topic">
 									<?php foreach ( tp_contact_topics() as $topic ) : ?>
-										<option <?php selected( $val( 'topic' ), $topic ); ?>><?php echo esc_html( $topic ); ?></option>
+										<option <?php selected( $val( 'topic' ) ?: tp_contact_topic_from_url(), $topic ); ?>><?php echo esc_html( $topic ); ?></option>
 									<?php endforeach; ?>
 								</select>
+								<?php $complaints = tp_page_url_by_template( 'complaints' ); ?>
+								<?php if ( $complaints ) : ?>
+									<p class="field__hint"><?php printf( /* translators: %s: link */ esc_html__( 'Making a complaint? See %s.', 'taxi-peninsula' ), '<a href="' . esc_url( $complaints ) . '">' . esc_html__( 'how we handle complaints', 'taxi-peninsula' ) . '</a>' ); ?></p>
+								<?php endif; ?>
 							</div>
 							<div class="field field--wide">
 								<label for="ct-message"><?php esc_html_e( 'Message', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
@@ -102,8 +120,12 @@ function tp_contact_shortcode() {
 				<ul class="icon-list">
 					<li><?php tp_the_icon( 'mail' ); ?><a href="<?php echo esc_attr( tp_email_href() ); ?>"><?php echo esc_html( antispambot( tp_opt( 'email' ) ) ); ?></a></li>
 					<li><?php tp_the_icon( 'pin' ); ?><span><?php echo esc_html( tp_opt( 'location' ) ); ?></span></li>
-					<li><?php tp_the_icon( 'clock' ); ?><span><?php echo esc_html( tp_opt( 'hours' ) ); ?></span></li>
+					<li><?php tp_the_icon( 'clock' ); ?><?php tp_the_hours_badge(); ?></li>
 				</ul>
+				<?php if ( tp_hours_enabled() ) : ?>
+					<?php echo tp_hours_table(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper. ?>
+					<p class="hours-note" data-hours-closed-note hidden><?php echo esc_html( get_theme_mod( 'tp_hours_closed_note', __( 'Book online any time — we will confirm when we open.', 'taxi-peninsula' ) ) ); ?></p>
+				<?php endif; ?>
 				<a class="btn btn--accent" href="<?php echo esc_url( tp_booking_page_url() ); ?>"><?php esc_html_e( 'Book online', 'taxi-peninsula' ); ?></a>
 			</aside>
 		</div>
@@ -182,6 +204,8 @@ function tp_handle_contact() {
 		tp_mail_headers( $email )
 	);
 
+	tp_contact_auto_reply( $name, $email, $topic, $message );
+
 	wp_safe_redirect( add_query_arg( 'sent', 1, $return ) . '#contact' );
 	exit;
 }
@@ -216,3 +240,80 @@ add_action( 'admin_menu', static function () {
 		}
 	}
 }, 99 );
+
+/**
+ * Acknowledge every enquiry so people know it arrived (and how complaints are handled).
+ */
+function tp_contact_auto_reply( $name, $email, $topic, $message ) {
+	if ( ! is_email( $email ) ) {
+		return;
+	}
+	$site  = wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );
+	$reply = trim( (string) get_theme_mod( 'tp_reply_time', '' ) );
+	/* translators: %s: name */
+	$body  = sprintf( __( 'Hi %s,', 'taxi-peninsula' ), $name ) . "\n\n";
+	$body .= __( 'Thanks for getting in touch — we have received your message.', 'taxi-peninsula' );
+	if ( $reply ) {
+		/* translators: %s: response time, e.g. "within one business day" */
+		$body .= ' ' . sprintf( __( 'We aim to reply %s.', 'taxi-peninsula' ), $reply );
+	}
+	$body .= "\n\n";
+	if ( __( 'Complaint', 'taxi-peninsula' ) === $topic ) {
+		$complaints = tp_page_url_by_template( 'complaints' );
+		$body      .= __( 'We take every complaint seriously and will keep you updated until it is resolved.', 'taxi-peninsula' ) . "\n";
+		if ( $complaints ) {
+			$body .= __( 'How we handle complaints:', 'taxi-peninsula' ) . ' ' . $complaints . "\n";
+		}
+		$body .= "\n";
+	}
+	/* translators: %s: phone */
+	$body .= sprintf( __( 'If it is urgent, please call %s.', 'taxi-peninsula' ), tp_opt( 'phone_display' ) ) . "\n\n";
+	$body .= __( 'Your message:', 'taxi-peninsula' ) . "\n" . $topic . "\n" . $message . "\n\n" . $site . "\n";
+	wp_mail(
+		$email,
+		/* translators: %s: site name */
+		sprintf( __( 'We received your message — %s', 'taxi-peninsula' ), $site ),
+		$body,
+		tp_mail_headers( tp_opt( 'email' ) )
+	);
+}
+
+/**
+ * "Best way to reach us" chooser: sends people to the right place first time.
+ */
+add_shortcode( 'tp_contact_chooser', 'tp_contact_chooser' );
+function tp_contact_chooser() {
+	$contact = tp_page_url_by_template( 'contact', home_url( '/' ) );
+	$form    = static function ( $topic ) use ( $contact ) {
+		return add_query_arg( 'topic', sanitize_title( $topic ), $contact ) . '#contact';
+	};
+	$items = array(
+		array( 'calendar', __( 'Book a trip', 'taxi-peninsula' ), __( 'Online in two minutes, or call us.', 'taxi-peninsula' ), tp_booking_page_url() ),
+		array( 'clock', __( 'Change or cancel a booking', 'taxi-peninsula' ), __( 'Use your reference and mobile number.', 'taxi-peninsula' ), tp_page_url_by_template( 'lookup', $form( __( 'General question', 'taxi-peninsula' ) ) ) ),
+		array( 'users', __( 'NDIS or aged-care account', 'taxi-peninsula' ), __( 'Regular trips and invoicing.', 'taxi-peninsula' ), tp_page_url_by_template( 'ndis', $form( __( 'NDIS / aged-care account', 'taxi-peninsula' ) ) ) ),
+		array( 'message', __( 'Feedback or a complaint', 'taxi-peninsula' ), __( 'Tell us what went well — or what did not.', 'taxi-peninsula' ), tp_page_url_by_template( 'complaints', $form( __( 'Complaint', 'taxi-peninsula' ) ) ) ),
+		array( 'search', __( 'Lost property', 'taxi-peninsula' ), __( 'Left something in a taxi? Tell us your trip details.', 'taxi-peninsula' ), $form( __( 'Lost property', 'taxi-peninsula' ) ) ),
+	);
+	$careers = tp_page_url_by_template( 'careers' );
+	if ( $careers ) {
+		$items[] = array( 'wheelchair', __( 'Drive with us', 'taxi-peninsula' ), __( 'Jobs for patient, reliable drivers.', 'taxi-peninsula' ), $careers );
+	}
+	ob_start();
+	?>
+	<nav class="tp-component chooser" aria-labelledby="chooser-title">
+		<h2 id="chooser-title" class="chooser__title"><?php esc_html_e( 'What can we help with?', 'taxi-peninsula' ); ?></h2>
+		<ul class="chooser__list">
+			<?php foreach ( $items as $it ) : ?>
+				<li class="chooser__item">
+					<a class="chooser__link" href="<?php echo esc_url( $it[3] ); ?>">
+						<span class="chooser__icon"><?php tp_the_icon( $it[0] ); ?></span>
+						<span class="chooser__text"><strong><?php echo esc_html( $it[1] ); ?></strong><span><?php echo esc_html( $it[2] ); ?></span></span>
+						<?php tp_the_icon( 'arrow', 'chooser__arrow' ); ?>
+					</a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+	</nav>
+	<?php
+	return ob_get_clean();
+}

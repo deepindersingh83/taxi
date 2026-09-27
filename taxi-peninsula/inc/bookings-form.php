@@ -49,12 +49,19 @@ function tp_render_booking_form() {
 			$state = $stored;
 		}
 	} else {
-		// Prefill from links such as area pages: ?pickup=Frankston.
+		// Prefill from links and the hero quick-book bar: ?pickup=…&dropoff=…&date=YYYY-MM-DD.
 		foreach ( array( 'pickup', 'dropoff' ) as $prefill ) {
 			if ( ! empty( $_GET[ $prefill ] ) ) {
 				$state['old'][ $prefill ] = sanitize_text_field( wp_unslash( $_GET[ $prefill ] ) );
 			}
 		}
+		foreach ( array( 'date' => '/^\d{4}-\d{2}-\d{2}$/', 'time' => '/^\d{2}:\d{2}$/' ) as $prefill => $pattern ) {
+			$v = isset( $_GET[ $prefill ] ) ? sanitize_text_field( wp_unslash( $_GET[ $prefill ] ) ) : '';
+			if ( preg_match( $pattern, $v ) ) {
+				$state['old'][ $prefill ] = $v;
+			}
+		}
+		$state['quickbook'] = ! empty( $_GET['pickup'] ) || ! empty( $_GET['dropoff'] );
 		if ( isset( $_GET['payment'] ) ) {
 			$state['old']['payment'] = sanitize_key( wp_unslash( $_GET['payment'] ) );
 		}

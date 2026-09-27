@@ -42,6 +42,7 @@ function tp_customize_register( WP_Customize_Manager $wp_customize ) {
 		'hero_title'      => array( 'tp_hero', __( 'Headline', 'taxi-peninsula' ), 'text', 'sanitize_text_field' ),
 		'hero_text'       => array( 'tp_hero', __( 'Intro text', 'taxi-peninsula' ), 'textarea', 'sanitize_textarea_field' ),
 		'service_areas'   => array( 'tp_bookings', __( 'Service areas (one per line). Add other names and postcodes after "|", e.g. Frankston | Frankston South | 3199', 'taxi-peninsula' ), 'textarea', 'sanitize_textarea_field' ),
+		'reply_time'      => array( 'tp_contact', __( 'Enquiry reply time for the auto-reply email (e.g. "within one business day"). Leave empty to not promise a time.', 'taxi-peninsula' ), 'text', 'sanitize_text_field' ),
 		'sms_number'      => array( 'tp_contact', __( 'Mobile for "Message us" by SMS (+61 format)', 'taxi-peninsula' ), 'text', 'sanitize_text_field' ),
 		'whatsapp_number' => array( 'tp_contact', __( 'WhatsApp number (+61 format, leave empty to hide)', 'taxi-peninsula' ), 'text', 'sanitize_text_field' ),
 		'since_year'      => array( 'tp_dynamic', __( 'Year you started (e.g. 2019) — shown as "since 2019"', 'taxi-peninsula' ), 'number', 'absint' ),

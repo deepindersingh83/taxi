@@ -22,7 +22,7 @@
 				<li><?php tp_the_icon( 'phone' ); ?><a href="<?php echo esc_url( tp_phone_href() ); ?>"><?php echo esc_html( tp_opt( 'phone_display' ) ); ?></a></li>
 				<li><?php tp_the_icon( 'mail' ); ?><a href="<?php echo esc_attr( tp_email_href() ); ?>"><?php echo esc_html( antispambot( tp_opt( 'email' ) ) ); ?></a></li>
 				<li><?php tp_the_icon( 'pin' ); ?><span><?php echo esc_html( tp_opt( 'location' ) ); ?></span></li>
-				<li><?php tp_the_icon( 'clock' ); ?><span><?php echo esc_html( tp_opt( 'hours' ) ); ?></span></li>
+				<li><?php tp_the_icon( 'clock' ); ?><?php tp_the_hours_badge(); ?></li>
 			</ul>
 		</div>
 

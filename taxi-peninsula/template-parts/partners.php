@@ -12,7 +12,7 @@ if ( ! $partners ) {
 ?>
 <section class="section section--partners" aria-labelledby="partners-title">
 	<div class="container">
-		<h2 id="partners-title" class="partners__title"><?php esc_html_e( 'Trusted by local organisations', 'taxi-peninsula' ); ?></h2>
+		<h2 id="partners-title" class="partners__title"><?php echo esc_html( $args['title'] ?? __( 'Trusted by local organisations', 'taxi-peninsula' ) ); ?></h2>
 		<ul class="partners">
 			<?php foreach ( $partners as $p ) : ?>
 				<?php $url = get_post_meta( $p->ID, '_tp_url', true ); ?>

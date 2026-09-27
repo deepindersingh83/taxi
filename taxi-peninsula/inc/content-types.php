@@ -184,6 +184,9 @@ function tp_content_fields() {
 			'local'     => array( __( 'Local travel notes', 'taxi-peninsula' ), 'textarea', __( 'A paragraph only a local would write: parking and drop-off points, accessible entrances, typical travel times to the city or airport.', 'taxi-peninsula' ) ),
 			'local_faq' => array( __( 'Local questions (optional)', 'taxi-peninsula' ), 'textarea', __( 'First line is the question, following lines the answer. Leave a blank line between questions.', 'taxi-peninsula' ) ),
 		),
+		'tp_faq'         => array(
+			'featured' => array( __( 'Show on the home page (top questions strip)', 'taxi-peninsula' ), 'checkbox', '' ),
+		),
 		'tp_testimonial' => array(
 			'rating' => array( __( 'Stars (1–5)', 'taxi-peninsula' ), 'number', '' ),
 			'detail' => array( __( 'Detail shown under the name', 'taxi-peninsula' ), 'text', __( 'e.g. Rosebud · regular dialysis trips', 'taxi-peninsula' ) ),
@@ -205,6 +208,10 @@ function tp_render_content_box( WP_Post $post ) {
 		$id    = 'tp_meta_' . $key;
 		$value = get_post_meta( $post->ID, '_tp_' . $key, true );
 		$wide  = 'textarea' === $f[1] ? ' tp-admin-grid__wide' : '';
+		if ( 'checkbox' === $f[1] ) {
+			printf( '<p class="tp-admin-field tp-admin-grid__wide"><label><input type="checkbox" id="%1$s" name="tp_meta[%2$s]" value="1"%3$s> %4$s</label></p>', esc_attr( $id ), esc_attr( $key ), checked( $value, '1', false ), esc_html( $f[0] ) );
+			continue;
+		}
 		echo '<p class="tp-admin-field' . esc_attr( $wide ) . '"><label for="' . esc_attr( $id ) . '">' . esc_html( $f[0] ) . '</label>';
 		if ( 'select' === $f[1] ) {
 			printf( '<select id="%s" name="tp_meta[%s]">', esc_attr( $id ), esc_attr( $key ) );
@@ -245,6 +252,9 @@ function tp_save_content_meta( $post_id, WP_Post $post ) {
 	foreach ( $fields[ $post->post_type ] as $key => $f ) {
 		$raw = $input[ $key ] ?? '';
 		switch ( $f[1] ) {
+			case 'checkbox':
+				$val = empty( $raw ) ? '' : '1';
+				break;
 			case 'select':
 				$val = isset( $f[2][ $raw ] ) ? $raw : '';
 				break;

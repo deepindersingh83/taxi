@@ -598,6 +598,54 @@
 		el.insertAdjacentElement('afterend', btn);
 	});
 
+	/* Arriving from the hero quick-book bar: go to the form and focus the first empty field. */
+	var qbForm = document.querySelector('form[data-from-quickbook]');
+	if (qbForm && !document.querySelector('[data-focus]')) {
+		var firstEmpty = Array.prototype.find.call(qbForm.querySelectorAll('input[required], select[required]'), function (el) {
+			return el.offsetParent !== null && el.type !== 'checkbox' && !el.value;
+		});
+		if (firstEmpty) {
+			firstEmpty.scrollIntoView({ block: 'center' });
+			firstEmpty.focus({ preventScroll: true });
+		}
+	}
+
+	/* Live "Open now / Closed" status in the business's timezone. */
+	function shortTime(hhmm) {
+		var p = hhmm.split(':'), h = +p[0] % 24, m = +p[1];
+		return ((h % 12) || 12) + (m ? ':' + (m < 10 ? '0' : '') + m : '') + (h < 12 ? 'am' : 'pm');
+	}
+	document.querySelectorAll('[data-hours]').forEach(function (el) {
+		var sched, days;
+		try { sched = JSON.parse(el.getAttribute('data-hours')); days = JSON.parse(el.getAttribute('data-days')); } catch (e) { return; }
+		var tz = el.getAttribute('data-tz') || undefined;
+		var fmt = new Intl.DateTimeFormat('en-GB', { weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false, timeZone: tz });
+		var parts = {};
+		fmt.formatToParts(new Date()).forEach(function (p) { parts[p.type] = p.value; });
+		var dow = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].indexOf(parts.weekday) + 1;
+		var time = (parts.hour === '24' ? '00' : parts.hour) + ':' + parts.minute;
+		var today = sched[dow], open = !!(today && time >= today[0] && time < today[1]), text;
+		if (open) {
+			text = (tpI18n.openUntil || 'Open now · phones answered until %s').replace('%s', shortTime(today[1]));
+		} else {
+			text = tpI18n.closed || 'Closed now';
+			for (var i = 0; i < 8; i++) {
+				var d = ((dow - 1 + i) % 7) + 1, r = sched[d];
+				if (!r || (i === 0 && time >= r[0])) { continue; }
+				var when = i === 0 ? (tpI18n.openAt || 'we open at %s').replace('%s', shortTime(r[0]))
+					: i === 1 ? (tpI18n.openTomorrow || 'we open tomorrow at %s').replace('%s', shortTime(r[0]))
+					: (tpI18n.openDay || 'we open %1$s at %2$s').replace('%1$s', days[d % 7]).replace('%2$s', shortTime(r[0]));
+				text = (tpI18n.closedWhen || 'Closed now · %s').replace('%s', when);
+				break;
+			}
+		}
+		el.classList.toggle('is-open', open);
+		el.classList.toggle('is-closed', !open);
+		var t = el.querySelector('.hours-status__text');
+		if (t) { t.textContent = text; }
+		document.querySelectorAll('[data-hours-closed-note]').forEach(function (n) { n.hidden = open; });
+	});
+
 	/* Move focus to server-rendered errors / success so screen readers announce them. */
 	var focusTarget = document.querySelector('[data-focus]');
 	if (focusTarget) {

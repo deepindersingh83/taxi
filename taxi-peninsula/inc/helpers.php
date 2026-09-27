@@ -32,6 +32,7 @@ function tp_defaults() {
 		'stats_min'       => 250,
 		'hero_moments'    => "04:00-08:59 | Early flight or appointment? Book your pick-up the night before.\n09:00-14:59 | Heading to an appointment? We can have you there on time.\n15:00-18:59 | Home from the hospital? Book a pick-up in two minutes.\n19:00-03:59 | Planning tomorrow's trips? Book tonight so we can confirm early.",
 		'sms_number'      => '+61468323211',
+		'reply_time'      => '',
 		'whatsapp_number' => '',
 		'video_title'     => 'How we secure your wheelchair',
 		'video_url'       => '',

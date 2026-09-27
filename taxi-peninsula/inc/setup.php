@@ -100,6 +100,17 @@ function tp_enqueue() {
 				'faqCount' => __( '%d matching questions', 'taxi-peninsula' ),
 				'close'    => __( 'Close', 'taxi-peninsula' ),
 				'more'     => __( 'Read more', 'taxi-peninsula' ),
+				/* translators: %s: closing time */
+				'openUntil'    => __( 'Open now · phones answered until %s', 'taxi-peninsula' ),
+				'closed'       => __( 'Closed now', 'taxi-peninsula' ),
+				/* translators: %s: when we open */
+				'closedWhen'   => __( 'Closed now · %s', 'taxi-peninsula' ),
+				/* translators: %s: time */
+				'openAt'       => __( 'we open at %s', 'taxi-peninsula' ),
+				/* translators: %s: time */
+				'openTomorrow' => __( 'we open tomorrow at %s', 'taxi-peninsula' ),
+				/* translators: 1: weekday, 2: time */
+				'openDay'      => __( 'we open %1$s at %2$s', 'taxi-peninsula' ),
 				'less'     => __( 'Show less', 'taxi-peninsula' ),
 				'prev'     => __( 'Previous photo', 'taxi-peninsula' ),
 				'next'     => __( 'Next photo', 'taxi-peninsula' ),

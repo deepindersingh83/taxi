@@ -31,7 +31,7 @@
 			<?php if ( $tp_lookup ) : ?>
 				<li><a href="<?php echo esc_url( $tp_lookup ); ?>"><?php tp_the_icon( 'calendar' ); ?><span><?php esc_html_e( 'Manage my booking', 'taxi-peninsula' ); ?></span></a></li>
 			<?php endif; ?>
-			<li class="topbar__hours"><?php tp_the_icon( 'clock' ); ?><span><?php echo esc_html( tp_opt( 'hours' ) ); ?></span></li>
+			<li class="topbar__hours"><?php tp_the_icon( 'clock' ); ?><?php tp_the_hours_badge(); ?></li>
 		</ul>
 		<div class="a11y-tools" role="group" aria-label="<?php esc_attr_e( 'Display options', 'taxi-peninsula' ); ?>">
 			<span class="a11y-tools__label"><?php tp_the_icon( 'text' ); ?><span><?php esc_html_e( 'Text size', 'taxi-peninsula' ); ?></span></span>

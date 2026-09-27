@@ -74,6 +74,12 @@ function tp_starter_pages() {
 			'pattern'  => 'page-careers',
 			'status'   => 'draft',
 		),
+		'complaints'    => array(
+			'title'    => __( 'Complaints & Feedback', 'taxi-peninsula' ),
+			'template' => 'page-templates/policy.php',
+			'pattern'  => 'page-complaints',
+			'status'   => 'draft',
+		),
 		'accessibility' => array(
 			'title'    => __( 'Accessibility Statement', 'taxi-peninsula' ),
 			'template' => 'page-templates/policy.php',
@@ -155,7 +161,7 @@ function tp_render_setup_page() {
 		<p><?php esc_html_e( 'Create the pages and example content this theme needs in one click. Anything that already exists is left alone.', 'taxi-peninsula' ); ?></p>
 		<ul class="ul-disc">
 			<li><?php esc_html_e( 'Pages: Book a Taxi, Manage My Booking, Our Fleet, FAQ, NDIS & Aged Care, Contact Us, Driver Jobs, About Us and Our Services', 'taxi-peninsula' ); ?></li>
-			<li><?php esc_html_e( 'Draft Terms & Cancellation Policy, Accessibility Statement and Drive With Us pages with [CONFIRM] notes for your real policies', 'taxi-peninsula' ); ?></li>
+			<li><?php esc_html_e( 'Draft Terms & Cancellation Policy, Complaints & Feedback, Accessibility Statement and Drive With Us pages with [CONFIRM] notes for your real policies', 'taxi-peninsula' ); ?></li>
 			<li><?php esc_html_e( 'Three draft blog posts with writing outlines', 'taxi-peninsula' ); ?></li>
 			<li><?php esc_html_e( 'Frequently asked questions, grouped by topic', 'taxi-peninsula' ); ?></li>
 			<li><?php esc_html_e( 'Service pages (airport, medical, NDIS…) and one page per service area', 'taxi-peninsula' ); ?></li>
@@ -442,6 +448,7 @@ function tp_create_starter_menus( array $pages ) {
 			$page_item( $menu_id, 'faq', 4 );
 			$page_item( $menu_id, 'contact', 5 );
 			$page_item( $menu_id, 'terms', 7 );
+			$page_item( $menu_id, 'complaints', 8 );
 			$page_item( $menu_id, 'accessibility', 8 );
 			$privacy = (int) get_option( 'wp_page_for_privacy_policy' );
 			if ( $privacy && 'publish' === get_post_status( $privacy ) ) {
