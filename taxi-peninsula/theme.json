@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"layout": { "contentSize": "44rem", "wideSize": "60rem" },
+		"color": {
+			"defaultPalette": false,
+			"palette": [
+				{ "slug": "primary", "name": "Navy", "color": "#0b2a5b" },
+				{ "slug": "accent", "name": "Taxi yellow", "color": "#ffc72c" },
+				{ "slug": "link", "name": "Link blue", "color": "#0a57c2" },
+				{ "slug": "text", "name": "Text", "color": "#16213a" },
+				{ "slug": "muted", "name": "Muted", "color": "#4a5670" },
+				{ "slug": "surface-alt", "name": "Light blue-grey", "color": "#f3f6fb" },
+				{ "slug": "white", "name": "White", "color": "#ffffff" }
+			]
+		},
+		"typography": {
+			"fluid": true,
+			"defaultFontSizes": false,
+			"fontFamilies": [
+				{
+					"slug": "hyperlegible",
+					"name": "Atkinson Hyperlegible",
+					"fontFamily": "\"Atkinson Hyperlegible\", system-ui, sans-serif"
+				}
+			],
+			"fontSizes": [
+				{ "slug": "small", "name": "Small", "size": "1rem", "fluid": { "min": "0.9rem", "max": "1rem" } },
+				{ "slug": "medium", "name": "Medium", "size": "1.25rem", "fluid": { "min": "1.0625rem", "max": "1.25rem" } },
+				{ "slug": "large", "name": "Large", "size": "1.6rem", "fluid": { "min": "1.25rem", "max": "1.6rem" } },
+				{ "slug": "x-large", "name": "Extra large", "size": "2.65rem", "fluid": { "min": "1.8rem", "max": "2.65rem" } },
+				{ "slug": "huge", "name": "Huge", "size": "3.4rem", "fluid": { "min": "2.15rem", "max": "3.4rem" } }
+			]
+		}
+	}
+}

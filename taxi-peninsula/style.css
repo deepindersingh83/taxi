@@ -1,0 +1,16 @@
+/*
+Theme Name: Taxi Peninsula
+Theme URI: https://taxipeninsula.com.au
+Author: Taxi Peninsula
+Description: Accessible, wheelchair-taxi booking theme for Melbourne. Includes an online booking form, a Bookings manager in wp-admin (statuses, filters, CSV export, email notifications), a Booking Manager user role, and fluid "dynamic type" with on-page text-size and high-contrast controls.
+Version: 1.0.0
+Requires at least: 6.2
+Tested up to: 7.1
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: taxi-peninsula
+Tags: accessibility-ready, custom-colors, custom-menu, custom-logo, featured-images, blog, one-column, two-columns, translation-ready
+*/
+
+/* The theme's styles live in assets/css/main.css. */

@@ -1,0 +1,33 @@
+/* Taxi Peninsula — wp-admin styles for the Bookings screens. */
+
+.tp-badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-weight: 600; font-size: 12px; line-height: 20px; white-space: nowrap; }
+.tp-badge--pending { background: #fff4ce; color: #6b4e00; }
+.tp-badge--confirmed { background: #dbeafe; color: #1e3a8a; }
+.tp-badge--assigned { background: #ede9fe; color: #4c1d95; }
+.tp-badge--completed { background: #dcfce7; color: #14532d; }
+.tp-badge--cancelled { background: #fee2e2; color: #7f1d1d; }
+.tp-tag { display: inline-block; padding: 0 6px; border-radius: 4px; background: #0b2a5b; color: #fff; font-weight: 600; }
+
+.post-type-tp_booking .column-tp_status { width: 9rem; }
+.post-type-tp_booking .column-tp_pickup { width: 11rem; }
+.post-type-tp_booking .column-date { width: 9rem; }
+.post-type-tp_booking .tablenav input[type="date"] { vertical-align: middle; }
+
+.tp-admin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 16px; }
+.tp-admin-grid__wide { grid-column: 1 / -1; }
+.tp-admin-field label { display: block; font-weight: 600; margin-bottom: 4px; }
+.tp-admin-field input:not([type="checkbox"]), .tp-admin-field select, .tp-admin-field textarea { width: 100%; }
+.tp-admin-field label:has(input[type="checkbox"]) { font-weight: 400; margin-top: 24px; }
+
+.tp-ref { font-size: 20px; font-weight: 700; letter-spacing: .05em; margin: 0 0 8px; }
+.tp-status-actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.tp-status-actions .submitdelete { color: #b32d2e; }
+
+.tp-log { margin: 0; }
+.tp-log li { border-left: 3px solid #dcdcde; padding-left: 8px; margin-bottom: 10px; }
+.tp-log .dashicons { font-size: 16px; width: 16px; height: 16px; color: #2271b1; }
+
+.tp-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 8px; margin: 0 0 12px; }
+.tp-stats a { display: block; padding: 10px; background: #f6f7f7; border-radius: 6px; text-decoration: none; text-align: center; }
+.tp-stats__n { display: block; font-size: 24px; font-weight: 700; color: #0b2a5b; }
+.tp-upcoming li { padding: 6px 0; border-bottom: 1px solid #f0f0f1; }
