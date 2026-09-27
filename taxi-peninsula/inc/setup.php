@@ -179,3 +179,21 @@ add_filter( 'excerpt_length', static function () {
 add_filter( 'excerpt_more', static function () {
 	return '…';
 } );
+
+/**
+ * Hide menu links to pages/posts that aren't published yet (e.g. draft policy
+ * pages created by Setup), so visitors never hit a "not found" page.
+ */
+add_filter( 'wp_nav_menu_objects', static function ( $items ) {
+	return array_values(
+		array_filter(
+			$items,
+			static function ( $item ) {
+				if ( 'post_type' !== $item->type || ! $item->object_id ) {
+					return true;
+				}
+				return 'publish' === get_post_status( (int) $item->object_id ) || current_user_can( 'edit_post', (int) $item->object_id );
+			}
+		)
+	);
+} );
