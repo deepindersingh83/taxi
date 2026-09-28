@@ -28,10 +28,11 @@ $tp_hero_classes = array(
 	'hero--' . $tp_align,
 	'hero--h-' . sanitize_html_class( tp_design( 'hero_height' ) ),
 	$tp_side ? 'hero--with-side' : 'hero--text-only',
+	tp_anim_road_in( 'hero' ) ? 'hero--has-road' : '',
 );
 ?>
 
-<section class="<?php echo esc_attr( implode( ' ', $tp_hero_classes ) ); ?>">
+<section class="<?php echo esc_attr( trim( implode( ' ', $tp_hero_classes ) ) ); ?>">
 	<?php if ( 'photo' === $tp_bg ) : ?>
 		<?php echo wp_get_attachment_image( $hero_image, 'full', false, array( 'class' => 'hero__bg', 'alt' => '', 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => '100vw' ) ); ?>
 	<?php endif; ?>
@@ -78,6 +79,9 @@ $tp_hero_classes = array(
 		</div>
 		<?php endif; ?>
 	</div>
+	<?php if ( tp_anim_road_in( 'hero' ) ) : ?>
+		<?php tp_the_road_strip( 'hero' ); ?>
+	<?php endif; ?>
 </section>
 
 <?php

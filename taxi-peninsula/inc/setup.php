@@ -131,7 +131,7 @@ function tp_enqueue() {
 add_action( 'wp_head', 'tp_prepaint_prefs', 1 );
 function tp_prepaint_prefs() {
 	?>
-	<script>try{var d=document.documentElement,s=localStorage.getItem('tp-text-size'),c=localStorage.getItem('tp-contrast'),t=localStorage.getItem('tp-theme');if(s)d.setAttribute('data-text-size',s);if(c==='high')d.setAttribute('data-contrast','high');if(t==='dark'||t==='light')d.setAttribute('data-theme',t);}catch(e){}</script>
+	<script>try{var d=document.documentElement,s=localStorage.getItem('tp-text-size'),c=localStorage.getItem('tp-contrast'),t=localStorage.getItem('tp-theme');if(s)d.setAttribute('data-text-size',s);if(c==='high')d.setAttribute('data-contrast','high');if(t==='dark'||t==='light')d.setAttribute('data-theme',t);if(localStorage.getItem('tp-motion')==='off')d.setAttribute('data-motion','off');}catch(e){}</script>
 	<?php
 }
 

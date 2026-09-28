@@ -9,7 +9,10 @@
 </main>
 
 <?php $tp_cols = tp_design( 'footer_cols' ); ?>
-<footer class="site-footer">
+<footer class="site-footer<?php echo tp_anim_road_in( 'footer' ) ? ' site-footer--has-road' : ''; ?>">
+	<?php if ( tp_anim_road_in( 'footer' ) ) : ?>
+		<?php tp_the_road_strip( 'footer' ); ?>
+	<?php endif; ?>
 	<div class="container site-footer__grid<?php echo 'auto' !== $tp_cols ? ' site-footer__grid--' . esc_attr( $tp_cols ) : ''; ?>">
 		<div class="site-footer__brand">
 			<?php $tp_flogo = (int) tp_design( 'logo_footer' ); ?>

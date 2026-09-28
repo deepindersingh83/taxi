@@ -477,6 +477,11 @@ function tp_the_display_options( $class = '' ) {
 		<button type="button" class="a11y-btn" data-text-size="xl" aria-pressed="false" aria-label="<?php esc_attr_e( 'Largest text', 'taxi-peninsula' ); ?>">A<sup>++</sup></button>
 		<button type="button" class="a11y-btn a11y-btn--contrast" data-contrast-toggle aria-pressed="false"><?php tp_the_icon( 'contrast' ); ?><span><?php esc_html_e( 'High contrast', 'taxi-peninsula' ); ?></span></button>
 		<button type="button" class="a11y-btn a11y-btn--theme" data-theme-toggle aria-pressed="false"><?php tp_the_icon( 'moon' ); ?><span><?php esc_html_e( 'Dark mode', 'taxi-peninsula' ); ?></span></button>
+		<?php
+		if ( function_exists( 'tp_anim' ) && tp_anim( 'on' ) ) {
+			echo tp_motion_button( 'a11y-btn a11y-btn--motion' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper.
+		}
+		?>
 	</div>
 	<?php
 }

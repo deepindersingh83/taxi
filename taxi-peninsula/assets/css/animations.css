@@ -1,0 +1,224 @@
+/* ==========================================================================
+   Taxi Peninsula — animated taxis and scenes (v1.6)
+   Only transform and opacity are animated, so it stays smooth on phones.
+   Motion stops (and a tidy still picture shows) when:
+   - the visitor's device asks for reduced motion,
+   - the visitor presses "Pause animations" (html[data-motion="off"]),
+   - animations are switched off in the Customizer (body.tp-anim-off).
+   ========================================================================== */
+
+:root {
+	--tp-sky-1: #cfe3fb;
+	--tp-sky-2: #f3f8fe;
+	--tp-cloud: rgb(255 255 255 / .95);
+	--tp-hill: #bbf7d0;
+}
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]):not([data-contrast="high"]) { --tp-sky-1: #0b1a33; --tp-sky-2: #1c2f52; --tp-cloud: rgb(255 255 255 / .18); --tp-hill: #14532d; }
+}
+:root[data-theme="dark"]:not([data-contrast="high"]) { --tp-sky-1: #0b1a33; --tp-sky-2: #1c2f52; --tp-cloud: rgb(255 255 255 / .18); --tp-hill: #14532d; }
+
+.tp-f-accent { fill: var(--c-accent); }
+.tp-f-primary { fill: var(--c-primary); }
+.tp-f-link { fill: var(--c-link); }
+:root[data-theme="dark"] .tp-f-link { fill: #3b82f6; }
+
+/* Still picture when motion is off. */
+@media (prefers-reduced-motion: reduce) {
+	.tp-anim, .tp-anim * { animation: none !important; }
+	.tp-scene__pause, .a11y-btn--motion { display: none !important; }
+}
+html[data-motion="off"] .tp-anim,
+html[data-motion="off"] .tp-anim *,
+.tp-anim-off .tp-anim,
+.tp-anim-off .tp-anim * { animation: none !important; }
+/* Save battery: only animate what is on screen (main.js adds these classes). */
+.tp-io .tp-anim:not(.is-inview),
+.tp-io .tp-anim:not(.is-inview) * { animation-play-state: paused !important; }
+
+/* Pause buttons: the icon shows what pressing will do. */
+.tp-motion-icon--play { display: none; }
+[data-motion-toggle][aria-pressed="true"] .tp-motion-icon--pause { display: none; }
+[data-motion-toggle][aria-pressed="true"] .tp-motion-icon--play { display: inline; }
+
+@keyframes tp-spin { to { transform: rotate(360deg); } }
+@keyframes tp-drift { from { transform: translateX(-24px); } to { transform: translateX(24px); } }
+@keyframes tp-step { from { transform: rotate(-14deg); } to { transform: rotate(14deg); } }
+
+/* --------------------------------------------------------------------------
+   Road strip: taxis driving by (hero, page banners, footer, shortcode)
+   ----------------------------------------------------------------------- */
+
+.tp-road {
+	--road-h: 4.5rem;
+	--lane: 2.1rem;
+	--van-h: 3.4rem;
+	--car-h: 2rem;
+	--road-bg: rgb(0 0 0 / .28);
+	--road-line: rgb(255 255 255 / .55);
+	position: relative; height: var(--road-h); overflow: hidden; pointer-events: none;
+	container-type: inline-size;
+}
+.tp-road::before {
+	content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: var(--lane); background: var(--road-bg);
+}
+.tp-road::after {
+	content: ""; position: absolute; left: 0; right: 0; bottom: calc(var(--lane) / 2 - 1px); height: 2px;
+	background: repeating-linear-gradient(90deg, var(--road-line) 0 1.2rem, transparent 1.2rem 2.2rem);
+}
+.tp-road__v { position: absolute; bottom: .15rem; left: var(--x); width: auto; overflow: visible; z-index: 1; }
+.tp-road__v--van { --x: 14%; height: var(--van-h); z-index: 2; animation: tp-drive 24s linear infinite; animation-delay: -7s; }
+.tp-road__v--car { --x: 62%; height: var(--car-h); z-index: 2; animation: tp-drive 15s linear infinite; animation-delay: -2s; }
+.tp-road__v--far {
+	--x: 80%; height: calc(var(--car-h) * .8); bottom: calc(var(--lane) * .55); opacity: .75;
+	transform: scaleX(-1); animation: tp-drive-back 19s linear infinite; animation-delay: -11s;
+}
+.tp-road .tp-spin { animation: tp-spin .7s linear infinite; }
+.tp-road__v--far .tp-spin { animation-duration: .9s; }
+
+@keyframes tp-drive {
+	from { transform: translateX(calc(-1 * var(--x) - 14rem)); }
+	to { transform: translateX(calc(100cqw - var(--x) + 2rem)); }
+}
+@keyframes tp-drive-back {
+	from { transform: translateX(calc(100cqw - var(--x) + 2rem)) scaleX(-1); }
+	to { transform: translateX(calc(-1 * var(--x) - 12rem)) scaleX(-1); }
+}
+
+/* Hero: the road runs along the bottom edge. */
+.hero--has-road { padding-bottom: calc(var(--space-2xl) + 4.6rem); }
+.hero--has-road.hero--h-short { padding-bottom: calc(var(--space-xl) + 4.6rem); }
+.tp-road--hero { --road-h: 5.2rem; --lane: 2.3rem; --van-h: 4rem; --car-h: 2.35rem; position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; }
+.hero .hero__inner { position: relative; z-index: 2; }
+
+/* Page banners: a slimmer road. */
+.page-header--has-road { position: relative; padding-bottom: calc(var(--space-xl) + 2.6rem); }
+.page-header--image.page-header--has-road { padding-bottom: calc(var(--space-2xl) + 2.6rem); }
+.tp-road--banner { --road-h: 3rem; --lane: 1.35rem; --van-h: 2.3rem; --car-h: 1.35rem; position: absolute; left: 0; right: 0; bottom: 0; }
+.page-header--plain .tp-road--banner { --road-bg: rgb(15 23 42 / .1); --road-line: rgb(15 23 42 / .25); }
+
+/* Footer: road along the top edge. */
+.site-footer--has-road { position: relative; padding-top: calc(var(--space-2xl) + 3rem); }
+.tp-road--footer { position: absolute; left: 0; right: 0; top: 0; --road-bg: rgb(255 255 255 / .07); --road-line: rgb(255 255 255 / .3); }
+
+/* In page content (shortcode). */
+.tp-road--content { --road-bg: #475569; --road-line: rgb(255 255 255 / .7); border-radius: var(--radius); background: linear-gradient(var(--tp-sky-1), var(--tp-sky-2)); }
+
+html[data-contrast="high"] .tp-road { display: none; }
+html[data-contrast="high"] .hero--has-road { padding-bottom: var(--space-2xl); }
+html[data-contrast="high"] .page-header--has-road { padding-bottom: var(--space-xl); }
+html[data-contrast="high"] .site-footer--has-road { padding-top: var(--space-2xl); }
+@media print { .tp-road, .tp-scene__pause { display: none; } }
+
+/* --------------------------------------------------------------------------
+   Scenes
+   ----------------------------------------------------------------------- */
+
+.tp-scene { position: relative; margin: 0 0 var(--space-m); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); background: var(--tp-sky-2); }
+.tp-scene__svg { display: block; width: 100%; height: auto; }
+.tp-scene__pause {
+	position: absolute; right: .6rem; top: .6rem; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; padding: 0;
+	color: #fff; background: rgb(15 23 42 / .72); border: 2px solid rgb(255 255 255 / .6); border-radius: 50%; cursor: pointer;
+}
+.tp-scene__pause:hover { background: rgb(15 23 42 / .92); }
+.tp-scene__pause span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.tp-cloud { animation: tp-drift 9s ease-in-out infinite alternate; }
+.tp-leg { transform-box: fill-box; transform-origin: 50% 0; animation: tp-step .45s ease-in-out infinite alternate; }
+.tp-leg--b { animation-direction: alternate-reverse; }
+.tp-ramp { transform-box: fill-box; transform-origin: 50% 100%; }
+
+/* Doorstep pickup (18s loop). Still picture: van parked, ramp down, passenger at the ramp. */
+.tp-pk-van { transform: translate(300px, 102px); animation: tp-pk-van 18s infinite; }
+.tp-pk-wheel { animation: tp-pk-wheel 18s infinite; }
+.tp-pk-ramp { transform: rotate(-107deg); animation: tp-pk-ramp 18s ease-in-out infinite; }
+.tp-pk-rider { transform: translate(224px, 146px); animation: tp-pk-rider 18s linear infinite; }
+
+@keyframes tp-pk-van {
+	0% { transform: translate(-220px, 102px); animation-timing-function: cubic-bezier(.25, .6, .35, 1); }
+	22%, 62% { transform: translate(300px, 102px); animation-timing-function: cubic-bezier(.55, 0, .85, .45); }
+	82%, 100% { transform: translate(880px, 102px); }
+}
+@keyframes tp-pk-wheel {
+	0% { transform: rotate(0); animation-timing-function: cubic-bezier(.25, .6, .35, 1); }
+	22%, 62% { transform: rotate(900deg); animation-timing-function: cubic-bezier(.55, 0, .85, .45); }
+	82%, 100% { transform: rotate(2300deg); }
+}
+@keyframes tp-pk-ramp {
+	0%, 24% { transform: rotate(0); }
+	30%, 50% { transform: rotate(-107deg); }
+	56%, 100% { transform: rotate(0); }
+}
+@keyframes tp-pk-rider {
+	0% { transform: translate(205px, 146px); opacity: 0; }
+	6% { opacity: 1; }
+	30% { transform: translate(205px, 146px); }
+	36% { transform: translate(224px, 146px); }
+	46% { transform: translate(300px, 133px); }
+	50% { transform: translate(330px, 133px); opacity: 1; }
+	51% { opacity: 0; }
+	52% { transform: translate(330px, 133px); opacity: 0; }
+	100% { transform: translate(205px, 146px); opacity: 0; }
+}
+
+/* Airport (20s loop): drop-off at Departures, plane takes off, maxi taxi pickup at Arrivals.
+   Still picture: van at Arrivals with ramp down, traveller at Departures, plane climbing. */
+.tp-ap-plane { transform: translate(560px, 36px) rotate(-10deg) scale(.8); animation: tp-ap-plane 20s ease-in infinite; }
+.tp-ap-car { transform: translate(900px, 142px); animation: tp-ap-car 20s infinite; }
+.tp-ap-carwheel { animation: tp-ap-carwheel 20s infinite; }
+.tp-ap-walker { transform: translate(697px, 146px); animation: tp-ap-walker 20s linear infinite; }
+.tp-ap-van { transform: translate(470px, 102px); animation: tp-ap-van 20s infinite; }
+.tp-ap-vanwheel { animation: tp-ap-vanwheel 20s infinite; }
+.tp-ap-ramp { transform: rotate(-107deg); animation: tp-ap-ramp 20s ease-in-out infinite; }
+.tp-ap-rider { transform: translate(394px, 146px); animation: tp-ap-rider 20s linear infinite; }
+
+@keyframes tp-ap-plane {
+	0%, 18% { transform: translate(-80px, 150px) rotate(0) scale(.6); opacity: 0; }
+	20% { opacity: 1; }
+	58% { transform: translate(860px, -30px) rotate(-12deg) scale(.95); opacity: 1; }
+	59%, 100% { transform: translate(860px, -30px) rotate(-12deg) scale(.95); opacity: 0; }
+}
+@keyframes tp-ap-car {
+	0% { transform: translate(-180px, 142px); animation-timing-function: cubic-bezier(.25, .6, .35, 1); }
+	16%, 34% { transform: translate(600px, 142px); animation-timing-function: cubic-bezier(.55, 0, .85, .45); }
+	46%, 100% { transform: translate(900px, 142px); }
+}
+@keyframes tp-ap-carwheel {
+	0% { transform: rotate(0); animation-timing-function: cubic-bezier(.25, .6, .35, 1); }
+	16%, 34% { transform: rotate(1500deg); animation-timing-function: cubic-bezier(.55, 0, .85, .45); }
+	46%, 100% { transform: rotate(2100deg); }
+}
+@keyframes tp-ap-walker {
+	0%, 17% { transform: translate(672px, 146px); opacity: 0; }
+	20% { transform: translate(672px, 146px); opacity: 1; }
+	30% { transform: translate(697px, 146px); opacity: 1; }
+	32%, 100% { transform: translate(700px, 146px); opacity: 0; }
+}
+@keyframes tp-ap-van {
+	0%, 44% { transform: translate(-220px, 102px); animation-timing-function: cubic-bezier(.25, .6, .35, 1); }
+	58%, 80% { transform: translate(470px, 102px); animation-timing-function: cubic-bezier(.55, 0, .85, .45); }
+	96%, 100% { transform: translate(880px, 102px); }
+}
+@keyframes tp-ap-vanwheel {
+	0%, 44% { transform: rotate(0); animation-timing-function: cubic-bezier(.25, .6, .35, 1); }
+	58%, 80% { transform: rotate(1100deg); animation-timing-function: cubic-bezier(.55, 0, .85, .45); }
+	96%, 100% { transform: rotate(2000deg); }
+}
+@keyframes tp-ap-ramp {
+	0%, 59% { transform: rotate(0); }
+	64%, 74% { transform: rotate(-107deg); }
+	79%, 100% { transform: rotate(0); }
+}
+@keyframes tp-ap-rider {
+	0%, 60% { transform: translate(372px, 146px); opacity: 0; }
+	63% { transform: translate(376px, 146px); opacity: 1; }
+	66% { transform: translate(394px, 146px); }
+	72% { transform: translate(470px, 133px); opacity: 1; }
+	73% { opacity: 0; }
+	74%, 100% { transform: translate(500px, 133px); opacity: 0; }
+}
+
+/* Home section. */
+.journey { display: grid; gap: var(--space-xl); grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); }
+.journey__title { font-size: var(--step-1); margin-top: var(--space-xs); }
+.journey__item p { color: var(--c-muted); margin-bottom: var(--space-xs); }
+.single-tp_service .tp-scene { margin-bottom: var(--space-l); }

@@ -16,6 +16,7 @@ function tp_home_sections() {
 	return array(
 		'stats'        => array( __( 'Live trust numbers', 'taxi-peninsula' ), '', '' ),
 		'features'     => array( __( 'Why passengers choose us', 'taxi-peninsula' ), __( 'Why passengers choose us', 'taxi-peninsula' ), '' ),
+		'journey'      => array( __( 'How a trip works (animated scenes)', 'taxi-peninsula' ), __( 'From your door to the departure gate', 'taxi-peninsula' ), __( 'We back right up to your door, lower the ramp and help you aboard — and we are waiting at Arrivals when you land.', 'taxi-peninsula' ) ),
 		'who'          => array( __( 'Who we help', 'taxi-peninsula' ), __( 'Who we help', 'taxi-peninsula' ), __( 'Whether you are travelling yourself or arranging transport for someone else, we make it simple.', 'taxi-peninsula' ) ),
 		'book'         => array( __( 'Booking form', 'taxi-peninsula' ), __( 'Book your accessible taxi', 'taxi-peninsula' ), __( 'Tell us where you are going and what you need. We will confirm your booking and let you know when your driver is on the way.', 'taxi-peninsula' ) ),
 		'services'     => array( __( 'Services', 'taxi-peninsula' ), __( 'Our services', 'taxi-peninsula' ), __( 'Reliable wheelchair accessible transport for everyday trips and important appointments.', 'taxi-peninsula' ) ),
@@ -33,7 +34,7 @@ function tp_home_sections() {
 
 /**
  * Current layout as [key => visible bool], in display order. New sections added
- * in theme updates are appended (visible) so they are never silently lost.
+ * in theme updates are shown in their default position so they are never silently lost.
  */
 function tp_home_layout() {
 	$known  = tp_home_sections();
@@ -46,10 +47,14 @@ function tp_home_layout() {
 			$layout[ $key ] = ! $hidden;
 		}
 	}
+	// Sections added in a theme update go right after the section they follow by default.
+	$prev = null;
 	foreach ( array_keys( $known ) as $key ) {
 		if ( ! isset( $layout[ $key ] ) ) {
-			$layout[ $key ] = true;
+			$pos    = null === $prev ? 0 : array_search( $prev, array_keys( $layout ), true ) + 1;
+			$layout = array_slice( $layout, 0, $pos, true ) + array( $key => true ) + array_slice( $layout, $pos, null, true );
 		}
+		$prev = $key;
 	}
 	return $layout;
 }

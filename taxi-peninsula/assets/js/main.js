@@ -62,6 +62,32 @@
 		syncTheme();
 	});
 
+	/* Pause / play all animations (remembered for the visitor). */
+	var motionBtns = document.querySelectorAll('[data-motion-toggle]');
+	var syncMotion = function () {
+		var off = root.getAttribute('data-motion') === 'off';
+		motionBtns.forEach(function (b) { b.setAttribute('aria-pressed', off ? 'true' : 'false'); });
+	};
+	motionBtns.forEach(function (b) {
+		b.addEventListener('click', function () {
+			var off = root.getAttribute('data-motion') !== 'off';
+			if (off) { root.setAttribute('data-motion', 'off'); } else { root.removeAttribute('data-motion'); }
+			store('tp-motion', off ? 'off' : null);
+			syncMotion();
+		});
+	});
+	syncMotion();
+
+	/* Only run animations that are on screen. */
+	var animated = document.querySelectorAll('.tp-anim');
+	if (animated.length && 'IntersectionObserver' in window) {
+		root.classList.add('tp-io');
+		var io = new IntersectionObserver(function (entries) {
+			entries.forEach(function (e) { e.target.classList.toggle('is-inview', e.isIntersecting); });
+		}, { rootMargin: '100px' });
+		animated.forEach(function (el) { io.observe(el); });
+	}
+
 	/* Back to top: appears once the visitor has scrolled a long way. */
 	var toTop = document.querySelector('[data-back-to-top]');
 	if (toTop) {

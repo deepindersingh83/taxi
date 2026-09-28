@@ -24,6 +24,7 @@ while ( have_posts() ) :
 			<?php if ( tp_show_featured_image() ) : ?>
 				<figure class="featured-image"><?php the_post_thumbnail( 'large', array( 'alt' => tp_thumbnail_alt( get_post() ) ) ); ?></figure>
 			<?php endif; ?>
+			<?php tp_the_scene( tp_service_scene_name() ); ?>
 			<div class="prose entry-content"><?php the_content(); ?></div>
 			<p class="cta-inline">
 				<a class="btn btn--accent btn--lg" href="<?php echo esc_url( tp_booking_page_url() ); ?>"><?php esc_html_e( 'Book this trip', 'taxi-peninsula' ); ?> <?php tp_the_icon( 'arrow' ); ?></a>

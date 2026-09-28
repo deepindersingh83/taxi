@@ -225,6 +225,23 @@ Everything is under **Appearance → Customize** and previews before you publish
 - **Blog:** grid or list layout, the sidebar on or off (for the blog and single posts), and posts per page.
 - **Back to top button:** show or hide it.
 
+### Animations (v1.6)
+Lightweight animated illustrations, drawn in SVG and CSS. There are no video files or scripts to download, and they use your chosen colours.
+- **Taxis driving by:** a maxi taxi and taxis drive along a road at the bottom of the home page hero, under every page title banner, and along the top of the footer.
+- **Door-to-door pickup scene:** a maxi taxi pulls up at a house, lowers its rear ramp, and a passenger in a wheelchair rolls aboard before it drives off.
+- **Airport scene:** a taxi drops a traveller at *Departures* while a plane takes off, then a maxi taxi picks up a wheelchair passenger at *Arrivals*.
+- **Where the scenes show:**
+  - the home page section "How a trip works" (move or hide it in *Home page layout*)
+  - every service page (airport services get the airport scene, the rest get the pickup scene)
+  - anywhere you add `[tp_scene name="pickup"]`, `[tp_scene name="airport"]` or `[tp_scene name="road"]`, or the matching block patterns
+- **Accessibility:**
+  - every scene has a text description for screen readers, and the moving roads are hidden from them
+  - a **Pause animations** button (in the display options and on each scene) stops everything and is remembered for that visitor
+  - anyone whose device asks for reduced motion sees still pictures
+  - high contrast mode hides the moving roads
+  - animations only run while they're on screen
+- **Settings** (Customize → Design → *Animations*): turn animations on or off, and choose where the moving road appears (hero, page banners, footer). When animations are off, the scenes show as still pictures.
+
 ## Install
 
 1. Zip the `taxi-peninsula` folder and upload it under **Appearance → Themes → Add New → Upload**. Then activate it.
