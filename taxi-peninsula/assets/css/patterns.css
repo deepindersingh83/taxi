@@ -5,21 +5,21 @@
 
 .tp-hero-block {
 	padding: clamp(3rem, 2rem + 5vw, 6rem) clamp(1rem, 4vw, 3rem);
-	background-image: radial-gradient(60rem 30rem at 110% -10%, rgb(255 199 44 / .25), transparent 60%), linear-gradient(135deg, #0b2a5b 0%, #13408a 100%);
+	background-image: radial-gradient(60rem 30rem at 110% -10%, var(--c-accent-glow, rgb(255 199 44 / .25)), transparent 60%), linear-gradient(135deg, var(--c-primary, #0b2a5b) 0%, var(--c-primary-2, #13408a) 100%);
 }
 .tp-hero-block h1, .tp-hero-block h2 { color: #fff; font-size: clamp(2.5rem, 1.8rem + 3.4vw, 4.3rem); line-height: 1.1; margin-bottom: .5em; }
-.tp-eyebrow { color: #ffc72c; font-size: .95rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .5rem; }
+.tp-eyebrow { color: var(--c-accent, #ffc72c); font-size: .95rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .5rem; }
 .tp-lead { font-size: clamp(1.25rem, 1.15rem + .5vw, 1.6rem); }
 .tp-hero-block .wp-block-button.is-style-outline .wp-block-button__link { color: #fff; border-color: #fff; }
 
 .tp-section-block { padding: clamp(2.5rem, 2rem + 2.5vw, 4.5rem) clamp(1rem, 4vw, 2rem); }
 .tp-cta-block { padding: clamp(2rem, 1.7rem + 1.5vw, 3rem) clamp(1rem, 4vw, 2rem); }
-.tp-cta-block h2 { color: #0b2a5b; margin-bottom: .25em; }
-.tp-cta-block .wp-block-button.is-style-outline .wp-block-button__link { color: #0b2a5b; border-color: #0b2a5b; }
+.tp-cta-block h2 { color: var(--c-heading, #0b2a5b); margin-bottom: .25em; }
+.tp-cta-block .wp-block-button.is-style-outline .wp-block-button__link { color: var(--c-heading, #0b2a5b); border-color: var(--c-heading, #0b2a5b); }
 
 .tp-card-columns > .wp-block-column {
 	padding: clamp(1.25rem, 1rem + 1vw, 2rem); background: var(--c-surface, #fff); border: 1px solid var(--c-border, #d5dcea); border-radius: 1.25rem;
-	box-shadow: 0 1px 2px rgb(11 42 91 / .06), 0 8px 24px rgb(11 42 91 / .08);
+	box-shadow: var(--shadow, 0 1px 2px rgb(11 42 91 / .06), 0 8px 24px rgb(11 42 91 / .08));
 }
 .tp-card-columns h3 { font-size: clamp(1.25rem, 1.15rem + .5vw, 1.6rem); }
 .tp-highlight-box { padding: 1.5rem; border-radius: 1.25rem; }

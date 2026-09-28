@@ -27,10 +27,10 @@ get_template_part(
 	)
 );
 ?>
-<div class="container layout-sidebar section">
+<div class="container <?php echo esc_attr( tp_blog_layout_class() ); ?> section">
 	<div class="layout-sidebar__main">
 		<?php if ( have_posts() ) : ?>
-			<div class="post-grid post-grid--2">
+			<div class="<?php echo esc_attr( tp_post_list_class() ); ?>">
 				<?php
 				while ( have_posts() ) :
 					the_post();
@@ -51,7 +51,9 @@ get_template_part(
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 		<?php endif; ?>
 	</div>
-	<?php get_sidebar(); ?>
+	<?php if ( tp_blog_has_sidebar() ) : ?>
+		<?php get_sidebar(); ?>
+	<?php endif; ?>
 </div>
 <?php
 get_footer();

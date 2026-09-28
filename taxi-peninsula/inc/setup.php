@@ -77,8 +77,7 @@ function tp_widgets_init() {
 
 add_action( 'wp_enqueue_scripts', 'tp_enqueue' );
 function tp_enqueue() {
-	// Atkinson Hyperlegible was designed by the Braille Institute for low-vision readers.
-	wp_enqueue_style( 'tp-fonts', 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap', array(), null );
+	// Fonts are self-hosted; the chosen one is enqueued in inc/design.php.
 	wp_enqueue_style( 'tp-main', TP_URI . '/assets/css/main.css', array(), TP_VERSION );
 	wp_enqueue_style( 'tp-patterns', TP_URI . '/assets/css/patterns.css', array( 'tp-main' ), TP_VERSION );
 	wp_enqueue_script( 'tp-main', TP_URI . '/assets/js/main.js', array(), TP_VERSION, true );
@@ -124,14 +123,6 @@ function tp_enqueue() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-}
-
-add_filter( 'wp_resource_hints', 'tp_resource_hints', 10, 2 );
-function tp_resource_hints( $urls, $relation ) {
-	if ( 'preconnect' === $relation ) {
-		$urls[] = array( 'href' => 'https://fonts.gstatic.com', 'crossorigin' );
-	}
-	return $urls;
 }
 
 /**

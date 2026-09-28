@@ -26,13 +26,13 @@ $tp_blog = new WP_Query(
 	)
 );
 ?>
-<div class="container layout-sidebar section">
+<div class="container <?php echo esc_attr( tp_blog_layout_class() ); ?> section">
 	<div class="layout-sidebar__main">
 		<?php if ( ! empty( $tp_intro ) ) : ?>
 			<div class="entry-content page-content section__intro"><?php echo apply_filters( 'the_content', $tp_intro ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped,WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- core content filter. ?></div>
 		<?php endif; ?>
 		<?php if ( $tp_blog->have_posts() ) : ?>
-			<div class="post-grid post-grid--2">
+			<div class="<?php echo esc_attr( tp_post_list_class() ); ?>">
 				<?php
 				while ( $tp_blog->have_posts() ) :
 					$tp_blog->the_post();
@@ -60,7 +60,9 @@ $tp_blog = new WP_Query(
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 		<?php endif; ?>
 	</div>
-	<?php get_sidebar(); ?>
+	<?php if ( tp_blog_has_sidebar() ) : ?>
+		<?php get_sidebar(); ?>
+	<?php endif; ?>
 </div>
 <?php
 get_footer();

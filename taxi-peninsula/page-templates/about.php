@@ -23,7 +23,7 @@ while ( have_posts() ) :
 	?>
 	<div class="container section">
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry-content page-content' ); ?>>
-			<?php if ( has_post_thumbnail() ) : ?>
+			<?php if ( tp_show_featured_image() ) : ?>
 				<figure class="featured-image"><?php the_post_thumbnail( 'large', array( 'alt' => tp_thumbnail_alt( get_post() ) ) ); ?></figure>
 			<?php endif; ?>
 			<?php the_content(); ?>

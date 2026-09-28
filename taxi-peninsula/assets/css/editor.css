@@ -1,12 +1,11 @@
 /* Block editor: match front-end type so posts preview accurately. */
-@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap");
 
 body {
-	font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
+	font-family: var(--font, "Atkinson Hyperlegible", system-ui, sans-serif);
 	font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
 	line-height: 1.6;
 	color: #16213a;
 }
-h1, h2, h3, h4 { color: #0b2a5b; line-height: 1.2; }
-a { color: #0a57c2; }
-blockquote { border-left: 5px solid #ffc72c; background: #f3f6fb; padding: .75rem 1rem; margin-inline: 0; }
+h1, h2, h3, h4 { color: var(--c-heading, #0b2a5b); line-height: 1.2; }
+a { color: var(--c-link, #0a57c2); }
+blockquote { border-left: 5px solid var(--c-accent, #ffc72c); background: var(--c-bg-alt, #f3f6fb); padding: .75rem 1rem; margin-inline: 0; }

@@ -34,9 +34,9 @@ while ( have_posts() ) :
 		)
 	);
 	?>
-	<div class="container layout-sidebar section">
+	<div class="container <?php echo esc_attr( tp_blog_layout_class( true ) ); ?> section">
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'layout-sidebar__main' ); ?>>
-			<?php if ( has_post_thumbnail() ) : ?>
+			<?php if ( tp_show_featured_image() ) : ?>
 				<figure class="featured-image"><?php the_post_thumbnail( 'large', array( 'alt' => tp_thumbnail_alt( get_post() ) ) ); ?></figure>
 			<?php endif; ?>
 			<div class="prose entry-content">
@@ -70,7 +70,9 @@ while ( have_posts() ) :
 			}
 			?>
 		</article>
-		<?php get_sidebar(); ?>
+		<?php if ( tp_blog_has_sidebar() ) : ?>
+			<?php get_sidebar(); ?>
+		<?php endif; ?>
 	</div>
 	<?php
 endwhile;

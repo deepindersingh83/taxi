@@ -10,15 +10,18 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#0b2a5b">
+	<meta name="theme-color" content="<?php echo esc_attr( tp_design_colors()['primary'] ); ?>" data-light="<?php echo esc_attr( tp_design_colors()['primary'] ); ?>">
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<span id="top" class="screen-reader-text" tabindex="-1"></span>
 <a class="skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'taxi-peninsula' ); ?></a>
 
 <?php tp_render_notices(); ?>
 
+<?php $tp_topbar = tp_design( 'topbar' ); ?>
+<?php if ( 'none' !== $tp_topbar ) : ?>
 <div class="topbar">
 	<div class="container topbar__inner">
 		<ul class="topbar__contact">
@@ -33,32 +36,17 @@
 			<?php endif; ?>
 			<li class="topbar__hours"><?php tp_the_icon( 'clock' ); ?><?php tp_the_hours_badge(); ?></li>
 		</ul>
-		<div class="a11y-tools" role="group" aria-label="<?php esc_attr_e( 'Display options', 'taxi-peninsula' ); ?>">
-			<span class="a11y-tools__label"><?php tp_the_icon( 'text' ); ?><span><?php esc_html_e( 'Text size', 'taxi-peninsula' ); ?></span></span>
-			<button type="button" class="a11y-btn" data-text-size="sm" aria-pressed="false" aria-label="<?php esc_attr_e( 'Smaller text', 'taxi-peninsula' ); ?>">A<sup>−</sup></button>
-			<button type="button" class="a11y-btn" data-text-size="md" aria-pressed="true" aria-label="<?php esc_attr_e( 'Default text size', 'taxi-peninsula' ); ?>">A</button>
-			<button type="button" class="a11y-btn" data-text-size="lg" aria-pressed="false" aria-label="<?php esc_attr_e( 'Larger text', 'taxi-peninsula' ); ?>">A<sup>+</sup></button>
-			<button type="button" class="a11y-btn" data-text-size="xl" aria-pressed="false" aria-label="<?php esc_attr_e( 'Largest text', 'taxi-peninsula' ); ?>">A<sup>++</sup></button>
-			<button type="button" class="a11y-btn a11y-btn--contrast" data-contrast-toggle aria-pressed="false"><?php tp_the_icon( 'contrast' ); ?><span><?php esc_html_e( 'High contrast', 'taxi-peninsula' ); ?></span></button>
-			<button type="button" class="a11y-btn a11y-btn--theme" data-theme-toggle aria-pressed="false"><?php tp_the_icon( 'moon' ); ?><span><?php esc_html_e( 'Dark mode', 'taxi-peninsula' ); ?></span></button>
-		</div>
+		<?php if ( 'full' === $tp_topbar ) : ?>
+			<?php tp_the_display_options(); ?>
+		<?php endif; ?>
 	</div>
 </div>
+<?php endif; ?>
 
 <header class="site-header">
 	<div class="container site-header__inner">
 		<div class="brand">
-			<?php if ( has_custom_logo() ) : ?>
-				<?php the_custom_logo(); ?>
-			<?php else : ?>
-				<a class="brand__link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<span class="brand__mark"><?php tp_the_icon( 'wheelchair' ); ?></span>
-					<span class="brand__text">
-						<span class="brand__name"><?php bloginfo( 'name' ); ?></span>
-						<span class="brand__tag"><?php esc_html_e( 'Wheelchair Accessible Taxis', 'taxi-peninsula' ); ?></span>
-					</span>
-				</a>
-			<?php endif; ?>
+			<?php tp_the_brand(); ?>
 		</div>
 
 		<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
@@ -79,10 +67,16 @@
 				)
 			);
 			?>
-			<div class="primary-nav__cta">
-				<a class="btn btn--ghost" href="<?php echo esc_url( tp_phone_href() ); ?>"><?php tp_the_icon( 'phone' ); ?><?php echo esc_html( tp_opt( 'phone_display' ) ); ?></a>
-				<a class="btn btn--accent" href="<?php echo esc_url( tp_booking_page_url() ); ?>"><?php esc_html_e( 'Book now', 'taxi-peninsula' ); ?></a>
-			</div>
+			<?php if ( tp_design( 'header_phone' ) || tp_design( 'header_book' ) ) : ?>
+				<div class="primary-nav__cta">
+					<?php if ( tp_design( 'header_phone' ) ) : ?>
+						<a class="btn btn--ghost" href="<?php echo esc_url( tp_phone_href() ); ?>"><?php tp_the_icon( 'phone' ); ?><?php echo esc_html( tp_design( 'header_phone_text' ) ?: tp_opt( 'phone_display' ) ); ?></a>
+					<?php endif; ?>
+					<?php if ( tp_design( 'header_book' ) ) : ?>
+						<a class="btn btn--accent" href="<?php echo esc_url( tp_booking_page_url() ); ?>"><?php echo esc_html( tp_design( 'header_book_text' ) ?: __( 'Book now', 'taxi-peninsula' ) ); ?></a>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
 		</nav>
 	</div>
 </header>

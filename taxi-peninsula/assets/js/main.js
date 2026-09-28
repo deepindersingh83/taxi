@@ -29,8 +29,7 @@
 	});
 
 	/* High contrast toggle. */
-	var contrast = document.querySelector('[data-contrast-toggle]');
-	if (contrast) {
+	document.querySelectorAll('[data-contrast-toggle]').forEach(function (contrast) {
 		contrast.setAttribute('aria-pressed', root.getAttribute('data-contrast') === 'high' ? 'true' : 'false');
 		contrast.addEventListener('click', function () {
 			var on = root.getAttribute('data-contrast') !== 'high';
@@ -38,11 +37,10 @@
 			contrast.setAttribute('aria-pressed', on ? 'true' : 'false');
 			store('tp-contrast', on ? 'high' : null);
 		});
-	}
+	});
 
 	/* Dark mode toggle (follows the device setting until the visitor chooses). */
-	var themeBtn = document.querySelector('[data-theme-toggle]');
-	if (themeBtn) {
+	document.querySelectorAll('[data-theme-toggle]').forEach(function (themeBtn) {
 		var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
 		var isDark = function () {
 			var t = root.getAttribute('data-theme');
@@ -52,7 +50,7 @@
 			var dark = isDark();
 			themeBtn.setAttribute('aria-pressed', dark ? 'true' : 'false');
 			var meta = document.querySelector('meta[name="theme-color"]');
-			if (meta) { meta.setAttribute('content', dark ? '#0c1322' : '#0b2a5b'); }
+			if (meta) { meta.setAttribute('content', dark ? '#0c1322' : (meta.getAttribute('data-light') || '#0b2a5b')); }
 		};
 		themeBtn.addEventListener('click', function () {
 			var next = isDark() ? 'light' : 'dark';
@@ -62,6 +60,20 @@
 		});
 		if (mq && mq.addEventListener) { mq.addEventListener('change', syncTheme); }
 		syncTheme();
+	});
+
+	/* Back to top: appears once the visitor has scrolled a long way. */
+	var toTop = document.querySelector('[data-back-to-top]');
+	if (toTop) {
+		var ticking = false;
+		var syncTop = function () {
+			toTop.classList.toggle('is-visible', window.scrollY > 900);
+			ticking = false;
+		};
+		window.addEventListener('scroll', function () {
+			if (!ticking) { ticking = true; window.requestAnimationFrame(syncTop); }
+		}, { passive: true });
+		syncTop();
 	}
 
 	/* Announcements: scheduled show/hide (works on cached pages) and dismiss. */
@@ -123,6 +135,26 @@
 		nav.addEventListener('click', function (e) {
 			if (e.target.closest('a')) { setOpen(false); }
 		});
+
+		/* On computers, fall back to the Menu button when the full menu doesn't fit
+		   (long menus, larger base text, or the visitor's text size buttons). */
+		var wide = window.matchMedia ? window.matchMedia('(min-width: 80.01em)') : null;
+		var inner = nav.parentElement;
+		var fitNav = function () {
+			if (!wide || !wide.matches) { root.classList.remove('tp-nav-compact'); return; }
+			root.classList.remove('tp-nav-compact');
+			var over = inner.scrollWidth > inner.clientWidth + 1 || nav.scrollWidth > nav.clientWidth + 1;
+			root.classList.toggle('tp-nav-compact', over);
+			if (!over) { setOpen(false); }
+		};
+		var fitTimer;
+		var queueFit = function () { clearTimeout(fitTimer); fitTimer = setTimeout(fitNav, 60); };
+		window.addEventListener('resize', queueFit);
+		if (document.fonts && document.fonts.ready) { document.fonts.ready.then(fitNav); }
+		if (window.MutationObserver) {
+			new MutationObserver(queueFit).observe(root, { attributes: true, attributeFilter: ['data-text-size'] });
+		}
+		fitNav();
 	}
 
 	/* Show/hide dependent fields (e.g. return trip time). */

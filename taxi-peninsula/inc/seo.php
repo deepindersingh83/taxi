@@ -149,7 +149,7 @@ function tp_business_schema() {
 	}
 	$node = apply_filters( 'tp_business_schema', $node );
 
-	$same_as = array_values( array_filter( array( tp_setting( 'gbp_url' ), tp_setting( 'google_reviews_url' ) ) ) );
+	$same_as = array_values( array_filter( array_merge( array( tp_setting( 'gbp_url' ), tp_setting( 'google_reviews_url' ) ), wp_list_pluck( tp_social_links(), 1 ) ) ) );
 	if ( $same_as ) {
 		$node['sameAs'] = array_values( array_unique( $same_as ) );
 	}

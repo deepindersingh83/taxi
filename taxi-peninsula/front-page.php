@@ -8,9 +8,33 @@
 get_header();
 
 $hero_image = tp_current_hero_image();
+$tp_bg      = tp_design( 'hero_bg' );
+$tp_align   = 'center' === tp_design( 'hero_align' ) ? 'center' : 'left';
+if ( 'photo' === $tp_bg && ! $hero_image ) {
+	$tp_bg = 'gradient';
+}
+// What sits beside the text: a photo, the badge card, or nothing.
+$tp_side = tp_design( 'hero_side' );
+if ( 'photo' === $tp_bg || 'center' === $tp_align || 'none' === $tp_side ) {
+	$tp_side = '';
+} elseif ( 'card' === $tp_side || ! $hero_image ) {
+	$tp_side = 'card';
+} else {
+	$tp_side = 'photo';
+}
+$tp_hero_classes = array(
+	'hero',
+	'hero--' . $tp_bg,
+	'hero--' . $tp_align,
+	'hero--h-' . sanitize_html_class( tp_design( 'hero_height' ) ),
+	$tp_side ? 'hero--with-side' : 'hero--text-only',
+);
 ?>
 
-<section class="hero">
+<section class="<?php echo esc_attr( implode( ' ', $tp_hero_classes ) ); ?>">
+	<?php if ( 'photo' === $tp_bg ) : ?>
+		<?php echo wp_get_attachment_image( $hero_image, 'full', false, array( 'class' => 'hero__bg', 'alt' => '', 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => '100vw' ) ); ?>
+	<?php endif; ?>
 	<div class="container hero__inner">
 		<div class="hero__copy">
 			<p class="eyebrow"><?php tp_the_icon( 'wheelchair' ); ?><?php echo esc_html( tp_opt( 'hero_eyebrow' ) ); ?></p>
@@ -36,8 +60,9 @@ $hero_image = tp_current_hero_image();
 			</ul>
 		</div>
 
+		<?php if ( $tp_side ) : ?>
 		<div class="hero__media">
-			<?php if ( $hero_image ) : ?>
+			<?php if ( 'photo' === $tp_side ) : ?>
 				<?php echo wp_get_attachment_image( $hero_image, 'large', false, array( 'class' => 'hero__img', 'loading' => 'eager', 'fetchpriority' => 'high' ) ); ?>
 			<?php else : ?>
 				<div class="hero__card" aria-hidden="true">
@@ -51,6 +76,7 @@ $hero_image = tp_current_hero_image();
 				</div>
 			<?php endif; ?>
 		</div>
+		<?php endif; ?>
 	</div>
 </section>
 

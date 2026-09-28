@@ -8,12 +8,19 @@
 ?>
 </main>
 
+<?php $tp_cols = tp_design( 'footer_cols' ); ?>
 <footer class="site-footer">
-	<div class="container site-footer__grid">
+	<div class="container site-footer__grid<?php echo 'auto' !== $tp_cols ? ' site-footer__grid--' . esc_attr( $tp_cols ) : ''; ?>">
 		<div class="site-footer__brand">
-			<p class="site-footer__name"><?php tp_the_icon( 'wheelchair' ); ?> <?php bloginfo( 'name' ); ?></p>
+			<?php $tp_flogo = (int) tp_design( 'logo_footer' ); ?>
+			<?php if ( $tp_flogo && wp_attachment_is_image( $tp_flogo ) ) : ?>
+				<p class="site-footer__logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_get_attachment_image( $tp_flogo, 'full', false, array( 'alt' => get_bloginfo( 'name' ), 'loading' => 'lazy' ) ); ?></a></p>
+			<?php else : ?>
+				<p class="site-footer__name"><?php tp_the_icon( 'wheelchair' ); ?> <?php bloginfo( 'name' ); ?></p>
+			<?php endif; ?>
 			<p><?php echo esc_html( get_bloginfo( 'description' ) ?: __( 'Wheelchair accessible taxis for Melbourne and the Mornington Peninsula.', 'taxi-peninsula' ) ); ?></p>
 			<a class="btn btn--accent" href="<?php echo esc_url( tp_booking_page_url() ); ?>"><?php esc_html_e( 'Book a taxi online', 'taxi-peninsula' ); ?></a>
+			<?php tp_the_social_links(); ?>
 		</div>
 
 		<div>
@@ -26,6 +33,7 @@
 			</ul>
 		</div>
 
+		<?php if ( tp_design( 'footer_menu' ) ) : ?>
 		<div>
 			<h2 class="site-footer__heading"><?php esc_html_e( 'Links', 'taxi-peninsula' ); ?></h2>
 			<?php
@@ -40,14 +48,21 @@
 			);
 			?>
 		</div>
+		<?php endif; ?>
 
 		<?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
 			<div><?php dynamic_sidebar( 'sidebar-footer' ); ?></div>
 		<?php endif; ?>
 	</div>
 
+	<?php if ( 'full' !== tp_design( 'topbar' ) ) : ?>
+		<div class="container site-footer__display">
+			<?php tp_the_display_options( 'a11y-tools--footer' ); ?>
+		</div>
+	<?php endif; ?>
+
 	<div class="container site-footer__bottom">
-		<p>&copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>. <?php esc_html_e( 'All rights reserved.', 'taxi-peninsula' ); ?></p>
+		<p><?php echo tp_copyright_text(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- kses'd in helper. ?></p>
 		<?php if ( function_exists( 'the_privacy_policy_link' ) ) : ?>
 			<p><?php the_privacy_policy_link(); ?></p>
 		<?php endif; ?>
@@ -76,6 +91,10 @@ if ( empty( $tp_pages['driver'] ) || ! is_page( $tp_pages['driver'] ) ) :
 			<span><?php esc_html_e( 'Call now', 'taxi-peninsula' ); ?></span>
 		</a>
 	</div>
+<?php endif; ?>
+
+<?php if ( tp_design( 'back_to_top' ) ) : ?>
+	<a class="back-to-top" href="#top" data-back-to-top><?php tp_the_icon( 'chevron-up' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Back to top', 'taxi-peninsula' ); ?></span></a>
 <?php endif; ?>
 
 <?php wp_footer(); ?>

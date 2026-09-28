@@ -182,6 +182,49 @@ A **Security check** panel under Bookings → Setup flags HTTPS, error display, 
 - **Complaints process:** Setup creates a draft *Complaints & Feedback* page. It covers how to complain, the steps and timeframes, and escalation to Commercial Passenger Vehicles Victoria and the NDIS Quality and Safeguards Commission. Response times and the regulators' contact details are marked [CONFIRM].
 - **Enquiry auto-reply:** every contact form enquiry now gets an acknowledgement email. Complaints also get a link to the complaints process. Set a reply time (e.g. "within one business day") in Customize → Contact details, or leave it empty to not promise one.
 
+### Design options (v1.5)
+Everything is under **Appearance → Customize** and previews before you publish.
+
+**Logo & branding** (*Site Identity*)
+- Upload your logo, then set its **height on computers and on phones** with sliders.
+- **Extra logos:** a **dark mode** version (usually white), a **high contrast** version (plain black) and a **footer** logo. The right one swaps in automatically.
+- **Show in the header:** the logo only, or the logo with the site name and tagline. On small phones the name is hidden visually but still read by screen readers.
+- **Editable tagline** under the name (default "Wheelchair Accessible Taxis"). Leave it empty to hide it.
+
+**Colours** (*Design → Colours*)
+- **Five ready-made schemes:** Navy & Yellow (original), Teal & Amber, Forest Green & Lime, Charcoal & Orange, Purple & Gold. Picking one fills in the colour pickers.
+- **Pickers** for the main colour, accent, links, page background and footer. Shades such as hover colours, tints, borders, button text and the dark-mode link colour are worked out automatically.
+- **Contrast warnings:** a warning appears under a colour, with its contrast ratio, if the combination fails WCAG AA (e.g. white text on a light main colour).
+- **Editor palette:** the block editor's colour palette follows your choices, and pattern blocks use them too.
+
+**Fonts & shape** (*Design → Fonts & shape*)
+- **Fonts:** Atkinson Hyperlegible (default), Lexend, Inter or Source Sans 3. All are stored in the theme (`assets/fonts`, SIL Open Font License), so nothing is loaded from Google. The chosen font is preloaded.
+- **Sizes and weights:** base text size (90–125%) and heading weight. The visitor's text-size buttons still work on top of the base size.
+- **Shapes:** button shape (pill, rounded, square), card corner size and shadow strength (none, soft, strong).
+
+**Header** (*Design → Header*)
+- **Layouts on computers:** logo left with menu right, everything centred, or a logo row above the menu.
+- **Sticky header:** on or off.
+- **Header buttons:** show or hide the phone and "Book" buttons and change their wording.
+- **Top bar:** full (contact details + display options), contact details only, or none. When the display options (text size, high contrast, dark mode) leave the top bar they move to the footer; they are never removed.
+- **Automatic Menu button:** if the full menu doesn't fit on a computer screen (a long menu, a big logo, larger text), the header switches to the Menu button instead of overflowing.
+
+**Home page hero** (*Design → Home page hero*)
+- **Background:** gradient, solid colour, or the hero/seasonal photo with an adjustable darkening overlay (keep it at 55% or more).
+- **Beside the text:** the photo, the badge card, or nothing.
+- **Text position and height:** left or centred text; short, medium or full-screen height.
+
+**Footer** (*Design → Footer*)
+- **Columns:** automatic, 2, 3 or 4.
+- **Footer menu:** show or hide it.
+- **Social links:** Facebook, Instagram, LinkedIn and YouTube icons. They're also added to your Google business data (`sameAs`).
+- **Copyright line:** your own text, where `{year}` and `{site}` are filled in for you (e.g. "© {year} {site} · ABN …").
+
+**Pages & blog** (*Design → Pages & blog*)
+- **Page title banner:** the main colour, an image (a page's featured image, or a default banner image), or plain.
+- **Blog:** grid or list layout, the sidebar on or off (for the blog and single posts), and posts per page.
+- **Back to top button:** show or hide it.
+
 ## Install
 
 1. Zip the `taxi-peninsula` folder and upload it under **Appearance → Themes → Add New → Upload**. Then activate it.
@@ -189,7 +232,7 @@ A **Security check** panel under Bookings → Setup flags HTTPS, error display, 
 3. **Settings → Permalinks:** choose "Post name".
 4. **Bookings → Setup:** click **Create starter content**.
 5. **Settings → Reading:** choose a static front page (for example a page called *Home*), and set a *Blog* page as the posts page.
-6. **Appearance → Customize → Taxi Peninsula:** check the contact details, hours, hero text and service areas.
+6. **Appearance → Customize → Taxi Peninsula:** check the contact details, hours, hero text and service areas. Upload your logo under *Site Identity* and choose colours and fonts under *Design*.
 7. **Bookings → Settings:** connect SMS, Stripe and spam protection as needed (details below).
 8. **Users → Add New:** add drivers with the **Driver** role and their mobile number, and office staff as **Booking Manager**.
 9. Review the starter content: FAQs, services, suburb pages and the example fleet vehicles (add photos, then publish them). Add real **Testimonials**.
