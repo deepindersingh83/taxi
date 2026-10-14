@@ -24,7 +24,7 @@ $id    = wp_unique_id( 'features-title-' );
 			foreach ( $features as $f ) :
 				?>
 				<div class="feature">
-					<span class="feature__icon"><?php tp_the_icon( $f[0] ); ?></span>
+					<?php tp_the_spot( $f[0], 'feature__icon' ); ?>
 					<h3 class="feature__title"><?php echo esc_html( $f[1] ); ?></h3>
 					<p><?php echo esc_html( $f[2] ); ?></p>
 				</div>

@@ -49,9 +49,32 @@ $today       = wp_date( 'Y-m-d' );
 		</div>
 	<?php endif; ?>
 
+	<?php
+	$methods   = tp_payment_methods();
+	$has_pay   = count( $methods ) > 1;
+	$step_list = array(
+		'trip'    => __( 'Trip', 'taxi-peninsula' ),
+		'needs'   => __( 'Needs', 'taxi-peninsula' ),
+		'pay'     => __( 'Payment', 'taxi-peninsula' ),
+		'details' => __( 'Details', 'taxi-peninsula' ),
+	);
+	if ( ! $has_pay ) {
+		unset( $step_list['pay'] );
+	}
+	?>
+	<nav class="form-steps" aria-label="<?php esc_attr_e( 'Booking steps', 'taxi-peninsula' ); ?>" data-form-steps>
+		<ol>
+			<?php $n = 0; ?>
+			<?php foreach ( $step_list as $key => $label ) : ?>
+				<li data-step="<?php echo esc_attr( $key ); ?>"><a href="#bf-step-<?php echo esc_attr( $key ); ?>"><span class="form-steps__n"><?php echo esc_html( ++$n ); ?></span><span class="form-steps__label"><?php echo esc_html( $label ); ?></span></a></li>
+			<?php endforeach; ?>
+		</ol>
+		<span class="form-steps__bar" aria-hidden="true"><span></span></span>
+	</nav>
+
 	<?php tp_booking_form_account_panel( $old ); ?>
 
-	<fieldset class="booking-form__group">
+	<fieldset class="booking-form__group" id="bf-step-trip" data-step-panel="trip">
 		<legend><span class="step">1</span> <?php esc_html_e( 'Your trip', 'taxi-peninsula' ); ?></legend>
 
 		<div class="field field--wide">
@@ -137,7 +160,7 @@ $today       = wp_date( 'Y-m-d' );
 		<?php endif; ?>
 	</fieldset>
 
-	<fieldset class="booking-form__group">
+	<fieldset class="booking-form__group" id="bf-step-needs" data-step-panel="needs">
 		<legend><span class="step">2</span> <?php esc_html_e( 'Accessibility needs', 'taxi-peninsula' ); ?></legend>
 
 		<div class="field field--wide">
@@ -192,9 +215,8 @@ $today       = wp_date( 'Y-m-d' );
 		</div>
 	</fieldset>
 
-	<?php $methods = tp_payment_methods(); ?>
-	<?php if ( count( $methods ) > 1 ) : ?>
-	<fieldset class="booking-form__group">
+	<?php if ( $has_pay ) : ?>
+	<fieldset class="booking-form__group" id="bf-step-pay" data-step-panel="pay">
 		<legend><span class="step">3</span> <?php esc_html_e( 'Payment', 'taxi-peninsula' ); ?></legend>
 
 		<div class="field field--wide">
@@ -238,8 +260,8 @@ $today       = wp_date( 'Y-m-d' );
 	</fieldset>
 	<?php endif; ?>
 
-	<fieldset class="booking-form__group">
-		<legend><span class="step"><?php echo count( $methods ) > 1 ? '4' : '3'; ?></span> <?php esc_html_e( 'Your details', 'taxi-peninsula' ); ?></legend>
+	<fieldset class="booking-form__group" id="bf-step-details" data-step-panel="details">
+		<legend><span class="step"><?php echo $has_pay ? '4' : '3'; ?></span> <?php esc_html_e( 'Your details', 'taxi-peninsula' ); ?></legend>
 
 		<div class="field field--wide">
 			<label for="bf-name"><?php esc_html_e( 'Full name', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
@@ -284,6 +306,8 @@ $today       = wp_date( 'Y-m-d' );
 	</fieldset>
 
 	<?php tp_spam_fields(); ?>
+
+	<?php get_template_part( 'template-parts/trip-summary', null, array( 'compact' => true ) ); ?>
 
 	<div class="booking-form__submit">
 		<button type="submit" class="btn btn--accent btn--lg"><?php esc_html_e( 'Request booking', 'taxi-peninsula' ); ?> <?php tp_the_icon( 'arrow' ); ?></button>

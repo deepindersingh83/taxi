@@ -32,6 +32,7 @@ add_action( 'admin_menu', static function () {
 add_action( 'admin_enqueue_scripts', static function ( $hook ) {
 	if ( false !== strpos( $hook, 'tp-finance' ) ) {
 		wp_enqueue_style( 'tp-admin', TP_URI . '/assets/css/admin.css', array(), TP_VERSION );
+		tp_admin_brand_vars();
 	}
 } );
 

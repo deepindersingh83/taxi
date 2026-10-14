@@ -306,7 +306,7 @@ function tp_contact_chooser() {
 			<?php foreach ( $items as $it ) : ?>
 				<li class="chooser__item">
 					<a class="chooser__link" href="<?php echo esc_url( $it[3] ); ?>">
-						<span class="chooser__icon"><?php tp_the_icon( $it[0] ); ?></span>
+						<?php tp_the_spot( $it[0], 'chooser__icon' ); ?>
 						<span class="chooser__text"><strong><?php echo esc_html( $it[1] ); ?></strong><span><?php echo esc_html( $it[2] ); ?></span></span>
 						<?php tp_the_icon( 'arrow', 'chooser__arrow' ); ?>
 					</a>

@@ -37,6 +37,10 @@ function tp_design_defaults() {
 		'button_shape'     => 'pill',
 		'card_radius'      => 'medium',
 		'shadow'           => 'soft',
+		'icon_style'       => 'illustrated',
+		'dividers'         => 'wave',
+		'bottom_nav'       => true,
+		'reveal'           => true,
 		// Header.
 		'header_layout'    => 'split',
 		'header_sticky'    => true,
@@ -370,6 +374,13 @@ add_filter( 'body_class', static function ( $classes ) {
 		$classes[] = 'tp-header--static';
 	}
 	$classes[] = 'tp-topbar--' . sanitize_html_class( tp_design( 'topbar' ) );
+	$classes[] = 'tp-dividers--' . sanitize_html_class( tp_design( 'dividers' ) );
+	if ( tp_design( 'bottom_nav' ) ) {
+		$classes[] = 'tp-has-bottom-nav';
+	}
+	if ( tp_design( 'reveal' ) ) {
+		$classes[] = 'tp-reveal';
+	}
 	return $classes;
 } );
 
@@ -715,6 +726,18 @@ function tp_design_customize_register( WP_Customize_Manager $wp_customize ) {
 		'strong' => __( 'Strong', 'taxi-peninsula' ),
 	);
 	$add( 'shadow', 'tp_design_type', __( 'Shadows', 'taxi-peninsula' ), 'select', array( 'sanitize' => $choice( $shadows ), 'choices' => $shadows ) );
+	$icon_styles = array(
+		'illustrated' => __( 'Colour illustrations (taxi style)', 'taxi-peninsula' ),
+		'line'        => __( 'Simple line icons', 'taxi-peninsula' ),
+	);
+	$add( 'icon_style', 'tp_design_type', __( 'Icon style', 'taxi-peninsula' ), 'radio', array( 'sanitize' => $choice( $icon_styles ), 'choices' => $icon_styles, 'description' => __( 'For services, “Why passengers choose us”, “Who we help” and the contact page.', 'taxi-peninsula' ) ) );
+	$dividers = array(
+		'wave' => __( 'Gentle wave', 'taxi-peninsula' ),
+		'road' => __( 'Road line', 'taxi-peninsula' ),
+		'none' => __( 'Straight edges', 'taxi-peninsula' ),
+	);
+	$add( 'dividers', 'tp_design_type', __( 'Between page sections', 'taxi-peninsula' ), 'radio', array( 'sanitize' => $choice( $dividers ), 'choices' => $dividers ) );
+	$add( 'reveal', 'tp_design_type', __( 'Fade sections in gently as visitors scroll', 'taxi-peninsula' ), 'checkbox', array( 'sanitize' => 'tp_sanitize_checkbox', 'description' => __( 'Always off for visitors who ask their device to reduce motion.', 'taxi-peninsula' ) ) );
 
 	// ---- Header.
 	$layouts = array(
@@ -724,6 +747,7 @@ function tp_design_customize_register( WP_Customize_Manager $wp_customize ) {
 	);
 	$add( 'header_layout', 'tp_design_header', __( 'Layout on computers', 'taxi-peninsula' ), 'radio', array( 'sanitize' => $choice( $layouts ), 'choices' => $layouts, 'description' => __( 'Phones and tablets always use the Menu button.', 'taxi-peninsula' ) ) );
 	$add( 'header_sticky', 'tp_design_header', __( 'Keep the header at the top while scrolling', 'taxi-peninsula' ), 'checkbox', array( 'sanitize' => 'tp_sanitize_checkbox' ) );
+	$add( 'bottom_nav', 'tp_design_header', __( 'App-style bar at the bottom of phones (Book, My trips, Call, Menu)', 'taxi-peninsula' ), 'checkbox', array( 'sanitize' => 'tp_sanitize_checkbox', 'description' => __( 'Replaces the floating Call / Text buttons on phones.', 'taxi-peninsula' ) ) );
 	$add( 'header_book', 'tp_design_header', __( 'Show the “Book” button', 'taxi-peninsula' ), 'checkbox', array( 'sanitize' => 'tp_sanitize_checkbox' ) );
 	$add( 'header_book_text', 'tp_design_header', __( '“Book” button wording', 'taxi-peninsula' ), 'text' );
 	$add( 'header_phone', 'tp_design_header', __( 'Show the phone button', 'taxi-peninsula' ), 'checkbox', array( 'sanitize' => 'tp_sanitize_checkbox', 'description' => __( 'With the “Logo left, menu right” layout and the top bar showing, it is hidden on wide screens to leave room for the menu — the number is in the top bar.', 'taxi-peninsula' ) ) );

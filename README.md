@@ -293,6 +293,31 @@ Lightweight animated illustrations, drawn in SVG and CSS. There are no video fil
 - **Totals:** fares, GST, paid online, amount owing on account and trips missing a fare.
 - **Exports:** a finance **CSV export**, plus a link to each tax invoice. Accounts staff cannot open the dispatch board or edit bookings.
 
+### Design upgrades (v1.8)
+
+All of these follow your logo colours and work in dark mode and high contrast. They can be switched in **Appearance → Customize → Design**.
+
+- **Illustrations:** drawn icons for services, "Who we help", destinations and the contact chooser, in the same style as the maxi taxi. Set *Fonts & shape → Icon style* to *Line* to use the simple outline icons instead.
+- **Section dividers:** a gentle wave or a dashed road line between sections, or none (*Fonts & shape → Section dividers*).
+- **Book a Taxi page:**
+  - progress steps 1–4 (Trip, Needs, Payment, Your details) that fill in as you go
+  - a sticky "Your trip" summary with the route, time, people, vehicle and fare estimate
+  - a friendlier confirmation screen: what happens next, **Add to calendar** (.ics with a 30-minute reminder), view the booking and book the return trip
+- **My Account dashboard:** a "Your next trip" card with a live countdown, trip progress, and the driver's photo and vehicle once assigned, plus small stats tiles.
+- **Driver phone screen:**
+  - big colour-coded step buttons, a large time display and a "Next job" marker
+  - Navigate buttons switch from pick-up to drop-off once the passenger is on board
+  - swipe left or right between days, with a bottom bar (Previous, Today, Next) for one-handed use
+- **Dispatch timeline:** a "Timeline" view on the dispatch board shows each driver as a row of blocks across the day, with clashes outlined and a line for the current time. The board remembers your view.
+- **Branded emails and invoices:** every email is sent as HTML with your logo, colours, trip-details table, buttons and contact footer, plus a plain-text copy. Receipts and tax invoices carry the same brand band.
+- **Micro-interactions:** buttons show a spinner while sending, success messages pop in with a tick, and sections fade in as you scroll (turn off under *Fonts & shape*). All of this is skipped for visitors who prefer reduced motion.
+- **Empty states:** friendly illustrations when there are no trips, no jobs, nothing to dispatch or no search results.
+- **Mobile bottom bar:** Book, My trips, Call and Menu along the bottom on phones (*Header → Mobile bottom bar*).
+- **Typography:** tighter headings, an accent bar on section titles and pull-quote testimonials.
+- **App icons and share images:**
+  - if no Site Icon is set, the theme makes a favicon, Apple touch icon and web app manifest from your colours
+  - every page without a featured image gets a generated 1200×630 share card with its title, your phone number and the maxi taxi symbol (cached in `uploads/tp-share`)
+
 ## Install
 
 1. Zip the `taxi-peninsula` folder and upload it under **Appearance → Themes → Add New → Upload**. Then activate it.

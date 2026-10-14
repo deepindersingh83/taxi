@@ -23,6 +23,7 @@ while ( have_posts() ) :
 	<section id="book" class="section section--book">
 		<div class="container book-layout">
 			<div class="book-layout__intro">
+				<?php get_template_part( 'template-parts/trip-summary' ); ?>
 				<?php if ( '' !== trim( get_the_content() ) ) : ?>
 					<div class="prose"><?php the_content(); ?></div>
 				<?php endif; ?>

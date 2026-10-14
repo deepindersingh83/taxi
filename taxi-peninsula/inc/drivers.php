@@ -209,9 +209,13 @@ function tp_driver_day_view( $driver_id, $base, $is_manager ) {
 	);
 	// phpcs:enable
 
-	$dt      = DateTimeImmutable::createFromFormat( '!Y-m-d', $day, wp_timezone() );
-	$nav_arg = $is_manager && $driver_id ? array( 'driver' => $driver_id ) : array();
+	$dt       = DateTimeImmutable::createFromFormat( '!Y-m-d', $day, wp_timezone() );
+	$nav_arg  = $is_manager && $driver_id ? array( 'driver' => $driver_id ) : array();
+	$prev_url = add_query_arg( array_merge( $nav_arg, array( 'jobs_day' => $dt->modify( '-1 day' )->format( 'Y-m-d' ) ) ), $base );
+	$next_url = add_query_arg( array_merge( $nav_arg, array( 'jobs_day' => $dt->modify( '+1 day' )->format( 'Y-m-d' ) ) ), $base );
+	$is_today = wp_date( 'Y-m-d' ) === $day;
 	?>
+	<div class="driver-day" data-swipe-prev="<?php echo esc_url( $prev_url ); ?>" data-swipe-next="<?php echo esc_url( $next_url ); ?>">
 	<div class="driver-jobs__bar">
 		<a class="btn btn--ghost" href="<?php echo esc_url( add_query_arg( array_merge( $nav_arg, array( 'jobs_day' => $dt->modify( '-1 day' )->format( 'Y-m-d' ) ) ), $base ) ); ?>" aria-label="<?php esc_attr_e( 'Previous day', 'taxi-peninsula' ); ?>">‹</a>
 		<h2 class="driver-jobs__day"><?php echo esc_html( wp_date( 'l j F', $dt->getTimestamp() ) ); ?></h2>
@@ -250,17 +254,29 @@ function tp_driver_day_view( $driver_id, $base, $is_manager ) {
 	);
 
 	if ( ! $jobs ) {
-		echo '<p class="empty-state">' . esc_html__( 'No jobs for this day.', 'taxi-peninsula' ) . '</p>';
+		tp_the_empty_state( 'empty-day', __( 'No jobs for this day', 'taxi-peninsula' ), __( 'Swipe or use the arrows to check other days. New jobs are texted to you.', 'taxi-peninsula' ) );
 	}
+	$next_marked = false;
 	foreach ( $jobs as $job ) {
-		tp_driver_job_card( tp_get_booking( $job->ID ), $day, $is_manager );
+		$b       = tp_get_booking( $job->ID );
+		$is_next = ! $next_marked && $b['driver_id'] && in_array( $b['status'], tp_active_statuses(), true );
+		$next_marked = $next_marked || $is_next;
+		tp_driver_job_card( $b, $day, $is_manager, $is_next );
 	}
+	?>
+	<nav class="driver-dock" aria-label="<?php esc_attr_e( 'Change day', 'taxi-peninsula' ); ?>">
+		<a class="driver-dock__btn" href="<?php echo esc_url( $prev_url ); ?>"><span aria-hidden="true">‹</span> <?php esc_html_e( 'Previous day', 'taxi-peninsula' ); ?></a>
+		<a class="driver-dock__btn driver-dock__today<?php echo $is_today ? ' is-current' : ''; ?>" href="<?php echo esc_url( add_query_arg( $nav_arg, $base ) ); ?>"<?php echo $is_today ? ' aria-current="date"' : ''; ?>><?php esc_html_e( 'Today', 'taxi-peninsula' ); ?></a>
+		<a class="driver-dock__btn" href="<?php echo esc_url( $next_url ); ?>"><?php esc_html_e( 'Next day', 'taxi-peninsula' ); ?> <span aria-hidden="true">›</span></a>
+	</nav>
+	</div>
+	<?php
 }
 
 /**
  * One job card with the driver's next actions.
  */
-function tp_driver_job_card( array $b, $day, $is_manager ) {
+function tp_driver_job_card( array $b, $day, $is_manager, $is_next = false ) {
 	$vehicles = tp_vehicle_types();
 	$aids     = tp_mobility_aids();
 	$maps     = static function ( $addr ) {
@@ -274,7 +290,10 @@ function tp_driver_job_card( array $b, $day, $is_manager ) {
 		wp_nonce_field( 'tp_step_' . $b['id'] );
 	};
 	?>
-	<article class="job card job--<?php echo esc_attr( $b['status'] ); ?>" id="job-<?php echo esc_attr( $b['id'] ); ?>" tabindex="-1">
+	<article class="job card job--<?php echo esc_attr( $b['status'] ); ?><?php echo $is_next ? ' job--next' : ''; ?>" id="job-<?php echo esc_attr( $b['id'] ); ?>" tabindex="-1">
+		<?php if ( $is_next ) : ?>
+			<p class="job__next"><?php esc_html_e( 'Next job', 'taxi-peninsula' ); ?></p>
+		<?php endif; ?>
 		<header class="job__head">
 			<p class="job__time"><?php echo esc_html( tp_format_pickup( $b, 'g:i a' ) ); ?></p>
 			<?php echo tp_status_badge( $b['status'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
@@ -318,19 +337,22 @@ function tp_driver_job_card( array $b, $day, $is_manager ) {
 		<?php if ( $b['notes'] ) : ?>
 			<p class="job__notes"><?php echo esc_html( $b['notes'] ); ?></p>
 		<?php endif; ?>
-		<div class="job__actions">
-			<a class="btn btn--primary" href="<?php echo esc_url( 'tel:' . preg_replace( '/[^0-9+]/', '', $b['phone'] ) ); ?>"><?php tp_the_icon( 'phone' ); ?> <?php esc_html_e( 'Call passenger', 'taxi-peninsula' ); ?></a>
+		<div class="job__steps">
 			<?php foreach ( $next as $step ) : ?>
 				<?php
 				if ( 'decline' === $step ) {
 					continue;
 				}
 				?>
-				<form method="post" action="<?php echo esc_url( $action ); ?>">
+				<form method="post" action="<?php echo esc_url( $action ); ?>" data-step-form>
 					<?php $hidden( $step ); ?>
-					<button type="submit" class="btn btn--<?php echo esc_attr( $steps[ $step ][2] ); ?>"><?php echo esc_html( $steps[ $step ][1] ); ?></button>
+					<button type="submit" class="btn btn--step btn--step-<?php echo esc_attr( $step ); ?>"><?php echo esc_html( $steps[ $step ][1] ); ?></button>
 				</form>
 			<?php endforeach; ?>
+		</div>
+		<div class="job__actions">
+			<a class="btn btn--ghost" href="<?php echo esc_url( 'tel:' . preg_replace( '/[^0-9+]/', '', $b['phone'] ) ); ?>"><?php tp_the_icon( 'phone' ); ?> <?php esc_html_e( 'Call passenger', 'taxi-peninsula' ); ?></a>
+			<a class="btn btn--ghost" href="<?php echo esc_url( $maps( 'onboard' === $b['status'] ? $b['dropoff'] : $b['pickup'] ) ); ?>" target="_blank" rel="noopener"><?php tp_the_icon( 'pin' ); ?> <?php echo esc_html( 'onboard' === $b['status'] ? __( 'Navigate to drop-off', 'taxi-peninsula' ) : __( 'Navigate to pick-up', 'taxi-peninsula' ) ); ?><span class="screen-reader-text"> <?php esc_html_e( '(opens Google Maps)', 'taxi-peninsula' ); ?></span></a>
 		</div>
 		<?php if ( in_array( 'decline', $next, true ) ) : ?>
 			<details class="job__decline">
@@ -388,7 +410,7 @@ function tp_driver_week_view( $driver_id, $base, $is_manager ) {
 	<section class="card driver-week" aria-labelledby="dw-up">
 		<h2 id="dw-up" class="driver-week__title"><?php esc_html_e( 'Coming up (next 7 days)', 'taxi-peninsula' ); ?></h2>
 		<?php if ( ! $upcoming ) : ?>
-			<p><?php esc_html_e( 'No upcoming trips.', 'taxi-peninsula' ); ?></p>
+			<?php tp_the_empty_state( 'empty-day', __( 'No upcoming trips this week', 'taxi-peninsula' ) ); ?>
 		<?php else : ?>
 			<ul class="driver-week__list">
 				<?php foreach ( $upcoming as $b ) : ?>

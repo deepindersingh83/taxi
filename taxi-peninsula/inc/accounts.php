@@ -551,7 +551,25 @@ function tp_account_trips_tab( WP_User $user, $coord, array $state ) {
 		}
 	}
 	$past = array_slice( array_reverse( $past ), 0, 50 );
+	$next = $upcoming ? array_shift( $upcoming ) : null;
+	$year = 0;
+	foreach ( $past as $b ) {
+		$year += ( 'completed' === $b['status'] && substr( $b['date'], 0, 4 ) === wp_date( 'Y' ) ) ? 1 : 0;
+	}
 	?>
+	<?php if ( $next ) : ?>
+		<?php tp_account_next_trip( $next ); ?>
+	<?php endif; ?>
+	<ul class="tp-tiles account__stats">
+		<li><span class="tp-tiles__n"><?php echo esc_html( count( $upcoming ) + ( $next ? 1 : 0 ) ); ?></span><?php esc_html_e( 'Upcoming trips', 'taxi-peninsula' ); ?></li>
+		<li><span class="tp-tiles__n"><?php echo esc_html( $year ); ?></span>
+			<?php
+			/* translators: %s: year */
+			echo esc_html( sprintf( __( 'Trips in %s', 'taxi-peninsula' ), wp_date( 'Y' ) ) );
+			?>
+		</li>
+		<li><span class="tp-tiles__n"><?php echo esc_html( count( $passengers ) ); ?></span><?php echo esc_html( $coord ? __( 'Saved clients', 'taxi-peninsula' ) : __( 'Saved passengers', 'taxi-peninsula' ) ); ?></li>
+	</ul>
 	<?php if ( $coord && $passengers ) : ?>
 		<form class="account__filter" method="get" action="<?php echo esc_url( tp_account_url() ); ?>#account">
 			<label for="acc-who"><?php esc_html_e( 'Show trips for', 'taxi-peninsula' ); ?></label>
@@ -566,9 +584,11 @@ function tp_account_trips_tab( WP_User $user, $coord, array $state ) {
 	<?php endif; ?>
 
 	<section aria-labelledby="acc-up">
-		<h3 id="acc-up" class="account__title"><?php esc_html_e( 'Upcoming trips', 'taxi-peninsula' ); ?></h3>
-		<?php if ( ! $upcoming ) : ?>
-			<p class="empty-state"><?php esc_html_e( 'No upcoming trips.', 'taxi-peninsula' ); ?> <a href="<?php echo esc_url( tp_booking_page_url() ); ?>"><?php esc_html_e( 'Book one now', 'taxi-peninsula' ); ?></a></p>
+		<h3 id="acc-up" class="account__title"><?php echo esc_html( $next ? __( 'Later trips', 'taxi-peninsula' ) : __( 'Upcoming trips', 'taxi-peninsula' ) ); ?></h3>
+		<?php if ( ! $upcoming && $next ) : ?>
+			<p class="account__none"><?php esc_html_e( 'Nothing else booked yet.', 'taxi-peninsula' ); ?></p>
+		<?php elseif ( ! $upcoming ) : ?>
+			<?php tp_the_empty_state( 'empty-list', __( 'No upcoming trips', 'taxi-peninsula' ), __( 'Where to next? Book online in about two minutes.', 'taxi-peninsula' ), array( __( 'Book a trip', 'taxi-peninsula' ), tp_booking_page_url() ) ); ?>
 		<?php endif; ?>
 		<?php foreach ( $upcoming as $b ) : ?>
 			<?php tp_account_trip_card( $b, $passengers, $coord ); ?>
@@ -600,6 +620,65 @@ function tp_account_trips_tab( WP_User $user, $coord, array $state ) {
 			<button type="submit" class="btn btn--primary"><?php esc_html_e( 'Add booking', 'taxi-peninsula' ); ?></button>
 		</form>
 	</details>
+	<?php
+}
+
+/**
+ * "Your next trip": big card with countdown, progress and the driver.
+ */
+function tp_account_next_trip( array $b ) {
+	$start  = DateTimeImmutable::createFromFormat( 'Y-m-d H:i', $b['date'] . ' ' . ( $b['time'] ?: '00:00' ), wp_timezone() );
+	$driver = $b['driver_id'] ? tp_public_driver( $b['driver_id'] ) : null;
+	$dname  = '';
+	if ( $b['driver_id'] && ! $driver ) {
+		$u     = get_userdata( $b['driver_id'] );
+		$dname = $u ? ( $u->first_name ?: strtok( $u->display_name, ' ' ) ) : '';
+	}
+	$steps = array( 'confirmed', 'assigned', 'on_way', 'arrived' );
+	$map   = array( 'pending' => -1, 'confirmed' => 0, 'assigned' => 1, 'accepted' => 1, 'on_way' => 2, 'arrived' => 3, 'onboard' => 3 );
+	$pos   = $map[ $b['status'] ] ?? -1;
+	$label = array(
+		'confirmed' => __( 'Confirmed', 'taxi-peninsula' ),
+		'assigned'  => __( 'Driver assigned', 'taxi-peninsula' ),
+		'on_way'    => __( 'On the way', 'taxi-peninsula' ),
+		'arrived'   => __( 'Arrived', 'taxi-peninsula' ),
+	);
+	?>
+	<section class="next-trip" aria-labelledby="next-trip-title">
+		<div class="next-trip__main">
+			<p class="next-trip__kicker" id="next-trip-title"><?php esc_html_e( 'Your next trip', 'taxi-peninsula' ); ?></p>
+			<p class="next-trip__when"><?php echo esc_html( tp_format_pickup( $b, 'l j F' ) ); ?><br><span><?php echo esc_html( tp_format_pickup( $b, 'g:i a' ) ); ?></span></p>
+			<?php if ( $start ) : ?>
+				<p class="next-trip__countdown" data-countdown="<?php echo esc_attr( $start->getTimestamp() ); ?>"><?php echo esc_html( human_time_diff( time(), $start->getTimestamp() ) ); ?></p>
+			<?php endif; ?>
+			<p class="next-trip__ref"><?php echo esc_html( $b['reference'] . ' · ' . $b['name'] ); ?></p>
+			<p class="next-trip__route"><?php echo esc_html( $b['pickup'] ); ?> <span aria-hidden="true">→</span><span class="screen-reader-text"><?php esc_html_e( 'to', 'taxi-peninsula' ); ?></span> <?php echo esc_html( $b['dropoff'] ); ?></p>
+			<ol class="next-trip__steps" aria-label="<?php esc_attr_e( 'Trip progress', 'taxi-peninsula' ); ?>">
+				<?php foreach ( $steps as $i => $key ) : ?>
+					<li class="<?php echo esc_attr( $i < $pos ? 'is-done' : ( $i === $pos ? 'is-current' : '' ) ); ?>"<?php echo $i === $pos ? ' aria-current="step"' : ''; ?>><?php echo esc_html( $label[ $key ] ); ?></li>
+				<?php endforeach; ?>
+			</ol>
+			<p class="next-trip__actions">
+				<a class="btn btn--accent" href="<?php echo esc_url( tp_booking_manage_url( $b['id'] ) ); ?>"><?php esc_html_e( 'View or change', 'taxi-peninsula' ); ?></a>
+				<a class="btn btn--light" href="<?php echo esc_url( tp_booking_ics_url( $b['id'] ) ); ?>" download><?php tp_the_icon( 'calendar' ); ?> <?php esc_html_e( 'Add to calendar', 'taxi-peninsula' ); ?></a>
+			</p>
+		</div>
+		<div class="next-trip__driver">
+			<?php if ( $driver ) : ?>
+				<?php echo tp_driver_avatar( $driver, 'medium' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper. ?>
+				<p><span><?php esc_html_e( 'Your driver', 'taxi-peninsula' ); ?></span><strong><?php echo esc_html( $driver['name'] ); ?></strong></p>
+			<?php elseif ( $dname ) : ?>
+				<span class="driver-card__initial" aria-hidden="true"><?php echo esc_html( mb_substr( $dname, 0, 1 ) ); ?></span>
+				<p><span><?php esc_html_e( 'Your driver', 'taxi-peninsula' ); ?></span><strong><?php echo esc_html( $dname ); ?></strong></p>
+			<?php else : ?>
+				<?php echo tp_illustration( 'wheelchair', 'next-trip__illo' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG. ?>
+				<p><span><?php esc_html_e( 'Driver', 'taxi-peninsula' ); ?></span><strong><?php esc_html_e( 'To be assigned', 'taxi-peninsula' ); ?></strong></p>
+			<?php endif; ?>
+			<?php if ( $b['fleet_id'] ) : ?>
+				<p class="next-trip__vehicle"><?php echo esc_html( tp_fleet_label( $b['fleet_id'] ) ); ?></p>
+			<?php endif; ?>
+		</div>
+	</section>
 	<?php
 }
 
@@ -1189,6 +1268,12 @@ function tp_render_receipt() {
 	<style>
 		body { font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #16213a; background: #eef2f7; margin: 0; padding: 24px; }
 		.doc { max-width: 760px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 24px rgb(0 0 0 / .08); }
+		.doc__brand { display: flex; align-items: center; gap: 12px; margin: -40px -40px 28px; padding: 20px 40px; background: <?php echo esc_attr( $c['primary'] ); ?>; border-radius: 12px 12px 0 0; color: #fff; font-size: 20px; }
+		.doc__logo { height: 44px; width: auto; background: #fff; padding: 6px 10px; border-radius: 8px; }
+		.doc__mark { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 10px; background: <?php echo esc_attr( $c['accent'] ); ?>; color: <?php echo esc_attr( $c['on_accent'] ); ?>; }
+		.doc__mark svg { width: 28px; height: 28px; }
+		@media (max-width: 600px) { .doc__brand { margin: -20px -20px 20px; padding: 16px 20px; } }
+		@media print { .doc__brand { margin: 0 0 20px; border-radius: 8px; -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
 		.doc__head { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; border-bottom: 4px solid <?php echo esc_attr( $c['accent'] ); ?>; padding-bottom: 16px; margin-bottom: 24px; }
 		h1 { margin: 0; font-size: 28px; color: <?php echo esc_attr( $c['primary'] ); ?>; }
 		h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .05em; color: #4a5670; margin: 0 0 4px; }
@@ -1210,6 +1295,14 @@ function tp_render_receipt() {
 </head>
 <body>
 	<main class="doc">
+		<div class="doc__brand">
+			<?php $tp_logo = (int) get_theme_mod( 'custom_logo' ); ?>
+			<?php if ( $tp_logo ) : ?>
+				<?php echo wp_get_attachment_image( $tp_logo, 'medium', false, array( 'alt' => $site, 'class' => 'doc__logo' ) ); ?>
+			<?php else : ?>
+				<span class="doc__mark"><?php echo tp_icon( 'wheelchair' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span><strong><?php echo esc_html( $site ); ?></strong>
+			<?php endif; ?>
+		</div>
 		<header class="doc__head">
 			<div>
 				<h1><?php echo esc_html( $title ); ?></h1>

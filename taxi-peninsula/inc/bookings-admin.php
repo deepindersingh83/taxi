@@ -14,7 +14,16 @@ function tp_admin_assets( $hook ) {
 	$types  = array( 'tp_booking', 'tp_message', 'tp_fleet', 'tp_service', 'tp_testimonial', 'tp_area', 'tp_faq' );
 	if ( ( $screen && in_array( $screen->post_type, $types, true ) ) || 'index.php' === $hook || false !== strpos( $hook, 'tp-' ) ) {
 		wp_enqueue_style( 'tp-admin', TP_URI . '/assets/css/admin.css', array(), TP_VERSION );
+		tp_admin_brand_vars();
 	}
+}
+
+/**
+ * Brand colours for illustrations and the dispatch timeline in wp-admin.
+ */
+function tp_admin_brand_vars() {
+	$c = tp_design_colors();
+	wp_add_inline_style( 'tp-admin', sprintf( ':root{--c-primary:%1$s;--c-accent:%2$s;--c-link:%3$s;--illo-bg:%4$s}', $c['primary'], $c['accent'], $c['link'], $c['bg_alt'] ) );
 }
 
 /* -------------------------------------------------------------------------

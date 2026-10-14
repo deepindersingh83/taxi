@@ -62,6 +62,106 @@
 		syncTheme();
 	});
 
+	/* Height of the sticky header, so sticky bars sit just below it. */
+	var stickyHeader = document.querySelector('.site-header');
+	var syncSticky = function () {
+		var sticky = stickyHeader && getComputedStyle(stickyHeader).position === 'sticky';
+		root.style.setProperty('--tp-sticky-top', (sticky ? stickyHeader.offsetHeight : 0) + 'px');
+	};
+	syncSticky();
+	window.addEventListener('resize', syncSticky);
+
+	/* Booking form: step progress and a live trip summary. */
+	var bookForm = document.querySelector('[data-form-steps]') ? document.querySelector('[data-form-steps]').closest('form') : null;
+	if (bookForm) {
+		var stepsNav = bookForm.querySelector('[data-form-steps]');
+		var stepItems = Array.prototype.slice.call(stepsNav.querySelectorAll('li[data-step]'));
+		var panels = stepItems.map(function (li) { return bookForm.querySelector('[data-step-panel="' + li.getAttribute('data-step') + '"]'); });
+		var bar = stepsNav.querySelector('.form-steps__bar span');
+		var panelDone = function (panel) {
+			if (!panel) { return false; }
+			var req = panel.querySelectorAll('[required]');
+			for (var i = 0; i < req.length; i++) {
+				var el = req[i];
+				if (el.closest('[hidden]')) { continue; }
+				if (el.type === 'checkbox' ? !el.checked : (el.value.trim() === '' || !el.checkValidity())) { return false; }
+			}
+			return true;
+		};
+		var current = 0;
+		var syncSteps = function () {
+			stepItems.forEach(function (li, i) {
+				li.classList.toggle('is-done', i < current && panelDone(panels[i]));
+				li.classList.toggle('is-current', i === current);
+				var link = li.querySelector('a');
+				if (i === current) { link.setAttribute('aria-current', 'step'); } else { link.removeAttribute('aria-current'); }
+			});
+			if (bar) { bar.style.width = ((current + 1) / stepItems.length * 100) + '%'; }
+		};
+		bookForm.addEventListener('focusin', function (e) {
+			var idx = panels.indexOf(e.target.closest('[data-step-panel]'));
+			if (idx > -1 && idx !== current) { current = idx; syncSteps(); }
+		});
+		if ('IntersectionObserver' in window) {
+			var stepIo = new IntersectionObserver(function (entries) {
+				entries.forEach(function (en) {
+					if (en.isIntersecting && !bookForm.contains(document.activeElement)) {
+						current = panels.indexOf(en.target); syncSteps();
+					}
+				});
+			}, { rootMargin: '-35% 0px -55% 0px' });
+			panels.forEach(function (p) { if (p) { stepIo.observe(p); } });
+		}
+		bookForm.addEventListener('change', syncSteps);
+		syncSteps();
+
+		var summaries = document.querySelectorAll('[data-trip-summary]');
+		var field = function (name) { return bookForm.querySelector('[name="' + name + '"]'); };
+		var place = function (v) { v = (v || '').trim(); return v ? v.split(',')[0] : ''; };
+		var fmtWhen = function () {
+			var d = field('date') ? field('date').value : '';
+			var t = field('time') ? field('time').value : '';
+			if (!d) { return ''; }
+			try {
+				var dt = new Date(d + 'T' + (t || '00:00'));
+				var out = dt.toLocaleDateString('en-AU', { weekday: 'short', day: 'numeric', month: 'short' });
+				if (t) { out += ', ' + dt.toLocaleTimeString('en-AU', { hour: 'numeric', minute: '2-digit' }); }
+				return out;
+			} catch (e) { return d + ' ' + t; }
+		};
+		var syncSummary = function () {
+			var from = place(field('pickup') && field('pickup').value);
+			var to = place(field('dropoff') && field('dropoff').value);
+			var veh = bookForm.querySelector('[name="vehicle"]:checked');
+			var vehLabel = veh ? (veh.closest('label') || veh.parentNode).textContent.replace(/\s+/g, ' ').trim() : '';
+			var pax = field('passengers') ? +field('passengers').value || 1 : 1;
+			var wc = field('wheelchairs') ? +field('wheelchairs').value || 0 : 0;
+			var people = pax + ' ' + (pax === 1 ? (tpI18n.passenger || 'passenger') : (tpI18n.passengers || 'passengers'));
+			if (wc) { people += ' · ' + wc + ' ' + (wc === 1 ? (tpI18n.wheelchair || 'wheelchair') : (tpI18n.wheelchairs || 'wheelchairs')); }
+			var fareBox = bookForm.querySelector('[data-fare-estimate]');
+			var fare = fareBox && !fareBox.hidden && fareBox.querySelector('strong') ? fareBox.querySelector('strong').textContent.replace(/^[^$]*/, '') : '';
+			var ret = field('return_trip') && field('return_trip').checked ? ((field('return_time') && field('return_time').value) || (tpI18n.yesShort || 'Yes')) : '';
+			summaries.forEach(function (box) {
+				box.hidden = !(from || to);
+				var set = function (key, val, fallback) { var el = box.querySelector('[data-sum="' + key + '"]'); if (el) { el.textContent = val || fallback; } };
+				set('from', from, tpI18n.pickup || 'Pick-up');
+				set('to', to, tpI18n.dropoff || 'Drop-off');
+				set('when', fmtWhen(), '—');
+				set('vehicle', vehLabel, '—');
+				set('people', people, '—');
+				set('fare', fare, '—');
+				set('return', ret, '—');
+				var fr = box.querySelector('[data-sum-row="fare"]'); if (fr) { fr.hidden = !fare; }
+				var rr = box.querySelector('[data-sum-row="return"]'); if (rr) { rr.hidden = !ret; }
+			});
+		};
+		bookForm.addEventListener('input', syncSummary);
+		bookForm.addEventListener('change', syncSummary);
+		var fareWatch = bookForm.querySelector('[data-fare-estimate]');
+		if (fareWatch && window.MutationObserver) { new MutationObserver(syncSummary).observe(fareWatch, { childList: true, subtree: true, attributes: true }); }
+		syncSummary();
+	}
+
 	/* Signed-in booking: choosing a saved passenger / client fills their details. */
 	var acct = document.querySelector('[data-account-prefill]');
 	if (acct) {
@@ -137,6 +237,97 @@
 			entries.forEach(function (e) { e.target.classList.toggle('is-inview', e.isIntersecting); });
 		}, { rootMargin: '100px' });
 		animated.forEach(function (el) { io.observe(el); });
+	}
+
+	/* Bottom bar "Menu" opens the main menu. */
+	var menuBtn = document.querySelector('[data-open-menu]');
+	var navToggle = document.querySelector('.nav-toggle');
+	if (menuBtn && navToggle) {
+		menuBtn.addEventListener('click', function () {
+			var header = document.querySelector('.site-header');
+			if (header && getComputedStyle(header).position !== 'sticky') { window.scrollTo(0, 0); }
+			if (navToggle.getAttribute('aria-expanded') !== 'true') { navToggle.click(); }
+			var first = document.querySelector('#primary-nav a');
+			if (first) { first.focus(); }
+		});
+	}
+
+	/* "Your next trip" countdown, e.g. "in 3 hours", "tomorrow". */
+	var countdowns = document.querySelectorAll('[data-countdown]');
+	if (countdowns.length && window.Intl && Intl.RelativeTimeFormat) {
+		var rtf = new Intl.RelativeTimeFormat(document.documentElement.lang || 'en-AU', { numeric: 'auto' });
+		var tick = function () {
+			var now = Date.now() / 1000;
+			countdowns.forEach(function (el) {
+				var diff = +el.getAttribute('data-countdown') - now;
+				var text;
+				if (diff < 60) { text = tpI18n.now || 'Now'; }
+				else if (diff < 3600) { text = rtf.format(Math.round(diff / 60), 'minute'); }
+				else if (diff < 86400) { text = rtf.format(Math.round(diff / 3600), 'hour'); }
+				else { text = rtf.format(Math.round(diff / 86400), 'day'); }
+				el.textContent = text;
+			});
+		};
+		tick();
+		setInterval(tick, 30000);
+	}
+
+	/* Driver jobs: swipe left/right to change day. */
+	var swipeArea = document.querySelector('[data-swipe-next]');
+	if (swipeArea) {
+		var sx = 0, sy = 0, tracking = false;
+		swipeArea.addEventListener('touchstart', function (e) {
+			if (e.touches.length !== 1 || e.target.closest('input, textarea, select, details[open], .table-scroll')) { tracking = false; return; }
+			tracking = true; sx = e.touches[0].clientX; sy = e.touches[0].clientY;
+		}, { passive: true });
+		swipeArea.addEventListener('touchend', function (e) {
+			if (!tracking) { return; }
+			tracking = false;
+			var dx = e.changedTouches[0].clientX - sx;
+			var dy = e.changedTouches[0].clientY - sy;
+			if (Math.abs(dx) > 80 && Math.abs(dx) > Math.abs(dy) * 2) {
+				var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+				if (!reduce) {
+					swipeArea.classList.add('is-swiping');
+					swipeArea.style.transform = 'translateX(' + (dx > 0 ? 40 : -40) + 'px)';
+					swipeArea.style.opacity = '.4';
+				}
+				window.location.href = swipeArea.getAttribute(dx < 0 ? 'data-swipe-next' : 'data-swipe-prev');
+			}
+		}, { passive: true });
+	}
+
+	/* Buttons show they are working, then the page moves on. */
+	document.addEventListener('submit', function (e) {
+		var formEl = e.target;
+		if (e.defaultPrevented || !formEl.matches('form')) { return; }
+		var btn = e.submitter || formEl.querySelector('[type="submit"]');
+		if (btn && !btn.classList.contains('is-loading')) {
+			btn.classList.add('is-loading');
+			btn.setAttribute('aria-busy', 'true');
+		}
+	});
+	window.addEventListener('pageshow', function () {
+		document.querySelectorAll('.is-loading').forEach(function (b) { b.classList.remove('is-loading'); b.removeAttribute('aria-busy'); b.disabled = false; });
+	});
+
+	/* Gentle fade-in as sections scroll into view (not for reduced motion). */
+	var revealOn = document.body.classList.contains('tp-reveal') && 'IntersectionObserver' in window &&
+		!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+	if (revealOn) {
+		var revealEls = document.querySelectorAll('.site-main .section .container > *, .site-main .card, .feature, .service, .who__panel, .testimonial, .post-card, .journey__item');
+		var revealIo = new IntersectionObserver(function (entries) {
+			entries.forEach(function (en) {
+				if (en.isIntersecting) { en.target.classList.add('is-revealed'); revealIo.unobserve(en.target); }
+			});
+		}, { rootMargin: '0px 0px -8% 0px' });
+		revealEls.forEach(function (el) {
+			if (el.closest('.tp-component, .account, .driver-jobs, form')) { return; } // tools stay put
+			var r = el.getBoundingClientRect();
+			if (r.top < window.innerHeight) { return; } // already on screen: never hide it
+			el.classList.add('reveal');
+			revealIo.observe(el);
+		});
 	}
 
 	/* Back to top: appears once the visitor has scrolled a long way. */

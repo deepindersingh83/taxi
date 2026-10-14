@@ -52,6 +52,10 @@ function tp_share_image() {
 	if ( is_singular() && has_post_thumbnail() ) {
 		return get_the_post_thumbnail_url( null, 'large' );
 	}
+	// A branded card with the page title (generated once and cached).
+	if ( function_exists( 'tp_generated_share_image' ) && tp_generated_share_image() ) {
+		return tp_generated_share_image();
+	}
 	$hero = (int) tp_opt( 'hero_image' );
 	if ( $hero ) {
 		return wp_get_attachment_image_url( $hero, 'large' );

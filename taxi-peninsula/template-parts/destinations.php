@@ -17,7 +17,7 @@ if ( count( $destinations ) < 3 ) {
 		<ul class="destinations">
 			<?php foreach ( $destinations as $d ) : ?>
 				<li class="destination">
-					<span class="destination__icon"><?php tp_the_icon( preg_match( '/airport|terminal/i', $d['label'] ) ? 'plane' : ( preg_match( '/hospital|medical|clinic|dialysis|health|rehab/i', $d['label'] ) ? 'medical' : 'pin' ) ); ?></span>
+					<?php tp_the_spot( preg_match( '/airport|terminal/i', $d['label'] ) ? 'plane' : ( preg_match( '/hospital|medical|clinic|dialysis|health|rehab/i', $d['label'] ) ? 'medical' : 'pin' ), 'destination__icon' ); ?>
 					<span class="destination__name"><?php echo esc_html( $d['label'] ); ?></span>
 					<span class="destination__links">
 						<a class="btn btn--accent" href="<?php echo esc_url( $d['book_url'] ); ?>">

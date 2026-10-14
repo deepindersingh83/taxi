@@ -94,6 +94,7 @@ if ( empty( $tp_pages['driver'] ) || ! is_page( $tp_pages['driver'] ) ) :
 			<span><?php esc_html_e( 'Call now', 'taxi-peninsula' ); ?></span>
 		</a>
 	</div>
+	<?php tp_the_bottom_nav(); ?>
 <?php endif; ?>
 
 <?php if ( tp_design( 'back_to_top' ) ) : ?>

@@ -17,7 +17,7 @@ if ( ! $panels ) {
 		<ul class="who">
 			<?php foreach ( $panels as $p ) : ?>
 				<li class="who__panel">
-					<span class="who__icon"><?php tp_the_icon( $p['icon'] ); ?></span>
+					<?php tp_the_spot( $p['icon'], 'who__icon' ); ?>
 					<h3 class="who__title"><?php echo esc_html( $p['title'] ); ?></h3>
 					<p><?php echo esc_html( $p['text'] ); ?></p>
 					<a class="who__link link-arrow" href="<?php echo esc_url( $p['url'] ); ?>"><?php echo esc_html( $p['link'] ); ?> <?php tp_the_icon( 'arrow' ); ?></a>

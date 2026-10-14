@@ -34,6 +34,7 @@ function tp_render_booking_form() {
 			'template-parts/booking',
 			'success',
 			array(
+				'token'     => isset( $_GET['t'] ) ? sanitize_key( wp_unslash( $_GET['t'] ) ) : '',
 				'reference' => preg_match( '/^TP-[A-Z0-9]{6}$/', $ref ) ? $ref : '',
 				'count'     => isset( $_GET['trips'] ) ? absint( $_GET['trips'] ) : 1,
 				'pay_error' => ! empty( $_GET['pay_error'] ),
@@ -77,7 +78,7 @@ add_action( 'admin_post_tp_booking', 'tp_handle_booking' );
 function tp_handle_booking() {
 	$return = isset( $_POST['_tp_return'] ) ? esc_url_raw( wp_unslash( $_POST['_tp_return'] ) ) : '';
 	$return = wp_validate_redirect( $return, home_url( '/' ) );
-	$return = remove_query_arg( array( 'tp_form', 'booking', 'ref', 'trips', 'pay_error', 'pickup', 'dropoff', 'payment' ), $return );
+	$return = remove_query_arg( array( 'tp_form', 'booking', 'ref', 't', 'trips', 'pay_error', 'pickup', 'dropoff', 'payment', 'rebook', 'swap' ), $return );
 
 	if ( ! isset( $_POST['_tp_nonce'] ) || ! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['_tp_nonce'] ) ), 'tp_booking' ) ) {
 		tp_booking_fail( $return, array( 'form' => __( 'Your session expired. Please check your details and submit again.', 'taxi-peninsula' ) ), $_POST );
@@ -171,6 +172,7 @@ function tp_handle_booking() {
 	$args      = array(
 		'booking' => 'received',
 		'ref'     => $first_ref,
+		't'       => tp_booking_token( $ids[0] ),
 	);
 	if ( count( $ids ) > 1 ) {
 		$args['trips'] = count( $ids );
@@ -218,7 +220,8 @@ function tp_booking_fail( $return, array $errors, $old, $anchor = '#book' ) {
 }
 
 function tp_mail_headers( $reply_to = '' ) {
-	$headers = array( 'Content-Type: text/plain; charset=UTF-8' );
+	// X-TP-Mail marks the theme's emails so inc/brand.php can send them as branded HTML.
+	$headers = array( 'Content-Type: text/plain; charset=UTF-8', 'X-TP-Mail: 1' );
 	if ( $reply_to && is_email( $reply_to ) ) {
 		$headers[] = 'Reply-To: ' . $reply_to;
 	}
@@ -341,3 +344,75 @@ function tp_send_status_email( $post_id ) {
 		tp_mail_headers( tp_opt( 'email' ) )
 	);
 }
+
+/* -------------------------------------------------------------------------
+ * "Add to calendar" (.ics) for a booking.
+ * ---------------------------------------------------------------------- */
+
+function tp_booking_ics_url( $post_id ) {
+	return add_query_arg(
+		array(
+			'tp_ics' => (int) $post_id,
+			't'      => tp_booking_token( $post_id ),
+		),
+		home_url( '/' )
+	);
+}
+
+add_action( 'template_redirect', static function () {
+	// phpcs:disable WordPress.Security.NonceVerification.Recommended -- access controlled by HMAC token.
+	if ( empty( $_GET['tp_ics'] ) ) {
+		return;
+	}
+	$post_id = absint( $_GET['tp_ics'] );
+	$token   = isset( $_GET['t'] ) ? sanitize_key( wp_unslash( $_GET['t'] ) ) : '';
+	// phpcs:enable
+	if ( 'tp_booking' !== get_post_type( $post_id ) || ! $token || ! hash_equals( tp_booking_token( $post_id ), $token ) ) {
+		wp_die( esc_html__( 'This calendar link is not valid.', 'taxi-peninsula' ), '', array( 'response' => 403 ) );
+	}
+	$b     = tp_get_booking( $post_id );
+	$start = DateTimeImmutable::createFromFormat( 'Y-m-d H:i', $b['date'] . ' ' . ( $b['time'] ?: '00:00' ), wp_timezone() );
+	if ( ! $start ) {
+		wp_die( '', '', array( 'response' => 404 ) );
+	}
+	$end  = $start->modify( '+' . max( 30, (int) $b['duration'] ?: 60 ) . ' minutes' );
+	$utc  = new DateTimeZone( 'UTC' );
+	$esc  = static function ( $text ) {
+		return str_replace( array( '\\', ';', ',', "\r\n", "\n" ), array( '\\\\', '\;', '\,', '\n', '\n' ), wp_strip_all_tags( (string) $text ) );
+	};
+	$site = wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );
+	/* translators: 1: site name, 2: reference */
+	$summary = sprintf( __( 'Wheelchair taxi — %1$s (%2$s)', 'taxi-peninsula' ), $site, $b['reference'] );
+	$desc    = $b['pickup'] . ' → ' . $b['dropoff'] . "\n"
+		/* translators: %s: phone */
+		. sprintf( __( 'Questions? Call %s', 'taxi-peninsula' ), tp_opt( 'phone_display' ) ) . "\n"
+		. tp_booking_manage_url( $post_id );
+	$lines   = array(
+		'BEGIN:VCALENDAR',
+		'VERSION:2.0',
+		'PRODID:-//' . $esc( $site ) . '//Booking//EN',
+		'CALSCALE:GREGORIAN',
+		'METHOD:PUBLISH',
+		'BEGIN:VEVENT',
+		'UID:' . $b['reference'] . '@' . wp_parse_url( home_url(), PHP_URL_HOST ),
+		'DTSTAMP:' . gmdate( 'Ymd\THis\Z' ),
+		'DTSTART:' . $start->setTimezone( $utc )->format( 'Ymd\THis\Z' ),
+		'DTEND:' . $end->setTimezone( $utc )->format( 'Ymd\THis\Z' ),
+		'SUMMARY:' . $esc( $summary ),
+		'LOCATION:' . $esc( $b['pickup'] ),
+		'DESCRIPTION:' . $esc( $desc ),
+		'BEGIN:VALARM',
+		'TRIGGER:-PT30M',
+		'ACTION:DISPLAY',
+		'DESCRIPTION:' . $esc( $summary ),
+		'END:VALARM',
+		'END:VEVENT',
+		'END:VCALENDAR',
+	);
+	nocache_headers();
+	header( 'Content-Type: text/calendar; charset=utf-8' );
+	header( 'Content-Disposition: attachment; filename="taxi-' . sanitize_file_name( strtolower( $b['reference'] ) ) . '.ics"' );
+	header( 'X-Robots-Tag: noindex' );
+	echo implode( "\r\n", $lines ) . "\r\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- calendar file, text escaped above.
+	exit;
+} );

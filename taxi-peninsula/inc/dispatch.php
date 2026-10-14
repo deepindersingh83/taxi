@@ -97,6 +97,13 @@ function tp_render_dispatch_page() {
 		$day = wp_date( 'Y-m-d' );
 	}
 	$dt   = DateTimeImmutable::createFromFormat( '!Y-m-d', $day, wp_timezone() );
+	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- read-only view.
+	$view = isset( $_GET['view'] ) && 'timeline' === $_GET['view'] ? 'timeline' : 'columns';
+	if ( isset( $_GET['view'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		update_user_meta( get_current_user_id(), 'tp_dispatch_view', $view );
+	} elseif ( 'timeline' === get_user_meta( get_current_user_id(), 'tp_dispatch_view', true ) ) {
+		$view = 'timeline';
+	}
 	$base = admin_url( 'edit.php?post_type=tp_booking&page=tp-dispatch' );
 
 	$ids = get_posts(
@@ -159,6 +166,10 @@ function tp_render_dispatch_page() {
 			<a class="button" href="<?php echo esc_url( add_query_arg( 'day', $dt->modify( '+1 day' )->format( 'Y-m-d' ), $base ) ); ?>" aria-label="<?php esc_attr_e( 'Next day', 'taxi-peninsula' ); ?>">›</a>
 			<a class="button" href="<?php echo esc_url( $base ); ?>"><?php esc_html_e( 'Today', 'taxi-peninsula' ); ?></a>
 			<strong class="tp-dispatch__date"><?php echo esc_html( wp_date( 'l j F Y', $dt->getTimestamp() ) ); ?></strong>
+			<span class="tp-dispatch__views" role="group" aria-label="<?php esc_attr_e( 'View', 'taxi-peninsula' ); ?>">
+				<a class="button<?php echo 'columns' === $view ? ' button-primary' : ''; ?>" href="<?php echo esc_url( add_query_arg( array( 'day' => $day, 'view' => 'columns' ), $base ) ); ?>"<?php echo 'columns' === $view ? ' aria-current="page"' : ''; ?>><?php esc_html_e( 'Columns', 'taxi-peninsula' ); ?></a>
+				<a class="button<?php echo 'timeline' === $view ? ' button-primary' : ''; ?>" href="<?php echo esc_url( add_query_arg( array( 'day' => $day, 'view' => 'timeline' ), $base ) ); ?>"<?php echo 'timeline' === $view ? ' aria-current="page"' : ''; ?>><?php esc_html_e( 'Timeline', 'taxi-peninsula' ); ?></a>
+			</span>
 			<noscript><button class="button" type="submit"><?php esc_html_e( 'Go', 'taxi-peninsula' ); ?></button></noscript>
 		</form>
 
@@ -169,10 +180,14 @@ function tp_render_dispatch_page() {
 			<li><span class="tp-tiles__n"><?php echo esc_html( tp_open_request_count() ); ?></span><a href="<?php echo esc_url( admin_url( 'edit.php?post_type=tp_booking&page=tp-requests' ) ); ?>"><?php esc_html_e( 'Change requests', 'taxi-peninsula' ); ?></a></li>
 		</ul>
 
+		<?php if ( 'timeline' === $view ) : ?>
+			<?php tp_dispatch_timeline( $day, $drivers, $by_driver, $unassigned ); ?>
+		<?php endif; ?>
+
 		<section class="tp-dispatch__unassigned" aria-labelledby="tp-unassigned">
 			<h2 id="tp-unassigned"><?php esc_html_e( 'Needs a driver', 'taxi-peninsula' ); ?> <span class="count">(<?php echo esc_html( count( $unassigned ) ); ?>)</span></h2>
 			<?php if ( ! $unassigned ) : ?>
-				<p class="description"><?php esc_html_e( 'Every trip for this day has a driver.', 'taxi-peninsula' ); ?></p>
+				<div class="tp-admin-empty"><?php echo tp_illustration( 'success' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG. ?><p><?php esc_html_e( 'Every trip for this day has a driver.', 'taxi-peninsula' ); ?></p></div>
 			<?php else : ?>
 				<div class="tp-dispatch__cards">
 					<?php foreach ( $unassigned as $b ) : ?>
@@ -182,8 +197,12 @@ function tp_render_dispatch_page() {
 			<?php endif; ?>
 		</section>
 
+		<?php if ( 'columns' === $view ) : ?>
 		<h2><?php esc_html_e( 'Drivers', 'taxi-peninsula' ); ?></h2>
-		<?php if ( ! $drivers ) : ?>
+		<?php endif; ?>
+		<?php if ( 'timeline' === $view ) : ?>
+			<?php // Timeline already shows the drivers. ?>
+		<?php elseif ( ! $drivers ) : ?>
 			<p><?php esc_html_e( 'No drivers yet.', 'taxi-peninsula' ); ?> <a href="<?php echo esc_url( admin_url( 'user-new.php' ) ); ?>"><?php esc_html_e( 'Add a user with the Driver role.', 'taxi-peninsula' ); ?></a></p>
 		<?php else : ?>
 			<div class="tp-dispatch__columns" tabindex="0" role="region" aria-label="<?php esc_attr_e( 'Trips by driver', 'taxi-peninsula' ); ?>">
@@ -223,6 +242,102 @@ function tp_render_dispatch_page() {
 		<?php endif; ?>
 		<p class="description"><?php esc_html_e( 'Changing the driver saves straight away, texts the new driver and lets the customer know. Warnings never block an assignment — they are there to help you double-check.', 'taxi-peninsula' ); ?></p>
 	</div>
+	<?php
+}
+
+/**
+ * Timeline: drivers as rows, the day's hours across the top, trips as blocks.
+ * Overlapping trips stack in lanes and are outlined in red.
+ */
+function tp_dispatch_timeline( $day, array $drivers, array $by_driver, array $unassigned ) {
+	$day_start = DateTimeImmutable::createFromFormat( '!Y-m-d', $day, wp_timezone() )->getTimestamp();
+	$first     = 6;
+	$last      = 20;
+	$all       = array_merge( $unassigned, ...array_values( $by_driver ) );
+	foreach ( $all as $b ) {
+		list( $s, $e ) = tp_trip_window( $b );
+		$first = min( $first, (int) floor( ( $s - $day_start ) / HOUR_IN_SECONDS ) );
+		$last  = max( $last, (int) ceil( ( $e - $day_start ) / HOUR_IN_SECONDS ) );
+	}
+	$first = max( 0, $first );
+	$last  = min( 24, max( $last, $first + 4 ) );
+	$span  = ( $last - $first ) * HOUR_IN_SECONDS;
+	$from  = $day_start + $first * HOUR_IN_SECONDS;
+
+	$rows = array( array( __( 'Needs a driver', 'taxi-peninsula' ), $unassigned, true ) );
+	foreach ( $drivers as $d ) {
+		$rows[] = array( $d->display_name, $by_driver[ $d->ID ] ?? array(), false );
+	}
+	$now = time();
+	?>
+	<section class="tp-timeline" aria-labelledby="tp-timeline-title" style="--hours: <?php echo esc_attr( $last - $first ); ?>">
+		<h2 id="tp-timeline-title" class="screen-reader-text"><?php esc_html_e( 'Timeline', 'taxi-peninsula' ); ?></h2>
+		<div class="tp-timeline__scroll" tabindex="0" role="region" aria-label="<?php esc_attr_e( 'Trips by driver and time', 'taxi-peninsula' ); ?>">
+			<div class="tp-timeline__grid">
+				<div class="tp-timeline__row tp-timeline__row--head" aria-hidden="true">
+					<div class="tp-timeline__label"></div>
+					<div class="tp-timeline__track">
+						<?php for ( $h = $first; $h < $last; $h++ ) : ?>
+							<span class="tp-timeline__hour" style="left: <?php echo esc_attr( ( $h - $first ) / ( $last - $first ) * 100 ); ?>%"><?php echo esc_html( wp_date( 'ga', $day_start + $h * HOUR_IN_SECONDS ) ); ?></span>
+						<?php endfor; ?>
+					</div>
+				</div>
+				<?php foreach ( $rows as $row ) : ?>
+					<?php
+					list( $label, $trips, $is_unassigned ) = $row;
+					// Lane packing so overlapping trips don't hide each other.
+					$lanes  = array();
+					$placed = array();
+					foreach ( $trips as $b ) {
+						list( $s, $e ) = tp_trip_window( $b );
+						$lane = 0;
+						while ( isset( $lanes[ $lane ] ) && $lanes[ $lane ] > $s ) {
+							$lane++;
+						}
+						$lanes[ $lane ] = $e;
+						$clash          = ! $is_unassigned && in_array( $b['status'], tp_active_statuses(), true ) && (bool) array_filter(
+							$trips,
+							static function ( $o ) use ( $b, $s, $e ) {
+								if ( $o['id'] === $b['id'] || ! in_array( $o['status'], tp_active_statuses(), true ) ) {
+									return false;
+								}
+								list( $os, $oe ) = tp_trip_window( $o );
+								return $s < $oe && $os < $e;
+							}
+						);
+						$placed[] = array( $b, $s, $e, $lane, $clash );
+					}
+					$height = max( 1, count( $lanes ) );
+					?>
+					<div class="tp-timeline__row<?php echo $is_unassigned ? ' tp-timeline__row--unassigned' : ''; ?>">
+						<div class="tp-timeline__label"><strong><?php echo esc_html( $label ); ?></strong> <span class="count">(<?php echo esc_html( count( $trips ) ); ?>)</span></div>
+						<ul class="tp-timeline__track" style="--lanes: <?php echo esc_attr( $height ); ?>">
+							<?php if ( $now > $from && $now < $from + $span ) : ?>
+								<li class="tp-timeline__now" style="left: <?php echo esc_attr( ( $now - $from ) / $span * 100 ); ?>%" aria-hidden="true"></li>
+							<?php endif; ?>
+							<?php foreach ( $placed as $item ) : ?>
+								<?php
+								list( $b, $s, $e, $lane, $clash ) = $item;
+								$left  = max( 0, ( $s - $from ) / $span * 100 );
+								$width = max( 2.5, ( $e - $s ) / $span * 100 );
+								?>
+								<li class="tp-tblock tp-tblock--<?php echo esc_attr( $b['status'] ); ?><?php echo $clash ? ' is-clash' : ''; ?>" style="left: <?php echo esc_attr( round( $left, 3 ) ); ?>%; width: <?php echo esc_attr( round( $width, 3 ) ); ?>%; --lane: <?php echo esc_attr( $lane ); ?>">
+									<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=tp_booking&page=tp-dispatch&view=columns&day=' . rawurlencode( $day ) . '#tp-card-' . $b['id'] ) ); ?>" title="<?php echo esc_attr( tp_format_pickup( $b, 'g:i a' ) . ' · ' . $b['name'] . ' · ' . $b['pickup'] . ' → ' . $b['dropoff'] . ' · ' . ( tp_statuses()[ $b['status'] ] ?? '' ) ); ?>">
+										<strong><?php echo esc_html( tp_format_pickup( $b, 'g:i' ) ); ?></strong>
+										<span><?php echo esc_html( $b['name'] ); ?> · <?php echo esc_html( tp_short_place( $b['pickup'] ) . '→' . tp_short_place( $b['dropoff'] ) ); ?></span>
+										<?php if ( $clash ) : ?>
+											<span class="screen-reader-text"><?php esc_html_e( '(clashes with another trip)', 'taxi-peninsula' ); ?></span>
+										<?php endif; ?>
+									</a>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		</div>
+		<p class="description"><?php esc_html_e( 'Each block is the pick-up time plus the trip and 15 minutes to load. Red outline = overlapping trips for the same driver. Click a block to assign or move it in the column view.', 'taxi-peninsula' ); ?></p>
+	</section>
 	<?php
 }
 
@@ -397,7 +512,7 @@ function tp_render_requests_page() {
 
 		<?php $ids = tp_open_request_ids(); ?>
 		<?php if ( ! $ids ) : ?>
-			<p class="tp-empty"><?php esc_html_e( 'No open requests. Nice work!', 'taxi-peninsula' ); ?></p>
+			<div class="tp-admin-empty tp-empty"><?php echo tp_illustration( 'message' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG. ?><p><?php esc_html_e( 'No open requests. Nice work!', 'taxi-peninsula' ); ?></p></div>
 		<?php endif; ?>
 
 		<?php foreach ( $ids as $id ) : ?>

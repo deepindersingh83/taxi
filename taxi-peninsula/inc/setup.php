@@ -111,6 +111,15 @@ function tp_enqueue() {
 				/* translators: 1: weekday, 2: time */
 				'openDay'      => __( 'we open %1$s at %2$s', 'taxi-peninsula' ),
 				'less'     => __( 'Show less', 'taxi-peninsula' ),
+				'passenger'   => __( 'passenger', 'taxi-peninsula' ),
+				'passengers'  => __( 'passengers', 'taxi-peninsula' ),
+				'wheelchair'  => __( 'wheelchair', 'taxi-peninsula' ),
+				'wheelchairs' => __( 'wheelchairs', 'taxi-peninsula' ),
+				'pickup'      => __( 'Pick-up', 'taxi-peninsula' ),
+				'dropoff'     => __( 'Drop-off', 'taxi-peninsula' ),
+				'yesShort'    => __( 'Yes', 'taxi-peninsula' ),
+				'sending'     => __( 'Sending…', 'taxi-peninsula' ),
+				'now'         => __( 'Now', 'taxi-peninsula' ),
 				'prev'     => __( 'Previous photo', 'taxi-peninsula' ),
 				'next'     => __( 'Next photo', 'taxi-peninsula' ),
 				/* translators: 1: photo number, 2: total */
