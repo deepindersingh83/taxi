@@ -242,6 +242,57 @@ Lightweight animated illustrations, drawn in SVG and CSS. There are no video fil
   - animations only run while they're on screen
 - **Settings** (Customize → Design → *Animations*): turn animations on or off, and choose where the moving road appears (hero, page banners, footer). When animations are off, the scenes show as still pictures.
 
+### Roles: operators, drivers, customers, coordinators, accounts (v1.7)
+**User types**
+| Role | Signs in to | Can do |
+|---|---|---|
+| Administrator / Booking Manager (operator) | wp-admin | Everything below: dispatch, requests, bookings, reports, finance |
+| Driver | Driver Jobs page (phone) | Only their own trips |
+| Customer | My Account page | Their own trips, passengers, addresses, receipts |
+| Coordinator / facility | My Account page | Book for many clients, see all their bookings, invoices on account |
+| Accounts (finance) | wp-admin → Invoices | Fares, invoices, payments and finance CSV only — no dispatch |
+
+**Operator** (Bookings menu)
+- **Dispatch board:** one screen per day, with "Needs a driver" at the top and a column for each driver. Change the driver or vehicle from a dropdown and it saves straight away: the driver gets a text and the customer is told. Assigning without choosing a vehicle uses the driver's **usual vehicle** (set on their user profile).
+- **Clash warnings:** shown on the board, after assigning, and on the booking screen:
+  - a driver who already has a trip at that time (trip length plus 15 minutes to load)
+  - a vehicle without wheelchair access, or with too few wheelchair positions or seats
+  - a Maxi booking given a one-wheelchair van
+  - warnings never block an assignment
+- **Change requests:** every customer change or cancellation request in one list, with **Approve** and **Decline** buttons. A change can be applied right there (new date, time, addresses) and include a reply. The customer gets an email and SMS either way. Approving "cancel all remaining trips" cancels the rest of a repeat booking.
+
+**Driver** (Driver Jobs page)
+- **Trip buttons:** *Accept trip → On my way → Arrived → Passenger on board → Completed*, or *No-show* once arrived.
+- **Customer texts:** "On my way" and "Arrived" text the passenger automatically (Bookings → Settings → SMS). Every step is time-stamped.
+- **Decline with a reason:** the trip goes back to "Needs a driver" with the reason shown, and the office is emailed and texted.
+- **New driver must accept:** when a trip is reassigned, the new driver has to accept it.
+- **My week:** trips for the next 7 days, plus a weekly **timesheet** with on-my-way, on-board and finish times, minutes with passengers, km, no-shows and the driver's average rating. It can be printed.
+
+**Customer** (My Account page, created by Bookings → Setup)
+- **Sign-up:** create an account (name, email, mobile, password) with the same spam protection as the booking form. Bookings made while signed in appear automatically. Older ones can be added with their reference and phone number.
+- **Trips:**
+  - upcoming and past trips with live status (the progress bar now shows *On the way* and *Arrived*)
+  - **Book again** and **Book the return**, which copy the trip with the addresses swapped for the return
+- **Passengers and addresses:** passenger profiles with wheelchair type, chair size and weight, and needs. Choosing one on the booking form fills in their details and adds the chair notes for the driver. Saved addresses can be picked from a list.
+- **Receipts and invoices:**
+  - receipts open from the account, the booking page and the "completed" email
+  - once a fare is entered they show GST (1/11 of the fare)
+  - with your **ABN** set (Bookings → Settings → Payments) they become **tax invoices**
+  - account invoices show "Amount due" and your payment terms
+  - print or save as PDF from the browser
+- **Ratings:** customers rate a completed trip from 1 to 5 stars with an optional comment. Ratings of 3 stars or lower email the office. Driver averages show on the dispatch board and in the driver's week.
+
+**Coordinator / facility account**
+- **Sign-up:** choose "Clients or residents" when signing up and enter the organisation name. The office is emailed about each new organisation account.
+- **Clients:** save each client once, with their NDIS number and wheelchair details. Bookings default to **account / invoice**, with the organisation's invoice details filled in.
+- **Bookings:** see all bookings made for clients, filtered by client. Coordinators get the emails; each client gets the texts on their own mobile.
+
+**Accounts (finance)** (wp-admin → Invoices)
+- **Trip list:** finished trips and online deposits by date range, payment method, invoice status or search (invoice to, passenger, reference, NDIS number).
+- **Fares and invoices:** enter the final fare and mark account invoices *Invoice sent* or *Paid*.
+- **Totals:** fares, GST, paid online, amount owing on account and trips missing a fare.
+- **Exports:** a finance **CSV export**, plus a link to each tax invoice. Accounts staff cannot open the dispatch board or edit bookings.
+
 ## Install
 
 1. Zip the `taxi-peninsula` folder and upload it under **Appearance → Themes → Add New → Upload**. Then activate it.
@@ -251,7 +302,7 @@ Lightweight animated illustrations, drawn in SVG and CSS. There are no video fil
 5. **Settings → Reading:** choose a static front page (for example a page called *Home*), and set a *Blog* page as the posts page.
 6. **Appearance → Customize → Taxi Peninsula:** check the contact details, hours, hero text and service areas. Upload your logo under *Site Identity* and choose colours and fonts under *Design*.
 7. **Bookings → Settings:** connect SMS, Stripe and spam protection as needed (details below).
-8. **Users → Add New:** add drivers with the **Driver** role and their mobile number, and office staff as **Booking Manager**.
+8. **Users → Add New:** add drivers with the **Driver** role, their mobile number and usual vehicle; office staff as **Booking Manager**; bookkeepers as **Accounts (finance)**. Customers and coordinators sign up themselves on the My Account page.
 9. Review the starter content: FAQs, services, suburb pages and the example fleet vehicles (add photos, then publish them). Add real **Testimonials**.
 10. Install an SMTP plugin, for example WP Mail SMTP, so emails are delivered reliably.
 

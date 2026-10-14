@@ -30,6 +30,10 @@
 			<?php if ( tp_sms_href() ) : ?>
 				<li class="topbar__sms"><a href="<?php echo esc_attr( tp_sms_href() ); ?>"><?php tp_the_icon( 'message' ); ?><span><?php esc_html_e( 'Text us', 'taxi-peninsula' ); ?></span></a></li>
 			<?php endif; ?>
+			<?php $tp_account = tp_page_url_by_template( 'account' ); ?>
+			<?php if ( $tp_account && ( ! is_user_logged_in() || tp_is_account_user() ) ) : ?>
+				<li><a href="<?php echo esc_url( $tp_account ); ?>"><?php tp_the_icon( 'users' ); ?><span><?php echo esc_html( is_user_logged_in() && tp_is_account_user() ? __( 'My account', 'taxi-peninsula' ) : __( 'Sign in', 'taxi-peninsula' ) ); ?></span></a></li>
+			<?php endif; ?>
 			<?php $tp_lookup = tp_page_url_by_template( 'lookup' ); ?>
 			<?php if ( $tp_lookup ) : ?>
 				<li><a href="<?php echo esc_url( $tp_lookup ); ?>"><?php tp_the_icon( 'calendar' ); ?><span><?php esc_html_e( 'Manage my booking', 'taxi-peninsula' ); ?></span></a></li>

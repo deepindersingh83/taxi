@@ -112,9 +112,28 @@ function tp_statuses() {
 		'pending'   => __( 'Pending', 'taxi-peninsula' ),
 		'confirmed' => __( 'Confirmed', 'taxi-peninsula' ),
 		'assigned'  => __( 'Driver assigned', 'taxi-peninsula' ),
+		'accepted'  => __( 'Driver accepted', 'taxi-peninsula' ),
+		'on_way'    => __( 'Driver on the way', 'taxi-peninsula' ),
+		'arrived'   => __( 'Driver arrived', 'taxi-peninsula' ),
+		'onboard'   => __( 'Passenger on board', 'taxi-peninsula' ),
 		'completed' => __( 'Completed', 'taxi-peninsula' ),
+		'no_show'   => __( 'No-show', 'taxi-peninsula' ),
 		'cancelled' => __( 'Cancelled', 'taxi-peninsula' ),
 	);
+}
+
+/**
+ * Statuses of trips that are still going ahead (not finished or cancelled).
+ */
+function tp_active_statuses() {
+	return array( 'pending', 'confirmed', 'assigned', 'accepted', 'on_way', 'arrived', 'onboard' );
+}
+
+/**
+ * Statuses of trips that have finished (used for receipts, ratings and timesheets).
+ */
+function tp_finished_statuses() {
+	return array( 'completed', 'no_show' );
 }
 
 /**
@@ -199,6 +218,7 @@ function tp_feature_shortcodes() {
 		'faq'     => 'tp_faq',
 		'fleet'   => 'tp_fleet',
 		'driver'  => 'tp_driver_jobs',
+		'account' => 'tp_account',
 		'ndis'    => 'tp_ndis',
 	);
 }

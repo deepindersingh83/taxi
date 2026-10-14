@@ -99,3 +99,57 @@
 .tp-chart__table table { max-width: 320px; }
 .tp-reports__drivers { max-width: 480px; }
 .tp-admin-field--account { opacity: .7; }
+
+/* v1.7 — new trip statuses */
+.tp-badge--accepted { background: #e0e7ff; color: #312e81; }
+.tp-badge--on_way { background: #cffafe; color: #164e63; }
+.tp-badge--arrived { background: #fef3c7; color: #78350f; }
+.tp-badge--onboard { background: #d1fae5; color: #064e3b; }
+.tp-badge--no_show { background: #f3f4f6; color: #374151; border: 1px solid #9ca3af; }
+.tp-warning { margin: 6px 0; padding: 6px 8px; background: #fef3c7; border-left: 4px solid #d97706; color: #78350f; }
+.tp-warning .dashicons { color: #b45309; }
+.tp-tiles li.is-alert { border-color: #d97706; background: #fffbeb; }
+
+/* Dispatch board */
+.tp-dispatch__nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0; }
+.tp-dispatch__date { font-size: 15px; margin-left: 8px; }
+.tp-dispatch__unassigned { background: #fff7ed; border: 1px solid #fdba74; border-radius: 8px; padding: 4px 16px 16px; margin-bottom: 16px; }
+.tp-dispatch__cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.tp-dispatch__columns { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(260px, 300px); gap: 12px; overflow-x: auto; padding-bottom: 12px; align-items: start; }
+.tp-dispatch__col { background: #f6f7f7; border: 1px solid #dcdcde; border-radius: 8px; padding: 10px; display: grid; gap: 10px; }
+.tp-dispatch__colhead h3 { margin: 0; font-size: 15px; }
+.tp-dispatch__colhead p { margin: 2px 0 0; color: #50575e; }
+.tp-dcard { background: #fff; border: 1px solid #dcdcde; border-left: 4px solid #2271b1; border-radius: 6px; padding: 10px; display: grid; gap: 4px; }
+.tp-dcard.has-warning { border-left-color: #d63638; }
+.tp-dcard--completed, .tp-dcard--no_show { opacity: .7; border-left-color: #00a32a; }
+.tp-dcard p { margin: 0; }
+.tp-dcard__head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.tp-dcard__time { font-size: 16px; }
+.tp-dcard__route { color: #1d2327; }
+.tp-dcard__needs { color: #50575e; font-size: 12px; }
+.tp-dcard__flag { font-size: 12px; padding: 4px 6px; border-radius: 4px; background: #fff7ed; }
+.tp-dcard__flag--warn { background: #fcf0f1; color: #8a2424; }
+.tp-dcard__flag--declined { background: #fef3c7; color: #78350f; }
+.tp-dcard__assign { display: grid; grid-template-columns: auto 1fr; gap: 4px 6px; align-items: center; margin-top: 6px; padding-top: 6px; border-top: 1px solid #f0f0f1; }
+.tp-dcard__assign select { width: 100%; max-width: none; }
+.tp-dcard__assign button { grid-column: 2; justify-self: start; }
+
+/* Change requests */
+.tp-req.card { max-width: 900px; padding: 12px 20px; margin: 12px 0; }
+.tp-req__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.tp-req__head h2 { font-size: 16px; margin: 8px 0; }
+.tp-req__meta { color: #50575e; }
+.tp-req__msg { margin: 8px 0; padding: 8px 12px; background: #f6f7f7; border-left: 4px solid #2271b1; font-size: 14px; }
+.tp-req__change { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; border: 1px solid #dcdcde; padding: 8px 12px 12px; border-radius: 6px; }
+.tp-req__change label { display: grid; gap: 2px; font-weight: 600; }
+.tp-req__wide { grid-column: 1 / -1; }
+.tp-req__buttons { display: flex; gap: 8px; }
+.tp-empty { font-size: 15px; padding: 24px; background: #fff; border: 1px dashed #c3c4c7; border-radius: 8px; max-width: 600px; }
+
+/* Finance */
+.tp-finance__filters { display: flex; flex-wrap: wrap; align-items: end; gap: 10px; margin: 12px 0 16px; }
+.tp-finance__filters label { display: grid; gap: 2px; font-weight: 600; }
+.tp-finance__table td { vertical-align: top; }
+.tp-finance__table .num { text-align: right; }
+.tp-finance__row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.tp-finance__money input { width: 90px; }

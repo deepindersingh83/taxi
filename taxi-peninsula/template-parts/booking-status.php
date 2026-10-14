@@ -15,7 +15,7 @@ $vehicles  = tp_vehicle_types();
 $aids      = tp_mobility_aids();
 $payments  = array_merge( array( 'driver' => __( 'Pay the driver', 'taxi-peninsula' ), 'account' => __( 'Account / invoice', 'taxi-peninsula' ), 'online' => __( 'Online deposit', 'taxi-peninsula' ) ), tp_payment_methods() );
 $pickup_ts = strtotime( get_gmt_from_date( $b['date'] . ' ' . $b['time'] . ':00' ) . ' UTC' );
-$is_open   = in_array( $b['status'], array( 'pending', 'confirmed', 'assigned' ), true ) && $pickup_ts > time();
+$is_open   = in_array( $b['status'], array( 'pending', 'confirmed', 'assigned', 'accepted' ), true ) && $pickup_ts > time();
 $driver    = $b['driver_id'] ? get_userdata( $b['driver_id'] ) : null;
 $series    = tp_series_ids( $b['series'] );
 
@@ -23,10 +23,17 @@ $steps = array(
 	'pending'   => __( 'Received', 'taxi-peninsula' ),
 	'confirmed' => __( 'Confirmed', 'taxi-peninsula' ),
 	'assigned'  => __( 'Driver assigned', 'taxi-peninsula' ),
+	'on_way'    => __( 'On the way', 'taxi-peninsula' ),
+	'arrived'   => __( 'Arrived', 'taxi-peninsula' ),
 	'completed' => __( 'Completed', 'taxi-peninsula' ),
 );
+// Several live statuses share a step on the customer's progress bar.
+$step_of = array(
+	'accepted' => 'assigned',
+	'onboard'  => 'arrived',
+);
 $order = array_keys( $steps );
-$pos   = array_search( $b['status'], $order, true );
+$pos   = array_search( $step_of[ $b['status'] ] ?? $b['status'], $order, true );
 ?>
 <div class="booking-status card">
 	<?php if ( ! empty( $args['requested'] ) ) : ?>
@@ -52,8 +59,15 @@ $pos   = array_search( $b['status'], $order, true );
 
 	<?php if ( 'cancelled' === $b['status'] ) : ?>
 		<p class="notice notice--error"><?php esc_html_e( 'This booking has been cancelled.', 'taxi-peninsula' ); ?></p>
+	<?php elseif ( 'no_show' === $b['status'] ) : ?>
+		<p class="notice notice--error"><?php esc_html_e( 'Our driver arrived but could not find you, so this trip was marked as a no-show. Please call us if this is a mistake.', 'taxi-peninsula' ); ?></p>
 	<?php else : ?>
-		<ol class="progress" aria-label="<?php esc_attr_e( 'Booking progress', 'taxi-peninsula' ); ?>">
+		<?php if ( 'on_way' === $b['status'] ) : ?>
+			<p class="notice notice--info" role="status"><strong><?php esc_html_e( 'Your driver is on the way.', 'taxi-peninsula' ); ?></strong></p>
+		<?php elseif ( 'arrived' === $b['status'] ) : ?>
+			<p class="notice notice--success" role="status"><strong><?php esc_html_e( 'Your driver has arrived.', 'taxi-peninsula' ); ?></strong></p>
+		<?php endif; ?>
+		<ol class="progress" style="--steps: <?php echo count( $steps ); ?>" aria-label="<?php esc_attr_e( 'Booking progress', 'taxi-peninsula' ); ?>">
 			<?php
 			foreach ( $steps as $key => $label ) :
 				$i     = array_search( $key, $order, true );
@@ -122,6 +136,14 @@ $pos   = array_search( $b['status'], $order, true );
 			</button>
 		</form>
 	<?php endif; ?>
+
+	<?php if ( ! empty( $args['rated'] ) ) : ?>
+		<p class="notice notice--success" role="status" tabindex="-1" data-focus><?php esc_html_e( 'Thank you for rating your trip!', 'taxi-peninsula' ); ?></p>
+	<?php endif; ?>
+	<?php if ( in_array( $b['status'], tp_finished_statuses(), true ) || $b['paid'] > 0 ) : ?>
+		<p class="booking-status__docs"><a class="btn btn--ghost" href="<?php echo esc_url( tp_receipt_url( $b['id'] ) ); ?>" target="_blank" rel="noopener"><?php echo esc_html( tp_document_title( $b ) ); ?><span class="screen-reader-text"> <?php esc_html_e( '(opens in a new tab)', 'taxi-peninsula' ); ?></span></a></p>
+	<?php endif; ?>
+	<div id="rate"><?php tp_rating_block( $b, tp_booking_manage_url( $b['id'] ) ); ?></div>
 
 	<?php if ( count( $series ) > 1 ) : ?>
 		<details class="series">

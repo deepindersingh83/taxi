@@ -62,6 +62,57 @@
 		syncTheme();
 	});
 
+	/* Signed-in booking: choosing a saved passenger / client fills their details. */
+	var acct = document.querySelector('[data-account-prefill]');
+	if (acct) {
+		var data = {};
+		try { data = JSON.parse(acct.getAttribute('data-account-prefill')) || {}; } catch (e) {}
+		var form = acct.closest('form');
+		var set = function (name, value) {
+			var el = form && form.querySelector('[name="' + name + '"]');
+			if (el && value !== undefined && value !== null) { el.value = value; el.dispatchEvent(new Event('change', { bubbles: true })); }
+		};
+		var pick = acct.querySelector('[data-passenger-select]');
+		if (pick) {
+			pick.addEventListener('change', function () {
+				var p = (data.passengers || {})[pick.value];
+				if (p) {
+					set('name', p.name); set('phone', p.phone);
+					if (p.aid) { set('mobility_aid', p.aid); }
+					if (p.ndis) { set('ndis_number', p.ndis); }
+					var notes = form.querySelector('[name="notes"]');
+					if (notes && p.notes && notes.value.indexOf(p.notes) === -1) { notes.value = (notes.value ? notes.value + '\n' : '') + p.notes; }
+				} else if (data.self) {
+					set('name', data.self.name); set('phone', data.self.phone);
+				} else {
+					set('name', ''); set('phone', '');
+				}
+			});
+		}
+	}
+	document.querySelectorAll('[data-address-for]').forEach(function (sel) {
+		sel.addEventListener('change', function () {
+			var input = document.getElementById(sel.getAttribute('data-address-for'));
+			if (input && sel.value) {
+				input.value = sel.value;
+				input.dispatchEvent(new Event('change', { bubbles: true }));
+				sel.value = '';
+				input.focus();
+			}
+		});
+	});
+
+	/* Sign-up: show "Organisation name" only for coordinator accounts. */
+	var orgField = document.querySelector('[data-org-field]');
+	if (orgField) {
+		var syncOrg = function () {
+			var chosen = document.querySelector('[data-toggle-org]:checked');
+			orgField.hidden = !(chosen && chosen.getAttribute('data-toggle-org') === '1');
+		};
+		document.querySelectorAll('[data-toggle-org]').forEach(function (r) { r.addEventListener('change', syncOrg); });
+		syncOrg();
+	}
+
 	/* Pause / play all animations (remembered for the visitor). */
 	var motionBtns = document.querySelectorAll('[data-motion-toggle]');
 	var syncMotion = function () {
@@ -207,7 +258,8 @@
 	}
 
 	/* Sedan = no wheelchair; keep the numbers sensible. */
-	var form = document.querySelector('form.booking-form');
+	var bookingAction = document.querySelector('form.booking-form input[name="action"][value="tp_booking"]');
+	var form = bookingAction ? bookingAction.form : null;
 	if (form) {
 		var wheelchairs = form.querySelector('[name="wheelchairs"]');
 		form.querySelectorAll('[name="vehicle"]').forEach(function (radio) {

@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TP_VERSION', '1.6.1' );
+define( 'TP_VERSION', '1.7.0' );
 define( 'TP_DIR', get_template_directory() );
 define( 'TP_URI', get_template_directory_uri() );
 
@@ -27,6 +27,8 @@ require TP_DIR . '/inc/lookup.php';
 require TP_DIR . '/inc/contact.php';
 require TP_DIR . '/inc/components.php';
 require TP_DIR . '/inc/drivers.php';
+require TP_DIR . '/inc/trips.php';
+require TP_DIR . '/inc/accounts.php';
 require TP_DIR . '/inc/seo.php';
 require TP_DIR . '/inc/analytics.php';
 require TP_DIR . '/inc/local-seo.php';
@@ -43,6 +45,8 @@ require TP_DIR . '/inc/animations.php';
 
 if ( is_admin() ) {
 	require TP_DIR . '/inc/bookings-admin.php';
+	require TP_DIR . '/inc/dispatch.php';
+	require TP_DIR . '/inc/finance.php';
 	require TP_DIR . '/inc/admin-tools.php';
 	require TP_DIR . '/inc/starter-content.php';
 }

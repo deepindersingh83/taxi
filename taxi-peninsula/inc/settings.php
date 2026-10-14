@@ -27,6 +27,7 @@ function tp_settings_schema() {
 		'sms_customer_received' => array( 'sms', __( 'Text customers when a booking is received', 'taxi-peninsula' ), 'checkbox', true, '' ),
 		'sms_customer_status'   => array( 'sms', __( 'Text customers when a booking is confirmed, a driver is assigned or it is cancelled', 'taxi-peninsula' ), 'checkbox', true, '' ),
 		'sms_driver_assigned'   => array( 'sms', __( 'Text drivers when a job is assigned to them', 'taxi-peninsula' ), 'checkbox', true, '' ),
+		'sms_customer_trip'     => array( 'sms', __( 'Text customers when the driver taps "On my way" and "Arrived"', 'taxi-peninsula' ), 'checkbox', true, '' ),
 
 		// Payments.
 		'payments_enabled'      => array( 'payments', __( 'Offer online deposit with Stripe', 'taxi-peninsula' ), 'checkbox', false, '' ),
@@ -34,6 +35,9 @@ function tp_settings_schema() {
 		'stripe_webhook_secret' => array( 'payments', __( 'Stripe webhook signing secret', 'taxi-peninsula' ), 'secret', '', '' ),
 		'deposit_amount'        => array( 'payments', __( 'Deposit amount (AUD)', 'taxi-peninsula' ), 'number', 20, '' ),
 		'invoice_enabled'       => array( 'payments', __( 'Offer "account / invoice" for NDIS, aged care and business customers', 'taxi-peninsula' ), 'checkbox', true, '' ),
+		'abn'                   => array( 'payments', __( 'ABN', 'taxi-peninsula' ), 'text', '', __( 'Shown on receipts. With an ABN and a fare entered, receipts become tax invoices (GST shown as 1/11 of the fare).', 'taxi-peninsula' ) ),
+		'business_address'      => array( 'payments', __( 'Business address for invoices', 'taxi-peninsula' ), 'textarea', '', '' ),
+		'payment_terms'         => array( 'payments', __( 'Payment terms on account invoices', 'taxi-peninsula' ), 'textarea', '', __( 'e.g. Payment due within 14 days. BSB 000-000, Account 00000000.', 'taxi-peninsula' ) ),
 
 		// Spam protection.
 		'captcha_provider'      => array( 'captcha', __( 'Spam protection', 'taxi-peninsula' ), 'select', 'none', __( 'Protects the booking, contact and booking-lookup forms.', 'taxi-peninsula' ), array( 'none' => __( 'Off (honeypot + rate limits only)', 'taxi-peninsula' ), 'turnstile' => 'Cloudflare Turnstile', 'recaptcha' => 'Google reCAPTCHA v2 (checkbox)' ) ),
@@ -174,6 +178,9 @@ function tp_render_setting_field( $args ) {
 				)
 			);
 			break;
+		case 'textarea':
+			printf( '<textarea class="large-text" rows="3" id="%1$s" name="%2$s">%3$s</textarea>', esc_attr( $id ), esc_attr( $name ), esc_textarea( (string) $value ) );
+			break;
 		case 'secret':
 			printf(
 				'<input type="password" class="regular-text" id="%1$s" name="%2$s" value="" autocomplete="new-password" placeholder="%3$s">',
@@ -224,6 +231,9 @@ function tp_sanitize_settings( $input ) {
 				break;
 			case 'url':
 				$clean[ $key ] = esc_url_raw( (string) $raw );
+				break;
+			case 'textarea':
+				$clean[ $key ] = sanitize_textarea_field( (string) $raw );
 				break;
 			default:
 				$clean[ $key ] = sanitize_text_field( (string) $raw );

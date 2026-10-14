@@ -31,7 +31,9 @@ $lookup    = tp_page_url_by_template( 'lookup' );
 		<p class="notice notice--error"><?php esc_html_e( 'We saved your booking but could not open the online payment page. You can pay the driver instead, or try again from your booking page.', 'taxi-peninsula' ); ?></p>
 	<?php endif; ?>
 	<p><?php esc_html_e( 'We will confirm your booking by phone, SMS or email shortly. A copy of your request has been sent to your inbox.', 'taxi-peninsula' ); ?></p>
-	<?php if ( $lookup ) : ?>
+	<?php if ( tp_is_account_user() ) : ?>
+		<p><a class="btn btn--ghost" href="<?php echo esc_url( tp_account_url() ); ?>"><?php esc_html_e( 'See it in My Account', 'taxi-peninsula' ); ?></a></p>
+	<?php elseif ( $lookup ) : ?>
 		<p><?php printf( /* translators: %s: link */ esc_html__( 'You can check its status any time on the %s page.', 'taxi-peninsula' ), '<a href="' . esc_url( $lookup ) . '">' . esc_html__( 'Manage my booking', 'taxi-peninsula' ) . '</a>' ); ?></p>
 	<?php endif; ?>
 	<p>

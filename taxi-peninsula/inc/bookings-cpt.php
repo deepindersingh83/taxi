@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const TP_CAPS_VERSION = 2;
+const TP_CAPS_VERSION = 3;
 
 add_action( 'init', 'tp_register_booking_cpt' );
 function tp_register_booking_cpt() {
@@ -97,6 +97,30 @@ function tp_install_caps() {
 		)
 	);
 
+	// Customers and coordinators only use the front-end My Account page.
+	remove_role( 'tp_customer' );
+	add_role( 'tp_customer', __( 'Customer', 'taxi-peninsula' ), array( 'read' => true, 'tp_book_account' => true ) );
+	remove_role( 'tp_coordinator' );
+	add_role(
+		'tp_coordinator',
+		__( 'Coordinator / facility', 'taxi-peninsula' ),
+		array(
+			'read'             => true,
+			'tp_book_account'  => true,
+			'tp_book_for_many' => true,
+		)
+	);
+
+	// Accounts staff: invoices, payments and exports only — no dispatch.
+	remove_role( 'tp_accounts' );
+	add_role( 'tp_accounts', __( 'Accounts (finance)', 'taxi-peninsula' ), array( 'read' => true, 'tp_view_finance' => true ) );
+	foreach ( array( 'administrator', 'editor', 'tp_booking_manager' ) as $role_name ) {
+		$role = get_role( $role_name );
+		if ( $role ) {
+			$role->add_cap( 'tp_view_finance' );
+		}
+	}
+
 	update_option( 'tp_caps_version', TP_CAPS_VERSION );
 }
 
@@ -179,6 +203,10 @@ function tp_get_booking( $post_id ) {
 		'estimate'    => get_post_meta( $post_id, '_tp_estimate', true ),
 		'distance_km' => (float) get_post_meta( $post_id, '_tp_distance_km', true ),
 		'duration'    => (int) get_post_meta( $post_id, '_tp_duration_min', true ),
+		'customer_id' => (int) get_post_meta( $post_id, '_tp_customer_id', true ),
+		'fare'        => get_post_meta( $post_id, '_tp_fare', true ),
+		'rating'      => (int) get_post_meta( $post_id, '_tp_rating', true ),
+		'invoice'     => get_post_meta( $post_id, '_tp_invoice_status', true ),
 	);
 	foreach ( array_keys( tp_booking_fields() ) as $key ) {
 		$data[ $key ] = get_post_meta( $post_id, '_tp_' . $key, true );
@@ -465,9 +493,15 @@ function tp_assign( $post_id, $driver_id, $fleet_id, $notify ) {
 		);
 		do_action( 'tp_driver_assigned', $post_id, $driver_id, $notify );
 
+		// A newly assigned driver has to accept the trip, even if the last one had.
 		$status = get_post_meta( $post_id, '_tp_status', true );
-		if ( in_array( $status, array( 'pending', 'confirmed' ), true ) ) {
-			tp_set_status( $post_id, 'assigned', $notify );
+		if ( in_array( $status, array( 'pending', 'confirmed', 'accepted' ), true ) ) {
+			tp_set_status( $post_id, 'assigned', $notify && 'accepted' !== $status );
+		}
+	} elseif ( ! $driver_id && $old_driver ) {
+		tp_add_log( $post_id, array( 'note' => __( 'Driver unassigned', 'taxi-peninsula' ) ) );
+		if ( in_array( get_post_meta( $post_id, '_tp_status', true ), array( 'assigned', 'accepted' ), true ) ) {
+			tp_set_status( $post_id, 'confirmed', false );
 		}
 	}
 }

@@ -52,6 +52,10 @@ function tp_starter_pages() {
 			'title'   => __( 'Driver Jobs', 'taxi-peninsula' ),
 			'content' => "<!-- wp:shortcode -->\n[tp_driver_jobs]\n<!-- /wp:shortcode -->",
 		),
+		'account' => array(
+			'title'   => __( 'My Account', 'taxi-peninsula' ),
+			'content' => "<!-- wp:paragraph -->\n<p>" . __( 'Sign in to see all your trips, rebook in one tap, save passengers and addresses, and download receipts. NDIS coordinators, aged-care homes and hospitals can open an organisation account to book for their clients.', 'taxi-peninsula' ) . "</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:shortcode -->\n[tp_account]\n<!-- /wp:shortcode -->",
+		),
 		'about'         => array(
 			'title'    => __( 'About Us', 'taxi-peninsula' ),
 			'template' => 'page-templates/about.php',
@@ -160,7 +164,7 @@ function tp_render_setup_page() {
 
 		<p><?php esc_html_e( 'Create the pages and example content this theme needs in one click. Anything that already exists is left alone.', 'taxi-peninsula' ); ?></p>
 		<ul class="ul-disc">
-			<li><?php esc_html_e( 'Pages: Book a Taxi, Manage My Booking, Our Fleet, FAQ, NDIS & Aged Care, Contact Us, Driver Jobs, About Us and Our Services', 'taxi-peninsula' ); ?></li>
+			<li><?php esc_html_e( 'Pages: Book a Taxi, Manage My Booking, My Account, Our Fleet, FAQ, NDIS & Aged Care, Contact Us, Driver Jobs, About Us and Our Services', 'taxi-peninsula' ); ?></li>
 			<li><?php esc_html_e( 'Draft Terms & Cancellation Policy, Complaints & Feedback, Accessibility Statement and Drive With Us pages with [CONFIRM] notes for your real policies', 'taxi-peninsula' ); ?></li>
 			<li><?php esc_html_e( 'Three draft blog posts with writing outlines', 'taxi-peninsula' ); ?></li>
 			<li><?php esc_html_e( 'Frequently asked questions, grouped by topic', 'taxi-peninsula' ); ?></li>

@@ -630,7 +630,7 @@ html[data-contrast="high"] .tp-badge { background: #fff; color: #000; border: 2p
 .booking-status__pay { margin: var(--space-l) 0; }
 .booking-status__call { margin: var(--space-l) 0 0; color: var(--c-muted); }
 
-.progress { list-style: none; margin: 0 0 var(--space-l); padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-2xs); counter-reset: prog; }
+.progress { list-style: none; margin: 0 0 var(--space-l); padding: 0; display: grid; grid-template-columns: repeat(var(--steps, 4), minmax(0, 1fr)); gap: var(--space-2xs); counter-reset: prog; }
 .progress li { counter-increment: prog; font-size: var(--step--1); font-weight: 700; color: var(--c-muted); }
 .progress li::before { content: ""; display: block; height: .5rem; border-radius: 999px; background: var(--c-border); margin-bottom: .4rem; }
 .progress .is-done, .progress .is-current { color: var(--c-heading); }
@@ -1120,3 +1120,92 @@ html[data-contrast="high"] .back-to-top { background: #000; outline: 2px solid #
 		position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
 	}
 }
+
+/* ==========================================================================
+   v1.7 — trips, driver week, customer accounts, ratings
+   ========================================================================== */
+
+.tp-badge--accepted { background: #e0e7ff; color: #312e81; }
+.tp-badge--on_way { background: #cffafe; color: #164e63; }
+.tp-badge--arrived { background: #fef3c7; color: #78350f; }
+.tp-badge--onboard { background: #d1fae5; color: #064e3b; }
+.tp-badge--no_show { background: #f3f4f6; color: #374151; border: 1px solid #9ca3af; }
+@media (max-width: 30em) { .progress li { font-size: .75rem; } }
+
+/* Driver app */
+.driver-jobs__tabs { display: flex; gap: var(--space-xs); flex-wrap: wrap; }
+.driver-jobs__tabs .btn { flex: 1 1 8rem; }
+.job__decline { margin-top: var(--space-xs); }
+.job__decline summary { cursor: pointer; font-weight: 700; color: var(--c-link); min-height: 2.75rem; display: inline-flex; align-items: center; }
+.job__decline-form { display: grid; gap: var(--space-s); margin-top: var(--space-xs); }
+.job--on_way, .job--arrived, .job--onboard { border-left: 6px solid var(--c-accent); }
+.job:target, .job:focus { outline: 3px solid var(--c-focus); outline-offset: 2px; }
+.driver-week { display: grid; gap: var(--space-s); }
+.driver-week__title { font-size: var(--step-1); margin: 0; }
+.driver-week__list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-xs); }
+.driver-week__list li { display: grid; gap: .1rem; padding: var(--space-xs) 0; border-bottom: 1px solid var(--c-border); }
+.driver-week__list .tp-badge { justify-self: start; }
+.tp-tiles { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fill, minmax(min(100%, 9rem), 1fr)); }
+.tp-tiles li { display: grid; gap: .1rem; padding: var(--space-s); background: var(--c-bg-alt); border-radius: var(--radius); font-size: var(--step--1); font-weight: 700; color: var(--c-muted); }
+.tp-tiles__n { font-size: var(--step-2); color: var(--c-heading); line-height: 1.1; }
+.table-scroll { overflow-x: auto; }
+.timesheet { width: 100%; border-collapse: collapse; font-size: var(--step--1); }
+.timesheet th, .timesheet td { padding: .5rem .4rem; border-bottom: 1px solid var(--c-border); text-align: left; white-space: nowrap; }
+.timesheet th { color: var(--c-muted); }
+@media print {
+	.driver-jobs__tabs, .driver-jobs__bar .btn, .driver-jobs__logout, .driver-jobs__filter { display: none !important; }
+}
+
+/* My Account */
+.account { display: grid; gap: var(--space-l); }
+.account__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-s); }
+.account__hello { margin: 0; font-size: var(--step-2); }
+.account__org { margin: 0; color: var(--c-muted); font-weight: 700; }
+.account__actions { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin: 0; }
+.account__tabs { display: flex; flex-wrap: wrap; gap: var(--space-2xs); border-bottom: 2px solid var(--c-border); }
+.account__tabs a { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 var(--space-s); font-weight: 700; text-decoration: none; color: var(--c-text); border-bottom: 4px solid transparent; margin-bottom: -2px; }
+.account__tabs a[aria-current] { color: var(--c-heading); border-bottom-color: var(--c-accent); }
+.account__title { font-size: var(--step-1); margin-top: var(--space-m); }
+.account__auth { display: grid; gap: var(--space-l); grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); align-items: start; }
+.account__auth .login-username label, .account__auth .login-password label { display: block; font-weight: 700; }
+.account__auth #wp-submit { font: inherit; font-weight: 700; padding: .7em 1.4em; border: 0; border-radius: var(--btn-radius); background: var(--c-primary); color: #fff; cursor: pointer; min-height: 3rem; }
+.account__join { display: grid; gap: var(--space-s); }
+.account__filter { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs); }
+.account__filter select { width: auto; }
+.account__link summary { cursor: pointer; font-weight: 700; color: var(--c-link); }
+.account__link form { display: grid; gap: var(--space-s); margin-top: var(--space-s); max-width: 28rem; }
+.trip { display: grid; gap: var(--space-2xs); padding: var(--space-m); margin-bottom: var(--space-s); }
+.trip__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-xs); }
+.trip__head p, .trip__route, .trip__meta { margin: 0; }
+.trip__meta { color: var(--c-muted); font-size: var(--step--1); }
+.trip__actions { display: flex; flex-wrap: wrap; gap: var(--space-2xs); margin: var(--space-xs) 0 0; }
+.trip__actions .btn { min-height: 2.75rem; padding: .4em 1em; font-size: var(--step--1); }
+.trip__rated { margin: 0; color: var(--c-success); font-weight: 700; }
+.profile-list { list-style: none; margin: 0 0 var(--space-l); padding: 0; display: grid; gap: var(--space-xs); }
+.profile { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-s); padding: var(--space-m); }
+.profile > div { display: grid; gap: .1rem; }
+.profile span { color: var(--c-muted); font-size: var(--step--1); }
+.profile__notes { font-style: italic; }
+.profile__actions { display: flex; gap: var(--space-2xs); margin: 0; }
+.profile__actions form { margin: 0; }
+
+/* Booking form when signed in */
+.account-box--form { margin-bottom: var(--space-l); }
+.account-box__save { display: flex; gap: .6rem; align-items: center; font-weight: 400; }
+.saved-address { margin-top: var(--space-2xs); }
+.saved-address select { font-size: var(--step--1); min-height: 2.5rem; padding: .3em .6em; color: var(--c-muted); }
+
+/* Ratings */
+.rate { margin-top: var(--space-xs); }
+.rate summary { list-style: none; display: inline-flex; }
+.rate summary::-webkit-details-marker { display: none; }
+.rate__form { display: grid; gap: var(--space-s); margin-top: var(--space-s); }
+.rate__stars { border: 0; padding: 0; margin: 0; display: inline-flex; flex-direction: row-reverse; justify-content: flex-end; gap: .25rem; }
+.rate__stars legend { width: 100%; margin-bottom: var(--space-2xs); }
+.rate__stars input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.rate__stars label { cursor: pointer; color: #9ca3af; padding: .15rem; border-radius: .4rem; }
+.rate__stars label .icon { width: 2.25rem; height: 2.25rem; }
+.rate__stars input:checked ~ label, .rate__stars label:hover, .rate__stars label:hover ~ label { color: #b7791f; }
+.rate__stars input:checked ~ label .icon, .rate__stars label:hover .icon, .rate__stars label:hover ~ label .icon { fill: currentColor; }
+.rate__stars input:focus-visible + label { outline: 3px solid var(--c-focus); outline-offset: 2px; }
+.booking-status__docs { margin: var(--space-m) 0 0; }

@@ -29,6 +29,7 @@ function tp_lookup_shortcode() {
 	$flags = array(
 		'requested' => ! empty( $_GET['requested'] ),
 		'paid'      => isset( $_GET['paid'] ) ? sanitize_key( wp_unslash( $_GET['paid'] ) ) : '',
+		'rated'     => ! empty( $_GET['rated'] ),
 	);
 	// phpcs:enable
 

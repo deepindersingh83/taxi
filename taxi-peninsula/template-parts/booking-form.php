@@ -49,6 +49,8 @@ $today       = wp_date( 'Y-m-d' );
 		</div>
 	<?php endif; ?>
 
+	<?php tp_booking_form_account_panel( $old ); ?>
+
 	<fieldset class="booking-form__group">
 		<legend><span class="step">1</span> <?php esc_html_e( 'Your trip', 'taxi-peninsula' ); ?></legend>
 
@@ -56,12 +58,14 @@ $today       = wp_date( 'Y-m-d' );
 			<label for="bf-pickup"><?php esc_html_e( 'Pick-up address', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
 			<input id="bf-pickup" name="pickup" type="text" required autocomplete="street-address" <?php echo $places ? 'data-places' : 'list="tp-areas"'; ?> value="<?php echo esc_attr( $val( 'pickup' ) ); ?>" placeholder="<?php esc_attr_e( 'Street address, suburb', 'taxi-peninsula' ); ?>"<?php $invalid( 'pickup' ); ?>>
 			<?php $err( 'pickup' ); ?>
+			<?php tp_booking_form_address_picker( 'pickup' ); ?>
 		</div>
 
 		<div class="field field--wide">
 			<label for="bf-dropoff"><?php esc_html_e( 'Drop-off address', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
 			<input id="bf-dropoff" name="dropoff" type="text" required <?php echo $places ? 'data-places' : 'list="tp-areas"'; ?> value="<?php echo esc_attr( $val( 'dropoff' ) ); ?>" placeholder="<?php esc_attr_e( 'e.g. Frankston Hospital, Melbourne Airport', 'taxi-peninsula' ); ?>"<?php $invalid( 'dropoff' ); ?>>
 			<?php $err( 'dropoff' ); ?>
+			<?php tp_booking_form_address_picker( 'dropoff' ); ?>
 		</div>
 
 		<datalist id="tp-areas">

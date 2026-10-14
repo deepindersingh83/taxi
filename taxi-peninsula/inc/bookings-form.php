@@ -65,6 +65,7 @@ function tp_render_booking_form() {
 		if ( isset( $_GET['payment'] ) ) {
 			$state['old']['payment'] = sanitize_key( wp_unslash( $_GET['payment'] ) );
 		}
+		$state['old'] = tp_booking_form_prefill( $state['old'] );
 	}
 	// phpcs:enable
 
@@ -281,7 +282,8 @@ function tp_send_new_booking_emails( $post_id, $ids = array() ) {
 
 add_action( 'tp_booking_status_changed', 'tp_email_on_status', 10, 4 );
 function tp_email_on_status( $post_id, $old, $status, $notify ) {
-	if ( $notify ) {
+	// Live trip steps go by SMS only; an email would arrive too late to help.
+	if ( $notify && ! in_array( $status, array( 'accepted', 'on_way', 'arrived', 'onboard' ), true ) ) {
 		tp_send_status_email( $post_id );
 	}
 }
@@ -302,6 +304,7 @@ function tp_send_status_email( $post_id ) {
 		'assigned'  => __( 'A driver has been assigned to your booking.', 'taxi-peninsula' ),
 		'completed' => __( 'Thanks for travelling with us. We hope to see you again soon.', 'taxi-peninsula' ),
 		'cancelled' => __( 'Your booking has been cancelled. If this is unexpected, please call us.', 'taxi-peninsula' ),
+		'no_show'   => __( 'Our driver arrived but could not find you, so the trip was marked as a no-show. Please call us if this is a mistake or you would like to rebook.', 'taxi-peninsula' ),
 		'pending'   => __( 'Your booking is being reviewed.', 'taxi-peninsula' ),
 	);
 
@@ -321,7 +324,12 @@ function tp_send_status_email( $post_id ) {
 		$body .= "\n";
 	}
 	$body .= tp_booking_summary( $b ) . "\n";
-	$body .= __( 'View or manage your booking:', 'taxi-peninsula' ) . ' ' . tp_booking_manage_url( $post_id ) . "\n\n";
+	if ( 'completed' === $b['status'] ) {
+		$body .= tp_document_title( $b ) . ': ' . tp_receipt_url( $post_id ) . "\n";
+		$body .= __( 'How did we do? Rate your trip:', 'taxi-peninsula' ) . ' ' . tp_booking_manage_url( $post_id ) . "#rate\n\n";
+	} else {
+		$body .= __( 'View or manage your booking:', 'taxi-peninsula' ) . ' ' . tp_booking_manage_url( $post_id ) . "\n\n";
+	}
 	/* translators: %s: phone number */
 	$body .= sprintf( __( 'Questions? Call %s.', 'taxi-peninsula' ), tp_opt( 'phone_display' ) ) . "\n\n" . $site . "\n";
 

@@ -449,7 +449,28 @@ function tp_render_assign_box( WP_Post $post ) {
 		echo '</p>';
 	}
 
-	echo '<p class="description">' . esc_html__( 'Assigning a driver sets the status to "Driver assigned" and texts the driver when SMS is set up.', 'taxi-peninsula' ) . '</p>';
+	if ( in_array( $b['status'], tp_active_statuses(), true ) ) {
+		foreach ( tp_trip_warnings( $b, $b['driver_id'], $b['fleet_id'] ) as $warning ) {
+			echo '<p class="tp-warning"><span class="dashicons dashicons-warning" aria-hidden="true"></span> ' . esc_html( $warning ) . '</p>';
+		}
+	}
+	echo '<p class="description">' . esc_html__( 'Assigning a driver sets the status to "Driver assigned" and texts the driver when SMS is set up. The driver then accepts or declines it on their phone.', 'taxi-peninsula' ) . '</p>';
+	printf( '<p><a href="%s">%s</a></p>', esc_url( admin_url( 'edit.php?post_type=tp_booking&page=tp-dispatch&day=' . rawurlencode( $b['date'] ) ) ), esc_html__( 'Open this day on the dispatch board', 'taxi-peninsula' ) );
+
+	printf(
+		'<p><label for="tp_fare"><strong>%1$s</strong></label><input type="number" step="0.01" min="0" id="tp_fare" name="tp_fare" class="widefat" value="%2$s"><span class="description">%3$s</span></p>',
+		esc_html__( 'Final fare incl. GST ($)', 'taxi-peninsula' ),
+		esc_attr( $b['fare'] ),
+		esc_html__( 'Used on the customer’s receipt / tax invoice.', 'taxi-peninsula' )
+	);
+	if ( $b['rating'] ) {
+		$comment = get_post_meta( $post->ID, '_tp_rating_comment', true );
+		/* translators: %d: stars */
+		echo '<p><strong>' . esc_html( sprintf( __( 'Customer rating: %d★', 'taxi-peninsula' ), $b['rating'] ) ) . '</strong>' . ( $comment ? '<br>' . esc_html( $comment ) : '' ) . '</p>';
+	}
+	if ( in_array( $b['status'], tp_finished_statuses(), true ) ) {
+		printf( '<p><a href="%s" target="_blank" rel="noopener">%s ↗</a></p>', esc_url( tp_receipt_url( $post->ID ) ), esc_html( tp_document_title( $b ) ) );
+	}
 
 	if ( 'online' === $b['payment'] ) {
 		echo '<p><strong>' . esc_html__( 'Online deposit:', 'taxi-peninsula' ) . '</strong> ';
@@ -496,6 +517,10 @@ function tp_save_booking_admin( $post_id, WP_Post $post ) {
 	tp_save_booking_meta( $post_id, $data );
 
 	update_post_meta( $post_id, '_tp_admin_notes', isset( $_POST['tp_admin_notes'] ) ? sanitize_textarea_field( wp_unslash( $_POST['tp_admin_notes'] ) ) : '' );
+	if ( isset( $_POST['tp_fare'] ) ) {
+		$fare = sanitize_text_field( wp_unslash( $_POST['tp_fare'] ) );
+		update_post_meta( $post_id, '_tp_fare', '' === $fare ? '' : round( max( 0, (float) $fare ), 2 ) );
+	}
 
 	$ref = get_post_meta( $post_id, '_tp_reference', true );
 	if ( ! $ref ) {
@@ -520,7 +545,7 @@ function tp_save_booking_admin( $post_id, WP_Post $post ) {
 	if ( $fleet_id && 'tp_fleet' !== get_post_type( $fleet_id ) ) {
 		$fleet_id = 0;
 	}
-	if ( $status !== $before && ! in_array( $status, array( 'pending', 'confirmed' ), true ) ) {
+	if ( $status !== $before && ! in_array( $status, array( 'pending', 'confirmed', 'assigned' ), true ) ) {
 		// Staff chose a later status explicitly; record the assignment without changing it again.
 		update_post_meta( $post_id, '_tp_driver_id', $driver_id );
 		update_post_meta( $post_id, '_tp_fleet_id', $fleet_id );
@@ -666,7 +691,7 @@ function tp_dashboard_widget() {
 			'meta_query'  => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
 				'relation' => 'AND',
 				array( 'key' => '_tp_pickup_at', 'value' => wp_date( 'Y-m-d H:i' ), 'compare' => '>=' ),
-				array( 'key' => '_tp_status', 'value' => array( 'pending', 'confirmed', 'assigned' ), 'compare' => 'IN' ),
+				array( 'key' => '_tp_status', 'value' => tp_active_statuses(), 'compare' => 'IN' ),
 			),
 		)
 	);
