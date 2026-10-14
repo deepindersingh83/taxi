@@ -44,7 +44,7 @@ function tp_design_defaults() {
 		'header_phone_text'=> '',
 		'header_book'      => true,
 		'header_book_text' => __( 'Book now', 'taxi-peninsula' ),
-		'topbar'           => 'full',
+		'topbar'           => 'contact',
 		// Hero.
 		'hero_bg'          => 'gradient',
 		'hero_side'        => 'auto',
@@ -733,7 +733,7 @@ function tp_design_customize_register( WP_Customize_Manager $wp_customize ) {
 		'contact' => __( 'Top bar with contact details — display options in the footer', 'taxi-peninsula' ),
 		'none'    => __( 'No top bar — display options in the footer', 'taxi-peninsula' ),
 	);
-	$add( 'topbar', 'tp_design_header', __( 'Top bar', 'taxi-peninsula' ), 'radio', array( 'sanitize' => $choice( $topbar ), 'choices' => $topbar, 'description' => __( 'Display options are the text size, high contrast and dark mode buttons. They are never removed completely.', 'taxi-peninsula' ) ) );
+	$add( 'topbar', 'tp_design_header', __( 'Top bar', 'taxi-peninsula' ), 'radio', array( 'sanitize' => $choice( $topbar ), 'choices' => $topbar, 'description' => __( 'Display options are the text size, high contrast, dark mode and pause animations buttons. By default they sit in the footer so the top of the page stays clean.', 'taxi-peninsula' ) ) );
 
 	// ---- Hero.
 	$bgs = array(

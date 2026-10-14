@@ -206,7 +206,7 @@ Everything is under **Appearance → Customize** and previews before you publish
 - **Layouts on computers:** logo left with menu right, everything centred, or a logo row above the menu.
 - **Sticky header:** on or off.
 - **Header buttons:** show or hide the phone and "Book" buttons and change their wording.
-- **Top bar:** full (contact details + display options), contact details only, or none. When the display options (text size, high contrast, dark mode) leave the top bar they move to the footer; they are never removed.
+- **Top bar:** contact details only (default), full (contact details + display options), or none. When the display options (text size, high contrast, dark mode) leave the top bar they move to the footer; they are never removed.
 - **Automatic Menu button:** if the full menu doesn't fit on a computer screen (a long menu, a big logo, larger text), the header switches to the Menu button instead of overflowing.
 
 **Home page hero** (*Design → Home page hero*)
