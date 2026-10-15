@@ -53,6 +53,8 @@
 		</div>
 		<?php endif; ?>
 
+		<?php do_action( 'tp_footer_columns' ); ?>
+
 		<?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
 			<div><?php dynamic_sidebar( 'sidebar-footer' ); ?></div>
 		<?php endif; ?>

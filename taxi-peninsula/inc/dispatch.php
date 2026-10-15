@@ -367,6 +367,7 @@ function tp_dispatch_card( array $b, array $drivers, array $driver_trips, $day )
 			echo ' · ' . esc_html( sprintf( __( '%1$d pax, %2$d wheelchair(s)', 'taxi-peninsula' ), $b['passengers'], $b['wheelchairs'] ) );
 			?>
 		</p>
+		<?php echo tp_flight_badge( $b ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper. ?>
 		<?php if ( $last && ! $b['driver_id'] ) : ?>
 			<?php $who = get_userdata( $last['driver'] ); ?>
 			<p class="tp-dcard__flag tp-dcard__flag--declined">

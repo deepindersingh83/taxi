@@ -469,8 +469,8 @@ function tp_render_assign_box( WP_Post $post ) {
 	printf(
 		'<p><label for="tp_fare"><strong>%1$s</strong></label><input type="number" step="0.01" min="0" id="tp_fare" name="tp_fare" class="widefat" value="%2$s"><span class="description">%3$s</span></p>',
 		esc_html__( 'Final fare incl. GST ($)', 'taxi-peninsula' ),
-		esc_attr( $b['fare'] ),
-		esc_html__( 'Used on the customer’s receipt / tax invoice.', 'taxi-peninsula' )
+		esc_attr( tp_fare_input_value( $b['id'] ) ),
+		esc_html__( 'Used on the customer’s receipt / tax invoice.', 'taxi-peninsula' ) . ( $b['promo'] ? ' ' . sprintf( /* translators: 1: code 2: offer */ __( 'Promo %1$s (%2$s) is taken off automatically.', 'taxi-peninsula' ), $b['promo'], tp_promo_label( $b['promo'] ) ) : '' )
 	);
 	if ( $b['rating'] ) {
 		$comment = get_post_meta( $post->ID, '_tp_rating_comment', true );
@@ -535,7 +535,7 @@ function tp_save_booking_admin( $post_id, WP_Post $post ) {
 	update_post_meta( $post_id, '_tp_admin_notes', isset( $_POST['tp_admin_notes'] ) ? sanitize_textarea_field( wp_unslash( $_POST['tp_admin_notes'] ) ) : '' );
 	if ( isset( $_POST['tp_fare'] ) ) {
 		$fare = sanitize_text_field( wp_unslash( $_POST['tp_fare'] ) );
-		update_post_meta( $post_id, '_tp_fare', '' === $fare ? '' : round( max( 0, (float) $fare ), 2 ) );
+		tp_set_fare( $post_id, '' === $fare ? '' : (float) $fare );
 	}
 
 	$ref = get_post_meta( $post_id, '_tp_reference', true );

@@ -21,7 +21,9 @@ add_action( 'admin_menu', static function () {
 }, 30 );
 
 function tp_starter_pages() {
-	return array(
+	return apply_filters(
+		'tp_starter_pages',
+		array(
 		'book'    => array(
 			'title'    => __( 'Book a Taxi', 'taxi-peninsula' ),
 			'template' => 'page-templates/booking.php',
@@ -96,6 +98,7 @@ function tp_starter_pages() {
 			'pattern'  => 'page-accessibility',
 			'status'   => 'draft',
 		),
+		)
 	);
 }
 

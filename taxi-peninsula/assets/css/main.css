@@ -1934,3 +1934,49 @@ body:has(.driver-dock) .whatsapp-button { display: none; }
 @media print { .whatsapp-button { display: none !important; } }
 .widget--quickbook .quickbook__field label { color: #fff; }
 .widget--quickbook .quickbook__field--date, .widget--quickbook .quickbook__field--time { grid-column: 1 / -1; }
+
+/* =========================================================================
+   v2.2 — partner pages, quotes, lost property, offers, local pages, flights
+   ========================================================================= */
+.flight-badge { display: flex; align-items: center; flex-wrap: wrap; gap: .4em; margin: var(--space-xs) 0; font-weight: 600; color: var(--c-heading); }
+.flight-badge .icon { width: 1.15em; height: 1.15em; flex: none; }
+
+.venue-hero { background: var(--c-primary); color: #fff; padding-block: var(--space-xl); }
+.venue-hero__inner { display: flex; align-items: center; gap: var(--space-l); flex-wrap: wrap; }
+.venue-hero__logo { flex: none; background: #fff; border-radius: var(--radius); padding: var(--space-s); }
+.venue-hero__logo img { display: block; max-height: 5.5rem; width: auto; max-width: 12rem; }
+.venue-hero__text { flex: 1 1 20rem; min-width: 0; }
+.venue-hero h1 { color: #fff; margin: 0 0 var(--space-xs); font-size: var(--step-4); }
+.venue-hero__lead { font-size: var(--step-1); margin: 0; max-width: 46rem; color: rgb(255 255 255 / .92); }
+.venue-body { display: grid; gap: var(--space-xl); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 64em) { .venue-body { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: start; } }
+.venue-book h2, .local-service__book h2 { margin-top: 0; font-size: var(--step-2); }
+.venue-book .quickbook, .local-service__book .quickbook { grid-template-columns: repeat(2, minmax(0, 1fr)); box-shadow: none; padding: 0; border: 0; background: transparent; }
+.venue-book .quickbook__field--from, .venue-book .quickbook__field--to, .venue-book .quickbook__go,
+.local-service__book .quickbook__field--from, .local-service__book .quickbook__field--to, .local-service__book .quickbook__go { grid-column: 1 / -1; }
+@media (max-width: 30em) { .venue-book .quickbook, .local-service__book .quickbook { grid-template-columns: 1fr; } }
+.venue-book__or { margin: var(--space-m) 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs) var(--space-s); }
+.venue-book__phone { display: inline-flex; align-items: center; gap: .4em; font-size: var(--step-1); font-weight: 700; text-decoration: none; }
+.venue-info__staff { color: var(--c-muted); }
+.local-service__book { margin-bottom: var(--space-xl); }
+
+.quote-form, .lost-form { max-width: 52rem; }
+.booking-form__group .field--check { align-self: end; }
+.booking-form__group .field--check label { display: flex; gap: .6rem; align-items: flex-start; }
+
+.newsletter__form { display: grid; gap: var(--space-s); }
+.newsletter__consent { display: flex; gap: .6rem; align-items: flex-start; font-size: var(--step--1); }
+.newsletter__consent input { margin-top: .25em; flex: none; }
+.newsletter__small { margin: 0; font-size: var(--step--1); }
+.newsletter__done { font-weight: 600; }
+.newsletter--page { max-width: 34rem; }
+.site-footer .newsletter__form label, .site-footer .newsletter__pitch, .site-footer .newsletter__done { color: inherit; }
+.site-footer .newsletter__small a { color: inherit; }
+.site-footer .newsletter .btn--primary { background: var(--c-accent); border-color: var(--c-accent); color: var(--c-on-accent); }
+.site-footer .newsletter .field__error { color: #fff; background: #a3122a; padding: .25rem .5rem; border-radius: .35rem; }
+
+.sub-page { max-width: 38rem; margin-inline: auto; text-align: center; }
+.sub-page h1 { font-size: var(--step-3); }
+.sub-page__or { margin-top: var(--space-l); color: var(--c-muted); }
+.sub-page__inline { display: inline-block; margin: 0 .25rem .5rem; }
+.sub-page .booking-success__icon { margin-inline: auto; }

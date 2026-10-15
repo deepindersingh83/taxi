@@ -38,6 +38,14 @@ $today       = wp_date( 'Y-m-d' );
 	<input type="hidden" name="action" value="tp_booking">
 	<input type="hidden" name="_tp_return" value="<?php echo esc_url( $current_url ); ?>">
 	<?php wp_nonce_field( 'tp_booking', '_tp_nonce', false ); ?>
+	<?php
+	/**
+	 * Extra hidden fields (a quote being accepted, a partner page).
+	 *
+	 * @param array $old Prefilled values.
+	 */
+	do_action( 'tp_booking_form_hidden', $old );
+	?>
 
 
 	<?php if ( $errors ) : ?>
@@ -110,6 +118,13 @@ $today       = wp_date( 'Y-m-d' );
 			<label for="bf-time"><?php esc_html_e( 'Pick-up time', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
 			<input id="bf-time" name="time" type="time" required value="<?php echo esc_attr( $val( 'time' ) ); ?>"<?php $invalid( 'time' ); ?>>
 			<?php $err( 'time' ); ?>
+		</div>
+
+		<div class="field field--wide">
+			<label for="bf-flight"><?php esc_html_e( 'Arriving by plane? Flight number (optional)', 'taxi-peninsula' ); ?></label>
+			<input id="bf-flight" name="flight" type="text" autocomplete="off" inputmode="text" maxlength="9" placeholder="<?php esc_attr_e( 'e.g. QF432', 'taxi-peninsula' ); ?>" value="<?php echo esc_attr( $val( 'flight' ) ); ?>" aria-describedby="bf-flight-hint"<?php $invalid( 'flight' ); ?>>
+			<p class="field__hint" id="bf-flight-hint"><?php esc_html_e( 'For airport pick-ups we watch your flight and move the pick-up if it lands early or late. Set the pick-up time to when you expect to be ready.', 'taxi-peninsula' ); ?></p>
+			<?php $err( 'flight' ); ?>
 		</div>
 
 		<?php if ( tp_fare_available() ) : ?>
@@ -315,6 +330,21 @@ $today       = wp_date( 'Y-m-d' );
 			</label>
 			<?php $err( 'consent' ); ?>
 		</div>
+
+		<?php if ( function_exists( 'tp_promos_active' ) && tp_promos_active() ) : ?>
+			<div class="field">
+				<label for="bf-promo"><?php esc_html_e( 'Promo code (optional)', 'taxi-peninsula' ); ?></label>
+				<input id="bf-promo" name="promo" type="text" autocomplete="off" maxlength="20" value="<?php echo esc_attr( $val( 'promo' ) ); ?>"<?php $invalid( 'promo' ); ?>>
+				<?php $err( 'promo' ); ?>
+			</div>
+		<?php endif; ?>
+
+		<?php if ( function_exists( 'tp_marketing_enabled' ) && tp_marketing_enabled() ) : ?>
+			<div class="field field--wide field--check">
+				<input id="bf-offers" name="offers" type="checkbox" value="1" <?php checked( $val( 'offers' ), '1' ); ?>>
+				<label for="bf-offers"><?php echo esc_html( tp_marketing_consent_text() ); ?></label>
+			</div>
+		<?php endif; ?>
 
 		<?php if ( $terms_url ) : ?>
 			<div class="field field--wide field--check">

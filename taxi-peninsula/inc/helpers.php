@@ -247,7 +247,9 @@ function tp_client_ip() {
  * Shortcode that identifies each feature page.
  */
 function tp_feature_shortcodes() {
-	return array(
+	return apply_filters(
+		'tp_feature_shortcodes',
+		array(
 		'book'    => 'tp_booking_form',
 		'lookup'  => 'tp_booking_lookup',
 		'contact' => 'tp_contact_form',
@@ -256,6 +258,7 @@ function tp_feature_shortcodes() {
 		'driver'  => 'tp_driver_jobs',
 		'account' => 'tp_account',
 		'ndis'    => 'tp_ndis',
+		)
 	);
 }
 

@@ -388,6 +388,13 @@ function tp_account_shortcode() {
 		'addresses'  => __( 'Saved addresses', 'taxi-peninsula' ),
 		'details'    => __( 'My details', 'taxi-peninsula' ),
 	);
+	/**
+	 * Filters the My Account tabs. Extra tabs render on `tp_account_tab_{key}`.
+	 *
+	 * @param array $tabs  key => label.
+	 * @param bool  $coord Coordinator account.
+	 */
+	$tabs  = apply_filters( 'tp_account_tabs', $tabs, $coord );
 	$tab   = isset( $tabs[ $tab ] ) ? $tab : 'trips';
 	$org   = get_user_meta( $user->ID, 'tp_org', true );
 	?>
@@ -445,7 +452,14 @@ function tp_account_shortcode() {
 		case 'details':
 			tp_account_details_tab( $user, $coord );
 			break;
+		case 'trips':
+			tp_account_trips_tab( $user, $coord, $state );
+			break;
 		default:
+			if ( has_action( 'tp_account_tab_' . $tab ) ) {
+				do_action( 'tp_account_tab_' . $tab, $user, $coord );
+				break;
+			}
 			tp_account_trips_tab( $user, $coord, $state );
 	}
 	echo '</div>';
@@ -1370,8 +1384,20 @@ function tp_render_receipt() {
 						<?php esc_html_e( 'Wheelchair accessible taxi', 'taxi-peninsula' ); ?><br>
 						<span class="note"><?php echo esc_html( $b['pickup'] ); ?> → <?php echo esc_html( $b['dropoff'] ); ?><?php echo $b['distance_km'] > 0 ? ' (' . esc_html( number_format_i18n( $b['distance_km'], 1 ) ) . ' km)' : ''; ?></span>
 					</td>
-					<td class="n"><?php echo null !== $fare ? esc_html( tp_money( $fare ) ) : '—'; ?></td>
+					<?php $tp_disc = (float) get_post_meta( $post_id, '_tp_discount', true ); ?>
+					<td class="n"><?php echo null !== $fare ? esc_html( tp_money( $tp_disc > 0 ? $fare + $tp_disc : $fare ) ) : '—'; ?></td>
 				</tr>
+				<?php if ( null !== $fare && $tp_disc > 0 ) : ?>
+					<tr>
+						<td>
+							<?php
+							/* translators: %s: promo code */
+							echo esc_html( sprintf( __( 'Promo code %s', 'taxi-peninsula' ), $b['promo'] ) );
+							?>
+						</td>
+						<td class="n">−<?php echo esc_html( tp_money( $tp_disc ) ); ?></td>
+					</tr>
+				<?php endif; ?>
 			</tbody>
 			<?php if ( null !== $fare ) : ?>
 				<tfoot>

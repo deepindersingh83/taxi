@@ -15,7 +15,13 @@ defined( 'ABSPATH' ) || exit;
  * Settings schema: key => [section, label, type, default, help, choices?].
  */
 function tp_settings_schema() {
-	return array(
+	static $schema = null;
+	if ( null !== $schema && did_action( 'init' ) ) {
+		return $schema;
+	}
+	$schema = apply_filters(
+		'tp_settings_schema',
+		array(
 		// SMS.
 		'sms_provider'          => array( 'sms', __( 'SMS provider', 'taxi-peninsula' ), 'select', 'none', '', array( 'none' => __( 'Off', 'taxi-peninsula' ), 'clicksend' => 'ClickSend', 'twilio' => 'Twilio' ) ),
 		'clicksend_username'    => array( 'sms', __( 'ClickSend username', 'taxi-peninsula' ), 'text', '', '' ),
@@ -69,11 +75,13 @@ function tp_settings_schema() {
 		'recurring_enabled'     => array( 'recurring', __( 'Allow customers to request repeat trips', 'taxi-peninsula' ), 'checkbox', true, '' ),
 		'recurring_max_weeks'   => array( 'recurring', __( 'Longest repeat period (weeks)', 'taxi-peninsula' ), 'number', 12, '' ),
 		'max_advance_months'    => array( 'recurring', __( 'How far ahead customers can book online (months)', 'taxi-peninsula' ), 'number', 12, '' ),
+		)
 	);
+	return $schema;
 }
 
 function tp_settings_sections() {
-	return array(
+	$sections = array(
 		'sms'       => array( __( 'SMS notifications', 'taxi-peninsula' ), __( 'Messages are sent through your own ClickSend or Twilio account and billed by them.', 'taxi-peninsula' ) ),
 		'payments'  => array( __( 'Payments & invoicing', 'taxi-peninsula' ), sprintf( /* translators: %s: webhook URL */ __( 'In Stripe, add a webhook for the "checkout.session.completed" event pointing to: %s', 'taxi-peninsula' ), '<code>' . esc_html( rest_url( 'taxi-peninsula/v1/stripe' ) ) . '</code>' ) ),
 		'captcha'   => array( __( 'Spam protection', 'taxi-peninsula' ), '' ),
@@ -81,6 +89,7 @@ function tp_settings_sections() {
 		'privacy'   => array( __( 'Privacy & data retention', 'taxi-peninsula' ), __( 'The Australian Privacy Principles ask you to keep personal information only while you need it. Tax invoices are kept for 5 years, as the ATO requires.', 'taxi-peninsula' ) ),
 		'recurring' => array( __( 'Recurring trips', 'taxi-peninsula' ), '' ),
 	);
+	return apply_filters( 'tp_settings_sections', $sections );
 }
 
 /**

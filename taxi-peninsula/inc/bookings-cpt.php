@@ -160,6 +160,8 @@ function tp_booking_fields() {
 		'invoice_email' => array( __( 'Invoice email', 'taxi-peninsula' ), 'email' ),
 		'ndis_number'   => array( __( 'NDIS number / reference', 'taxi-peninsula' ), 'text' ),
 		'notes'         => array( __( 'Passenger notes', 'taxi-peninsula' ), 'textarea' ),
+		'flight'        => array( __( 'Flight number', 'taxi-peninsula' ), 'text' ),
+		'promo'         => array( __( 'Promo code', 'taxi-peninsula' ), 'text' ),
 	);
 }
 
@@ -267,6 +269,8 @@ function tp_sanitize_booking( array $raw, $strict = true ) {
 		'invoice_email' => sanitize_email( $raw['invoice_email'] ?? '' ),
 		'ndis_number'   => sanitize_text_field( $raw['ndis_number'] ?? '' ),
 		'notes'         => sanitize_textarea_field( $raw['notes'] ?? '' ),
+		'flight'        => strtoupper( preg_replace( '/[^A-Za-z0-9]/', '', (string) ( $raw['flight'] ?? '' ) ) ),
+		'promo'         => strtoupper( sanitize_text_field( $raw['promo'] ?? '' ) ),
 	);
 
 	$errors = array();
@@ -341,6 +345,16 @@ function tp_sanitize_booking( array $raw, $strict = true ) {
 
 	if ( 'sedan' === $d['vehicle'] ) {
 		$d['wheelchairs'] = 0;
+	}
+
+	if ( '' !== $d['flight'] && ! preg_match( '/^[A-Z0-9]{2}[A-Z]?\d{1,4}[A-Z]?$/', $d['flight'] ) ) {
+		$errors['flight'] = __( 'Please check the flight number, e.g. QF432 or VA 1234.', 'taxi-peninsula' );
+	}
+	if ( $strict && '' !== $d['promo'] && function_exists( 'tp_promo_check' ) ) {
+		$promo_error = tp_promo_check( $d['promo'], $d );
+		if ( $promo_error ) {
+			$errors['promo'] = $promo_error;
+		}
 	}
 
 	if ( $strict ) {
@@ -600,6 +614,12 @@ function tp_booking_summary( array $b ) {
 	}
 	if ( tp_opt( 'show_mptp' ) ) {
 		$lines[ __( 'MPTP member', 'taxi-peninsula' ) ] = $b['mptp'] ? __( 'Yes', 'taxi-peninsula' ) : __( 'No', 'taxi-peninsula' );
+	}
+	if ( '' !== (string) $b['flight'] ) {
+		$lines[ __( 'Flight', 'taxi-peninsula' ) ] = $b['flight'];
+	}
+	if ( '' !== (string) $b['promo'] ) {
+		$lines[ __( 'Promo code', 'taxi-peninsula' ) ] = $b['promo'] . ( function_exists( 'tp_promo_label' ) ? ' — ' . tp_promo_label( $b['promo'] ) : '' );
 	}
 	if ( '' !== (string) $b['notes'] ) {
 		$lines[ __( 'Notes', 'taxi-peninsula' ) ] = $b['notes'];

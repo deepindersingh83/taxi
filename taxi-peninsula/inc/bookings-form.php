@@ -74,6 +74,17 @@ function tp_render_booking_form() {
 		if ( isset( $_GET['payment'] ) ) {
 			$state['old']['payment'] = sanitize_key( wp_unslash( $_GET['payment'] ) );
 		}
+		foreach ( array( 'promo', 'flight' ) as $prefill ) {
+			if ( ! empty( $_GET[ $prefill ] ) ) {
+				$state['old'][ $prefill ] = strtoupper( preg_replace( '/[^A-Za-z0-9]/', '', sanitize_text_field( wp_unslash( $_GET[ $prefill ] ) ) ) );
+			}
+		}
+		/**
+		 * Filters values prefilled from the link (quotes, partner pages).
+		 *
+		 * @param array $old Prefilled values.
+		 */
+		$state['old'] = apply_filters( 'tp_booking_form_link_prefill', $state['old'] );
 		$state['old'] = tp_booking_form_prefill( $state['old'] );
 	}
 	// phpcs:enable

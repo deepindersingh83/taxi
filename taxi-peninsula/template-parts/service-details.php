@@ -5,7 +5,7 @@
  * @package TaxiPeninsula
  */
 
-$id     = get_the_ID();
+$id     = isset( $args['id'] ) ? (int) $args['id'] : get_the_ID();
 $expect = array_values( array_filter( array_map( 'trim', explode( "\n", (string) get_post_meta( $id, '_tp_expect', true ) ) ) ) );
 if ( ! $expect ) {
 	$expect = array(

@@ -45,6 +45,12 @@ function tp_meta_description() {
 		/* translators: 1: site name, 2: phone */
 		$text = sprintf( __( '%1$s — wheelchair accessible taxis in Melbourne and the Mornington Peninsula. Book online or call %2$s.', 'taxi-peninsula' ), get_bloginfo( 'name' ), tp_opt( 'phone_display' ) );
 	}
+	/**
+	 * Filters the meta description (e.g. for generated local pages).
+	 *
+	 * @param string $text Description.
+	 */
+	$text = (string) apply_filters( 'tp_meta_description', $text );
 	return $text ? wp_html_excerpt( $text, 155, '…' ) : '';
 }
 

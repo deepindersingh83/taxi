@@ -296,7 +296,7 @@ function tp_contact_chooser() {
 		array( 'clock', __( 'Change or cancel a booking', 'taxi-peninsula' ), __( 'Use your reference and mobile number.', 'taxi-peninsula' ), tp_page_url_by_template( 'lookup', $form( __( 'General question', 'taxi-peninsula' ) ) ) ),
 		array( 'users', __( 'NDIS or aged-care account', 'taxi-peninsula' ), __( 'Regular trips and invoicing.', 'taxi-peninsula' ), tp_page_url_by_template( 'ndis', $form( __( 'NDIS / aged-care account', 'taxi-peninsula' ) ) ) ),
 		array( 'message', __( 'Feedback or a complaint', 'taxi-peninsula' ), __( 'Tell us what went well — or what did not.', 'taxi-peninsula' ), tp_page_url_by_template( 'complaints', $form( __( 'Complaint', 'taxi-peninsula' ) ) ) ),
-		array( 'search', __( 'Lost property', 'taxi-peninsula' ), __( 'Left something in a taxi? Tell us your trip details.', 'taxi-peninsula' ), $form( __( 'Lost property', 'taxi-peninsula' ) ) ),
+		array( 'search', __( 'Lost property', 'taxi-peninsula' ), __( 'Left something in a taxi? Tell us your trip details.', 'taxi-peninsula' ), apply_filters( 'tp_lost_property_url', $form( __( 'Lost property', 'taxi-peninsula' ) ) ) ),
 	);
 	$careers = tp_page_url_by_template( 'careers' );
 	if ( $careers ) {

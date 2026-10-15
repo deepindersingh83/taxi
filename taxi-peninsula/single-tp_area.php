@@ -108,7 +108,7 @@ while ( have_posts() ) :
 						<li>
 							<?php tp_the_icon( $s['icon'] ); ?>
 							<?php if ( $s['url'] ) : ?>
-								<a href="<?php echo esc_url( $s['url'] ); ?>"><?php echo esc_html( $s['title'] ); ?></a>
+								<a href="<?php echo esc_url( apply_filters( 'tp_area_service_url', $s['url'], get_the_ID(), $s['url'] ) ); ?>"><?php echo esc_html( $s['title'] ); ?></a>
 							<?php else : ?>
 								<span><?php echo esc_html( $s['title'] ); ?></span>
 							<?php endif; ?>

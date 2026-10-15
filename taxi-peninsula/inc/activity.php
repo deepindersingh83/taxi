@@ -56,7 +56,9 @@ add_action(
  * Action types shown in the log filter.
  */
 function tp_activity_actions() {
-	return array(
+	return apply_filters(
+		'tp_activity_actions',
+		array(
 		'created'  => __( 'Booking created', 'taxi-peninsula' ),
 		'status'   => __( 'Status changed', 'taxi-peninsula' ),
 		'edited'   => __( 'Details changed', 'taxi-peninsula' ),
@@ -65,6 +67,8 @@ function tp_activity_actions() {
 		'privacy'  => __( 'Privacy', 'taxi-peninsula' ),
 		'login'    => __( 'Staff sign-in', 'taxi-peninsula' ),
 		'settings' => __( 'Settings', 'taxi-peninsula' ),
+		'enquiry'  => __( 'Quotes, lost property & sign-ups', 'taxi-peninsula' ),
+		)
 	);
 }
 

@@ -337,6 +337,7 @@ function tp_driver_job_card( array $b, $day, $is_manager, $is_next = false ) {
 		<?php if ( $b['notes'] ) : ?>
 			<p class="job__notes"><?php echo esc_html( $b['notes'] ); ?></p>
 		<?php endif; ?>
+		<?php echo tp_flight_badge( $b ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper. ?>
 		<div class="job__steps">
 			<?php foreach ( $next as $step ) : ?>
 				<?php

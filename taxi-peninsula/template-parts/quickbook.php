@@ -13,6 +13,9 @@ $action  = strtok( $book, '#' );
 $places  = tp_places_available();
 $context = $args['context'] ?? 'hero';
 $uid     = 'qb-' . sanitize_key( $context );
+$hidden  = isset( $args['hidden'] ) ? (array) $args['hidden'] : array();
+$pickup  = isset( $args['pickup'] ) ? (string) $args['pickup'] : '';
+$dropoff = isset( $args['dropoff'] ) ? (string) $args['dropoff'] : '';
 if ( $places ) {
 	tp_booking_script_config();
 }
@@ -20,11 +23,11 @@ if ( $places ) {
 <form class="quickbook quickbook--<?php echo esc_attr( $context ); ?>" method="get" action="<?php echo esc_url( $action ); ?>" aria-label="<?php esc_attr_e( 'Start a booking', 'taxi-peninsula' ); ?>" data-quickbook>
 	<div class="quickbook__field quickbook__field--from">
 		<label for="<?php echo esc_attr( $uid ); ?>-from"><?php esc_html_e( 'From', 'taxi-peninsula' ); ?></label>
-		<input id="<?php echo esc_attr( $uid ); ?>-from" name="pickup" type="text" autocomplete="street-address" placeholder="<?php esc_attr_e( 'Pick-up address', 'taxi-peninsula' ); ?>" <?php echo $places ? 'data-places' : ''; ?>>
+		<input id="<?php echo esc_attr( $uid ); ?>-from" name="pickup" type="text" autocomplete="street-address" placeholder="<?php esc_attr_e( 'Pick-up address', 'taxi-peninsula' ); ?>" value="<?php echo esc_attr( $pickup ); ?>" <?php echo $places ? 'data-places' : ''; ?>>
 	</div>
 	<div class="quickbook__field quickbook__field--to">
 		<label for="<?php echo esc_attr( $uid ); ?>-to"><?php esc_html_e( 'To', 'taxi-peninsula' ); ?></label>
-		<input id="<?php echo esc_attr( $uid ); ?>-to" name="dropoff" type="text" placeholder="<?php esc_attr_e( 'Where to?', 'taxi-peninsula' ); ?>" <?php echo $places ? 'data-places' : ''; ?>>
+		<input id="<?php echo esc_attr( $uid ); ?>-to" name="dropoff" type="text" placeholder="<?php esc_attr_e( 'Where to?', 'taxi-peninsula' ); ?>" value="<?php echo esc_attr( $dropoff ); ?>" <?php echo $places ? 'data-places' : ''; ?>>
 	</div>
 	<div class="quickbook__field quickbook__field--date">
 		<label for="<?php echo esc_attr( $uid ); ?>-date"><?php esc_html_e( 'Date', 'taxi-peninsula' ); ?></label>
@@ -42,5 +45,8 @@ if ( $places ) {
 			<option value="0"><?php esc_html_e( 'No wheelchair', 'taxi-peninsula' ); ?></option>
 		</select>
 	</div>
+	<?php foreach ( $hidden as $hk => $hv ) : ?>
+		<input type="hidden" name="<?php echo esc_attr( $hk ); ?>" value="<?php echo esc_attr( $hv ); ?>">
+	<?php endforeach; ?>
 	<button type="submit" class="btn btn--accent quickbook__go"><?php esc_html_e( 'Continue', 'taxi-peninsula' ); ?> <?php tp_the_icon( 'arrow' ); ?></button>
 </form>

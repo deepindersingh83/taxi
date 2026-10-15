@@ -1127,6 +1127,49 @@
 		}
 	}
 
+	/* Lead tracking: count taps on phone / WhatsApp / SMS / email links, and
+	   show a tracking number to visitors from a matching source. */
+	(function () {
+		var cfg = window.tpTrack;
+		if (!cfg || !cfg.url) { return; }
+		var src = ['', ''];
+		var m = document.cookie.match(/(?:^|;\s*)tp_src=([^;]*)/);
+		if (m) {
+			try { src = decodeURIComponent(m[1]).split('|'); } catch (err) {}
+		}
+		var match = null;
+		(cfg.numbers || []).forEach(function (n) {
+			if (!match && n[0] === String(src[0] || '').toLowerCase() && (!n[1] || n[1] === String(src[1] || '').toLowerCase())) { match = n; }
+		});
+		var digits = function (s) { return String(s || '').replace(/[^\d+]/g, ''); };
+		if (match && cfg.phone) {
+			document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
+				if (digits(a.getAttribute('href').slice(4)) !== digits(cfg.phone)) { return; }
+				a.setAttribute('href', 'tel:' + match[3]);
+				var walker = document.createTreeWalker(a, NodeFilter.SHOW_TEXT);
+				while (walker.nextNode()) {
+					var t = walker.currentNode;
+					if (/\d{3}/.test(t.nodeValue)) { t.nodeValue = t.nodeValue.replace(/[\d+][\d\s()+-]{5,}\d/, match[2]); }
+				}
+			});
+		}
+		document.addEventListener('click', function (e) {
+			var a = e.target.closest ? e.target.closest('a[href]') : null;
+			if (!a) { return; }
+			var href = a.getAttribute('href') || '';
+			var type = /^tel:/i.test(href) ? 'call' : (/^sms:/i.test(href) ? 'sms' : (/^mailto:/i.test(href) ? 'email' : (/^https:\/\/(wa\.me|api\.whatsapp\.com)\//i.test(href) ? 'whatsapp' : '')));
+			if (!type) { return; }
+			var data = new FormData();
+			data.append('type', type);
+			data.append('page', location.pathname);
+			if (navigator.sendBeacon) {
+				navigator.sendBeacon(cfg.url, data);
+			} else {
+				try { fetch(cfg.url, { method: 'POST', body: data, keepalive: true }); } catch (err) {}
+			}
+		}, true);
+	})();
+
 	/* Move focus to server-rendered errors / success so screen readers announce them. */
 	var focusTarget = document.querySelector('[data-focus]');
 	if (focusTarget) {

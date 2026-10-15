@@ -8,6 +8,62 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### New in v2.2
+- **Flight-linked airport pick-ups**:
+  - customers add a flight number when booking
+  - every 15 minutes on the day, the theme checks the flight using AeroDataBox via RapidAPI (Bookings → Settings → Flight tracking)
+  - if the flight lands early or late, the pick-up moves by the same amount, keeping the gap the customer asked for
+  - the office is emailed, and the driver and customer are texted
+  - without an API key, the dispatch board and driver screen show a live-status link instead
+- **Quote requests**:
+  - `[tp_quote_request]` (starter page "Get a Quote") handles long trips (Geelong, regional, interstate), weddings and groups
+  - the office prices the quote under Bookings → Quotes and emails it to the customer
+  - the customer's "Book this trip" link opens a filled-in booking form, and the quote is marked "Booked"
+- **Partner pages and QR codes**:
+  - set up under Bookings → Partner pages, at `/book-from/{name}/`: one page for each hospital, aged-care home or NDIS provider
+  - each page has the partner's logo and a booking card with the pick-up address filled in
+  - an optional promo code and invoice details are applied automatically
+  - a printable A4 poster carries a QR code; the QR library is bundled with the theme, so nothing is loaded from other sites
+  - page visits, QR scans and bookings are counted for each partner
+  - pages are kept out of search engines
+- **NDIS trip log** (Bookings → NDIS trip log, and My Account → NDIS trip log for coordinators):
+  - one monthly list for each participant
+  - download it as a CSV, or print it and "Save as PDF" from the print dialog
+  - the office can email it to the plan manager
+  - optional: show your NDIS provider number and support item on the log
+- **Lost property**:
+  - `[tp_lost_property]` (starter page "Lost Property") is the form for passengers
+  - the office logs items found in vehicles
+  - each report shows likely matches by trip, driver, vehicle, date and wording
+  - "Match & tell passenger" emails the passenger, and texts them when SMS is set up
+- **Promo codes** (Bookings → Promo codes):
+  - a percentage or a dollar amount off
+  - optional start and end dates, a use limit, and first-trip-only
+  - codes are checked on the booking form
+  - the discount comes off when the office enters the fare, and shows on the receipt, the Finance page and its CSV
+- **News & offers by email and SMS**, built for the Spam Act 2003:
+  - the opt-in box is never pre-ticked, and the consent wording, time, page and IP address are stored
+  - email addresses are double opt-in
+  - every message names the business and has an unsubscribe link; emails also carry the one-click List-Unsubscribe header
+  - "reply STOP" works through the inbound SMS address
+  - sign-up comes from the booking form, the footer box, or `[tp_newsletter]`
+  - messages go out in batches from Bookings → News & offers, which also lists subscribers and exports a CSV with consent records
+  - sign-ups are included in privacy export and erase
+- **Local service pages**:
+  - `/wheelchair-taxi/{area}/{service}/`, e.g. "Airport transfers from Mornington"
+  - each page has travel times, a map, the service's steps and fares, local questions with FAQ schema, and a booking card with the suburb filled in
+  - pages are listed in the XML sitemap
+  - turn them off, or set noindex, under Bookings → Settings → Local pages
+- **Google Business Profile posts**:
+  - tick "Post to Google" on an announcement, a promo code (posted as an Offer) or a blog post
+  - setup is under Bookings → Google profile: an OAuth client and your business location
+  - **Google must approve your project for the Business Profile APIs first**, which can take a few days
+- **Call tracking** (Bookings → Leads & calls):
+  - each visit's source is remembered: UTM tags, Google Ads, Facebook, search engines, referring sites and partner QR codes
+  - counted against it: taps on phone, WhatsApp, SMS and email links; bookings; quotes; and sign-ups
+  - reports are by source, campaign, page and partner
+  - optional tracking numbers show a different phone number to visitors from a given source
+
 ### For passengers
 - **Online booking** covers:
   - pick-up and drop-off, date and time, and an optional return trip
@@ -499,7 +555,7 @@ location ~* /wp-content/uploads/.*\.php$ { deny all; }
 - Don't use an account called `admin`.
 
 ## Shortcodes
-`[tp_booking_form]` `[tp_booking_lookup]` `[tp_contact_form]` `[tp_faq]` `[tp_faq topic="booking"]` `[tp_fleet]` `[tp_fleet limit="2"]` `[tp_ndis]` `[tp_testimonials]` `[tp_driver_jobs]` `[tp_services]` `[tp_areas]` `[tp_contact_details]` `[tp_map]` `[tp_map q="Frankston VIC"]` `[tp_stats]` `[tp_suburb_checker]` `[tp_destinations]` `[tp_drivers]` `[tp_video]` `[tp_partners]` `[tp_driver_apply]` `[tp_contact_chooser]` `[tp_faq featured="yes" limit="4" search="no"]`
+`[tp_booking_form]` `[tp_booking_lookup]` `[tp_contact_form]` `[tp_faq]` `[tp_faq topic="booking"]` `[tp_fleet]` `[tp_fleet limit="2"]` `[tp_ndis]` `[tp_testimonials]` `[tp_driver_jobs]` `[tp_services]` `[tp_areas]` `[tp_contact_details]` `[tp_map]` `[tp_map q="Frankston VIC"]` `[tp_stats]` `[tp_suburb_checker]` `[tp_destinations]` `[tp_drivers]` `[tp_video]` `[tp_partners]` `[tp_driver_apply]` `[tp_contact_chooser]` `[tp_faq featured="yes" limit="4" search="no"]` `[tp_quote_request]` `[tp_lost_property]` `[tp_newsletter]`
 
 ## Before going live
 - **Complaints page:** replace the [CONFIRM] response times and add the regulators' current contact details, then publish it. The chooser and the auto-reply link to it once it's published.

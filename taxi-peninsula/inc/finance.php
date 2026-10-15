@@ -204,7 +204,7 @@ function tp_render_finance_page() {
 								<input type="hidden" name="back" value="<?php echo esc_attr( add_query_arg( $f, admin_url( 'admin.php?page=tp-finance' ) ) ); ?>">
 								<?php wp_nonce_field( 'tp_finance_' . $b['id'] ); ?>
 								<label class="screen-reader-text" for="fare-<?php echo esc_attr( $b['id'] ); ?>"><?php esc_html_e( 'Fare incl. GST', 'taxi-peninsula' ); ?></label>
-								<span class="tp-finance__money">$<input type="number" step="0.01" min="0" id="fare-<?php echo esc_attr( $b['id'] ); ?>" name="fare" value="<?php echo esc_attr( $b['fare'] ); ?>" placeholder="<?php esc_attr_e( 'Fare', 'taxi-peninsula' ); ?>"></span>
+								<span class="tp-finance__money">$<input type="number" step="0.01" min="0" id="fare-<?php echo esc_attr( $b['id'] ); ?>" name="fare" value="<?php echo esc_attr( tp_fare_input_value( $b['id'] ) ); ?>" placeholder="<?php esc_attr_e( 'Fare', 'taxi-peninsula' ); ?>"></span>
 								<?php if ( 'account' === $b['payment'] ) : ?>
 									<label class="screen-reader-text" for="inv-<?php echo esc_attr( $b['id'] ); ?>"><?php esc_html_e( 'Invoice status', 'taxi-peninsula' ); ?></label>
 									<select id="inv-<?php echo esc_attr( $b['id'] ); ?>" name="invoice">
@@ -220,6 +220,11 @@ function tp_render_finance_page() {
 									<?php
 									/* translators: %s: GST amount */
 									echo esc_html( sprintf( __( 'GST %s', 'taxi-peninsula' ), tp_money( (float) $b['fare'] / 11 ) ) );
+									$tp_disc = (float) get_post_meta( $b['id'], '_tp_discount', true );
+									if ( $tp_disc > 0 ) {
+										/* translators: 1: discount 2: code 3: amount to pay */
+										echo '<br>' . esc_html( sprintf( __( '−%1$s promo %2$s = %3$s', 'taxi-peninsula' ), tp_money( $tp_disc ), $b['promo'], tp_money( $b['fare'] ) ) );
+									}
 									?>
 								</small>
 							<?php endif; ?>
@@ -242,8 +247,8 @@ function tp_handle_finance_save() {
 	}
 	$fare = isset( $_POST['fare'] ) ? sanitize_text_field( wp_unslash( $_POST['fare'] ) ) : '';
 	$new  = '' === $fare ? '' : round( max( 0, (float) $fare ), 2 );
-	if ( (string) $new !== (string) get_post_meta( $post_id, '_tp_fare', true ) ) {
-		update_post_meta( $post_id, '_tp_fare', $new );
+	if ( (string) $new !== (string) tp_fare_input_value( $post_id ) ) {
+		tp_set_fare( $post_id, $new );
 		/* translators: %s: fare */
 		tp_add_log( $post_id, array( 'note' => sprintf( __( 'Fare set to %s', 'taxi-peninsula' ), '' === $new ? '—' : tp_money( $new ) ) ) );
 	}
@@ -275,7 +280,7 @@ function tp_handle_finance_export() {
 		$v = (string) $v;
 		return ( '' !== $v && in_array( $v[0], array( '=', '+', '-', '@', "\t", "\r" ), true ) ) ? "'" . $v : $v;
 	};
-	fputcsv( $out, array( 'Invoice / reference', 'Trip date', 'Status', 'Passenger', 'Invoice to', 'Invoice email', 'NDIS number', 'Payment', 'MPTP', 'Fare incl GST', 'GST', 'Paid online', 'Balance', 'Invoice status', 'From', 'To', 'Km' ), ',', '"', '' );
+	fputcsv( $out, array( 'Invoice / reference', 'Trip date', 'Status', 'Passenger', 'Invoice to', 'Invoice email', 'NDIS number', 'Payment', 'MPTP', 'Fare incl GST', 'GST', 'Promo code', 'Discount', 'Paid online', 'Balance', 'Invoice status', 'From', 'To', 'Km' ), ',', '"', '' );
 	foreach ( $rows as $b ) {
 		$fare = '' === (string) $b['fare'] ? '' : (float) $b['fare'];
 		fputcsv(
@@ -294,6 +299,8 @@ function tp_handle_finance_export() {
 					$b['mptp'] ? 'Yes' : '',
 					'' === $fare ? '' : number_format( $fare, 2, '.', '' ),
 					'' === $fare ? '' : number_format( $fare / 11, 2, '.', '' ),
+					$b['promo'],
+					(float) get_post_meta( $b['id'], '_tp_discount', true ) > 0 ? number_format( (float) get_post_meta( $b['id'], '_tp_discount', true ), 2, '.', '' ) : '',
 					$b['paid'] > 0 ? number_format( $b['paid'], 2, '.', '' ) : '',
 					'' === $fare ? '' : number_format( max( 0, $fare - $b['paid'] ), 2, '.', '' ),
 					tp_invoice_statuses()[ $b['invoice'] ] ?? '',
