@@ -96,15 +96,26 @@ function tp_booking_sms( $post_id, $to, $message, $who ) {
 		return;
 	}
 	$result = tp_send_sms( $to, $message );
-	tp_add_log(
-		$post_id,
-		array(
-			'note' => is_wp_error( $result )
-				/* translators: 1: recipient, 2: error */
-				? sprintf( __( 'SMS to %1$s failed: %2$s', 'taxi-peninsula' ), $who, $result->get_error_message() )
-				/* translators: %s: recipient */
-				: sprintf( __( 'SMS sent to %s', 'taxi-peninsula' ), $who ),
-		)
+	// The history is for the office, so it stays in the site language.
+	tp_in_site_lang(
+		static function () use ( $post_id, $result, $who ) {
+			$labels = array(
+				'customer' => __( 'customer', 'taxi-peninsula' ),
+				'driver'   => __( 'driver', 'taxi-peninsula' ),
+				'office'   => __( 'office', 'taxi-peninsula' ),
+			);
+			$who    = $labels[ $who ] ?? $who;
+			tp_add_log(
+				$post_id,
+				array(
+					'note' => is_wp_error( $result )
+						/* translators: 1: recipient, 2: error */
+						? sprintf( __( 'SMS to %1$s failed: %2$s', 'taxi-peninsula' ), $who, $result->get_error_message() )
+						/* translators: %s: recipient */
+						: sprintf( __( 'SMS sent to %s', 'taxi-peninsula' ), $who ),
+				)
+			);
+		}
 	);
 }
 
@@ -118,21 +129,25 @@ function tp_sms_on_created( $post_id, $all_ids ) {
 	$count = count( $all_ids );
 
 	if ( tp_setting( 'sms_office_number' ) ) {
-		$msg = sprintf(
-			/* translators: 1: reference, 2: pick-up time, 3: name, 4: phone, 5: from, 6: to */
-			__( 'New booking %1$s: %2$s, %3$s (%4$s). %5$s → %6$s', 'taxi-peninsula' ),
-			$b['reference'],
-			tp_format_pickup( $b, 'D j M g:ia' ),
-			$b['name'],
-			$b['phone'],
-			$b['pickup'],
-			$b['dropoff']
+		tp_in_site_lang(
+			static function () use ( $post_id, $b, $count ) {
+				$msg = sprintf(
+					/* translators: 1: reference, 2: pick-up time, 3: name, 4: phone, 5: from, 6: to */
+					__( 'New booking %1$s: %2$s, %3$s (%4$s). %5$s → %6$s', 'taxi-peninsula' ),
+					$b['reference'],
+					tp_format_pickup( $b, 'D j M g:ia' ),
+					$b['name'],
+					$b['phone'],
+					$b['pickup'],
+					$b['dropoff']
+				);
+				if ( $count > 1 ) {
+					/* translators: %d: number of trips */
+					$msg .= ' ' . sprintf( __( '(repeat: %d trips)', 'taxi-peninsula' ), $count );
+				}
+				tp_booking_sms( $post_id, tp_setting( 'sms_office_number' ), $msg, 'office' );
+			}
 		);
-		if ( $count > 1 ) {
-			/* translators: %d: number of trips */
-			$msg .= ' ' . sprintf( __( '(repeat: %d trips)', 'taxi-peninsula' ), $count );
-		}
-		tp_booking_sms( $post_id, tp_setting( 'sms_office_number' ), $msg, __( 'office', 'taxi-peninsula' ) );
 	}
 
 	if ( tp_setting( 'sms_customer_received' ) ) {
@@ -144,12 +159,18 @@ function tp_sms_on_created( $post_id, $all_ids ) {
 			tp_format_pickup( $b, 'D j M g:ia' ),
 			tp_booking_manage_url( $post_id )
 		);
-		tp_booking_sms( $post_id, $b['phone'], $msg, __( 'customer', 'taxi-peninsula' ) );
+		tp_booking_sms( $post_id, $b['phone'], $msg, 'customer' );
 	}
 }
 
 add_action( 'tp_booking_status_changed', 'tp_sms_on_status', 20, 4 );
 function tp_sms_on_status( $post_id, $old, $status, $notify ) {
+	return tp_in_booking_lang( $post_id, static function () use ( $post_id, $old, $status, $notify ) {
+		return tp_sms_on_status_run( $post_id, $old, $status, $notify );
+	} );
+}
+
+function tp_sms_on_status_run( $post_id, $old, $status, $notify ) {
 	if ( ! $notify || ! tp_setting( 'sms_customer_status' ) ) {
 		return;
 	}
@@ -183,7 +204,7 @@ function tp_sms_on_status( $post_id, $old, $status, $notify ) {
 		default:
 			return;
 	}
-	tp_booking_sms( $post_id, $b['phone'], $msg, __( 'customer', 'taxi-peninsula' ) );
+	tp_booking_sms( $post_id, $b['phone'], $msg, 'customer' );
 }
 
 add_action( 'tp_driver_assigned', 'tp_sms_driver_assigned', 20, 3 );
@@ -210,7 +231,7 @@ function tp_sms_driver_assigned( $post_id, $driver_id, $notify ) {
 	if ( $jobs ) {
 		$msg .= ' ' . $jobs;
 	}
-	tp_booking_sms( $post_id, $phone, $msg, __( 'driver', 'taxi-peninsula' ) );
+	tp_booking_sms( $post_id, $phone, $msg, 'driver' );
 }
 
 add_action( 'admin_post_tp_test_sms', 'tp_handle_test_sms' );

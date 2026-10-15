@@ -146,6 +146,7 @@ function tp_handle_booking() {
 		if ( tp_terms_url() ) {
 			update_post_meta( $post_id, '_tp_terms_accepted', current_time( 'mysql' ) );
 		}
+		update_post_meta( $post_id, '_tp_consent_at', current_time( 'mysql' ) );
 		$ids[] = $post_id;
 	}
 
@@ -252,12 +253,26 @@ function tp_send_new_booking_emails( $post_id, $ids = array() ) {
 		? "\n" . sprintf( __( 'Repeat booking — %d trips:', 'taxi-peninsula' ), count( $ids ) ) . "\n" . tp_series_dates_text( $ids )
 		: '';
 
-	wp_mail(
-		$admin_to,
-		/* translators: 1: reference, 2: pick-up time */
-		sprintf( __( 'New booking %1$s — %2$s', 'taxi-peninsula' ), $b['reference'], tp_format_pickup( $b ) ) . ( $series ? ' ' . __( '(repeat)', 'taxi-peninsula' ) : '' ),
-		$summary . $series . "\n" . __( 'Manage this booking:', 'taxi-peninsula' ) . ' ' . admin_url( 'post.php?post=' . $post_id . '&action=edit' ),
-		tp_mail_headers( $b['email'] )
+	// The office alert is always in the site language.
+	tp_in_site_lang(
+		static function () use ( $post_id, $ids, $b, $admin_to ) {
+			$series = count( $ids ) > 1
+				/* translators: %d: number of trips */
+				? "\n" . sprintf( __( 'Repeat booking — %d trips:', 'taxi-peninsula' ), count( $ids ) ) . "\n" . tp_series_dates_text( $ids )
+				: '';
+			$note   = get_post_meta( $post_id, '_tp_lang', true );
+			$note   = $note && isset( tp_languages()[ $note ] )
+				/* translators: %s: language name */
+				? sprintf( __( 'Booked in %s — emails and texts to the customer are sent in this language.', 'taxi-peninsula' ), tp_languages()[ $note ][2] ) . "\n\n"
+				: '';
+			wp_mail(
+				$admin_to,
+				/* translators: 1: reference, 2: pick-up time */
+				sprintf( __( 'New booking %1$s — %2$s', 'taxi-peninsula' ), $b['reference'], tp_format_pickup( $b ) ) . ( $series ? ' ' . __( '(repeat)', 'taxi-peninsula' ) : '' ),
+				$note . tp_booking_summary( $b ) . $series . "\n" . __( 'Manage this booking:', 'taxi-peninsula' ) . ' ' . admin_url( 'post.php?post=' . $post_id . '&action=edit' ),
+				tp_mail_headers( $b['email'] )
+			);
+		}
 	);
 
 	if ( tp_opt( 'customer_emails' ) && is_email( $b['email'] ) ) {
@@ -295,6 +310,12 @@ function tp_email_on_status( $post_id, $old, $status, $notify ) {
  * Let the customer know when a booking changes status.
  */
 function tp_send_status_email( $post_id ) {
+	return tp_in_booking_lang( $post_id, static function () use ( $post_id ) {
+		return tp_send_status_email_run( $post_id );
+	} );
+}
+
+function tp_send_status_email_run( $post_id ) {
 	$b = tp_get_booking( $post_id );
 	if ( ! is_email( $b['email'] ) ) {
 		return false;

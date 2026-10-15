@@ -362,6 +362,9 @@ function tp_account_shortcode() {
 	// phpcs:enable
 
 	if ( ! is_user_logged_in() ) {
+		if ( ! empty( $_GET['bye'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			echo '<p class="notice notice--success" role="status" tabindex="-1" data-focus>' . esc_html__( 'Your account has been deleted. Thank you for travelling with us.', 'taxi-peninsula' ) . '</p>';
+		}
 		tp_account_signin( $state );
 		echo '</div>';
 		return ob_get_clean();
@@ -884,6 +887,7 @@ function tp_account_details_tab( WP_User $user, $coord ) {
 		<button type="submit" class="btn btn--primary"><?php esc_html_e( 'Change password', 'taxi-peninsula' ); ?></button>
 	</form>
 	<?php
+	tp_account_privacy_panel( $user );
 }
 
 /* -------------------------------------------------------------------------
@@ -982,12 +986,16 @@ function tp_handle_account_register() {
 		update_user_meta( $user_id, 'tp_org', $old['org'] );
 		update_user_meta( $user_id, 'tp_invoice_name', $old['org'] );
 		update_user_meta( $user_id, 'tp_invoice_email', $old['email'] );
-		wp_mail(
-			tp_opt( 'notify_email' ) ?: get_option( 'admin_email' ),
-			/* translators: %s: organisation */
-			sprintf( __( 'New coordinator account: %s', 'taxi-peninsula' ), $old['org'] ),
-			sprintf( "%s\n%s\n%s\n%s\n\n%s", $old['org'], $old['name'], $old['email'], $old['phone'], admin_url( 'user-edit.php?user_id=' . $user_id ) ),
-			tp_mail_headers( $old['email'] )
+		tp_in_site_lang(
+			static function () use ( $old, $user_id ) {
+				wp_mail(
+					tp_opt( 'notify_email' ) ?: get_option( 'admin_email' ),
+					/* translators: %s: organisation */
+					sprintf( __( 'New coordinator account: %s', 'taxi-peninsula' ), $old['org'] ),
+					sprintf( "%s\n%s\n%s\n%s\n\n%s", $old['org'], $old['name'], $old['email'], $old['phone'], admin_url( 'user-edit.php?user_id=' . $user_id ) ),
+					tp_mail_headers( $old['email'] )
+				);
+			}
 		);
 	}
 	wp_set_current_user( $user_id );
@@ -1138,6 +1146,7 @@ function tp_rating_block( array $b, $return ) {
 	if ( $b['rating'] ) {
 		/* translators: %d: stars */
 		echo '<p class="trip__rated">' . esc_html( sprintf( _n( 'You rated this trip %d star. Thank you!', 'You rated this trip %d stars. Thank you!', $b['rating'], 'taxi-peninsula' ), $b['rating'] ) ) . '</p>';
+		tp_review_invite( $b );
 		return;
 	}
 	$id = 'rate-' . $b['id'];
@@ -1182,8 +1191,13 @@ function tp_handle_rate_trip() {
 		update_post_meta( $post_id, '_tp_rating', $rating );
 		update_post_meta( $post_id, '_tp_rating_comment', $comment );
 		update_post_meta( $post_id, '_tp_rated_at', current_time( 'mysql' ) );
-		/* translators: 1: stars, 2: comment */
-		tp_add_log( $post_id, array( 'note' => sprintf( __( 'Customer rating: %1$d★ %2$s', 'taxi-peninsula' ), $rating, $comment ) ) );
+		tp_in_site_lang(
+			static function () use ( $post_id, $rating, $comment ) {
+				/* translators: 1: stars, 2: comment */
+				tp_add_log( $post_id, array( 'note' => sprintf( __( 'Customer rating: %1$d★ %2$s', 'taxi-peninsula' ), $rating, $comment ) ) );
+			}
+		);
+		tp_review_invite_email( $post_id );
 		if ( $rating <= 3 ) {
 			$b = tp_get_booking( $post_id );
 			wp_mail(

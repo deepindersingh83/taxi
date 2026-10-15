@@ -7,12 +7,13 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TP_VERSION', '1.8.0' );
+define( 'TP_VERSION', '1.9.0' );
 define( 'TP_DIR', get_template_directory() );
 define( 'TP_URI', get_template_directory_uri() );
 
 require TP_DIR . '/inc/helpers.php';
 require TP_DIR . '/inc/settings.php';
+require TP_DIR . '/inc/languages.php';
 require TP_DIR . '/inc/setup.php';
 require TP_DIR . '/inc/customizer.php';
 require TP_DIR . '/inc/security.php';
@@ -29,6 +30,9 @@ require TP_DIR . '/inc/components.php';
 require TP_DIR . '/inc/drivers.php';
 require TP_DIR . '/inc/trips.php';
 require TP_DIR . '/inc/accounts.php';
+require TP_DIR . '/inc/activity.php';
+require TP_DIR . '/inc/privacy.php';
+require TP_DIR . '/inc/review-invite.php';
 require TP_DIR . '/inc/seo.php';
 require TP_DIR . '/inc/analytics.php';
 require TP_DIR . '/inc/local-seo.php';

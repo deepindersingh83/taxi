@@ -196,12 +196,16 @@ function tp_handle_contact() {
 	}
 	tp_rate_limit( 'contact', 5, HOUR_IN_SECONDS, true );
 
-	wp_mail(
-		tp_opt( 'notify_email' ) ?: get_option( 'admin_email' ),
-		/* translators: 1: topic, 2: name */
-		sprintf( __( 'Website enquiry: %1$s — %2$s', 'taxi-peninsula' ), $topic, $name ),
-		sprintf( "%s\n%s\n%s\n\n%s\n\n%s", $name, $email, $phone, $message, admin_url( 'edit.php?post_type=tp_message' ) ),
-		tp_mail_headers( $email )
+	tp_in_site_lang(
+		static function () use ( $topic, $name, $email, $phone, $message ) {
+			wp_mail(
+				tp_opt( 'notify_email' ) ?: get_option( 'admin_email' ),
+				/* translators: 1: topic, 2: name */
+				sprintf( __( 'Website enquiry: %1$s — %2$s', 'taxi-peninsula' ), $topic, $name ),
+				sprintf( "%s\n%s\n%s\n\n%s\n\n%s", $name, $email, $phone, $message, admin_url( 'edit.php?post_type=tp_message' ) ),
+				tp_mail_headers( $email )
+			);
+		}
 	);
 
 	tp_contact_auto_reply( $name, $email, $topic, $message );

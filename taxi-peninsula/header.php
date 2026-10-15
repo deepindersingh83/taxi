@@ -53,6 +53,8 @@
 			<?php tp_the_brand(); ?>
 		</div>
 
+		<?php tp_the_language_switcher( 'header' ); ?>
+
 		<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
 			<span class="nav-toggle__open"><?php tp_the_icon( 'menu' ); ?></span>
 			<span class="nav-toggle__close"><?php tp_the_icon( 'close' ); ?></span>

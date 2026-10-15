@@ -17,6 +17,9 @@ function tp_captcha_enabled() {
  * Output honeypot + captcha widget inside a form.
  */
 function tp_spam_fields() {
+	if ( function_exists( 'tp_lang' ) && 'en' !== tp_lang() ) {
+		echo '<input type="hidden" name="tp_lang" value="' . esc_attr( tp_lang() ) . '">';
+	}
 	echo '<div class="hp" aria-hidden="true"><label for="' . esc_attr( wp_unique_id( 'tp-hp-' ) ) . '">Website</label><input type="text" name="tp_website" tabindex="-1" autocomplete="off"></div>';
 
 	if ( ! tp_captcha_enabled() ) {

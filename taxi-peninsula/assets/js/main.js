@@ -302,6 +302,7 @@
 		var formEl = e.target;
 		if (e.defaultPrevented || !formEl.matches('form')) { return; }
 		var btn = e.submitter || formEl.querySelector('[type="submit"]');
+		if (btn && btn.hasAttribute('data-no-loading')) { return; } // downloads keep the page open
 		if (btn && !btn.classList.contains('is-loading')) {
 			btn.classList.add('is-loading');
 			btn.setAttribute('aria-busy', 'true');
@@ -946,6 +947,44 @@
 		if (t) { t.textContent = text; }
 		document.querySelectorAll('[data-hours-closed-note]').forEach(function (n) { n.hidden = open; });
 	});
+
+	/* Language menu: close on Escape or a click outside. */
+	document.querySelectorAll('[data-lang-switch]').forEach(function (d) {
+		document.addEventListener('click', function (e) { if (d.open && !d.contains(e.target)) { d.open = false; } });
+		d.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape' && d.open) { d.open = false; d.querySelector('summary').focus(); }
+		});
+	});
+	function langDismiss() { try { localStorage.setItem('tp-lang-offer', 'done'); } catch (err) {} }
+	document.addEventListener('click', function (e) {
+		if (e.target.closest && e.target.closest('[data-lang-choice]')) { langDismiss(); }
+	});
+
+	/* Offer the browser's language once, worded in that language. */
+	var suggest = document.querySelector('[data-lang-suggest]');
+	if (suggest) {
+		var offers = {}, seen = null;
+		try { offers = JSON.parse(suggest.getAttribute('data-lang-suggest')) || {}; seen = localStorage.getItem('tp-lang-offer'); } catch (err) {}
+		var wanted = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || '']);
+		var pick = null;
+		for (var li = 0; li < wanted.length && !pick; li++) {
+			var code = String(wanted[li]).toLowerCase().split('-')[0];
+			if (code === 'en') { break; }
+			if (offers[code]) { pick = offers[code]; }
+		}
+		if (pick && !seen) {
+			suggest.setAttribute('lang', pick.lang);
+			suggest.setAttribute('dir', pick.dir);
+			suggest.querySelector('.lang-suggest__q').textContent = pick.q;
+			var yes = suggest.querySelector('.lang-suggest__yes');
+			yes.textContent = pick.yes;
+			yes.href = pick.url;
+			var no = suggest.querySelector('.lang-suggest__no');
+			no.textContent = pick.no;
+			no.addEventListener('click', function () { langDismiss(); suggest.hidden = true; });
+			suggest.hidden = false;
+		}
+	}
 
 	/* Move focus to server-rendered errors / success so screen readers announce them. */
 	var focusTarget = document.querySelector('[data-focus]');

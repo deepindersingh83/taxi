@@ -48,6 +48,19 @@ function tp_settings_schema() {
 		'google_reviews_url'    => array( 'reviews', __( 'Google reviews link', 'taxi-peninsula' ), 'url', '', __( 'Your Google Business Profile reviews URL.', 'taxi-peninsula' ) ),
 		'google_rating'         => array( 'reviews', __( 'Google star rating', 'taxi-peninsula' ), 'text', '', __( 'e.g. 4.9 — copy it from your Google profile. Leave empty to hide.', 'taxi-peninsula' ) ),
 		'google_review_count'   => array( 'reviews', __( 'Number of Google reviews', 'taxi-peninsula' ), 'number', '', '' ),
+		'review_write_url'      => array( 'reviews', __( 'Write-a-review link', 'taxi-peninsula' ), 'url', '', __( 'In Google Business Profile choose "Ask for reviews" and copy the link (it looks like https://g.page/r/…/review). Leave empty to use the reviews link above.', 'taxi-peninsula' ) ),
+		'review_request'        => array( 'reviews', __( 'Invite customers to review you on Google', 'taxi-peninsula' ), 'select', 'happy', __( 'Shown straight after a customer rates a trip. Note: Google’s review policy and the ACCC’s guidance on online reviews say businesses should not invite only happy customers — Google can remove reviews gathered that way. "After any rating" is the safest choice.', 'taxi-peninsula' ), array( 'happy' => __( 'After a 4 or 5 star rating', 'taxi-peninsula' ), 'all' => __( 'After any rating', 'taxi-peninsula' ), 'off' => __( 'Off', 'taxi-peninsula' ) ) ),
+		'review_email'          => array( 'reviews', __( 'Also email the invitation', 'taxi-peninsula' ), 'checkbox', true, __( 'Sent at most once every 6 months to the same email address.', 'taxi-peninsula' ) ),
+
+		// Privacy.
+		'privacy_contact'           => array( 'privacy', __( 'Privacy contact', 'taxi-peninsula' ), 'text', '', __( 'Name or role shown in the privacy policy, e.g. "Privacy Officer". Leave empty to use the business name.', 'taxi-peninsula' ) ),
+		'privacy_email'             => array( 'privacy', __( 'Privacy email', 'taxi-peninsula' ), 'text', '', __( 'Leave empty to use your main email address.', 'taxi-peninsula' ) ),
+		'privacy_hosting'           => array( 'privacy', __( 'Where your website and email are hosted', 'taxi-peninsula' ), 'text', '', __( 'e.g. "VentraIP (website, Australia) and Microsoft 365 (email, Australia)". Shown in the privacy policy.', 'taxi-peninsula' ) ),
+		'privacy_providers'         => array( 'privacy', __( 'Other services that handle personal information', 'taxi-peninsula' ), 'textarea', '', __( 'One per line, e.g. "Xero (accounting) — Australia and United States". SMS, Stripe, Google Maps and spam protection are listed automatically when switched on.', 'taxi-peninsula' ) ),
+		'privacy_cleanup'           => array( 'privacy', __( 'Remove old personal details automatically', 'taxi-peninsula' ), 'checkbox', true, __( 'Runs once a day using the periods below. See Bookings → Privacy for what is due.', 'taxi-peninsula' ) ),
+		'retention_trip_months'     => array( 'privacy', __( 'Trips: remove passenger details after (months)', 'taxi-peninsula' ), 'number', 24, __( 'Names, phone numbers, emails, street addresses, notes and comments are removed from trips this old. The reference, date, suburbs, fare and payment stay for your records; account invoice details are kept for 5 years for tax. 0 = never.', 'taxi-peninsula' ) ),
+		'retention_messages_months' => array( 'privacy', __( 'Messages and driver applications: delete after (months)', 'taxi-peninsula' ), 'number', 12, __( '0 = never.', 'taxi-peninsula' ) ),
+		'retention_activity_months' => array( 'privacy', __( 'Activity log: delete entries after (months)', 'taxi-peninsula' ), 'number', 24, __( '0 = never.', 'taxi-peninsula' ) ),
 
 		// Policies.
 		'terms_page_id'         => array( 'recurring', __( 'Terms & cancellation policy page', 'taxi-peninsula' ), 'page', 0, __( 'Customers must tick "I accept" before booking. Leave as "— Use the Setup page —" to use the page created by Bookings → Setup.', 'taxi-peninsula' ) ),
@@ -64,6 +77,7 @@ function tp_settings_sections() {
 		'payments'  => array( __( 'Payments & invoicing', 'taxi-peninsula' ), sprintf( /* translators: %s: webhook URL */ __( 'In Stripe, add a webhook for the "checkout.session.completed" event pointing to: %s', 'taxi-peninsula' ), '<code>' . esc_html( rest_url( 'taxi-peninsula/v1/stripe' ) ) . '</code>' ) ),
 		'captcha'   => array( __( 'Spam protection', 'taxi-peninsula' ), '' ),
 		'reviews'   => array( __( 'Google reviews', 'taxi-peninsula' ), __( 'Shown with your testimonials on the home page.', 'taxi-peninsula' ) ),
+		'privacy'   => array( __( 'Privacy & data retention', 'taxi-peninsula' ), __( 'The Australian Privacy Principles ask you to keep personal information only while you need it. Tax invoices are kept for 5 years, as the ATO requires.', 'taxi-peninsula' ) ),
 		'recurring' => array( __( 'Recurring trips', 'taxi-peninsula' ), '' ),
 	);
 }

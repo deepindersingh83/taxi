@@ -84,6 +84,12 @@ function tp_starter_pages() {
 			'pattern'  => 'page-complaints',
 			'status'   => 'draft',
 		),
+		'privacy'       => array(
+			'title'    => __( 'Privacy Policy', 'taxi-peninsula' ),
+			'template' => 'page-templates/policy.php',
+			'pattern'  => 'page-privacy',
+			'status'   => 'draft',
+		),
 		'accessibility' => array(
 			'title'    => __( 'Accessibility Statement', 'taxi-peninsula' ),
 			'template' => 'page-templates/policy.php',
@@ -165,7 +171,7 @@ function tp_render_setup_page() {
 		<p><?php esc_html_e( 'Create the pages and example content this theme needs in one click. Anything that already exists is left alone.', 'taxi-peninsula' ); ?></p>
 		<ul class="ul-disc">
 			<li><?php esc_html_e( 'Pages: Book a Taxi, Manage My Booking, My Account, Our Fleet, FAQ, NDIS & Aged Care, Contact Us, Driver Jobs, About Us and Our Services', 'taxi-peninsula' ); ?></li>
-			<li><?php esc_html_e( 'Draft Terms & Cancellation Policy, Complaints & Feedback, Accessibility Statement and Drive With Us pages with [CONFIRM] notes for your real policies', 'taxi-peninsula' ); ?></li>
+			<li><?php esc_html_e( 'Draft Terms & Cancellation Policy, Privacy Policy, Complaints & Feedback, Accessibility Statement and Drive With Us pages with [CONFIRM] notes for your real policies', 'taxi-peninsula' ); ?></li>
 			<li><?php esc_html_e( 'Three draft blog posts with writing outlines', 'taxi-peninsula' ); ?></li>
 			<li><?php esc_html_e( 'Frequently asked questions, grouped by topic', 'taxi-peninsula' ); ?></li>
 			<li><?php esc_html_e( 'Service pages (airport, medical, NDIS…) and one page per service area', 'taxi-peninsula' ); ?></li>
@@ -247,6 +253,9 @@ function tp_create_starter_content() {
 		}
 	}
 	update_option( 'tp_pages', $pages );
+	if ( ! empty( $pages['privacy'] ) ) {
+		tp_privacy_create_page();
+	}
 
 	// Static front page + blog page, if the site still shows latest posts on the home page.
 	if ( 'posts' === get_option( 'show_on_front' ) ) {

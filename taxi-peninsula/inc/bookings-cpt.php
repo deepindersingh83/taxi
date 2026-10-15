@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const TP_CAPS_VERSION = 3;
+const TP_CAPS_VERSION = 4;
 
 add_action( 'init', 'tp_register_booking_cpt' );
 function tp_register_booking_cpt() {
@@ -118,6 +118,7 @@ function tp_install_caps() {
 		$role = get_role( $role_name );
 		if ( $role ) {
 			$role->add_cap( 'tp_view_finance' );
+			$role->add_cap( 'tp_view_activity' );
 		}
 	}
 
@@ -449,6 +450,7 @@ function tp_add_log( $post_id, array $entry ) {
 		$entry
 	);
 	update_post_meta( $post_id, '_tp_log', $log );
+	do_action( 'tp_booking_log_added', $post_id, end( $log ) );
 }
 
 /**

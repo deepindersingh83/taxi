@@ -118,6 +118,12 @@ function tp_handle_driver_step() {
  * Driver declines a trip: unassign it, record why, and alert the office.
  */
 function tp_decline_trip( $post_id, $driver_id, $reason, $note = '' ) {
+	return tp_in_site_lang( static function () use ( $post_id, $driver_id, $reason, $note ) {
+		return tp_decline_trip_run( $post_id, $driver_id, $reason, $note );
+	} );
+}
+
+function tp_decline_trip_run( $post_id, $driver_id, $reason, $note = '' ) {
 	$reasons = tp_decline_reasons();
 	$reason  = isset( $reasons[ $reason ] ) ? $reason : 'other';
 	$driver  = get_userdata( $driver_id );
@@ -149,7 +155,7 @@ function tp_decline_trip( $post_id, $driver_id, $reason, $note = '' ) {
 		tp_mail_headers()
 	);
 	if ( tp_setting( 'sms_office_number' ) ) {
-		tp_booking_sms( $post_id, tp_setting( 'sms_office_number' ), $message, __( 'office', 'taxi-peninsula' ) );
+		tp_booking_sms( $post_id, tp_setting( 'sms_office_number' ), $message, 'office' );
 	}
 }
 
@@ -162,6 +168,12 @@ add_action( 'tp_driver_assigned', static function ( $post_id ) {
 
 add_action( 'tp_booking_status_changed', 'tp_sms_trip_progress', 25, 4 );
 function tp_sms_trip_progress( $post_id, $old, $status, $notify ) {
+	return tp_in_booking_lang( $post_id, static function () use ( $post_id, $old, $status, $notify ) {
+		return tp_sms_trip_progress_run( $post_id, $old, $status, $notify );
+	} );
+}
+
+function tp_sms_trip_progress_run( $post_id, $old, $status, $notify ) {
 	if ( ! $notify || ! tp_setting( 'sms_customer_trip' ) || ! in_array( $status, array( 'on_way', 'arrived' ), true ) ) {
 		return;
 	}
@@ -182,7 +194,7 @@ function tp_sms_trip_progress( $post_id, $old, $status, $notify ) {
 	}
 	/* translators: %s: phone */
 	$msg .= ' ' . sprintf( __( 'Questions? Call %s.', 'taxi-peninsula' ), tp_opt( 'phone_display' ) );
-	tp_booking_sms( $post_id, $b['phone'], $msg, __( 'customer', 'taxi-peninsula' ) );
+	tp_booking_sms( $post_id, $b['phone'], $msg, 'customer' );
 }
 
 /* ---- My week (driver timesheet) ---- */
@@ -241,6 +253,12 @@ function tp_driver_rating( $driver_id ) {
  * Tell a customer something about their booking by email and (if set up) SMS.
  */
 function tp_notify_customer( $post_id, $subject, $message ) {
+	return tp_in_booking_lang( $post_id, static function () use ( $post_id, $subject, $message ) {
+		return tp_notify_customer_run( $post_id, $subject, $message );
+	} );
+}
+
+function tp_notify_customer_run( $post_id, $subject, $message ) {
 	$b    = tp_get_booking( $post_id );
 	$site = wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );
 	if ( is_email( $b['email'] ) ) {
@@ -251,6 +269,6 @@ function tp_notify_customer( $post_id, $subject, $message ) {
 		wp_mail( $b['email'], $subject . ' — ' . $b['reference'], $body, tp_mail_headers( tp_opt( 'email' ) ) );
 	}
 	if ( tp_setting( 'sms_customer_status' ) ) {
-		tp_booking_sms( $post_id, $b['phone'], $message, __( 'customer', 'taxi-peninsula' ) );
+		tp_booking_sms( $post_id, $b['phone'], $message, 'customer' );
 	}
 }

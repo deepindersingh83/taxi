@@ -318,6 +318,35 @@ All of these follow your logo colours and work in dark mode and high contrast. T
   - if no Site Icon is set, the theme makes a favicon, Apple touch icon and web app manifest from your colours
   - every page without a featured image gets a generated 1200×630 share card with its title, your phone number and the maxi taxi symbol (cached in `uploads/tp-share`)
 
+### Languages, reviews, activity log and privacy (v1.9)
+
+**Languages** — Tiếng Việt, 简体中文, Ελληνικά, Italiano and العربية
+- A globe button in the header (and a list in the footer) switches the language. The choice is remembered, and `?lang=vi` works on any link. Visitors whose browser prefers one of these languages are offered it once, in that language.
+- Translated: menus, the booking form and confirmation, Manage My Booking, My Account, the driver screen, receipts, built-in page titles, and the emails and texts customers get. Customer emails and SMS go out in the language the booking was made in, even when staff or a driver trigger them. Office emails, booking history and the activity log stay in English.
+- Arabic switches the whole layout to right-to-left (`assets/css/main-rtl.css`). If you edit `main.css`, regenerate it with `npx rtlcss assets/css/main.css assets/css/main-rtl.css`.
+- **Your own page text:** open a page and use the **Languages** box → *Add translation*. It makes a draft copy to translate in the editor, and visitors who chose that language are sent to it automatically. The Pages list has a Languages column.
+- **Home page text you changed:** Appearance → Customize → Taxi Peninsula → *Translated home page text*.
+- **Settings:** Customize → Taxi Peninsula → *Languages* turns each language on or off, shows the free interpreter line (TIS National 131 450, National Relay Service 133 677), and sets the **Auslan video** (shown by `[tp_auslan]` on the Accessibility Statement page and linked from the language menu).
+- Pages not yet translated show a short note in the visitor's language with the interpreter details.
+- Translation files are in `languages/` (`.po` to edit with Poedit or Loco Translate, `.mo`/`.l10n.php` used by WordPress). Vietnamese, Chinese, Italian and Arabic are complete; Greek is partly done (about 80% — untranslated lines show in English). They were written for this theme but **should be checked by a native speaker before launch**, especially anything about fares, NDIS and cancellations.
+- Page caching: exclude the `tp_lang` cookie from your cache (or vary on it) so each visitor gets their language.
+
+**Google review invitations**
+- After a customer rates a trip in My Account or Manage My Booking, they are invited to leave a Google review, with a one-tap button. An email invitation follows (at most once every 6 months per address). Clicks are recorded in the booking history.
+- Bookings → Settings → Google reviews: paste your *Write-a-review link* (Google Business Profile → Ask for reviews) and choose who is invited. The default is **after a 4 or 5 star rating**, as requested. Google's review policy and the ACCC's guidance say businesses should not ask only happy customers, and Google may remove reviews gathered that way, so *After any rating* is the safer choice.
+
+**Activity log** (Bookings → Activity log)
+- One record of who did what: bookings created, every status change, driver assignments and declines, each edited field (old → new; notes are logged as "changed" without their text), change requests, payments, ratings, deleted bookings, privacy requests and staff sign-ins (including failed passwords).
+- Filter by booking, person, type or date, and export CSV. Each booking's History box links to its full activity. Visible to administrators and booking managers.
+
+**Privacy (Australian Privacy Principles)**
+- **Bookings → Privacy:** requests waiting, what the clean-up will remove next, *Run clean-up now*, and *Create the privacy policy page*.
+- **Automatic clean-up** (daily, Bookings → Settings → Privacy): passenger details are removed from trips older than 24 months (names, phone numbers, emails, street addresses, notes and comments). References, dates, suburbs, fares and payments are kept, and account invoice details are kept for 5 years for tax. Messages and driver applications are deleted after 12 months, activity log entries after 24 months. All the periods can be changed.
+- **Requests:** WordPress's Tools → Export / Erase Personal Data now include bookings, saved passengers, clients, addresses and messages. Upcoming trips are kept until they are over.
+- **Customers:** My Account → My details → *Your privacy* lets customers **download their data** and **delete their account** themselves. Anyone can ask for a copy or deletion with the form on the privacy policy page (`[tp_privacy_request]`); they confirm by email first.
+- **Privacy policy:** `[tp_privacy_policy]` writes a policy following the APPs from your settings: what you collect (including health and mobility information as sensitive information), who sees it, overseas services (SMS, Stripe, Google, spam protection, plus any you list), retention periods, access and correction, and complaints to the OAIC. Fill in *Where your website and email are hosted* and have it reviewed by your adviser before publishing.
+- The booking form's consent now covers using mobility and health details to arrange the trip, links to the privacy policy, and records when consent was given.
+
 ## Install
 
 1. Zip the `taxi-peninsula` folder and upload it under **Appearance → Themes → Add New → Upload**. Then activate it.

@@ -1,0 +1,3420 @@
+# Vietnamese translation of the Taxi Peninsula theme.
+# Review by a native speaker is recommended before going live.
+msgid ""
+msgstr ""
+"Project-Id-Version: Taxi Peninsula 1.9.0\n"
+"PO-Revision-Date: 2026-10-15 00:11+0000\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: taxi-peninsula\n"
+
+#. Theme Name of the theme Author of the theme
+msgid "Taxi Peninsula"
+msgstr "Taxi Peninsula"
+
+#. Theme URI of the theme
+msgid "https://taxipeninsula.com.au"
+msgstr "https://taxipeninsula.com.au"
+
+#. Description of the theme
+msgid "Accessible wheelchair-taxi booking theme for Melbourne. Online bookings with repeat trips, account/invoice and Stripe deposits; customer booking lookup; wp-admin bookings manager with calendar, run sheet, reports, driver & vehicle assignment and CSV export; SMS (ClickSend/Twilio) and email notifications; driver job pages; FAQ, fleet, NDIS, service and suburb pages; SEO structured data; spam protection; page templates (About, Contact, Services, Blog, Policy, Full width, Canvas) and block patterns; Google address suggestions and fare estimates; cookie consent + GA4; breadcrumbs and local SEO; security hardening; fluid \"dynamic type\" with text-size and high-contrast controls."
+msgstr "Giao diện đặt taxi cho xe lăn dành cho Melbourne. Đặt xe trực tuyến với chuyến đi lặp lại, thanh toán qua tài khoản/hóa đơn và đặt cọc qua Stripe; khách hàng tra cứu lịch đặt xe; trang quản lý đặt xe trong wp-admin với lịch, bảng điều phối, báo cáo, phân công tài xế và xe, xuất tệp CSV; thông báo qua SMS (ClickSend/Twilio) và email; trang công việc cho tài xế; các trang Câu hỏi thường gặp, đội xe, NDIS, dịch vụ và khu vực; dữ liệu có cấu trúc cho SEO; chống thư rác; mẫu trang (Giới thiệu, Liên hệ, Dịch vụ, Blog, Chính sách, Toàn chiều rộng, Trang trống) và mẫu khối; gợi ý địa chỉ và ước tính giá cước từ Google; đồng ý cookie + GA4; đường dẫn điều hướng và SEO địa phương; tăng cường bảo mật; chữ \"tự điều chỉnh\" linh hoạt với nút chỉnh cỡ chữ và độ tương phản cao."
+
+msgid "Page not found"
+msgstr "Không tìm thấy trang"
+
+msgid "Sorry, we could not find that page. Try a search, or head back home."
+msgstr "Xin lỗi, chúng tôi không tìm thấy trang này. Bạn hãy thử tìm kiếm, hoặc quay về trang chủ."
+
+msgid "Back to home"
+msgstr "Về trang chủ"
+
+msgid "Book a taxi"
+msgstr "Đặt taxi"
+
+msgid "Areas we cover"
+msgstr "Khu vực phục vụ"
+
+msgid "Wheelchair accessible taxis across Melbourne and the Mornington Peninsula. Not listed? Call us — we travel further on request."
+msgstr "Taxi cho xe lăn khắp Melbourne và bán đảo Mornington. Không thấy khu vực của bạn? Hãy gọi cho chúng tôi — chúng tôi có thể đi xa hơn nếu bạn yêu cầu."
+
+#. translators: %s: suburb translators: %s: area
+msgid "Wheelchair taxi %s"
+msgstr "Taxi xe lăn %s"
+
+msgid "Our services"
+msgstr "Dịch vụ của chúng tôi"
+
+msgid "Reliable wheelchair accessible transport for everyday trips and important appointments."
+msgstr "Dịch vụ đưa đón tin cậy cho người dùng xe lăn, cho những chuyến đi hằng ngày và các cuộc hẹn quan trọng."
+
+#. translators: %s: number of comments
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s bình luận"
+
+msgid "Wheelchair accessible taxis for Melbourne and the Mornington Peninsula."
+msgstr "Taxi cho xe lăn tại Melbourne và bán đảo Mornington."
+
+msgid "Book a taxi online"
+msgstr "Đặt taxi trực tuyến"
+
+msgid "Contact"
+msgstr "Liên hệ"
+
+msgid "Links"
+msgstr "Liên kết"
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "Text us"
+msgstr "Nhắn tin cho chúng tôi"
+
+msgid "Call now"
+msgstr "Gọi ngay"
+
+msgid "Back to top"
+msgstr "Lên đầu trang"
+
+msgid "Book online"
+msgstr "Đặt xe trực tuyến"
+
+msgid "Ramp & hoist vehicles"
+msgstr "Xe có dốc lên xuống & thang nâng"
+
+msgid "Wheelchair restraints fitted"
+msgstr "Có dây cố định xe lăn"
+
+msgid "Door-to-door assistance"
+msgstr "Hỗ trợ tận nơi, từ cửa đến cửa"
+
+msgid "Accessible by design"
+msgstr "Thiết kế cho người khuyết tật"
+
+msgid "On-time pick-ups"
+msgstr "Đón khách đúng giờ"
+
+msgid "Accredited drivers"
+msgstr "Tài xế được cấp phép"
+
+msgid "Patient, friendly help"
+msgstr "Giúp đỡ kiên nhẫn, thân thiện"
+
+msgid "Skip to content"
+msgstr "Chuyển đến nội dung"
+
+msgid "My account"
+msgstr "Tài khoản của tôi"
+
+msgid "Sign in"
+msgstr "Đăng nhập"
+
+msgid "Manage my booking"
+msgstr "Quản lý lịch đặt xe"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Main"
+msgstr "Chính"
+
+msgid "Book now"
+msgstr "Đặt xe ngay"
+
+msgid "Full name"
+msgstr "Họ và tên"
+
+msgid "Mobile (for the driver to call)"
+msgstr "Số di động (để tài xế gọi)"
+
+msgid "Mobility aid"
+msgstr "Dụng cụ hỗ trợ di chuyển"
+
+msgid "Chair width (cm)"
+msgstr "Chiều rộng xe lăn (cm)"
+
+msgid "Chair length (cm)"
+msgstr "Chiều dài xe lăn (cm)"
+
+msgid "Chair + passenger weight (kg)"
+msgstr "Cân nặng xe lăn + hành khách (kg)"
+
+msgid "NDIS number / reference"
+msgstr "Số / mã tham chiếu NDIS"
+
+msgid "Needs and notes for the driver"
+msgstr "Nhu cầu và ghi chú cho tài xế"
+
+#. translators: 1: width, 2: length
+msgid "Chair %1$s × %2$s cm"
+msgstr "Xe lăn %1$s × %2$s cm"
+
+#. translators: %s: weight
+msgid "about %s kg with passenger"
+msgstr "khoảng %s kg kể cả hành khách"
+
+msgid "Which client is travelling?"
+msgstr "Khách hàng nào sẽ đi?"
+
+msgid "Who is travelling?"
+msgstr "Ai sẽ đi xe?"
+
+#. translators: %s: booking reference
+msgid "Details copied from %s. Choose the date and check the times, then send."
+msgstr "Thông tin đã được sao chép từ %s. Bạn hãy chọn ngày, kiểm tra giờ, rồi gửi đi."
+
+msgid "Me"
+msgstr "Tôi"
+
+msgid "— New client —"
+msgstr "— Khách hàng mới —"
+
+msgid "Choosing a client fills in their details and wheelchair notes."
+msgstr "Khi chọn một khách hàng, thông tin và ghi chú xe lăn của họ sẽ tự điền vào."
+
+msgid "Choosing a saved passenger fills in their details and wheelchair notes."
+msgstr "Khi chọn một hành khách đã lưu, thông tin và ghi chú xe lăn của họ sẽ tự điền vào."
+
+msgid "Save this person as a client in my account"
+msgstr "Lưu người này làm khách hàng trong tài khoản của tôi"
+
+msgid "Save this passenger to my account"
+msgstr "Lưu hành khách này vào tài khoản của tôi"
+
+msgid "Remember these addresses"
+msgstr "Ghi nhớ các địa chỉ này"
+
+msgid "Use a saved address"
+msgstr "Dùng địa chỉ đã lưu"
+
+msgid "Use a saved address…"
+msgstr "Dùng địa chỉ đã lưu…"
+
+#. translators: 1: coordinator name, 2: organisation
+msgid "Booked by %1$s (%2$s)"
+msgstr "Do %1$s (%2$s) đặt"
+
+msgid "Your account has been deleted. Thank you for travelling with us."
+msgstr "Tài khoản của bạn đã được xóa. Cảm ơn bạn đã đi xe cùng chúng tôi."
+
+msgid "You are signed in as staff. Customer accounts are for passengers and coordinators."
+msgstr "Bạn đang đăng nhập với tư cách nhân viên. Tài khoản khách hàng dành cho hành khách và điều phối viên."
+
+msgid "Open the dispatch board"
+msgstr "Mở bảng điều phối"
+
+msgid "Go to my jobs"
+msgstr "Đến công việc của tôi"
+
+msgid "My trips"
+msgstr "Chuyến đi của tôi"
+
+msgid "Clients"
+msgstr "Khách hàng"
+
+msgid "Passengers"
+msgstr "Hành khách"
+
+msgid "Saved addresses"
+msgstr "Địa chỉ đã lưu"
+
+msgid "My details"
+msgstr "Thông tin của tôi"
+
+#. translators: %s: first name
+msgid "Hello, %s"
+msgstr "Xin chào, %s"
+
+msgid "Coordinator account"
+msgstr "Tài khoản điều phối viên"
+
+msgid "Book a trip"
+msgstr "Đặt chuyến đi"
+
+msgid "Sign out"
+msgstr "Đăng xuất"
+
+msgid "Saved."
+msgstr "Đã lưu."
+
+msgid "Removed."
+msgstr "Đã xóa."
+
+msgid "Address saved."
+msgstr "Đã lưu địa chỉ."
+
+msgid "Your details are updated."
+msgstr "Thông tin của bạn đã được cập nhật."
+
+msgid "Your password has been changed."
+msgstr "Mật khẩu của bạn đã được thay đổi."
+
+msgid "Booking added to your account."
+msgstr "Đã thêm lịch đặt xe vào tài khoản của bạn."
+
+msgid "Thank you for rating your trip!"
+msgstr "Cảm ơn bạn đã đánh giá chuyến đi!"
+
+msgid "Welcome! Your account is ready. Your next booking will appear here automatically."
+msgstr "Chào mừng bạn! Tài khoản của bạn đã sẵn sàng. Lần đặt xe tới sẽ tự động hiện ở đây."
+
+msgid "Email address"
+msgstr "Địa chỉ email"
+
+msgid "Forgotten your password?"
+msgstr "Quên mật khẩu?"
+
+msgid "Create an account"
+msgstr "Tạo tài khoản"
+
+msgid "See all your trips and their status in one place"
+msgstr "Xem tất cả chuyến đi và tình trạng của chúng ở cùng một nơi"
+
+msgid "Rebook a regular trip in one tap"
+msgstr "Đặt lại chuyến đi thường xuyên chỉ với một lần chạm"
+
+msgid "Save passengers, wheelchair details and addresses"
+msgstr "Lưu hành khách, thông tin xe lăn và địa chỉ"
+
+msgid "Download receipts and invoices"
+msgstr "Tải biên nhận và hóa đơn"
+
+msgid "I am booking for"
+msgstr "Tôi đặt xe cho"
+
+msgid "Myself or a family member"
+msgstr "Bản thân hoặc người trong gia đình"
+
+msgid "Clients or residents (NDIS coordinator, aged care, hospital)"
+msgstr "Khách hàng hoặc cư dân (điều phối viên NDIS, nhà dưỡng lão, bệnh viện)"
+
+msgid "Organisation name"
+msgstr "Tên tổ chức"
+
+msgid "Your full name"
+msgstr "Họ và tên của bạn"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Mobile"
+msgstr "Số di động"
+
+msgid "Choose a password"
+msgstr "Chọn mật khẩu"
+
+msgid "At least 10 characters."
+msgstr "Ít nhất 10 ký tự."
+
+msgid "Create account"
+msgstr "Tạo tài khoản"
+
+msgid "Upcoming trips"
+msgstr "Chuyến đi sắp tới"
+
+#. translators: %s: year
+msgid "Trips in %s"
+msgstr "Các chuyến đi năm %s"
+
+msgid "Saved clients"
+msgstr "Khách hàng đã lưu"
+
+msgid "Saved passengers"
+msgstr "Hành khách đã lưu"
+
+msgid "Show trips for"
+msgstr "Xem chuyến đi của"
+
+msgid "All clients"
+msgstr "Tất cả khách hàng"
+
+msgid "Show"
+msgstr "Xem"
+
+msgid "Later trips"
+msgstr "Các chuyến sau"
+
+msgid "Nothing else booked yet."
+msgstr "Chưa có chuyến nào khác được đặt."
+
+msgid "No upcoming trips"
+msgstr "Không có chuyến đi sắp tới"
+
+msgid "Where to next? Book online in about two minutes."
+msgstr "Bạn muốn đi đâu tiếp theo? Đặt xe trực tuyến chỉ mất khoảng hai phút."
+
+msgid "Past trips"
+msgstr "Chuyến đi đã qua"
+
+msgid "Your finished trips will appear here, with receipts."
+msgstr "Các chuyến đi đã hoàn tất sẽ hiện ở đây, kèm biên nhận."
+
+msgid "Add a booking you made before you had an account"
+msgstr "Thêm lịch đặt xe bạn đã đặt trước khi có tài khoản"
+
+msgid "Booking reference"
+msgstr "Mã đặt xe"
+
+msgid "Phone number on the booking"
+msgstr "Số điện thoại trong lịch đặt xe"
+
+msgid "Add booking"
+msgstr "Thêm lịch đặt xe"
+
+msgid "Confirmed"
+msgstr "Đã xác nhận"
+
+msgid "Driver assigned"
+msgstr "Đã có tài xế"
+
+msgid "On the way"
+msgstr "Đang trên đường đến"
+
+msgid "Arrived"
+msgstr "Đã đến nơi"
+
+msgid "Your next trip"
+msgstr "Chuyến đi tiếp theo của bạn"
+
+msgid "to"
+msgstr "đến"
+
+msgid "Trip progress"
+msgstr "Tiến trình chuyến đi"
+
+msgid "View or change"
+msgstr "Xem hoặc thay đổi"
+
+msgid "Add to calendar"
+msgstr "Thêm vào lịch"
+
+msgid "Your driver"
+msgstr "Tài xế của bạn"
+
+msgid "Driver"
+msgstr "Tài xế"
+
+msgid "To be assigned"
+msgstr "Sẽ được phân công"
+
+msgid "Details"
+msgstr "Chi tiết"
+
+msgid "Book again"
+msgstr "Đặt lại"
+
+msgid "Book the return"
+msgstr "Đặt chuyến về"
+
+msgid "(opens in a new tab)"
+msgstr "(mở trong thẻ mới)"
+
+msgid "Save each client once — their details and wheelchair notes fill in automatically when you book for them."
+msgstr "Chỉ cần lưu mỗi khách hàng một lần — thông tin và ghi chú xe lăn của họ sẽ tự điền vào khi bạn đặt xe cho họ."
+
+msgid "Save the people you book for, with their wheelchair details, so booking takes seconds."
+msgstr "Lưu những người bạn thường đặt xe cho, kèm thông tin xe lăn của họ, để đặt xe chỉ mất vài giây."
+
+msgid "Edit"
+msgstr "Sửa"
+
+msgid "Remove"
+msgstr "Xóa"
+
+msgid "Edit details"
+msgstr "Sửa thông tin"
+
+msgid "Add a client"
+msgstr "Thêm khách hàng"
+
+msgid "Add a passenger"
+msgstr "Thêm hành khách"
+
+msgid "e.g. needs help with the front door, carer travels on Tuesdays, hearing impaired — please text"
+msgstr "ví dụ: cần giúp ở cửa trước, người chăm sóc đi cùng vào thứ Ba, bị khiếm thính — xin vui lòng nhắn tin"
+
+msgid "Save"
+msgstr "Lưu"
+
+msgid "Cancel"
+msgstr "Hủy"
+
+msgid "Addresses you use often — home, the hospital, a day program. Pick them from a list when you book."
+msgstr "Những địa chỉ bạn hay dùng — nhà, bệnh viện, chương trình ban ngày. Chọn từ danh sách khi đặt xe."
+
+msgid "Add an address"
+msgstr "Thêm địa chỉ"
+
+msgid "Name"
+msgstr "Tên"
+
+msgid "e.g. Home, Dialysis"
+msgstr "ví dụ: Nhà, Lọc thận"
+
+msgid "Address"
+msgstr "Địa chỉ"
+
+msgid "Save address"
+msgstr "Lưu địa chỉ"
+
+msgid "Contact details"
+msgstr "Thông tin liên lạc"
+
+msgid "First name"
+msgstr "Tên"
+
+msgid "Last name"
+msgstr "Họ"
+
+msgid "Email (sign-in)"
+msgstr "Email (để đăng nhập)"
+
+#. translators: %s: phone
+msgid "To change your email, call us on %s."
+msgstr "Để thay đổi email, xin gọi cho chúng tôi theo số %s."
+
+msgid "Organisation"
+msgstr "Tổ chức"
+
+msgid "Send invoices to (name)"
+msgstr "Gửi hóa đơn cho (tên)"
+
+msgid "Invoice email"
+msgstr "Email nhận hóa đơn"
+
+msgid "Save details"
+msgstr "Lưu thông tin"
+
+msgid "Change password"
+msgstr "Đổi mật khẩu"
+
+msgid "Current password"
+msgstr "Mật khẩu hiện tại"
+
+msgid "New password (10+ characters)"
+msgstr "Mật khẩu mới (từ 10 ký tự)"
+
+msgid "Too many sign-ups from your connection. Please try again later or call us."
+msgstr "Có quá nhiều lượt đăng ký từ kết nối của bạn. Xin thử lại sau hoặc gọi cho chúng tôi."
+
+msgid "Please enter your name."
+msgstr "Xin nhập tên của bạn."
+
+msgid "Please enter a valid email address."
+msgstr "Xin nhập địa chỉ email hợp lệ."
+
+msgid "There is already an account with that email. Please sign in, or use “Forgotten your password?”."
+msgstr "Đã có tài khoản với email này. Xin đăng nhập, hoặc dùng mục “Quên mật khẩu?”."
+
+msgid "Please enter a valid mobile number."
+msgstr "Xin nhập số di động hợp lệ."
+
+msgid "Please choose a password of at least 10 characters."
+msgstr "Xin chọn mật khẩu có ít nhất 10 ký tự."
+
+msgid "Please enter your organisation’s name."
+msgstr "Xin nhập tên tổ chức của bạn."
+
+#. translators: %s: organisation
+msgid "New coordinator account: %s"
+msgstr "Tài khoản điều phối viên mới: %s"
+
+msgid "Please enter a name."
+msgstr "Xin nhập tên."
+
+msgid "You have reached the limit of saved people. Please remove some first."
+msgstr "Bạn đã lưu đủ số người tối đa. Xin xóa bớt trước."
+
+msgid "Please enter an address."
+msgstr "Xin nhập địa chỉ."
+
+msgid "Your current password was not right."
+msgstr "Mật khẩu hiện tại của bạn không đúng."
+
+msgid "Too many attempts. Please wait a few minutes."
+msgstr "Bạn đã thử quá nhiều lần. Xin đợi vài phút."
+
+msgid "We could not find a booking with that reference and phone number."
+msgstr "Chúng tôi không tìm thấy lịch đặt xe nào với mã đặt xe và số điện thoại này."
+
+#. translators: %d: stars
+msgid "You rated this trip %d star. Thank you!"
+msgid_plural "You rated this trip %d stars. Thank you!"
+msgstr[0] "Bạn đã đánh giá chuyến đi này %d sao. Xin cảm ơn!"
+
+msgid "Rate this trip"
+msgstr "Đánh giá chuyến đi"
+
+msgid "How was your trip?"
+msgstr "Chuyến đi của bạn thế nào?"
+
+#. translators: %d: stars
+msgid "%d star"
+msgid_plural "%d stars"
+msgstr[0] "%d sao"
+
+msgid "Anything you would like to tell us? (optional)"
+msgstr "Bạn có điều gì muốn nói với chúng tôi không? (không bắt buộc)"
+
+msgid "Send rating"
+msgstr "Gửi đánh giá"
+
+#. translators: 1: stars, 2: comment
+msgid "Customer rating: %1$d★ %2$s"
+msgstr "Đánh giá của khách: %1$d★ %2$s"
+
+#. translators: 1: stars, 2: reference
+msgid "Low rating (%1$d★) for %2$s"
+msgstr "Đánh giá thấp (%1$d★) cho %2$s"
+
+msgid "Tax invoice"
+msgstr "Hóa đơn thuế"
+
+msgid "Receipt"
+msgstr "Biên nhận"
+
+msgid "Trip summary"
+msgstr "Tóm tắt chuyến đi"
+
+msgid "This receipt link is not valid."
+msgstr "Đường dẫn biên nhận này không hợp lệ."
+
+msgid "Number"
+msgstr "Số"
+
+msgid "Date"
+msgstr "Ngày"
+
+msgid "Bill to"
+msgstr "Gửi hóa đơn cho"
+
+msgid "Passenger"
+msgstr "Hành khách"
+
+msgid "Trip"
+msgstr "Chuyến đi"
+
+msgid "Description"
+msgstr "Mô tả"
+
+msgid "Amount (incl. GST)"
+msgstr "Số tiền (gồm GST)"
+
+msgid "Wheelchair accessible taxi"
+msgstr "Taxi cho xe lăn"
+
+msgid "GST included"
+msgstr "Đã gồm GST"
+
+msgid "Paid online (deposit)"
+msgstr "Đã trả trực tuyến (tiền cọc)"
+
+msgid "Amount due"
+msgstr "Số tiền phải trả"
+
+msgid "Total paid"
+msgstr "Tổng đã trả"
+
+msgid "Paid"
+msgstr "Đã trả"
+
+msgid "The fare has not been entered yet. If you need a tax invoice for this trip, please contact us and quote the number above."
+msgstr "Giá cước chưa được nhập. Nếu bạn cần hóa đơn thuế cho chuyến đi này, xin liên hệ chúng tôi và cho biết số ở trên."
+
+msgid "This is a receipt, not a tax invoice."
+msgstr "Đây là biên nhận, không phải hóa đơn thuế."
+
+msgid "Multi Purpose Taxi Program (MPTP) member."
+msgstr "Thành viên Chương trình Taxi Đa Mục đích của bang Victoria (MPTP)."
+
+msgid "Print or save as PDF"
+msgstr "In hoặc lưu thành PDF"
+
+msgid "Back to booking"
+msgstr "Quay lại lịch đặt xe"
+
+msgid "Paid online"
+msgstr "Đã trả trực tuyến"
+
+msgid "Vehicle"
+msgstr "Xe"
+
+msgid "Change request"
+msgstr "Yêu cầu thay đổi"
+
+msgid "Yes"
+msgstr "Có"
+
+msgid "No"
+msgstr "Không"
+
+msgid "Search"
+msgstr "Tìm kiếm"
+
+msgid "From"
+msgstr "Từ"
+
+msgid "To"
+msgstr "Đến"
+
+msgid "When"
+msgstr "Thời gian"
+
+#. translators: %s: phone
+msgid "Booking"
+msgstr "Lịch đặt xe"
+
+msgid "Previous"
+msgstr "Trước"
+
+msgid "Next"
+msgstr "Tiếp"
+
+msgid "All drivers"
+msgstr "Tất cả tài xế"
+
+msgid "Needs"
+msgstr "Nhu cầu"
+
+msgid "Payment"
+msgstr "Thanh toán"
+
+msgid "Notes"
+msgstr "Ghi chú"
+
+msgid "TBA"
+msgstr "Chưa xác định"
+
+#. translators: %s: amount
+msgid "%s paid"
+msgstr "Đã trả %s"
+
+msgid "Completed"
+msgstr "Đã hoàn tất"
+
+msgid "Can we use analytics cookies?"
+msgstr "Chúng tôi có thể dùng cookie phân tích không?"
+
+msgid "We would like to use Google Analytics to understand how people use this site so we can improve it. These cookies are optional — the site and online booking work the same either way."
+msgstr "Chúng tôi muốn dùng Google Analytics để hiểu cách mọi người sử dụng trang web này, nhờ đó cải thiện trang. Các cookie này là tùy chọn — trang web và việc đặt xe trực tuyến vẫn hoạt động như nhau dù bạn chọn thế nào."
+
+msgid "Privacy policy"
+msgstr "Chính sách quyền riêng tư"
+
+msgid "Accept analytics"
+msgstr "Đồng ý cookie phân tích"
+
+msgid "Reject"
+msgstr "Từ chối"
+
+msgid "Cookie settings"
+msgstr "Cài đặt cookie"
+
+msgid "Airport drop-offs and pickups"
+msgstr "Đưa đón sân bay"
+
+msgid "A taxi drops a traveller at Departures while a plane takes off. Then a maxi taxi pulls up at Arrivals, lowers its ramp and a passenger in a wheelchair rolls aboard."
+msgstr "Một chiếc taxi đưa hành khách đến khu Khởi hành trong lúc máy bay cất cánh. Sau đó một chiếc maxi taxi (taxi cỡ lớn) dừng ở khu Đến, hạ dốc xuống và một hành khách ngồi xe lăn lăn lên xe."
+
+msgid "Door-to-door wheelchair pickup"
+msgstr "Đón khách xe lăn tận nhà"
+
+msgid "A maxi taxi pulls up outside a house, lowers its rear ramp, and a passenger in a wheelchair rolls aboard before the taxi drives away."
+msgstr "Một chiếc maxi taxi (taxi cỡ lớn) dừng trước một ngôi nhà, hạ dốc phía sau xuống, một hành khách ngồi xe lăn lăn lên xe rồi taxi chạy đi."
+
+msgid "Pause animations"
+msgstr "Tạm dừng hình động"
+
+msgid "Animations"
+msgstr "Hình động"
+
+msgid "Moving taxis and the pickup/airport scenes. Visitors can pause them, and they stay still for anyone whose device asks for reduced motion. The scenes are also on the home page (Home page layout → “How a trip works”), on service pages, and anywhere you add the shortcode [tp_scene name=\"pickup\"], [tp_scene name=\"airport\"] or [tp_scene name=\"road\"]."
+msgstr "Taxi chuyển động và các cảnh đón khách/sân bay. Khách truy cập có thể tạm dừng chúng, và chúng sẽ đứng yên với những ai có thiết bị yêu cầu giảm chuyển động. Các cảnh này cũng có trên trang chủ (Bố cục trang chủ → “Chuyến đi diễn ra thế nào”), trên các trang dịch vụ, và bất cứ nơi nào bạn thêm mã ngắn [tp_scene name=\"pickup\"], [tp_scene name=\"airport\"] hoặc [tp_scene name=\"road\"]."
+
+msgid "Turn animations on"
+msgstr "Bật hình động"
+
+msgid "When off, the scenes show as still pictures and the moving road is hidden."
+msgstr "Khi tắt, các cảnh sẽ hiện thành hình tĩnh và con đường chuyển động sẽ bị ẩn."
+
+msgid "Taxis driving along the bottom of the home page hero"
+msgstr "Taxi chạy dọc phía dưới phần ảnh đầu trang chủ"
+
+msgid "Taxis driving under page title banners"
+msgstr "Taxi chạy bên dưới các băng tiêu đề trang"
+
+msgid "Taxis driving along the top of the footer"
+msgstr "Taxi chạy dọc phía trên chân trang"
+
+msgid "Pick-up time"
+msgstr "Giờ đón"
+
+msgid "Route"
+msgstr "Lộ trình"
+
+msgid "Status"
+msgstr "Tình trạng"
+
+msgid "Received"
+msgstr "Đã nhận"
+
+#. translators: 1: passengers, 2: wheelchairs
+msgid "%1$d pax · %2$d wheelchair(s)"
+msgstr "%1$d khách · %2$d xe lăn"
+
+msgid "Today"
+msgstr "Hôm nay"
+
+msgid "Bookings"
+msgstr "Lịch đặt xe"
+
+msgid "Booking details"
+msgstr "Chi tiết đặt xe"
+
+msgid "Search bookings"
+msgstr "Tìm lịch đặt xe"
+
+msgid "No bookings found."
+msgstr "Không tìm thấy lịch đặt xe nào."
+
+msgid "No bookings in the bin."
+msgstr "Không có lịch đặt xe nào trong thùng rác."
+
+msgid "All bookings"
+msgstr "Tất cả lịch đặt xe"
+
+msgid "Booking Manager"
+msgstr "Quản lý đặt xe"
+
+msgid "Customer"
+msgstr "Khách hàng"
+
+msgid "Coordinator / facility"
+msgstr "Điều phối viên / cơ sở"
+
+msgid "Accounts (finance)"
+msgstr "Kế toán (tài chính)"
+
+msgid "Passenger name"
+msgstr "Tên hành khách"
+
+msgid "Mobile / phone"
+msgstr "Di động / điện thoại"
+
+msgid "Pick-up address"
+msgstr "Địa chỉ đón"
+
+msgid "Drop-off address"
+msgstr "Địa chỉ trả khách"
+
+msgid "Pick-up date"
+msgstr "Ngày đón"
+
+msgid "Wheelchairs"
+msgstr "Xe lăn"
+
+msgid "Return trip"
+msgstr "Chuyến về"
+
+msgid "Return pick-up time"
+msgstr "Giờ đón chuyến về"
+
+msgid "MPTP member"
+msgstr "Thành viên MPTP"
+
+msgid "Invoice to (organisation / plan manager)"
+msgstr "Gửi hóa đơn cho (tổ chức / người quản lý chương trình)"
+
+msgid "Passenger notes"
+msgstr "Ghi chú về hành khách"
+
+msgid "Pay the driver (card, cash or MPTP)"
+msgstr "Trả tiền cho tài xế (thẻ, tiền mặt hoặc MPTP)"
+
+msgid "Account / invoice (NDIS, aged care, business)"
+msgstr "Tài khoản / hóa đơn (NDIS, chăm sóc người cao tuổi, doanh nghiệp)"
+
+#. translators: %s: deposit amount
+msgid "Pay a %s deposit online now"
+msgstr "Đặt cọc %s trực tuyến ngay bây giờ"
+
+msgid "This field is required."
+msgstr "Mục này là bắt buộc."
+
+msgid "Please enter a valid phone number."
+msgstr "Xin nhập số điện thoại hợp lệ."
+
+msgid "Tell us who to invoice."
+msgstr "Xin cho chúng tôi biết gửi hóa đơn cho ai."
+
+msgid "Please enter the email address for invoices."
+msgstr "Xin nhập địa chỉ email nhận hóa đơn."
+
+msgid "Please choose a valid date."
+msgstr "Xin chọn ngày hợp lệ."
+
+msgid "Please choose a valid time."
+msgstr "Xin chọn giờ hợp lệ."
+
+#. translators: %s: phone number
+msgid "Online bookings need a little notice. For an urgent pick-up please call %s."
+msgstr "Đặt xe trực tuyến cần báo trước một chút. Nếu cần đón gấp, xin gọi %s."
+
+msgid "Choose which days the trip repeats."
+msgstr "Xin chọn những ngày lặp lại chuyến đi."
+
+msgid "Choose an end date after the first trip."
+msgstr "Xin chọn ngày kết thúc sau chuyến đi đầu tiên."
+
+#. translators: %d: number of weeks
+msgid "Repeat bookings can run for up to %d weeks. Call us to arrange a longer schedule."
+msgstr "Chuyến đi lặp lại có thể kéo dài tối đa %d tuần. Xin gọi cho chúng tôi để sắp xếp lịch dài hơn."
+
+#. translators: %s: driver name
+msgid "Driver assigned: %s"
+msgstr "Đã có tài xế: %s"
+
+msgid "Driver unassigned"
+msgstr "Đã bỏ phân công tài xế"
+
+msgid "Reference"
+msgstr "Mã đặt xe"
+
+msgid "Phone"
+msgstr "Điện thoại"
+
+msgid "Pick-up"
+msgstr "Đón"
+
+msgid "Yes – time to be arranged"
+msgstr "Có – giờ sẽ được sắp xếp sau"
+
+msgid "Invoice to"
+msgstr "Gửi hóa đơn cho"
+
+msgid "Estimated fare"
+msgstr "Giá cước ước tính"
+
+msgid "(estimate only)"
+msgstr "(chỉ là ước tính)"
+
+msgid "Pay the driver"
+msgstr "Trả tiền cho tài xế"
+
+msgid "Account / invoice"
+msgstr "Tài khoản / hóa đơn"
+
+msgid "Online deposit (Stripe)"
+msgstr "Đặt cọc trực tuyến (Stripe)"
+
+msgid "Your session expired. Please check your details and submit again."
+msgstr "Phiên làm việc đã hết hạn. Xin kiểm tra lại thông tin và gửi lại."
+
+#. translators: %s: phone number
+msgid "Too many bookings from your connection. Please call us on %s."
+msgstr "Có quá nhiều lượt đặt xe từ kết nối của bạn. Xin gọi cho chúng tôi theo số %s."
+
+msgid "Please agree so we can contact you about this booking."
+msgstr "Xin đồng ý để chúng tôi có thể liên lạc với bạn về lịch đặt xe này."
+
+msgid "Please accept the terms and cancellation policy."
+msgstr "Xin chấp nhận điều khoản và chính sách hủy chuyến."
+
+#. translators: %s: phone number
+msgid "Sorry, we could not save your booking. Please call %s."
+msgstr "Xin lỗi, chúng tôi không lưu được lịch đặt xe của bạn. Xin gọi %s."
+
+#. translators: %d: number of trips
+msgid "Repeat booking — %d trips:"
+msgstr "Đặt xe lặp lại — %d chuyến:"
+
+#. translators: %s: language name
+msgid "Booked in %s — emails and texts to the customer are sent in this language."
+msgstr "Đặt bằng %s — email và tin nhắn gửi cho khách hàng sẽ dùng ngôn ngữ này."
+
+#. translators: 1: reference, 2: pick-up time
+msgid "New booking %1$s — %2$s"
+msgstr "Lịch đặt xe mới %1$s — %2$s"
+
+#. translators: 1: reference, 2: pick-up time
+msgid "(repeat)"
+msgstr "(lặp lại)"
+
+msgid "Manage this booking:"
+msgstr "Quản lý lịch đặt xe này:"
+
+#. translators: %s: passenger name translators: %s: name translators: %s: first name
+msgid "Hi %s,"
+msgstr "Chào %s,"
+
+msgid "Thanks for booking with us. We have received your request and will confirm it shortly."
+msgstr "Cảm ơn bạn đã đặt xe với chúng tôi. Chúng tôi đã nhận được yêu cầu của bạn và sẽ sớm xác nhận."
+
+msgid "View or manage your booking:"
+msgstr "Xem hoặc quản lý lịch đặt xe của bạn:"
+
+#. translators: 1: phone, 2: email
+msgid "Need to change something? Call %1$s or email %2$s and quote your reference."
+msgstr "Bạn cần thay đổi gì không? Xin gọi %1$s hoặc gửi email đến %2$s và cho biết mã đặt xe của bạn."
+
+#. translators: 1: site name, 2: reference
+msgid "%1$s booking received — %2$s"
+msgstr "%1$s đã nhận lịch đặt xe — %2$s"
+
+msgid "Good news — your booking is confirmed."
+msgstr "Tin vui — lịch đặt xe của bạn đã được xác nhận."
+
+msgid "A driver has been assigned to your booking."
+msgstr "Đã có tài xế được phân công cho lịch đặt xe của bạn."
+
+msgid "Thanks for travelling with us. We hope to see you again soon."
+msgstr "Cảm ơn bạn đã đi xe cùng chúng tôi. Mong sớm được gặp lại bạn."
+
+msgid "Your booking has been cancelled. If this is unexpected, please call us."
+msgstr "Lịch đặt xe của bạn đã bị hủy. Nếu bạn không mong đợi điều này, xin gọi cho chúng tôi."
+
+msgid "Our driver arrived but could not find you, so the trip was marked as a no-show. Please call us if this is a mistake or you would like to rebook."
+msgstr "Tài xế của chúng tôi đã đến nhưng không tìm thấy bạn, nên chuyến đi được ghi là khách không có mặt. Xin gọi cho chúng tôi nếu đây là nhầm lẫn hoặc nếu bạn muốn đặt lại."
+
+msgid "Your booking is being reviewed."
+msgstr "Lịch đặt xe của bạn đang được xem xét."
+
+#. translators: %s: driver first name
+msgid "Your driver: %s"
+msgstr "Tài xế của bạn: %s"
+
+#. translators: %s: vehicle
+msgid "Vehicle: %s"
+msgstr "Xe: %s"
+
+msgid "How did we do? Rate your trip:"
+msgstr "Chúng tôi phục vụ thế nào? Hãy đánh giá chuyến đi của bạn:"
+
+#. translators: %s: phone number translators: %s: phone
+msgid "Questions? Call %s."
+msgstr "Có thắc mắc? Xin gọi %s."
+
+#. translators: 1: reference, 2: status
+msgid "Booking %1$s: %2$s"
+msgstr "Lịch đặt xe %1$s: %2$s"
+
+msgid "This calendar link is not valid."
+msgstr "Đường dẫn lịch này không hợp lệ."
+
+#. translators: 1: site name, 2: reference
+msgid "Wheelchair taxi — %1$s (%2$s)"
+msgstr "Taxi xe lăn — %1$s (%2$s)"
+
+#. translators: %s: phone
+msgid "Questions? Call %s"
+msgstr "Có thắc mắc? Xin gọi %s"
+
+msgid "Driver jobs"
+msgstr "Công việc tài xế"
+
+msgid "Quick links"
+msgstr "Liên kết nhanh"
+
+msgid "Book"
+msgstr "Đặt xe"
+
+msgid "Call"
+msgstr "Gọi"
+
+msgid "Driver application"
+msgstr "Đơn xin làm tài xế"
+
+msgid "Mon"
+msgstr "T2"
+
+msgid "Tue"
+msgstr "T3"
+
+msgid "Wed"
+msgstr "T4"
+
+msgid "Thu"
+msgstr "T5"
+
+msgid "Fri"
+msgstr "T6"
+
+msgid "Sat"
+msgstr "T7"
+
+msgid "Sun"
+msgstr "CN"
+
+msgid "Nights"
+msgstr "Ban đêm"
+
+msgid "Application received — thank you!"
+msgstr "Đã nhận đơn — xin cảm ơn!"
+
+msgid "We read every application and will be in touch if there is a suitable opening."
+msgstr "Chúng tôi đọc mọi đơn và sẽ liên lạc nếu có vị trí phù hợp."
+
+msgid "Apply to drive with us"
+msgstr "Nộp đơn làm tài xế với chúng tôi"
+
+msgid "Please check the highlighted fields."
+msgstr "Xin kiểm tra các mục được đánh dấu."
+
+msgid "Suburb you live in"
+msgstr "Khu vực bạn sống"
+
+msgid "Driver accreditation"
+msgstr "Giấy phép tài xế"
+
+msgid "I hold Victorian commercial passenger vehicle driver accreditation"
+msgstr "Tôi có giấy phép tài xế xe chở khách thương mại của bang Victoria"
+
+msgid "I have applied / am applying"
+msgstr "Tôi đã nộp / đang nộp đơn"
+
+msgid "Not yet"
+msgstr "Chưa có"
+
+msgid "Experience with wheelchair accessible vehicles"
+msgstr "Kinh nghiệm với xe dành cho xe lăn"
+
+msgid "None yet — happy to be trained"
+msgstr "Chưa có — sẵn lòng được đào tạo"
+
+msgid "Some (under 1 year)"
+msgstr "Một ít (dưới 1 năm)"
+
+msgid "Experienced (1 year or more)"
+msgstr "Có kinh nghiệm (từ 1 năm trở lên)"
+
+msgid "When can you drive?"
+msgstr "Khi nào bạn có thể lái xe?"
+
+msgid "Tell us a little about yourself"
+msgstr "Hãy cho chúng tôi biết đôi chút về bạn"
+
+msgid "Driving history, disability or aged-care experience, why you would like to join…"
+msgstr "Quá trình lái xe, kinh nghiệm chăm sóc người khuyết tật hoặc người cao tuổi, lý do bạn muốn tham gia…"
+
+msgid "I agree to you keeping my application to consider me for driving roles."
+msgstr "Tôi đồng ý để quý công ty lưu đơn của tôi nhằm xem xét cho các vị trí lái xe."
+
+msgid "Send application"
+msgstr "Gửi đơn"
+
+msgid "Your session expired. Please try again."
+msgstr "Phiên làm việc đã hết hạn. Xin thử lại."
+
+msgid "Too many applications from your connection. Please try again later."
+msgstr "Có quá nhiều đơn từ kết nối của bạn. Xin thử lại sau."
+
+msgid "Please fill in your name, mobile, a valid email and tick the consent box."
+msgstr "Xin điền tên, số di động, email hợp lệ và đánh dấu vào ô đồng ý."
+
+msgid "Holds accreditation"
+msgstr "Có giấy phép"
+
+msgid "Applying for accreditation"
+msgstr "Đang xin giấy phép"
+
+msgid "No accreditation yet"
+msgstr "Chưa có giấy phép"
+
+msgid "No WAT experience"
+msgstr "Chưa có kinh nghiệm lái taxi xe lăn"
+
+msgid "Some WAT experience"
+msgstr "Có ít kinh nghiệm lái taxi xe lăn"
+
+msgid "Experienced WAT driver"
+msgstr "Tài xế taxi xe lăn có kinh nghiệm"
+
+msgid "Suburb:"
+msgstr "Khu vực:"
+
+msgid "Accreditation:"
+msgstr "Giấy phép:"
+
+msgid "Experience:"
+msgstr "Kinh nghiệm:"
+
+msgid "Available:"
+msgstr "Có thể làm:"
+
+#. translators: %s: name
+msgid "Driver application: %s"
+msgstr "Đơn xin làm tài xế: %s"
+
+msgid "Search the questions"
+msgstr "Tìm trong các câu hỏi"
+
+msgid "e.g. power wheelchair, airport, NDIS"
+msgstr "ví dụ: xe lăn điện, sân bay, NDIS"
+
+msgid "No questions match. Try another word, or call us — we are happy to help."
+msgstr "Không có câu hỏi nào phù hợp. Hãy thử từ khác, hoặc gọi cho chúng tôi — chúng tôi rất sẵn lòng giúp đỡ."
+
+msgid "FAQ topics"
+msgstr "Chủ đề câu hỏi thường gặp"
+
+msgid "General"
+msgstr "Chung"
+
+msgid "Our fleet details are coming soon."
+msgstr "Thông tin về đội xe của chúng tôi sẽ sớm có."
+
+#. translators: %d: photos
+msgid "%d photo"
+msgid_plural "%d photos"
+msgstr[0] "%d ảnh"
+
+#. translators: %s: vehicle
+msgid "Open photos of %s full screen"
+msgstr "Mở ảnh %s toàn màn hình"
+
+#. translators: %d: wheelchairs
+msgid "%d wheelchair"
+msgid_plural "%d wheelchairs"
+msgstr[0] "%d xe lăn"
+
+#. translators: %d: seats
+msgid "%d seated passenger"
+msgid_plural "%d seated passengers"
+msgstr[0] "%d hành khách ngồi ghế"
+
+msgid "Book online or call"
+msgstr "Đặt trực tuyến hoặc gọi điện"
+
+msgid "Participants, family, support coordinators and providers can all book."
+msgstr "Người tham gia, gia đình, điều phối viên hỗ trợ và nhà cung cấp dịch vụ đều có thể đặt xe."
+
+msgid "Choose \"Account / invoice\""
+msgstr "Chọn \"Tài khoản / hóa đơn\""
+
+msgid "Tell us who to invoice and add the NDIS number or purchase order."
+msgstr "Cho chúng tôi biết gửi hóa đơn cho ai và thêm số NDIS hoặc số đơn đặt hàng."
+
+msgid "Set up regular trips"
+msgstr "Sắp xếp chuyến đi định kỳ"
+
+msgid "Tick \"regular trip\" to book the same run every week."
+msgstr "Đánh dấu \"chuyến đi định kỳ\" để đặt cùng một chuyến mỗi tuần."
+
+msgid "Track every trip"
+msgstr "Theo dõi mọi chuyến đi"
+
+msgid "Each trip has its own reference you can check on Manage My Booking."
+msgstr "Mỗi chuyến đi có mã riêng mà bạn có thể kiểm tra ở mục Quản lý lịch đặt xe."
+
+msgid "Book on account"
+msgstr "Đặt xe theo tài khoản"
+
+msgid "Ask about an account"
+msgstr "Hỏi về tài khoản"
+
+msgid "Call us"
+msgstr "Gọi cho chúng tôi"
+
+#. translators: %s: place
+msgid "Map of %s"
+msgstr "Bản đồ %s"
+
+msgid "Do you cover my suburb?"
+msgstr "Chúng tôi có phục vụ khu vực của bạn không?"
+
+msgid "Suburb or postcode"
+msgstr "Khu vực hoặc mã bưu điện"
+
+msgid "Check"
+msgstr "Kiểm tra"
+
+msgid "General question"
+msgstr "Câu hỏi chung"
+
+msgid "Quote for a trip"
+msgstr "Báo giá chuyến đi"
+
+msgid "NDIS / aged-care account"
+msgstr "Tài khoản NDIS / chăm sóc người cao tuổi"
+
+msgid "Feedback"
+msgstr "Góp ý"
+
+msgid "Complaint"
+msgstr "Khiếu nại"
+
+msgid "Lost property"
+msgstr "Đồ thất lạc"
+
+msgid "Message sent"
+msgstr "Đã gửi tin nhắn"
+
+msgid "Thanks for getting in touch. We will reply as soon as we can."
+msgstr "Cảm ơn bạn đã liên lạc. Chúng tôi sẽ trả lời sớm nhất có thể."
+
+msgid "Send us a message"
+msgstr "Gửi tin nhắn cho chúng tôi"
+
+msgid "Your name"
+msgstr "Tên của bạn"
+
+msgid "Phone (optional)"
+msgstr "Điện thoại (không bắt buộc)"
+
+msgid "Topic"
+msgstr "Chủ đề"
+
+#. translators: %s: link
+msgid "Making a complaint? See %s."
+msgstr "Bạn muốn khiếu nại? Xem %s."
+
+#. translators: %s: link
+msgid "how we handle complaints"
+msgstr "cách chúng tôi giải quyết khiếu nại"
+
+msgid "Message"
+msgstr "Tin nhắn"
+
+msgid "Send message"
+msgstr "Gửi tin nhắn"
+
+msgid "To book or for urgent trips, call"
+msgstr "Để đặt xe hoặc đi gấp, xin gọi"
+
+msgid "Book online any time — we will confirm when we open."
+msgstr "Đặt xe trực tuyến bất cứ lúc nào — chúng tôi sẽ xác nhận khi mở cửa."
+
+#. translators: %s: phone
+msgid "Too many messages from your connection. Please call %s."
+msgstr "Có quá nhiều tin nhắn từ kết nối của bạn. Xin gọi %s."
+
+msgid "Please fill in your name, a valid email and your message."
+msgstr "Xin điền tên, email hợp lệ và tin nhắn của bạn."
+
+#. translators: 1: topic, 2: name
+msgid "Website enquiry: %1$s — %2$s"
+msgstr "Câu hỏi từ trang web: %1$s — %2$s"
+
+msgid "Thanks for getting in touch — we have received your message."
+msgstr "Cảm ơn bạn đã liên lạc — chúng tôi đã nhận được tin nhắn của bạn."
+
+#. translators: %s: response time, e.g. "within one business day"
+msgid "We aim to reply %s."
+msgstr "Chúng tôi cố gắng trả lời %s."
+
+msgid "We take every complaint seriously and will keep you updated until it is resolved."
+msgstr "Chúng tôi xem trọng mọi khiếu nại và sẽ cập nhật cho bạn đến khi vấn đề được giải quyết."
+
+msgid "How we handle complaints:"
+msgstr "Cách chúng tôi giải quyết khiếu nại:"
+
+#. translators: %s: phone
+msgid "If it is urgent, please call %s."
+msgstr "Nếu việc gấp, xin gọi %s."
+
+msgid "Your message:"
+msgstr "Tin nhắn của bạn:"
+
+#. translators: %s: site name
+msgid "We received your message — %s"
+msgstr "Chúng tôi đã nhận được tin nhắn của bạn — %s"
+
+msgid "Online in two minutes, or call us."
+msgstr "Đặt trực tuyến trong hai phút, hoặc gọi cho chúng tôi."
+
+msgid "Change or cancel a booking"
+msgstr "Thay đổi hoặc hủy lịch đặt xe"
+
+msgid "Use your reference and mobile number."
+msgstr "Dùng mã đặt xe và số di động của bạn."
+
+msgid "NDIS or aged-care account"
+msgstr "Tài khoản NDIS hoặc chăm sóc người cao tuổi"
+
+msgid "Regular trips and invoicing."
+msgstr "Chuyến đi định kỳ và lập hóa đơn."
+
+msgid "Feedback or a complaint"
+msgstr "Góp ý hoặc khiếu nại"
+
+msgid "Tell us what went well — or what did not."
+msgstr "Hãy cho chúng tôi biết điều gì tốt — hoặc điều gì chưa tốt."
+
+msgid "Left something in a taxi? Tell us your trip details."
+msgstr "Bỏ quên đồ trên taxi? Hãy cho chúng tôi biết thông tin chuyến đi của bạn."
+
+msgid "Drive with us"
+msgstr "Lái xe cùng chúng tôi"
+
+msgid "Jobs for patient, reliable drivers."
+msgstr "Việc làm cho tài xế kiên nhẫn, đáng tin cậy."
+
+msgid "What can we help with?"
+msgstr "Chúng tôi có thể giúp gì cho bạn?"
+
+#. Template Name of the theme
+msgid "Services"
+msgstr "Dịch vụ"
+
+msgid "Areas"
+msgstr "Khu vực"
+
+msgid "Wheelchair safety video"
+msgstr "Video an toàn xe lăn"
+
+msgid "Location"
+msgstr "Địa điểm"
+
+msgid "Opening hours"
+msgstr "Giờ mở cửa"
+
+msgid "Small heading"
+msgstr "Tiêu đề nhỏ"
+
+msgid "Headline"
+msgstr "Tiêu đề chính"
+
+msgid "Intro text"
+msgstr "Đoạn giới thiệu"
+
+msgid "Footer"
+msgstr "Chân trang"
+
+msgid "Popular destinations"
+msgstr "Điểm đến phổ biến"
+
+msgid "Destinations"
+msgstr "Điểm đến"
+
+msgid "Built automatically from bookings in the last 12 months. To protect privacy, only places that look public (hospitals, airports, centres…) and that at least three different passengers travelled to can appear on the website. Visitor counts are never shown."
+msgstr "Được tạo tự động từ các lịch đặt xe trong 12 tháng qua. Để bảo vệ quyền riêng tư, chỉ những nơi có vẻ là nơi công cộng (bệnh viện, sân bay, trung tâm…) và có ít nhất ba hành khách khác nhau đã đến mới có thể hiện trên trang web. Số lượt khách không bao giờ được hiển thị."
+
+msgid "Nothing yet — destinations appear here as bookings build up."
+msgstr "Chưa có — điểm đến sẽ hiện ở đây khi có thêm lịch đặt xe."
+
+msgid "Destination"
+msgstr "Điểm đến"
+
+msgid "Passengers / trips (12 months)"
+msgstr "Hành khách / chuyến đi (12 tháng)"
+
+msgid "Show as"
+msgstr "Hiển thị là"
+
+msgid "Guide link (optional)"
+msgstr "Liên kết hướng dẫn (không bắt buộc)"
+
+msgid "On website"
+msgstr "Trên trang web"
+
+msgid "Needs 3+ passengers"
+msgstr "Cần từ 3 hành khách"
+
+msgid "Destinations saved."
+msgstr "Đã lưu điểm đến."
+
+msgid "Previous day"
+msgstr "Ngày trước"
+
+msgid "Next day"
+msgstr "Ngày sau"
+
+#. translators: 1: driver, 2: reason
+msgid "Declined by %1$s: %2$s"
+msgstr "%1$s đã từ chối: %2$s"
+
+msgid "Driver details"
+msgstr "Thông tin tài xế"
+
+msgid "Mobile (for job SMS)"
+msgstr "Số di động (nhận SMS công việc)"
+
+msgid "Usual vehicle"
+msgstr "Xe thường dùng"
+
+msgid "— None —"
+msgstr "— Không có —"
+
+msgid "Used on the dispatch board when you assign this driver without choosing a vehicle."
+msgstr "Được dùng trên bảng điều phối khi bạn phân công tài xế này mà không chọn xe."
+
+msgid "Driver sign in"
+msgstr "Tài xế đăng nhập"
+
+msgid "This page is for drivers only."
+msgstr "Trang này chỉ dành cho tài xế."
+
+msgid "Jobs by day"
+msgstr "Công việc theo ngày"
+
+msgid "My week"
+msgstr "Tuần của tôi"
+
+msgid "Driver views"
+msgstr "Chế độ xem tài xế"
+
+#. translators: %s: new status
+msgid "Trip updated: %s."
+msgstr "Đã cập nhật chuyến đi: %s."
+
+msgid "Trip declined. The office has been told so they can reassign it."
+msgstr "Đã từ chối chuyến đi. Văn phòng đã được báo để phân công lại."
+
+msgid "That trip had already changed, so nothing was updated. Here is its latest status."
+msgstr "Chuyến đi này đã thay đổi trước đó, nên không có gì được cập nhật. Đây là tình trạng mới nhất."
+
+msgid "No jobs for this day"
+msgstr "Không có công việc trong ngày này"
+
+msgid "Swipe or use the arrows to check other days. New jobs are texted to you."
+msgstr "Vuốt hoặc dùng mũi tên để xem các ngày khác. Công việc mới sẽ được nhắn tin cho bạn."
+
+msgid "Change day"
+msgstr "Đổi ngày"
+
+msgid "Next job"
+msgstr "Công việc tiếp theo"
+
+msgid "Pick up"
+msgstr "Đón khách"
+
+msgid "Drop off"
+msgstr "Trả khách"
+
+msgid "Return trip:"
+msgstr "Chuyến về:"
+
+msgid "Account — do not charge passenger"
+msgstr "Tài khoản — không thu tiền hành khách"
+
+#. translators: %s: amount
+msgid "Deposit paid: %s"
+msgstr "Đã đặt cọc: %s"
+
+msgid "Call passenger"
+msgstr "Gọi hành khách"
+
+msgid "Navigate to drop-off"
+msgstr "Chỉ đường đến điểm trả khách"
+
+msgid "Navigate to pick-up"
+msgstr "Chỉ đường đến điểm đón"
+
+msgid "(opens Google Maps)"
+msgstr "(mở Google Maps)"
+
+msgid "Can’t do this trip?"
+msgstr "Không nhận được chuyến này?"
+
+msgid "Reason"
+msgstr "Lý do"
+
+msgid "Note for the office (optional)"
+msgstr "Ghi chú cho văn phòng (không bắt buộc)"
+
+msgid "Decline trip"
+msgstr "Từ chối chuyến"
+
+msgid "Choose a driver to see their week."
+msgstr "Chọn một tài xế để xem lịch tuần của họ."
+
+msgid "Coming up (next 7 days)"
+msgstr "Sắp tới (7 ngày tới)"
+
+msgid "No upcoming trips this week"
+msgstr "Không có chuyến đi nào sắp tới trong tuần này"
+
+msgid "Previous week"
+msgstr "Tuần trước"
+
+#. translators: 1: start date, 2: end date
+msgid "Timesheet %1$s – %2$s"
+msgstr "Bảng chấm công %1$s – %2$s"
+
+msgid "Next week"
+msgstr "Tuần sau"
+
+msgid "Trips completed"
+msgstr "Chuyến đã hoàn tất"
+
+msgid "Hours with passengers"
+msgstr "Số giờ chở khách"
+
+msgid "Trip km (estimated)"
+msgstr "Số km chuyến đi (ước tính)"
+
+msgid "No-shows"
+msgstr "Khách không có mặt"
+
+#. translators: %d: number of ratings
+msgid "Rating (%d review)"
+msgid_plural "Rating (%d reviews)"
+msgstr[0] "Đánh giá (%d lượt)"
+
+msgid "No finished trips this week yet."
+msgstr "Tuần này chưa có chuyến đi nào hoàn tất."
+
+msgid "Timesheet"
+msgstr "Bảng chấm công"
+
+msgid "On my way"
+msgstr "Tôi đang đến"
+
+msgid "On board"
+msgstr "Đã lên xe"
+
+msgid "Finished"
+msgstr "Đã xong"
+
+msgid "Minutes"
+msgstr "Phút"
+
+msgid "no-show"
+msgstr "khách không có mặt"
+
+msgid "Print timesheet"
+msgstr "In bảng chấm công"
+
+msgid "trips completed"
+msgstr "chuyến đi đã hoàn tất"
+
+msgid "suburbs & destinations served"
+msgstr "khu vực & điểm đến đã phục vụ"
+
+msgid "accessible vehicles"
+msgstr "xe dành cho xe lăn"
+
+msgid "serving passengers since"
+msgstr "phục vụ hành khách từ năm"
+
+msgid "Announcements"
+msgstr "Thông báo"
+
+msgid "Announcement"
+msgstr "Thông báo"
+
+msgid "Add announcement"
+msgstr "Thêm thông báo"
+
+msgid "Edit announcement"
+msgstr "Sửa thông báo"
+
+msgid "Message, e.g. \"Very busy today — please book ahead or call us.\""
+msgstr "Nội dung, ví dụ: \"Hôm nay rất đông khách — xin đặt trước hoặc gọi cho chúng tôi.\""
+
+msgid "Information (blue)"
+msgstr "Thông tin (xanh dương)"
+
+msgid "Heads-up (yellow)"
+msgstr "Lưu ý (vàng)"
+
+msgid "Urgent (red)"
+msgstr "Khẩn cấp (đỏ)"
+
+msgid "Schedule & link"
+msgstr "Lịch hiển thị & liên kết"
+
+msgid "Show from"
+msgstr "Hiển thị từ"
+
+msgid "Leave empty to show straight away."
+msgstr "Để trống để hiển thị ngay."
+
+msgid "Show until"
+msgstr "Hiển thị đến"
+
+msgid "Leave empty to show until you unpublish it."
+msgstr "Để trống để hiển thị cho đến khi bạn gỡ xuống."
+
+msgid "Style"
+msgstr "Kiểu"
+
+msgid "Link (optional)"
+msgstr "Liên kết (không bắt buộc)"
+
+msgid "Link text"
+msgstr "Chữ trên liên kết"
+
+msgid "e.g. See holiday hours"
+msgstr "ví dụ: Xem giờ làm việc ngày lễ"
+
+msgid "Visitors cannot dismiss it (use sparingly)"
+msgstr "Khách truy cập không thể đóng thông báo (chỉ dùng khi thật cần)"
+
+msgid "Showing"
+msgstr "Đang hiển thị"
+
+msgid "Live now"
+msgstr "Đang hiển thị"
+
+msgid "Now"
+msgstr "Bây giờ"
+
+msgid "until unpublished"
+msgstr "cho đến khi gỡ xuống"
+
+msgid "More details"
+msgstr "Xem thêm chi tiết"
+
+msgid "Dismiss announcement"
+msgstr "Đóng thông báo"
+
+msgid "Hi, I would like to book a wheelchair taxi."
+msgstr "Xin chào, tôi muốn đặt một chiếc taxi cho xe lăn."
+
+msgid "Unpublish automatically"
+msgstr "Tự động gỡ xuống"
+
+msgid "Move to drafts on"
+msgstr "Chuyển về bản nháp vào ngày"
+
+msgid "For seasonal pages and promotions. Use \"Publish → Schedule\" to choose when it goes live."
+msgstr "Dành cho các trang theo mùa và khuyến mãi. Dùng \"Đăng → Lên lịch\" để chọn thời điểm trang được đăng."
+
+msgid "Google did not return your reviews."
+msgstr "Google không trả về các đánh giá của bạn."
+
+msgid "Google user"
+msgstr "Người dùng Google"
+
+msgid "Place saved. Your Google reviews will appear on the site shortly."
+msgstr "Đã lưu địa điểm. Các đánh giá Google của bạn sẽ sớm hiện trên trang web."
+
+msgid "Find your Google Place ID"
+msgstr "Tìm mã địa điểm Google (Place ID) của bạn"
+
+msgid "Search for your business as it appears on Google Maps, then choose it. This connects live reviews and your star rating."
+msgstr "Tìm doanh nghiệp của bạn như trên Google Maps, rồi chọn nó. Việc này sẽ kết nối các đánh giá trực tiếp và số sao của bạn."
+
+msgid "Business name and suburb"
+msgstr "Tên doanh nghiệp và khu vực"
+
+msgid "Search Google"
+msgstr "Tìm trên Google"
+
+msgid "No matches. Try the exact name shown on your Google Business Profile."
+msgstr "Không có kết quả. Hãy thử đúng tên hiển thị trên Hồ sơ doanh nghiệp Google của bạn."
+
+msgid "Use this"
+msgstr "Dùng mục này"
+
+#. translators: 1: place name, 2: rating, 3: count, 4: number of reviews shown
+msgid "Connected: %1$s — %2$s★ from %3$d reviews (%4$d shown on the site)."
+msgstr "Đã kết nối: %1$s — %2$s★ từ %3$d đánh giá (%4$d đánh giá hiển thị trên trang web)."
+
+msgid "Melbourne & the Mornington Peninsula, VIC"
+msgstr "Melbourne & bán đảo Mornington, VIC"
+
+msgid "Open 24 hours, 7 days — bookings recommended"
+msgstr "Mở cửa 24 giờ, 7 ngày — nên đặt xe trước"
+
+msgid "Wheelchair accessible taxis · Melbourne"
+msgstr "Taxi cho xe lăn · Melbourne"
+
+msgid "Accessible rides, booked in minutes."
+msgstr "Xe tiện lợi cho người dùng xe lăn, đặt chỉ trong vài phút."
+
+msgid "Ramp and hoist equipped taxis with trained, patient drivers. Door-to-door across Melbourne and the Mornington Peninsula, including hospital, airport and NDIS trips."
+msgstr "Taxi có dốc lên xuống và thang nâng, cùng tài xế được đào tạo, kiên nhẫn. Đưa đón tận nơi khắp Melbourne và bán đảo Mornington, kể cả chuyến đi bệnh viện, sân bay và NDIS."
+
+msgid ""
+"04:00-08:59 | Early flight or appointment? Book your pick-up the night before.\n"
+"09:00-14:59 | Heading to an appointment? We can have you there on time.\n"
+"15:00-18:59 | Home from the hospital? Book a pick-up in two minutes.\n"
+"19:00-03:59 | Planning tomorrow's trips? Book tonight so we can confirm early."
+msgstr ""
+"04:00-08:59 | Bay sớm hay có hẹn sớm? Hãy đặt xe đón từ tối hôm trước.\n"
+"09:00-14:59 | Bạn sắp đi khám hay có hẹn? Chúng tôi sẽ đưa bạn đến đúng giờ.\n"
+"15:00-18:59 | Từ bệnh viện về nhà? Đặt xe đón chỉ trong hai phút.\n"
+"19:00-03:59 | Đang lên kế hoạch đi lại cho ngày mai? Hãy đặt tối nay để chúng tôi xác nhận sớm."
+
+msgid "How we secure your wheelchair"
+msgstr "Cách chúng tôi cố định xe lăn của bạn"
+
+msgid "Wheelchair Accessible Taxi (WAT)"
+msgstr "Taxi cho xe lăn (WAT)"
+
+msgid "Maxi WAT – 2 wheelchairs / groups"
+msgstr "Maxi WAT – 2 xe lăn / đi nhóm"
+
+msgid "Standard sedan (no wheelchair)"
+msgstr "Xe sedan thường (không chở xe lăn)"
+
+msgid "Manual wheelchair"
+msgstr "Xe lăn đẩy tay"
+
+msgid "Power / electric wheelchair"
+msgstr "Xe lăn điện"
+
+msgid "Mobility scooter"
+msgstr "Xe điện cho người khuyết tật (scooter)"
+
+msgid "Walker or frame"
+msgstr "Khung tập đi"
+
+msgid "None"
+msgstr "Không có"
+
+msgid "Pending"
+msgstr "Đang chờ"
+
+msgid "Driver accepted"
+msgstr "Tài xế đã nhận chuyến"
+
+msgid "Driver on the way"
+msgstr "Tài xế đang trên đường đến"
+
+msgid "Driver arrived"
+msgstr "Tài xế đã đến nơi"
+
+msgid "Passenger on board"
+msgstr "Hành khách đã lên xe"
+
+msgid "No-show"
+msgstr "Khách không có mặt"
+
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+msgid "Live trust numbers"
+msgstr "Số liệu uy tín trực tiếp"
+
+msgid "Why passengers choose us"
+msgstr "Vì sao hành khách chọn chúng tôi"
+
+msgid "How a trip works (animated scenes)"
+msgstr "Chuyến đi diễn ra thế nào (cảnh hoạt hình)"
+
+msgid "From your door to the departure gate"
+msgstr "Từ cửa nhà bạn đến cổng khởi hành"
+
+msgid "We back right up to your door, lower the ramp and help you aboard — and we are waiting at Arrivals when you land."
+msgstr "Chúng tôi lùi xe sát cửa nhà bạn, hạ dốc xuống và giúp bạn lên xe — và chúng tôi chờ sẵn ở khu Đến khi bạn hạ cánh."
+
+msgid "Who we help"
+msgstr "Chúng tôi giúp những ai"
+
+msgid "Whether you are travelling yourself or arranging transport for someone else, we make it simple."
+msgstr "Dù bạn tự đi hay sắp xếp xe cho người khác, chúng tôi đều giúp mọi việc trở nên đơn giản."
+
+msgid "Booking form"
+msgstr "Mẫu đặt xe"
+
+msgid "Book your accessible taxi"
+msgstr "Đặt taxi cho xe lăn của bạn"
+
+msgid "Tell us where you are going and what you need. We will confirm your booking and let you know when your driver is on the way."
+msgstr "Hãy cho chúng tôi biết bạn đi đâu và cần gì. Chúng tôi sẽ xác nhận lịch đặt xe và báo cho bạn khi tài xế đang trên đường đến."
+
+msgid "Where our passengers go"
+msgstr "Hành khách của chúng tôi đi đâu"
+
+msgid "Our most-booked destinations this year. Tap one to book a trip there."
+msgstr "Những điểm đến được đặt nhiều nhất năm nay. Chạm vào một điểm để đặt chuyến đến đó."
+
+msgid "Areas we cover + suburb checker"
+msgstr "Khu vực phục vụ + kiểm tra khu vực"
+
+msgid "Based on the Mornington Peninsula and servicing greater Melbourne. Not listed? Call us — we travel further on request."
+msgstr "Có trụ sở tại bán đảo Mornington và phục vụ toàn vùng Melbourne. Không thấy khu vực của bạn? Hãy gọi cho chúng tôi — chúng tôi có thể đi xa hơn nếu bạn yêu cầu."
+
+msgid "Top questions (FAQ strip)"
+msgstr "Câu hỏi hàng đầu (dải câu hỏi thường gặp)"
+
+msgid "Questions we are often asked"
+msgstr "Những câu hỏi chúng tôi thường nhận được"
+
+msgid "Reviews & testimonials"
+msgstr "Đánh giá & lời chứng thực"
+
+msgid "What our passengers say"
+msgstr "Hành khách nói gì về chúng tôi"
+
+msgid "Home page content (from the editor)"
+msgstr "Nội dung trang chủ (từ trình soạn thảo)"
+
+msgid "Latest blog posts"
+msgstr "Bài viết mới nhất"
+
+msgid "News & travel tips"
+msgstr "Tin tức & mẹo đi lại"
+
+msgid "Partner logos"
+msgstr "Logo đối tác"
+
+msgid "Trusted by local organisations"
+msgstr "Được các tổ chức địa phương tin dùng"
+
+msgid "Call-to-action band"
+msgstr "Dải kêu gọi hành động"
+
+msgid "Need a wheelchair taxi today?"
+msgstr "Bạn cần taxi cho xe lăn hôm nay?"
+
+msgid "Call our friendly team and we will get you moving."
+msgstr "Hãy gọi cho đội ngũ thân thiện của chúng tôi, chúng tôi sẽ đưa bạn lên đường."
+
+msgid "Book your own trip online or by phone. We help you from your door to theirs."
+msgstr "Tự đặt chuyến đi của bạn trực tuyến hoặc qua điện thoại. Chúng tôi giúp bạn từ cửa nhà bạn đến tận cửa nơi bạn đến."
+
+msgid "Family & carers"
+msgstr "Gia đình & người chăm sóc"
+
+msgid "Booking for a parent, partner or client? Carers can travel too, and you can manage the booking online."
+msgstr "Đặt xe cho cha mẹ, người bạn đời hay khách hàng? Người chăm sóc cũng có thể đi cùng, và bạn có thể quản lý lịch đặt xe trực tuyến."
+
+msgid "Tips for carers"
+msgstr "Mẹo cho người chăm sóc"
+
+msgid "NDIS coordinators & plan managers"
+msgstr "Điều phối viên NDIS & người quản lý chương trình"
+
+msgid "Set up regular trips for participants and have them invoiced to the right place."
+msgstr "Sắp xếp chuyến đi định kỳ cho người tham gia và gửi hóa đơn đến đúng nơi."
+
+msgid "NDIS & accounts"
+msgstr "NDIS & tài khoản"
+
+msgid "Hospitals & aged care"
+msgstr "Bệnh viện & chăm sóc người cao tuổi"
+
+msgid "Discharges, appointments and outings for your patients and residents. Ask us about an account."
+msgstr "Xuất viện, cuộc hẹn và chuyến đi chơi cho bệnh nhân và cư dân của bạn. Hãy hỏi chúng tôi về tài khoản."
+
+msgid "Talk to us"
+msgstr "Nói chuyện với chúng tôi"
+
+#. translators: %s: section
+msgid "Move %s up"
+msgstr "Chuyển %s lên"
+
+#. translators: %s: section
+msgid "Move %s down"
+msgstr "Chuyển %s xuống"
+
+msgid "Home page layout"
+msgstr "Bố cục trang chủ"
+
+msgid "Tick to show a section, untick to hide it, and use ▲ ▼ to reorder. The hero banner always stays at the top."
+msgstr "Đánh dấu để hiện một phần, bỏ đánh dấu để ẩn, và dùng ▲ ▼ để sắp xếp lại. Băng ảnh đầu trang luôn nằm trên cùng."
+
+msgid "Sections"
+msgstr "Các phần"
+
+msgid "Show the quick-book bar in the hero (From, To, Date)"
+msgstr "Hiện thanh đặt xe nhanh trong ảnh đầu trang (Từ, Đến, Ngày)"
+
+msgid "Home page headings & text"
+msgstr "Tiêu đề & nội dung trang chủ"
+
+msgid "Leave a field empty to use the default wording."
+msgstr "Để trống một mục để dùng câu chữ mặc định."
+
+#. translators: %s: section
+msgid "%s — heading"
+msgstr "%s — tiêu đề"
+
+#. translators: %s: section
+msgid "%s — intro"
+msgstr "%s — giới thiệu"
+
+msgid "Who we help panels"
+msgstr "Các ô \"Chúng tôi giúp những ai\""
+
+msgid "Four short panels for different audiences. Clear a heading to hide that panel. Leave a link empty to use the matching page automatically."
+msgstr "Bốn ô ngắn cho các nhóm người đọc khác nhau. Xóa tiêu đề để ẩn ô đó. Để trống liên kết để tự động dùng trang tương ứng."
+
+msgid "heading"
+msgstr "tiêu đề"
+
+msgid "text"
+msgstr "nội dung"
+
+msgid "link text"
+msgstr "chữ trên liên kết"
+
+msgid "link (optional)"
+msgstr "liên kết (không bắt buộc)"
+
+#. translators: 1: panel number, 2: field
+msgid "Panel %1$d — %2$s"
+msgstr "Ô %1$d — %2$s"
+
+msgid "Hero photos"
+msgstr "Ảnh đầu trang"
+
+msgid "Hero photo"
+msgstr "Ảnh đầu trang"
+
+msgid "Add seasonal hero photo"
+msgstr "Thêm ảnh đầu trang theo mùa"
+
+msgid "Edit hero photo"
+msgstr "Sửa ảnh đầu trang"
+
+msgid "Set hero photo"
+msgstr "Đặt ảnh đầu trang"
+
+msgid "When to show it"
+msgstr "Khi nào hiển thị"
+
+msgid "Set the photo with \"Hero photo\" on the right (give it alt text in the Media Library). It replaces the normal hero image between these dates."
+msgstr "Đặt ảnh bằng mục \"Ảnh đầu trang\" ở bên phải (thêm văn bản thay thế trong Thư viện phương tiện). Ảnh này sẽ thay ảnh đầu trang thông thường trong khoảng thời gian giữa các ngày này."
+
+msgid "Until (inclusive)"
+msgstr "Đến hết ngày"
+
+msgid "Repeat every year (e.g. every December)"
+msgstr "Lặp lại mỗi năm (ví dụ: mỗi tháng Mười Hai)"
+
+msgid "Photo"
+msgstr "Ảnh"
+
+msgid "Shown"
+msgstr "Hiển thị"
+
+msgid "(every year)"
+msgstr "(mỗi năm)"
+
+msgid "Showing now"
+msgstr "Đang hiển thị"
+
+msgid "Opening hours by day (used when not open 24/7)"
+msgstr "Giờ mở cửa theo ngày (dùng khi không mở cửa 24/7)"
+
+msgid "One line per day or range, e.g. \"Mon-Fri 06:00-22:00\", \"Sat 07:00-20:00\", \"Sun closed\"."
+msgstr "Mỗi dòng một ngày hoặc một khoảng ngày, ví dụ: \"Mon-Fri 06:00-22:00\", \"Sat 07:00-20:00\", \"Sun closed\"."
+
+msgid "Message shown while closed"
+msgstr "Thông báo hiển thị khi đóng cửa"
+
+#. translators: %s: closing time
+msgid "Open now · phones answered until %s"
+msgstr "Đang mở cửa · nghe điện thoại đến %s"
+
+#. translators: %s: time
+msgid "we open at %s"
+msgstr "chúng tôi mở cửa lúc %s"
+
+#. translators: %s: time
+msgid "we open tomorrow at %s"
+msgstr "chúng tôi mở cửa ngày mai lúc %s"
+
+#. translators: 1: weekday, 2: time
+msgid "we open %1$s at %2$s"
+msgstr "chúng tôi mở cửa %1$s lúc %2$s"
+
+#. translators: %s: when we open
+msgid "Closed now · %s"
+msgstr "Hiện đang đóng cửa · %s"
+
+msgid "Closed now"
+msgstr "Hiện đang đóng cửa"
+
+msgid "Closed"
+msgstr "Đóng cửa"
+
+msgid "Phone hours"
+msgstr "Giờ nghe điện thoại"
+
+msgid "Languages"
+msgstr "Ngôn ngữ"
+
+msgid "Visitors can switch the website to these languages. Menus, the booking form, booking pages, emails and texts are translated. For your own page text, open the page and use the Languages box to make a translated copy."
+msgstr "Khách truy cập có thể chuyển trang web sang các ngôn ngữ này. Menu, mẫu đặt xe, các trang đặt xe, email và tin nhắn đều được dịch. Với nội dung trang do bạn tự viết, hãy mở trang đó và dùng hộp Ngôn ngữ để tạo bản dịch."
+
+#. translators: 1: language name in English, 2: native name
+msgid "Offer %1$s (%2$s)"
+msgstr "Cung cấp %1$s (%2$s)"
+
+msgid "Show the free interpreter (TIS National 131 450) and National Relay Service details"
+msgstr "Hiện thông tin thông dịch viên miễn phí (TIS National 131 450) và Dịch vụ Chuyển tiếp Quốc gia (National Relay Service)"
+
+msgid "Shown in the footer and on pages that are not translated yet. Register your business with TIS National so their interpreters can call you."
+msgstr "Hiển thị ở chân trang và trên các trang chưa được dịch. Hãy đăng ký doanh nghiệp của bạn với TIS National để thông dịch viên của họ có thể gọi cho bạn."
+
+msgid "Auslan video (YouTube or Vimeo link)"
+msgstr "Video Auslan (liên kết YouTube hoặc Vimeo)"
+
+msgid "A short video in Auslan explaining how to book. Shown with [tp_auslan] (it is on the Accessibility Statement page) and linked from the language menu."
+msgstr "Một video ngắn bằng Auslan hướng dẫn cách đặt xe. Hiển thị bằng [tp_auslan] (có trên trang Tuyên bố về khả năng tiếp cận) và được liên kết từ menu ngôn ngữ."
+
+msgid "Auslan video: English transcript"
+msgstr "Video Auslan: bản ghi lời bằng tiếng Anh"
+
+msgid "Translated home page text"
+msgstr "Nội dung trang chủ đã dịch"
+
+msgid "If you changed the hero text or opening hours, add the translated versions here. Leave a box empty to use the theme’s built-in translation of the original wording."
+msgstr "Nếu bạn đã thay đổi nội dung ảnh đầu trang hoặc giờ mở cửa, hãy thêm bản dịch vào đây. Để trống một ô để dùng bản dịch có sẵn của giao diện cho câu chữ gốc."
+
+msgid "This page is in English."
+msgstr "Trang này bằng tiếng Anh."
+
+msgid "The booking form and your booking details are in your language."
+msgstr "Mẫu đặt xe và thông tin đặt xe của bạn có bằng ngôn ngữ của bạn."
+
+#. translators: 1: language, 2: page title
+msgid "This is the %1$s version of “%2$s”."
+msgstr "Đây là bản %1$s của “%2$s”."
+
+msgid "Visitors who choose this language are sent here automatically once it is published."
+msgstr "Khách truy cập chọn ngôn ngữ này sẽ được tự động chuyển đến đây sau khi trang được đăng."
+
+msgid "Save the page first, then you can add translated copies."
+msgstr "Hãy lưu trang trước, sau đó bạn có thể thêm bản dịch."
+
+msgid "Make a copy of this page for each language and translate the text in the editor. Menus and links switch to the right copy by themselves."
+msgstr "Tạo một bản sao của trang này cho mỗi ngôn ngữ và dịch nội dung trong trình soạn thảo. Menu và liên kết sẽ tự chuyển sang đúng bản sao."
+
+msgid "Edit draft"
+msgstr "Sửa bản nháp"
+
+msgid "Add translation"
+msgstr "Thêm bản dịch"
+
+msgid "Auslan"
+msgstr "Auslan"
+
+#. translators: %s: current language
+msgid "Language: %s. Change language"
+msgstr "Ngôn ngữ: %s. Đổi ngôn ngữ"
+
+msgid "video"
+msgstr "video"
+
+#. translators: 1: business name, 2: phone number
+msgid "Need an interpreter? Call TIS National on 131 450 and ask them to call %1$s on %2$s."
+msgstr "Bạn cần thông dịch viên? Hãy gọi TIS National theo số 131 450 và nhờ họ gọi cho %1$s theo số %2$s."
+
+msgid "Deaf, hard of hearing or speech impaired? Use the National Relay Service on 133 677."
+msgstr "Bạn bị khiếm thính, nghe kém hoặc khó nói? Hãy dùng Dịch vụ Chuyển tiếp Quốc gia (National Relay Service) theo số 133 677."
+
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+msgid "Auslan and the National Relay Service"
+msgstr "Auslan và Dịch vụ Chuyển tiếp Quốc gia (National Relay Service)"
+
+msgid "How to book with us, in Auslan"
+msgstr "Cách đặt xe với chúng tôi, bằng Auslan"
+
+msgid "Play: how to book with us, in Auslan"
+msgstr "Phát: cách đặt xe với chúng tôi, bằng Auslan"
+
+msgid "Read the English transcript"
+msgstr "Đọc bản ghi lời bằng tiếng Anh"
+
+msgid "[Add your Auslan video link under Appearance → Customize → Taxi Peninsula → Languages. Only staff see this note.]"
+msgstr "[Hãy thêm liên kết video Auslan của bạn trong Giao diện → Tùy chỉnh → Taxi Peninsula → Ngôn ngữ. Chỉ nhân viên mới thấy ghi chú này.]"
+
+msgid "Book online — the booking form has no time limit and works with screen readers."
+msgstr "Đặt xe trực tuyến — mẫu đặt xe không giới hạn thời gian và dùng được với trình đọc màn hình."
+
+#. translators: %s: SMS link
+msgid "Text us on %s — we reply by text."
+msgstr "Nhắn tin cho chúng tôi theo số %s — chúng tôi sẽ trả lời bằng tin nhắn."
+
+#. translators: %s: phone
+msgid "National Relay Service: use the NRS app or nrschat.nrscall.gov.au, or call 133 677, and give our number %s."
+msgstr "Dịch vụ Chuyển tiếp Quốc gia (National Relay Service): dùng ứng dụng NRS hoặc nrschat.nrscall.gov.au, hoặc gọi 133 677, và cho họ số của chúng tôi %s."
+
+msgid "Ask for SMS updates: we text you when your driver is on the way and when they arrive."
+msgstr "Hãy yêu cầu nhận tin SMS: chúng tôi sẽ nhắn tin khi tài xế đang trên đường đến và khi tài xế đã đến."
+
+msgid "Home"
+msgstr "Trang chủ"
+
+#. Template Name of the theme
+msgid "Blog"
+msgstr "Blog"
+
+#. translators: %s: phone
+msgid "Too many attempts. Please wait a few minutes or call %s."
+msgstr "Bạn đã thử quá nhiều lần. Xin đợi vài phút hoặc gọi %s."
+
+msgid "We could not find a booking with that reference and phone number. Please check both and try again."
+msgstr "Chúng tôi không tìm thấy lịch đặt xe nào với mã đặt xe và số điện thoại này. Xin kiểm tra lại cả hai và thử lại."
+
+msgid "Please choose an option and tell us what you would like to change."
+msgstr "Xin chọn một mục và cho chúng tôi biết bạn muốn thay đổi gì."
+
+#. translators: 1: request type, 2: reference
+msgid "%1$s — %2$s"
+msgstr "%1$s — %2$s"
+
+#. translators: 1: request type, 2: reference, 3: pick-up time
+msgid "%1$s for %2$s (%3$s). Check email/admin."
+msgstr "%1$s cho %2$s (%3$s). Kiểm tra email/trang quản trị."
+
+msgid "Cancellation request"
+msgstr "Yêu cầu hủy"
+
+msgid "Cancel all remaining repeat trips"
+msgstr "Hủy tất cả các chuyến lặp lại còn lại"
+
+#. translators: 1: kilometres, 2: minutes
+msgid "%1$s km, about %2$d min drive"
+msgstr "%1$s km, khoảng %2$d phút lái xe"
+
+#. translators: %d: number of suggestions
+msgid "%d address suggestions available. Use the up and down arrow keys to choose."
+msgstr "Có %d gợi ý địa chỉ. Dùng phím mũi tên lên và xuống để chọn."
+
+msgid "No address suggestions."
+msgstr "Không có gợi ý địa chỉ."
+
+msgid "Calculating fare estimate…"
+msgstr "Đang tính giá cước ước tính…"
+
+msgid "We could not estimate this trip online. We will confirm the fare with you."
+msgstr "Chúng tôi không thể ước tính chuyến đi này trực tuyến. Chúng tôi sẽ xác nhận giá cước với bạn."
+
+msgid "Address suggestions by Google"
+msgstr "Gợi ý địa chỉ do Google cung cấp"
+
+msgid "Online payment is not available."
+msgstr "Hiện không thể thanh toán trực tuyến."
+
+#. translators: 1: site name, 2: reference
+msgid "%1$s booking deposit — %2$s"
+msgstr "Tiền cọc đặt xe %1$s — %2$s"
+
+msgid "Unknown Stripe error."
+msgstr "Lỗi Stripe không xác định."
+
+msgid "Stripe (online payment)"
+msgstr "Stripe (thanh toán trực tuyến)"
+
+#. translators: %s: amount
+msgid "Deposit of %s paid online (Stripe)."
+msgstr "Đã trả tiền cọc %s trực tuyến (Stripe)."
+
+#. translators: 1: reference, 2: amount
+msgid "Deposit paid for %1$s (%2$s)"
+msgstr "Đã trả tiền cọc cho %1$s (%2$s)"
+
+msgid "Public driver profile"
+msgstr "Hồ sơ công khai của tài xế"
+
+msgid "Shown on the \"Meet the drivers\" section and to passengers once this driver is assigned to their trip. Only the first name is used."
+msgstr "Hiển thị ở phần \"Gặp gỡ các tài xế\" và cho hành khách khi tài xế này được phân công cho chuyến đi của họ. Chỉ dùng tên gọi."
+
+msgid "Show on the website"
+msgstr "Hiển thị trên trang web"
+
+msgid "Yes — the driver has agreed to their first name, photo and bio being shown publicly."
+msgstr "Có — tài xế đã đồng ý cho hiển thị công khai tên gọi, ảnh và tiểu sử."
+
+msgid "Short bio"
+msgstr "Tiểu sử ngắn"
+
+msgid "e.g. Driving on the Peninsula for 8 years. Loves the footy and a good chat."
+msgstr "ví dụ: Lái xe ở bán đảo 8 năm. Mê bóng bầu dục Úc và thích trò chuyện."
+
+msgid "Choose photo"
+msgstr "Chọn ảnh"
+
+msgid "A friendly, well-lit head-and-shoulders photo works best. Add alt text in the Media Library."
+msgstr "Ảnh chân dung từ vai trở lên, thân thiện, đủ ánh sáng là tốt nhất. Thêm văn bản thay thế trong Thư viện phương tiện."
+
+#. translators: %s: first name
+msgid "Photo of %s"
+msgstr "Ảnh của %s"
+
+msgid "Photo gallery"
+msgstr "Thư viện ảnh"
+
+msgid "Choose photos"
+msgstr "Chọn ảnh"
+
+msgid "Clear"
+msgstr "Xóa hết"
+
+msgid "Show the ramp or hoist, the restraints and the inside of the vehicle. Give every photo alt text and a caption — they are read out in the full-screen viewer."
+msgstr "Cho thấy dốc lên xuống hoặc thang nâng, dây cố định xe lăn và bên trong xe. Hãy thêm văn bản thay thế và chú thích cho mọi ảnh — chúng sẽ được đọc lên trong chế độ xem toàn màn hình."
+
+msgid "Partners"
+msgstr "Đối tác"
+
+msgid "Partner"
+msgstr "Đối tác"
+
+msgid "Add partner"
+msgstr "Thêm đối tác"
+
+msgid "Edit partner"
+msgstr "Sửa đối tác"
+
+msgid "Logo"
+msgstr "Logo"
+
+msgid "Set logo"
+msgstr "Đặt logo"
+
+msgid "Partner details"
+msgstr "Thông tin đối tác"
+
+msgid "Website (optional)"
+msgstr "Trang web (không bắt buộc)"
+
+msgid "We have written permission to show this logo"
+msgstr "Chúng tôi có văn bản cho phép hiển thị logo này"
+
+msgid "The logo stays hidden until this is ticked."
+msgstr "Logo sẽ bị ẩn cho đến khi mục này được đánh dấu."
+
+msgid "Ask for a copy of your information, or for it to be deleted"
+msgstr "Yêu cầu bản sao thông tin của bạn, hoặc yêu cầu xóa thông tin"
+
+msgid "Thank you. Please check your email and click the link to confirm the request — we then reply within 30 days."
+msgstr "Xin cảm ơn. Xin kiểm tra email và bấm vào liên kết để xác nhận yêu cầu — sau đó chúng tôi sẽ trả lời trong vòng 30 ngày."
+
+msgid "Sorry, we could not send that. Please check the email address, or call us."
+msgstr "Xin lỗi, chúng tôi không gửi được. Xin kiểm tra lại địa chỉ email, hoặc gọi cho chúng tôi."
+
+#. translators: %s: link to My Account
+msgid "You are signed in, so you can download your data or delete your account straight away under %s."
+msgstr "Bạn đã đăng nhập, nên bạn có thể tải dữ liệu của mình hoặc xóa tài khoản ngay tại %s."
+
+msgid "My Account → My details"
+msgstr "Tài khoản của tôi → Thông tin của tôi"
+
+msgid "What would you like?"
+msgstr "Bạn muốn yêu cầu gì?"
+
+msgid "A copy of the information you hold about me"
+msgstr "Bản sao thông tin quý công ty đang lưu về tôi"
+
+msgid "Delete my information"
+msgstr "Xóa thông tin của tôi"
+
+msgid "Email address you used for bookings"
+msgstr "Địa chỉ email bạn đã dùng để đặt xe"
+
+msgid "We email you a link to confirm it is really you."
+msgstr "Chúng tôi sẽ gửi email cho bạn một liên kết để xác nhận đúng là bạn."
+
+msgid "Send request"
+msgstr "Gửi yêu cầu"
+
+#. translators: 1: request type, 2: masked email
+msgid "Privacy request received (%1$s) from %2$s — waiting for email confirmation"
+msgstr "Đã nhận yêu cầu về quyền riêng tư (%1$s) từ %2$s — đang chờ xác nhận qua email"
+
+msgid "delete"
+msgstr "xóa"
+
+msgid "copy"
+msgstr "bản sao"
+
+msgid "Your privacy"
+msgstr "Quyền riêng tư của bạn"
+
+msgid "You can download everything we hold about you, or close your account."
+msgstr "Bạn có thể tải xuống mọi thông tin chúng tôi lưu về bạn, hoặc đóng tài khoản."
+
+msgid "Read our privacy policy"
+msgstr "Đọc chính sách quyền riêng tư của chúng tôi"
+
+msgid "Download my data"
+msgstr "Tải dữ liệu của tôi"
+
+msgid "A file with your details, trips, saved passengers and addresses."
+msgstr "Một tệp gồm thông tin của bạn, các chuyến đi, hành khách và địa chỉ đã lưu."
+
+msgid "Delete my account"
+msgstr "Xóa tài khoản của tôi"
+
+#. translators: %s: phone
+msgid "You have upcoming trips. Please cancel them first, or call us on %s, then come back to delete your account."
+msgstr "Bạn có chuyến đi sắp tới. Xin hủy các chuyến đó trước, hoặc gọi cho chúng tôi theo số %s, rồi quay lại để xóa tài khoản."
+
+msgid "This signs you out and deletes your account, saved passengers, clients and addresses. Names, contact details and street addresses are removed from your past trips. We keep the trip reference, date, suburbs and fare for our records, and invoice details for 5 years because tax law requires it."
+msgstr "Thao tác này sẽ đăng xuất và xóa tài khoản, hành khách, khách hàng và địa chỉ đã lưu của bạn. Tên, thông tin liên lạc và địa chỉ nhà sẽ được xóa khỏi các chuyến đi trước đây. Chúng tôi giữ lại mã đặt xe, ngày, khu vực và giá cước để lưu hồ sơ, và giữ thông tin hóa đơn trong 5 năm vì luật thuế yêu cầu."
+
+msgid "Your password"
+msgstr "Mật khẩu của bạn"
+
+msgid "I understand this cannot be undone."
+msgstr "Tôi hiểu rằng việc này không thể hoàn tác."
+
+msgid "Customer downloaded their data from My Account"
+msgstr "Khách hàng đã tải dữ liệu của họ từ Tài khoản của tôi"
+
+msgid "Your password was not right, so your account was not deleted."
+msgstr "Mật khẩu của bạn không đúng, nên tài khoản chưa bị xóa."
+
+msgid "You have upcoming trips. Please cancel them first."
+msgstr "Bạn có chuyến đi sắp tới. Xin hủy các chuyến đó trước."
+
+msgid "Customer deleted their account"
+msgstr "Khách hàng đã xóa tài khoản của họ"
+
+#. translators: %s: masked email
+msgid "Customer account deleted (%s)"
+msgstr "Đã xóa tài khoản khách hàng (%s)"
+
+msgid "A customer deleted their account"
+msgstr "Một khách hàng đã xóa tài khoản của họ"
+
+#. translators: %d: number of trips
+msgid "A customer account was deleted from My Account. Personal details were removed from %d trips; references, dates, suburbs and fares were kept."
+msgstr "Một tài khoản khách hàng đã bị xóa từ Tài khoản của tôi. Thông tin cá nhân đã được xóa khỏi %d chuyến đi; mã đặt xe, ngày, khu vực và giá cước vẫn được giữ lại."
+
+msgid "Thanks for sharing your experience on Google!"
+msgstr "Cảm ơn bạn đã chia sẻ trải nghiệm trên Google!"
+
+msgid "Would you share your experience on Google?"
+msgstr "Bạn có muốn chia sẻ trải nghiệm của mình trên Google không?"
+
+msgid "A short review helps other families and carers find accessible transport they can trust. It takes about a minute."
+msgstr "Một bài đánh giá ngắn giúp các gia đình và người chăm sóc khác tìm được dịch vụ đi lại cho người khuyết tật mà họ có thể tin cậy. Chỉ mất khoảng một phút."
+
+msgid "Write a Google review"
+msgstr "Viết đánh giá trên Google"
+
+msgid "Customer opened the Google review link"
+msgstr "Khách hàng đã mở liên kết đánh giá Google"
+
+msgid "there"
+msgstr "bạn"
+
+msgid "Thank you for rating your trip with us — it really helps."
+msgstr "Cảm ơn bạn đã đánh giá chuyến đi với chúng tôi — điều này thực sự hữu ích."
+
+msgid "Would you also share your experience on Google? A short review helps other families and carers find accessible transport they can trust."
+msgstr "Bạn có muốn chia sẻ thêm trải nghiệm của mình trên Google không? Một bài đánh giá ngắn giúp các gia đình và người chăm sóc khác tìm được dịch vụ đi lại cho người khuyết tật mà họ có thể tin cậy."
+
+msgid "Thank you for travelling with us."
+msgstr "Cảm ơn bạn đã đi xe cùng chúng tôi."
+
+msgid "Thank you for your rating"
+msgstr "Cảm ơn bạn đã đánh giá"
+
+msgid "Google review invitation emailed"
+msgstr "Đã gửi email mời đánh giá trên Google"
+
+msgid "Please complete the \"I am human\" check and try again."
+msgstr "Xin hoàn thành bước kiểm tra \"Tôi là người\" rồi thử lại."
+
+#. translators: 1: area, 2: phone
+msgid "Wheelchair accessible taxi in %1$s. Ramp and hoist vehicles, trained drivers, door-to-door. Book online or call %2$s."
+msgstr "Taxi cho xe lăn tại %1$s. Xe có dốc lên xuống và thang nâng, tài xế được đào tạo, đưa đón tận nơi. Đặt xe trực tuyến hoặc gọi %2$s."
+
+msgid "Wheelchair accessible taxi services in Melbourne: hospital and medical trips, airport transfers, NDIS and aged-care transport, group travel and events."
+msgstr "Dịch vụ taxi cho xe lăn tại Melbourne: chuyến đi bệnh viện và khám bệnh, đưa đón sân bay, đi lại cho NDIS và người cao tuổi, đi nhóm và sự kiện."
+
+msgid "Suburbs we cover with wheelchair accessible taxis across Melbourne and the Mornington Peninsula."
+msgstr "Các khu vực chúng tôi phục vụ bằng taxi cho xe lăn khắp Melbourne và bán đảo Mornington."
+
+msgid "News and travel tips for passengers using wheelchair accessible taxis in Melbourne."
+msgstr "Tin tức và mẹo đi lại cho hành khách dùng taxi cho xe lăn tại Melbourne."
+
+#. translators: 1: site name, 2: phone
+msgid "%1$s — wheelchair accessible taxis in Melbourne and the Mornington Peninsula. Book online or call %2$s."
+msgstr "%1$s — taxi cho xe lăn tại Melbourne và bán đảo Mornington. Đặt xe trực tuyến hoặc gọi %2$s."
+
+msgid "Mobile number"
+msgstr "Số di động"
+
+msgid "Primary menu"
+msgstr "Menu chính"
+
+msgid "Footer menu"
+msgstr "Menu chân trang"
+
+msgid "Ready-made sections and page starters for your taxi website."
+msgstr "Các phần dựng sẵn và mẫu trang khởi đầu cho trang web taxi của bạn."
+
+msgid "Blog sidebar"
+msgstr "Thanh bên của blog"
+
+#. translators: %s: suburb
+msgid "Yes — we cover %s."
+msgstr "Có — chúng tôi phục vụ %s."
+
+#. translators: %s: suburb
+msgid "Book a pick-up in %s"
+msgstr "Đặt xe đón tại %s"
+
+#. translators: %s: suburb
+msgid "Wheelchair taxis in %s"
+msgstr "Taxi xe lăn tại %s"
+
+#. translators: %s: what the visitor typed
+msgid "\"%s\" is not on our regular list, but we often travel further on request."
+msgstr "\"%s\" không có trong danh sách thường xuyên của chúng tôi, nhưng chúng tôi thường đi xa hơn nếu bạn yêu cầu."
+
+#. translators: %s: phone number
+msgid "Call %s to check"
+msgstr "Gọi %s để hỏi"
+
+#. translators: %d: number of questions
+msgid "%d matching questions"
+msgstr "%d câu hỏi phù hợp"
+
+msgid "Close"
+msgstr "Đóng"
+
+msgid "Read more"
+msgstr "Đọc thêm"
+
+msgid "Show less"
+msgstr "Thu gọn"
+
+msgid "passenger"
+msgstr "hành khách"
+
+msgid "passengers"
+msgstr "hành khách"
+
+msgid "wheelchair"
+msgstr "xe lăn"
+
+msgid "wheelchairs"
+msgstr "xe lăn"
+
+msgid "Drop-off"
+msgstr "Trả khách"
+
+msgid "Sending…"
+msgstr "Đang gửi…"
+
+msgid "Previous photo"
+msgstr "Ảnh trước"
+
+msgid "Next photo"
+msgstr "Ảnh tiếp theo"
+
+#. translators: 1: photo number, 2: total
+msgid "Photo %1$d of %2$d"
+msgstr "Ảnh %1$d / %2$d"
+
+msgid "SMS is not configured."
+msgstr "Chưa cài đặt SMS."
+
+msgid "Invalid mobile number."
+msgstr "Số di động không hợp lệ."
+
+#. translators: 1: HTTP status, 2: provider message
+msgid "SMS failed (%1$d) %2$s"
+msgstr "Gửi SMS thất bại (%1$d) %2$s"
+
+msgid "customer"
+msgstr "khách hàng"
+
+msgid "driver"
+msgstr "tài xế"
+
+msgid "office"
+msgstr "văn phòng"
+
+#. translators: 1: recipient, 2: error
+msgid "SMS to %1$s failed: %2$s"
+msgstr "Gửi SMS cho %1$s thất bại: %2$s"
+
+#. translators: %s: recipient
+msgid "SMS sent to %s"
+msgstr "Đã gửi SMS cho %s"
+
+#. translators: 1: reference, 2: pick-up time, 3: name, 4: phone, 5: from, 6: to
+msgid "New booking %1$s: %2$s, %3$s (%4$s). %5$s → %6$s"
+msgstr "Lịch đặt xe mới %1$s: %2$s, %3$s (%4$s). %5$s → %6$s"
+
+#. translators: %d: number of trips
+msgid "(repeat: %d trips)"
+msgstr "(lặp lại: %d chuyến)"
+
+#. translators: 1: site, 2: reference, 3: pick-up time, 4: link
+msgid "%1$s: we received your booking %2$s for %3$s. We will confirm shortly. Manage it: %4$s"
+msgstr "%1$s: chúng tôi đã nhận lịch đặt xe %2$s của bạn lúc %3$s. Chúng tôi sẽ sớm xác nhận. Quản lý tại: %4$s"
+
+#. translators: 1: site, 2: reference, 3: pick-up time
+msgid "%1$s: booking %2$s is confirmed for %3$s."
+msgstr "%1$s: lịch đặt xe %2$s đã được xác nhận lúc %3$s."
+
+#. translators: 1: site, 2: reference, 3: pick-up time
+msgid "%1$s: a driver is assigned to booking %2$s for %3$s."
+msgstr "%1$s: đã có tài xế cho lịch đặt xe %2$s lúc %3$s."
+
+#. translators: %s: driver first name
+msgid "Driver: %s."
+msgstr "Tài xế: %s."
+
+#. translators: %s: vehicle
+msgid "Vehicle: %s."
+msgstr "Xe: %s."
+
+#. translators: 1: site, 2: reference, 3: phone
+msgid "%1$s: booking %2$s has been cancelled. Questions? Call %3$s."
+msgstr "%1$s: lịch đặt xe %2$s đã bị hủy. Có thắc mắc? Xin gọi %3$s."
+
+#. translators: 1: reference, 2: pick-up time, 3: from, 4: to, 5: name, 6: phone
+msgid "New job %1$s: %2$s. %3$s → %4$s. %5$s %6$s"
+msgstr "Công việc mới %1$s: %2$s. %3$s → %4$s. %5$s %6$s"
+
+#. translators: %s: site name
+msgid "Test message from %s. SMS is working."
+msgstr "Tin nhắn thử từ %s. SMS đang hoạt động."
+
+msgid "Test SMS sent."
+msgstr "Đã gửi SMS thử."
+
+msgid "Accept trip"
+msgstr "Nhận chuyến"
+
+msgid "Not available at that time"
+msgstr "Không rảnh vào giờ đó"
+
+msgid "My vehicle is not suitable"
+msgstr "Xe của tôi không phù hợp"
+
+msgid "Too far from my area"
+msgstr "Quá xa khu vực của tôi"
+
+msgid "Other reason"
+msgstr "Lý do khác"
+
+msgid "You cannot update this job."
+msgstr "Bạn không thể cập nhật công việc này."
+
+#. translators: 1: driver, 2: reference, 3: pick-up time, 4: reason
+msgid "%1$s declined %2$s (%3$s): %4$s. Please reassign."
+msgstr "%1$s đã từ chối %2$s (%3$s): %4$s. Xin phân công lại."
+
+#. translators: %s: reference
+msgid "Trip declined — %s needs a driver"
+msgstr "Chuyến bị từ chối — %s cần tài xế"
+
+msgid "Dispatch board:"
+msgstr "Bảng điều phối:"
+
+#. translators: 1: site, 2: driver first name, 3: reference
+msgid "%1$s: %2$s is on the way to pick you up (booking %3$s)."
+msgstr "%1$s: %2$s đang trên đường đến đón bạn (lịch đặt xe %3$s)."
+
+#. translators: 1: site, 2: driver first name, 3: pick-up address
+msgid "%1$s: %2$s has arrived at %3$s."
+msgstr "%1$s: %2$s đã đến %3$s."
+
+#. translators: %s: search query
+msgid "Search results for “%s”"
+msgstr "Kết quả tìm kiếm cho “%s”"
+
+msgid "What makes us different"
+msgstr "Điều làm chúng tôi khác biệt"
+
+msgid "Meet the drivers"
+msgstr "Gặp gỡ các tài xế"
+
+msgid "Our vehicles"
+msgstr "Xe của chúng tôi"
+
+msgid "See the full fleet"
+msgstr "Xem toàn bộ đội xe"
+
+msgid "Posts"
+msgstr "Bài viết"
+
+msgid "Request a wheelchair accessible taxi anywhere in Melbourne and the Mornington Peninsula."
+msgstr "Yêu cầu taxi cho xe lăn ở bất cứ đâu tại Melbourne và bán đảo Mornington."
+
+msgid "Urgent or same-hour trip?"
+msgstr "Cần đi gấp hoặc trong vòng một giờ?"
+
+msgid "Rewarding work helping people get where they need to be."
+msgstr "Công việc ý nghĩa, giúp mọi người đến được nơi họ cần đến."
+
+msgid "Questions, quotes or account enquiries — we are happy to help."
+msgstr "Câu hỏi, báo giá hoặc hỏi về tài khoản — chúng tôi rất sẵn lòng giúp đỡ."
+
+msgid "Where we operate"
+msgstr "Nơi chúng tôi hoạt động"
+
+#. translators: %s: date
+msgid "Last updated %s"
+msgstr "Cập nhật lần cuối %s"
+
+msgid "On this page"
+msgstr "Trên trang này"
+
+msgid "Print this page"
+msgstr "In trang này"
+
+msgid "How booking works"
+msgstr "Cách đặt xe"
+
+msgctxt "Pattern title"
+msgid "About: our story"
+msgstr "Giới thiệu: câu chuyện của chúng tôi"
+
+msgctxt "Pattern description"
+msgid "Two columns: your story and an \"at a glance\" box."
+msgstr "Hai cột: câu chuyện của bạn và một ô \"tóm tắt nhanh\"."
+
+msgctxt "Pattern title"
+msgid "Areas we cover"
+msgstr "Khu vực phục vụ"
+
+msgctxt "Pattern description"
+msgid "Suburb chips linking to each area page."
+msgstr "Các thẻ khu vực liên kết đến trang của từng khu vực."
+
+msgctxt "Pattern title"
+msgid "Booking form"
+msgstr "Mẫu đặt xe"
+
+msgctxt "Pattern description"
+msgid "The full online booking form."
+msgstr "Mẫu đặt xe trực tuyến đầy đủ."
+
+msgctxt "Pattern title"
+msgid "Best way to reach us (contact chooser)"
+msgstr "Cách tốt nhất để liên lạc với chúng tôi (chọn cách liên hệ)"
+
+msgctxt "Pattern description"
+msgid "Buttons that send each kind of enquiry to the right place."
+msgstr "Các nút gửi từng loại yêu cầu đến đúng nơi."
+
+msgctxt "Pattern title"
+msgid "Contact details + map"
+msgstr "Thông tin liên lạc + bản đồ"
+
+msgctxt "Pattern description"
+msgid "Phone, email, hours and a map side by side."
+msgstr "Điện thoại, email, giờ làm việc và bản đồ đặt cạnh nhau."
+
+msgctxt "Pattern title"
+msgid "Call to action (yellow band)"
+msgstr "Kêu gọi hành động (dải màu vàng)"
+
+msgctxt "Pattern description"
+msgid "Bright band with phone and booking buttons."
+msgstr "Dải màu nổi bật với nút gọi điện và nút đặt xe."
+
+msgctxt "Pattern title"
+msgid "Popular destinations"
+msgstr "Điểm đến phổ biến"
+
+msgctxt "Pattern description"
+msgid "Most-booked destinations from real (anonymised) bookings, with Book buttons."
+msgstr "Những điểm đến được đặt nhiều nhất từ các lịch đặt xe thật (đã ẩn danh), kèm nút Đặt xe."
+
+msgctxt "Pattern title"
+msgid "Meet the drivers"
+msgstr "Gặp gỡ các tài xế"
+
+msgctxt "Pattern description"
+msgid "Public driver profiles (only drivers who have opted in)."
+msgstr "Hồ sơ công khai của tài xế (chỉ những tài xế đã đồng ý)."
+
+msgctxt "Pattern title"
+msgid "FAQ accordion"
+msgstr "Câu hỏi thường gặp dạng mở rộng"
+
+msgctxt "Pattern description"
+msgid "Frequently asked questions (edit them under FAQs)."
+msgstr "Các câu hỏi thường gặp (sửa trong mục Câu hỏi thường gặp)."
+
+msgctxt "Pattern title"
+msgid "Feature cards (3 columns)"
+msgstr "Thẻ nổi bật (3 cột)"
+
+msgctxt "Pattern description"
+msgid "Three highlight cards — edit the headings and text."
+msgstr "Ba thẻ nổi bật — hãy sửa tiêu đề và nội dung."
+
+msgid "Purpose-built vehicles"
+msgstr "Xe được thiết kế chuyên dụng"
+
+msgctxt "Pattern title"
+msgid "Hero banner"
+msgstr "Băng ảnh đầu trang"
+
+msgctxt "Pattern description"
+msgid "Large navy banner with headline, intro and booking buttons. Use at the top of a \"Blank canvas\" page."
+msgstr "Băng lớn màu xanh đậm với tiêu đề, đoạn giới thiệu và nút đặt xe. Dùng ở đầu trang \"Trang trống\"."
+
+msgctxt "Pattern title"
+msgid "About Us page"
+msgstr "Trang Giới thiệu"
+
+msgctxt "Pattern description"
+msgid "Starter content for an About Us page."
+msgstr "Nội dung khởi đầu cho trang Giới thiệu."
+
+msgctxt "Pattern title"
+msgid "Accessibility statement page"
+msgstr "Trang Tuyên bố về khả năng tiếp cận"
+
+msgctxt "Pattern description"
+msgid "Accessibility statement draft covering your commitment, features, known limitations and how to give feedback."
+msgstr "Bản nháp tuyên bố về khả năng tiếp cận, gồm cam kết, các tính năng, những hạn chế đã biết và cách góp ý."
+
+msgctxt "Pattern title"
+msgid "Drive with us page"
+msgstr "Trang Lái xe cùng chúng tôi"
+
+msgctxt "Pattern description"
+msgid "Starter content for a driver recruitment page, with [CONFIRM] notes for pay and conditions."
+msgstr "Nội dung khởi đầu cho trang tuyển tài xế, có ghi chú [CONFIRM] cho lương và điều kiện làm việc."
+
+msgctxt "Pattern title"
+msgid "Complaints & feedback page"
+msgstr "Trang Khiếu nại & góp ý"
+
+msgctxt "Pattern description"
+msgid "A clear complaints process with steps, response times ([CONFIRM]) and how to escalate to regulators."
+msgstr "Quy trình khiếu nại rõ ràng gồm các bước, thời gian phản hồi ([CONFIRM]) và cách khiếu nại lên cơ quan quản lý."
+
+msgid "What happens next"
+msgstr "Điều gì xảy ra tiếp theo"
+
+msgctxt "Pattern title"
+msgid "Privacy policy page"
+msgstr "Trang Chính sách quyền riêng tư"
+
+msgctxt "Pattern description"
+msgid "Privacy policy that follows the Australian Privacy Principles and updates from your settings, with a request form."
+msgstr "Chính sách quyền riêng tư theo Các Nguyên tắc Quyền riêng tư của Úc, tự cập nhật từ phần cài đặt của bạn, kèm mẫu yêu cầu."
+
+msgctxt "Pattern title"
+msgid "Seasonal / event landing page"
+msgstr "Trang giới thiệu theo mùa / sự kiện"
+
+msgctxt "Pattern description"
+msgid "Landing page for an event or season (footy finals, Christmas, spring racing). Schedule it with Publish → Schedule and set \"Unpublish automatically\"."
+msgstr "Trang giới thiệu cho một sự kiện hoặc mùa (chung kết bóng bầu dục, Giáng sinh, mùa đua ngựa mùa xuân). Lên lịch bằng Đăng → Lên lịch và đặt \"Tự động gỡ xuống\"."
+
+msgctxt "Pattern title"
+msgid "Terms & cancellation policy page"
+msgstr "Trang Điều khoản & chính sách hủy chuyến"
+
+msgctxt "Pattern description"
+msgid "Structured draft for your booking terms and cancellation policy, with [CONFIRM] notes where your real policy is needed."
+msgstr "Bản nháp có cấu trúc cho điều khoản đặt xe và chính sách hủy chuyến, có ghi chú [CONFIRM] ở những chỗ cần chính sách thật của bạn."
+
+msgctxt "Pattern title"
+msgid "Partner logos"
+msgstr "Logo đối tác"
+
+msgctxt "Pattern description"
+msgid "Logos of partner organisations (only those with permission ticked)."
+msgstr "Logo của các tổ chức đối tác (chỉ những tổ chức đã được đánh dấu cho phép)."
+
+msgctxt "Pattern title"
+msgid "Blog: local destination guide"
+msgstr "Blog: hướng dẫn điểm đến địa phương"
+
+msgctxt "Pattern description"
+msgid "Outline for posts like \"Wheelchair taxi to [hospital]: what to expect\"."
+msgstr "Dàn ý cho các bài viết như \"Taxi xe lăn đến [bệnh viện]: những điều cần biết\"."
+
+msgid "Book a wheelchair taxi"
+msgstr "Đặt taxi cho xe lăn"
+
+msgctxt "Pattern title"
+msgid "Blog: travel tips list"
+msgstr "Blog: danh sách mẹo đi lại"
+
+msgctxt "Pattern description"
+msgid "Outline for step-by-step advice posts."
+msgstr "Dàn ý cho các bài viết hướng dẫn từng bước."
+
+msgctxt "Pattern title"
+msgid "Animated scene: airport drop-off and pickup"
+msgstr "Cảnh hoạt hình: đưa đón sân bay"
+
+msgctxt "Pattern description"
+msgid "Drop-off at Departures, pickup at Arrivals, and a plane taking off. Follows your colours, and visitors can pause it."
+msgstr "Trả khách ở khu Khởi hành, đón khách ở khu Đến, và một chiếc máy bay cất cánh. Theo màu sắc của bạn, và khách truy cập có thể tạm dừng."
+
+msgctxt "Pattern title"
+msgid "Animated scene: door-to-door wheelchair pickup"
+msgstr "Cảnh hoạt hình: đón khách xe lăn tận nhà"
+
+msgctxt "Pattern description"
+msgid "A maxi taxi pulls up, lowers its ramp and a passenger rolls aboard. Follows your colours, and visitors can pause it."
+msgstr "Một chiếc maxi taxi dừng lại, hạ dốc xuống và một hành khách lăn xe lên. Theo màu sắc của bạn, và khách truy cập có thể tạm dừng."
+
+msgctxt "Pattern title"
+msgid "Animated strip: taxis driving by"
+msgstr "Dải hoạt hình: taxi chạy ngang qua"
+
+msgctxt "Pattern description"
+msgid "A narrow road with a maxi taxi and taxis driving past. Follows your colours, and visitors can pause it."
+msgstr "Một con đường hẹp có maxi taxi và các taxi chạy ngang qua. Theo màu sắc của bạn, và khách truy cập có thể tạm dừng."
+
+msgctxt "Pattern title"
+msgid "Services grid"
+msgstr "Lưới dịch vụ"
+
+msgctxt "Pattern description"
+msgid "Cards for every published Service (updates automatically)."
+msgstr "Thẻ cho mỗi Dịch vụ đã đăng (tự động cập nhật)."
+
+msgctxt "Pattern title"
+msgid "Live trust numbers"
+msgstr "Số liệu uy tín trực tiếp"
+
+msgctxt "Pattern description"
+msgid "Trips completed, suburbs served and years in business — updates itself from your bookings."
+msgstr "Số chuyến đã hoàn tất, số khu vực đã phục vụ và số năm hoạt động — tự cập nhật từ các lịch đặt xe của bạn."
+
+msgctxt "Pattern title"
+msgid "How it works (steps)"
+msgstr "Cách thức hoạt động (các bước)"
+
+msgctxt "Pattern description"
+msgid "Numbered steps explaining how booking works."
+msgstr "Các bước được đánh số giải thích cách đặt xe."
+
+msgid "By phone, SMS or email."
+msgstr "Qua điện thoại, SMS hoặc email."
+
+msgid "Your driver helps you in and out."
+msgstr "Tài xế giúp bạn lên và xuống xe."
+
+msgctxt "Pattern title"
+msgid "Do you cover my suburb? checker"
+msgstr "Kiểm tra \"Chúng tôi có phục vụ khu vực của bạn không?\""
+
+msgctxt "Pattern description"
+msgid "Instant answer for visitors checking if you cover their suburb or postcode."
+msgstr "Trả lời ngay cho khách truy cập muốn biết bạn có phục vụ khu vực hoặc mã bưu điện của họ không."
+
+msgctxt "Pattern title"
+msgid "Testimonials"
+msgstr "Lời chứng thực"
+
+msgctxt "Pattern description"
+msgid "Your published testimonials and Google rating."
+msgstr "Các lời chứng thực đã đăng và điểm đánh giá Google của bạn."
+
+msgctxt "Pattern title"
+msgid "Our values (4 columns)"
+msgstr "Giá trị của chúng tôi (4 cột)"
+
+msgctxt "Pattern description"
+msgid "Four short value statements."
+msgstr "Bốn câu ngắn nêu giá trị."
+
+msgctxt "Pattern title"
+msgid "Wheelchair safety video"
+msgstr "Video an toàn xe lăn"
+
+msgctxt "Pattern description"
+msgid "Captioned video with transcript — set it up in Customize → Taxi Peninsula → Wheelchair safety video."
+msgstr "Video có phụ đề kèm bản ghi lời — cài đặt trong Tùy chỉnh → Taxi Peninsula → Video an toàn xe lăn."
+
+msgid "Search for:"
+msgstr "Tìm:"
+
+msgid "Search articles…"
+msgstr "Tìm bài viết…"
+
+msgid "Sidebar"
+msgstr "Thanh bên"
+
+msgid "Book online in two minutes or call our team."
+msgstr "Đặt xe trực tuyến trong hai phút hoặc gọi cho đội ngũ của chúng tôi."
+
+msgid "Categories"
+msgstr "Chuyên mục"
+
+#. translators: 1: suburb, 2: site name
+msgid "Need an accessible ride in %1$s? %2$s provides wheelchair accessible taxis with ramps or hoists, wheelchair restraints and drivers trained to help you in and out safely."
+msgstr "Bạn cần xe đi lại thuận tiện cho xe lăn tại %1$s? %2$s cung cấp taxi cho xe lăn có dốc lên xuống hoặc thang nâng, dây cố định xe lăn và tài xế được đào tạo để giúp bạn lên xuống xe an toàn."
+
+#. translators: %s: suburb
+msgid "We pick up from homes, hospitals, aged-care residences and day programs in %s and take you anywhere across Melbourne and the Mornington Peninsula — including Melbourne and Avalon airports."
+msgstr "Chúng tôi đón khách tại nhà, bệnh viện, nhà dưỡng lão và chương trình ban ngày ở %s và đưa bạn đi bất cứ đâu khắp Melbourne và bán đảo Mornington — kể cả sân bay Melbourne và Avalon."
+
+#. translators: %s: suburb
+msgid "Places we often travel to around %s"
+msgstr "Những nơi chúng tôi thường đến quanh %s"
+
+#. translators: %s: suburb
+msgid "Getting around %s"
+msgstr "Đi lại quanh %s"
+
+#. translators: %s: suburb
+msgid "Popular trips from %s"
+msgstr "Các chuyến đi phổ biến từ %s"
+
+#. translators: %s: suburb
+msgid "Guides for %s"
+msgstr "Hướng dẫn cho %s"
+
+#. translators: %s: suburb
+msgid "Questions about travelling in %s"
+msgstr "Câu hỏi về việc đi lại ở %s"
+
+msgid "Nearby areas"
+msgstr "Khu vực lân cận"
+
+msgid "Other areas we cover"
+msgstr "Các khu vực khác chúng tôi phục vụ"
+
+msgid "Book this trip"
+msgstr "Đặt chuyến này"
+
+msgid "More services"
+msgstr "Thêm dịch vụ"
+
+msgid "Ready to book?"
+msgstr "Sẵn sàng đặt xe?"
+
+msgid "Other services"
+msgstr "Dịch vụ khác"
+
+msgid "Pages:"
+msgstr "Trang:"
+
+msgid "Booking steps"
+msgstr "Các bước đặt xe"
+
+msgid "Your trip"
+msgstr "Chuyến đi của bạn"
+
+msgid "Street address, suburb"
+msgstr "Địa chỉ nhà, khu vực"
+
+msgid "e.g. Frankston Hospital, Melbourne Airport"
+msgstr "ví dụ: Frankston Hospital, Melbourne Airport"
+
+msgid "Estimate only, based on the usual driving route. The final fare depends on traffic, waiting time and route, and any MPTP subsidy is applied by the driver."
+msgstr "Chỉ là ước tính, dựa trên tuyến đường thường đi. Giá cước cuối cùng tùy vào tình hình giao thông, thời gian chờ và tuyến đường; khoản trợ giá MPTP (nếu có) sẽ do tài xế áp dụng."
+
+msgid "I need a return trip"
+msgstr "Tôi cần chuyến về"
+
+msgid "Return pick-up time (if known)"
+msgstr "Giờ đón chuyến về (nếu biết)"
+
+msgid "This is a regular trip (e.g. dialysis, therapy, day program)"
+msgstr "Đây là chuyến đi định kỳ (ví dụ: lọc thận, trị liệu, chương trình ban ngày)"
+
+msgid "Repeat every"
+msgstr "Lặp lại vào mỗi"
+
+msgid "Until"
+msgstr "Đến ngày"
+
+#. translators: %d: weeks
+msgid "Same times each day, for up to %d weeks. Each trip gets its own reference so it can be changed separately."
+msgstr "Cùng giờ mỗi ngày, tối đa %d tuần. Mỗi chuyến có mã đặt xe riêng để có thể thay đổi riêng từng chuyến."
+
+msgid "Accessibility needs"
+msgstr "Nhu cầu hỗ trợ đi lại"
+
+msgid "I am a Multi Purpose Taxi Program (MPTP) member"
+msgstr "Tôi là thành viên Chương trình Taxi Đa Mục đích của bang Victoria (MPTP)"
+
+msgid "Anything we should know?"
+msgstr "Chúng tôi cần biết thêm điều gì không?"
+
+msgid "e.g. wheelchair dimensions, carer travelling, assistance to the door, flight number"
+msgstr "ví dụ: kích thước xe lăn, có người chăm sóc đi cùng, cần giúp đến tận cửa, số hiệu chuyến bay"
+
+msgid "How will you pay?"
+msgstr "Bạn sẽ thanh toán bằng cách nào?"
+
+msgid "Plan manager, provider or company"
+msgstr "Người quản lý chương trình, nhà cung cấp dịch vụ hoặc công ty"
+
+msgid "NDIS number or purchase order (optional)"
+msgstr "Số NDIS hoặc số đơn đặt hàng (không bắt buộc)"
+
+msgid "After you submit, you will be taken to Stripe’s secure checkout to pay the deposit. The rest of the fare is paid at the end of the trip."
+msgstr "Sau khi gửi, bạn sẽ được chuyển đến trang thanh toán an toàn của Stripe để trả tiền cọc. Phần còn lại của giá cước được trả khi kết thúc chuyến đi."
+
+msgid "Your details"
+msgstr "Thông tin của bạn"
+
+msgid "I agree to be contacted by phone, SMS or email about this booking, and for you to use the mobility and health details I give to arrange the trip."
+msgstr "Tôi đồng ý để được liên lạc qua điện thoại, SMS hoặc email về lịch đặt xe này, và đồng ý để quý công ty dùng thông tin về khả năng đi lại và sức khỏe mà tôi cung cấp để sắp xếp chuyến đi."
+
+#. translators: %s: link to the terms page
+msgid "I have read and accept the %s."
+msgstr "Tôi đã đọc và chấp nhận %s."
+
+msgid "terms and cancellation policy"
+msgstr "điều khoản và chính sách hủy chuyến"
+
+msgid "Request booking"
+msgstr "Gửi yêu cầu đặt xe"
+
+#. translators: %s: phone link
+msgid "Travelling in the next hour? Call %s"
+msgstr "Bạn cần đi trong vòng một giờ tới? Xin gọi %s"
+
+msgid "Find your booking"
+msgstr "Tìm lịch đặt xe của bạn"
+
+msgid "Enter the reference from your confirmation (it starts with TP-) and the mobile number you booked with."
+msgstr "Nhập mã đặt xe trong thư xác nhận (bắt đầu bằng TP-) và số di động bạn đã dùng khi đặt xe."
+
+msgid "Show my booking"
+msgstr "Xem lịch đặt xe của tôi"
+
+#. translators: %s: phone link
+msgid "Lost your reference? Call %s."
+msgstr "Mất mã đặt xe? Xin gọi %s."
+
+msgid "Online deposit"
+msgstr "Đặt cọc trực tuyến"
+
+msgid "Thanks — we have received your request."
+msgstr "Xin cảm ơn — chúng tôi đã nhận được yêu cầu của bạn."
+
+msgid "Our team will contact you to confirm."
+msgstr "Đội ngũ của chúng tôi sẽ liên lạc với bạn để xác nhận."
+
+msgid "Payment complete — thank you."
+msgstr "Đã thanh toán xong — xin cảm ơn."
+
+msgid "It can take a minute for the payment to show below."
+msgstr "Có thể mất khoảng một phút để khoản thanh toán hiện ở bên dưới."
+
+msgid "The payment was not completed. You can try again below or pay the driver."
+msgstr "Thanh toán chưa hoàn tất. Bạn có thể thử lại bên dưới hoặc trả tiền cho tài xế."
+
+msgid "This booking has been cancelled."
+msgstr "Lịch đặt xe này đã bị hủy."
+
+msgid "Our driver arrived but could not find you, so this trip was marked as a no-show. Please call us if this is a mistake."
+msgstr "Tài xế của chúng tôi đã đến nhưng không tìm thấy bạn, nên chuyến đi này được ghi là khách không có mặt. Xin gọi cho chúng tôi nếu đây là nhầm lẫn."
+
+msgid "Your driver is on the way."
+msgstr "Tài xế của bạn đang trên đường đến."
+
+msgid "Your driver has arrived."
+msgstr "Tài xế của bạn đã đến nơi."
+
+msgid "Booking progress"
+msgstr "Tiến trình đặt xe"
+
+msgid "Time to be arranged"
+msgstr "Giờ sẽ được sắp xếp sau"
+
+#. translators: 1: passengers, 2: wheelchairs
+msgid "%1$d passenger(s), %2$d wheelchair(s)"
+msgstr "%1$d hành khách, %2$d xe lăn"
+
+msgid "estimate only"
+msgstr "chỉ là ước tính"
+
+msgid "Your notes"
+msgstr "Ghi chú của bạn"
+
+#. translators: %s: amount
+msgid "Pay %s deposit securely"
+msgstr "Trả tiền cọc %s an toàn"
+
+#. translators: %d: number of trips
+msgid "This is part of a repeat booking (%d trips)"
+msgstr "Đây là một phần của lịch đặt xe lặp lại (%d chuyến)"
+
+#. translators: %s: request type
+msgid "Your %s is with our team. We will contact you shortly."
+msgstr "Đội ngũ của chúng tôi đã nhận %s của bạn. Chúng tôi sẽ sớm liên lạc với bạn."
+
+msgid "Change or cancel this booking"
+msgstr "Thay đổi hoặc hủy lịch đặt xe này"
+
+msgid "What would you like to do?"
+msgstr "Bạn muốn làm gì?"
+
+msgid "Change the time, address or details"
+msgstr "Thay đổi giờ, địa chỉ hoặc thông tin"
+
+msgid "Cancel this trip"
+msgstr "Hủy chuyến này"
+
+msgid "Cancel all remaining trips in this repeat booking"
+msgstr "Hủy tất cả các chuyến còn lại trong lịch đặt xe lặp lại này"
+
+msgid "e.g. Please change the pick-up to 10:15am"
+msgstr "ví dụ: Xin đổi giờ đón sang 10:15 sáng"
+
+msgid "Requests are handled by our team. For changes within the next two hours, please call us."
+msgstr "Các yêu cầu do đội ngũ của chúng tôi xử lý. Nếu cần thay đổi trong vòng hai giờ tới, xin gọi cho chúng tôi."
+
+#. translators: %s: phone link
+msgid "Questions about your trip? Call %s."
+msgstr "Có thắc mắc về chuyến đi? Xin gọi %s."
+
+msgid "Thanks — your booking request is in!"
+msgstr "Xin cảm ơn — yêu cầu đặt xe của bạn đã được gửi!"
+
+msgid "Your reference"
+msgstr "Mã đặt xe của bạn"
+
+#. translators: %d: number of trips
+msgid "%d trip has been requested."
+msgid_plural "%d trips have been requested."
+msgstr[0] "Đã yêu cầu %d chuyến đi."
+
+msgid "Each trip has its own reference, listed in your confirmation email."
+msgstr "Mỗi chuyến đi có mã đặt xe riêng, được liệt kê trong email xác nhận của bạn."
+
+msgid "We saved your booking but could not open the online payment page. You can pay the driver instead, or try again from your booking page."
+msgstr "Chúng tôi đã lưu lịch đặt xe của bạn nhưng không mở được trang thanh toán trực tuyến. Bạn có thể trả tiền cho tài xế, hoặc thử lại từ trang lịch đặt xe của bạn."
+
+msgid "We confirm your booking"
+msgstr "Chúng tôi xác nhận lịch đặt xe"
+
+msgid "By SMS or email — usually within the hour during opening times."
+msgstr "Qua SMS hoặc email — thường trong vòng một giờ trong giờ mở cửa."
+
+msgid "Your driver is assigned"
+msgstr "Tài xế được phân công"
+
+msgid "We text you their first name and the vehicle."
+msgstr "Chúng tôi nhắn tin cho bạn tên gọi của tài xế và thông tin xe."
+
+msgid "On the day"
+msgstr "Vào ngày đi"
+
+msgid "You get a text when your driver is on the way and when they arrive."
+msgstr "Bạn sẽ nhận tin nhắn khi tài xế đang trên đường đến và khi tài xế đã đến."
+
+msgid "View booking"
+msgstr "Xem lịch đặt xe"
+
+msgid "Book the return trip"
+msgstr "Đặt chuyến về"
+
+msgid "Make another booking"
+msgstr "Đặt thêm chuyến khác"
+
+msgid "See all your trips in My Account"
+msgstr "Xem tất cả chuyến đi trong Tài khoản của tôi"
+
+#. translators: %s: link
+msgid "Book often? %s to see every trip in one place and rebook in one tap."
+msgstr "Hay đặt xe? %s để xem mọi chuyến đi ở cùng một nơi và đặt lại chỉ với một lần chạm."
+
+msgid "Create a free account"
+msgstr "Tạo tài khoản miễn phí"
+
+#. translators: %s: phone link
+msgid "Need to change something? Call %s and quote your reference."
+msgstr "Bạn cần thay đổi gì không? Xin gọi %s và cho biết mã đặt xe của bạn."
+
+msgid "Nothing here yet"
+msgstr "Chưa có gì ở đây"
+
+msgid "No results matched your search. Try different words."
+msgstr "Không có kết quả phù hợp. Hãy thử từ khác."
+
+msgid "Check back soon for news and travel tips."
+msgstr "Hãy quay lại sớm để xem tin tức và mẹo đi lại."
+
+#. translators: %s: place
+msgid "a trip to %s"
+msgstr "chuyến đi đến %s"
+
+msgid "Guide"
+msgstr "Hướng dẫn"
+
+#. translators: %s: place
+msgid "to travelling to %s"
+msgstr "đi lại đến %s"
+
+msgid "Rear-entry ramps or hoists and four-point restraints, so you can stay in your own chair."
+msgstr "Dốc lên xuống hoặc thang nâng ở cửa sau và dây cố định bốn điểm, để bạn có thể ngồi nguyên trên xe lăn của mình."
+
+msgid "Trained, accredited drivers"
+msgstr "Tài xế được đào tạo, có giấy phép"
+
+msgid "Our drivers are experienced in loading, securing and assisting passengers with a disability."
+msgstr "Tài xế của chúng tôi có kinh nghiệm đưa xe lăn lên xe, cố định xe lăn và hỗ trợ hành khách khuyết tật."
+
+msgid "Punctual, 24/7"
+msgstr "Đúng giờ, 24/7"
+
+msgid "Book ahead for appointments and flights, or call us for a same-day pick-up."
+msgstr "Đặt trước cho các cuộc hẹn và chuyến bay, hoặc gọi cho chúng tôi để được đón trong ngày."
+
+msgid "Carers welcome"
+msgstr "Chào đón người chăm sóc"
+
+msgid "Family members and support workers can travel with you at no extra hassle."
+msgstr "Người nhà và nhân viên hỗ trợ có thể đi cùng bạn mà không phiền phức gì thêm."
+
+msgid "Prefer to talk to someone?"
+msgstr "Bạn muốn nói chuyện trực tiếp?"
+
+msgid "See all FAQs"
+msgstr "Xem tất cả câu hỏi thường gặp"
+
+msgid "Pickups from your door"
+msgstr "Đón tận cửa nhà bạn"
+
+msgid "Our maxi taxis back up close, lower the ramp and help you aboard. You stay in your own chair, secured with four-point restraints."
+msgstr "Maxi taxi của chúng tôi lùi sát vào, hạ dốc xuống và giúp bạn lên xe. Bạn ngồi nguyên trên xe lăn của mình, được cố định bằng dây bốn điểm."
+
+msgid "Book a pickup"
+msgstr "Đặt xe đón"
+
+msgid "Airport drop-offs & pickups"
+msgstr "Đưa đón sân bay"
+
+msgid "Straight to Departures, and waiting at Arrivals when you land — with room for luggage and mobility equipment."
+msgstr "Đưa thẳng đến khu Khởi hành, và chờ sẵn ở khu Đến khi bạn hạ cánh — có chỗ cho hành lý và dụng cụ hỗ trợ di chuyển."
+
+msgid "Book an airport transfer"
+msgstr "Đặt xe đưa đón sân bay"
+
+msgid "All articles"
+msgstr "Tất cả bài viết"
+
+msgid "Start a booking"
+msgstr "Bắt đầu đặt xe"
+
+msgid "Where to?"
+msgstr "Bạn đi đâu?"
+
+msgid "Continue"
+msgstr "Tiếp tục"
+
+msgid "Suburbs in this article"
+msgstr "Các khu vực trong bài viết này"
+
+msgid "Travelling in this area?"
+msgstr "Bạn đi lại trong khu vực này?"
+
+msgid "Keep reading"
+msgstr "Đọc tiếp"
+
+msgid "About our service in numbers"
+msgstr "Dịch vụ của chúng tôi qua những con số"
+
+msgid "Send your request"
+msgstr "Gửi yêu cầu của bạn"
+
+msgid "Takes about two minutes."
+msgstr "Chỉ mất khoảng hai phút."
+
+msgid "We confirm"
+msgstr "Chúng tôi xác nhận"
+
+msgid "Ride in comfort"
+msgstr "Đi xe thoải mái"
+
+#. translators: 1: rating, 2: count
+msgid "Rated %1$s out of 5 from %2$d Google review"
+msgid_plural "Rated %1$s out of 5 from %2$d Google reviews"
+msgstr[0] "Được đánh giá %1$s trên 5 từ %2$d đánh giá Google"
+
+#. translators: %s: rating
+msgid "Rated %s out of 5 on Google"
+msgstr "Được đánh giá %s trên 5 trên Google"
+
+#. translators: %d: stars
+msgid "%d out of 5 stars"
+msgstr "%d trên 5 sao"
+
+msgid "View on Google"
+msgstr "Xem trên Google"
+
+msgid "Reviews from Google, shown as written by reviewers."
+msgstr "Đánh giá từ Google, hiển thị đúng như người đánh giá đã viết."
+
+msgid "Read or leave a review on Google"
+msgstr "Đọc hoặc viết đánh giá trên Google"
+
+msgid "Your trip so far"
+msgstr "Chuyến đi của bạn đến lúc này"
+
+msgid "Travelling"
+msgstr "Đang đi"
+
+msgid "Estimate"
+msgstr "Ước tính"
+
+msgid "Return"
+msgstr "Chuyến về"
+
+msgid "See exactly how our drivers load, secure and unload a wheelchair — so you know what to expect before your first trip."
+msgstr "Xem chính xác cách tài xế của chúng tôi đưa xe lăn lên, cố định và đưa xe lăn xuống — để bạn biết trước điều gì sẽ diễn ra trước chuyến đi đầu tiên."
+
+msgid "Read the transcript"
+msgstr "Đọc bản ghi lời"
+
+#. translators: %s: video title
+msgid "Play video: %s (with captions)"
+msgstr "Phát video: %s (có phụ đề)"
+
+msgid "Plays from YouTube (privacy-enhanced mode)."
+msgstr "Phát từ YouTube (chế độ tăng cường quyền riêng tư)."
+
+msgid "Plays from Vimeo."
+msgstr "Phát từ Vimeo."
+
+#. Built-in page title
+msgid "FAQ"
+msgstr "Câu hỏi thường gặp"
+
+#. Built-in page title
+msgid "Book a Taxi"
+msgstr "Đặt taxi"
+
+#. Built-in page title
+msgid "Manage My Booking"
+msgstr "Quản lý đặt xe"
+
+#. Built-in page title
+msgid "My Account"
+msgstr "Tài khoản của tôi"
+
+#. Built-in page title
+msgid "Contact Us"
+msgstr "Liên hệ"
+
+#. Built-in page title
+msgid "Our Fleet"
+msgstr "Đội xe của chúng tôi"
+
+#. Built-in page title
+msgid "Driver Jobs"
+msgstr "Chuyến của tài xế"
+
+#. Built-in page title
+msgid "Our Services"
+msgstr "Dịch vụ của chúng tôi"
+
+#. Built-in page title
+msgid "About Us"
+msgstr "Về chúng tôi"
+
+#. Built-in page title
+msgid "NDIS & Aged Care"
+msgstr "NDIS & Chăm sóc người cao tuổi"
+
+#. Built-in page title
+msgid "Privacy Policy"
+msgstr "Chính sách quyền riêng tư"
+
+#. Built-in page title
+msgid "Accessibility Statement"
+msgstr "Tuyên bố về khả năng tiếp cận"
+
+#. Built-in page title
+msgid "Terms & Cancellation Policy"
+msgstr "Điều khoản & Chính sách hủy"
+
+#. Built-in page title
+msgid "Complaints & Feedback"
+msgstr "Khiếu nại & Góp ý"
+
+#. Built-in page title
+msgid "Drive With Us"
+msgstr "Lái xe cùng chúng tôi"

@@ -78,7 +78,7 @@ function tp_rest_places( WP_REST_Request $req ) {
 	$body = array(
 		'input'               => $q,
 		'includedRegionCodes' => array( 'au' ),
-		'languageCode'        => 'en-AU',
+		'languageCode'        => function_exists( 'tp_lang' ) && 'en' !== tp_lang() ? tp_languages()[ tp_lang() ][4] : 'en-AU',
 		// Bias towards Melbourne & the Mornington Peninsula (max radius 50 km).
 		'locationBias'        => array(
 			'circle' => array(

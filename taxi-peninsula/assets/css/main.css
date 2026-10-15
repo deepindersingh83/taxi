@@ -1421,3 +1421,103 @@ html[data-contrast="high"] .bottom-nav { border-top: 3px solid #000; }
 .next-trip__driver .driver-card__initial { display: grid; place-items: center; font-size: 2.5rem; font-weight: 700; color: var(--c-on-accent); background: var(--c-accent); border-radius: 50%; }
 @media (max-width: 48em) { .driver-dock__btn { display: flex !important; align-items: center; justify-content: center; gap: .3em; white-space: nowrap; } }
 .next-trip__ref { font-size: var(--step--1); color: rgb(255 255 255 / .8); font-weight: 700; letter-spacing: .03em; }
+
+/* =========================================================================
+ * v1.9 — privacy, review invitations, languages
+ * ====================================================================== */
+.btn--danger { background: var(--c-error); color: #fff; border-color: var(--c-error); }
+.btn--danger:hover { background: #8f1d14; border-color: #8f1d14; color: #fff; }
+.choice { display: flex; gap: .6rem; align-items: center; margin: .35rem 0; font-weight: 600; cursor: pointer; }
+.choice input { width: 1.25rem; height: 1.25rem; flex: none; accent-color: var(--c-primary); }
+.account-privacy { margin-top: var(--space-l); }
+.account-privacy__export { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; margin: var(--space-s) 0 var(--space-m); }
+.account-privacy__export .field__hint { margin: 0; }
+.account-privacy__delete { border-top: 1px solid var(--c-border); padding-top: var(--space-s); }
+.account-privacy__delete summary { cursor: pointer; font-weight: 700; color: var(--c-error); }
+.account-privacy__delete[open] summary { margin-bottom: var(--space-s); }
+.privacy-request { margin-top: var(--space-xl); }
+.privacy-request__title { font-size: var(--fs-h3, 1.4rem); margin-top: 0; }
+.tp-privacy-policy__updated { color: var(--c-muted); font-size: .95em; }
+.tp-privacy-policy h2 { margin-top: var(--space-l); }
+.tp-privacy-policy__contact { list-style: none; padding: 0; }
+.tp-privacy-policy__contact li { margin: .3rem 0; }
+.btn--sm { padding: .5rem 1rem; font-size: .95rem; min-height: 2.5rem; }
+.review-invite { display: flex; gap: var(--space-s); align-items: flex-start; margin-top: var(--space-s); padding: var(--space-s) var(--space-m); border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); background: var(--c-warm-bg, var(--c-bg-alt)); }
+.review-invite__icon { flex: none; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgb(0 0 0 / .12); }
+.review-invite__title { margin: 0; font-weight: 700; color: var(--c-heading); }
+.review-invite__text { margin: .25rem 0 .6rem; }
+
+/* Language menu */
+.lang-switch { position: relative; margin-inline-start: auto; }
+.lang-switch__button {
+	display: inline-flex; align-items: center; gap: .4em; min-height: 3rem; padding: 0 .9rem; list-style: none; cursor: pointer;
+	font-weight: 700; color: var(--c-heading); background: var(--c-bg-alt); border: 2px solid var(--c-border); border-radius: var(--btn-radius);
+}
+.lang-switch__button::-webkit-details-marker { display: none; }
+.lang-switch__button .icon { width: 1.25rem; height: 1.25rem; }
+.lang-switch__code { display: none; }
+.lang-switch[open] .lang-switch__button, .lang-switch__button:hover { border-color: var(--c-outline); }
+.lang-switch__menu {
+	position: absolute; z-index: 60; inset-inline-end: 0; top: calc(100% + .4rem); min-width: 15rem; margin: 0; padding: .4rem; list-style: none;
+	background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.lang-switch__menu a { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem .8rem; border-radius: calc(var(--radius) - .2rem); color: var(--c-text); text-decoration: none; font-weight: 700; }
+.lang-switch__menu a:hover, .lang-switch__menu a:focus-visible { background: var(--c-bg-alt); }
+.lang-switch__menu a[aria-current] { background: var(--c-bg-alt); box-shadow: inset 4px 0 0 var(--c-accent); }
+.lang-switch__en { color: var(--c-muted); font-weight: 400; font-size: .9em; }
+@media (max-width: 30em) {
+	.lang-switch__current { display: none; }
+	.lang-switch__code { display: inline; }
+	.lang-switch__button { padding: 0 .7rem; }
+}
+@media (min-width: 80.01em) {
+	.lang-switch { order: 3; margin-inline-start: 0; }
+	.primary-nav { order: 2; }
+}
+
+.site-footer__langs { display: grid; gap: var(--space-s); margin-top: var(--space-xl); padding-top: var(--space-l); border-top: 1px solid color-mix(in srgb, var(--c-footer-text) 20%, transparent); }
+.lang-links ul { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin: 0; padding: 0; list-style: none; }
+.lang-links a { color: var(--c-footer-link); font-weight: 700; }
+.lang-links a[aria-current] { text-decoration-thickness: 3px; text-decoration-color: var(--c-accent); }
+.interpreter-note { display: flex; gap: .6rem; align-items: flex-start; margin: 0; }
+.interpreter-note .icon { flex: none; width: 1.2rem; height: 1.2rem; margin-top: .2rem; }
+.interpreter-note--footer { color: var(--c-footer-text); }
+.interpreter-note--footer a { color: var(--c-footer-link); }
+.lang-note { margin-bottom: var(--space-l); padding: var(--space-s) var(--space-m); background: var(--c-bg-alt); border-inline-start: 5px solid var(--c-accent); border-radius: var(--radius); }
+.lang-note p { margin: 0 0 .4rem; }
+.lang-note .interpreter-note { margin: 0; }
+
+.lang-suggest {
+	position: fixed; z-index: 90; inset-inline: var(--space-s); bottom: var(--space-s); max-width: 30rem; margin-inline: auto;
+	padding: var(--space-s) var(--space-m); background: var(--c-surface); color: var(--c-text); border: 2px solid var(--c-primary); border-radius: var(--radius-lg, 12px); box-shadow: var(--shadow);
+}
+.lang-suggest__q { margin: 0 0 .6rem; font-weight: 700; font-size: 1.1rem; }
+.lang-suggest__actions { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; }
+.tp-has-bottom-nav .lang-suggest { bottom: calc(var(--space-s) + 4.5rem); }
+
+/* Auslan */
+.auslan { margin-block: var(--space-l); }
+.auslan__title { margin-top: 0; }
+.auslan__video { margin-bottom: var(--space-s); }
+.auslan__ways { margin-bottom: 0; }
+
+/* Scripts the brand font does not cover: use the system's own fonts. */
+html:is([lang|="vi"], [lang|="zh"], [lang|="el"], [lang|="ar"]) { --font: system-ui, -apple-system, "Segoe UI", "Noto Sans", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Noto Sans Arabic", Tahoma, Roboto, Arial, sans-serif; }
+html[lang|="zh"] body, html[lang|="ar"] body { line-height: 1.75; }
+a[href^="tel:"] > span, .icon-list a[href^="tel:"] { unicode-bidi: isolate; }
+@media (max-width: 30em) {
+	.site-header__inner { gap: .5rem; }
+	.lang-switch__button { gap: .25em; padding: 0 .55rem; font-size: .9rem; }
+}
+@media (max-width: 30em) {
+	.site-header__inner { gap: .4rem; }
+	.lang-switch__code { display: none; }
+	.lang-switch__button { padding: 0 .65rem; }
+	.lang-switch__button .icon { width: 1.4rem; height: 1.4rem; }
+}
+@media (max-width: 80em) {
+	/* Brand gives way so the language and menu buttons stay on the same row. */
+	.site-header__inner { flex-wrap: nowrap; }
+	.brand { flex: 1 1 auto; min-width: 0; }
+	.brand__name, .brand__tag { overflow-wrap: anywhere; }
+}

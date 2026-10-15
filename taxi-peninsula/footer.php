@@ -58,6 +58,13 @@
 		<?php endif; ?>
 	</div>
 
+	<?php if ( count( tp_enabled_languages() ) > 1 || get_theme_mod( 'tp_tis_note', true ) ) : ?>
+		<div class="container site-footer__langs">
+			<?php tp_the_language_switcher( 'footer' ); ?>
+			<?php tp_the_interpreter_note( 'interpreter-note interpreter-note--footer' ); ?>
+		</div>
+	<?php endif; ?>
+
 	<?php if ( 'full' !== tp_design( 'topbar' ) ) : ?>
 		<div class="container site-footer__display">
 			<?php tp_the_display_options( 'a11y-tools--footer' ); ?>

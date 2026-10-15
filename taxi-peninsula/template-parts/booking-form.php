@@ -283,7 +283,13 @@ $today       = wp_date( 'Y-m-d' );
 
 		<div class="field field--wide field--check">
 			<input id="bf-consent" name="consent" type="checkbox" value="1" required <?php checked( $val( 'consent' ), '1' ); ?><?php $invalid( 'consent' ); ?>>
-			<label for="bf-consent"><?php esc_html_e( 'I agree to be contacted by phone, SMS or email about this booking.', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
+			<label for="bf-consent">
+				<?php esc_html_e( 'I agree to be contacted by phone, SMS or email about this booking, and for you to use the mobility and health details I give to arrange the trip.', 'taxi-peninsula' ); ?>
+				<?php if ( get_privacy_policy_url() ) : ?>
+					<a href="<?php echo esc_url( get_privacy_policy_url() ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Privacy policy', 'taxi-peninsula' ); ?><span class="screen-reader-text"> <?php esc_html_e( '(opens in a new tab)', 'taxi-peninsula' ); ?></span></a>
+				<?php endif; ?>
+				<span class="req" aria-hidden="true">*</span>
+			</label>
 			<?php $err( 'consent' ); ?>
 		</div>
 

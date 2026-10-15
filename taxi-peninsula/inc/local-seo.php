@@ -140,61 +140,7 @@ add_filter( 'wp_sitemaps_add_provider', static function ( $provider, $name ) {
  * Google review requests after a completed trip.
  * ---------------------------------------------------------------------- */
 
-add_action( 'tp_booking_status_changed', 'tp_maybe_request_review', 30, 3 );
-function tp_maybe_request_review( $post_id, $old, $status ) {
-	$url = tp_setting( 'google_reviews_url' );
-	if ( 'completed' !== $status || ! $url || ! tp_setting( 'review_request' ) ) {
-		return;
-	}
-	$b = tp_get_booking( $post_id );
-
-	// Only for recent trips, so bulk-completing old bookings doesn't send a flood.
-	$pickup = DateTimeImmutable::createFromFormat( 'Y-m-d H:i', $b['date'] . ' ' . ( $b['time'] ?: '00:00' ), wp_timezone() );
-	if ( ! $pickup || $pickup->getTimestamp() < time() - 2 * DAY_IN_SECONDS ) {
-		return;
-	}
-
-	// Once per customer (matched by phone number).
-	$asked = get_posts(
-		array(
-			'post_type'   => 'tp_booking',
-			'numberposts' => 1,
-			'fields'      => 'ids',
-			'meta_query'  => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
-				array( 'key' => '_tp_phone', 'value' => $b['phone'] ),
-				array( 'key' => '_tp_review_requested', 'compare' => 'EXISTS' ),
-			),
-		)
-	);
-	if ( $asked ) {
-		return;
-	}
-	update_post_meta( $post_id, '_tp_review_requested', current_time( 'mysql' ) );
-
-	$site = wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );
-	if ( is_email( $b['email'] ) ) {
-		/* translators: %s: passenger name */
-		$body  = sprintf( __( 'Hi %s,', 'taxi-peninsula' ), $b['name'] ) . "\n\n";
-		$body .= __( 'Thank you for travelling with us. If you have a minute, a short Google review helps other passengers and carers find an accessible taxi they can trust:', 'taxi-peninsula' ) . "\n\n" . $url . "\n\n";
-		/* translators: %s: phone */
-		$body .= sprintf( __( 'Something we could do better? Reply to this email or call %s — we read every message.', 'taxi-peninsula' ), tp_opt( 'phone_display' ) ) . "\n\n" . $site . "\n";
-		wp_mail(
-			$b['email'],
-			/* translators: %s: site name */
-			sprintf( __( 'How was your trip with %s?', 'taxi-peninsula' ), $site ),
-			$body,
-			tp_mail_headers( tp_opt( 'email' ) )
-		);
-	}
-	tp_booking_sms(
-		$post_id,
-		$b['phone'],
-		/* translators: 1: site, 2: review link */
-		sprintf( __( 'Thanks for travelling with %1$s! A quick Google review would mean a lot: %2$s', 'taxi-peninsula' ), $site, $url ),
-		__( 'customer (review request)', 'taxi-peninsula' )
-	);
-	tp_add_log( $post_id, array( 'note' => __( 'Google review requested', 'taxi-peninsula' ) ) );
-}
+// Review invitations are sent after the customer rates a trip: see inc/review-invite.php.
 
 /* -------------------------------------------------------------------------
  * Image alt text.

@@ -68,6 +68,18 @@
 <p class="tp-todo"><?php esc_html_e( '[CONFIRM: e.g. "Tested with keyboard only, NVDA and VoiceOver screen readers, and automated checks in [month year]."]', 'taxi-peninsula' ); ?></p>
 <!-- /wp:paragraph -->
 
+<!-- wp:shortcode -->
+[tp_auslan]
+<!-- /wp:shortcode -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading"><?php esc_html_e( 'Other languages', 'taxi-peninsula' ); ?></h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><?php esc_html_e( 'Choose Tiếng Việt, 简体中文, Ελληνικά, Italiano or العربية from the language menu at the top of every page. The booking form, your booking details, and our emails and texts about your trip will be in that language. For anything else, call TIS National on 131 450 for a free interpreter and ask them to call us.', 'taxi-peninsula' ); ?></p>
+<!-- /wp:paragraph -->
+
 <!-- wp:heading -->
 <h2 class="wp-block-heading"><?php esc_html_e( 'Feedback and help', 'taxi-peninsula' ); ?></h2>
 <!-- /wp:heading -->

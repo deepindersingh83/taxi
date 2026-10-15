@@ -507,6 +507,13 @@ function tp_render_log_box( WP_Post $post ) {
 	}
 	printf( '<li><strong>%s</strong><br><small>%s</small></li>', esc_html__( 'Received', 'taxi-peninsula' ), esc_html( get_the_date( 'j M Y g:i a', $post ) ) );
 	echo '</ul>';
+	if ( current_user_can( 'tp_view_activity' ) ) {
+		printf(
+			'<p><a href="%s">%s</a></p>',
+			esc_url( admin_url( 'edit.php?post_type=tp_booking&page=tp-activity&b=' . $post->ID ) ),
+			esc_html__( 'Full activity, with every edited field →', 'taxi-peninsula' )
+		);
+	}
 }
 
 add_action( 'save_post_tp_booking', 'tp_save_booking_admin', 10, 2 );

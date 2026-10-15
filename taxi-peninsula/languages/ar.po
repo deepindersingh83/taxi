@@ -1,0 +1,3465 @@
+# Arabic translation of the Taxi Peninsula theme.
+# Review by a native speaker is recommended before going live.
+msgid ""
+msgstr ""
+"Project-Id-Version: Taxi Peninsula 1.9.0\n"
+"PO-Revision-Date: 2026-10-15 00:11+0000\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"X-Domain: taxi-peninsula\n"
+
+#. Theme Name of the theme Author of the theme
+msgid "Taxi Peninsula"
+msgstr "Taxi Peninsula"
+
+#. Theme URI of the theme
+msgid "https://taxipeninsula.com.au"
+msgstr "https://taxipeninsula.com.au"
+
+#. Description of the theme
+msgid "Accessible wheelchair-taxi booking theme for Melbourne. Online bookings with repeat trips, account/invoice and Stripe deposits; customer booking lookup; wp-admin bookings manager with calendar, run sheet, reports, driver & vehicle assignment and CSV export; SMS (ClickSend/Twilio) and email notifications; driver job pages; FAQ, fleet, NDIS, service and suburb pages; SEO structured data; spam protection; page templates (About, Contact, Services, Blog, Policy, Full width, Canvas) and block patterns; Google address suggestions and fare estimates; cookie consent + GA4; breadcrumbs and local SEO; security hardening; fluid \"dynamic type\" with text-size and high-contrast controls."
+msgstr "قالب لحجز سيارات الأجرة المجهزة للكراسي المتحركة في ملبورن. حجوزات عبر الإنترنت مع رحلات متكررة، والدفع بالحساب أو الفاتورة، وعربون عبر Stripe؛ وإمكانية بحث العملاء عن حجوزاتهم؛ ومدير حجوزات في لوحة تحكم ووردبريس يتضمن تقويمًا وجدول تشغيل وتقارير وتعيين السائقين والمركبات وتصدير CSV؛ وإشعارات عبر SMS (ClickSend/Twilio) والبريد الإلكتروني؛ وصفحات مهام للسائقين؛ وصفحات للأسئلة الشائعة والأسطول وNDIS والخدمات والضواحي؛ وبيانات منظمة لتحسين محركات البحث؛ وحماية من الرسائل المزعجة؛ وقوالب صفحات (من نحن، اتصل بنا، الخدمات، المدونة، السياسة، عرض كامل، لوحة فارغة) وأنماط كتل؛ واقتراحات العناوين وتقدير الأجرة من Google؛ وموافقة على ملفات تعريف الارتباط مع GA4؛ ومسارات التنقل وتحسين البحث المحلي؛ وتعزيز الأمان؛ و«خط ديناميكي» مرن مع أدوات للتحكم في حجم النص والتباين العالي."
+
+msgid "Page not found"
+msgstr "الصفحة غير موجودة"
+
+msgid "Sorry, we could not find that page. Try a search, or head back home."
+msgstr "عذرًا، لم نتمكن من العثور على هذه الصفحة. جرّب البحث، أو عُد إلى الصفحة الرئيسية."
+
+msgid "Back to home"
+msgstr "العودة إلى الرئيسية"
+
+msgid "Book a taxi"
+msgstr "احجز سيارة أجرة"
+
+msgid "Areas we cover"
+msgstr "المناطق التي نخدمها"
+
+msgid "Wheelchair accessible taxis across Melbourne and the Mornington Peninsula. Not listed? Call us — we travel further on request."
+msgstr "سيارات أجرة مجهزة للكراسي المتحركة في جميع أنحاء ملبورن وشبه جزيرة مورنينغتون. منطقتك غير مذكورة؟ اتصل بنا — يمكننا السفر لمسافات أبعد عند الطلب."
+
+#. translators: %s: suburb translators: %s: area
+msgid "Wheelchair taxi %s"
+msgstr "سيارة أجرة للكراسي المتحركة في %s"
+
+msgid "Our services"
+msgstr "خدماتنا"
+
+msgid "Reliable wheelchair accessible transport for everyday trips and important appointments."
+msgstr "نقل موثوق ومجهز للكراسي المتحركة للرحلات اليومية والمواعيد المهمة."
+
+#. translators: %s: number of comments
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s تعليق"
+msgstr[1] "تعليق واحد"
+msgstr[2] "تعليقان"
+msgstr[3] "%s تعليقات"
+msgstr[4] "%s تعليقًا"
+msgstr[5] "%s تعليق"
+
+msgid "Wheelchair accessible taxis for Melbourne and the Mornington Peninsula."
+msgstr "سيارات أجرة مجهزة للكراسي المتحركة في ملبورن وشبه جزيرة مورنينغتون."
+
+msgid "Book a taxi online"
+msgstr "احجز سيارة أجرة عبر الإنترنت"
+
+msgid "Contact"
+msgstr "اتصل بنا"
+
+msgid "Links"
+msgstr "روابط"
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "Text us"
+msgstr "راسلنا نصيًا"
+
+msgid "Call now"
+msgstr "اتصل الآن"
+
+msgid "Back to top"
+msgstr "العودة إلى الأعلى"
+
+msgid "Book online"
+msgstr "احجز عبر الإنترنت"
+
+msgid "Ramp & hoist vehicles"
+msgstr "مركبات بمنحدر ورافعة"
+
+msgid "Wheelchair restraints fitted"
+msgstr "أحزمة تثبيت للكراسي المتحركة"
+
+msgid "Door-to-door assistance"
+msgstr "مساعدة من الباب إلى الباب"
+
+msgid "Accessible by design"
+msgstr "مصممة لسهولة الوصول"
+
+msgid "On-time pick-ups"
+msgstr "وصول في الموعد"
+
+msgid "Accredited drivers"
+msgstr "سائقون معتمدون"
+
+msgid "Patient, friendly help"
+msgstr "مساعدة ودودة وصبورة"
+
+msgid "Skip to content"
+msgstr "انتقل إلى المحتوى"
+
+msgid "My account"
+msgstr "حسابي"
+
+msgid "Sign in"
+msgstr "تسجيل الدخول"
+
+msgid "Manage my booking"
+msgstr "إدارة حجزي"
+
+msgid "Menu"
+msgstr "القائمة"
+
+msgid "Main"
+msgstr "الرئيسية"
+
+msgid "Book now"
+msgstr "احجز الآن"
+
+msgid "Full name"
+msgstr "الاسم الكامل"
+
+msgid "Mobile (for the driver to call)"
+msgstr "رقم الجوال (ليتصل بك السائق)"
+
+msgid "Mobility aid"
+msgstr "أداة التنقل المساعدة"
+
+msgid "Chair width (cm)"
+msgstr "عرض الكرسي (سم)"
+
+msgid "Chair length (cm)"
+msgstr "طول الكرسي (سم)"
+
+msgid "Chair + passenger weight (kg)"
+msgstr "وزن الكرسي مع الراكب (كغ)"
+
+msgid "NDIS number / reference"
+msgstr "رقم NDIS / المرجع"
+
+msgid "Needs and notes for the driver"
+msgstr "الاحتياجات والملاحظات للسائق"
+
+#. translators: 1: width, 2: length
+msgid "Chair %1$s × %2$s cm"
+msgstr "الكرسي %1$s × %2$s سم"
+
+#. translators: %s: weight
+msgid "about %s kg with passenger"
+msgstr "حوالي %s كغ مع الراكب"
+
+msgid "Which client is travelling?"
+msgstr "أي عميل سيسافر؟"
+
+msgid "Who is travelling?"
+msgstr "من سيسافر؟"
+
+#. translators: %s: booking reference
+msgid "Details copied from %s. Choose the date and check the times, then send."
+msgstr "تم نسخ التفاصيل من %s. اختر التاريخ وتحقق من الأوقات، ثم أرسل."
+
+msgid "Me"
+msgstr "أنا"
+
+msgid "— New client —"
+msgstr "— عميل جديد —"
+
+msgid "Choosing a client fills in their details and wheelchair notes."
+msgstr "عند اختيار عميل تُملأ بياناته وملاحظات الكرسي المتحرك تلقائيًا."
+
+msgid "Choosing a saved passenger fills in their details and wheelchair notes."
+msgstr "عند اختيار راكب محفوظ تُملأ بياناته وملاحظات الكرسي المتحرك تلقائيًا."
+
+msgid "Save this person as a client in my account"
+msgstr "احفظ هذا الشخص كعميل في حسابي"
+
+msgid "Save this passenger to my account"
+msgstr "احفظ هذا الراكب في حسابي"
+
+msgid "Remember these addresses"
+msgstr "تذكّر هذه العناوين"
+
+msgid "Use a saved address"
+msgstr "استخدم عنوانًا محفوظًا"
+
+msgid "Use a saved address…"
+msgstr "استخدم عنوانًا محفوظًا…"
+
+#. translators: 1: coordinator name, 2: organisation
+msgid "Booked by %1$s (%2$s)"
+msgstr "حجز بواسطة %1$s (%2$s)"
+
+msgid "Your account has been deleted. Thank you for travelling with us."
+msgstr "تم حذف حسابك. شكرًا لسفرك معنا."
+
+msgid "You are signed in as staff. Customer accounts are for passengers and coordinators."
+msgstr "لقد سجلت الدخول كموظف. حسابات العملاء مخصصة للركاب والمنسقين."
+
+msgid "Open the dispatch board"
+msgstr "افتح لوحة التوزيع"
+
+msgid "Go to my jobs"
+msgstr "انتقل إلى مهامي"
+
+msgid "My trips"
+msgstr "رحلاتي"
+
+msgid "Clients"
+msgstr "العملاء"
+
+msgid "Passengers"
+msgstr "الركاب"
+
+msgid "Saved addresses"
+msgstr "العناوين المحفوظة"
+
+msgid "My details"
+msgstr "بياناتي"
+
+#. translators: %s: first name
+msgid "Hello, %s"
+msgstr "مرحبًا، %s"
+
+msgid "Coordinator account"
+msgstr "حساب منسق"
+
+msgid "Book a trip"
+msgstr "احجز رحلة"
+
+msgid "Sign out"
+msgstr "تسجيل الخروج"
+
+msgid "Saved."
+msgstr "تم الحفظ."
+
+msgid "Removed."
+msgstr "تمت الإزالة."
+
+msgid "Address saved."
+msgstr "تم حفظ العنوان."
+
+msgid "Your details are updated."
+msgstr "تم تحديث بياناتك."
+
+msgid "Your password has been changed."
+msgstr "تم تغيير كلمة المرور."
+
+msgid "Booking added to your account."
+msgstr "تمت إضافة الحجز إلى حسابك."
+
+msgid "Thank you for rating your trip!"
+msgstr "شكرًا لتقييمك رحلتك!"
+
+msgid "Welcome! Your account is ready. Your next booking will appear here automatically."
+msgstr "أهلًا بك! حسابك جاهز. سيظهر حجزك القادم هنا تلقائيًا."
+
+msgid "Email address"
+msgstr "البريد الإلكتروني"
+
+msgid "Forgotten your password?"
+msgstr "هل نسيت كلمة المرور؟"
+
+msgid "Create an account"
+msgstr "إنشاء حساب"
+
+msgid "See all your trips and their status in one place"
+msgstr "شاهد جميع رحلاتك وحالتها في مكان واحد"
+
+msgid "Rebook a regular trip in one tap"
+msgstr "أعد حجز رحلة منتظمة بلمسة واحدة"
+
+msgid "Save passengers, wheelchair details and addresses"
+msgstr "احفظ الركاب وبيانات الكرسي المتحرك والعناوين"
+
+msgid "Download receipts and invoices"
+msgstr "نزّل الإيصالات والفواتير"
+
+msgid "I am booking for"
+msgstr "أنا أحجز لـ"
+
+msgid "Myself or a family member"
+msgstr "نفسي أو أحد أفراد عائلتي"
+
+msgid "Clients or residents (NDIS coordinator, aged care, hospital)"
+msgstr "عملاء أو مقيمين (منسق NDIS، رعاية المسنين، مستشفى)"
+
+msgid "Organisation name"
+msgstr "اسم المنظمة"
+
+msgid "Your full name"
+msgstr "اسمك الكامل"
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "Mobile"
+msgstr "الجوال"
+
+msgid "Choose a password"
+msgstr "اختر كلمة مرور"
+
+msgid "At least 10 characters."
+msgstr "10 أحرف على الأقل."
+
+msgid "Create account"
+msgstr "إنشاء حساب"
+
+msgid "Upcoming trips"
+msgstr "الرحلات القادمة"
+
+#. translators: %s: year
+msgid "Trips in %s"
+msgstr "رحلات عام %s"
+
+msgid "Saved clients"
+msgstr "العملاء المحفوظون"
+
+msgid "Saved passengers"
+msgstr "الركاب المحفوظون"
+
+msgid "Show trips for"
+msgstr "عرض رحلات"
+
+msgid "All clients"
+msgstr "كل العملاء"
+
+msgid "Show"
+msgstr "عرض"
+
+msgid "Later trips"
+msgstr "رحلات لاحقة"
+
+msgid "Nothing else booked yet."
+msgstr "لا توجد حجوزات أخرى بعد."
+
+msgid "No upcoming trips"
+msgstr "لا توجد رحلات قادمة"
+
+msgid "Where to next? Book online in about two minutes."
+msgstr "إلى أين وجهتك التالية؟ احجز عبر الإنترنت في دقيقتين تقريبًا."
+
+msgid "Past trips"
+msgstr "الرحلات السابقة"
+
+msgid "Your finished trips will appear here, with receipts."
+msgstr "ستظهر رحلاتك المنتهية هنا مع الإيصالات."
+
+msgid "Add a booking you made before you had an account"
+msgstr "أضف حجزًا قمت به قبل إنشاء حسابك"
+
+msgid "Booking reference"
+msgstr "رقم الحجز المرجعي"
+
+msgid "Phone number on the booking"
+msgstr "رقم الهاتف المسجل في الحجز"
+
+msgid "Add booking"
+msgstr "إضافة الحجز"
+
+msgid "Confirmed"
+msgstr "مؤكد"
+
+msgid "Driver assigned"
+msgstr "تم تعيين السائق"
+
+msgid "On the way"
+msgstr "في الطريق"
+
+msgid "Arrived"
+msgstr "وصل"
+
+msgid "Your next trip"
+msgstr "رحلتك القادمة"
+
+msgid "to"
+msgstr "إلى"
+
+msgid "Trip progress"
+msgstr "تقدّم الرحلة"
+
+msgid "View or change"
+msgstr "عرض أو تغيير"
+
+msgid "Add to calendar"
+msgstr "أضف إلى التقويم"
+
+msgid "Your driver"
+msgstr "سائقك"
+
+msgid "Driver"
+msgstr "السائق"
+
+msgid "To be assigned"
+msgstr "سيتم تعيينه"
+
+msgid "Details"
+msgstr "التفاصيل"
+
+msgid "Book again"
+msgstr "احجز مجددًا"
+
+msgid "Book the return"
+msgstr "احجز رحلة العودة"
+
+msgid "(opens in a new tab)"
+msgstr "(يفتح في علامة تبويب جديدة)"
+
+msgid "Save each client once — their details and wheelchair notes fill in automatically when you book for them."
+msgstr "احفظ كل عميل مرة واحدة — تُملأ بياناته وملاحظات الكرسي المتحرك تلقائيًا عند الحجز له."
+
+msgid "Save the people you book for, with their wheelchair details, so booking takes seconds."
+msgstr "احفظ الأشخاص الذين تحجز لهم مع بيانات الكرسي المتحرك، ليستغرق الحجز ثوانٍ فقط."
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "Remove"
+msgstr "إزالة"
+
+msgid "Edit details"
+msgstr "تعديل البيانات"
+
+msgid "Add a client"
+msgstr "إضافة عميل"
+
+msgid "Add a passenger"
+msgstr "إضافة راكب"
+
+msgid "e.g. needs help with the front door, carer travels on Tuesdays, hearing impaired — please text"
+msgstr "مثال: يحتاج مساعدة عند الباب الأمامي، يرافقه مقدّم الرعاية أيام الثلاثاء، ضعيف السمع — يرجى المراسلة نصيًا"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Addresses you use often — home, the hospital, a day program. Pick them from a list when you book."
+msgstr "العناوين التي تستخدمها كثيرًا — المنزل، المستشفى، برنامج نهاري. اخترها من قائمة عند الحجز."
+
+msgid "Add an address"
+msgstr "إضافة عنوان"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "e.g. Home, Dialysis"
+msgstr "مثال: المنزل، غسيل الكلى"
+
+msgid "Address"
+msgstr "العنوان"
+
+msgid "Save address"
+msgstr "حفظ العنوان"
+
+msgid "Contact details"
+msgstr "بيانات الاتصال"
+
+msgid "First name"
+msgstr "الاسم الأول"
+
+msgid "Last name"
+msgstr "اسم العائلة"
+
+msgid "Email (sign-in)"
+msgstr "البريد الإلكتروني (لتسجيل الدخول)"
+
+#. translators: %s: phone
+msgid "To change your email, call us on %s."
+msgstr "لتغيير بريدك الإلكتروني، اتصل بنا على %s."
+
+msgid "Organisation"
+msgstr "المنظمة"
+
+msgid "Send invoices to (name)"
+msgstr "أرسل الفواتير إلى (الاسم)"
+
+msgid "Invoice email"
+msgstr "البريد الإلكتروني للفواتير"
+
+msgid "Save details"
+msgstr "حفظ البيانات"
+
+msgid "Change password"
+msgstr "تغيير كلمة المرور"
+
+msgid "Current password"
+msgstr "كلمة المرور الحالية"
+
+msgid "New password (10+ characters)"
+msgstr "كلمة المرور الجديدة (10 أحرف أو أكثر)"
+
+msgid "Too many sign-ups from your connection. Please try again later or call us."
+msgstr "عدد كبير جدًا من التسجيلات من اتصالك. يرجى المحاولة لاحقًا أو الاتصال بنا."
+
+msgid "Please enter your name."
+msgstr "يرجى إدخال اسمك."
+
+msgid "Please enter a valid email address."
+msgstr "يرجى إدخال بريد إلكتروني صحيح."
+
+msgid "There is already an account with that email. Please sign in, or use “Forgotten your password?”."
+msgstr "يوجد حساب بهذا البريد الإلكتروني بالفعل. يرجى تسجيل الدخول، أو استخدام «هل نسيت كلمة المرور؟»."
+
+msgid "Please enter a valid mobile number."
+msgstr "يرجى إدخال رقم جوال صحيح."
+
+msgid "Please choose a password of at least 10 characters."
+msgstr "يرجى اختيار كلمة مرور من 10 أحرف على الأقل."
+
+msgid "Please enter your organisation’s name."
+msgstr "يرجى إدخال اسم منظمتك."
+
+#. translators: %s: organisation
+msgid "New coordinator account: %s"
+msgstr "حساب منسق جديد: %s"
+
+msgid "Please enter a name."
+msgstr "يرجى إدخال اسم."
+
+msgid "You have reached the limit of saved people. Please remove some first."
+msgstr "لقد بلغت الحد الأقصى للأشخاص المحفوظين. يرجى إزالة بعضهم أولًا."
+
+msgid "Please enter an address."
+msgstr "يرجى إدخال عنوان."
+
+msgid "Your current password was not right."
+msgstr "كلمة المرور الحالية غير صحيحة."
+
+msgid "Too many attempts. Please wait a few minutes."
+msgstr "محاولات كثيرة جدًا. يرجى الانتظار بضع دقائق."
+
+msgid "We could not find a booking with that reference and phone number."
+msgstr "لم نتمكن من العثور على حجز بهذا الرقم المرجعي ورقم الهاتف."
+
+#. translators: %d: stars
+msgid "You rated this trip %d star. Thank you!"
+msgid_plural "You rated this trip %d stars. Thank you!"
+msgstr[0] "قيّمت هذه الرحلة بـ %d نجمة. شكرًا لك!"
+msgstr[1] "قيّمت هذه الرحلة بنجمة واحدة. شكرًا لك!"
+msgstr[2] "قيّمت هذه الرحلة بنجمتين. شكرًا لك!"
+msgstr[3] "قيّمت هذه الرحلة بـ %d نجوم. شكرًا لك!"
+msgstr[4] "قيّمت هذه الرحلة بـ %d نجمة. شكرًا لك!"
+msgstr[5] "قيّمت هذه الرحلة بـ %d نجمة. شكرًا لك!"
+
+msgid "Rate this trip"
+msgstr "قيّم هذه الرحلة"
+
+msgid "How was your trip?"
+msgstr "كيف كانت رحلتك؟"
+
+#. translators: %d: stars
+msgid "%d star"
+msgid_plural "%d stars"
+msgstr[0] "%d نجمة"
+msgstr[1] "نجمة واحدة"
+msgstr[2] "نجمتان"
+msgstr[3] "%d نجوم"
+msgstr[4] "%d نجمة"
+msgstr[5] "%d نجمة"
+
+msgid "Anything you would like to tell us? (optional)"
+msgstr "هل تود إخبارنا بشيء؟ (اختياري)"
+
+msgid "Send rating"
+msgstr "إرسال التقييم"
+
+#. translators: 1: stars, 2: comment
+msgid "Customer rating: %1$d★ %2$s"
+msgstr "تقييم العميل: %1$d★ %2$s"
+
+#. translators: 1: stars, 2: reference
+msgid "Low rating (%1$d★) for %2$s"
+msgstr "تقييم منخفض (%1$d★) للحجز %2$s"
+
+msgid "Tax invoice"
+msgstr "فاتورة ضريبية"
+
+msgid "Receipt"
+msgstr "إيصال"
+
+msgid "Trip summary"
+msgstr "ملخص الرحلة"
+
+msgid "This receipt link is not valid."
+msgstr "رابط الإيصال هذا غير صالح."
+
+msgid "Number"
+msgstr "الرقم"
+
+msgid "Date"
+msgstr "التاريخ"
+
+msgid "Bill to"
+msgstr "الفاتورة باسم"
+
+msgid "Passenger"
+msgstr "الراكب"
+
+msgid "Trip"
+msgstr "الرحلة"
+
+msgid "Description"
+msgstr "الوصف"
+
+msgid "Amount (incl. GST)"
+msgstr "المبلغ (شامل GST)"
+
+msgid "Wheelchair accessible taxi"
+msgstr "سيارة أجرة مجهزة للكراسي المتحركة"
+
+msgid "GST included"
+msgstr "شامل GST"
+
+msgid "Paid online (deposit)"
+msgstr "مدفوع عبر الإنترنت (عربون)"
+
+msgid "Amount due"
+msgstr "المبلغ المستحق"
+
+msgid "Total paid"
+msgstr "إجمالي المدفوع"
+
+msgid "Paid"
+msgstr "مدفوع"
+
+msgid "The fare has not been entered yet. If you need a tax invoice for this trip, please contact us and quote the number above."
+msgstr "لم يتم إدخال الأجرة بعد. إذا كنت بحاجة إلى فاتورة ضريبية لهذه الرحلة، يرجى التواصل معنا وذكر الرقم أعلاه."
+
+msgid "This is a receipt, not a tax invoice."
+msgstr "هذا إيصال وليس فاتورة ضريبية."
+
+msgid "Multi Purpose Taxi Program (MPTP) member."
+msgstr "عضو في برنامج سيارات الأجرة متعدد الأغراض (MPTP)."
+
+msgid "Print or save as PDF"
+msgstr "اطبع أو احفظ كملف PDF"
+
+msgid "Back to booking"
+msgstr "العودة إلى الحجز"
+
+msgid "Paid online"
+msgstr "مدفوع عبر الإنترنت"
+
+msgid "Vehicle"
+msgstr "المركبة"
+
+msgid "Change request"
+msgstr "طلب تغيير"
+
+msgid "Yes"
+msgstr "نعم"
+
+msgid "No"
+msgstr "لا"
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "From"
+msgstr "من"
+
+msgid "To"
+msgstr "إلى"
+
+msgid "When"
+msgstr "الموعد"
+
+#. translators: %s: phone
+msgid "Booking"
+msgstr "الحجز"
+
+msgid "Previous"
+msgstr "السابق"
+
+msgid "Next"
+msgstr "التالي"
+
+msgid "All drivers"
+msgstr "كل السائقين"
+
+msgid "Needs"
+msgstr "الاحتياجات"
+
+msgid "Payment"
+msgstr "الدفع"
+
+msgid "Notes"
+msgstr "ملاحظات"
+
+msgid "TBA"
+msgstr "سيُحدَّد لاحقًا"
+
+#. translators: %s: amount
+msgid "%s paid"
+msgstr "تم دفع %s"
+
+msgid "Completed"
+msgstr "مكتمل"
+
+msgid "Can we use analytics cookies?"
+msgstr "هل يمكننا استخدام ملفات تعريف الارتباط التحليلية؟"
+
+msgid "We would like to use Google Analytics to understand how people use this site so we can improve it. These cookies are optional — the site and online booking work the same either way."
+msgstr "نود استخدام Google Analytics لفهم كيفية استخدام الناس لهذا الموقع حتى نتمكن من تحسينه. ملفات تعريف الارتباط هذه اختيارية — يعمل الموقع والحجز عبر الإنترنت بالطريقة نفسها في الحالتين."
+
+msgid "Privacy policy"
+msgstr "سياسة الخصوصية"
+
+msgid "Accept analytics"
+msgstr "قبول التحليلات"
+
+msgid "Reject"
+msgstr "رفض"
+
+msgid "Cookie settings"
+msgstr "إعدادات ملفات تعريف الارتباط"
+
+msgid "Airport drop-offs and pickups"
+msgstr "التوصيل من المطار وإليه"
+
+msgid "A taxi drops a traveller at Departures while a plane takes off. Then a maxi taxi pulls up at Arrivals, lowers its ramp and a passenger in a wheelchair rolls aboard."
+msgstr "سيارة أجرة تُنزل مسافرًا عند صالة المغادرة بينما تقلع طائرة. ثم تتوقف سيارة أجرة كبيرة (ماكسي) عند صالة الوصول، وتُنزل منحدرها، ويصعد راكب على كرسي متحرك إلى داخلها."
+
+msgid "Door-to-door wheelchair pickup"
+msgstr "نقل الكراسي المتحركة من الباب إلى الباب"
+
+msgid "A maxi taxi pulls up outside a house, lowers its rear ramp, and a passenger in a wheelchair rolls aboard before the taxi drives away."
+msgstr "سيارة أجرة كبيرة (ماكسي) تتوقف أمام منزل، وتُنزل منحدرها الخلفي، ويصعد راكب على كرسي متحرك إلى داخلها قبل أن تنطلق السيارة."
+
+msgid "Pause animations"
+msgstr "إيقاف الرسوم المتحركة"
+
+msgid "Animations"
+msgstr "الرسوم المتحركة"
+
+msgid "Moving taxis and the pickup/airport scenes. Visitors can pause them, and they stay still for anyone whose device asks for reduced motion. The scenes are also on the home page (Home page layout → “How a trip works”), on service pages, and anywhere you add the shortcode [tp_scene name=\"pickup\"], [tp_scene name=\"airport\"] or [tp_scene name=\"road\"]."
+msgstr "سيارات أجرة متحركة ومشاهد الاستقبال والمطار. يمكن للزوار إيقافها مؤقتًا، وتبقى ثابتة لكل من يطلب جهازه تقليل الحركة. تظهر المشاهد أيضًا في الصفحة الرئيسية (تخطيط الصفحة الرئيسية ← «كيف تتم الرحلة»)، وفي صفحات الخدمات، وفي أي مكان تضيف فيه الرمز المختصر [tp_scene name=\"pickup\"] أو [tp_scene name=\"airport\"] أو [tp_scene name=\"road\"]."
+
+msgid "Turn animations on"
+msgstr "تشغيل الرسوم المتحركة"
+
+msgid "When off, the scenes show as still pictures and the moving road is hidden."
+msgstr "عند الإيقاف، تظهر المشاهد كصور ثابتة ويُخفى الطريق المتحرك."
+
+msgid "Taxis driving along the bottom of the home page hero"
+msgstr "سيارات أجرة تسير أسفل الواجهة الرئيسية للصفحة الرئيسية"
+
+msgid "Taxis driving under page title banners"
+msgstr "سيارات أجرة تسير أسفل لافتات عناوين الصفحات"
+
+msgid "Taxis driving along the top of the footer"
+msgstr "سيارات أجرة تسير أعلى تذييل الصفحة"
+
+msgid "Pick-up time"
+msgstr "وقت الاستقبال"
+
+msgid "Route"
+msgstr "المسار"
+
+msgid "Status"
+msgstr "الحالة"
+
+msgid "Received"
+msgstr "تاريخ الاستلام"
+
+#. translators: 1: passengers, 2: wheelchairs
+msgid "%1$d pax · %2$d wheelchair(s)"
+msgstr "%1$d راكب · %2$d كرسي متحرك"
+
+msgid "Today"
+msgstr "اليوم"
+
+msgid "Bookings"
+msgstr "الحجوزات"
+
+msgid "Booking details"
+msgstr "تفاصيل الحجز"
+
+msgid "Search bookings"
+msgstr "البحث في الحجوزات"
+
+msgid "No bookings found."
+msgstr "لم يتم العثور على حجوزات."
+
+msgid "No bookings in the bin."
+msgstr "لا توجد حجوزات في سلة المحذوفات."
+
+msgid "All bookings"
+msgstr "كل الحجوزات"
+
+msgid "Booking Manager"
+msgstr "مدير الحجوزات"
+
+msgid "Customer"
+msgstr "العميل"
+
+msgid "Coordinator / facility"
+msgstr "المنسق / المنشأة"
+
+msgid "Accounts (finance)"
+msgstr "الحسابات (المالية)"
+
+msgid "Passenger name"
+msgstr "اسم الراكب"
+
+msgid "Mobile / phone"
+msgstr "الجوال / الهاتف"
+
+msgid "Pick-up address"
+msgstr "عنوان الاستقبال"
+
+msgid "Drop-off address"
+msgstr "عنوان التوصيل"
+
+msgid "Pick-up date"
+msgstr "تاريخ الاستقبال"
+
+msgid "Wheelchairs"
+msgstr "الكراسي المتحركة"
+
+msgid "Return trip"
+msgstr "رحلة العودة"
+
+msgid "Return pick-up time"
+msgstr "وقت الاستقبال في رحلة العودة"
+
+msgid "MPTP member"
+msgstr "عضو في MPTP"
+
+msgid "Invoice to (organisation / plan manager)"
+msgstr "الفاتورة باسم (المنظمة / مدير الخطة)"
+
+msgid "Passenger notes"
+msgstr "ملاحظات الراكب"
+
+msgid "Pay the driver (card, cash or MPTP)"
+msgstr "الدفع للسائق (بطاقة أو نقدًا أو MPTP)"
+
+msgid "Account / invoice (NDIS, aged care, business)"
+msgstr "حساب / فاتورة (NDIS، رعاية المسنين، الشركات)"
+
+#. translators: %s: deposit amount
+msgid "Pay a %s deposit online now"
+msgstr "ادفع عربونًا بقيمة %s عبر الإنترنت الآن"
+
+msgid "This field is required."
+msgstr "هذا الحقل مطلوب."
+
+msgid "Please enter a valid phone number."
+msgstr "يرجى إدخال رقم هاتف صحيح."
+
+msgid "Tell us who to invoice."
+msgstr "أخبرنا باسم من نُصدر الفاتورة."
+
+msgid "Please enter the email address for invoices."
+msgstr "يرجى إدخال البريد الإلكتروني الخاص بالفواتير."
+
+msgid "Please choose a valid date."
+msgstr "يرجى اختيار تاريخ صحيح."
+
+msgid "Please choose a valid time."
+msgstr "يرجى اختيار وقت صحيح."
+
+#. translators: %s: phone number
+msgid "Online bookings need a little notice. For an urgent pick-up please call %s."
+msgstr "الحجز عبر الإنترنت يحتاج إلى إشعار مسبق قليلًا. للاستقبال العاجل يرجى الاتصال على %s."
+
+msgid "Choose which days the trip repeats."
+msgstr "اختر الأيام التي تتكرر فيها الرحلة."
+
+msgid "Choose an end date after the first trip."
+msgstr "اختر تاريخ انتهاء بعد الرحلة الأولى."
+
+#. translators: %d: number of weeks
+msgid "Repeat bookings can run for up to %d weeks. Call us to arrange a longer schedule."
+msgstr "يمكن أن تستمر الحجوزات المتكررة حتى %d أسبوعًا. اتصل بنا لترتيب جدول أطول."
+
+#. translators: %s: driver name
+msgid "Driver assigned: %s"
+msgstr "تم تعيين السائق: %s"
+
+msgid "Driver unassigned"
+msgstr "تم إلغاء تعيين السائق"
+
+msgid "Reference"
+msgstr "المرجع"
+
+msgid "Phone"
+msgstr "الهاتف"
+
+msgid "Pick-up"
+msgstr "الاستقبال"
+
+msgid "Yes – time to be arranged"
+msgstr "نعم – سيُحدَّد الوقت لاحقًا"
+
+msgid "Invoice to"
+msgstr "الفاتورة باسم"
+
+msgid "Estimated fare"
+msgstr "الأجرة التقديرية"
+
+msgid "(estimate only)"
+msgstr "(تقدير فقط)"
+
+msgid "Pay the driver"
+msgstr "الدفع للسائق"
+
+msgid "Account / invoice"
+msgstr "حساب / فاتورة"
+
+msgid "Online deposit (Stripe)"
+msgstr "عربون عبر الإنترنت (Stripe)"
+
+msgid "Your session expired. Please check your details and submit again."
+msgstr "انتهت صلاحية جلستك. يرجى التحقق من بياناتك والإرسال مرة أخرى."
+
+#. translators: %s: phone number
+msgid "Too many bookings from your connection. Please call us on %s."
+msgstr "عدد كبير جدًا من الحجوزات من اتصالك. يرجى الاتصال بنا على %s."
+
+msgid "Please agree so we can contact you about this booking."
+msgstr "يرجى الموافقة حتى نتمكن من التواصل معك بشأن هذا الحجز."
+
+msgid "Please accept the terms and cancellation policy."
+msgstr "يرجى قبول الشروط وسياسة الإلغاء."
+
+#. translators: %s: phone number
+msgid "Sorry, we could not save your booking. Please call %s."
+msgstr "عذرًا، لم نتمكن من حفظ حجزك. يرجى الاتصال على %s."
+
+#. translators: %d: number of trips
+msgid "Repeat booking — %d trips:"
+msgstr "حجز متكرر — عدد الرحلات %d:"
+
+#. translators: %s: language name
+msgid "Booked in %s — emails and texts to the customer are sent in this language."
+msgstr "تم الحجز باللغة %s — تُرسل الرسائل الإلكترونية والنصية إلى العميل بهذه اللغة."
+
+#. translators: 1: reference, 2: pick-up time
+msgid "New booking %1$s — %2$s"
+msgstr "حجز جديد %1$s — %2$s"
+
+#. translators: 1: reference, 2: pick-up time
+msgid "(repeat)"
+msgstr "(متكرر)"
+
+msgid "Manage this booking:"
+msgstr "إدارة هذا الحجز:"
+
+#. translators: %s: passenger name translators: %s: name translators: %s: first name
+msgid "Hi %s,"
+msgstr "مرحبًا %s،"
+
+msgid "Thanks for booking with us. We have received your request and will confirm it shortly."
+msgstr "شكرًا لحجزك معنا. لقد استلمنا طلبك وسنؤكده قريبًا."
+
+msgid "View or manage your booking:"
+msgstr "عرض حجزك أو إدارته:"
+
+#. translators: 1: phone, 2: email
+msgid "Need to change something? Call %1$s or email %2$s and quote your reference."
+msgstr "هل تحتاج إلى تغيير شيء؟ اتصل على %1$s أو راسلنا على %2$s واذكر رقمك المرجعي."
+
+#. translators: 1: site name, 2: reference
+msgid "%1$s booking received — %2$s"
+msgstr "%1$s: تم استلام الحجز — %2$s"
+
+msgid "Good news — your booking is confirmed."
+msgstr "خبر سار — تم تأكيد حجزك."
+
+msgid "A driver has been assigned to your booking."
+msgstr "تم تعيين سائق لحجزك."
+
+msgid "Thanks for travelling with us. We hope to see you again soon."
+msgstr "شكرًا لسفرك معنا. نتمنى أن نراك مجددًا قريبًا."
+
+msgid "Your booking has been cancelled. If this is unexpected, please call us."
+msgstr "تم إلغاء حجزك. إذا كان هذا غير متوقع، يرجى الاتصال بنا."
+
+msgid "Our driver arrived but could not find you, so the trip was marked as a no-show. Please call us if this is a mistake or you would like to rebook."
+msgstr "وصل سائقنا لكنه لم يتمكن من العثور عليك، لذا سُجّلت الرحلة على أنها «لم يحضر». يرجى الاتصال بنا إذا كان هذا خطأ أو إذا كنت ترغب في إعادة الحجز."
+
+msgid "Your booking is being reviewed."
+msgstr "حجزك قيد المراجعة."
+
+#. translators: %s: driver first name
+msgid "Your driver: %s"
+msgstr "سائقك: %s"
+
+#. translators: %s: vehicle
+msgid "Vehicle: %s"
+msgstr "المركبة: %s"
+
+msgid "How did we do? Rate your trip:"
+msgstr "كيف كانت خدمتنا؟ قيّم رحلتك:"
+
+#. translators: %s: phone number translators: %s: phone
+msgid "Questions? Call %s."
+msgstr "لديك أسئلة؟ اتصل على %s."
+
+#. translators: 1: reference, 2: status
+msgid "Booking %1$s: %2$s"
+msgstr "الحجز %1$s: %2$s"
+
+msgid "This calendar link is not valid."
+msgstr "رابط التقويم هذا غير صالح."
+
+#. translators: 1: site name, 2: reference
+msgid "Wheelchair taxi — %1$s (%2$s)"
+msgstr "سيارة أجرة للكراسي المتحركة — %1$s (%2$s)"
+
+#. translators: %s: phone
+msgid "Questions? Call %s"
+msgstr "لديك أسئلة؟ اتصل على %s"
+
+msgid "Driver jobs"
+msgstr "مهام السائق"
+
+msgid "Quick links"
+msgstr "روابط سريعة"
+
+msgid "Book"
+msgstr "احجز"
+
+msgid "Call"
+msgstr "اتصل"
+
+msgid "Driver application"
+msgstr "طلب عمل سائق"
+
+msgid "Mon"
+msgstr "الإثنين"
+
+msgid "Tue"
+msgstr "الثلاثاء"
+
+msgid "Wed"
+msgstr "الأربعاء"
+
+msgid "Thu"
+msgstr "الخميس"
+
+msgid "Fri"
+msgstr "الجمعة"
+
+msgid "Sat"
+msgstr "السبت"
+
+msgid "Sun"
+msgstr "الأحد"
+
+msgid "Nights"
+msgstr "الليالي"
+
+msgid "Application received — thank you!"
+msgstr "تم استلام الطلب — شكرًا لك!"
+
+msgid "We read every application and will be in touch if there is a suitable opening."
+msgstr "نقرأ كل طلب وسنتواصل معك إذا توفرت فرصة مناسبة."
+
+msgid "Apply to drive with us"
+msgstr "قدّم طلبًا للعمل سائقًا معنا"
+
+msgid "Please check the highlighted fields."
+msgstr "يرجى التحقق من الحقول المميزة."
+
+msgid "Suburb you live in"
+msgstr "الضاحية التي تسكن فيها"
+
+msgid "Driver accreditation"
+msgstr "اعتماد السائق"
+
+msgid "I hold Victorian commercial passenger vehicle driver accreditation"
+msgstr "أحمل اعتماد سائق مركبات نقل الركاب التجارية في ولاية فيكتوريا"
+
+msgid "I have applied / am applying"
+msgstr "قدّمت طلبًا / أنا بصدد التقديم"
+
+msgid "Not yet"
+msgstr "ليس بعد"
+
+msgid "Experience with wheelchair accessible vehicles"
+msgstr "الخبرة في المركبات المجهزة للكراسي المتحركة"
+
+msgid "None yet — happy to be trained"
+msgstr "لا خبرة بعد — يسعدني التدرّب"
+
+msgid "Some (under 1 year)"
+msgstr "بعض الخبرة (أقل من سنة)"
+
+msgid "Experienced (1 year or more)"
+msgstr "خبرة (سنة أو أكثر)"
+
+msgid "When can you drive?"
+msgstr "متى يمكنك القيادة؟"
+
+msgid "Tell us a little about yourself"
+msgstr "أخبرنا قليلًا عن نفسك"
+
+msgid "Driving history, disability or aged-care experience, why you would like to join…"
+msgstr "سجل القيادة، الخبرة في مجال الإعاقة أو رعاية المسنين، سبب رغبتك في الانضمام…"
+
+msgid "I agree to you keeping my application to consider me for driving roles."
+msgstr "أوافق على احتفاظكم بطلبي للنظر في ترشيحي لوظائف القيادة."
+
+msgid "Send application"
+msgstr "إرسال الطلب"
+
+msgid "Your session expired. Please try again."
+msgstr "انتهت صلاحية جلستك. يرجى المحاولة مرة أخرى."
+
+msgid "Too many applications from your connection. Please try again later."
+msgstr "عدد كبير جدًا من الطلبات من اتصالك. يرجى المحاولة لاحقًا."
+
+msgid "Please fill in your name, mobile, a valid email and tick the consent box."
+msgstr "يرجى إدخال اسمك ورقم جوالك وبريد إلكتروني صحيح، ووضع علامة في مربع الموافقة."
+
+msgid "Holds accreditation"
+msgstr "يحمل اعتمادًا"
+
+msgid "Applying for accreditation"
+msgstr "يتقدّم بطلب اعتماد"
+
+msgid "No accreditation yet"
+msgstr "لا يوجد اعتماد بعد"
+
+msgid "No WAT experience"
+msgstr "لا خبرة في سيارات الكراسي المتحركة"
+
+msgid "Some WAT experience"
+msgstr "بعض الخبرة في سيارات الكراسي المتحركة"
+
+msgid "Experienced WAT driver"
+msgstr "سائق متمرس في سيارات الكراسي المتحركة"
+
+msgid "Suburb:"
+msgstr "الضاحية:"
+
+msgid "Accreditation:"
+msgstr "الاعتماد:"
+
+msgid "Experience:"
+msgstr "الخبرة:"
+
+msgid "Available:"
+msgstr "متاح:"
+
+#. translators: %s: name
+msgid "Driver application: %s"
+msgstr "طلب عمل سائق: %s"
+
+msgid "Search the questions"
+msgstr "ابحث في الأسئلة"
+
+msgid "e.g. power wheelchair, airport, NDIS"
+msgstr "مثال: كرسي متحرك كهربائي، المطار، NDIS"
+
+msgid "No questions match. Try another word, or call us — we are happy to help."
+msgstr "لا توجد أسئلة مطابقة. جرّب كلمة أخرى، أو اتصل بنا — يسعدنا مساعدتك."
+
+msgid "FAQ topics"
+msgstr "مواضيع الأسئلة الشائعة"
+
+msgid "General"
+msgstr "عام"
+
+msgid "Our fleet details are coming soon."
+msgstr "تفاصيل أسطولنا ستتوفر قريبًا."
+
+#. translators: %d: photos
+msgid "%d photo"
+msgid_plural "%d photos"
+msgstr[0] "%d صورة"
+msgstr[1] "صورة واحدة"
+msgstr[2] "صورتان"
+msgstr[3] "%d صور"
+msgstr[4] "%d صورة"
+msgstr[5] "%d صورة"
+
+#. translators: %s: vehicle
+msgid "Open photos of %s full screen"
+msgstr "افتح صور %s بملء الشاشة"
+
+#. translators: %d: wheelchairs
+msgid "%d wheelchair"
+msgid_plural "%d wheelchairs"
+msgstr[0] "%d كرسي متحرك"
+msgstr[1] "كرسي متحرك واحد"
+msgstr[2] "كرسيان متحركان"
+msgstr[3] "%d كراسٍ متحركة"
+msgstr[4] "%d كرسيًا متحركًا"
+msgstr[5] "%d كرسي متحرك"
+
+#. translators: %d: seats
+msgid "%d seated passenger"
+msgid_plural "%d seated passengers"
+msgstr[0] "%d راكب جالس"
+msgstr[1] "راكب جالس واحد"
+msgstr[2] "راكبان جالسان"
+msgstr[3] "%d ركاب جالسين"
+msgstr[4] "%d راكبًا جالسًا"
+msgstr[5] "%d راكب جالس"
+
+msgid "Book online or call"
+msgstr "احجز عبر الإنترنت أو اتصل"
+
+msgid "Participants, family, support coordinators and providers can all book."
+msgstr "يمكن للمشاركين والعائلات ومنسقي الدعم ومقدمي الخدمات جميعًا الحجز."
+
+msgid "Choose \"Account / invoice\""
+msgstr "اختر «حساب / فاتورة»"
+
+msgid "Tell us who to invoice and add the NDIS number or purchase order."
+msgstr "أخبرنا باسم من نُصدر الفاتورة وأضف رقم NDIS أو أمر الشراء."
+
+msgid "Set up regular trips"
+msgstr "رتّب رحلات منتظمة"
+
+msgid "Tick \"regular trip\" to book the same run every week."
+msgstr "ضع علامة على «رحلة منتظمة» لحجز الرحلة نفسها كل أسبوع."
+
+msgid "Track every trip"
+msgstr "تابع كل رحلة"
+
+msgid "Each trip has its own reference you can check on Manage My Booking."
+msgstr "لكل رحلة رقم مرجعي خاص بها يمكنك التحقق منه في صفحة «إدارة حجزي»."
+
+msgid "Book on account"
+msgstr "احجز على الحساب"
+
+msgid "Ask about an account"
+msgstr "استفسر عن فتح حساب"
+
+msgid "Call us"
+msgstr "اتصل بنا"
+
+#. translators: %s: place
+msgid "Map of %s"
+msgstr "خريطة %s"
+
+msgid "Do you cover my suburb?"
+msgstr "هل نخدم ضاحيتك؟"
+
+msgid "Suburb or postcode"
+msgstr "الضاحية أو الرمز البريدي"
+
+msgid "Check"
+msgstr "تحقق"
+
+msgid "General question"
+msgstr "سؤال عام"
+
+msgid "Quote for a trip"
+msgstr "عرض سعر لرحلة"
+
+msgid "NDIS / aged-care account"
+msgstr "حساب NDIS / رعاية المسنين"
+
+msgid "Feedback"
+msgstr "ملاحظات وآراء"
+
+msgid "Complaint"
+msgstr "شكوى"
+
+msgid "Lost property"
+msgstr "المفقودات"
+
+msgid "Message sent"
+msgstr "تم إرسال الرسالة"
+
+msgid "Thanks for getting in touch. We will reply as soon as we can."
+msgstr "شكرًا لتواصلك معنا. سنرد عليك في أقرب وقت ممكن."
+
+msgid "Send us a message"
+msgstr "أرسل لنا رسالة"
+
+msgid "Your name"
+msgstr "اسمك"
+
+msgid "Phone (optional)"
+msgstr "الهاتف (اختياري)"
+
+msgid "Topic"
+msgstr "الموضوع"
+
+#. translators: %s: link
+msgid "Making a complaint? See %s."
+msgstr "هل تريد تقديم شكوى؟ اطّلع على %s."
+
+#. translators: %s: link
+msgid "how we handle complaints"
+msgstr "كيف نتعامل مع الشكاوى"
+
+msgid "Message"
+msgstr "الرسالة"
+
+msgid "Send message"
+msgstr "إرسال الرسالة"
+
+msgid "To book or for urgent trips, call"
+msgstr "للحجز أو للرحلات العاجلة، اتصل على"
+
+msgid "Book online any time — we will confirm when we open."
+msgstr "احجز عبر الإنترنت في أي وقت — سنؤكد الحجز عند بدء دوامنا."
+
+#. translators: %s: phone
+msgid "Too many messages from your connection. Please call %s."
+msgstr "عدد كبير جدًا من الرسائل من اتصالك. يرجى الاتصال على %s."
+
+msgid "Please fill in your name, a valid email and your message."
+msgstr "يرجى إدخال اسمك وبريد إلكتروني صحيح ورسالتك."
+
+#. translators: 1: topic, 2: name
+msgid "Website enquiry: %1$s — %2$s"
+msgstr "استفسار من الموقع: %1$s — %2$s"
+
+msgid "Thanks for getting in touch — we have received your message."
+msgstr "شكرًا لتواصلك معنا — لقد استلمنا رسالتك."
+
+#. translators: %s: response time, e.g. "within one business day"
+msgid "We aim to reply %s."
+msgstr "نسعى إلى الرد %s."
+
+msgid "We take every complaint seriously and will keep you updated until it is resolved."
+msgstr "نأخذ كل شكوى على محمل الجد، وسنبقيك على اطلاع حتى يتم حلها."
+
+msgid "How we handle complaints:"
+msgstr "كيف نتعامل مع الشكاوى:"
+
+#. translators: %s: phone
+msgid "If it is urgent, please call %s."
+msgstr "إذا كان الأمر عاجلًا، يرجى الاتصال على %s."
+
+msgid "Your message:"
+msgstr "رسالتك:"
+
+#. translators: %s: site name
+msgid "We received your message — %s"
+msgstr "استلمنا رسالتك — %s"
+
+msgid "Online in two minutes, or call us."
+msgstr "عبر الإنترنت في دقيقتين، أو اتصل بنا."
+
+msgid "Change or cancel a booking"
+msgstr "تغيير حجز أو إلغاؤه"
+
+msgid "Use your reference and mobile number."
+msgstr "استخدم رقمك المرجعي ورقم جوالك."
+
+msgid "NDIS or aged-care account"
+msgstr "حساب NDIS أو رعاية المسنين"
+
+msgid "Regular trips and invoicing."
+msgstr "رحلات منتظمة وإصدار فواتير."
+
+msgid "Feedback or a complaint"
+msgstr "ملاحظات أو شكوى"
+
+msgid "Tell us what went well — or what did not."
+msgstr "أخبرنا بما كان جيدًا — أو بما لم يكن كذلك."
+
+msgid "Left something in a taxi? Tell us your trip details."
+msgstr "نسيت شيئًا في سيارة أجرة؟ أخبرنا بتفاصيل رحلتك."
+
+msgid "Drive with us"
+msgstr "اعمل سائقًا معنا"
+
+msgid "Jobs for patient, reliable drivers."
+msgstr "وظائف للسائقين الصبورين والموثوقين."
+
+msgid "What can we help with?"
+msgstr "بماذا يمكننا مساعدتك؟"
+
+#. Template Name of the theme
+msgid "Services"
+msgstr "الخدمات"
+
+msgid "Areas"
+msgstr "المناطق"
+
+msgid "Wheelchair safety video"
+msgstr "فيديو سلامة الكراسي المتحركة"
+
+msgid "Location"
+msgstr "الموقع"
+
+msgid "Opening hours"
+msgstr "ساعات العمل"
+
+msgid "Small heading"
+msgstr "عنوان صغير"
+
+msgid "Headline"
+msgstr "العنوان الرئيسي"
+
+msgid "Intro text"
+msgstr "نص تمهيدي"
+
+msgid "Footer"
+msgstr "التذييل"
+
+msgid "Popular destinations"
+msgstr "الوجهات الشائعة"
+
+msgid "Destinations"
+msgstr "الوجهات"
+
+msgid "Built automatically from bookings in the last 12 months. To protect privacy, only places that look public (hospitals, airports, centres…) and that at least three different passengers travelled to can appear on the website. Visitor counts are never shown."
+msgstr "تُنشأ تلقائيًا من حجوزات آخر 12 شهرًا. لحماية الخصوصية، لا تظهر على الموقع إلا الأماكن التي تبدو عامة (مستشفيات، مطارات، مراكز…) والتي سافر إليها ثلاثة ركاب مختلفين على الأقل. لا تُعرض أعداد الزوار أبدًا."
+
+msgid "Nothing yet — destinations appear here as bookings build up."
+msgstr "لا شيء بعد — ستظهر الوجهات هنا مع تزايد الحجوزات."
+
+msgid "Destination"
+msgstr "الوجهة"
+
+msgid "Passengers / trips (12 months)"
+msgstr "الركاب / الرحلات (12 شهرًا)"
+
+msgid "Show as"
+msgstr "عرض باسم"
+
+msgid "Guide link (optional)"
+msgstr "رابط الدليل (اختياري)"
+
+msgid "On website"
+msgstr "على الموقع"
+
+msgid "Needs 3+ passengers"
+msgstr "يتطلب 3 ركاب أو أكثر"
+
+msgid "Destinations saved."
+msgstr "تم حفظ الوجهات."
+
+msgid "Previous day"
+msgstr "اليوم السابق"
+
+msgid "Next day"
+msgstr "اليوم التالي"
+
+#. translators: 1: driver, 2: reason
+msgid "Declined by %1$s: %2$s"
+msgstr "رفضها %1$s: %2$s"
+
+msgid "Driver details"
+msgstr "بيانات السائق"
+
+msgid "Mobile (for job SMS)"
+msgstr "الجوال (لرسائل SMS الخاصة بالمهام)"
+
+msgid "Usual vehicle"
+msgstr "المركبة المعتادة"
+
+msgid "— None —"
+msgstr "— لا شيء —"
+
+msgid "Used on the dispatch board when you assign this driver without choosing a vehicle."
+msgstr "تُستخدم في لوحة التوزيع عند تعيين هذا السائق دون اختيار مركبة."
+
+msgid "Driver sign in"
+msgstr "تسجيل دخول السائق"
+
+msgid "This page is for drivers only."
+msgstr "هذه الصفحة مخصصة للسائقين فقط."
+
+msgid "Jobs by day"
+msgstr "المهام حسب اليوم"
+
+msgid "My week"
+msgstr "أسبوعي"
+
+msgid "Driver views"
+msgstr "عروض السائق"
+
+#. translators: %s: new status
+msgid "Trip updated: %s."
+msgstr "تم تحديث الرحلة: %s."
+
+msgid "Trip declined. The office has been told so they can reassign it."
+msgstr "تم رفض الرحلة. أُبلغ المكتب لإعادة تعيينها."
+
+msgid "That trip had already changed, so nothing was updated. Here is its latest status."
+msgstr "تغيّرت تلك الرحلة بالفعل، لذا لم يتم تحديث أي شيء. إليك أحدث حالة لها."
+
+msgid "No jobs for this day"
+msgstr "لا توجد مهام في هذا اليوم"
+
+msgid "Swipe or use the arrows to check other days. New jobs are texted to you."
+msgstr "اسحب أو استخدم الأسهم لعرض الأيام الأخرى. تصلك المهام الجديدة برسالة نصية."
+
+msgid "Change day"
+msgstr "تغيير اليوم"
+
+msgid "Next job"
+msgstr "المهمة التالية"
+
+msgid "Pick up"
+msgstr "الاستقبال"
+
+msgid "Drop off"
+msgstr "التوصيل"
+
+msgid "Return trip:"
+msgstr "رحلة العودة:"
+
+msgid "Account — do not charge passenger"
+msgstr "على الحساب — لا تأخذ أجرة من الراكب"
+
+#. translators: %s: amount
+msgid "Deposit paid: %s"
+msgstr "العربون المدفوع: %s"
+
+msgid "Call passenger"
+msgstr "اتصل بالراكب"
+
+msgid "Navigate to drop-off"
+msgstr "التوجّه إلى مكان التوصيل"
+
+msgid "Navigate to pick-up"
+msgstr "التوجّه إلى مكان الاستقبال"
+
+msgid "(opens Google Maps)"
+msgstr "(يفتح Google Maps)"
+
+msgid "Can’t do this trip?"
+msgstr "لا يمكنك القيام بهذه الرحلة؟"
+
+msgid "Reason"
+msgstr "السبب"
+
+msgid "Note for the office (optional)"
+msgstr "ملاحظة للمكتب (اختياري)"
+
+msgid "Decline trip"
+msgstr "رفض الرحلة"
+
+msgid "Choose a driver to see their week."
+msgstr "اختر سائقًا لعرض أسبوعه."
+
+msgid "Coming up (next 7 days)"
+msgstr "القادم (الأيام السبعة المقبلة)"
+
+msgid "No upcoming trips this week"
+msgstr "لا توجد رحلات قادمة هذا الأسبوع"
+
+msgid "Previous week"
+msgstr "الأسبوع السابق"
+
+#. translators: 1: start date, 2: end date
+msgid "Timesheet %1$s – %2$s"
+msgstr "سجل الدوام %1$s – %2$s"
+
+msgid "Next week"
+msgstr "الأسبوع التالي"
+
+msgid "Trips completed"
+msgstr "الرحلات المكتملة"
+
+msgid "Hours with passengers"
+msgstr "الساعات مع الركاب"
+
+msgid "Trip km (estimated)"
+msgstr "كيلومترات الرحلات (تقديرية)"
+
+msgid "No-shows"
+msgstr "حالات عدم الحضور"
+
+#. translators: %d: number of ratings
+msgid "Rating (%d review)"
+msgid_plural "Rating (%d reviews)"
+msgstr[0] "التقييم (%d مراجعة)"
+msgstr[1] "التقييم (مراجعة واحدة)"
+msgstr[2] "التقييم (مراجعتان)"
+msgstr[3] "التقييم (%d مراجعات)"
+msgstr[4] "التقييم (%d مراجعة)"
+msgstr[5] "التقييم (%d مراجعة)"
+
+msgid "No finished trips this week yet."
+msgstr "لا توجد رحلات منتهية هذا الأسبوع بعد."
+
+msgid "Timesheet"
+msgstr "سجل الدوام"
+
+msgid "On my way"
+msgstr "أنا في الطريق"
+
+msgid "On board"
+msgstr "على متن السيارة"
+
+msgid "Finished"
+msgstr "انتهت"
+
+msgid "Minutes"
+msgstr "الدقائق"
+
+msgid "no-show"
+msgstr "لم يحضر"
+
+msgid "Print timesheet"
+msgstr "طباعة سجل الدوام"
+
+msgid "trips completed"
+msgstr "رحلة مكتملة"
+
+msgid "suburbs & destinations served"
+msgstr "ضاحية ووجهة نخدمها"
+
+msgid "accessible vehicles"
+msgstr "مركبة مجهزة"
+
+msgid "serving passengers since"
+msgstr "نخدم الركاب منذ"
+
+msgid "Announcements"
+msgstr "الإعلانات"
+
+msgid "Announcement"
+msgstr "إعلان"
+
+msgid "Add announcement"
+msgstr "إضافة إعلان"
+
+msgid "Edit announcement"
+msgstr "تعديل الإعلان"
+
+msgid "Message, e.g. \"Very busy today — please book ahead or call us.\""
+msgstr "الرسالة، مثال: «ضغط كبير اليوم — يرجى الحجز مسبقًا أو الاتصال بنا.»"
+
+msgid "Information (blue)"
+msgstr "معلومات (أزرق)"
+
+msgid "Heads-up (yellow)"
+msgstr "تنبيه (أصفر)"
+
+msgid "Urgent (red)"
+msgstr "عاجل (أحمر)"
+
+msgid "Schedule & link"
+msgstr "الجدولة والرابط"
+
+msgid "Show from"
+msgstr "العرض من"
+
+msgid "Leave empty to show straight away."
+msgstr "اتركه فارغًا للعرض فورًا."
+
+msgid "Show until"
+msgstr "العرض حتى"
+
+msgid "Leave empty to show until you unpublish it."
+msgstr "اتركه فارغًا للعرض حتى تلغي نشره."
+
+msgid "Style"
+msgstr "النمط"
+
+msgid "Link (optional)"
+msgstr "الرابط (اختياري)"
+
+msgid "Link text"
+msgstr "نص الرابط"
+
+msgid "e.g. See holiday hours"
+msgstr "مثال: اطّلع على مواعيد العطلات"
+
+msgid "Visitors cannot dismiss it (use sparingly)"
+msgstr "لا يمكن للزوار إغلاقه (استخدمه باعتدال)"
+
+msgid "Showing"
+msgstr "معروض"
+
+msgid "Live now"
+msgstr "منشور الآن"
+
+msgid "Now"
+msgstr "الآن"
+
+msgid "until unpublished"
+msgstr "حتى إلغاء النشر"
+
+msgid "More details"
+msgstr "مزيد من التفاصيل"
+
+msgid "Dismiss announcement"
+msgstr "إغلاق الإعلان"
+
+msgid "Hi, I would like to book a wheelchair taxi."
+msgstr "مرحبًا، أود حجز سيارة أجرة للكراسي المتحركة."
+
+msgid "Unpublish automatically"
+msgstr "إلغاء النشر تلقائيًا"
+
+msgid "Move to drafts on"
+msgstr "النقل إلى المسودات في"
+
+msgid "For seasonal pages and promotions. Use \"Publish → Schedule\" to choose when it goes live."
+msgstr "للصفحات الموسمية والعروض الترويجية. استخدم «نشر ← جدولة» لاختيار موعد نشرها."
+
+msgid "Google did not return your reviews."
+msgstr "لم تُرجع Google مراجعاتك."
+
+msgid "Google user"
+msgstr "مستخدم Google"
+
+msgid "Place saved. Your Google reviews will appear on the site shortly."
+msgstr "تم حفظ المكان. ستظهر مراجعاتك على Google في الموقع قريبًا."
+
+msgid "Find your Google Place ID"
+msgstr "ابحث عن معرّف مكانك على Google (Place ID)"
+
+msgid "Search for your business as it appears on Google Maps, then choose it. This connects live reviews and your star rating."
+msgstr "ابحث عن نشاطك التجاري كما يظهر في Google Maps، ثم اختره. يؤدي ذلك إلى ربط المراجعات المباشرة وتقييمك بالنجوم."
+
+msgid "Business name and suburb"
+msgstr "اسم النشاط التجاري والضاحية"
+
+msgid "Search Google"
+msgstr "البحث في Google"
+
+msgid "No matches. Try the exact name shown on your Google Business Profile."
+msgstr "لا توجد نتائج مطابقة. جرّب الاسم الدقيق الظاهر في ملفك التجاري على Google."
+
+msgid "Use this"
+msgstr "استخدم هذا"
+
+#. translators: 1: place name, 2: rating, 3: count, 4: number of reviews shown
+msgid "Connected: %1$s — %2$s★ from %3$d reviews (%4$d shown on the site)."
+msgstr "متصل: %1$s — %2$s★ من %3$d مراجعة (%4$d معروضة على الموقع)."
+
+msgid "Melbourne & the Mornington Peninsula, VIC"
+msgstr "ملبورن وشبه جزيرة مورنينغتون، فيكتوريا"
+
+msgid "Open 24 hours, 7 days — bookings recommended"
+msgstr "مفتوح 24 ساعة، 7 أيام — يُنصح بالحجز المسبق"
+
+msgid "Wheelchair accessible taxis · Melbourne"
+msgstr "سيارات أجرة مجهزة للكراسي المتحركة · ملبورن"
+
+msgid "Accessible rides, booked in minutes."
+msgstr "رحلات ميسّرة، تُحجز في دقائق."
+
+msgid "Ramp and hoist equipped taxis with trained, patient drivers. Door-to-door across Melbourne and the Mornington Peninsula, including hospital, airport and NDIS trips."
+msgstr "سيارات أجرة مجهزة بمنحدر ورافعة مع سائقين مدرّبين وصبورين. من الباب إلى الباب في جميع أنحاء ملبورن وشبه جزيرة مورنينغتون، بما في ذلك رحلات المستشفى والمطار وNDIS."
+
+msgid ""
+"04:00-08:59 | Early flight or appointment? Book your pick-up the night before.\n"
+"09:00-14:59 | Heading to an appointment? We can have you there on time.\n"
+"15:00-18:59 | Home from the hospital? Book a pick-up in two minutes.\n"
+"19:00-03:59 | Planning tomorrow's trips? Book tonight so we can confirm early."
+msgstr ""
+"04:00-08:59 | رحلة طيران أو موعد مبكر؟ احجز الاستقبال في الليلة السابقة.\n"
+"09:00-14:59 | متجه إلى موعد؟ يمكننا إيصالك في الوقت المحدد.\n"
+"15:00-18:59 | عائد من المستشفى؟ احجز الاستقبال في دقيقتين.\n"
+"19:00-03:59 | تخطط لرحلات الغد؟ احجز الليلة حتى نؤكد مبكرًا."
+
+msgid "How we secure your wheelchair"
+msgstr "كيف نثبّت كرسيك المتحرك"
+
+msgid "Wheelchair Accessible Taxi (WAT)"
+msgstr "سيارة أجرة مجهزة للكراسي المتحركة (WAT)"
+
+msgid "Maxi WAT – 2 wheelchairs / groups"
+msgstr "سيارة ماكسي مجهزة – كرسيان متحركان / مجموعات"
+
+msgid "Standard sedan (no wheelchair)"
+msgstr "سيارة سيدان عادية (بدون كرسي متحرك)"
+
+msgid "Manual wheelchair"
+msgstr "كرسي متحرك يدوي"
+
+msgid "Power / electric wheelchair"
+msgstr "كرسي متحرك كهربائي"
+
+msgid "Mobility scooter"
+msgstr "سكوتر تنقل"
+
+msgid "Walker or frame"
+msgstr "مشاية أو إطار مساعد"
+
+msgid "None"
+msgstr "لا شيء"
+
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+msgid "Driver accepted"
+msgstr "قبل السائق الرحلة"
+
+msgid "Driver on the way"
+msgstr "السائق في الطريق"
+
+msgid "Driver arrived"
+msgstr "وصل السائق"
+
+msgid "Passenger on board"
+msgstr "الراكب على متن السيارة"
+
+msgid "No-show"
+msgstr "لم يحضر"
+
+msgid "Cancelled"
+msgstr "ملغى"
+
+msgid "Live trust numbers"
+msgstr "أرقام الثقة المباشرة"
+
+msgid "Why passengers choose us"
+msgstr "لماذا يختارنا الركاب"
+
+msgid "How a trip works (animated scenes)"
+msgstr "كيف تتم الرحلة (مشاهد متحركة)"
+
+msgid "From your door to the departure gate"
+msgstr "من باب منزلك إلى بوابة المغادرة"
+
+msgid "We back right up to your door, lower the ramp and help you aboard — and we are waiting at Arrivals when you land."
+msgstr "نقترب بالسيارة حتى باب منزلك، وننزل المنحدر ونساعدك على الصعود — ونكون في انتظارك عند صالة الوصول عندما تهبط."
+
+msgid "Who we help"
+msgstr "من نساعد"
+
+msgid "Whether you are travelling yourself or arranging transport for someone else, we make it simple."
+msgstr "سواء كنت تسافر بنفسك أو ترتب النقل لشخص آخر، نجعل الأمر سهلًا."
+
+msgid "Booking form"
+msgstr "نموذج الحجز"
+
+msgid "Book your accessible taxi"
+msgstr "احجز سيارة الأجرة المجهزة لك"
+
+msgid "Tell us where you are going and what you need. We will confirm your booking and let you know when your driver is on the way."
+msgstr "أخبرنا إلى أين تذهب وما تحتاجه. سنؤكد حجزك ونخبرك عندما يكون سائقك في الطريق."
+
+msgid "Where our passengers go"
+msgstr "إلى أين يذهب ركابنا"
+
+msgid "Our most-booked destinations this year. Tap one to book a trip there."
+msgstr "أكثر الوجهات حجزًا هذا العام. اضغط على إحداها لحجز رحلة إليها."
+
+msgid "Areas we cover + suburb checker"
+msgstr "المناطق التي نخدمها + أداة التحقق من الضاحية"
+
+msgid "Based on the Mornington Peninsula and servicing greater Melbourne. Not listed? Call us — we travel further on request."
+msgstr "مقرنا في شبه جزيرة مورنينغتون ونخدم منطقة ملبورن الكبرى. منطقتك غير مذكورة؟ اتصل بنا — يمكننا السفر لمسافات أبعد عند الطلب."
+
+msgid "Top questions (FAQ strip)"
+msgstr "أهم الأسئلة (شريط الأسئلة الشائعة)"
+
+msgid "Questions we are often asked"
+msgstr "أسئلة تُطرح علينا كثيرًا"
+
+msgid "Reviews & testimonials"
+msgstr "المراجعات والشهادات"
+
+msgid "What our passengers say"
+msgstr "ماذا يقول ركابنا"
+
+msgid "Home page content (from the editor)"
+msgstr "محتوى الصفحة الرئيسية (من المحرر)"
+
+msgid "Latest blog posts"
+msgstr "أحدث المقالات"
+
+msgid "News & travel tips"
+msgstr "أخبار ونصائح للسفر"
+
+msgid "Partner logos"
+msgstr "شعارات الشركاء"
+
+msgid "Trusted by local organisations"
+msgstr "تثق بنا المنظمات المحلية"
+
+msgid "Call-to-action band"
+msgstr "شريط الدعوة إلى الإجراء"
+
+msgid "Need a wheelchair taxi today?"
+msgstr "هل تحتاج إلى سيارة أجرة للكراسي المتحركة اليوم؟"
+
+msgid "Call our friendly team and we will get you moving."
+msgstr "اتصل بفريقنا الودود وسننطلق بك."
+
+msgid "Book your own trip online or by phone. We help you from your door to theirs."
+msgstr "احجز رحلتك بنفسك عبر الإنترنت أو بالهاتف. نساعدك من باب منزلك إلى باب وجهتك."
+
+msgid "Family & carers"
+msgstr "العائلة ومقدّمو الرعاية"
+
+msgid "Booking for a parent, partner or client? Carers can travel too, and you can manage the booking online."
+msgstr "تحجز لأحد والديك أو شريكك أو عميلك؟ يمكن لمقدّمي الرعاية السفر أيضًا، ويمكنك إدارة الحجز عبر الإنترنت."
+
+msgid "Tips for carers"
+msgstr "نصائح لمقدّمي الرعاية"
+
+msgid "NDIS coordinators & plan managers"
+msgstr "منسقو NDIS ومديرو الخطط"
+
+msgid "Set up regular trips for participants and have them invoiced to the right place."
+msgstr "رتّب رحلات منتظمة للمشاركين واجعل فواتيرها تُرسل إلى الجهة الصحيحة."
+
+msgid "NDIS & accounts"
+msgstr "NDIS والحسابات"
+
+msgid "Hospitals & aged care"
+msgstr "المستشفيات ورعاية المسنين"
+
+msgid "Discharges, appointments and outings for your patients and residents. Ask us about an account."
+msgstr "الخروج من المستشفى والمواعيد والنزهات لمرضاكم ونزلائكم. اسألونا عن فتح حساب."
+
+msgid "Talk to us"
+msgstr "تحدّث إلينا"
+
+#. translators: %s: section
+msgid "Move %s up"
+msgstr "نقل %s للأعلى"
+
+#. translators: %s: section
+msgid "Move %s down"
+msgstr "نقل %s للأسفل"
+
+msgid "Home page layout"
+msgstr "تخطيط الصفحة الرئيسية"
+
+msgid "Tick to show a section, untick to hide it, and use ▲ ▼ to reorder. The hero banner always stays at the top."
+msgstr "ضع علامة لإظهار قسم، وأزلها لإخفائه، واستخدم ▲ ▼ لإعادة الترتيب. تبقى اللافتة الرئيسية دائمًا في الأعلى."
+
+msgid "Sections"
+msgstr "الأقسام"
+
+msgid "Show the quick-book bar in the hero (From, To, Date)"
+msgstr "إظهار شريط الحجز السريع في اللافتة الرئيسية (من، إلى، التاريخ)"
+
+msgid "Home page headings & text"
+msgstr "عناوين ونصوص الصفحة الرئيسية"
+
+msgid "Leave a field empty to use the default wording."
+msgstr "اترك الحقل فارغًا لاستخدام الصياغة الافتراضية."
+
+#. translators: %s: section
+msgid "%s — heading"
+msgstr "%s — العنوان"
+
+#. translators: %s: section
+msgid "%s — intro"
+msgstr "%s — المقدمة"
+
+msgid "Who we help panels"
+msgstr "لوحات «من نساعد»"
+
+msgid "Four short panels for different audiences. Clear a heading to hide that panel. Leave a link empty to use the matching page automatically."
+msgstr "أربع لوحات قصيرة لفئات مختلفة. امسح العنوان لإخفاء تلك اللوحة. اترك الرابط فارغًا لاستخدام الصفحة المطابقة تلقائيًا."
+
+msgid "heading"
+msgstr "العنوان"
+
+msgid "text"
+msgstr "النص"
+
+msgid "link text"
+msgstr "نص الرابط"
+
+msgid "link (optional)"
+msgstr "الرابط (اختياري)"
+
+#. translators: 1: panel number, 2: field
+msgid "Panel %1$d — %2$s"
+msgstr "اللوحة %1$d — %2$s"
+
+msgid "Hero photos"
+msgstr "صور اللافتة الرئيسية"
+
+msgid "Hero photo"
+msgstr "صورة اللافتة الرئيسية"
+
+msgid "Add seasonal hero photo"
+msgstr "إضافة صورة موسمية للافتة الرئيسية"
+
+msgid "Edit hero photo"
+msgstr "تعديل صورة اللافتة الرئيسية"
+
+msgid "Set hero photo"
+msgstr "تعيين صورة اللافتة الرئيسية"
+
+msgid "When to show it"
+msgstr "متى تُعرض"
+
+msgid "Set the photo with \"Hero photo\" on the right (give it alt text in the Media Library). It replaces the normal hero image between these dates."
+msgstr "عيّن الصورة من خلال «صورة اللافتة الرئيسية» على اليمين (وأضف لها نصًا بديلًا في مكتبة الوسائط). تحل محل صورة اللافتة المعتادة بين هذين التاريخين."
+
+msgid "Until (inclusive)"
+msgstr "حتى (شاملًا)"
+
+msgid "Repeat every year (e.g. every December)"
+msgstr "التكرار كل عام (مثلًا كل ديسمبر)"
+
+msgid "Photo"
+msgstr "الصورة"
+
+msgid "Shown"
+msgstr "معروضة"
+
+msgid "(every year)"
+msgstr "(كل عام)"
+
+msgid "Showing now"
+msgstr "معروضة الآن"
+
+msgid "Opening hours by day (used when not open 24/7)"
+msgstr "ساعات العمل حسب اليوم (تُستخدم عندما لا نعمل على مدار الساعة طوال الأسبوع)"
+
+msgid "One line per day or range, e.g. \"Mon-Fri 06:00-22:00\", \"Sat 07:00-20:00\", \"Sun closed\"."
+msgstr "سطر واحد لكل يوم أو نطاق أيام، مثل \"Mon-Fri 06:00-22:00\" و\"Sat 07:00-20:00\" و\"Sun closed\"."
+
+msgid "Message shown while closed"
+msgstr "الرسالة المعروضة أثناء الإغلاق"
+
+#. translators: %s: closing time
+msgid "Open now · phones answered until %s"
+msgstr "مفتوح الآن · نرد على الهاتف حتى %s"
+
+#. translators: %s: time
+msgid "we open at %s"
+msgstr "نفتح الساعة %s"
+
+#. translators: %s: time
+msgid "we open tomorrow at %s"
+msgstr "نفتح غدًا الساعة %s"
+
+#. translators: 1: weekday, 2: time
+msgid "we open %1$s at %2$s"
+msgstr "نفتح يوم %1$s الساعة %2$s"
+
+#. translators: %s: when we open
+msgid "Closed now · %s"
+msgstr "مغلق الآن · %s"
+
+msgid "Closed now"
+msgstr "مغلق الآن"
+
+msgid "Closed"
+msgstr "مغلق"
+
+msgid "Phone hours"
+msgstr "ساعات الرد على الهاتف"
+
+msgid "Languages"
+msgstr "اللغات"
+
+msgid "Visitors can switch the website to these languages. Menus, the booking form, booking pages, emails and texts are translated. For your own page text, open the page and use the Languages box to make a translated copy."
+msgstr "يمكن للزوار تحويل الموقع إلى هذه اللغات. تُترجم القوائم ونموذج الحجز وصفحات الحجز والرسائل الإلكترونية والنصية. أما نصوص صفحاتك الخاصة، فافتح الصفحة واستخدم مربع «اللغات» لإنشاء نسخة مترجمة."
+
+#. translators: 1: language name in English, 2: native name
+msgid "Offer %1$s (%2$s)"
+msgstr "توفير %1$s (%2$s)"
+
+msgid "Show the free interpreter (TIS National 131 450) and National Relay Service details"
+msgstr "إظهار بيانات خدمة الترجمة الفورية المجانية (TIS National 131 450) وخدمة الترحيل الوطنية (National Relay Service)"
+
+msgid "Shown in the footer and on pages that are not translated yet. Register your business with TIS National so their interpreters can call you."
+msgstr "تُعرض في التذييل وفي الصفحات التي لم تُترجم بعد. سجّل نشاطك التجاري لدى TIS National حتى يتمكن مترجموها من الاتصال بك."
+
+msgid "Auslan video (YouTube or Vimeo link)"
+msgstr "فيديو بلغة Auslan (رابط YouTube أو Vimeo)"
+
+msgid "A short video in Auslan explaining how to book. Shown with [tp_auslan] (it is on the Accessibility Statement page) and linked from the language menu."
+msgstr "فيديو قصير بلغة الإشارة Auslan يشرح كيفية الحجز. يُعرض باستخدام [tp_auslan] (وهو موجود في صفحة بيان إمكانية الوصول) ويوجد رابط له في قائمة اللغات."
+
+msgid "Auslan video: English transcript"
+msgstr "فيديو Auslan: النص المكتوب بالإنجليزية"
+
+msgid "Translated home page text"
+msgstr "نصوص الصفحة الرئيسية المترجمة"
+
+msgid "If you changed the hero text or opening hours, add the translated versions here. Leave a box empty to use the theme’s built-in translation of the original wording."
+msgstr "إذا غيّرت نص اللافتة الرئيسية أو ساعات العمل، فأضف النسخ المترجمة هنا. اترك المربع فارغًا لاستخدام الترجمة المدمجة في القالب للصياغة الأصلية."
+
+msgid "This page is in English."
+msgstr "هذه الصفحة باللغة الإنجليزية."
+
+msgid "The booking form and your booking details are in your language."
+msgstr "نموذج الحجز وتفاصيل حجزك متوفرة بلغتك."
+
+#. translators: 1: language, 2: page title
+msgid "This is the %1$s version of “%2$s”."
+msgstr "هذه هي النسخة %1$s من «%2$s»."
+
+msgid "Visitors who choose this language are sent here automatically once it is published."
+msgstr "يُوجَّه الزوار الذين يختارون هذه اللغة إلى هنا تلقائيًا بمجرد نشرها."
+
+msgid "Save the page first, then you can add translated copies."
+msgstr "احفظ الصفحة أولًا، ثم يمكنك إضافة نسخ مترجمة."
+
+msgid "Make a copy of this page for each language and translate the text in the editor. Menus and links switch to the right copy by themselves."
+msgstr "أنشئ نسخة من هذه الصفحة لكل لغة وترجم النص في المحرر. تنتقل القوائم والروابط إلى النسخة الصحيحة تلقائيًا."
+
+msgid "Edit draft"
+msgstr "تعديل المسودة"
+
+msgid "Add translation"
+msgstr "إضافة ترجمة"
+
+msgid "Auslan"
+msgstr "Auslan"
+
+#. translators: %s: current language
+msgid "Language: %s. Change language"
+msgstr "اللغة: %s. تغيير اللغة"
+
+msgid "video"
+msgstr "فيديو"
+
+#. translators: 1: business name, 2: phone number
+msgid "Need an interpreter? Call TIS National on 131 450 and ask them to call %1$s on %2$s."
+msgstr "هل تحتاج إلى مترجم فوري؟ اتصل بـ TIS National على 131 450 واطلب منهم الاتصال بـ %1$s على %2$s."
+
+msgid "Deaf, hard of hearing or speech impaired? Use the National Relay Service on 133 677."
+msgstr "هل أنت أصم أو ضعيف السمع أو لديك صعوبة في النطق؟ استخدم خدمة الترحيل الوطنية (National Relay Service) على 133 677."
+
+msgid "Language"
+msgstr "اللغة"
+
+msgid "Auslan and the National Relay Service"
+msgstr "Auslan وخدمة الترحيل الوطنية"
+
+msgid "How to book with us, in Auslan"
+msgstr "كيف تحجز معنا، بلغة Auslan"
+
+msgid "Play: how to book with us, in Auslan"
+msgstr "تشغيل: كيف تحجز معنا، بلغة Auslan"
+
+msgid "Read the English transcript"
+msgstr "اقرأ النص المكتوب بالإنجليزية"
+
+msgid "[Add your Auslan video link under Appearance → Customize → Taxi Peninsula → Languages. Only staff see this note.]"
+msgstr "[أضف رابط فيديو Auslan من المظهر ← تخصيص ← Taxi Peninsula ← اللغات. هذه الملاحظة تظهر للموظفين فقط.]"
+
+msgid "Book online — the booking form has no time limit and works with screen readers."
+msgstr "احجز عبر الإنترنت — نموذج الحجز بلا حد زمني ويعمل مع برامج قراءة الشاشة."
+
+#. translators: %s: SMS link
+msgid "Text us on %s — we reply by text."
+msgstr "راسلنا نصيًا على %s — نرد برسالة نصية."
+
+#. translators: %s: phone
+msgid "National Relay Service: use the NRS app or nrschat.nrscall.gov.au, or call 133 677, and give our number %s."
+msgstr "خدمة الترحيل الوطنية (National Relay Service): استخدم تطبيق NRS أو nrschat.nrscall.gov.au، أو اتصل على 133 677، وأعطهم رقمنا %s."
+
+msgid "Ask for SMS updates: we text you when your driver is on the way and when they arrive."
+msgstr "اطلب تحديثات عبر SMS: نرسل لك رسالة نصية عندما يكون سائقك في الطريق وعند وصوله."
+
+msgid "Home"
+msgstr "الرئيسية"
+
+#. Template Name of the theme
+msgid "Blog"
+msgstr "المدونة"
+
+#. translators: %s: phone
+msgid "Too many attempts. Please wait a few minutes or call %s."
+msgstr "محاولات كثيرة جدًا. يرجى الانتظار بضع دقائق أو الاتصال على %s."
+
+msgid "We could not find a booking with that reference and phone number. Please check both and try again."
+msgstr "لم نتمكن من العثور على حجز بهذا الرقم المرجعي ورقم الهاتف. يرجى التحقق منهما والمحاولة مرة أخرى."
+
+msgid "Please choose an option and tell us what you would like to change."
+msgstr "يرجى اختيار أحد الخيارات وإخبارنا بما تريد تغييره."
+
+#. translators: 1: request type, 2: reference
+msgid "%1$s — %2$s"
+msgstr "%1$s — %2$s"
+
+#. translators: 1: request type, 2: reference, 3: pick-up time
+msgid "%1$s for %2$s (%3$s). Check email/admin."
+msgstr "%1$s للحجز %2$s (%3$s). راجع البريد الإلكتروني/لوحة الإدارة."
+
+msgid "Cancellation request"
+msgstr "طلب إلغاء"
+
+msgid "Cancel all remaining repeat trips"
+msgstr "إلغاء جميع الرحلات المتكررة المتبقية"
+
+#. translators: 1: kilometres, 2: minutes
+msgid "%1$s km, about %2$d min drive"
+msgstr "%1$s كم، حوالي %2$d دقيقة بالسيارة"
+
+#. translators: %d: number of suggestions
+msgid "%d address suggestions available. Use the up and down arrow keys to choose."
+msgstr "يتوفر %d من اقتراحات العناوين. استخدم مفتاحي السهم لأعلى ولأسفل للاختيار."
+
+msgid "No address suggestions."
+msgstr "لا توجد اقتراحات للعناوين."
+
+msgid "Calculating fare estimate…"
+msgstr "جارٍ حساب الأجرة التقديرية…"
+
+msgid "We could not estimate this trip online. We will confirm the fare with you."
+msgstr "لم نتمكن من تقدير تكلفة هذه الرحلة عبر الإنترنت. سنؤكد الأجرة معك."
+
+msgid "Address suggestions by Google"
+msgstr "اقتراحات العناوين من Google"
+
+msgid "Online payment is not available."
+msgstr "الدفع عبر الإنترنت غير متاح."
+
+#. translators: 1: site name, 2: reference
+msgid "%1$s booking deposit — %2$s"
+msgstr "%1$s: عربون الحجز — %2$s"
+
+msgid "Unknown Stripe error."
+msgstr "خطأ غير معروف من Stripe."
+
+msgid "Stripe (online payment)"
+msgstr "Stripe (الدفع عبر الإنترنت)"
+
+#. translators: %s: amount
+msgid "Deposit of %s paid online (Stripe)."
+msgstr "تم دفع عربون بقيمة %s عبر الإنترنت (Stripe)."
+
+#. translators: 1: reference, 2: amount
+msgid "Deposit paid for %1$s (%2$s)"
+msgstr "تم دفع العربون للحجز %1$s (%2$s)"
+
+msgid "Public driver profile"
+msgstr "الملف التعريفي العام للسائق"
+
+msgid "Shown on the \"Meet the drivers\" section and to passengers once this driver is assigned to their trip. Only the first name is used."
+msgstr "يُعرض في قسم «تعرّف على السائقين» وللركاب بمجرد تعيين هذا السائق لرحلتهم. يُستخدم الاسم الأول فقط."
+
+msgid "Show on the website"
+msgstr "العرض على الموقع"
+
+msgid "Yes — the driver has agreed to their first name, photo and bio being shown publicly."
+msgstr "نعم — وافق السائق على عرض اسمه الأول وصورته ونبذته علنًا."
+
+msgid "Short bio"
+msgstr "نبذة قصيرة"
+
+msgid "e.g. Driving on the Peninsula for 8 years. Loves the footy and a good chat."
+msgstr "مثال: يقود في شبه الجزيرة منذ 8 سنوات. يحب كرة القدم الأسترالية والأحاديث الممتعة."
+
+msgid "Choose photo"
+msgstr "اختر صورة"
+
+msgid "A friendly, well-lit head-and-shoulders photo works best. Add alt text in the Media Library."
+msgstr "أفضل صورة هي صورة ودودة وجيدة الإضاءة للرأس والكتفين. أضف نصًا بديلًا في مكتبة الوسائط."
+
+#. translators: %s: first name
+msgid "Photo of %s"
+msgstr "صورة %s"
+
+msgid "Photo gallery"
+msgstr "معرض الصور"
+
+msgid "Choose photos"
+msgstr "اختر الصور"
+
+msgid "Clear"
+msgstr "مسح"
+
+msgid "Show the ramp or hoist, the restraints and the inside of the vehicle. Give every photo alt text and a caption — they are read out in the full-screen viewer."
+msgstr "اعرض المنحدر أو الرافعة، وأحزمة التثبيت، وداخل المركبة. أضف لكل صورة نصًا بديلًا وتعليقًا — فهي تُقرأ بصوت عالٍ في عارض ملء الشاشة."
+
+msgid "Partners"
+msgstr "الشركاء"
+
+msgid "Partner"
+msgstr "شريك"
+
+msgid "Add partner"
+msgstr "إضافة شريك"
+
+msgid "Edit partner"
+msgstr "تعديل الشريك"
+
+msgid "Logo"
+msgstr "الشعار"
+
+msgid "Set logo"
+msgstr "تعيين الشعار"
+
+msgid "Partner details"
+msgstr "بيانات الشريك"
+
+msgid "Website (optional)"
+msgstr "الموقع الإلكتروني (اختياري)"
+
+msgid "We have written permission to show this logo"
+msgstr "لدينا إذن كتابي بعرض هذا الشعار"
+
+msgid "The logo stays hidden until this is ticked."
+msgstr "يبقى الشعار مخفيًا حتى يتم وضع علامة على هذا الخيار."
+
+msgid "Ask for a copy of your information, or for it to be deleted"
+msgstr "اطلب نسخة من معلوماتك أو حذفها"
+
+msgid "Thank you. Please check your email and click the link to confirm the request — we then reply within 30 days."
+msgstr "شكرًا لك. يرجى التحقق من بريدك الإلكتروني والنقر على الرابط لتأكيد الطلب — وسنرد بعد ذلك خلال 30 يومًا."
+
+msgid "Sorry, we could not send that. Please check the email address, or call us."
+msgstr "عذرًا، لم نتمكن من إرسال ذلك. يرجى التحقق من البريد الإلكتروني، أو الاتصال بنا."
+
+#. translators: %s: link to My Account
+msgid "You are signed in, so you can download your data or delete your account straight away under %s."
+msgstr "أنت مسجل الدخول، لذا يمكنك تنزيل بياناتك أو حذف حسابك مباشرة من %s."
+
+msgid "My Account → My details"
+msgstr "حسابي ← بياناتي"
+
+msgid "What would you like?"
+msgstr "ماذا تريد؟"
+
+msgid "A copy of the information you hold about me"
+msgstr "نسخة من المعلومات التي تحتفظون بها عني"
+
+msgid "Delete my information"
+msgstr "حذف معلوماتي"
+
+msgid "Email address you used for bookings"
+msgstr "البريد الإلكتروني الذي استخدمته في الحجوزات"
+
+msgid "We email you a link to confirm it is really you."
+msgstr "نرسل إليك رابطًا عبر البريد الإلكتروني للتأكد من أنك أنت فعلًا."
+
+msgid "Send request"
+msgstr "إرسال الطلب"
+
+#. translators: 1: request type, 2: masked email
+msgid "Privacy request received (%1$s) from %2$s — waiting for email confirmation"
+msgstr "تم استلام طلب خصوصية (%1$s) من %2$s — في انتظار التأكيد عبر البريد الإلكتروني"
+
+msgid "delete"
+msgstr "حذف"
+
+msgid "copy"
+msgstr "نسخة"
+
+msgid "Your privacy"
+msgstr "خصوصيتك"
+
+msgid "You can download everything we hold about you, or close your account."
+msgstr "يمكنك تنزيل كل ما نحتفظ به عنك، أو إغلاق حسابك."
+
+msgid "Read our privacy policy"
+msgstr "اقرأ سياسة الخصوصية"
+
+msgid "Download my data"
+msgstr "تنزيل بياناتي"
+
+msgid "A file with your details, trips, saved passengers and addresses."
+msgstr "ملف يحتوي على بياناتك ورحلاتك والركاب والعناوين المحفوظة."
+
+msgid "Delete my account"
+msgstr "حذف حسابي"
+
+#. translators: %s: phone
+msgid "You have upcoming trips. Please cancel them first, or call us on %s, then come back to delete your account."
+msgstr "لديك رحلات قادمة. يرجى إلغاؤها أولًا، أو الاتصال بنا على %s، ثم العودة لحذف حسابك."
+
+msgid "This signs you out and deletes your account, saved passengers, clients and addresses. Names, contact details and street addresses are removed from your past trips. We keep the trip reference, date, suburbs and fare for our records, and invoice details for 5 years because tax law requires it."
+msgstr "يؤدي هذا إلى تسجيل خروجك وحذف حسابك والركاب والعملاء والعناوين المحفوظة. تُزال الأسماء وبيانات الاتصال وعناوين الشوارع من رحلاتك السابقة. نحتفظ بالرقم المرجعي للرحلة وتاريخها والضواحي والأجرة في سجلاتنا، وبتفاصيل الفواتير لمدة 5 سنوات لأن قانون الضرائب يتطلب ذلك."
+
+msgid "Your password"
+msgstr "كلمة المرور"
+
+msgid "I understand this cannot be undone."
+msgstr "أفهم أنه لا يمكن التراجع عن ذلك."
+
+msgid "Customer downloaded their data from My Account"
+msgstr "قام العميل بتنزيل بياناته من «حسابي»"
+
+msgid "Your password was not right, so your account was not deleted."
+msgstr "كلمة المرور غير صحيحة، لذا لم يتم حذف حسابك."
+
+msgid "You have upcoming trips. Please cancel them first."
+msgstr "لديك رحلات قادمة. يرجى إلغاؤها أولًا."
+
+msgid "Customer deleted their account"
+msgstr "قام العميل بحذف حسابه"
+
+#. translators: %s: masked email
+msgid "Customer account deleted (%s)"
+msgstr "تم حذف حساب عميل (%s)"
+
+msgid "A customer deleted their account"
+msgstr "قام أحد العملاء بحذف حسابه"
+
+#. translators: %d: number of trips
+msgid "A customer account was deleted from My Account. Personal details were removed from %d trips; references, dates, suburbs and fares were kept."
+msgstr "تم حذف حساب عميل من «حسابي». أُزيلت البيانات الشخصية من الرحلات (العدد: %d)؛ وتم الاحتفاظ بالأرقام المرجعية والتواريخ والضواحي والأجور."
+
+msgid "Thanks for sharing your experience on Google!"
+msgstr "شكرًا لمشاركة تجربتك على Google!"
+
+msgid "Would you share your experience on Google?"
+msgstr "هل تشاركنا تجربتك على Google؟"
+
+msgid "A short review helps other families and carers find accessible transport they can trust. It takes about a minute."
+msgstr "تساعد مراجعة قصيرة العائلات ومقدّمي الرعاية الآخرين على إيجاد وسيلة نقل مجهزة يمكنهم الوثوق بها. تستغرق دقيقة تقريبًا."
+
+msgid "Write a Google review"
+msgstr "اكتب مراجعة على Google"
+
+msgid "Customer opened the Google review link"
+msgstr "فتح العميل رابط المراجعة على Google"
+
+msgid "there"
+msgstr "بك"
+
+msgid "Thank you for rating your trip with us — it really helps."
+msgstr "شكرًا لتقييمك رحلتك معنا — فهذا يساعدنا كثيرًا."
+
+msgid "Would you also share your experience on Google? A short review helps other families and carers find accessible transport they can trust."
+msgstr "هل تشاركنا أيضًا تجربتك على Google؟ تساعد مراجعة قصيرة العائلات ومقدّمي الرعاية الآخرين على إيجاد وسيلة نقل مجهزة يمكنهم الوثوق بها."
+
+msgid "Thank you for travelling with us."
+msgstr "شكرًا لسفرك معنا."
+
+msgid "Thank you for your rating"
+msgstr "شكرًا لتقييمك"
+
+msgid "Google review invitation emailed"
+msgstr "تم إرسال دعوة المراجعة على Google عبر البريد الإلكتروني"
+
+msgid "Please complete the \"I am human\" check and try again."
+msgstr "يرجى إكمال التحقق «أنا إنسان» والمحاولة مرة أخرى."
+
+#. translators: 1: area, 2: phone
+msgid "Wheelchair accessible taxi in %1$s. Ramp and hoist vehicles, trained drivers, door-to-door. Book online or call %2$s."
+msgstr "سيارة أجرة مجهزة للكراسي المتحركة في %1$s. مركبات بمنحدر ورافعة، وسائقون مدرّبون، وخدمة من الباب إلى الباب. احجز عبر الإنترنت أو اتصل على %2$s."
+
+msgid "Wheelchair accessible taxi services in Melbourne: hospital and medical trips, airport transfers, NDIS and aged-care transport, group travel and events."
+msgstr "خدمات سيارات الأجرة المجهزة للكراسي المتحركة في ملبورن: رحلات المستشفيات والمواعيد الطبية، والتنقل من المطار وإليه، والنقل الخاص بـ NDIS ورعاية المسنين، ورحلات المجموعات والمناسبات."
+
+msgid "Suburbs we cover with wheelchair accessible taxis across Melbourne and the Mornington Peninsula."
+msgstr "الضواحي التي نخدمها بسيارات الأجرة المجهزة للكراسي المتحركة في جميع أنحاء ملبورن وشبه جزيرة مورنينغتون."
+
+msgid "News and travel tips for passengers using wheelchair accessible taxis in Melbourne."
+msgstr "أخبار ونصائح سفر للركاب الذين يستخدمون سيارات الأجرة المجهزة للكراسي المتحركة في ملبورن."
+
+#. translators: 1: site name, 2: phone
+msgid "%1$s — wheelchair accessible taxis in Melbourne and the Mornington Peninsula. Book online or call %2$s."
+msgstr "%1$s — سيارات أجرة مجهزة للكراسي المتحركة في ملبورن وشبه جزيرة مورنينغتون. احجز عبر الإنترنت أو اتصل على %2$s."
+
+msgid "Mobile number"
+msgstr "رقم الجوال"
+
+msgid "Primary menu"
+msgstr "القائمة الرئيسية"
+
+msgid "Footer menu"
+msgstr "قائمة التذييل"
+
+msgid "Ready-made sections and page starters for your taxi website."
+msgstr "أقسام جاهزة وبدايات صفحات لموقع سيارات الأجرة الخاص بك."
+
+msgid "Blog sidebar"
+msgstr "الشريط الجانبي للمدونة"
+
+#. translators: %s: suburb
+msgid "Yes — we cover %s."
+msgstr "نعم — نحن نخدم %s."
+
+#. translators: %s: suburb
+msgid "Book a pick-up in %s"
+msgstr "احجز استقبالًا في %s"
+
+#. translators: %s: suburb
+msgid "Wheelchair taxis in %s"
+msgstr "سيارات أجرة للكراسي المتحركة في %s"
+
+#. translators: %s: what the visitor typed
+msgid "\"%s\" is not on our regular list, but we often travel further on request."
+msgstr "«%s» ليست ضمن قائمتنا المعتادة، لكننا كثيرًا ما نسافر لمسافات أبعد عند الطلب."
+
+#. translators: %s: phone number
+msgid "Call %s to check"
+msgstr "اتصل على %s للتحقق"
+
+#. translators: %d: number of questions
+msgid "%d matching questions"
+msgstr "عدد الأسئلة المطابقة: %d"
+
+msgid "Close"
+msgstr "إغلاق"
+
+msgid "Read more"
+msgstr "اقرأ المزيد"
+
+msgid "Show less"
+msgstr "عرض أقل"
+
+msgid "passenger"
+msgstr "راكب"
+
+msgid "passengers"
+msgstr "ركاب"
+
+msgid "wheelchair"
+msgstr "كرسي متحرك"
+
+msgid "wheelchairs"
+msgstr "كراسٍ متحركة"
+
+msgid "Drop-off"
+msgstr "التوصيل"
+
+msgid "Sending…"
+msgstr "جارٍ الإرسال…"
+
+msgid "Previous photo"
+msgstr "الصورة السابقة"
+
+msgid "Next photo"
+msgstr "الصورة التالية"
+
+#. translators: 1: photo number, 2: total
+msgid "Photo %1$d of %2$d"
+msgstr "الصورة %1$d من %2$d"
+
+msgid "SMS is not configured."
+msgstr "لم يتم إعداد SMS."
+
+msgid "Invalid mobile number."
+msgstr "رقم جوال غير صالح."
+
+#. translators: 1: HTTP status, 2: provider message
+msgid "SMS failed (%1$d) %2$s"
+msgstr "فشل إرسال SMS (%1$d) %2$s"
+
+msgid "customer"
+msgstr "العميل"
+
+msgid "driver"
+msgstr "السائق"
+
+msgid "office"
+msgstr "المكتب"
+
+#. translators: 1: recipient, 2: error
+msgid "SMS to %1$s failed: %2$s"
+msgstr "فشل إرسال SMS إلى %1$s: %2$s"
+
+#. translators: %s: recipient
+msgid "SMS sent to %s"
+msgstr "تم إرسال SMS إلى %s"
+
+#. translators: 1: reference, 2: pick-up time, 3: name, 4: phone, 5: from, 6: to
+msgid "New booking %1$s: %2$s, %3$s (%4$s). %5$s → %6$s"
+msgstr "حجز جديد %1$s: %2$s، %3$s (%4$s). %5$s ← %6$s"
+
+#. translators: %d: number of trips
+msgid "(repeat: %d trips)"
+msgstr "(متكرر: %d رحلة)"
+
+#. translators: 1: site, 2: reference, 3: pick-up time, 4: link
+msgid "%1$s: we received your booking %2$s for %3$s. We will confirm shortly. Manage it: %4$s"
+msgstr "%1$s: استلمنا حجزك %2$s بتاريخ %3$s. سنؤكده قريبًا. لإدارته: %4$s"
+
+#. translators: 1: site, 2: reference, 3: pick-up time
+msgid "%1$s: booking %2$s is confirmed for %3$s."
+msgstr "%1$s: تم تأكيد الحجز %2$s بتاريخ %3$s."
+
+#. translators: 1: site, 2: reference, 3: pick-up time
+msgid "%1$s: a driver is assigned to booking %2$s for %3$s."
+msgstr "%1$s: تم تعيين سائق للحجز %2$s بتاريخ %3$s."
+
+#. translators: %s: driver first name
+msgid "Driver: %s."
+msgstr "السائق: %s."
+
+#. translators: %s: vehicle
+msgid "Vehicle: %s."
+msgstr "المركبة: %s."
+
+#. translators: 1: site, 2: reference, 3: phone
+msgid "%1$s: booking %2$s has been cancelled. Questions? Call %3$s."
+msgstr "%1$s: تم إلغاء الحجز %2$s. لديك أسئلة؟ اتصل على %3$s."
+
+#. translators: 1: reference, 2: pick-up time, 3: from, 4: to, 5: name, 6: phone
+msgid "New job %1$s: %2$s. %3$s → %4$s. %5$s %6$s"
+msgstr "مهمة جديدة %1$s: %2$s. %3$s ← %4$s. %5$s %6$s"
+
+#. translators: %s: site name
+msgid "Test message from %s. SMS is working."
+msgstr "رسالة تجريبية من %s. خدمة SMS تعمل."
+
+msgid "Test SMS sent."
+msgstr "تم إرسال رسالة SMS تجريبية."
+
+msgid "Accept trip"
+msgstr "قبول الرحلة"
+
+msgid "Not available at that time"
+msgstr "غير متاح في ذلك الوقت"
+
+msgid "My vehicle is not suitable"
+msgstr "مركبتي غير مناسبة"
+
+msgid "Too far from my area"
+msgstr "بعيد جدًا عن منطقتي"
+
+msgid "Other reason"
+msgstr "سبب آخر"
+
+msgid "You cannot update this job."
+msgstr "لا يمكنك تحديث هذه المهمة."
+
+#. translators: 1: driver, 2: reference, 3: pick-up time, 4: reason
+msgid "%1$s declined %2$s (%3$s): %4$s. Please reassign."
+msgstr "رفض %1$s الحجز %2$s (%3$s): %4$s. يرجى إعادة التعيين."
+
+#. translators: %s: reference
+msgid "Trip declined — %s needs a driver"
+msgstr "تم رفض الرحلة — %s يحتاج إلى سائق"
+
+msgid "Dispatch board:"
+msgstr "لوحة التوزيع:"
+
+#. translators: 1: site, 2: driver first name, 3: reference
+msgid "%1$s: %2$s is on the way to pick you up (booking %3$s)."
+msgstr "%1$s: %2$s في الطريق لاستقبالك (الحجز %3$s)."
+
+#. translators: 1: site, 2: driver first name, 3: pick-up address
+msgid "%1$s: %2$s has arrived at %3$s."
+msgstr "%1$s: وصل %2$s إلى %3$s."
+
+#. translators: %s: search query
+msgid "Search results for “%s”"
+msgstr "نتائج البحث عن «%s»"
+
+msgid "What makes us different"
+msgstr "ما الذي يميزنا"
+
+msgid "Meet the drivers"
+msgstr "تعرّف على السائقين"
+
+msgid "Our vehicles"
+msgstr "مركباتنا"
+
+msgid "See the full fleet"
+msgstr "شاهد الأسطول كاملًا"
+
+msgid "Posts"
+msgstr "المقالات"
+
+msgid "Request a wheelchair accessible taxi anywhere in Melbourne and the Mornington Peninsula."
+msgstr "اطلب سيارة أجرة مجهزة للكراسي المتحركة في أي مكان في ملبورن وشبه جزيرة مورنينغتون."
+
+msgid "Urgent or same-hour trip?"
+msgstr "رحلة عاجلة أو خلال الساعة نفسها؟"
+
+msgid "Rewarding work helping people get where they need to be."
+msgstr "عمل مُجزٍ يساعد الناس على الوصول إلى حيث يحتاجون."
+
+msgid "Questions, quotes or account enquiries — we are happy to help."
+msgstr "أسئلة أو عروض أسعار أو استفسارات عن الحسابات — يسعدنا مساعدتك."
+
+msgid "Where we operate"
+msgstr "أين نعمل"
+
+#. translators: %s: date
+msgid "Last updated %s"
+msgstr "آخر تحديث %s"
+
+msgid "On this page"
+msgstr "في هذه الصفحة"
+
+msgid "Print this page"
+msgstr "اطبع هذه الصفحة"
+
+msgid "How booking works"
+msgstr "كيف يتم الحجز"
+
+msgctxt "Pattern title"
+msgid "About: our story"
+msgstr "من نحن: قصتنا"
+
+msgctxt "Pattern description"
+msgid "Two columns: your story and an \"at a glance\" box."
+msgstr "عمودان: قصتك ومربع «لمحة سريعة»."
+
+msgctxt "Pattern title"
+msgid "Areas we cover"
+msgstr "المناطق التي نخدمها"
+
+msgctxt "Pattern description"
+msgid "Suburb chips linking to each area page."
+msgstr "أزرار الضواحي مع روابط إلى صفحة كل منطقة."
+
+msgctxt "Pattern title"
+msgid "Booking form"
+msgstr "نموذج الحجز"
+
+msgctxt "Pattern description"
+msgid "The full online booking form."
+msgstr "نموذج الحجز الكامل عبر الإنترنت."
+
+msgctxt "Pattern title"
+msgid "Best way to reach us (contact chooser)"
+msgstr "أفضل طريقة للتواصل معنا (اختيار وسيلة الاتصال)"
+
+msgctxt "Pattern description"
+msgid "Buttons that send each kind of enquiry to the right place."
+msgstr "أزرار ترسل كل نوع من الاستفسارات إلى الجهة الصحيحة."
+
+msgctxt "Pattern title"
+msgid "Contact details + map"
+msgstr "بيانات الاتصال + الخريطة"
+
+msgctxt "Pattern description"
+msgid "Phone, email, hours and a map side by side."
+msgstr "الهاتف والبريد الإلكتروني وساعات العمل وخريطة جنبًا إلى جنب."
+
+msgctxt "Pattern title"
+msgid "Call to action (yellow band)"
+msgstr "دعوة إلى الإجراء (شريط أصفر)"
+
+msgctxt "Pattern description"
+msgid "Bright band with phone and booking buttons."
+msgstr "شريط زاهٍ مع أزرار الهاتف والحجز."
+
+msgctxt "Pattern title"
+msgid "Popular destinations"
+msgstr "الوجهات الشائعة"
+
+msgctxt "Pattern description"
+msgid "Most-booked destinations from real (anonymised) bookings, with Book buttons."
+msgstr "الوجهات الأكثر حجزًا من حجوزات حقيقية (مجهولة الهوية)، مع أزرار «احجز»."
+
+msgctxt "Pattern title"
+msgid "Meet the drivers"
+msgstr "تعرّف على السائقين"
+
+msgctxt "Pattern description"
+msgid "Public driver profiles (only drivers who have opted in)."
+msgstr "الملفات التعريفية العامة للسائقين (فقط السائقون الذين وافقوا على ذلك)."
+
+msgctxt "Pattern title"
+msgid "FAQ accordion"
+msgstr "الأسئلة الشائعة (قائمة قابلة للطي)"
+
+msgctxt "Pattern description"
+msgid "Frequently asked questions (edit them under FAQs)."
+msgstr "الأسئلة الشائعة (عدّلها من قسم الأسئلة الشائعة)."
+
+msgctxt "Pattern title"
+msgid "Feature cards (3 columns)"
+msgstr "بطاقات المزايا (3 أعمدة)"
+
+msgctxt "Pattern description"
+msgid "Three highlight cards — edit the headings and text."
+msgstr "ثلاث بطاقات مميزة — عدّل العناوين والنصوص."
+
+msgid "Purpose-built vehicles"
+msgstr "مركبات مصممة لهذا الغرض"
+
+msgctxt "Pattern title"
+msgid "Hero banner"
+msgstr "اللافتة الرئيسية"
+
+msgctxt "Pattern description"
+msgid "Large navy banner with headline, intro and booking buttons. Use at the top of a \"Blank canvas\" page."
+msgstr "لافتة كبيرة باللون الكحلي مع عنوان رئيسي ومقدمة وأزرار الحجز. استخدمها في أعلى صفحة «لوحة فارغة»."
+
+msgctxt "Pattern title"
+msgid "About Us page"
+msgstr "صفحة «من نحن»"
+
+msgctxt "Pattern description"
+msgid "Starter content for an About Us page."
+msgstr "محتوى مبدئي لصفحة «من نحن»."
+
+msgctxt "Pattern title"
+msgid "Accessibility statement page"
+msgstr "صفحة بيان إمكانية الوصول"
+
+msgctxt "Pattern description"
+msgid "Accessibility statement draft covering your commitment, features, known limitations and how to give feedback."
+msgstr "مسودة بيان إمكانية الوصول تغطي التزامك والمزايا والقيود المعروفة وكيفية تقديم الملاحظات."
+
+msgctxt "Pattern title"
+msgid "Drive with us page"
+msgstr "صفحة «اعمل سائقًا معنا»"
+
+msgctxt "Pattern description"
+msgid "Starter content for a driver recruitment page, with [CONFIRM] notes for pay and conditions."
+msgstr "محتوى مبدئي لصفحة توظيف السائقين، مع ملاحظات [CONFIRM] للأجر والشروط."
+
+msgctxt "Pattern title"
+msgid "Complaints & feedback page"
+msgstr "صفحة الشكاوى والملاحظات"
+
+msgctxt "Pattern description"
+msgid "A clear complaints process with steps, response times ([CONFIRM]) and how to escalate to regulators."
+msgstr "إجراءات واضحة للشكاوى تتضمن الخطوات وأوقات الرد ([CONFIRM]) وكيفية التصعيد إلى الجهات التنظيمية."
+
+msgid "What happens next"
+msgstr "ماذا يحدث بعد ذلك"
+
+msgctxt "Pattern title"
+msgid "Privacy policy page"
+msgstr "صفحة سياسة الخصوصية"
+
+msgctxt "Pattern description"
+msgid "Privacy policy that follows the Australian Privacy Principles and updates from your settings, with a request form."
+msgstr "سياسة خصوصية تتبع مبادئ الخصوصية الأسترالية وتتحدّث من إعداداتك، مع نموذج للطلبات."
+
+msgctxt "Pattern title"
+msgid "Seasonal / event landing page"
+msgstr "صفحة هبوط موسمية / لمناسبة"
+
+msgctxt "Pattern description"
+msgid "Landing page for an event or season (footy finals, Christmas, spring racing). Schedule it with Publish → Schedule and set \"Unpublish automatically\"."
+msgstr "صفحة هبوط لمناسبة أو موسم (نهائيات كرة القدم، عيد الميلاد، سباقات الربيع). جدولها عبر «نشر ← جدولة» وفعّل «إلغاء النشر تلقائيًا»."
+
+msgctxt "Pattern title"
+msgid "Terms & cancellation policy page"
+msgstr "صفحة الشروط وسياسة الإلغاء"
+
+msgctxt "Pattern description"
+msgid "Structured draft for your booking terms and cancellation policy, with [CONFIRM] notes where your real policy is needed."
+msgstr "مسودة منظمة لشروط الحجز وسياسة الإلغاء، مع ملاحظات [CONFIRM] حيث تلزم سياستك الفعلية."
+
+msgctxt "Pattern title"
+msgid "Partner logos"
+msgstr "شعارات الشركاء"
+
+msgctxt "Pattern description"
+msgid "Logos of partner organisations (only those with permission ticked)."
+msgstr "شعارات المنظمات الشريكة (فقط التي وُضعت علامة على إذنها)."
+
+msgctxt "Pattern title"
+msgid "Blog: local destination guide"
+msgstr "المدونة: دليل وجهة محلية"
+
+msgctxt "Pattern description"
+msgid "Outline for posts like \"Wheelchair taxi to [hospital]: what to expect\"."
+msgstr "مخطط لمقالات مثل «سيارة أجرة للكراسي المتحركة إلى [المستشفى]: ماذا تتوقع»."
+
+msgid "Book a wheelchair taxi"
+msgstr "احجز سيارة أجرة للكراسي المتحركة"
+
+msgctxt "Pattern title"
+msgid "Blog: travel tips list"
+msgstr "المدونة: قائمة نصائح السفر"
+
+msgctxt "Pattern description"
+msgid "Outline for step-by-step advice posts."
+msgstr "مخطط لمقالات النصائح خطوة بخطوة."
+
+msgctxt "Pattern title"
+msgid "Animated scene: airport drop-off and pickup"
+msgstr "مشهد متحرك: التوصيل إلى المطار والاستقبال منه"
+
+msgctxt "Pattern description"
+msgid "Drop-off at Departures, pickup at Arrivals, and a plane taking off. Follows your colours, and visitors can pause it."
+msgstr "التوصيل عند صالة المغادرة، والاستقبال عند صالة الوصول، وطائرة تقلع. يتبع ألوانك، ويمكن للزوار إيقافه مؤقتًا."
+
+msgctxt "Pattern title"
+msgid "Animated scene: door-to-door wheelchair pickup"
+msgstr "مشهد متحرك: استقبال الكراسي المتحركة من الباب إلى الباب"
+
+msgctxt "Pattern description"
+msgid "A maxi taxi pulls up, lowers its ramp and a passenger rolls aboard. Follows your colours, and visitors can pause it."
+msgstr "سيارة أجرة كبيرة (ماكسي) تتوقف، وتُنزل منحدرها، ويصعد راكب إلى داخلها. يتبع ألوانك، ويمكن للزوار إيقافه مؤقتًا."
+
+msgctxt "Pattern title"
+msgid "Animated strip: taxis driving by"
+msgstr "شريط متحرك: سيارات أجرة مارّة"
+
+msgctxt "Pattern description"
+msgid "A narrow road with a maxi taxi and taxis driving past. Follows your colours, and visitors can pause it."
+msgstr "طريق ضيق تمر فيه سيارة أجرة كبيرة (ماكسي) وسيارات أجرة أخرى. يتبع ألوانك، ويمكن للزوار إيقافه مؤقتًا."
+
+msgctxt "Pattern title"
+msgid "Services grid"
+msgstr "شبكة الخدمات"
+
+msgctxt "Pattern description"
+msgid "Cards for every published Service (updates automatically)."
+msgstr "بطاقات لكل خدمة منشورة (تتحدّث تلقائيًا)."
+
+msgctxt "Pattern title"
+msgid "Live trust numbers"
+msgstr "أرقام الثقة المباشرة"
+
+msgctxt "Pattern description"
+msgid "Trips completed, suburbs served and years in business — updates itself from your bookings."
+msgstr "الرحلات المكتملة والضواحي المخدومة وسنوات العمل — تتحدّث تلقائيًا من حجوزاتك."
+
+msgctxt "Pattern title"
+msgid "How it works (steps)"
+msgstr "كيف تعمل الخدمة (خطوات)"
+
+msgctxt "Pattern description"
+msgid "Numbered steps explaining how booking works."
+msgstr "خطوات مرقمة تشرح كيفية الحجز."
+
+msgid "By phone, SMS or email."
+msgstr "بالهاتف أو SMS أو البريد الإلكتروني."
+
+msgid "Your driver helps you in and out."
+msgstr "يساعدك سائقك على الصعود والنزول."
+
+msgctxt "Pattern title"
+msgid "Do you cover my suburb? checker"
+msgstr "أداة «هل نخدم ضاحيتك؟»"
+
+msgctxt "Pattern description"
+msgid "Instant answer for visitors checking if you cover their suburb or postcode."
+msgstr "إجابة فورية للزوار الذين يتحققون مما إذا كنت تخدم ضاحيتهم أو رمزهم البريدي."
+
+msgctxt "Pattern title"
+msgid "Testimonials"
+msgstr "الشهادات"
+
+msgctxt "Pattern description"
+msgid "Your published testimonials and Google rating."
+msgstr "شهاداتك المنشورة وتقييمك على Google."
+
+msgctxt "Pattern title"
+msgid "Our values (4 columns)"
+msgstr "قيمنا (4 أعمدة)"
+
+msgctxt "Pattern description"
+msgid "Four short value statements."
+msgstr "أربع عبارات قصيرة عن القيم."
+
+msgctxt "Pattern title"
+msgid "Wheelchair safety video"
+msgstr "فيديو سلامة الكراسي المتحركة"
+
+msgctxt "Pattern description"
+msgid "Captioned video with transcript — set it up in Customize → Taxi Peninsula → Wheelchair safety video."
+msgstr "فيديو مع ترجمة نصية ونص مكتوب — أعدّه من تخصيص ← Taxi Peninsula ← فيديو سلامة الكراسي المتحركة."
+
+msgid "Search for:"
+msgstr "البحث عن:"
+
+msgid "Search articles…"
+msgstr "ابحث في المقالات…"
+
+msgid "Sidebar"
+msgstr "الشريط الجانبي"
+
+msgid "Book online in two minutes or call our team."
+msgstr "احجز عبر الإنترنت في دقيقتين أو اتصل بفريقنا."
+
+msgid "Categories"
+msgstr "التصنيفات"
+
+#. translators: 1: suburb, 2: site name
+msgid "Need an accessible ride in %1$s? %2$s provides wheelchair accessible taxis with ramps or hoists, wheelchair restraints and drivers trained to help you in and out safely."
+msgstr "هل تحتاج إلى وسيلة نقل مجهزة في %1$s؟ توفر %2$s سيارات أجرة مجهزة للكراسي المتحركة بمنحدرات أو رافعات، وأحزمة تثبيت للكراسي، وسائقين مدرّبين على مساعدتك في الصعود والنزول بأمان."
+
+#. translators: %s: suburb
+msgid "We pick up from homes, hospitals, aged-care residences and day programs in %s and take you anywhere across Melbourne and the Mornington Peninsula — including Melbourne and Avalon airports."
+msgstr "نستقبلك من المنازل والمستشفيات ودور رعاية المسنين والبرامج النهارية في %s، ونوصلك إلى أي مكان في ملبورن وشبه جزيرة مورنينغتون — بما في ذلك مطاري ملبورن وأفالون."
+
+#. translators: %s: suburb
+msgid "Places we often travel to around %s"
+msgstr "أماكن نسافر إليها كثيرًا حول %s"
+
+#. translators: %s: suburb
+msgid "Getting around %s"
+msgstr "التنقل في %s"
+
+#. translators: %s: suburb
+msgid "Popular trips from %s"
+msgstr "رحلات شائعة من %s"
+
+#. translators: %s: suburb
+msgid "Guides for %s"
+msgstr "أدلة عن %s"
+
+#. translators: %s: suburb
+msgid "Questions about travelling in %s"
+msgstr "أسئلة عن السفر في %s"
+
+msgid "Nearby areas"
+msgstr "مناطق قريبة"
+
+msgid "Other areas we cover"
+msgstr "مناطق أخرى نخدمها"
+
+msgid "Book this trip"
+msgstr "احجز هذه الرحلة"
+
+msgid "More services"
+msgstr "مزيد من الخدمات"
+
+msgid "Ready to book?"
+msgstr "هل أنت مستعد للحجز؟"
+
+msgid "Other services"
+msgstr "خدمات أخرى"
+
+msgid "Pages:"
+msgstr "الصفحات:"
+
+msgid "Booking steps"
+msgstr "خطوات الحجز"
+
+msgid "Your trip"
+msgstr "رحلتك"
+
+msgid "Street address, suburb"
+msgstr "عنوان الشارع، الضاحية"
+
+msgid "e.g. Frankston Hospital, Melbourne Airport"
+msgstr "مثال: مستشفى فرانكستون، مطار ملبورن"
+
+msgid "Estimate only, based on the usual driving route. The final fare depends on traffic, waiting time and route, and any MPTP subsidy is applied by the driver."
+msgstr "تقدير فقط، بناءً على مسار القيادة المعتاد. تعتمد الأجرة النهائية على حركة المرور ووقت الانتظار والمسار، ويطبّق السائق أي دعم من MPTP."
+
+msgid "I need a return trip"
+msgstr "أحتاج إلى رحلة عودة"
+
+msgid "Return pick-up time (if known)"
+msgstr "وقت الاستقبال في رحلة العودة (إن كان معروفًا)"
+
+msgid "This is a regular trip (e.g. dialysis, therapy, day program)"
+msgstr "هذه رحلة منتظمة (مثل غسيل الكلى، العلاج، برنامج نهاري)"
+
+msgid "Repeat every"
+msgstr "التكرار كل"
+
+msgid "Until"
+msgstr "حتى"
+
+#. translators: %d: weeks
+msgid "Same times each day, for up to %d weeks. Each trip gets its own reference so it can be changed separately."
+msgstr "الأوقات نفسها كل يوم، لمدة تصل إلى %d أسبوعًا. لكل رحلة رقم مرجعي خاص بها حتى يمكن تغييرها بشكل منفصل."
+
+msgid "Accessibility needs"
+msgstr "احتياجات الوصول"
+
+msgid "I am a Multi Purpose Taxi Program (MPTP) member"
+msgstr "أنا عضو في برنامج سيارات الأجرة متعدد الأغراض (MPTP)"
+
+msgid "Anything we should know?"
+msgstr "هل هناك ما يجب أن نعرفه؟"
+
+msgid "e.g. wheelchair dimensions, carer travelling, assistance to the door, flight number"
+msgstr "مثال: أبعاد الكرسي المتحرك، مرافقة مقدّم رعاية، المساعدة حتى الباب، رقم الرحلة الجوية"
+
+msgid "How will you pay?"
+msgstr "كيف ستدفع؟"
+
+msgid "Plan manager, provider or company"
+msgstr "مدير الخطة أو مقدّم الخدمة أو الشركة"
+
+msgid "NDIS number or purchase order (optional)"
+msgstr "رقم NDIS أو أمر الشراء (اختياري)"
+
+msgid "After you submit, you will be taken to Stripe’s secure checkout to pay the deposit. The rest of the fare is paid at the end of the trip."
+msgstr "بعد الإرسال، ستنتقل إلى صفحة الدفع الآمنة في Stripe لدفع العربون. يُدفع باقي الأجرة في نهاية الرحلة."
+
+msgid "Your details"
+msgstr "بياناتك"
+
+msgid "I agree to be contacted by phone, SMS or email about this booking, and for you to use the mobility and health details I give to arrange the trip."
+msgstr "أوافق على أن يتم التواصل معي بالهاتف أو SMS أو البريد الإلكتروني بشأن هذا الحجز، وعلى استخدامكم لبيانات التنقل والصحة التي أقدّمها لترتيب الرحلة."
+
+#. translators: %s: link to the terms page
+msgid "I have read and accept the %s."
+msgstr "لقد قرأت %s وأوافق عليها."
+
+msgid "terms and cancellation policy"
+msgstr "الشروط وسياسة الإلغاء"
+
+msgid "Request booking"
+msgstr "طلب الحجز"
+
+#. translators: %s: phone link
+msgid "Travelling in the next hour? Call %s"
+msgstr "تسافر خلال الساعة القادمة؟ اتصل على %s"
+
+msgid "Find your booking"
+msgstr "ابحث عن حجزك"
+
+msgid "Enter the reference from your confirmation (it starts with TP-) and the mobile number you booked with."
+msgstr "أدخل الرقم المرجعي من رسالة التأكيد (يبدأ بـ TP-) ورقم الجوال الذي حجزت به."
+
+msgid "Show my booking"
+msgstr "اعرض حجزي"
+
+#. translators: %s: phone link
+msgid "Lost your reference? Call %s."
+msgstr "فقدت رقمك المرجعي؟ اتصل على %s."
+
+msgid "Online deposit"
+msgstr "عربون عبر الإنترنت"
+
+msgid "Thanks — we have received your request."
+msgstr "شكرًا — لقد استلمنا طلبك."
+
+msgid "Our team will contact you to confirm."
+msgstr "سيتواصل معك فريقنا للتأكيد."
+
+msgid "Payment complete — thank you."
+msgstr "تم الدفع — شكرًا لك."
+
+msgid "It can take a minute for the payment to show below."
+msgstr "قد يستغرق ظهور الدفعة أدناه دقيقة."
+
+msgid "The payment was not completed. You can try again below or pay the driver."
+msgstr "لم تكتمل عملية الدفع. يمكنك المحاولة مرة أخرى أدناه أو الدفع للسائق."
+
+msgid "This booking has been cancelled."
+msgstr "تم إلغاء هذا الحجز."
+
+msgid "Our driver arrived but could not find you, so this trip was marked as a no-show. Please call us if this is a mistake."
+msgstr "وصل سائقنا لكنه لم يتمكن من العثور عليك، لذا سُجّلت هذه الرحلة على أنها «لم يحضر». يرجى الاتصال بنا إذا كان هذا خطأ."
+
+msgid "Your driver is on the way."
+msgstr "سائقك في الطريق."
+
+msgid "Your driver has arrived."
+msgstr "وصل سائقك."
+
+msgid "Booking progress"
+msgstr "تقدّم الحجز"
+
+msgid "Time to be arranged"
+msgstr "سيُحدَّد الوقت لاحقًا"
+
+#. translators: 1: passengers, 2: wheelchairs
+msgid "%1$d passenger(s), %2$d wheelchair(s)"
+msgstr "عدد الركاب: %1$d، عدد الكراسي المتحركة: %2$d"
+
+msgid "estimate only"
+msgstr "تقدير فقط"
+
+msgid "Your notes"
+msgstr "ملاحظاتك"
+
+#. translators: %s: amount
+msgid "Pay %s deposit securely"
+msgstr "ادفع عربونًا بقيمة %s بأمان"
+
+#. translators: %d: number of trips
+msgid "This is part of a repeat booking (%d trips)"
+msgstr "هذا جزء من حجز متكرر (عدد الرحلات: %d)"
+
+#. translators: %s: request type
+msgid "Your %s is with our team. We will contact you shortly."
+msgstr "طلبك (%s) لدى فريقنا. سنتواصل معك قريبًا."
+
+msgid "Change or cancel this booking"
+msgstr "تغيير هذا الحجز أو إلغاؤه"
+
+msgid "What would you like to do?"
+msgstr "ماذا تريد أن تفعل؟"
+
+msgid "Change the time, address or details"
+msgstr "تغيير الوقت أو العنوان أو التفاصيل"
+
+msgid "Cancel this trip"
+msgstr "إلغاء هذه الرحلة"
+
+msgid "Cancel all remaining trips in this repeat booking"
+msgstr "إلغاء جميع الرحلات المتبقية في هذا الحجز المتكرر"
+
+msgid "e.g. Please change the pick-up to 10:15am"
+msgstr "مثال: يرجى تغيير موعد الاستقبال إلى 10:15 صباحًا"
+
+msgid "Requests are handled by our team. For changes within the next two hours, please call us."
+msgstr "يتولى فريقنا معالجة الطلبات. للتغييرات خلال الساعتين القادمتين، يرجى الاتصال بنا."
+
+#. translators: %s: phone link
+msgid "Questions about your trip? Call %s."
+msgstr "لديك أسئلة عن رحلتك؟ اتصل على %s."
+
+msgid "Thanks — your booking request is in!"
+msgstr "شكرًا — تم إرسال طلب حجزك!"
+
+msgid "Your reference"
+msgstr "رقمك المرجعي"
+
+#. translators: %d: number of trips
+msgid "%d trip has been requested."
+msgid_plural "%d trips have been requested."
+msgstr[0] "تم طلب %d رحلة."
+msgstr[1] "تم طلب رحلة واحدة."
+msgstr[2] "تم طلب رحلتين."
+msgstr[3] "تم طلب %d رحلات."
+msgstr[4] "تم طلب %d رحلة."
+msgstr[5] "تم طلب %d رحلة."
+
+msgid "Each trip has its own reference, listed in your confirmation email."
+msgstr "لكل رحلة رقم مرجعي خاص بها، مذكور في رسالة التأكيد الإلكترونية."
+
+msgid "We saved your booking but could not open the online payment page. You can pay the driver instead, or try again from your booking page."
+msgstr "حفظنا حجزك لكن لم نتمكن من فتح صفحة الدفع عبر الإنترنت. يمكنك الدفع للسائق بدلًا من ذلك، أو المحاولة مرة أخرى من صفحة حجزك."
+
+msgid "We confirm your booking"
+msgstr "نؤكد حجزك"
+
+msgid "By SMS or email — usually within the hour during opening times."
+msgstr "عبر SMS أو البريد الإلكتروني — عادةً خلال ساعة أثناء ساعات العمل."
+
+msgid "Your driver is assigned"
+msgstr "يتم تعيين سائقك"
+
+msgid "We text you their first name and the vehicle."
+msgstr "نرسل لك برسالة نصية اسمه الأول والمركبة."
+
+msgid "On the day"
+msgstr "في يوم الرحلة"
+
+msgid "You get a text when your driver is on the way and when they arrive."
+msgstr "تصلك رسالة نصية عندما يكون سائقك في الطريق وعند وصوله."
+
+msgid "View booking"
+msgstr "عرض الحجز"
+
+msgid "Book the return trip"
+msgstr "احجز رحلة العودة"
+
+msgid "Make another booking"
+msgstr "إجراء حجز آخر"
+
+msgid "See all your trips in My Account"
+msgstr "شاهد جميع رحلاتك في «حسابي»"
+
+#. translators: %s: link
+msgid "Book often? %s to see every trip in one place and rebook in one tap."
+msgstr "تحجز كثيرًا؟ %s لترى كل رحلاتك في مكان واحد وتعيد الحجز بلمسة واحدة."
+
+msgid "Create a free account"
+msgstr "أنشئ حسابًا مجانيًا"
+
+#. translators: %s: phone link
+msgid "Need to change something? Call %s and quote your reference."
+msgstr "هل تحتاج إلى تغيير شيء؟ اتصل على %s واذكر رقمك المرجعي."
+
+msgid "Nothing here yet"
+msgstr "لا يوجد شيء هنا بعد"
+
+msgid "No results matched your search. Try different words."
+msgstr "لا توجد نتائج مطابقة لبحثك. جرّب كلمات مختلفة."
+
+msgid "Check back soon for news and travel tips."
+msgstr "عُد قريبًا لقراءة الأخبار ونصائح السفر."
+
+#. translators: %s: place
+msgid "a trip to %s"
+msgstr "رحلة إلى %s"
+
+msgid "Guide"
+msgstr "دليل"
+
+#. translators: %s: place
+msgid "to travelling to %s"
+msgstr "السفر إلى %s"
+
+msgid "Rear-entry ramps or hoists and four-point restraints, so you can stay in your own chair."
+msgstr "منحدرات أو رافعات بالدخول من الخلف وأحزمة تثبيت رباعية النقاط، لتبقى جالسًا على كرسيك الخاص."
+
+msgid "Trained, accredited drivers"
+msgstr "سائقون مدرّبون ومعتمدون"
+
+msgid "Our drivers are experienced in loading, securing and assisting passengers with a disability."
+msgstr "سائقونا ذوو خبرة في إصعاد الركاب ذوي الإعاقة وتثبيتهم ومساعدتهم."
+
+msgid "Punctual, 24/7"
+msgstr "دقة في المواعيد، على مدار الساعة"
+
+msgid "Book ahead for appointments and flights, or call us for a same-day pick-up."
+msgstr "احجز مسبقًا للمواعيد ورحلات الطيران، أو اتصل بنا للاستقبال في اليوم نفسه."
+
+msgid "Carers welcome"
+msgstr "مرحبًا بمقدّمي الرعاية"
+
+msgid "Family members and support workers can travel with you at no extra hassle."
+msgstr "يمكن لأفراد العائلة وعاملي الدعم السفر معك دون أي عناء إضافي."
+
+msgid "Prefer to talk to someone?"
+msgstr "تفضّل التحدث إلى شخص ما؟"
+
+msgid "See all FAQs"
+msgstr "عرض جميع الأسئلة الشائعة"
+
+msgid "Pickups from your door"
+msgstr "الاستقبال من باب منزلك"
+
+msgid "Our maxi taxis back up close, lower the ramp and help you aboard. You stay in your own chair, secured with four-point restraints."
+msgstr "تقترب سيارات الأجرة الكبيرة (ماكسي) لدينا بالرجوع إلى الخلف، وتُنزل المنحدر وتساعدك على الصعود. تبقى جالسًا على كرسيك الخاص، مثبتًا بأحزمة رباعية النقاط."
+
+msgid "Book a pickup"
+msgstr "احجز استقبالًا"
+
+msgid "Airport drop-offs & pickups"
+msgstr "التوصيل إلى المطار والاستقبال منه"
+
+msgid "Straight to Departures, and waiting at Arrivals when you land — with room for luggage and mobility equipment."
+msgstr "مباشرة إلى صالة المغادرة، وفي انتظارك عند صالة الوصول عندما تهبط — مع مساحة للأمتعة ومعدات التنقل."
+
+msgid "Book an airport transfer"
+msgstr "احجز رحلة إلى المطار أو منه"
+
+msgid "All articles"
+msgstr "جميع المقالات"
+
+msgid "Start a booking"
+msgstr "ابدأ الحجز"
+
+msgid "Where to?"
+msgstr "إلى أين؟"
+
+msgid "Continue"
+msgstr "متابعة"
+
+msgid "Suburbs in this article"
+msgstr "الضواحي المذكورة في هذا المقال"
+
+msgid "Travelling in this area?"
+msgstr "تسافر في هذه المنطقة؟"
+
+msgid "Keep reading"
+msgstr "تابع القراءة"
+
+msgid "About our service in numbers"
+msgstr "خدمتنا بالأرقام"
+
+msgid "Send your request"
+msgstr "أرسل طلبك"
+
+msgid "Takes about two minutes."
+msgstr "يستغرق دقيقتين تقريبًا."
+
+msgid "We confirm"
+msgstr "نؤكد الحجز"
+
+msgid "Ride in comfort"
+msgstr "استمتع برحلة مريحة"
+
+#. translators: 1: rating, 2: count
+msgid "Rated %1$s out of 5 from %2$d Google review"
+msgid_plural "Rated %1$s out of 5 from %2$d Google reviews"
+msgstr[0] "التقييم %1$s من 5 بناءً على %2$d مراجعة على Google"
+msgstr[1] "التقييم %1$s من 5 بناءً على مراجعة واحدة على Google"
+msgstr[2] "التقييم %1$s من 5 بناءً على مراجعتين على Google"
+msgstr[3] "التقييم %1$s من 5 بناءً على %2$d مراجعات على Google"
+msgstr[4] "التقييم %1$s من 5 بناءً على %2$d مراجعة على Google"
+msgstr[5] "التقييم %1$s من 5 بناءً على %2$d مراجعة على Google"
+
+#. translators: %s: rating
+msgid "Rated %s out of 5 on Google"
+msgstr "التقييم %s من 5 على Google"
+
+#. translators: %d: stars
+msgid "%d out of 5 stars"
+msgstr "%d من 5 نجوم"
+
+msgid "View on Google"
+msgstr "عرض على Google"
+
+msgid "Reviews from Google, shown as written by reviewers."
+msgstr "مراجعات من Google، معروضة كما كتبها أصحابها."
+
+msgid "Read or leave a review on Google"
+msgstr "اقرأ مراجعة أو اكتب واحدة على Google"
+
+msgid "Your trip so far"
+msgstr "رحلتك حتى الآن"
+
+msgid "Travelling"
+msgstr "المسافرون"
+
+msgid "Estimate"
+msgstr "التقدير"
+
+msgid "Return"
+msgstr "العودة"
+
+msgid "See exactly how our drivers load, secure and unload a wheelchair — so you know what to expect before your first trip."
+msgstr "شاهد بالضبط كيف يُصعد سائقونا الكرسي المتحرك ويثبّتونه ويُنزلونه — لتعرف ما تتوقعه قبل رحلتك الأولى."
+
+msgid "Read the transcript"
+msgstr "اقرأ النص المكتوب"
+
+#. translators: %s: video title
+msgid "Play video: %s (with captions)"
+msgstr "تشغيل الفيديو: %s (مع ترجمة نصية)"
+
+msgid "Plays from YouTube (privacy-enhanced mode)."
+msgstr "يُشغَّل من YouTube (وضع الخصوصية المحسّن)."
+
+msgid "Plays from Vimeo."
+msgstr "يُشغَّل من Vimeo."
+
+#. Built-in page title
+msgid "FAQ"
+msgstr "الأسئلة الشائعة"
+
+#. Built-in page title
+msgid "Book a Taxi"
+msgstr "احجز سيارة أجرة"
+
+#. Built-in page title
+msgid "Manage My Booking"
+msgstr "إدارة حجزي"
+
+#. Built-in page title
+msgid "My Account"
+msgstr "حسابي"
+
+#. Built-in page title
+msgid "Contact Us"
+msgstr "اتصل بنا"
+
+#. Built-in page title
+msgid "Our Fleet"
+msgstr "أسطولنا"
+
+#. Built-in page title
+msgid "Driver Jobs"
+msgstr "رحلات السائق"
+
+#. Built-in page title
+msgid "Our Services"
+msgstr "خدماتنا"
+
+#. Built-in page title
+msgid "About Us"
+msgstr "من نحن"
+
+#. Built-in page title
+msgid "NDIS & Aged Care"
+msgstr "NDIS ورعاية المسنين"
+
+#. Built-in page title
+msgid "Privacy Policy"
+msgstr "سياسة الخصوصية"
+
+#. Built-in page title
+msgid "Accessibility Statement"
+msgstr "بيان إمكانية الوصول"
+
+#. Built-in page title
+msgid "Terms & Cancellation Policy"
+msgstr "الشروط وسياسة الإلغاء"
+
+#. Built-in page title
+msgid "Complaints & Feedback"
+msgstr "الشكاوى والملاحظات"
+
+#. Built-in page title
+msgid "Drive With Us"
+msgstr "انضم إلينا كسائق"

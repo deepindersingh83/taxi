@@ -182,12 +182,16 @@ function tp_handle_driver_apply() {
 	}
 	tp_rate_limit( 'apply', 3, HOUR_IN_SECONDS, true );
 
-	wp_mail(
-		tp_opt( 'notify_email' ) ?: get_option( 'admin_email' ),
-		/* translators: %s: name */
-		sprintf( __( 'Driver application: %s', 'taxi-peninsula' ), $d['name'] ),
-		$d['name'] . "\n" . $d['email'] . "\n" . $d['phone'] . "\n\n" . $summary . "\n\n" . admin_url( 'edit.php?post_type=tp_message' ),
-		tp_mail_headers( $d['email'] )
+	tp_in_site_lang(
+		static function () use ( $d, $summary ) {
+			wp_mail(
+				tp_opt( 'notify_email' ) ?: get_option( 'admin_email' ),
+				/* translators: %s: name */
+				sprintf( __( 'Driver application: %s', 'taxi-peninsula' ), $d['name'] ),
+				$d['name'] . "\n" . $d['email'] . "\n" . $d['phone'] . "\n\n" . $summary . "\n\n" . admin_url( 'edit.php?post_type=tp_message' ),
+				tp_mail_headers( $d['email'] )
+			);
+		}
 	);
 
 	wp_safe_redirect( add_query_arg( 'applied', 1, $return ) . '#apply' );

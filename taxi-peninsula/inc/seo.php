@@ -95,7 +95,12 @@ function tp_output_meta_tags() {
 	echo "<meta name=\"twitter:card\" content=\"summary_large_image\">\n";
 
 	if ( is_singular() ) {
-		printf( "<link rel=\"canonical\" href=\"%s\">\n", esc_url( get_permalink() ) );
+		$canonical = get_permalink();
+		// Theme-translated pages (e.g. the booking form) are their own page in each language.
+		if ( function_exists( 'tp_lang' ) && 'en' !== tp_lang() && 'en' === tp_post_lang( get_queried_object_id() ) && count( tp_translations( get_queried_object_id() ) ) < 2 && isset( $_GET['lang'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$canonical = add_query_arg( 'lang', tp_lang(), $canonical );
+		}
+		printf( "<link rel=\"canonical\" href=\"%s\">\n", esc_url( $canonical ) );
 	}
 }
 

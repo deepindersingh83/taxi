@@ -15,11 +15,11 @@ function tp_defaults() {
 		'phone_display'   => '0468 323 211',
 		'phone_link'      => '+61468323211',
 		'email'           => 'support@taxipeninsula.com.au',
-		'location'        => 'Melbourne & the Mornington Peninsula, VIC',
-		'hours'           => 'Open 24 hours, 7 days — bookings recommended',
-		'hero_eyebrow'    => 'Wheelchair accessible taxis · Melbourne',
-		'hero_title'      => 'Accessible rides, booked in minutes.',
-		'hero_text'       => 'Ramp and hoist equipped taxis with trained, patient drivers. Door-to-door across Melbourne and the Mornington Peninsula, including hospital, airport and NDIS trips.',
+		'location'        => __( 'Melbourne & the Mornington Peninsula, VIC', 'taxi-peninsula' ),
+		'hours'           => __( 'Open 24 hours, 7 days — bookings recommended', 'taxi-peninsula' ),
+		'hero_eyebrow'    => __( 'Wheelchair accessible taxis · Melbourne', 'taxi-peninsula' ),
+		'hero_title'      => __( 'Accessible rides, booked in minutes.', 'taxi-peninsula' ),
+		'hero_text'       => __( 'Ramp and hoist equipped taxis with trained, patient drivers. Door-to-door across Melbourne and the Mornington Peninsula, including hospital, airport and NDIS trips.', 'taxi-peninsula' ),
 		'hero_image'      => '',
 		'service_areas'   => "Melbourne CBD\nFrankston\nMornington\nMount Martha\nMount Eliza\nDromana\nRosebud\nRye\nSorrento\nPortsea\nHastings\nSomerville\nTyabb\nCarrum Downs\nSeaford\nDandenong\nMelbourne Airport\nAvalon Airport",
 		'notify_email'    => 'support@taxipeninsula.com.au',
@@ -30,11 +30,11 @@ function tp_defaults() {
 		'since_year'      => '',
 		'trips_offset'    => 0,
 		'stats_min'       => 250,
-		'hero_moments'    => "04:00-08:59 | Early flight or appointment? Book your pick-up the night before.\n09:00-14:59 | Heading to an appointment? We can have you there on time.\n15:00-18:59 | Home from the hospital? Book a pick-up in two minutes.\n19:00-03:59 | Planning tomorrow's trips? Book tonight so we can confirm early.",
+		'hero_moments'    => __( "04:00-08:59 | Early flight or appointment? Book your pick-up the night before.\n09:00-14:59 | Heading to an appointment? We can have you there on time.\n15:00-18:59 | Home from the hospital? Book a pick-up in two minutes.\n19:00-03:59 | Planning tomorrow's trips? Book tonight so we can confirm early.", 'taxi-peninsula' ),
 		'sms_number'      => '+61468323211',
 		'reply_time'      => '',
 		'whatsapp_number' => '',
-		'video_title'     => 'How we secure your wheelchair',
+		'video_title'     => __( 'How we secure your wheelchair', 'taxi-peninsula' ),
 		'video_url'       => '',
 		'video_file'      => '',
 		'video_captions'  => '',
@@ -51,9 +51,18 @@ function tp_defaults() {
  * @return mixed
  */
 function tp_opt( $key ) {
+	$translated = function_exists( 'tp_lang_opt' ) ? tp_lang_opt( $key ) : null;
+	if ( null !== $translated ) {
+		return $translated;
+	}
 	$defaults = tp_defaults();
 	$default  = isset( $defaults[ $key ] ) ? $defaults[ $key ] : '';
-	return get_theme_mod( 'tp_' . $key, $default );
+	$value    = get_theme_mod( 'tp_' . $key, $default );
+	// In right-to-left languages keep "0468 323 211" in order (Unicode isolate marks).
+	if ( 'phone_display' === $key && function_exists( 'tp_lang_is_rtl' ) && tp_lang_is_rtl() ) {
+		$value = "\u{2066}" . $value . "\u{2069}";
+	}
+	return $value;
 }
 
 function tp_phone_href() {
@@ -174,6 +183,8 @@ function tp_icon( $name, $class = '' ) {
 		'book'       => '<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>',
 		'pause'      => '<rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor" stroke="none"/><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor" stroke="none"/>',
 		'chevron-up' => '<path d="m18 15-6-6-6 6"/>',
+		'globe'      => '<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+		'download'   => '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/>',
 		'facebook'   => '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
 		'instagram'  => '<rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8a4 4 0 0 1 3.4 3.4z"/><path d="M17.5 6.5h.01"/>',
 		'linkedin'   => '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>',

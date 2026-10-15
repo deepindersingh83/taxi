@@ -137,6 +137,7 @@ function tp_stripe_webhook( WP_REST_Request $request ) {
 
 	$amount = ( (int) ( $session['amount_total'] ?? 0 ) ) / 100;
 	if ( (float) get_post_meta( $post_id, '_tp_paid', true ) <= 0 ) {
+		tp_activity_as( __( 'Stripe (online payment)', 'taxi-peninsula' ) );
 		update_post_meta( $post_id, '_tp_paid', $amount );
 		/* translators: %s: amount */
 		tp_add_log( $post_id, array( 'note' => sprintf( __( 'Deposit of %s paid online (Stripe).', 'taxi-peninsula' ), tp_money( $amount ) ) ) );
