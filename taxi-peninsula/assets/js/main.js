@@ -1170,6 +1170,72 @@
 		}, true);
 	})();
 
+	/* Web push: "Notify me" on the booking pages. */
+	(function () {
+		var box = document.querySelector('[data-push]');
+		if (!box) { return; }
+		var status = box.querySelector('.push-box__status');
+		var onBtn = box.querySelector('[data-push-on]');
+		var installBtn = box.querySelector('[data-install]');
+		var say = function (t) { status.textContent = t; };
+		var ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+		var standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+		var supported = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+		box.hidden = false;
+		if (!supported) {
+			if (ios && !standalone) { box.querySelector('.push-box__ios').hidden = false; onBtn.hidden = true; }
+			else { box.hidden = true; }
+			return;
+		}
+		var keyBytes = function (b64) {
+			var pad = '='.repeat((4 - b64.length % 4) % 4);
+			var raw = atob((b64 + pad).replace(/-/g, '+').replace(/_/g, '/'));
+			var out = new Uint8Array(raw.length);
+			for (var i = 0; i < raw.length; i++) { out[i] = raw.charCodeAt(i); }
+			return out;
+		};
+		var done = function () { onBtn.hidden = true; say(box.getAttribute('data-done') || 'Notifications are on for this trip.'); };
+		if (Notification.permission === 'granted') {
+			navigator.serviceWorker.getRegistration('/').then(function (reg) {
+				if (reg && sessionStorage) {
+					try { if (sessionStorage.getItem('tp-push-' + box.getAttribute('data-ref'))) { done(); } } catch (err) {}
+				}
+			});
+		}
+		onBtn.addEventListener('click', function () {
+			onBtn.disabled = true;
+			Notification.requestPermission().then(function (perm) {
+				if (perm !== 'granted') { throw new Error('denied'); }
+				return navigator.serviceWorker.register(box.getAttribute('data-sw'), { scope: '/' });
+			}).then(function () {
+				return navigator.serviceWorker.ready;
+			}).then(function (reg) {
+				return reg.pushManager.getSubscription().then(function (s) {
+					return s || reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: keyBytes(box.getAttribute('data-key')) });
+				});
+			}).then(function (sub) {
+				var data = new FormData();
+				data.append('ref', box.getAttribute('data-ref'));
+				data.append('t', box.getAttribute('data-t'));
+				data.append('endpoint', sub.endpoint);
+				return fetch(box.getAttribute('data-url'), { method: 'POST', body: data, credentials: 'omit' });
+			}).then(function (r) {
+				if (!r.ok) { throw new Error('save'); }
+				try { sessionStorage.setItem('tp-push-' + box.getAttribute('data-ref'), '1'); } catch (err) {}
+				done();
+			}).catch(function (err) {
+				onBtn.disabled = false;
+				say(err && err.message === 'denied' ? (box.getAttribute('data-denied') || 'Notifications are blocked in your browser settings. We will still text you.') : (box.getAttribute('data-failed') || 'Sorry, that did not work on this device. We will still text you.'));
+			});
+		});
+		// Offer "Add to home screen" where the browser supports it.
+		window.addEventListener('beforeinstallprompt', function (e) {
+			e.preventDefault();
+			installBtn.hidden = false;
+			installBtn.addEventListener('click', function () { e.prompt(); installBtn.hidden = true; }, { once: true });
+		});
+	})();
+
 	/* Move focus to server-rendered errors / success so screen readers announce them. */
 	var focusTarget = document.querySelector('[data-focus]');
 	if (focusTarget) {

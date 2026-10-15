@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TP_VERSION', '2.2.0' );
+define( 'TP_VERSION', '2.3.0' );
 define( 'TP_DIR', get_template_directory() );
 define( 'TP_URI', get_template_directory_uri() );
 
@@ -56,6 +56,11 @@ require TP_DIR . '/inc/lost-property.php';
 require TP_DIR . '/inc/marketing.php';
 require TP_DIR . '/inc/local-pages.php';
 require TP_DIR . '/inc/gbp.php';
+require TP_DIR . '/inc/push.php';
+require TP_DIR . '/inc/review-widgets.php';
+require TP_DIR . '/inc/events.php';
+require TP_DIR . '/inc/dashboard.php';
+require TP_DIR . '/inc/health.php';
 require TP_DIR . '/inc/hours.php';
 require TP_DIR . '/inc/design.php';
 require TP_DIR . '/inc/illustrations.php';

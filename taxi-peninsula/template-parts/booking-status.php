@@ -79,6 +79,7 @@ $pos   = array_search( $step_of[ $b['status'] ] ?? $b['status'], $order, true );
 			<?php endforeach; ?>
 		</ol>
 	<?php endif; ?>
+	<?php do_action( 'tp_booking_status_after', (int) $b['id'] ); ?>
 
 	<dl class="details">
 		<div><dt><?php esc_html_e( 'From', 'taxi-peninsula' ); ?></dt><dd><?php echo esc_html( $b['pickup'] ); ?></dd></div>

@@ -217,6 +217,10 @@ function tp_flight_notify( $post_id, $note, $moved ) {
 	if ( $b['driver_id'] ) {
 		tp_booking_sms( $post_id, get_user_meta( $b['driver_id'], 'tp_mobile', true ), $b['reference'] . ': ' . $note, 'driver' );
 	}
+	if ( $moved && function_exists( 'tp_push_booking' ) ) {
+		/* translators: %s: new pick-up time */
+		tp_push_booking( $post_id, __( 'Pick-up time changed', 'taxi-peninsula' ), sprintf( __( 'Your flight is running to a new time. New pick-up: %s.', 'taxi-peninsula' ), tp_format_pickup( $b, 'g:i a' ) ) );
+	}
 	if ( $moved && $b['phone'] ) {
 		$msg = sprintf(
 			/* translators: 1: flight 2: new pick-up 3: site name */

@@ -121,13 +121,13 @@ function tp_gbp_api( $method, $url, $body = null ) {
 add_action(
 	'admin_menu',
 	static function () {
-		add_submenu_page( 'edit.php?post_type=tp_booking', __( 'Google profile', 'taxi-peninsula' ), __( 'Google profile', 'taxi-peninsula' ), 'manage_options', 'tp-gbp', 'tp_render_gbp_page' );
+		add_submenu_page( 'edit.php?post_type=tp_booking', __( 'Google profile', 'taxi-peninsula' ), __( 'Google profile', 'taxi-peninsula' ), 'tp_manage_offers', 'tp-gbp', 'tp_render_gbp_page' );
 	},
 	44
 );
 
 function tp_render_gbp_page() {
-	if ( ! current_user_can( 'manage_options' ) ) {
+	if ( ! current_user_can( 'tp_manage_offers' ) ) {
 		return;
 	}
 	$s       = tp_gbp_state();
@@ -214,7 +214,7 @@ add_action(
 	'admin_post_tp_gbp_connect',
 	static function () {
 		check_admin_referer( 'tp_gbp_connect' );
-		if ( ! current_user_can( 'manage_options' ) ) {
+		if ( ! current_user_can( 'tp_manage_offers' ) ) {
 			wp_die( '', 403 );
 		}
 		$state = wp_generate_password( 20, false );
@@ -241,7 +241,7 @@ add_action(
 add_action(
 	'admin_post_tp_gbp_oauth',
 	static function () {
-		if ( ! current_user_can( 'manage_options' ) ) {
+		if ( ! current_user_can( 'tp_manage_offers' ) ) {
 			wp_die( '', 403 );
 		}
 		// phpcs:disable WordPress.Security.NonceVerification.Recommended -- OAuth state is checked instead.
@@ -336,7 +336,7 @@ add_action(
 	'admin_post_tp_gbp_location',
 	static function () {
 		check_admin_referer( 'tp_gbp_location' );
-		if ( ! current_user_can( 'manage_options' ) ) {
+		if ( ! current_user_can( 'tp_manage_offers' ) ) {
 			wp_die( '', 403 );
 		}
 		$value = isset( $_POST['location'] ) ? sanitize_text_field( wp_unslash( $_POST['location'] ) ) : '';
@@ -352,7 +352,7 @@ add_action(
 	'admin_post_tp_gbp_disconnect',
 	static function () {
 		check_admin_referer( 'tp_gbp_disconnect' );
-		if ( ! current_user_can( 'manage_options' ) ) {
+		if ( ! current_user_can( 'tp_manage_offers' ) ) {
 			wp_die( '', 403 );
 		}
 		delete_option( 'tp_gbp' );

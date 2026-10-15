@@ -84,6 +84,8 @@ get_template_part(
 
 			<?php get_template_part( 'template-parts/service', 'details', array( 'id' => $tp_service->ID ) ); ?>
 
+			<?php echo tp_review_widget( array( $tp_a ), $tp_a ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper. ?>
+
 			<?php if ( $tp_faq ) : ?>
 				<h2>
 					<?php

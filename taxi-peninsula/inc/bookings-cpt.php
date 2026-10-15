@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const TP_CAPS_VERSION = 4;
+const TP_CAPS_VERSION = 5;
 
 add_action( 'init', 'tp_register_booking_cpt' );
 function tp_register_booking_cpt() {
@@ -119,6 +119,40 @@ function tp_install_caps() {
 		if ( $role ) {
 			$role->add_cap( 'tp_view_finance' );
 			$role->add_cap( 'tp_view_activity' );
+		}
+	}
+
+	// Marketing: offers, promo codes, partner and event pages, Google posts,
+	// the leads report and website content — but no bookings or customers.
+	$promo_caps = array( 'edit_tp_promos', 'edit_others_tp_promos', 'edit_published_tp_promos', 'edit_private_tp_promos', 'publish_tp_promos', 'read_private_tp_promos', 'delete_tp_promos', 'delete_others_tp_promos', 'delete_published_tp_promos', 'delete_private_tp_promos' );
+	$marketing  = array(
+		'read'                   => true,
+		'upload_files'           => true,
+		'edit_posts'             => true,
+		'edit_others_posts'      => true,
+		'edit_published_posts'   => true,
+		'publish_posts'          => true,
+		'delete_posts'           => true,
+		'delete_published_posts' => true,
+		'manage_categories'      => true,
+		'edit_pages'             => true,
+		'edit_others_pages'      => true,
+		'edit_published_pages'   => true,
+		'publish_pages'          => true,
+		'tp_manage_offers'       => true,
+		'tp_view_leads'          => true,
+	);
+	foreach ( $promo_caps as $cap ) {
+		$marketing[ $cap ] = true;
+	}
+	remove_role( 'tp_marketing' );
+	add_role( 'tp_marketing', __( 'Marketing', 'taxi-peninsula' ), $marketing );
+	foreach ( array( 'administrator', 'editor', 'tp_booking_manager' ) as $role_name ) {
+		$role = get_role( $role_name );
+		if ( $role ) {
+			foreach ( array_merge( $promo_caps, array( 'tp_manage_offers', 'tp_view_leads' ) ) as $cap ) {
+				$role->add_cap( $cap );
+			}
 		}
 	}
 

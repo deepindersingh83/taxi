@@ -60,6 +60,9 @@ $account   = tp_page_url_by_template( 'account' );
 		</li>
 	</ol>
 
+	<?php if ( $b ) : ?>
+		<?php do_action( 'tp_booking_status_after', (int) $post_id ); ?>
+	<?php endif; ?>
 	<p class="print-only print-brand"><?php echo esc_html( get_bloginfo( 'name' ) . ' · ' . tp_opt( 'phone_display' ) ); ?></p>
 	<div class="booking-success__actions">
 		<button type="button" class="btn btn--ghost" data-print><?php tp_the_icon( 'book' ); ?> <?php esc_html_e( 'Print', 'taxi-peninsula' ); ?></button>

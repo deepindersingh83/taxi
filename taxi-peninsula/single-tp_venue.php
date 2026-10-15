@@ -66,6 +66,7 @@ while ( have_posts() ) :
 				<li><?php tp_the_icon( 'check' ); ?><?php esc_html_e( 'Pay the driver, use your MPTP card, or ask for an NDIS / aged-care invoice', 'taxi-peninsula' ); ?></li>
 				<li><?php tp_the_icon( 'check' ); ?><?php esc_html_e( 'We text you when your driver is on the way', 'taxi-peninsula' ); ?></li>
 			</ul>
+			<?php echo tp_review_widget( tp_venue_review_terms( $tp_id ), $tp_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper. ?>
 			<?php if ( $tp_m['phone'] ) : ?>
 				<p class="venue-info__staff">
 					<?php

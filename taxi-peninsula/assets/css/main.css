@@ -1980,3 +1980,49 @@ body:has(.driver-dock) .whatsapp-button { display: none; }
 .sub-page__or { margin-top: var(--space-l); color: var(--c-muted); }
 .sub-page__inline { display: inline-block; margin: 0 .25rem .5rem; }
 .sub-page .booking-success__icon { margin-inline: auto; }
+
+/* =========================================================================
+   v2.3 — found items, phone notifications, reviews, events
+   ========================================================================= */
+.job__found { margin-top: var(--space-s); border-top: 1px solid var(--c-border); padding-top: var(--space-s); }
+.job__found > summary, .driver-found > summary { cursor: pointer; font-weight: 700; display: inline-flex; align-items: center; gap: .4em; min-height: 44px; }
+.job__found-form { display: grid; gap: var(--space-s); margin-top: var(--space-s); }
+.job__found-form input[type="file"] { font: inherit; max-width: 100%; }
+.driver-found { margin-top: var(--space-l); padding: var(--space-m); }
+
+.push-box { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-s) var(--space-m); margin: var(--space-m) 0; padding: var(--space-m); border: 2px solid var(--c-border); border-radius: var(--radius); background: var(--c-bg-alt); }
+.push-box__icon { width: 2rem; height: 2rem; color: var(--c-heading); }
+.push-box__text { flex: 1 1 16rem; min-width: 0; }
+.push-box__title { margin: 0; font-weight: 700; color: var(--c-heading); }
+.push-box__ios, .push-box__status { margin: .35rem 0 0; color: var(--c-muted); }
+.push-box__status:empty { display: none; }
+.push-box__actions { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+
+.review-widget { margin-block: var(--space-xl); }
+.review-widget__list { display: grid; gap: var(--space-m); grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
+.review-widget .testimonial { margin: 0; }
+
+.event-hero { position: relative; isolation: isolate; background: var(--c-primary); color: #fff; padding-block: var(--space-2xl); overflow: hidden; }
+.event-hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.event-hero--image::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--hero-overlay); }
+.event-hero h1 { color: #fff; font-size: var(--step-5); margin: 0 0 var(--space-s); }
+.event-hero__when, .event-hero__where { display: flex; align-items: center; gap: .5em; margin: .25rem 0 0; font-size: var(--step-1); }
+.event-body > h2 { margin-top: var(--space-xl); }
+.event-body__tip { font-size: var(--step-1); }
+.event-points { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-m); grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+.event-point { display: flex; flex-direction: column; }
+.event-point__name { display: flex; align-items: center; gap: .4em; margin: 0 0 var(--space-xs); font-size: var(--step-1); }
+.event-point__addr { margin: 0; color: var(--c-muted); }
+.event-point__note { margin: var(--space-xs) 0 0; }
+.event-point__actions { margin: auto 0 0; padding-top: var(--space-m); display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+.event-return { margin-top: var(--space-xl); }
+.event-promo { margin-top: var(--space-l); padding: var(--space-s) var(--space-m); border-left: 6px solid var(--c-accent); background: var(--c-bg-alt); font-weight: 600; }
+.event-grid { display: grid; gap: var(--space-l); grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); }
+.event-card { position: relative; display: flex; flex-direction: column; padding-top: 0; overflow: hidden; }
+.event-card__img { display: block; margin: 0 calc(var(--space-l) * -1) var(--space-s); }
+.event-card__img img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.event-card__date { margin: var(--space-m) 0 0; color: var(--c-heading); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.event-card__day { font-size: var(--step-3); line-height: 1; }
+.event-card__title { margin: var(--space-xs) 0; font-size: var(--step-1); }
+.event-card__title a::after { content: ""; position: absolute; inset: 0; }
+.event-card__meta { margin: 0 0 var(--space-xs); color: var(--c-muted); }

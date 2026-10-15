@@ -276,14 +276,14 @@ add_action(
 add_action(
 	'admin_menu',
 	static function () {
-		add_submenu_page( 'edit.php?post_type=tp_booking', __( 'Leads & calls', 'taxi-peninsula' ), __( 'Leads & calls', 'taxi-peninsula' ), 'edit_tp_bookings', 'tp-leads', 'tp_render_leads_page' );
+		add_submenu_page( 'edit.php?post_type=tp_booking', __( 'Leads & calls', 'taxi-peninsula' ), __( 'Leads & calls', 'taxi-peninsula' ), 'tp_view_leads', 'tp-leads', 'tp_render_leads_page' );
 	},
 	42
 );
 
 function tp_render_leads_page() {
 	global $wpdb;
-	if ( ! current_user_can( 'edit_tp_bookings' ) ) {
+	if ( ! current_user_can( 'tp_view_leads' ) ) {
 		return;
 	}
 	$days  = isset( $_GET['days'] ) ? max( 1, min( 365, absint( $_GET['days'] ) ) ) : 30; // phpcs:ignore WordPress.Security.NonceVerification.Recommended

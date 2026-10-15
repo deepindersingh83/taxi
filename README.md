@@ -8,6 +8,43 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### New in v2.3
+- **Drivers log found items:** a "Found an item?" button on each finished job, plus one for items not linked to a trip.
+  - The driver takes or picks a photo, types what it is and where it is now.
+  - It appears under Bookings → Lost property with the photo, linked to the trip, driver and vehicle.
+  - The office is emailed, including how many passenger reports may match.
+- **Check connections** (Bookings → Check connections): one button that tests:
+  - the flight data API key
+  - the Google Business Profile connection
+  - the SMS provider login
+  - the SMS "STOP" reply address
+  - whether phone notifications are ready
+  - email (a test email is sent to you)
+  - Each result is shown in plain words with a "Fix it" link.
+- **Phone notifications with no app:** passengers tap "Notify me" on their booking page or confirmation.
+  - They are notified when the booking is confirmed, the driver is on the way or has arrived, the pick-up time moves for a flight, or the booking is cancelled.
+  - It uses standard Web Push with keys the site makes itself; there is nothing to sign up for.
+  - On iPhone, Apple only allows this once the site is added to the Home Screen, and the page explains how.
+  - The site must be on https.
+- **Event pages** (Events, `/events/`): concerts, the footy, Christmas lights.
+  - Each event has a date, venue, set accessible drop-off and pick-up points, "going home after" advice and an optional promo code.
+  - "Book a trip here" and "Book a ride home from here" open a filled-in booking form, and bookings are tagged with the event.
+  - Past events say so. Pages include event schema for Google. Shortcode: `[tp_events]`.
+- **Review widgets:**
+  - Partner pages show reviews that mention that hospital or home, using its name plus optional "other names".
+  - Local pages show reviews that mention the suburb.
+  - Reviews come from your Testimonials and your Google reviews. If none mention the place, the widget shows your best general reviews under "What passengers say".
+  - Shortcode: `[tp_reviews_about terms="Frankston, Peninsula Health"]`.
+- **Owner dashboard** (Bookings → Owner dashboard), for the last 7, 30, 90 or 365 days:
+  - headline numbers: trips, completed, revenue, average fare, cancellation and no-show rates, compared with the previous period
+  - charts of trips and revenue over time
+  - a weekday × hour heat map of busiest pick-up times
+  - top partners, where bookings come from, and trip outcomes
+  - every chart has a table view
+- **Marketing role:**
+  - It can manage promo codes, partner pages, events, News & offers, Google posts, the Leads & calls report, and website content (posts, pages, announcements, media).
+  - It cannot see bookings, customers, dispatch, quotes or finance.
+
 ### New in v2.2
 - **Flight-linked airport pick-ups**:
   - customers add a flight number when booking
@@ -46,7 +83,7 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
   - email addresses are double opt-in
   - every message names the business and has an unsubscribe link; emails also carry the one-click List-Unsubscribe header
   - "reply STOP" works through the inbound SMS address
-  - sign-up comes from the booking form, the footer box, or `[tp_newsletter]`
+  - sign-up comes from the booking form, the footer box, or `[tp_newsletter]` `[tp_events]` `[tp_reviews_about]`
   - messages go out in batches from Bookings → News & offers, which also lists subscribers and exports a CSV with consent records
   - sign-ups are included in privacy export and erase
 - **Local service pages**:

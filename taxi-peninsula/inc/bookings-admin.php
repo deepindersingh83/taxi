@@ -49,6 +49,15 @@ function tp_count_by_status() {
 add_action( 'admin_menu', 'tp_booking_menu_bubble', 99 );
 function tp_booking_menu_bubble() {
 	global $menu;
+	if ( ! current_user_can( 'edit_tp_bookings' ) ) {
+		// Marketing staff see this menu only for their own pages: call it "Marketing", with no booking count.
+		foreach ( (array) $menu as $i => $item ) {
+			if ( isset( $item[2] ) && 'edit.php?post_type=tp_booking' === $item[2] ) {
+				$menu[ $i ][0] = __( 'Marketing', 'taxi-peninsula' );
+			}
+		}
+		return;
+	}
 	$pending = tp_count_by_status()['pending'];
 	if ( ! $pending || ! is_array( $menu ) ) {
 		return;

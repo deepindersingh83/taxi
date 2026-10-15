@@ -585,7 +585,7 @@ function tp_marketing_batch() {
 add_action(
 	'admin_menu',
 	static function () {
-		add_submenu_page( 'edit.php?post_type=tp_booking', __( 'News & offers', 'taxi-peninsula' ), __( 'News & offers', 'taxi-peninsula' ), 'edit_tp_bookings', 'tp-offers', 'tp_render_offers_page' );
+		add_submenu_page( 'edit.php?post_type=tp_booking', __( 'News & offers', 'taxi-peninsula' ), __( 'News & offers', 'taxi-peninsula' ), 'tp_manage_offers', 'tp-offers', 'tp_render_offers_page' );
 	},
 	43
 );
@@ -600,7 +600,7 @@ function tp_sub_counts() {
 
 function tp_render_offers_page() {
 	global $wpdb;
-	if ( ! current_user_can( 'edit_tp_bookings' ) ) {
+	if ( ! current_user_can( 'tp_manage_offers' ) ) {
 		return;
 	}
 	$counts  = tp_sub_counts();
@@ -720,7 +720,7 @@ function tp_render_offers_page() {
 add_action( 'admin_post_tp_offer_send', 'tp_handle_offer_send' );
 function tp_handle_offer_send() {
 	check_admin_referer( 'tp_offer_send' );
-	if ( ! current_user_can( 'edit_tp_bookings' ) ) {
+	if ( ! current_user_can( 'tp_manage_offers' ) ) {
 		wp_die( '', 403 );
 	}
 	$channel = isset( $_POST['channel'] ) ? sanitize_key( wp_unslash( $_POST['channel'] ) ) : 'email';
@@ -757,7 +757,7 @@ add_action(
 	static function () {
 		$id = isset( $_GET['id'] ) ? absint( $_GET['id'] ) : 0;
 		check_admin_referer( 'tp_sub_delete_' . $id );
-		if ( ! current_user_can( 'edit_tp_bookings' ) ) {
+		if ( ! current_user_can( 'tp_manage_offers' ) ) {
 			wp_die( '', 403 );
 		}
 		global $wpdb;
@@ -771,7 +771,7 @@ add_action(
 	'admin_post_tp_subs_export',
 	static function () {
 		check_admin_referer( 'tp_subs_export' );
-		if ( ! current_user_can( 'edit_tp_bookings' ) ) {
+		if ( ! current_user_can( 'tp_manage_offers' ) ) {
 			wp_die( '', 403 );
 		}
 		global $wpdb;

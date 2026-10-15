@@ -44,11 +44,12 @@ add_action(
 				'exclude_from_search' => true,
 				'show_in_nav_menus'   => false,
 				'show_ui'             => true,
-				'show_in_menu'        => 'edit.php?post_type=tp_booking',
+				'show_in_menu'        => current_user_can( 'edit_tp_bookings' ) ? 'edit.php?post_type=tp_booking' : true,
+				'menu_icon'           => 'dashicons-building',
 				'show_in_rest'        => true,
 				'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
 				'rewrite'             => array( 'slug' => 'book-from', 'with_front' => false ),
-				'capability_type'     => 'tp_booking',
+				'capability_type'     => array( 'tp_promo', 'tp_promos' ),
 				'map_meta_cap'        => true,
 			)
 		);
@@ -76,7 +77,7 @@ add_filter(
 
 function tp_venue_meta( $id ) {
 	$m = array();
-	foreach ( array( 'type', 'pickup', 'pickup_note', 'contact', 'contact_email', 'phone', 'promo', 'invoice_name', 'invoice_email' ) as $k ) {
+	foreach ( array( 'type', 'pickup', 'pickup_note', 'contact', 'contact_email', 'phone', 'promo', 'invoice_name', 'invoice_email', 'review_terms' ) as $k ) {
 		$m[ $k ] = (string) get_post_meta( $id, '_tp_v_' . $k, true );
 	}
 	$m['type'] = $m['type'] ?: 'hospital';
@@ -110,7 +111,7 @@ add_action(
 			return;
 		}
 		$ua = isset( $_SERVER['HTTP_USER_AGENT'] ) ? (string) $_SERVER['HTTP_USER_AGENT'] : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- only matched.
-		if ( preg_match( '/bot|crawl|spider|preview|curl|wget/i', $ua ) || is_user_logged_in() && current_user_can( 'edit_tp_bookings' ) ) {
+		if ( preg_match( '/bot|crawl|spider|preview|curl|wget/i', $ua ) || is_user_logged_in() && ( current_user_can( 'edit_tp_bookings' ) || current_user_can( 'edit_tp_promos' ) ) ) {
 			return;
 		}
 		$id   = get_queried_object_id();
@@ -250,6 +251,7 @@ function tp_render_venue_box( $post ) {
 		$row( 'promo', __( 'Promo code applied automatically', 'taxi-peninsula' ), 'text', __( 'Optional — a code from Bookings → Promo codes.', 'taxi-peninsula' ) );
 		$row( 'invoice_name', __( 'Invoice to (if the partner pays)', 'taxi-peninsula' ) );
 		$row( 'invoice_email', __( 'Invoice email', 'taxi-peninsula' ), 'email' );
+		$row( 'review_terms', __( 'Other names for this place', 'taxi-peninsula' ), 'text', __( 'Comma separated, e.g. "Peninsula Health, Frankston ED". Reviews that mention the name or these words are shown on the page.', 'taxi-peninsula' ) );
 		?>
 		<tr><th><?php esc_html_e( 'Notify the contact', 'taxi-peninsula' ); ?></th><td><label><input type="checkbox" name="tp_v[notify]" value="1" <?php checked( (bool) get_post_meta( $post->ID, '_tp_v_notify', true ) ); ?>> <?php esc_html_e( 'Email the contact when a trip is booked from this page', 'taxi-peninsula' ); ?></label></td></tr>
 	</table>
@@ -306,7 +308,7 @@ add_action(
 		}
 		$in = isset( $_POST['tp_v'] ) && is_array( $_POST['tp_v'] ) ? wp_unslash( $_POST['tp_v'] ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- sanitized per field.
 		update_post_meta( $post_id, '_tp_v_type', isset( tp_venue_types()[ $in['type'] ?? '' ] ) ? $in['type'] : 'other' );
-		foreach ( array( 'pickup', 'contact', 'phone', 'invoice_name' ) as $k ) {
+		foreach ( array( 'pickup', 'contact', 'phone', 'invoice_name', 'review_terms' ) as $k ) {
 			update_post_meta( $post_id, '_tp_v_' . $k, sanitize_text_field( $in[ $k ] ?? '' ) );
 		}
 		update_post_meta( $post_id, '_tp_v_pickup_note', sanitize_textarea_field( $in['pickup_note'] ?? '' ) );

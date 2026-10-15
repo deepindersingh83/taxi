@@ -39,7 +39,7 @@ add_action(
 				'public'          => false,
 				'show_ui'         => true,
 				'show_in_menu'    => 'edit.php?post_type=tp_booking',
-				'supports'        => array( 'title' ),
+				'supports'        => array( 'title', 'thumbnail' ),
 				'capability_type' => 'tp_booking',
 				'map_meta_cap'    => true,
 			)
@@ -465,6 +465,7 @@ add_filter(
 		return array(
 			'cb'         => '<input type="checkbox">',
 			'title'      => __( 'Item', 'taxi-peninsula' ),
+			'tp_photo'   => __( 'Photo', 'taxi-peninsula' ),
 			'tp_kind'    => __( 'Type', 'taxi-peninsula' ),
 			'tp_date'    => __( 'Date', 'taxi-peninsula' ),
 			'tp_who'     => __( 'Passenger / trip', 'taxi-peninsula' ),
@@ -478,6 +479,9 @@ add_action(
 	static function ( $col, $id ) {
 		$m = tp_lost_meta( $id );
 		switch ( $col ) {
+			case 'tp_photo':
+				echo has_post_thumbnail( $id ) ? get_the_post_thumbnail( $id, array( 60, 60 ) ) : '—'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				break;
 			case 'tp_kind':
 				echo esc_html( 'report' === $m['kind'] ? __( 'Reported lost', 'taxi-peninsula' ) : __( 'Found in vehicle', 'taxi-peninsula' ) );
 				break;
@@ -510,6 +514,157 @@ add_action(
 		}
 		foreach ( get_posts( array( 'post_type' => 'tp_lost', 'numberposts' => 200, 'fields' => 'ids', 'date_query' => array( array( 'before' => $months . ' months ago' ) ) ) ) as $id ) {
 			wp_delete_post( $id, true );
+		}
+	}
+);
+
+/* -------------------------------------------------------------------------
+ * Drivers: "Found an item" on the driver screen, with a photo.
+ * ---------------------------------------------------------------------- */
+
+/**
+ * The "Found an item" form for a job (or with no job when $b is empty).
+ *
+ * @param array  $b   Booking, or array() for an item not linked to a trip.
+ * @param string $day Day being viewed (to come back to).
+ */
+function tp_driver_found_form( array $b = array(), $day = '' ) {
+	$bid = (int) ( $b['id'] ?? 0 );
+	$uid = 'found-' . ( $bid ?: 'any' );
+	?>
+	<details class="job__found<?php echo $bid ? '' : ' card driver-found'; ?>">
+		<summary><?php tp_the_icon( 'search' ); ?> <?php echo esc_html( $bid ? __( 'Found an item after this trip?', 'taxi-peninsula' ) : __( 'Found an item in the vehicle?', 'taxi-peninsula' ) ); ?></summary>
+		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" enctype="multipart/form-data" class="job__found-form">
+			<input type="hidden" name="action" value="tp_driver_found">
+			<input type="hidden" name="booking" value="<?php echo esc_attr( $bid ); ?>">
+			<input type="hidden" name="day" value="<?php echo esc_attr( $day ); ?>">
+			<?php wp_nonce_field( 'tp_found_' . $bid ); ?>
+			<div class="field">
+				<label for="<?php echo esc_attr( $uid ); ?>-photo"><?php esc_html_e( 'Photo', 'taxi-peninsula' ); ?></label>
+				<input type="file" id="<?php echo esc_attr( $uid ); ?>-photo" name="photo" accept="image/*">
+				<p class="field__hint"><?php esc_html_e( 'Take a photo or choose one. It helps the passenger recognise it.', 'taxi-peninsula' ); ?></p>
+			</div>
+			<div class="field">
+				<label for="<?php echo esc_attr( $uid ); ?>-item"><?php esc_html_e( 'What is it?', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
+				<input type="text" id="<?php echo esc_attr( $uid ); ?>-item" name="item" required maxlength="100" placeholder="<?php esc_attr_e( 'e.g. black umbrella', 'taxi-peninsula' ); ?>">
+			</div>
+			<div class="field">
+				<label for="<?php echo esc_attr( $uid ); ?>-where"><?php esc_html_e( 'Where is it now?', 'taxi-peninsula' ); ?></label>
+				<input type="text" id="<?php echo esc_attr( $uid ); ?>-where" name="where" maxlength="120" placeholder="<?php esc_attr_e( 'e.g. in the glovebox, handed in at the depot', 'taxi-peninsula' ); ?>">
+			</div>
+			<button type="submit" class="btn btn--primary"><?php esc_html_e( 'Send to the office', 'taxi-peninsula' ); ?></button>
+		</form>
+	</details>
+	<?php
+}
+
+add_action( 'admin_post_tp_driver_found', 'tp_handle_driver_found' );
+function tp_handle_driver_found() {
+	$bid = isset( $_POST['booking'] ) ? absint( $_POST['booking'] ) : 0;
+	check_admin_referer( 'tp_found_' . $bid );
+	$manager = current_user_can( 'edit_tp_bookings' );
+	if ( ! $manager && ! current_user_can( 'tp_driver_jobs' ) ) {
+		wp_die( '', 403 );
+	}
+	if ( $bid && ( 'tp_booking' !== get_post_type( $bid ) || ( ! $manager && (int) get_post_meta( $bid, '_tp_driver_id', true ) !== get_current_user_id() ) ) ) {
+		wp_die( esc_html__( 'This trip is not assigned to you.', 'taxi-peninsula' ), 403 );
+	}
+	$day  = isset( $_POST['day'] ) ? sanitize_text_field( wp_unslash( $_POST['day'] ) ) : '';
+	$back = add_query_arg( array_filter( array( 'day' => preg_match( '/^\d{4}-\d{2}-\d{2}$/', $day ) ? $day : '' ) ), tp_page_url_by_template( 'driver', home_url( '/' ) ) );
+	$item = isset( $_POST['item'] ) ? sanitize_text_field( wp_unslash( $_POST['item'] ) ) : '';
+	if ( '' === $item ) {
+		wp_safe_redirect( add_query_arg( 'found', 'missing', $back ) . ( $bid ? '#job-' . $bid : '' ) );
+		exit;
+	}
+	$user  = wp_get_current_user();
+	$where = isset( $_POST['where'] ) ? sanitize_text_field( wp_unslash( $_POST['where'] ) ) : '';
+	$id    = wp_insert_post( array( 'post_type' => 'tp_lost', 'post_status' => 'publish', 'post_title' => $item, 'post_author' => $user->ID ) );
+	if ( ! $id || is_wp_error( $id ) ) {
+		wp_die( esc_html__( 'Could not save the item. Please call the office.', 'taxi-peninsula' ) );
+	}
+	$meta = array(
+		'kind'      => 'found',
+		'status'    => 'open',
+		/* translators: %s: driver name */
+		'where'     => $where ?: sprintf( __( 'With driver %s', 'taxi-peninsula' ), $user->display_name ),
+		'date'      => $bid ? (string) get_post_meta( $bid, '_tp_date', true ) : wp_date( 'Y-m-d' ),
+		'reference' => $bid ? (string) get_post_meta( $bid, '_tp_reference', true ) : '',
+		'booking_id' => $bid ?: '',
+		'driver_id' => $bid ? (int) get_post_meta( $bid, '_tp_driver_id', true ) : $user->ID,
+		'fleet_id'  => $bid ? (int) get_post_meta( $bid, '_tp_fleet_id', true ) : '',
+	);
+	foreach ( $meta as $k => $v ) {
+		update_post_meta( $id, '_tp_l_' . $k, $v );
+	}
+
+	// Photo: images only, up to 10 MB.
+	$photo = '';
+	if ( ! empty( $_FILES['photo']['name'] ) && empty( $_FILES['photo']['error'] ) && (int) $_FILES['photo']['size'] <= 10 * MB_IN_BYTES ) {
+		require_once ABSPATH . 'wp-admin/includes/file.php';
+		require_once ABSPATH . 'wp-admin/includes/media.php';
+		require_once ABSPATH . 'wp-admin/includes/image.php';
+		$check = wp_check_filetype_and_ext( $_FILES['photo']['tmp_name'], sanitize_file_name( wp_unslash( $_FILES['photo']['name'] ) ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		if ( $check['type'] && 0 === strpos( $check['type'], 'image/' ) ) {
+			$att = media_handle_upload( 'photo', $id, array( 'post_title' => $item ), array( 'test_form' => false, 'mimes' => array( 'jpg|jpeg|jpe' => 'image/jpeg', 'png' => 'image/png', 'gif' => 'image/gif', 'webp' => 'image/webp', 'heic' => 'image/heic' ) ) );
+			if ( ! is_wp_error( $att ) ) {
+				set_post_thumbnail( $id, $att );
+				$photo = wp_get_attachment_url( $att );
+			}
+		}
+	}
+
+	if ( $bid ) {
+		/* translators: %s: item */
+		tp_add_log( $bid, array( 'note' => sprintf( __( 'Driver found an item: %s', 'taxi-peninsula' ), $item ) ) );
+	}
+	if ( function_exists( 'tp_activity' ) ) {
+		/* translators: %s: item */
+		tp_activity( 'enquiry', sprintf( __( 'Found item logged by driver: %s', 'taxi-peninsula' ), $item ), $bid );
+	}
+	$matches = tp_lost_matches( $id );
+	tp_in_site_lang(
+		static function () use ( $id, $item, $meta, $user, $photo, $matches ) {
+			$body = sprintf(
+				/* translators: 1: driver 2: item 3: where */
+				__( '%1$s found: %2$s. Now: %3$s.', 'taxi-peninsula' ),
+				$user->display_name,
+				$item,
+				$meta['where']
+			) . "\n";
+			if ( $meta['reference'] ) {
+				$body .= __( 'Trip', 'taxi-peninsula' ) . ': ' . $meta['reference'] . "\n";
+			}
+			if ( $matches ) {
+				/* translators: %d: count */
+				$body .= sprintf( _n( '%d passenger report may match.', '%d passenger reports may match.', count( $matches ), 'taxi-peninsula' ), count( $matches ) ) . "\n";
+			}
+			$body .= "\n";
+			if ( $photo ) {
+				$body .= __( 'Photo', 'taxi-peninsula' ) . ': ' . $photo . "\n";
+			}
+			$body .= __( 'Open lost property', 'taxi-peninsula' ) . ': ' . admin_url( 'post.php?action=edit&post=' . $id );
+			wp_mail(
+				tp_opt( 'notify_email' ) ?: get_option( 'admin_email' ),
+				/* translators: %s: item */
+				sprintf( __( 'Item found in a vehicle: %s', 'taxi-peninsula' ), $item ),
+				$body,
+				tp_mail_headers()
+			);
+		}
+	);
+	wp_safe_redirect( add_query_arg( 'found', $photo ? 'photo' : 'sent', $back ) . ( $bid ? '#job-' . $bid : '' ) );
+	exit;
+}
+
+// Message on the driver screen after sending.
+add_action(
+	'tp_driver_jobs_top',
+	static function () {
+		$found = isset( $_GET['found'] ) ? sanitize_key( wp_unslash( $_GET['found'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( 'sent' === $found || 'photo' === $found ) {
+			echo '<p class="notice notice--success" role="status" tabindex="-1" data-focus>' . esc_html( 'photo' === $found ? __( 'Thanks — the office has the item details and photo.', 'taxi-peninsula' ) : __( 'Thanks — the office has the item details.', 'taxi-peninsula' ) ) . '</p>';
+		} elseif ( 'missing' === $found ) {
+			echo '<p class="notice notice--error" role="alert" tabindex="-1" data-focus>' . esc_html__( 'Please say what the item is.', 'taxi-peninsula' ) . '</p>';
 		}
 	}
 );

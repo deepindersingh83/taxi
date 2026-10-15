@@ -155,6 +155,8 @@ function tp_driver_jobs_shortcode() {
 	}
 	echo '</nav>';
 
+	do_action( 'tp_driver_jobs_top' );
+
 	if ( $is_manager ) {
 		tp_driver_jobs_filter( $base, $driver_id, $view );
 	}
@@ -164,6 +166,8 @@ function tp_driver_jobs_shortcode() {
 	} else {
 		tp_driver_day_view( $driver_id, $base, $is_manager );
 	}
+
+	tp_driver_found_form();
 
 	printf( '<p class="driver-jobs__logout"><a href="%s">%s</a></p>', esc_url( wp_logout_url( $base ) ), esc_html__( 'Sign out', 'taxi-peninsula' ) );
 	echo '</div>';
@@ -373,6 +377,9 @@ function tp_driver_job_card( array $b, $day, $is_manager, $is_next = false ) {
 					<button type="submit" class="btn btn--ghost"><?php esc_html_e( 'Decline trip', 'taxi-peninsula' ); ?></button>
 				</form>
 			</details>
+		<?php endif; ?>
+		<?php if ( $b['driver_id'] && in_array( $b['status'], array( 'onboard', 'completed', 'no_show', 'arrived' ), true ) ) : ?>
+			<?php tp_driver_found_form( $b, $day ); ?>
 		<?php endif; ?>
 	</article>
 	<?php
