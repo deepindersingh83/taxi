@@ -10,7 +10,7 @@ if ( ! $partners ) {
 	return;
 }
 ?>
-<section class="section section--partners" aria-labelledby="partners-title">
+<section class="section section--partners<?php echo empty( $args['slim'] ) ? '' : ' section--partners-slim'; ?>" aria-labelledby="partners-title">
 	<div class="container">
 		<h2 id="partners-title" class="partners__title"><?php echo esc_html( $args['title'] ?? __( 'Trusted by local organisations', 'taxi-peninsula' ) ); ?></h2>
 		<ul class="partners">

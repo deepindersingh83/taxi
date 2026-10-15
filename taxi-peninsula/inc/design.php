@@ -768,7 +768,8 @@ function tp_design_customize_register( WP_Customize_Manager $wp_customize ) {
 	$add( 'hero_bg', 'tp_design_hero', __( 'Background', 'taxi-peninsula' ), 'radio', array( 'sanitize' => $choice( $bgs ), 'choices' => $bgs, 'description' => __( 'The photo is the hero photo (Taxi Peninsula → Home page hero) or the current seasonal photo.', 'taxi-peninsula' ) ) );
 	$add( 'hero_overlay', 'tp_design_hero', __( 'Overlay darkness (%)', 'taxi-peninsula' ), 'range', array( 'sanitize' => $range( 20, 90 ), 'input_attrs' => array( 'min' => 30, 'max' => 85, 'step' => 5 ), 'description' => __( 'Keep it at 55% or more so white text stays readable on busy photos.', 'taxi-peninsula' ), 'active_callback' => static fn() => 'photo' === tp_design( 'hero_bg' ) ) );
 	$sides = array(
-		'auto' => __( 'The hero photo (or the badge card if there is no photo)', 'taxi-peninsula' ),
+		'auto'  => __( 'The hero photo (or the animated maxi taxi if there is no photo)', 'taxi-peninsula' ),
+		'scene' => __( 'The animated maxi taxi pick-up', 'taxi-peninsula' ),
 		'card' => __( 'The badge card', 'taxi-peninsula' ),
 		'none' => __( 'Nothing — text only', 'taxi-peninsula' ),
 	);

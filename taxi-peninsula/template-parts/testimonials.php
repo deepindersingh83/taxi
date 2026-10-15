@@ -52,6 +52,34 @@ if ( ! $items && ! $greview && '' === $rating ) {
 			<?php endif; ?>
 		</div>
 
+		<?php
+		$slider = ! empty( $args['slider'] );
+		$quote  = $slider ? trim( (string) get_theme_mod( 'tp_home_quote', '' ) ) : '';
+		$qname  = $slider ? trim( (string) get_theme_mod( 'tp_home_quote_name', '' ) ) : '';
+		if ( $slider && '' === $quote && $items ) {
+			$quote = wp_strip_all_tags( $items[0]->post_content );
+			$qname = get_the_title( $items[0] ) . ( get_post_meta( $items[0]->ID, '_tp_detail', true ) ? ', ' . get_post_meta( $items[0]->ID, '_tp_detail', true ) : '' );
+			$items = array_slice( $items, 1 );
+		}
+		?>
+		<?php if ( $quote ) : ?>
+			<figure class="feature-quote">
+				<blockquote><p><?php echo esc_html( wp_trim_words( $quote, 45 ) ); ?></p></blockquote>
+				<?php if ( $qname ) : ?>
+					<figcaption><?php echo esc_html( $qname ); ?></figcaption>
+				<?php endif; ?>
+			</figure>
+		<?php endif; ?>
+
+		<?php if ( $slider && ( $greview || $items ) ) : ?>
+			<div class="slider" data-slider>
+				<div class="slider__controls">
+					<button type="button" class="slider__btn" data-slider-prev aria-label="<?php esc_attr_e( 'Previous reviews', 'taxi-peninsula' ); ?>"><?php tp_the_icon( 'chevron-left' ); ?></button>
+					<button type="button" class="slider__btn" data-slider-next aria-label="<?php esc_attr_e( 'Next reviews', 'taxi-peninsula' ); ?>"><?php tp_the_icon( 'chevron-right' ); ?></button>
+				</div>
+				<div class="slider__track" tabindex="0" role="group" aria-label="<?php esc_attr_e( 'Reviews — scroll sideways for more', 'taxi-peninsula' ); ?>">
+		<?php endif; ?>
+
 		<?php if ( $greview ) : ?>
 			<div class="testimonials testimonials--google">
 				<?php foreach ( array_slice( $greview, 0, $limit ) as $r ) : ?>
@@ -78,6 +106,7 @@ if ( ! $items && ! $greview && '' === $rating ) {
 					</figure>
 				<?php endforeach; ?>
 			</div>
+			<?php if ( ! $slider ) : ?>
 			<p class="google-attribution">
 				<?php if ( tp_setting( 'google_logo_url' ) ) : ?>
 					<img src="<?php echo esc_url( tp_setting( 'google_logo_url' ) ); ?>" alt="Google" width="66" height="22" loading="lazy">
@@ -86,6 +115,7 @@ if ( ! $items && ! $greview && '' === $rating ) {
 				<?php endif; ?>
 				<span><?php esc_html_e( 'Reviews from Google, shown as written by reviewers.', 'taxi-peninsula' ); ?></span>
 			</p>
+			<?php endif; ?>
 		<?php endif; ?>
 
 		<?php if ( $items ) : ?>
@@ -111,6 +141,22 @@ if ( ! $items && ! $greview && '' === $rating ) {
 					</figure>
 				<?php endforeach; ?>
 			</div>
+		<?php endif; ?>
+
+		<?php if ( $slider && ( $greview || $items ) ) : ?>
+				</div>
+			</div>
+		<?php endif; ?>
+
+		<?php if ( $slider && $greview ) : ?>
+			<p class="google-attribution">
+				<?php if ( tp_setting( 'google_logo_url' ) ) : ?>
+					<img src="<?php echo esc_url( tp_setting( 'google_logo_url' ) ); ?>" alt="Google" width="66" height="22" loading="lazy">
+				<?php else : ?>
+					<span class="google-attribution__text">Google</span>
+				<?php endif; ?>
+				<span><?php esc_html_e( 'Reviews from Google, shown as written by reviewers.', 'taxi-peninsula' ); ?></span>
+			</p>
 		<?php endif; ?>
 
 		<?php if ( $gurl ) : ?>

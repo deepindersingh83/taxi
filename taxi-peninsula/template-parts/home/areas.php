@@ -15,6 +15,10 @@ $area_links = tp_area_links();
 	<div class="container">
 		<h2 id="areas-title" class="section__title"><?php echo esc_html( tp_home_text( 'areas' ) ); ?></h2>
 		<p class="section__lead"><?php echo esc_html( tp_home_text( 'areas', 'text' ) ); ?></p>
+		<?php $map = tp_area_map( $areas ); ?>
+		<div class="areas-layout<?php echo $map ? ' areas-layout--map' : ''; ?>">
+		<?php echo $map; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in tp_area_map(). ?>
+		<div class="areas-layout__side">
 		<?php echo do_shortcode( '[tp_suburb_checker]' ); ?>
 		<ul class="chips">
 			<?php foreach ( $areas as $area ) : ?>
@@ -28,5 +32,7 @@ $area_links = tp_area_links();
 				</li>
 			<?php endforeach; ?>
 		</ul>
+		</div>
+		</div>
 	</div>
 </section>

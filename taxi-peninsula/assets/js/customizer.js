@@ -23,6 +23,43 @@
 			wp.a11y.speak(item.find('label').text().trim() + ': ' + (item.index() + 1));
 		}
 	});
+	// Drag and drop (mouse); ▲ ▼ buttons remain for keyboard and touch.
+	var dragging = null;
+	$(document).on('dragstart', '.tp-sortable__item', function (e) {
+		dragging = this;
+		$(this).addClass('is-dragging');
+		e.originalEvent.dataTransfer.effectAllowed = 'move';
+		e.originalEvent.dataTransfer.setData('text/plain', $(this).data('key'));
+	});
+	$(document).on('dragover', '.tp-sortable__item', function (e) {
+		if (!dragging || dragging === this) { return; }
+		e.preventDefault();
+		$('.tp-sortable__item').removeClass('is-over');
+		$(this).addClass('is-over');
+	});
+	$(document).on('drop', '.tp-sortable__item', function (e) {
+		if (!dragging || dragging === this) { return; }
+		e.preventDefault();
+		var after = $(dragging).index() < $(this).index();
+		if (after) { $(this).after(dragging); } else { $(this).before(dragging); }
+		sync($(this).closest('.tp-sortable'));
+	});
+	$(document).on('dragend', '.tp-sortable__item', function () {
+		$('.tp-sortable__item').removeClass('is-dragging is-over');
+		dragging = null;
+	});
+	$(document).on('click', '.tp-sortable-reset', function () {
+		var list = $(this).closest('li, .customize-control').find('.tp-sortable');
+		$(this).data('default').split(',').forEach(function (item) {
+			var key = item.replace(/^-/, '');
+			var li = list.find('.tp-sortable__item[data-key="' + key + '"]');
+			li.find('input[type=checkbox]').prop('checked', item.charAt(0) !== '-');
+			list.append(li);
+		});
+		sync(list);
+		if (wp.a11y && wp.a11y.speak) { wp.a11y.speak($(this).text()); }
+	});
+
 	$(function () {
 		$('.tp-sortable').each(function () {
 			$(this).find('.tp-sortable__item').each(function () {

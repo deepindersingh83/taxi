@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TP_VERSION', '1.9.0' );
+define( 'TP_VERSION', '2.0.0' );
 define( 'TP_DIR', get_template_directory() );
 define( 'TP_URI', get_template_directory_uri() );
 
@@ -43,6 +43,7 @@ require TP_DIR . '/inc/blog.php';
 require TP_DIR . '/inc/people.php';
 require TP_DIR . '/inc/careers.php';
 require TP_DIR . '/inc/home.php';
+require TP_DIR . '/inc/area-map.php';
 require TP_DIR . '/inc/hours.php';
 require TP_DIR . '/inc/design.php';
 require TP_DIR . '/inc/illustrations.php';

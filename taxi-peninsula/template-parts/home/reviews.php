@@ -6,4 +6,4 @@
  */
 
 ?>
-<?php get_template_part( 'template-parts/testimonials', null, array( 'limit' => 3, 'title' => tp_home_text( 'reviews' ) ) ); ?>
+<?php get_template_part( 'template-parts/testimonials', null, array( 'limit' => 8, 'slider' => true, 'title' => tp_home_text( 'reviews' ) ) ); ?>

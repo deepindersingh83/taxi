@@ -173,11 +173,13 @@ function tp_content_fields() {
 			'access'      => array( __( 'Access', 'taxi-peninsula' ), 'select', array( 'ramp' => __( 'Rear ramp', 'taxi-peninsula' ), 'side_ramp' => __( 'Side ramp', 'taxi-peninsula' ), 'hoist' => __( 'Hydraulic hoist / lift', 'taxi-peninsula' ), 'none' => __( 'No wheelchair access', 'taxi-peninsula' ) ) ),
 			'wheelchairs' => array( __( 'Wheelchair positions', 'taxi-peninsula' ), 'number', '' ),
 			'seats'       => array( __( 'Seated passengers', 'taxi-peninsula' ), 'number', '' ),
+			'max_chair'   => array( __( 'Largest wheelchair it takes', 'taxi-peninsula' ), 'text', __( 'Shown on the home page, e.g. "75 × 130 cm, 300 kg with passenger".', 'taxi-peninsula' ) ),
 			'features'    => array( __( 'Features (one per line)', 'taxi-peninsula' ), 'textarea', __( 'e.g. Four-point restraints, Lap-sash belt, Air-conditioned', 'taxi-peninsula' ) ),
 			'rego'        => array( __( 'Registration / fleet no. (staff only)', 'taxi-peninsula' ), 'text', __( 'Not shown on the website.', 'taxi-peninsula' ) ),
 		),
 		'tp_service'     => array(
 			'icon' => array( __( 'Icon', 'taxi-peninsula' ), 'select', $icons ),
+			'from_price' => array( __( 'Price hint: fares from (AUD)', 'taxi-peninsula' ), 'number', __( 'Optional. Shown as "From $45" on the service card. Leave empty to hide.', 'taxi-peninsula' ) ),
 		),
 		'tp_area'        => array(
 			'nearby'    => array( __( 'Places we often take passengers to or from (one per line)', 'taxi-peninsula' ), 'textarea', __( 'e.g. hospitals, dialysis and rehab centres, day programs, shopping centres, stations in or near this suburb.', 'taxi-peninsula' ) ),
@@ -228,7 +230,7 @@ function tp_render_content_box( WP_Post $post ) {
 				esc_attr( $id ),
 				esc_attr( $key ),
 				esc_attr( $value ),
-				'number' === $f[1] ? ' min="0" max="20"' : ''
+				'number' === $f[1] ? ( 'from_price' === $key ? ' min="0" max="9999"' : ' min="0" max="20"' ) : ''
 			);
 		}
 		if ( 'select' !== $f[1] && ! empty( $f[2] ) ) {
@@ -319,6 +321,7 @@ function tp_services_list() {
 					'text'  => has_excerpt( $p ) ? get_the_excerpt( $p ) : wp_trim_words( wp_strip_all_tags( $p->post_content ), 22 ),
 					'icon'  => get_post_meta( $p->ID, '_tp_icon', true ) ?: 'wheelchair',
 					'url'   => get_permalink( $p ),
+					'price' => get_post_meta( $p->ID, '_tp_from_price', true ),
 				);
 			},
 			$posts
@@ -332,6 +335,7 @@ function tp_services_list() {
 			'text'  => $s['excerpt'],
 			'icon'  => $s['icon'],
 			'url'   => '',
+			'price' => '',
 		);
 	}
 	return $out;

@@ -13,28 +13,34 @@ defined( 'ABSPATH' ) || exit;
  * An empty default title means the section has no editable heading.
  */
 function tp_home_sections() {
+	// key => [label, default title, default intro, shown by default].
 	return array(
-		'stats'        => array( __( 'Live trust numbers', 'taxi-peninsula' ), '', '' ),
-		'features'     => array( __( 'Why passengers choose us', 'taxi-peninsula' ), __( 'Why passengers choose us', 'taxi-peninsula' ), '' ),
-		'journey'      => array( __( 'How a trip works (animated scenes)', 'taxi-peninsula' ), __( 'From your door to the departure gate', 'taxi-peninsula' ), __( 'We back right up to your door, lower the ramp and help you aboard — and we are waiting at Arrivals when you land.', 'taxi-peninsula' ) ),
-		'who'          => array( __( 'Who we help', 'taxi-peninsula' ), __( 'Who we help', 'taxi-peninsula' ), __( 'Whether you are travelling yourself or arranging transport for someone else, we make it simple.', 'taxi-peninsula' ) ),
-		'book'         => array( __( 'Booking form', 'taxi-peninsula' ), __( 'Book your accessible taxi', 'taxi-peninsula' ), __( 'Tell us where you are going and what you need. We will confirm your booking and let you know when your driver is on the way.', 'taxi-peninsula' ) ),
-		'services'     => array( __( 'Services', 'taxi-peninsula' ), __( 'Our services', 'taxi-peninsula' ), __( 'Reliable wheelchair accessible transport for everyday trips and important appointments.', 'taxi-peninsula' ) ),
-		'video'        => array( __( 'Wheelchair safety video', 'taxi-peninsula' ), '', '' ),
-		'destinations' => array( __( 'Popular destinations', 'taxi-peninsula' ), __( 'Where our passengers go', 'taxi-peninsula' ), __( 'Our most-booked destinations this year. Tap one to book a trip there.', 'taxi-peninsula' ) ),
-		'areas'        => array( __( 'Areas we cover + suburb checker', 'taxi-peninsula' ), __( 'Areas we cover', 'taxi-peninsula' ), __( 'Based on the Mornington Peninsula and servicing greater Melbourne. Not listed? Call us — we travel further on request.', 'taxi-peninsula' ) ),
-		'faq'          => array( __( 'Top questions (FAQ strip)', 'taxi-peninsula' ), __( 'Questions we are often asked', 'taxi-peninsula' ), '' ),
-		'reviews'      => array( __( 'Reviews & testimonials', 'taxi-peninsula' ), __( 'What our passengers say', 'taxi-peninsula' ), '' ),
-		'content'      => array( __( 'Home page content (from the editor)', 'taxi-peninsula' ), '', '' ),
-		'posts'        => array( __( 'Latest blog posts', 'taxi-peninsula' ), __( 'News & travel tips', 'taxi-peninsula' ), '' ),
-		'partners'     => array( __( 'Partner logos', 'taxi-peninsula' ), __( 'Trusted by local organisations', 'taxi-peninsula' ), '' ),
-		'cta'          => array( __( 'Call-to-action band', 'taxi-peninsula' ), __( 'Need a wheelchair taxi today?', 'taxi-peninsula' ), __( 'Call our friendly team and we will get you moving.', 'taxi-peninsula' ) ),
+		'shortcuts'    => array( __( 'Audience shortcuts (under the hero)', 'taxi-peninsula' ), '', '', true ),
+		'stats'        => array( __( 'Live trust numbers', 'taxi-peninsula' ), '', '', true ),
+		'services'     => array( __( 'Services', 'taxi-peninsula' ), __( 'Our services', 'taxi-peninsula' ), __( 'Reliable wheelchair accessible transport for everyday trips and important appointments.', 'taxi-peninsula' ), true ),
+		'steps'        => array( __( 'How it works (3 steps)', 'taxi-peninsula' ), __( 'Booking takes about two minutes', 'taxi-peninsula' ), __( 'Book online or by phone, we confirm, and your driver helps you from door to door.', 'taxi-peninsula' ), true ),
+		'fleet'        => array( __( 'Our vehicles', 'taxi-peninsula' ), __( 'Vehicles built for wheelchairs', 'taxi-peninsula' ), __( 'Tell us about your chair when you book and we will send the right vehicle.', 'taxi-peninsula' ), true ),
+		'journey'      => array( __( 'How a trip works (animated scenes)', 'taxi-peninsula' ), __( 'From your door to the departure gate', 'taxi-peninsula' ), __( 'We back right up to your door, lower the ramp and help you aboard — and we are waiting at Arrivals when you land.', 'taxi-peninsula' ), true ),
+		'video'        => array( __( 'Wheelchair safety video', 'taxi-peninsula' ), '', '', true ),
+		'reviews'      => array( __( 'Reviews & testimonials', 'taxi-peninsula' ), __( 'What our passengers say', 'taxi-peninsula' ), '', true ),
+		'areas'        => array( __( 'Areas we cover + map + suburb checker', 'taxi-peninsula' ), __( 'Areas we cover', 'taxi-peninsula' ), __( 'Based on the Mornington Peninsula and servicing greater Melbourne. Not listed? Call us — we travel further on request.', 'taxi-peninsula' ), true ),
+		'faq'          => array( __( 'Top questions (FAQ strip)', 'taxi-peninsula' ), __( 'Questions we are often asked', 'taxi-peninsula' ), '', true ),
+		'content'      => array( __( 'Home page content (from the editor)', 'taxi-peninsula' ), '', '', true ),
+		'partners'     => array( __( 'Partner logos (slim strip)', 'taxi-peninsula' ), __( 'Trusted by local organisations', 'taxi-peninsula' ), '', true ),
+		'cta'          => array( __( 'Call-to-action band', 'taxi-peninsula' ), __( 'Need a wheelchair taxi today?', 'taxi-peninsula' ), __( 'Call our friendly team and we will get you moving.', 'taxi-peninsula' ), true ),
+		// Optional extras, hidden by default.
+		'book'         => array( __( 'Quick booking card', 'taxi-peninsula' ), __( 'Book your accessible taxi', 'taxi-peninsula' ), __( 'Tell us where you are going and what you need. We will confirm your booking and let you know when your driver is on the way.', 'taxi-peninsula' ), false ),
+		'who'          => array( __( 'Who we help (large panels)', 'taxi-peninsula' ), __( 'Who we help', 'taxi-peninsula' ), __( 'Whether you are travelling yourself or arranging transport for someone else, we make it simple.', 'taxi-peninsula' ), false ),
+		'features'     => array( __( 'Why passengers choose us', 'taxi-peninsula' ), __( 'Why passengers choose us', 'taxi-peninsula' ), '', false ),
+		'destinations' => array( __( 'Popular destinations', 'taxi-peninsula' ), __( 'Where our passengers go', 'taxi-peninsula' ), __( 'Our most-booked destinations this year. Tap one to book a trip there.', 'taxi-peninsula' ), false ),
+		'posts'        => array( __( 'Latest blog posts', 'taxi-peninsula' ), __( 'News & travel tips', 'taxi-peninsula' ), '', false ),
 	);
 }
 
 /**
  * Current layout as [key => visible bool], in display order. New sections added
- * in theme updates are shown in their default position so they are never silently lost.
+ * in theme updates appear in their default position, shown or hidden as the
+ * theme recommends, so they are never silently lost.
  */
 function tp_home_layout() {
 	$known  = tp_home_sections();
@@ -49,14 +55,25 @@ function tp_home_layout() {
 	}
 	// Sections added in a theme update go right after the section they follow by default.
 	$prev = null;
-	foreach ( array_keys( $known ) as $key ) {
+	foreach ( $known as $key => $s ) {
 		if ( ! isset( $layout[ $key ] ) ) {
 			$pos    = null === $prev ? 0 : array_search( $prev, array_keys( $layout ), true ) + 1;
-			$layout = array_slice( $layout, 0, $pos, true ) + array( $key => true ) + array_slice( $layout, $pos, null, true );
+			$layout = array_slice( $layout, 0, $pos, true ) + array( $key => ! empty( $s[3] ) ) + array_slice( $layout, $pos, null, true );
 		}
 		$prev = $key;
 	}
 	return $layout;
+}
+
+/**
+ * The recommended layout, as stored by the Customizer.
+ */
+function tp_home_default_layout() {
+	$out = array();
+	foreach ( tp_home_sections() as $key => $s ) {
+		$out[] = ( empty( $s[3] ) ? '-' : '' ) . $key;
+	}
+	return implode( ',', $out );
 }
 
 function tp_sanitize_home_layout( $value ) {
@@ -89,18 +106,19 @@ function tp_home_text( $key, $field = 'title' ) {
  * ---------------------------------------------------------------------- */
 
 function tp_who_defaults() {
+	// n => [illustration, heading, text, page, link text, short label for the shortcuts strip].
 	return array(
-		1 => array( 'wheelchair', __( 'Passengers', 'taxi-peninsula' ), __( 'Book your own trip online or by phone. We help you from your door to theirs.', 'taxi-peninsula' ), 'book', __( 'Book a trip', 'taxi-peninsula' ) ),
-		2 => array( 'heart', __( 'Family & carers', 'taxi-peninsula' ), __( 'Booking for a parent, partner or client? Carers can travel too, and you can manage the booking online.', 'taxi-peninsula' ), 'faq', __( 'Tips for carers', 'taxi-peninsula' ) ),
-		3 => array( 'users', __( 'NDIS coordinators & plan managers', 'taxi-peninsula' ), __( 'Set up regular trips for participants and have them invoiced to the right place.', 'taxi-peninsula' ), 'ndis', __( 'NDIS & accounts', 'taxi-peninsula' ) ),
-		4 => array( 'medical', __( 'Hospitals & aged care', 'taxi-peninsula' ), __( 'Discharges, appointments and outings for your patients and residents. Ask us about an account.', 'taxi-peninsula' ), 'contact', __( 'Talk to us', 'taxi-peninsula' ) ),
+		1 => array( 'wheelchair', __( 'Passengers', 'taxi-peninsula' ), __( 'Book your own trip online or by phone. We help you from your door to theirs.', 'taxi-peninsula' ), 'book', __( 'Book a trip', 'taxi-peninsula' ), __( 'I’m a passenger', 'taxi-peninsula' ) ),
+		2 => array( 'heart', __( 'Family & carers', 'taxi-peninsula' ), __( 'Booking for a parent, partner or client? Carers can travel too, and you can manage the booking online.', 'taxi-peninsula' ), 'book', __( 'Book for someone', 'taxi-peninsula' ), __( 'I’m booking for someone', 'taxi-peninsula' ) ),
+		3 => array( 'users', __( 'NDIS coordinators & plan managers', 'taxi-peninsula' ), __( 'Set up regular trips for participants and have them invoiced to the right place.', 'taxi-peninsula' ), 'ndis', __( 'NDIS & accounts', 'taxi-peninsula' ), __( 'NDIS & aged care', 'taxi-peninsula' ) ),
+		4 => array( 'medical', __( 'Hospitals & aged care', 'taxi-peninsula' ), __( 'Discharges, appointments and outings for your patients and residents. Ask us about an account.', 'taxi-peninsula' ), 'contact', __( 'Talk to us', 'taxi-peninsula' ), __( 'Hospital discharge', 'taxi-peninsula' ) ),
 	);
 }
 
 /**
  * Panels with Customizer overrides applied.
  *
- * @return array[] Each: icon, title, text, url, link.
+ * @return array[] Each: icon, title, text, url, link, short.
  */
 function tp_who_panels() {
 	$out = array();
@@ -119,6 +137,7 @@ function tp_who_panels() {
 			'text'  => get_theme_mod( "tp_who_{$n}_text", $d[2] ),
 			'url'   => $url,
 			'link'  => get_theme_mod( "tp_who_{$n}_link", $d[4] ),
+			'short' => get_theme_mod( "tp_who_{$n}_short", '' ) ?: $d[5],
 		);
 	}
 	return $out;
@@ -147,7 +166,8 @@ function tp_home_customize( WP_Customize_Manager $wp_customize ) {
 				<input type="hidden" class="tp-sortable-value" <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>">
 				<ol class="tp-sortable">
 					<?php foreach ( tp_home_layout() as $key => $visible ) : ?>
-						<li class="tp-sortable__item" data-key="<?php echo esc_attr( $key ); ?>">
+						<li class="tp-sortable__item" data-key="<?php echo esc_attr( $key ); ?>" draggable="true">
+								<span class="tp-sortable__grip" aria-hidden="true">⋮⋮</span>
 							<label><input type="checkbox" <?php checked( $visible ); ?>> <?php echo esc_html( $labels[ $key ] ); ?></label>
 							<span class="tp-sortable__btns">
 								<button type="button" class="button-link tp-up" aria-label="<?php echo esc_attr( sprintf( /* translators: %s: section */ __( 'Move %s up', 'taxi-peninsula' ), $labels[ $key ] ) ); ?>">▲</button>
@@ -156,6 +176,7 @@ function tp_home_customize( WP_Customize_Manager $wp_customize ) {
 						</li>
 					<?php endforeach; ?>
 				</ol>
+				<p><button type="button" class="button tp-sortable-reset" data-default="<?php echo esc_attr( tp_home_default_layout() ); ?>"><?php esc_html_e( 'Use the recommended layout', 'taxi-peninsula' ); ?></button></p>
 				<?php
 			}
 		}
@@ -167,14 +188,23 @@ function tp_home_customize( WP_Customize_Manager $wp_customize ) {
 			'title'       => __( 'Home page layout', 'taxi-peninsula' ),
 			'panel'       => 'tp_panel',
 			'priority'    => 5,
-			'description' => __( 'Tick to show a section, untick to hide it, and use ▲ ▼ to reorder. The hero banner always stays at the top.', 'taxi-peninsula' ),
+			'description' => __( 'Tick to show a section, untick to hide it, and drag (or use ▲ ▼) to reorder. The hero banner always stays at the top.', 'taxi-peninsula' ),
 		)
 	);
 	$wp_customize->add_setting( 'tp_home_layout', array( 'default' => '', 'sanitize_callback' => 'tp_sanitize_home_layout' ) );
 	$wp_customize->add_control( new TP_Sortable_Sections_Control( $wp_customize, 'tp_home_layout', array( 'section' => 'tp_home_layout', 'label' => __( 'Sections', 'taxi-peninsula' ) ) ) );
 
+	$wp_customize->add_setting( 'tp_home_badges', array( 'default' => true, 'sanitize_callback' => 'tp_sanitize_checkbox' ) );
+	$wp_customize->add_control( 'tp_home_badges', array( 'section' => 'tp_home_layout', 'type' => 'checkbox', 'label' => __( 'Show trust badges and the Google rating under the hero buttons', 'taxi-peninsula' ) ) );
+	$wp_customize->add_setting( 'tp_home_book_full', array( 'default' => false, 'sanitize_callback' => 'tp_sanitize_checkbox' ) );
+	$wp_customize->add_control( 'tp_home_book_full', array( 'section' => 'tp_home_layout', 'type' => 'checkbox', 'label' => __( 'Booking section: show the full booking form instead of the quick card', 'taxi-peninsula' ) ) );
+	$wp_customize->add_setting( 'tp_home_quote', array( 'default' => '', 'sanitize_callback' => 'sanitize_textarea_field' ) );
+	$wp_customize->add_control( 'tp_home_quote', array( 'section' => 'tp_home_text', 'type' => 'textarea', 'label' => __( 'Featured quote (reviews section)', 'taxi-peninsula' ), 'description' => __( 'A short, real quote from a passenger, carer or coordinator — with their permission. Leave empty to use your first testimonial.', 'taxi-peninsula' ) ) );
+	$wp_customize->add_setting( 'tp_home_quote_name', array( 'default' => '', 'sanitize_callback' => 'sanitize_text_field' ) );
+	$wp_customize->add_control( 'tp_home_quote_name', array( 'section' => 'tp_home_text', 'type' => 'text', 'label' => __( 'Featured quote — who said it', 'taxi-peninsula' ), 'input_attrs' => array( 'placeholder' => __( 'e.g. Sarah, NDIS support coordinator', 'taxi-peninsula' ) ) ) );
+
 	$wp_customize->add_setting( 'tp_home_quickbook', array( 'default' => true, 'sanitize_callback' => 'tp_sanitize_checkbox' ) );
-	$wp_customize->add_control( 'tp_home_quickbook', array( 'section' => 'tp_home_layout', 'type' => 'checkbox', 'label' => __( 'Show the quick-book bar in the hero (From, To, Date)', 'taxi-peninsula' ) ) );
+	$wp_customize->add_control( 'tp_home_quickbook', array( 'section' => 'tp_home_layout', 'type' => 'checkbox', 'label' => __( 'Show the quick-book card in the hero (From, To, Date, Time, Wheelchair)', 'taxi-peninsula' ) ) );
 
 	$wp_customize->add_section(
 		'tp_home_text',
@@ -201,7 +231,7 @@ function tp_home_customize( WP_Customize_Manager $wp_customize ) {
 	$wp_customize->add_section(
 		'tp_who',
 		array(
-			'title'       => __( 'Who we help panels', 'taxi-peninsula' ),
+			'title'       => __( 'Who we help & shortcuts', 'taxi-peninsula' ),
 			'panel'       => 'tp_panel',
 			'priority'    => 7,
 			'description' => __( 'Four short panels for different audiences. Clear a heading to hide that panel. Leave a link empty to use the matching page automatically.', 'taxi-peninsula' ),
@@ -223,7 +253,7 @@ function tp_home_customize( WP_Customize_Manager $wp_customize ) {
 
 add_action( 'customize_controls_enqueue_scripts', static function () {
 	wp_enqueue_script( 'tp-customizer', TP_URI . '/assets/js/customizer.js', array( 'jquery', 'customize-controls', 'wp-a11y' ), TP_VERSION, true );
-	wp_add_inline_style( 'customize-controls', '.tp-sortable{margin:8px 0 0;list-style:none}.tp-sortable__item{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:6px 8px;margin:0 0 4px;background:#fff;border:1px solid #dcdcde;border-radius:4px}.tp-sortable__item label{flex:1}.tp-sortable__btns button{padding:2px 6px;font-size:12px}.tp-sortable__item.is-hidden label{opacity:.6}' );
+	wp_add_inline_style( 'customize-controls', '.tp-sortable{margin:8px 0 0;list-style:none}.tp-sortable__item{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:6px 8px;margin:0 0 4px;background:#fff;border:1px solid #dcdcde;border-radius:4px}.tp-sortable__item label{flex:1}.tp-sortable__btns button{padding:2px 6px;font-size:12px}.tp-sortable__item.is-hidden label{opacity:.6}.tp-sortable__item{cursor:grab}.tp-sortable__grip{color:#8c8f94;letter-spacing:-2px;cursor:grab}.tp-sortable__item.is-dragging{opacity:.5}.tp-sortable__item.is-over{border-color:#2271b1;box-shadow:0 -3px 0 #2271b1}' );
 } );
 
 /* -------------------------------------------------------------------------

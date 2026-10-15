@@ -17,10 +17,12 @@ if ( 'photo' === $tp_bg && ! $hero_image ) {
 $tp_side = tp_design( 'hero_side' );
 if ( 'photo' === $tp_bg || 'center' === $tp_align || 'none' === $tp_side ) {
 	$tp_side = '';
-} elseif ( 'card' === $tp_side || ! $hero_image ) {
-	$tp_side = 'card';
-} else {
+} elseif ( 'card' === $tp_side || 'scene' === $tp_side ) {
+	// Keep the chosen option.
+} elseif ( $hero_image ) {
 	$tp_side = 'photo';
+} else {
+	$tp_side = 'scene'; // No photo yet: the animated maxi taxi pick-up.
 }
 $tp_hero_classes = array(
 	'hero',
@@ -48,22 +50,29 @@ $tp_hero_classes = array(
 				<p class="hero__moment" data-hero-moment data-moments="<?php echo esc_attr( wp_json_encode( tp_hero_moments() ) ); ?>" data-tz="<?php echo esc_attr( wp_timezone_string() ); ?>" <?php echo $tp_moment ? '' : 'hidden'; ?>><?php tp_the_icon( 'clock' ); ?><span><?php echo esc_html( $tp_moment ); ?></span></p>
 			<?php endif; ?>
 			<div class="hero__actions">
-				<a class="btn btn--accent btn--lg" href="#book"><?php esc_html_e( 'Book online', 'taxi-peninsula' ); ?> <?php tp_the_icon( 'arrow' ); ?></a>
+				<a class="btn btn--accent btn--lg" href="<?php echo esc_url( tp_booking_page_url() ); ?>"><?php esc_html_e( 'Book online', 'taxi-peninsula' ); ?> <?php tp_the_icon( 'arrow' ); ?></a>
 				<a class="btn btn--light btn--lg" href="<?php echo esc_url( tp_phone_href() ); ?>"><?php tp_the_icon( 'phone' ); ?> <?php echo esc_html( tp_opt( 'phone_display' ) ); ?></a>
 			</div>
-			<?php if ( get_theme_mod( 'tp_home_quickbook', true ) ) : ?>
-				<?php get_template_part( 'template-parts/quickbook' ); ?>
+			<?php if ( get_theme_mod( 'tp_home_badges', true ) ) : ?>
+				<?php get_template_part( 'template-parts/home/badges' ); ?>
 			<?php endif; ?>
-			<ul class="hero__ticks">
-				<li><?php tp_the_icon( 'check' ); ?><?php esc_html_e( 'Ramp & hoist vehicles', 'taxi-peninsula' ); ?></li>
-				<li><?php tp_the_icon( 'check' ); ?><?php esc_html_e( 'Wheelchair restraints fitted', 'taxi-peninsula' ); ?></li>
-				<li><?php tp_the_icon( 'check' ); ?><?php esc_html_e( 'Door-to-door assistance', 'taxi-peninsula' ); ?></li>
-			</ul>
+			<?php if ( get_theme_mod( 'tp_home_quickbook', true ) ) : ?>
+				<?php get_template_part( 'template-parts/quickbook', null, array( 'context' => 'hero' ) ); ?>
+			<?php endif; ?>
 		</div>
 
 		<?php if ( $tp_side ) : ?>
 		<div class="hero__media">
-			<?php if ( 'photo' === $tp_side ) : ?>
+			<?php if ( 'scene' === $tp_side ) : ?>
+				<figure class="hero__scene">
+					<?php tp_the_scene( 'pickup' ); ?>
+					<figcaption class="hero__scene-card">
+						<span class="hero__scene-icon" aria-hidden="true"><?php tp_the_icon( 'wheelchair' ); ?></span>
+						<span><strong><?php esc_html_e( 'Door to door, in your own chair', 'taxi-peninsula' ); ?></strong>
+						<?php esc_html_e( 'Ramp or hoist, four-point restraints and a driver who helps you aboard.', 'taxi-peninsula' ); ?></span>
+					</figcaption>
+				</figure>
+			<?php elseif ( 'photo' === $tp_side ) : ?>
 				<?php echo wp_get_attachment_image( $hero_image, 'large', false, array( 'class' => 'hero__img', 'loading' => 'eager', 'fetchpriority' => 'high' ) ); ?>
 			<?php else : ?>
 				<div class="hero__card" aria-hidden="true">

@@ -347,6 +347,26 @@ All of these follow your logo colours and work in dark mode and high contrast. T
 - **Privacy policy:** `[tp_privacy_policy]` writes a policy following the APPs from your settings: what you collect (including health and mobility information as sensitive information), who sees it, overseas services (SMS, Stripe, Google, spam protection, plus any you list), retention periods, access and correction, and complaints to the OAIC. Fill in *Where your website and email are hosted* and have it reviewed by your adviser before publishing.
 - The booking form's consent now covers using mobility and health details to arrange the trip, links to the privacy policy, and records when consent was given.
 
+### Home page redesign (v2.0)
+
+A shorter home page that gets people booking faster: about half the length on phones.
+
+- **New order:** hero → audience shortcuts → trust numbers → services → how it works → vehicles → animated trip scenes → reviews → areas map → FAQ → partner logos → call to action. "Who we help", "Why choose us", the full booking form, popular destinations and blog posts are still available but off by default.
+- **Section editor:** Appearance → Customize → Taxi Peninsula → *Home page layout*. Drag sections (or use ▲ ▼), tick to show or hide, and **Use the recommended layout** resets to the new order. Sites that had already saved a layout keep it; press that button to switch.
+- **Hero:**
+  - "Book online" goes straight to the Book a Taxi page
+  - trust badges (Accredited drivers, NDIS-friendly, MPTP accepted, 24/7 or 7 days) and your Google star rating sit under the buttons
+  - without a hero photo, the animated maxi taxi pick-up now shows beside the text (Design → Hero → *Beside the text*)
+- **Quick-book card:** from, to, date, time and wheelchair (none, 1 or 2). *Continue* opens the full form with these filled in and the right vehicle chosen. The "Booking" section can show this card or, if you prefer, the full form (*Home page layout*).
+- **Audience shortcuts** under the hero: I'm a passenger, I'm booking for someone, NDIS & aged care, Hospital discharge. Edit the labels and links in *Who we help & shortcuts*.
+- **How it works:** three illustrated steps, your reply time (Contact details → *Enquiry reply time*), and Book and Call buttons.
+- **Services:** a tidy 3 × 2 grid with *Learn more*. Add an optional price hint ("From $45") on each Service under *Price hint*.
+- **Vehicles:** up to three published Fleet vehicles with photo, wheelchair and seat numbers, ramp or hoist, and a new *Largest wheelchair it takes* field.
+- **Reviews:** a featured quote (Home page headings & text → *Featured quote*, or your first testimonial) above a sideways-scrolling slider with previous and next buttons.
+- **Areas map:** a built-in map of the bay and the peninsula with your service suburbs marked. No map service or API key is needed and nothing loads from elsewhere. Suburbs the map doesn't know are left off; the suburb checker sits beside it.
+- **Partners** show as a slim greyscale logo strip.
+- **Phones:** tighter spacing, services as a compact two-column list, vehicles swipe sideways, and the map replaces the long suburb list. The bottom bar keeps Book and Call one tap away.
+
 ## Install
 
 1. Zip the `taxi-peninsula` folder and upload it under **Appearance → Themes → Add New → Upload**. Then activate it.

@@ -62,6 +62,13 @@ function tp_render_booking_form() {
 				$state['old'][ $prefill ] = $v;
 			}
 		}
+		// Wheelchair count from the quick-book card picks the vehicle too.
+		if ( isset( $_GET['wheelchairs'] ) && '' !== $_GET['wheelchairs'] ) {
+			$chairs                        = min( 4, absint( $_GET['wheelchairs'] ) );
+			$state['old']['wheelchairs']   = $chairs;
+			$state['old']['vehicle']       = 0 === $chairs ? 'sedan' : ( $chairs > 1 ? 'maxi_wat' : 'wat' );
+			$state['old']['mobility_aid']  = 0 === $chairs ? 'none' : ( $state['old']['mobility_aid'] ?? 'manual' );
+		}
 		$state['quickbook'] = ! empty( $_GET['pickup'] ) || ! empty( $_GET['dropoff'] );
 		if ( isset( $_GET['payment'] ) ) {
 			$state['old']['payment'] = sanitize_key( wp_unslash( $_GET['payment'] ) );
