@@ -17,8 +17,10 @@ if ( 'photo' === $tp_bg && ! $hero_image ) {
 $tp_side = tp_design( 'hero_side' );
 if ( 'photo' === $tp_bg || 'center' === $tp_align || 'none' === $tp_side ) {
 	$tp_side = '';
-} elseif ( 'card' === $tp_side || 'scene' === $tp_side ) {
+} elseif ( 'card' === $tp_side || 'scene' === $tp_side || 'photo' === $tp_side ) {
 	// Keep the chosen option.
+} elseif ( get_theme_mod( 'tp_home_quickbook', true ) ) {
+	$tp_side = 'book'; // Quick-book card beside the text: a shorter hero on computers.
 } elseif ( $hero_image ) {
 	$tp_side = 'photo';
 } else {
@@ -30,6 +32,7 @@ $tp_hero_classes = array(
 	'hero--' . $tp_align,
 	'hero--h-' . sanitize_html_class( tp_design( 'hero_height' ) ),
 	$tp_side ? 'hero--with-side' : 'hero--text-only',
+	'book' === $tp_side ? 'hero--side-book' : '',
 	tp_anim_road_in( 'hero' ) ? 'hero--has-road' : '',
 );
 ?>
@@ -56,14 +59,20 @@ $tp_hero_classes = array(
 			<?php if ( get_theme_mod( 'tp_home_badges', true ) ) : ?>
 				<?php get_template_part( 'template-parts/home/badges' ); ?>
 			<?php endif; ?>
-			<?php if ( get_theme_mod( 'tp_home_quickbook', true ) ) : ?>
+			<?php if ( get_theme_mod( 'tp_home_quickbook', true ) && 'book' !== $tp_side ) : ?>
 				<?php get_template_part( 'template-parts/quickbook', null, array( 'context' => 'hero' ) ); ?>
 			<?php endif; ?>
 		</div>
 
 		<?php if ( $tp_side ) : ?>
 		<div class="hero__media">
-			<?php if ( 'scene' === $tp_side ) : ?>
+			<?php if ( 'book' === $tp_side ) : ?>
+				<div class="hero__book">
+					<h2 class="hero__book-title"><?php esc_html_e( 'Book a ride', 'taxi-peninsula' ); ?></h2>
+					<p class="hero__book-lead"><?php esc_html_e( 'Tell us where and when — the next step takes about a minute.', 'taxi-peninsula' ); ?></p>
+					<?php get_template_part( 'template-parts/quickbook', null, array( 'context' => 'hero' ) ); ?>
+				</div>
+			<?php elseif ( 'scene' === $tp_side ) : ?>
 				<figure class="hero__scene">
 					<?php tp_the_scene( 'pickup' ); ?>
 					<figcaption class="hero__scene-card">

@@ -60,7 +60,9 @@ $account   = tp_page_url_by_template( 'account' );
 		</li>
 	</ol>
 
+	<p class="print-only print-brand"><?php echo esc_html( get_bloginfo( 'name' ) . ' · ' . tp_opt( 'phone_display' ) ); ?></p>
 	<div class="booking-success__actions">
+		<button type="button" class="btn btn--ghost" data-print><?php tp_the_icon( 'book' ); ?> <?php esc_html_e( 'Print', 'taxi-peninsula' ); ?></button>
 		<?php if ( $b ) : ?>
 			<a class="btn btn--primary" href="<?php echo esc_url( tp_booking_ics_url( $post_id ) ); ?>" download><?php tp_the_icon( 'calendar' ); ?> <?php esc_html_e( 'Add to calendar', 'taxi-peninsula' ); ?></a>
 			<a class="btn btn--ghost" href="<?php echo esc_url( tp_booking_manage_url( $post_id ) ); ?>"><?php esc_html_e( 'View booking', 'taxi-peninsula' ); ?></a>

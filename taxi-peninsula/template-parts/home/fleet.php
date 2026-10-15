@@ -23,7 +23,7 @@ $page   = tp_page_url_by_template( 'fleet' );
 				<a class="link-arrow" href="<?php echo esc_url( $page ); ?>"><?php esc_html_e( 'See our fleet', 'taxi-peninsula' ); ?> <?php tp_the_icon( 'arrow' ); ?></a>
 			<?php endif; ?>
 		</div>
-		<ul class="fleet-show">
+		<ul class="fleet-show" tabindex="0" aria-label="<?php esc_attr_e( 'Our vehicles', 'taxi-peninsula' ); ?>">
 			<?php foreach ( $vehicles as $v ) : ?>
 				<?php
 				$acc    = get_post_meta( $v->ID, '_tp_access', true );

@@ -65,12 +65,6 @@
 		</div>
 	<?php endif; ?>
 
-	<?php if ( 'full' !== tp_design( 'topbar' ) ) : ?>
-		<div class="container site-footer__display">
-			<?php tp_the_display_options( 'a11y-tools--footer' ); ?>
-		</div>
-	<?php endif; ?>
-
 	<div class="container site-footer__bottom">
 		<p><?php echo tp_copyright_text(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- kses'd in helper. ?></p>
 		<?php if ( function_exists( 'the_privacy_policy_link' ) ) : ?>
@@ -85,7 +79,7 @@ $tp_pages = (array) get_option( 'tp_pages', array() );
 if ( empty( $tp_pages['driver'] ) || ! is_page( $tp_pages['driver'] ) ) :
 	?>
 	<div class="fab-group">
-		<?php if ( tp_whatsapp_href() ) : ?>
+		<?php if ( tp_whatsapp_href() && apply_filters( 'tp_show_whatsapp_fab', true ) ) : ?>
 			<a class="call-fab call-fab--alt" href="<?php echo esc_url( tp_whatsapp_href() ); ?>" target="_blank" rel="noopener">
 				<?php tp_the_icon( 'message' ); ?>
 				<span><?php esc_html_e( 'WhatsApp', 'taxi-peninsula' ); ?></span>

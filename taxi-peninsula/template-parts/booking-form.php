@@ -34,7 +34,7 @@ tp_booking_script_config();
 $areas       = tp_service_areas();
 $today       = wp_date( 'Y-m-d' );
 ?>
-<form class="booking-form" method="post"<?php echo ! empty( $args['quickbook'] ) ? ' data-from-quickbook' : ''; ?> action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" novalidate>
+<form class="booking-form" data-capacity="<?php echo esc_attr( wp_json_encode( tp_vehicle_capacity() ) ); ?>" data-messages="<?php echo esc_attr( wp_json_encode( array( 'chairs' => __( 'This vehicle takes one wheelchair. Choose "Maxi WAT" for two wheelchairs.', 'taxi-peninsula' ), 'chairsCall' => sprintf( /* translators: %s: phone number */ __( 'For more than two wheelchairs we send more than one vehicle — please call %s.', 'taxi-peninsula' ), tp_opt( 'phone_display' ) ), 'people' => __( 'This vehicle seats up to %d people including wheelchair users. Choose "Maxi WAT" or call us for a larger group.', 'taxi-peninsula' ), 'returnTime' => __( 'The return pick-up needs to be after the first pick-up time.', 'taxi-peninsula' ) ) ) ); ?>" method="post"<?php echo ! empty( $args['quickbook'] ) ? ' data-from-quickbook' : ''; ?> action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" novalidate>
 	<input type="hidden" name="action" value="tp_booking">
 	<input type="hidden" name="_tp_return" value="<?php echo esc_url( $current_url ); ?>">
 	<?php wp_nonce_field( 'tp_booking', '_tp_nonce', false ); ?>
@@ -79,33 +79,36 @@ $today       = wp_date( 'Y-m-d' );
 
 		<div class="field field--wide">
 			<label for="bf-pickup"><?php esc_html_e( 'Pick-up address', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
-			<input id="bf-pickup" name="pickup" type="text" required autocomplete="street-address" <?php echo $places ? 'data-places' : 'list="tp-areas"'; ?> value="<?php echo esc_attr( $val( 'pickup' ) ); ?>" placeholder="<?php esc_attr_e( 'Street address, suburb', 'taxi-peninsula' ); ?>"<?php $invalid( 'pickup' ); ?>>
+			<input id="bf-pickup" name="pickup" type="text" required autocomplete="street-address" <?php echo $places ? 'data-places' : ''; ?> value="<?php echo esc_attr( $val( 'pickup' ) ); ?>" placeholder="<?php esc_attr_e( 'Street address, suburb', 'taxi-peninsula' ); ?>"<?php $invalid( 'pickup' ); ?>>
 			<?php $err( 'pickup' ); ?>
 			<?php tp_booking_form_address_picker( 'pickup' ); ?>
 		</div>
 
 		<div class="field field--wide">
 			<label for="bf-dropoff"><?php esc_html_e( 'Drop-off address', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
-			<input id="bf-dropoff" name="dropoff" type="text" required <?php echo $places ? 'data-places' : 'list="tp-areas"'; ?> value="<?php echo esc_attr( $val( 'dropoff' ) ); ?>" placeholder="<?php esc_attr_e( 'e.g. Frankston Hospital, Melbourne Airport', 'taxi-peninsula' ); ?>"<?php $invalid( 'dropoff' ); ?>>
+			<input id="bf-dropoff" name="dropoff" type="text" required <?php echo $places ? 'data-places' : ''; ?> value="<?php echo esc_attr( $val( 'dropoff' ) ); ?>" placeholder="<?php esc_attr_e( 'e.g. Frankston Hospital, Melbourne Airport', 'taxi-peninsula' ); ?>"<?php $invalid( 'dropoff' ); ?>>
 			<?php $err( 'dropoff' ); ?>
 			<?php tp_booking_form_address_picker( 'dropoff' ); ?>
 		</div>
 
-		<datalist id="tp-areas">
-			<?php foreach ( $areas as $area ) : ?>
-				<option value="<?php echo esc_attr( $area ); ?>"></option>
-			<?php endforeach; ?>
-		</datalist>
+		<?php if ( ! $places && $areas ) : ?>
+			<p class="field__hint field--wide areas-hint" id="bf-areas-hint">
+				<?php
+				/* translators: %s: list of suburbs */
+				echo esc_html( sprintf( __( 'We cover %s and more — type the full street address.', 'taxi-peninsula' ), implode( ', ', array_slice( $areas, 0, 6 ) ) ) );
+				?>
+			</p>
+		<?php endif; ?>
 
 		<div class="field">
 			<label for="bf-date"><?php esc_html_e( 'Date', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
-			<input id="bf-date" name="date" type="date" required min="<?php echo esc_attr( $today ); ?>" value="<?php echo esc_attr( $val( 'date', $today ) ); ?>"<?php $invalid( 'date' ); ?>>
+			<input id="bf-date" name="date" type="date" required min="<?php echo esc_attr( $today ); ?>" max="<?php echo esc_attr( tp_booking_max_date() ); ?>" value="<?php echo esc_attr( $val( 'date', $today ) ); ?>"<?php $invalid( 'date' ); ?>>
 			<?php $err( 'date' ); ?>
 		</div>
 
 		<div class="field">
 			<label for="bf-time"><?php esc_html_e( 'Pick-up time', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
-			<input id="bf-time" name="time" type="time" required step="300" value="<?php echo esc_attr( $val( 'time' ) ); ?>"<?php $invalid( 'time' ); ?>>
+			<input id="bf-time" name="time" type="time" required value="<?php echo esc_attr( $val( 'time' ) ); ?>"<?php $invalid( 'time' ); ?>>
 			<?php $err( 'time' ); ?>
 		</div>
 
@@ -120,7 +123,7 @@ $today       = wp_date( 'Y-m-d' );
 
 		<div class="field" id="bf-return-wrap" <?php echo $val( 'return_trip' ) ? '' : 'hidden'; ?>>
 			<label for="bf-return-time"><?php esc_html_e( 'Return pick-up time (if known)', 'taxi-peninsula' ); ?></label>
-			<input id="bf-return-time" name="return_time" type="time" step="300" value="<?php echo esc_attr( $val( 'return_time' ) ); ?>"<?php $invalid( 'return_time' ); ?>>
+			<input id="bf-return-time" name="return_time" type="time" value="<?php echo esc_attr( $val( 'return_time' ) ); ?>"<?php $invalid( 'return_time' ); ?>>
 			<?php $err( 'return_time' ); ?>
 		</div>
 
@@ -165,6 +168,9 @@ $today       = wp_date( 'Y-m-d' );
 
 		<div class="field field--wide">
 			<span class="field__label" id="bf-vehicle-label"><?php esc_html_e( 'Vehicle', 'taxi-peninsula' ); ?></span>
+			<?php if ( ! empty( $args['auto_sedan'] ) ) : ?>
+				<p class="notice notice--info vehicle-note" role="status"><?php esc_html_e( 'You said no wheelchair, so we have chosen a standard taxi. If anyone travels in a wheelchair or needs the ramp, choose a wheelchair accessible taxi below.', 'taxi-peninsula' ); ?></p>
+			<?php endif; ?>
 			<div class="choice-cards" role="radiogroup" aria-labelledby="bf-vehicle-label">
 				<?php
 				$icons = array(
@@ -194,11 +200,13 @@ $today       = wp_date( 'Y-m-d' );
 		<div class="field field--pair">
 			<div>
 				<label for="bf-passengers"><?php esc_html_e( 'Passengers', 'taxi-peninsula' ); ?></label>
-				<input id="bf-passengers" name="passengers" type="number" inputmode="numeric" min="1" max="11" value="<?php echo esc_attr( $val( 'passengers', '1' ) ); ?>">
+				<input id="bf-passengers" name="passengers" type="number" inputmode="numeric" min="1" max="11" value="<?php echo esc_attr( $val( 'passengers', '1' ) ); ?>"<?php $invalid( 'passengers' ); ?>>
+				<?php $err( 'passengers' ); ?>
 			</div>
 			<div>
 				<label for="bf-wheelchairs"><?php esc_html_e( 'Wheelchairs', 'taxi-peninsula' ); ?></label>
-				<input id="bf-wheelchairs" name="wheelchairs" type="number" inputmode="numeric" min="0" max="4" value="<?php echo esc_attr( $val( 'wheelchairs', '1' ) ); ?>">
+				<input id="bf-wheelchairs" name="wheelchairs" type="number" inputmode="numeric" min="0" max="4" value="<?php echo esc_attr( $val( 'wheelchairs', '1' ) ); ?>"<?php $invalid( 'wheelchairs' ); ?>>
+				<?php $err( 'wheelchairs' ); ?>
 			</div>
 		</div>
 
@@ -262,6 +270,21 @@ $today       = wp_date( 'Y-m-d' );
 
 	<fieldset class="booking-form__group" id="bf-step-details" data-step-panel="details">
 		<legend><span class="step"><?php echo $has_pay ? '4' : '3'; ?></span> <?php esc_html_e( 'Your details', 'taxi-peninsula' ); ?></legend>
+
+		<?php
+		$me = is_user_logged_in() && function_exists( 'tp_is_account_user' ) && tp_is_account_user() ? wp_get_current_user() : null;
+		if ( $me ) :
+			$me_data = array(
+				'name'  => trim( $me->first_name . ' ' . $me->last_name ) ?: $me->display_name,
+				'phone' => (string) get_user_meta( $me->ID, 'tp_mobile', true ),
+				'email' => $me->user_email,
+			);
+			?>
+			<div class="field field--wide field--check use-me">
+				<input id="bf-use-me" type="checkbox" data-use-me="<?php echo esc_attr( wp_json_encode( $me_data ) ); ?>">
+				<label for="bf-use-me"><?php esc_html_e( 'I am the passenger — use my account details', 'taxi-peninsula' ); ?></label>
+			</div>
+		<?php endif; ?>
 
 		<div class="field field--wide">
 			<label for="bf-name"><?php esc_html_e( 'Full name', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>

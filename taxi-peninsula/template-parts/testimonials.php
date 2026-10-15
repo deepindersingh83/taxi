@@ -160,7 +160,11 @@ if ( ! $items && ! $greview && '' === $rating ) {
 		<?php endif; ?>
 
 		<?php if ( $gurl ) : ?>
-			<p class="section__more"><a class="link-arrow" href="<?php echo esc_url( $gurl ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Read or leave a review on Google', 'taxi-peninsula' ); ?> <?php tp_the_icon( 'arrow' ); ?></a></p>
+			<?php if ( $slider ) : ?>
+				<p class="section__more"><a class="btn btn--ghost" href="<?php echo esc_url( $gurl ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Read all reviews on Google', 'taxi-peninsula' ); ?> <?php tp_the_icon( 'arrow' ); ?><span class="screen-reader-text"> <?php esc_html_e( '(opens in a new tab)', 'taxi-peninsula' ); ?></span></a></p>
+			<?php else : ?>
+				<p class="section__more"><a class="link-arrow" href="<?php echo esc_url( $gurl ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Read or leave a review on Google', 'taxi-peninsula' ); ?> <?php tp_the_icon( 'arrow' ); ?></a></p>
+			<?php endif; ?>
 		<?php endif; ?>
 	</div>
 </section>

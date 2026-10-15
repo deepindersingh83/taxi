@@ -28,11 +28,11 @@ if ( $places ) {
 	</div>
 	<div class="quickbook__field quickbook__field--date">
 		<label for="<?php echo esc_attr( $uid ); ?>-date"><?php esc_html_e( 'Date', 'taxi-peninsula' ); ?></label>
-		<input id="<?php echo esc_attr( $uid ); ?>-date" name="date" type="date" min="<?php echo esc_attr( wp_date( 'Y-m-d' ) ); ?>" value="<?php echo esc_attr( wp_date( 'Y-m-d' ) ); ?>">
+		<input id="<?php echo esc_attr( $uid ); ?>-date" name="date" type="date" min="<?php echo esc_attr( wp_date( 'Y-m-d' ) ); ?>" max="<?php echo esc_attr( tp_booking_max_date() ); ?>" value="<?php echo esc_attr( wp_date( 'Y-m-d' ) ); ?>">
 	</div>
 	<div class="quickbook__field quickbook__field--time">
 		<label for="<?php echo esc_attr( $uid ); ?>-time"><?php esc_html_e( 'Pick-up time', 'taxi-peninsula' ); ?></label>
-		<input id="<?php echo esc_attr( $uid ); ?>-time" name="time" type="time" step="300">
+		<input id="<?php echo esc_attr( $uid ); ?>-time" name="time" type="time">
 	</div>
 	<div class="quickbook__field quickbook__field--chair">
 		<label for="<?php echo esc_attr( $uid ); ?>-chair"><?php esc_html_e( 'Wheelchair?', 'taxi-peninsula' ); ?></label>

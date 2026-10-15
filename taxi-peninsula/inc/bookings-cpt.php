@@ -343,6 +343,38 @@ function tp_sanitize_booking( array $raw, $strict = true ) {
 		$d['wheelchairs'] = 0;
 	}
 
+	if ( $strict ) {
+		if ( $date_ok && $d['date'] > tp_booking_max_date() ) {
+			$errors['date'] = sprintf(
+				/* translators: 1: months, 2: phone number */
+				__( 'Online bookings can be made up to %1$d months ahead. For a later date please call %2$s.', 'taxi-peninsula' ),
+				max( 1, (int) tp_setting( 'max_advance_months' ) ),
+				tp_opt( 'phone_display' )
+			);
+		}
+		if ( $d['return_trip'] && $time_ok && preg_match( '/^([01]\d|2[0-3]):[0-5]\d$/', $d['return_time'] ) && $d['return_time'] <= $d['time'] ) {
+			$errors['return_time'] = __( 'The return pick-up needs to be after the first pick-up time.', 'taxi-peninsula' );
+		}
+		$cap = tp_vehicle_capacity()[ $d['vehicle'] ] ?? null;
+		if ( $cap ) {
+			if ( $d['wheelchairs'] > $cap[1] ) {
+				$errors['wheelchairs'] = $d['wheelchairs'] <= ( tp_vehicle_capacity()['maxi_wat'][1] ?? 2 )
+					/* translators: %d: wheelchairs */
+					? sprintf( _n( 'This vehicle takes %d wheelchair. Choose "Maxi WAT" for two wheelchairs.', 'This vehicle takes %d wheelchairs. Choose "Maxi WAT" for two wheelchairs.', $cap[1], 'taxi-peninsula' ), $cap[1] )
+					/* translators: %s: phone number */
+					: sprintf( __( 'For more than two wheelchairs we send more than one vehicle — please call %s.', 'taxi-peninsula' ), tp_opt( 'phone_display' ) );
+			}
+			if ( $d['passengers'] > $cap[0] ) {
+				$errors['passengers'] = sprintf(
+					/* translators: 1: number of people, 2: phone number */
+					__( 'This vehicle seats up to %1$d people including wheelchair users. Choose "Maxi WAT" or call %2$s for a larger group.', 'taxi-peninsula' ),
+					$cap[0],
+					tp_opt( 'phone_display' )
+				);
+			}
+		}
+	}
+
 	return array( $d, $errors );
 }
 

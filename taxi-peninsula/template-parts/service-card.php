@@ -10,7 +10,11 @@
 $price = isset( $args['price'] ) && '' !== (string) $args['price'] ? (float) $args['price'] : 0;
 ?>
 <article class="service<?php echo $args['url'] ? ' service--link' : ''; ?>">
-	<?php tp_the_spot( $args['icon'], 'service__icon' ); ?>
+	<?php if ( ! empty( $args['image'] ) ) : ?>
+		<div class="service__photo"><?php echo wp_get_attachment_image( (int) $args['image'], 'tp-card', false, array( 'alt' => '', 'loading' => 'lazy' ) ); ?></div>
+	<?php else : ?>
+		<?php tp_the_spot( $args['icon'], 'service__icon' ); ?>
+	<?php endif; ?>
 	<h3 class="service__title">
 		<?php if ( $args['url'] ) : ?>
 			<a href="<?php echo esc_url( $args['url'] ); ?>"><?php echo esc_html( $args['title'] ); ?></a>

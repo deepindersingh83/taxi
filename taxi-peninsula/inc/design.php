@@ -753,7 +753,7 @@ function tp_design_customize_register( WP_Customize_Manager $wp_customize ) {
 	$add( 'header_phone', 'tp_design_header', __( 'Show the phone button', 'taxi-peninsula' ), 'checkbox', array( 'sanitize' => 'tp_sanitize_checkbox', 'description' => __( 'With the “Logo left, menu right” layout and the top bar showing, it is hidden on wide screens to leave room for the menu — the number is in the top bar.', 'taxi-peninsula' ) ) );
 	$add( 'header_phone_text', 'tp_design_header', __( 'Phone button wording', 'taxi-peninsula' ), 'text', array( 'description' => __( 'Leave empty to show the phone number.', 'taxi-peninsula' ) ) );
 	$topbar = array(
-		'full'    => __( 'Top bar with contact details and display options', 'taxi-peninsula' ),
+		'full'    => __( 'Top bar with contact details', 'taxi-peninsula' ),
 		'contact' => __( 'Top bar with contact details — display options in the footer', 'taxi-peninsula' ),
 		'none'    => __( 'No top bar — display options in the footer', 'taxi-peninsula' ),
 	);
@@ -768,7 +768,8 @@ function tp_design_customize_register( WP_Customize_Manager $wp_customize ) {
 	$add( 'hero_bg', 'tp_design_hero', __( 'Background', 'taxi-peninsula' ), 'radio', array( 'sanitize' => $choice( $bgs ), 'choices' => $bgs, 'description' => __( 'The photo is the hero photo (Taxi Peninsula → Home page hero) or the current seasonal photo.', 'taxi-peninsula' ) ) );
 	$add( 'hero_overlay', 'tp_design_hero', __( 'Overlay darkness (%)', 'taxi-peninsula' ), 'range', array( 'sanitize' => $range( 20, 90 ), 'input_attrs' => array( 'min' => 30, 'max' => 85, 'step' => 5 ), 'description' => __( 'Keep it at 55% or more so white text stays readable on busy photos.', 'taxi-peninsula' ), 'active_callback' => static fn() => 'photo' === tp_design( 'hero_bg' ) ) );
 	$sides = array(
-		'auto'  => __( 'The hero photo (or the animated maxi taxi if there is no photo)', 'taxi-peninsula' ),
+		'auto'  => __( 'The quick-book card (recommended)', 'taxi-peninsula' ),
+		'photo' => __( 'The hero photo', 'taxi-peninsula' ),
 		'scene' => __( 'The animated maxi taxi pick-up', 'taxi-peninsula' ),
 		'card' => __( 'The badge card', 'taxi-peninsula' ),
 		'none' => __( 'Nothing — text only', 'taxi-peninsula' ),

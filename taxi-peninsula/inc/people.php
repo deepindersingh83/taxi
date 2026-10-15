@@ -55,6 +55,14 @@ function tp_driver_profile_fields( WP_User $user ) {
 			<th><label for="tp_bio"><?php esc_html_e( 'Short bio', 'taxi-peninsula' ); ?></label></th>
 			<td><textarea name="tp_bio" id="tp_bio" rows="3" class="large-text" maxlength="400" placeholder="<?php esc_attr_e( 'e.g. Driving on the Peninsula for 8 years. Loves the footy and a good chat.', 'taxi-peninsula' ); ?>"><?php echo esc_textarea( get_user_meta( $user->ID, 'tp_bio', true ) ); ?></textarea></td>
 		</tr>
+		<tr>
+			<th><label for="tp_driver_langs"><?php esc_html_e( 'Languages spoken', 'taxi-peninsula' ); ?></label></th>
+			<td><input type="text" name="tp_driver_langs" id="tp_driver_langs" class="regular-text" value="<?php echo esc_attr( get_user_meta( $user->ID, 'tp_driver_langs', true ) ); ?>" placeholder="<?php esc_attr_e( 'e.g. English, Greek', 'taxi-peninsula' ); ?>"></td>
+		</tr>
+		<tr>
+			<th><label for="tp_driver_since"><?php esc_html_e( 'Driving since (year)', 'taxi-peninsula' ); ?></label></th>
+			<td><input type="number" name="tp_driver_since" id="tp_driver_since" min="1960" max="<?php echo esc_attr( wp_date( 'Y' ) ); ?>" value="<?php echo esc_attr( get_user_meta( $user->ID, 'tp_driver_since', true ) ); ?>"></td>
+		</tr>
 		<?php if ( current_user_can( 'upload_files' ) ) : ?>
 			<tr>
 				<th><?php esc_html_e( 'Photo', 'taxi-peninsula' ); ?></th>
@@ -82,6 +90,9 @@ function tp_save_driver_profile( $user_id ) {
 	}
 	update_user_meta( $user_id, 'tp_public', empty( $_POST['tp_public'] ) ? '' : '1' );
 	update_user_meta( $user_id, 'tp_bio', isset( $_POST['tp_bio'] ) ? sanitize_textarea_field( wp_unslash( $_POST['tp_bio'] ) ) : '' );
+	update_user_meta( $user_id, 'tp_driver_langs', isset( $_POST['tp_driver_langs'] ) ? sanitize_text_field( wp_unslash( $_POST['tp_driver_langs'] ) ) : '' );
+	$since = isset( $_POST['tp_driver_since'] ) ? absint( $_POST['tp_driver_since'] ) : 0;
+	update_user_meta( $user_id, 'tp_driver_since', ( $since >= 1960 && $since <= (int) wp_date( 'Y' ) ) ? $since : '' );
 	if ( isset( $_POST['tp_photo'] ) && current_user_can( 'upload_files' ) ) {
 		$photo = absint( $_POST['tp_photo'] );
 		update_user_meta( $user_id, 'tp_photo', ( $photo && wp_attachment_is_image( $photo ) ) ? $photo : '' );
@@ -102,6 +113,8 @@ function tp_public_driver( $user_id ) {
 		'name'  => $user->first_name ?: strtok( $user->display_name, ' ' ),
 		'bio'   => get_user_meta( $user_id, 'tp_bio', true ),
 		'photo' => (int) get_user_meta( $user_id, 'tp_photo', true ),
+		'langs' => get_user_meta( $user_id, 'tp_driver_langs', true ),
+		'since' => (int) get_user_meta( $user_id, 'tp_driver_since', true ),
 	);
 }
 
@@ -128,6 +141,7 @@ add_shortcode( 'tp_drivers', static function () {
 		echo '<li class="driver-card">';
 		echo tp_driver_avatar( $d ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper.
 		echo '<h3 class="driver-card__name">' . esc_html( $d['name'] ) . '</h3>';
+		tp_driver_facts( $d );
 		if ( $d['bio'] ) {
 			echo '<p>' . esc_html( $d['bio'] ) . '</p>';
 		}
@@ -300,3 +314,26 @@ add_shortcode( 'tp_partners', static function () {
 	get_template_part( 'template-parts/partners' );
 	return ob_get_clean();
 } );
+
+/**
+ * Years driving and languages, as small chips.
+ */
+function tp_driver_facts( array $d ) {
+	$facts = array();
+	if ( ! empty( $d['since'] ) ) {
+		$years   = max( 1, (int) wp_date( 'Y' ) - (int) $d['since'] );
+		/* translators: %d: years */
+		$facts[] = sprintf( _n( '%d year driving', '%d years driving', $years, 'taxi-peninsula' ), $years );
+	}
+	if ( ! empty( $d['langs'] ) ) {
+		/* translators: %s: languages */
+		$facts[] = sprintf( __( 'Speaks %s', 'taxi-peninsula' ), $d['langs'] );
+	}
+	if ( $facts ) {
+		echo '<ul class="driver-card__facts">';
+		foreach ( $facts as $f ) {
+			echo '<li>' . esc_html( $f ) . '</li>';
+		}
+		echo '</ul>';
+	}
+}

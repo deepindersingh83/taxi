@@ -106,6 +106,31 @@ function tp_vehicle_types() {
 	);
 }
 
+/**
+ * How many people and wheelchairs each vehicle type can take.
+ * Filter `tp_vehicle_capacity` to match your fleet.
+ *
+ * @return array type => [people, wheelchairs].
+ */
+function tp_vehicle_capacity() {
+	return apply_filters(
+		'tp_vehicle_capacity',
+		array(
+			'wat'      => array( 5, 1 ),
+			'maxi_wat' => array( 10, 2 ),
+			'sedan'    => array( 4, 0 ),
+		)
+	);
+}
+
+/**
+ * Latest date customers can book online (Bookings → Settings → Recurring trips).
+ */
+function tp_booking_max_date() {
+	$months = max( 1, (int) tp_setting( 'max_advance_months' ) );
+	return wp_date( 'Y-m-d', strtotime( '+' . $months . ' months' ) );
+}
+
 function tp_mobility_aids() {
 	return array(
 		'manual'  => __( 'Manual wheelchair', 'taxi-peninsula' ),

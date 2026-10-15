@@ -42,7 +42,7 @@ $id         = wp_unique_id( 'video-' );
 				<?php
 				if ( 'youtube' === $remote[0] ) {
 					$embed = 'https://www.youtube-nocookie.com/embed/' . $remote[1] . '?autoplay=1&rel=0&cc_load_policy=1&hl=en';
-					$thumb = $poster ?: 'https://i.ytimg.com/vi/' . $remote[1] . '/hqdefault.jpg';
+					$thumb = $poster; // Nothing loads from YouTube until play is pressed.
 				} else {
 					$embed = 'https://player.vimeo.com/video/' . $remote[1] . '?autoplay=1&dnt=1&texttrack=en';
 					$thumb = $poster;
@@ -51,6 +51,8 @@ $id         = wp_unique_id( 'video-' );
 				<button type="button" class="video-facade" data-video-embed="<?php echo esc_url( $embed ); ?>" data-video-title="<?php echo esc_attr( $title ); ?>">
 					<?php if ( $thumb ) : ?>
 						<img src="<?php echo esc_url( $thumb ); ?>" alt="" loading="lazy">
+					<?php else : ?>
+						<span class="video-facade__art" aria-hidden="true"><?php echo tp_illustration( 'wheelchair' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG. ?></span>
 					<?php endif; ?>
 					<span class="video-facade__play"><?php tp_the_icon( 'play' ); ?></span>
 					<span class="video-facade__label">

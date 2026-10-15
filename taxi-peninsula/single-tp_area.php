@@ -46,6 +46,33 @@ while ( have_posts() ) :
 				$local     = trim( (string) get_post_meta( get_the_ID(), '_tp_local', true ) );
 				$local_faq = tp_parse_local_faq( get_post_meta( get_the_ID(), '_tp_local_faq', true ) );
 				?>
+				<?php
+				$map    = tp_area_map( tp_service_areas(), $area );
+				$times  = tp_area_travel_times( $area );
+				?>
+				<?php if ( $map || $times ) : ?>
+					<div class="area-where">
+						<?php echo $map; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in tp_area_map(). ?>
+						<?php if ( $times ) : ?>
+							<div class="area-times">
+								<h2>
+									<?php
+									/* translators: %s: suburb */
+									echo esc_html( sprintf( __( 'Travel times from %s', 'taxi-peninsula' ), $area ) );
+									?>
+								</h2>
+								<ul class="area-times__list">
+									<?php foreach ( $times as $t ) : ?>
+										<?php /* translators: %d: minutes */ ?>
+										<li><span><?php echo esc_html( $t[0] ); ?></span><strong><?php echo esc_html( sprintf( __( 'about %d min', 'taxi-peninsula' ), $t[1] ) ); ?></strong></li>
+									<?php endforeach; ?>
+								</ul>
+								<p class="area-times__note"><?php esc_html_e( 'A rough guide without traffic. We allow extra time for loading your wheelchair.', 'taxi-peninsula' ); ?></p>
+							</div>
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
+
 				<?php if ( $nearby ) : ?>
 					<h2>
 						<?php

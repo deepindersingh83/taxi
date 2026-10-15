@@ -100,16 +100,20 @@ function tp_map_path( array $points, $close = true ) {
  * @param string[] $areas Service area names.
  * @return string
  */
-function tp_area_map( array $areas ) {
+function tp_area_map( array $areas, $highlight = '' ) {
 	$known  = tp_map_places();
 	$marked = array();
+	$here   = strtolower( trim( (string) $highlight ) );
+	if ( $here && isset( $known[ $here ] ) ) {
+		$marked[ $here ] = array( $highlight, $known[ $here ] );
+	}
 	foreach ( $areas as $name ) {
 		$key = strtolower( trim( $name ) );
 		if ( isset( $known[ $key ] ) && ! isset( $marked[ $key ] ) ) {
 			$marked[ $key ] = array( $name, $known[ $key ] );
 		}
 	}
-	if ( count( $marked ) < 2 ) {
+	if ( count( $marked ) < ( $here ? 1 : 2 ) ) {
 		return '';
 	}
 
@@ -151,15 +155,16 @@ function tp_area_map( array $areas ) {
 	};
 	// Dots first, so labels avoid them.
 	$points = array();
-	foreach ( $marked as $m ) {
+	foreach ( $marked as $key => $m ) {
 		list( $x, $y ) = tp_map_xy( $m[1][0], $m[1][1] );
-		$points[]      = array( $m[0], $x, $y );
+		$is_here       = $key === $here;
+		$points[]      = array( $m[0], $x, $y, $is_here );
 		$boxes[]       = array( $x - 6, $y - 6, $x + 6, $y + 6 );
-		$dots         .= sprintf( '<g class="amap__pin"><circle cx="%1$s" cy="%2$s" r="9" class="amap__halo"/><circle cx="%1$s" cy="%2$s" r="5.5" class="amap__dot"/><title>%3$s</title></g>', $x, $y, esc_html( $m[0] ) );
+		$dots         .= sprintf( '<g class="amap__pin%4$s"><circle cx="%1$s" cy="%2$s" r="%5$s" class="amap__halo"/><circle cx="%1$s" cy="%2$s" r="%6$s" class="amap__dot"/><title>%3$s</title></g>', $x, $y, esc_html( $m[0] ), $is_here ? ' amap__pin--here' : '', $is_here ? 16 : 9, $is_here ? 8 : 5.5 );
 	}
 	foreach ( $points as $p ) {
-		list( $name, $x, $y ) = $p;
-		$w = 6.6 * mb_strlen( $name ) + 6;
+		list( $name, $x, $y, $is_here ) = $p;
+		$w = ( $is_here ? 8.2 : 6.6 ) * mb_strlen( $name ) + 6;
 		$h = 15;
 		$options = array(
 			array( $x + 10, $y + 4.5, 'start', array( $x + 8, $y - 9, $x + 10 + $w, $y + 7 ) ),
@@ -170,7 +175,7 @@ function tp_area_map( array $areas ) {
 		foreach ( $options as $o ) {
 			if ( $fits( $o[3] ) ) {
 				$boxes[] = $o[3];
-				$labels .= sprintf( '<text x="%1$s" y="%2$s" text-anchor="%3$s" class="amap__label">%4$s</text>', $o[0], $o[1], $o[2], esc_html( $name ) );
+				$labels .= sprintf( '<text x="%1$s" y="%2$s" text-anchor="%3$s" class="amap__label%5$s">%4$s</text>', $o[0], $o[1], $o[2], esc_html( $name ), $is_here ? ' amap__label--here' : '' );
 				break;
 			}
 		}
@@ -212,4 +217,38 @@ function tp_area_map( array $areas ) {
 	</figure>
 	<?php
 	return ob_get_clean();
+}
+
+/**
+ * Rough drive times from a suburb to common destinations (straight-line
+ * distance × 1.3 at an average 60 km/h, rounded to 5 minutes).
+ *
+ * @param string $name Suburb.
+ * @return array[] Each: [destination, minutes].
+ */
+function tp_area_travel_times( $name ) {
+	$known = tp_map_places();
+	$from  = $known[ strtolower( trim( (string) $name ) ) ] ?? null;
+	if ( ! $from ) {
+		return array();
+	}
+	$dests = array(
+		__( 'Melbourne CBD', 'taxi-peninsula' )          => array( -37.814, 144.963 ),
+		__( 'Melbourne Airport', 'taxi-peninsula' )      => array( -37.670, 144.843 ),
+		__( 'Frankston Hospital', 'taxi-peninsula' )     => array( -38.151, 145.131 ),
+		__( 'Monash Medical Centre', 'taxi-peninsula' )  => array( -37.921, 145.123 ),
+		__( 'Rosebud Hospital', 'taxi-peninsula' )       => array( -38.360, 144.905 ),
+	);
+	$out = array();
+	foreach ( $dests as $label => $to ) {
+		$dlat = deg2rad( $to[0] - $from[0] );
+		$dlng = deg2rad( $to[1] - $from[1] );
+		$a    = sin( $dlat / 2 ) ** 2 + cos( deg2rad( $from[0] ) ) * cos( deg2rad( $to[0] ) ) * sin( $dlng / 2 ) ** 2;
+		$km   = 6371 * 2 * atan2( sqrt( $a ), sqrt( 1 - $a ) );
+		if ( $km < 2 ) {
+			continue;
+		}
+		$out[] = array( $label, max( 5, (int) ( round( $km * 1.3 / 60 * 60 / 5 ) * 5 ) ) );
+	}
+	return $out;
 }

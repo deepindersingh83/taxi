@@ -68,6 +68,7 @@ function tp_render_booking_form() {
 			$state['old']['wheelchairs']   = $chairs;
 			$state['old']['vehicle']       = 0 === $chairs ? 'sedan' : ( $chairs > 1 ? 'maxi_wat' : 'wat' );
 			$state['old']['mobility_aid']  = 0 === $chairs ? 'none' : ( $state['old']['mobility_aid'] ?? 'manual' );
+			$state['auto_sedan']           = 0 === $chairs;
 		}
 		$state['quickbook'] = ! empty( $_GET['pickup'] ) || ! empty( $_GET['dropoff'] );
 		if ( isset( $_GET['payment'] ) ) {

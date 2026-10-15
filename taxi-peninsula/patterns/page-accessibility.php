@@ -30,7 +30,7 @@
 
 <!-- wp:list -->
 <ul class="wp-block-list"><!-- wp:list-item -->
-<li><?php esc_html_e( 'Text size buttons (A− to A++) and a high-contrast mode at the top of every page', 'taxi-peninsula' ); ?></li>
+<li><?php esc_html_e( 'Pages follow your own device settings for text size, zoom, dark mode, high contrast and reduced motion', 'taxi-peninsula' ); ?></li>
 <!-- /wp:list-item -->
 <!-- wp:list-item -->
 <li><?php esc_html_e( 'A typeface designed for low-vision readers (Atkinson Hyperlegible)', 'taxi-peninsula' ); ?></li>

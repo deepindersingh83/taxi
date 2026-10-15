@@ -30,6 +30,7 @@ get_template_part(
 <div class="container <?php echo esc_attr( tp_blog_layout_class() ); ?> section">
 	<div class="layout-sidebar__main">
 		<?php if ( have_posts() ) : ?>
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Articles', 'taxi-peninsula' ); ?></h2>
 			<div class="<?php echo esc_attr( tp_post_list_class() ); ?>">
 				<?php
 				while ( have_posts() ) :

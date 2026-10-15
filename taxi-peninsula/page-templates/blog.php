@@ -32,6 +32,7 @@ $tp_blog = new WP_Query(
 			<div class="entry-content page-content section__intro"><?php echo apply_filters( 'the_content', $tp_intro ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped,WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- core content filter. ?></div>
 		<?php endif; ?>
 		<?php if ( $tp_blog->have_posts() ) : ?>
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Articles', 'taxi-peninsula' ); ?></h2>
 			<div class="<?php echo esc_attr( tp_post_list_class() ); ?>">
 				<?php
 				while ( $tp_blog->have_posts() ) :

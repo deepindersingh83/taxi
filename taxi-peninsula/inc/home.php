@@ -20,6 +20,7 @@ function tp_home_sections() {
 		'services'     => array( __( 'Services', 'taxi-peninsula' ), __( 'Our services', 'taxi-peninsula' ), __( 'Reliable wheelchair accessible transport for everyday trips and important appointments.', 'taxi-peninsula' ), true ),
 		'steps'        => array( __( 'How it works (3 steps)', 'taxi-peninsula' ), __( 'Booking takes about two minutes', 'taxi-peninsula' ), __( 'Book online or by phone, we confirm, and your driver helps you from door to door.', 'taxi-peninsula' ), true ),
 		'fleet'        => array( __( 'Our vehicles', 'taxi-peninsula' ), __( 'Vehicles built for wheelchairs', 'taxi-peninsula' ), __( 'Tell us about your chair when you book and we will send the right vehicle.', 'taxi-peninsula' ), true ),
+		'drivers'      => array( __( 'Meet the drivers', 'taxi-peninsula' ), __( 'Meet some of our drivers', 'taxi-peninsula' ), __( 'Trained, patient and local — the people who will help you aboard.', 'taxi-peninsula' ), true ),
 		'journey'      => array( __( 'How a trip works (animated scenes)', 'taxi-peninsula' ), __( 'From your door to the departure gate', 'taxi-peninsula' ), __( 'We back right up to your door, lower the ramp and help you aboard — and we are waiting at Arrivals when you land.', 'taxi-peninsula' ), true ),
 		'video'        => array( __( 'Wheelchair safety video', 'taxi-peninsula' ), '', '', true ),
 		'reviews'      => array( __( 'Reviews & testimonials', 'taxi-peninsula' ), __( 'What our passengers say', 'taxi-peninsula' ), '', true ),
@@ -111,7 +112,7 @@ function tp_who_defaults() {
 		1 => array( 'wheelchair', __( 'Passengers', 'taxi-peninsula' ), __( 'Book your own trip online or by phone. We help you from your door to theirs.', 'taxi-peninsula' ), 'book', __( 'Book a trip', 'taxi-peninsula' ), __( 'I’m a passenger', 'taxi-peninsula' ) ),
 		2 => array( 'heart', __( 'Family & carers', 'taxi-peninsula' ), __( 'Booking for a parent, partner or client? Carers can travel too, and you can manage the booking online.', 'taxi-peninsula' ), 'book', __( 'Book for someone', 'taxi-peninsula' ), __( 'I’m booking for someone', 'taxi-peninsula' ) ),
 		3 => array( 'users', __( 'NDIS coordinators & plan managers', 'taxi-peninsula' ), __( 'Set up regular trips for participants and have them invoiced to the right place.', 'taxi-peninsula' ), 'ndis', __( 'NDIS & accounts', 'taxi-peninsula' ), __( 'NDIS & aged care', 'taxi-peninsula' ) ),
-		4 => array( 'medical', __( 'Hospitals & aged care', 'taxi-peninsula' ), __( 'Discharges, appointments and outings for your patients and residents. Ask us about an account.', 'taxi-peninsula' ), 'contact', __( 'Talk to us', 'taxi-peninsula' ), __( 'Hospital discharge', 'taxi-peninsula' ) ),
+		4 => array( 'medical', __( 'Hospitals & aged care', 'taxi-peninsula' ), __( 'Discharges, appointments and outings for your patients and residents. Ask us about an account.', 'taxi-peninsula' ), 'book', __( 'Book a discharge trip', 'taxi-peninsula' ), __( 'Hospital discharge', 'taxi-peninsula' ) ),
 	);
 }
 

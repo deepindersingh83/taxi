@@ -826,13 +826,11 @@ add_shortcode(
 				$embed = 'youtube' === $remote[0]
 					? 'https://www.youtube-nocookie.com/embed/' . $remote[1] . '?autoplay=1&rel=0&cc_load_policy=1'
 					: 'https://player.vimeo.com/video/' . $remote[1] . '?autoplay=1&dnt=1';
-				$thumb = 'youtube' === $remote[0] ? 'https://i.ytimg.com/vi/' . $remote[1] . '/hqdefault.jpg' : '';
+				$thumb = ''; // Nothing loads from YouTube until play is pressed.
 				?>
 				<div class="video-frame auslan__video">
 					<button type="button" class="video-facade" data-video-embed="<?php echo esc_url( $embed ); ?>" data-video-title="<?php esc_attr_e( 'How to book with us, in Auslan', 'taxi-peninsula' ); ?>">
-						<?php if ( $thumb ) : ?>
-							<img src="<?php echo esc_url( $thumb ); ?>" alt="" loading="lazy">
-						<?php endif; ?>
+						<span class="video-facade__art" aria-hidden="true"><?php echo tp_illustration( 'users' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG. ?></span>
 						<span class="video-facade__play"><?php tp_the_icon( 'play' ); ?></span>
 						<span class="video-facade__label"><?php esc_html_e( 'Play: how to book with us, in Auslan', 'taxi-peninsula' ); ?></span>
 					</button>

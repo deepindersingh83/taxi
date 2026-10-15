@@ -26,6 +26,7 @@ while ( have_posts() ) :
 			<?php if ( '' !== trim( get_the_content() ) ) : ?>
 				<div class="entry-content page-content section__intro"><?php the_content(); ?></div>
 			<?php endif; ?>
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Our services', 'taxi-peninsula' ); ?></h2>
 			<?php echo do_shortcode( '[tp_services]' ); ?>
 		</div>
 	</section>

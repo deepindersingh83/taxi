@@ -68,6 +68,7 @@ function tp_settings_schema() {
 		// Recurring.
 		'recurring_enabled'     => array( 'recurring', __( 'Allow customers to request repeat trips', 'taxi-peninsula' ), 'checkbox', true, '' ),
 		'recurring_max_weeks'   => array( 'recurring', __( 'Longest repeat period (weeks)', 'taxi-peninsula' ), 'number', 12, '' ),
+		'max_advance_months'    => array( 'recurring', __( 'How far ahead customers can book online (months)', 'taxi-peninsula' ), 'number', 12, '' ),
 	);
 }
 

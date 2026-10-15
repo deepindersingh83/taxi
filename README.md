@@ -26,7 +26,7 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 - **Service pages** such as `/services/airport-transfers/`, and a **page per suburb** such as `/wheelchair-taxi/frankston/`.
 - A **testimonials** section and Google rating badge on the home page. It stays hidden until you add real testimonials or a rating.
 - **Accessibility and dynamic type:**
-  - fluid text sizes, plus A− / A / A+ / A++ text-size buttons and a high-contrast switch
+  - fluid text sizes that follow the visitor's own device settings (text size, zoom, dark mode, high contrast, reduced motion)
   - the Atkinson Hyperlegible font and large tap targets
   - keyboard and screen-reader support
 
@@ -199,14 +199,14 @@ Everything is under **Appearance → Customize** and previews before you publish
 
 **Fonts & shape** (*Design → Fonts & shape*)
 - **Fonts:** Atkinson Hyperlegible (default), Lexend, Inter or Source Sans 3. All are stored in the theme (`assets/fonts`, SIL Open Font License), so nothing is loaded from Google. The chosen font is preloaded.
-- **Sizes and weights:** base text size (90–125%) and heading weight. The visitor's text-size buttons still work on top of the base size.
+- **Sizes and weights:** base text size (90–125%) and heading weight.
 - **Shapes:** button shape (pill, rounded, square), card corner size and shadow strength (none, soft, strong).
 
 **Header** (*Design → Header*)
 - **Layouts on computers:** logo left with menu right, everything centred, or a logo row above the menu.
 - **Sticky header:** on or off.
 - **Header buttons:** show or hide the phone and "Book" buttons and change their wording.
-- **Top bar:** contact details only (default), full (contact details + display options), or none. When the display options (text size, high contrast, dark mode) leave the top bar they move to the footer; they are never removed.
+- **Top bar:** contact details or none. It is hidden on phones, where the bottom bar has Call. (Since v2.1 there are no on-page text-size, contrast or dark-mode buttons: the site follows each visitor's device settings.)
 - **Automatic Menu button:** if the full menu doesn't fit on a computer screen (a long menu, a big logo, larger text), the header switches to the Menu button instead of overflowing.
 
 **Home page hero** (*Design → Home page hero*)
@@ -236,7 +236,7 @@ Lightweight animated illustrations, drawn in SVG and CSS. There are no video fil
   - anywhere you add `[tp_scene name="pickup"]`, `[tp_scene name="airport"]` or `[tp_scene name="road"]`, or the matching block patterns
 - **Accessibility:**
   - every scene has a text description for screen readers, and the moving roads are hidden from them
-  - a **Pause animations** button (in the display options and on each scene) stops everything and is remembered for that visitor
+  - a **Pause animations** button on each scene stops everything and is remembered for that visitor
   - anyone whose device asks for reduced motion sees still pictures
   - high contrast mode hides the moving roads
   - animations only run while they're on screen
@@ -366,6 +366,53 @@ A shorter home page that gets people booking faster: about half the length on ph
 - **Areas map:** a built-in map of the bay and the peninsula with your service suburbs marked. No map service or API key is needed and nothing loads from elsewhere. Suburbs the map doesn't know are left off; the suburb checker sits beside it.
 - **Partners** show as a slim greyscale logo strip.
 - **Phones:** tighter spacing, services as a compact two-column list, vehicles swipe sideways, and the map replaces the long suburb list. The bottom bar keeps Book and Call one tap away.
+
+### Fixes, design and WhatsApp (v2.1)
+
+**Fixes**
+- Pick-up and return times accept any minute (9:53 used to be rejected).
+- **Menu on computers:**
+  - the full menu shows from 1025px wide
+  - the language button is a compact globe
+  - if the menu still doesn't fit, the Menu button sits at the right and opens a tidy drop-down panel
+  - the header slims down as you scroll
+- **Drop-downs:** each parent item has a ▾ button that opens its sub-menu by click, tap or keyboard (Escape closes). On phones, sub-items fold away under that button.
+- **Address boxes without a Google Maps key** no longer suggest bare suburb names (which replaced the street address). A "We cover …" hint shows instead.
+- **Booking checks**, in the browser and on the server:
+  - the return pick-up must be after the first pick-up
+  - passengers and wheelchairs must fit the chosen vehicle (filter `tp_vehicle_capacity` to match your fleet)
+  - online bookings can be made up to 12 months ahead (Bookings → Settings → Recurring trips)
+- **Removed display options:** the text-size, high-contrast, dark-mode and pause-animation buttons are no longer shown to visitors. The site follows each visitor's own device settings instead.
+- **Smaller fixes:**
+  - choosing "No wheelchair" in the quick-book card now explains why a standard taxi was picked
+  - "Hospital discharge" goes to booking
+  - videos load nothing from YouTube until play is pressed
+  - the vehicle scroller works with a keyboard
+  - heading levels are fixed on the Services and Blog pages
+  - the top bar is marked as a page area for screen readers
+  - the top bar is hidden on phones
+- **Saved passengers:** choosing a saved passenger or client on the booking form fills in their details again. A script name clash had broken this in v1.9–v2.0.
+
+**Design**
+- **Services mega-menu:** the Services menu item opens every service with its icon and a short description, plus a Book now card. Add the CSS class `mega` to use it on another top-level item.
+- **Shorter hero on computers:** the quick-book card sits beside the text (Design → Hero → *Beside the text*).
+- **Photos:** services use their featured image when one is set. Fleet, drivers and the hero already take photos. Use your own photos of your vehicles, drivers and (with consent) passengers rather than stock images.
+- **Service pages:**
+  - a "What to expect" timeline
+  - a "Typical fares" card
+  - questions for that service
+  - a booking card in the sidebar
+  - each Service has new fields for these
+- **Area pages:** the map highlights the suburb, with rough travel times to the city, the airport and nearby hospitals.
+- **Meet the drivers** on the home page, with languages spoken and years driving (Users → driver → Public driver profile).
+- **Reviews:** one overall rating, with no stars on every card, and a "Read all reviews on Google" button.
+- **Booking form:** "I am the passenger — use my account details", and larger boxes and tick boxes.
+- **Friendlier 404 and empty search pages**, with Book, Call, search and popular pages.
+- **Print:** a print layout for trip confirmations. The booking page and Manage My Booking have a Print button.
+
+**WhatsApp**
+- A floating "WhatsApp us" button opens WhatsApp on your number with a message already typed. On the Manage My Booking page the message includes the booking reference.
+- Settings: Customize → Taxi Peninsula → Contact details (WhatsApp number, show the button, message).
 
 ## Install
 

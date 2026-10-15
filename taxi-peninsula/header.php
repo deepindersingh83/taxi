@@ -22,7 +22,7 @@
 
 <?php $tp_topbar = tp_design( 'topbar' ); ?>
 <?php if ( 'none' !== $tp_topbar ) : ?>
-<div class="topbar">
+<div class="topbar" role="region" aria-label="<?php esc_attr_e( 'Contact details', 'taxi-peninsula' ); ?>">
 	<div class="container topbar__inner">
 		<ul class="topbar__contact">
 			<li><a href="<?php echo esc_url( tp_phone_href() ); ?>"><?php tp_the_icon( 'phone' ); ?><span><?php echo esc_html( tp_opt( 'phone_display' ) ); ?></span></a></li>
@@ -40,9 +40,6 @@
 			<?php endif; ?>
 			<li class="topbar__hours"><?php tp_the_icon( 'clock' ); ?><?php tp_the_hours_badge(); ?></li>
 		</ul>
-		<?php if ( 'full' === $tp_topbar ) : ?>
-			<?php tp_the_display_options(); ?>
-		<?php endif; ?>
 	</div>
 </div>
 <?php endif; ?>

@@ -56,6 +56,8 @@ $pos   = array_search( $step_of[ $b['status'] ] ?? $b['status'], $order, true );
 		</div>
 		<?php echo tp_status_badge( $b['status'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper. ?>
 	</div>
+	<p class="print-only print-brand"><?php echo esc_html( get_bloginfo( 'name' ) . ' · ' . tp_opt( 'phone_display' ) ); ?></p>
+	<p class="booking-status__print no-print"><button type="button" class="btn btn--ghost btn--sm" data-print><?php tp_the_icon( 'book' ); ?> <?php esc_html_e( 'Print trip confirmation', 'taxi-peninsula' ); ?></button></p>
 
 	<?php if ( 'cancelled' === $b['status'] ) : ?>
 		<p class="notice notice--error"><?php esc_html_e( 'This booking has been cancelled.', 'taxi-peninsula' ); ?></p>

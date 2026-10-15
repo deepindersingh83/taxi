@@ -180,6 +180,9 @@ function tp_content_fields() {
 		'tp_service'     => array(
 			'icon' => array( __( 'Icon', 'taxi-peninsula' ), 'select', $icons ),
 			'from_price' => array( __( 'Price hint: fares from (AUD)', 'taxi-peninsula' ), 'number', __( 'Optional. Shown as "From $45" on the service card. Leave empty to hide.', 'taxi-peninsula' ) ),
+			'expect'     => array( __( 'What to expect (one step per line)', 'taxi-peninsula' ), 'textarea', __( 'e.g. We text you when the driver is on the way. Leave empty for the standard steps.', 'taxi-peninsula' ) ),
+			'fare_note'  => array( __( 'Typical fares', 'taxi-peninsula' ), 'textarea', __( 'e.g. Frankston to Melbourne Airport is usually $150–$190. MPTP members pay half up to the cap.', 'taxi-peninsula' ) ),
+			'faq'        => array( __( 'Questions about this service', 'taxi-peninsula' ), 'textarea', __( 'First line is the question, following lines the answer. Leave a blank line between questions.', 'taxi-peninsula' ) ),
 		),
 		'tp_area'        => array(
 			'nearby'    => array( __( 'Places we often take passengers to or from (one per line)', 'taxi-peninsula' ), 'textarea', __( 'e.g. hospitals, dialysis and rehab centres, day programs, shopping centres, stations in or near this suburb.', 'taxi-peninsula' ) ),
@@ -322,6 +325,7 @@ function tp_services_list() {
 					'icon'  => get_post_meta( $p->ID, '_tp_icon', true ) ?: 'wheelchair',
 					'url'   => get_permalink( $p ),
 					'price' => get_post_meta( $p->ID, '_tp_from_price', true ),
+					'image' => get_post_thumbnail_id( $p ),
 				);
 			},
 			$posts
@@ -336,6 +340,7 @@ function tp_services_list() {
 			'icon'  => $s['icon'],
 			'url'   => '',
 			'price' => '',
+			'image' => 0,
 		);
 	}
 	return $out;

@@ -167,9 +167,9 @@
 	if (acct) {
 		var data = {};
 		try { data = JSON.parse(acct.getAttribute('data-account-prefill')) || {}; } catch (e) {}
-		var form = acct.closest('form');
+		var acctForm = acct.closest('form');
 		var set = function (name, value) {
-			var el = form && form.querySelector('[name="' + name + '"]');
+			var el = acctForm && acctForm.querySelector('[name="' + name + '"]');
 			if (el && value !== undefined && value !== null) { el.value = value; el.dispatchEvent(new Event('change', { bubbles: true })); }
 		};
 		var pick = acct.querySelector('[data-passenger-select]');
@@ -180,7 +180,7 @@
 					set('name', p.name); set('phone', p.phone);
 					if (p.aid) { set('mobility_aid', p.aid); }
 					if (p.ndis) { set('ndis_number', p.ndis); }
-					var notes = form.querySelector('[name="notes"]');
+					var notes = acctForm.querySelector('[name="notes"]');
 					if (notes && p.notes && notes.value.indexOf(p.notes) === -1) { notes.value = (notes.value ? notes.value + '\n' : '') + p.notes; }
 				} else if (data.self) {
 					set('name', data.self.name); set('phone', data.self.phone);
@@ -405,9 +405,57 @@
 			if (e.target.closest('a')) { setOpen(false); }
 		});
 
+		/* Dropdowns: a ▾ button beside each parent item opens its sub-menu or the
+		   services panel — by click, tap or keyboard. Hover still works with a mouse. */
+		var parents = nav.querySelectorAll('.menu-item-has-children, .has-mega');
+		var closeAll = function (except) {
+			parents.forEach(function (li) {
+				if (li !== except && !li.contains(except)) {
+					li.classList.remove('is-open');
+					var b = li.querySelector(':scope > .submenu-toggle');
+					if (b) { b.setAttribute('aria-expanded', 'false'); }
+				}
+			});
+		};
+		parents.forEach(function (li, i) {
+			var link = li.querySelector(':scope > a');
+			var panel = li.querySelector(':scope > .mega') || li.querySelector(':scope > .sub-menu');
+			if (!link || !panel) { return; }
+			if (!panel.id) { panel.id = 'submenu-' + i; }
+			var btn = document.createElement('button');
+			btn.type = 'button';
+			btn.className = 'submenu-toggle';
+			btn.setAttribute('aria-expanded', 'false');
+			btn.setAttribute('aria-controls', panel.id);
+			btn.setAttribute('aria-label', (window.tpI18n && tpI18n.showSubmenu ? tpI18n.showSubmenu : 'Show more: %s').replace('%s', link.textContent.trim()));
+			btn.innerHTML = '<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>';
+			link.insertAdjacentElement('afterend', btn);
+			btn.addEventListener('click', function (e) {
+				e.stopPropagation();
+				var open = !li.classList.contains('is-open');
+				li.classList.remove('is-dismissed');
+				closeAll(li);
+				li.classList.toggle('is-open', open);
+				btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+			});
+			li.addEventListener('keydown', function (e) {
+				if (e.key === 'Escape' && !li.classList.contains('is-dismissed')) {
+					e.stopPropagation();
+					li.classList.remove('is-open');
+					li.classList.add('is-dismissed');
+					btn.setAttribute('aria-expanded', 'false');
+					btn.focus();
+				}
+			});
+			// Escape hides a hover/focus dropdown until the pointer or focus leaves the item.
+			li.addEventListener('mouseleave', function () { li.classList.remove('is-dismissed'); });
+			li.addEventListener('focusout', function (e) { if (!li.contains(e.relatedTarget)) { li.classList.remove('is-dismissed'); } });
+		});
+		document.addEventListener('click', function (e) { if (!nav.contains(e.target)) { closeAll(null); } });
+
 		/* On computers, fall back to the Menu button when the full menu doesn't fit
 		   (long menus, larger base text, or the visitor's text size buttons). */
-		var wide = window.matchMedia ? window.matchMedia('(min-width: 80.01em)') : null;
+		var wide = window.matchMedia ? window.matchMedia('(min-width: 64.01em)') : null;
 		var inner = nav.parentElement;
 		var fitNav = function () {
 			if (!wide || !wide.matches) { root.classList.remove('tp-nav-compact'); return; }
@@ -461,8 +509,61 @@
 			});
 		});
 
+		/* "I am the passenger" copies the account holder's details. */
+		var useMe = form.querySelector('[data-use-me]');
+		if (useMe) {
+			var meData = {};
+			try { meData = JSON.parse(useMe.getAttribute('data-use-me')) || {}; } catch (err) {}
+			useMe.addEventListener('change', function () {
+				['name', 'phone', 'email'].forEach(function (k) {
+					var f = form.querySelector('[name="' + k + '"]');
+					if (f && useMe.checked && meData[k]) { f.value = meData[k]; f.dispatchEvent(new Event('input', { bubbles: true })); }
+				});
+			});
+		}
+
+		/* Capacity and return-time checks, shown as the person fills in the form. */
+		var cap = {};
+		try { cap = JSON.parse(form.getAttribute('data-capacity') || '{}'); } catch (err) {}
+		var msgs = {};
+		try { msgs = JSON.parse(form.getAttribute('data-messages') || '{}'); } catch (err) {}
+		var liveError = function (input, text) {
+			if (!input) { return; }
+			input.setCustomValidity(text || '');
+			var id = input.id + '-live';
+			var box = document.getElementById(id);
+			if (!box) {
+				box = document.createElement('p');
+				box.id = id;
+				box.className = 'field__error field__error--live';
+				box.setAttribute('aria-live', 'polite');
+				input.insertAdjacentElement('afterend', box);
+				input.setAttribute('aria-describedby', ((input.getAttribute('aria-describedby') || '') + ' ' + id).trim());
+			}
+			box.textContent = text || '';
+			box.hidden = !text;
+			input.setAttribute('aria-invalid', text ? 'true' : 'false');
+		};
+		var checkTrip = function () {
+			var v = form.querySelector('[name="vehicle"]:checked');
+			var c = v ? cap[v.value] : null;
+			var pax = form.querySelector('[name="passengers"]');
+			if (c && wheelchairs) {
+				var tooMany = c[1] > 0 && +wheelchairs.value > c[1];
+				liveError(wheelchairs, tooMany ? (+wheelchairs.value <= (cap.maxi_wat || [0, 2])[1] ? msgs.chairs : msgs.chairsCall) : '');
+			}
+			if (c && pax) { liveError(pax, +pax.value > c[0] ? (msgs.people || '').replace('%d', c[0]) : ''); }
+			var t = form.querySelector('[name="time"]'), rt = form.querySelector('[name="return_time"]'), rc = form.querySelector('[name="return_trip"]');
+			if (rt) { liveError(rt, rc && rc.checked && rt.value && t && t.value && rt.value <= t.value ? msgs.returnTime : ''); }
+		};
+		form.addEventListener('change', checkTrip);
+		form.addEventListener('input', function (e) { if (e.target.type === 'number' || e.target.type === 'time') { checkTrip(); } });
+
 		/* Friendly client-side check before the server validates again. */
 		form.addEventListener('submit', function (e) {
+			checkTrip();
+			var flagged = form.querySelector('.field__error--live:not([hidden])');
+			if (flagged && !flagged.closest('[hidden]')) { e.preventDefault(); flagged.previousElementSibling.focus(); return; }
 			var firstInvalid = null;
 			form.querySelectorAll('[required]').forEach(function (el) {
 				if (el.closest('[hidden]')) { return; }
@@ -948,6 +1049,17 @@
 		document.querySelectorAll('[data-hours-closed-note]').forEach(function (n) { n.hidden = open; });
 	});
 
+	/* Print buttons on trip confirmations. */
+	document.querySelectorAll('[data-print]').forEach(function (b) { b.addEventListener('click', function () { window.print(); }); });
+
+	/* Slim header once the page scrolls. */
+	var siteHeader = document.querySelector('.site-header');
+	if (siteHeader && !document.body.classList.contains('tp-header--static')) {
+		var onScroll = function () { siteHeader.classList.toggle('is-scrolled', window.scrollY > 80); };
+		window.addEventListener('scroll', onScroll, { passive: true });
+		onScroll();
+	}
+
 	/* Review slider: previous / next buttons scroll one card; buttons disable at the ends. */
 	document.querySelectorAll('[data-slider]').forEach(function (slider) {
 		var track = slider.querySelector('.slider__track');
@@ -995,21 +1107,21 @@
 		var offers = {}, seen = null;
 		try { offers = JSON.parse(suggest.getAttribute('data-lang-suggest')) || {}; seen = localStorage.getItem('tp-lang-offer'); } catch (err) {}
 		var wanted = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || '']);
-		var pick = null;
-		for (var li = 0; li < wanted.length && !pick; li++) {
+		var langPick = null;
+		for (var li = 0; li < wanted.length && !langPick; li++) {
 			var code = String(wanted[li]).toLowerCase().split('-')[0];
 			if (code === 'en') { break; }
-			if (offers[code]) { pick = offers[code]; }
+			if (offers[code]) { langPick = offers[code]; }
 		}
-		if (pick && !seen) {
-			suggest.setAttribute('lang', pick.lang);
-			suggest.setAttribute('dir', pick.dir);
-			suggest.querySelector('.lang-suggest__q').textContent = pick.q;
+		if (langPick && !seen) {
+			suggest.setAttribute('lang', langPick.lang);
+			suggest.setAttribute('dir', langPick.dir);
+			suggest.querySelector('.lang-suggest__q').textContent = langPick.q;
 			var yes = suggest.querySelector('.lang-suggest__yes');
-			yes.textContent = pick.yes;
-			yes.href = pick.url;
+			yes.textContent = langPick.yes;
+			yes.href = langPick.url;
 			var no = suggest.querySelector('.lang-suggest__no');
-			no.textContent = pick.no;
+			no.textContent = langPick.no;
 			no.addEventListener('click', function () { langDismiss(); suggest.hidden = true; });
 			suggest.hidden = false;
 		}
