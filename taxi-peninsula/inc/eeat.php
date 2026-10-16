@@ -272,6 +272,18 @@ function tp_save_author_fields( $user_id ) {
 }
 
 /**
+ * "SO" for "Sam Owner" — shown instead of a Gravatar photo (no outside service).
+ */
+function tp_initials( $name ) {
+	$parts = preg_split( '/\s+/', trim( (string) $name ) );
+	$out   = '';
+	foreach ( array_slice( array_filter( $parts ), 0, 2 ) as $p ) {
+		$out .= mb_strtoupper( mb_substr( $p, 0, 1 ) );
+	}
+	return $out ?: '?';
+}
+
+/**
  * "Written by" box.
  */
 function tp_author_box( $user_id ) {
@@ -289,7 +301,7 @@ function tp_author_box( $user_id ) {
 	return sprintf(
 		'<aside class="author-box" aria-label="%1$s">%2$s<div><p class="author-box__name">%3$s <strong>%4$s</strong></p>%5$s%6$s</div></aside>',
 		esc_attr__( 'About the author', 'taxi-peninsula' ),
-		get_avatar( $user_id, 72, '', '', array( 'class' => 'author-box__img' ) ),
+		'<span class="author-box__img" aria-hidden="true">' . esc_html( tp_initials( $u->display_name ) ) . '</span>',
 		esc_html__( 'Written by', 'taxi-peninsula' ),
 		esc_html( $u->display_name ),
 		$line ? '<p class="author-box__role">' . esc_html( $line ) . '</p>' : '',

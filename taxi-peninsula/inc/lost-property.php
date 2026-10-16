@@ -570,7 +570,7 @@ function tp_handle_driver_found() {
 		wp_die( esc_html__( 'This trip is not assigned to you.', 'taxi-peninsula' ), 403 );
 	}
 	$day  = isset( $_POST['day'] ) ? sanitize_text_field( wp_unslash( $_POST['day'] ) ) : '';
-	$back = add_query_arg( array_filter( array( 'day' => preg_match( '/^\d{4}-\d{2}-\d{2}$/', $day ) ? $day : '' ) ), tp_page_url_by_template( 'driver', home_url( '/' ) ) );
+	$back = add_query_arg( array_filter( array( 'jobs_day' => preg_match( '/^\d{4}-\d{2}-\d{2}$/', $day ) ? $day : '' ) ), tp_page_url_by_template( 'driver', home_url( '/' ) ) );
 	$item = isset( $_POST['item'] ) ? sanitize_text_field( wp_unslash( $_POST['item'] ) ) : '';
 	if ( '' === $item ) {
 		wp_safe_redirect( add_query_arg( 'found', 'missing', $back ) . ( $bid ? '#job-' . $bid : '' ) );

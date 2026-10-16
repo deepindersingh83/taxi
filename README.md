@@ -8,6 +8,11 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### v2.6.1 — fixes from a full error sweep
+- Driver "Found an item?" no longer lands on "Page not found". It returns to the driver's day view.
+- The language links on the "Page not found" page now go to the home page in that language, instead of to more missing pages.
+- The "Written by" box shows the author's initials instead of a Gravatar photo, so no visitor data goes to an outside service.
+
 ### New in v2.6 — search and AI visibility
 - **Council-area pages** at `/council/{council}/`, plus a list of all council areas at `/council/`. Each page has:
   - the suburbs you cover in that council area, a map and travel times

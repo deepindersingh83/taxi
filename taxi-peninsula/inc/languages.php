@@ -687,7 +687,8 @@ function tp_lang_url( $code ) {
 			return add_query_arg( 'lang', $code, get_permalink( $versions['en'] ) );
 		}
 	}
-	$path = isset( $_SERVER['REQUEST_URI'] ) ? esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '/';
+	// A missing page has no other-language version: switch language on the home page instead.
+	$path = is_404() ? '/' : ( isset( $_SERVER['REQUEST_URI'] ) ? esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '/' );
 	$url  = remove_query_arg( array( 'lang', 'tp_form', 'saved', 'rated', 'privacy_request' ), home_url( $path ) );
 	return add_query_arg( 'lang', $code, $url );
 }
