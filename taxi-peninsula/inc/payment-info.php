@@ -21,13 +21,17 @@ defined( 'ABSPATH' ) || exit;
 add_filter(
 	'tp_settings_schema',
 	static function ( $s ) {
-		$s['bpay_biller']     = array( 'payments', __( 'BPAY biller code', 'taxi-peninsula' ), 'text', '', __( 'From your bank. Leave empty to hide BPAY.', 'taxi-peninsula' ) );
+		$s['bpay_enabled']    = array( 'payments', __( 'Accept BPAY', 'taxi-peninsula' ), 'checkbox', true, __( 'When off, BPAY is not shown anywhere — invoices, quotes, emails or the website.', 'taxi-peninsula' ) );
+		$s['bpay_biller']     = array( 'payments', __( 'BPAY biller code', 'taxi-peninsula' ), 'text', '', __( 'From your bank.', 'taxi-peninsula' ) );
 		$s['bpay_check']      = array( 'payments', __( 'BPAY reference check digit', 'taxi-peninsula' ), 'select', 'luhn', __( 'Ask your bank which check-digit method your biller code uses. Most use MOD10 version 1 (Luhn).', 'taxi-peninsula' ), array( 'luhn' => __( 'MOD10 version 1 (Luhn)', 'taxi-peninsula' ), 'none' => __( 'No check digit', 'taxi-peninsula' ) ) );
 		$s['payid']           = array( 'payments', __( 'PayID', 'taxi-peninsula' ), 'text', '', __( 'Your PayID (email, mobile or ABN) for instant bank payments. Leave empty to hide.', 'taxi-peninsula' ) );
 		$s['payid_name']      = array( 'payments', __( 'PayID account name', 'taxi-peninsula' ), 'text', '', __( 'The name the payer\'s bank shows, so they know it is you.', 'taxi-peninsula' ) );
+		$s['bank_enabled']    = array( 'payments', __( 'Accept bank transfer', 'taxi-peninsula' ), 'checkbox', true, __( 'Shows your bank details on invoices, quotes and emails. Needs the BSB and account number below.', 'taxi-peninsula' ) );
 		$s['bank_bsb']        = array( 'payments', __( 'Bank transfer BSB', 'taxi-peninsula' ), 'text', '', '' );
 		$s['bank_account']    = array( 'payments', __( 'Bank transfer account number', 'taxi-peninsula' ), 'text', '', '' );
 		$s['bank_name']       = array( 'payments', __( 'Bank transfer account name', 'taxi-peninsula' ), 'text', '', '' );
+		$s['bank_institution'] = array( 'payments', __( 'Bank (optional)', 'taxi-peninsula' ), 'text', '', __( 'e.g. Commonwealth Bank', 'taxi-peninsula' ) );
+		$s['pay_on_website']  = array( 'payments', __( 'Show payment details on the website', 'taxi-peninsula' ), 'checkbox', true, __( 'On the booking form (when "Account / invoice" is chosen), on Manage My Booking for account trips, and on the "How to Pay" page. Details are never shown unless the method is switched on above.', 'taxi-peninsula' ) );
 		$s['cancel_free_hours'] = array( 'recurring', __( 'Free cancellation up to (hours before pick-up)', 'taxi-peninsula' ), 'number', 2, '' );
 		$s['cancel_fee']      = array( 'recurring', __( 'Late cancellation fee ($)', 'taxi-peninsula' ), 'number', '', __( 'Leave empty if you do not charge one.', 'taxi-peninsula' ) );
 		$s['noshow_fee']      = array( 'recurring', __( 'No-show fee ($)', 'taxi-peninsula' ), 'number', '', __( 'Charged when the driver arrives and the passenger is not there. Leave empty if you do not charge one.', 'taxi-peninsula' ) );
@@ -72,8 +76,33 @@ function tp_bpay_crn( $kind, $id ) {
 	return 'none' === tp_setting( 'bpay_check' ) ? $base : $base . tp_luhn_digit( $base );
 }
 
+function tp_bpay_on() {
+	return tp_setting( 'bpay_enabled' ) && '' !== trim( (string) tp_setting( 'bpay_biller' ) );
+}
+
+function tp_bank_on() {
+	return tp_setting( 'bank_enabled' ) && '' !== trim( (string) tp_setting( 'bank_bsb' ) ) && '' !== trim( (string) tp_setting( 'bank_account' ) );
+}
+
+function tp_payid_on() {
+	return '' !== trim( (string) tp_setting( 'payid' ) );
+}
+
 function tp_pay_options_available() {
-	return (bool) ( tp_setting( 'bpay_biller' ) || tp_setting( 'payid' ) || ( tp_setting( 'bank_bsb' ) && tp_setting( 'bank_account' ) ) );
+	return tp_bpay_on() || tp_payid_on() || tp_bank_on();
+}
+
+/**
+ * Bank details as one line: "BSB 063-000 · Account 1234 5678 · Taxi Peninsula Pty Ltd · Commonwealth Bank".
+ */
+function tp_bank_line( $sep = ' · ' ) {
+	$parts = array( 'BSB ' . tp_setting( 'bank_bsb' ), __( 'Account', 'taxi-peninsula' ) . ' ' . tp_setting( 'bank_account' ) );
+	foreach ( array( 'bank_name', 'bank_institution' ) as $k ) {
+		if ( tp_setting( $k ) ) {
+			$parts[] = tp_setting( $k );
+		}
+	}
+	return implode( $sep, $parts );
 }
 
 /**
@@ -89,7 +118,7 @@ function tp_pay_options_html( $kind = '', $id = 0, $ref = '' ) {
 	}
 	$crn  = $kind && $id ? tp_bpay_crn( $kind, $id ) : '';
 	$html = '<div class="pay-options">';
-	if ( tp_setting( 'bpay_biller' ) ) {
+	if ( tp_bpay_on() ) {
 		$html .= '<div class="bpay-box" role="group" aria-label="BPAY">'
 			. '<p class="bpay-box__brand">BPAY<sup>®</sup></p>'
 			. '<p class="bpay-box__line"><span>' . esc_html__( 'Biller Code', 'taxi-peninsula' ) . '</span> <strong>' . esc_html( tp_setting( 'bpay_biller' ) ) . '</strong></p>'
@@ -98,11 +127,11 @@ function tp_pay_options_html( $kind = '', $id = 0, $ref = '' ) {
 			. '</div>';
 	}
 	$lines = array();
-	if ( tp_setting( 'payid' ) ) {
+	if ( tp_payid_on() ) {
 		$lines[] = '<li><strong>PayID</strong> ' . esc_html( tp_setting( 'payid' ) ) . ( tp_setting( 'payid_name' ) ? ' (' . esc_html( tp_setting( 'payid_name' ) ) . ')' : '' ) . '</li>';
 	}
-	if ( tp_setting( 'bank_bsb' ) && tp_setting( 'bank_account' ) ) {
-		$lines[] = '<li><strong>' . esc_html__( 'Bank transfer', 'taxi-peninsula' ) . '</strong> BSB ' . esc_html( tp_setting( 'bank_bsb' ) ) . ' · ' . esc_html__( 'Account', 'taxi-peninsula' ) . ' ' . esc_html( tp_setting( 'bank_account' ) ) . ( tp_setting( 'bank_name' ) ? ' · ' . esc_html( tp_setting( 'bank_name' ) ) : '' ) . '</li>';
+	if ( tp_bank_on() ) {
+		$lines[] = '<li><strong>' . esc_html__( 'Bank transfer', 'taxi-peninsula' ) . '</strong> ' . esc_html( tp_bank_line() ) . '</li>';
 	}
 	if ( $lines ) {
 		$html .= '<ul class="pay-options__list">' . implode( '', $lines ) . '</ul>';
@@ -122,16 +151,16 @@ function tp_pay_options_text( $kind = '', $id = 0, $ref = '' ) {
 		return '';
 	}
 	$out = __( 'How to pay', 'taxi-peninsula' ) . ":\n";
-	if ( tp_setting( 'bpay_biller' ) ) {
+	if ( tp_bpay_on() ) {
 		$out .= '- BPAY® ' . __( 'Biller Code', 'taxi-peninsula' ) . ' ' . tp_setting( 'bpay_biller' ) . ', ' . __( 'Ref', 'taxi-peninsula' ) . ' ' . ( $kind && $id ? tp_bpay_crn( $kind, $id ) : __( 'on your invoice', 'taxi-peninsula' ) ) . "\n";
 	}
-	if ( tp_setting( 'payid' ) ) {
+	if ( tp_payid_on() ) {
 		$out .= '- PayID ' . tp_setting( 'payid' ) . ( tp_setting( 'payid_name' ) ? ' (' . tp_setting( 'payid_name' ) . ')' : '' ) . "\n";
 	}
-	if ( tp_setting( 'bank_bsb' ) && tp_setting( 'bank_account' ) ) {
-		$out .= '- ' . __( 'Bank transfer', 'taxi-peninsula' ) . ' BSB ' . tp_setting( 'bank_bsb' ) . ', ' . __( 'Account', 'taxi-peninsula' ) . ' ' . tp_setting( 'bank_account' ) . ( tp_setting( 'bank_name' ) ? ', ' . tp_setting( 'bank_name' ) : '' ) . "\n";
+	if ( tp_bank_on() ) {
+		$out .= '- ' . __( 'Bank transfer', 'taxi-peninsula' ) . ' ' . tp_bank_line( ', ' ) . "\n";
 	}
-	if ( $ref && ( tp_setting( 'payid' ) || tp_setting( 'bank_bsb' ) ) ) {
+	if ( $ref && ( tp_payid_on() || tp_bank_on() ) ) {
 		/* translators: %s: reference */
 		$out .= sprintf( __( 'Please use %s as the payment description.', 'taxi-peninsula' ), $ref ) . "\n";
 	}
@@ -141,8 +170,74 @@ function tp_pay_options_text( $kind = '', $id = 0, $ref = '' ) {
 add_shortcode(
 	'tp_pay_options',
 	static function () {
-		return tp_pay_options_html();
+		return tp_pay_on_website() ? tp_pay_options_html() : '';
 	}
+);
+
+/* -------------------------------------------------------------------------
+ * On the website.
+ * ---------------------------------------------------------------------- */
+
+function tp_pay_on_website() {
+	return tp_setting( 'pay_on_website' ) && tp_pay_options_available();
+}
+
+// "How to Pay" starter page.
+add_filter(
+	'tp_starter_pages',
+	static function ( $p ) {
+		$p['pay'] = array(
+			'title'   => __( 'How to Pay', 'taxi-peninsula' ),
+			'content' => "<!-- wp:paragraph -->\n<p>" . __( 'Pay the driver by card or cash at the end of the trip, use your MPTP card, or — for account customers — pay your invoice using the details below. Please use the reference on your invoice so we can match your payment.', 'taxi-peninsula' ) . "</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:shortcode -->\n[tp_pay_options]\n<!-- /wp:shortcode -->",
+		);
+		return $p;
+	}
+);
+add_filter(
+	'tp_feature_shortcodes',
+	static function ( $c ) {
+		$c['pay'] = 'tp_pay_options';
+		return $c;
+	}
+);
+
+// Footer: link to the How to Pay page.
+add_action(
+	'tp_footer_contact_items',
+	static function () {
+		$url = tp_pay_on_website() ? tp_page_url_by_template( 'pay' ) : '';
+		if ( $url ) {
+			printf( '<li>%s<a href="%s">%s</a></li>', tp_icon( 'check' ), esc_url( $url ), esc_html__( 'How to pay', 'taxi-peninsula' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static icon.
+		}
+	}
+);
+
+// Booking form: when "Account / invoice" is chosen.
+add_action(
+	'tp_booking_form_account_after',
+	static function () {
+		if ( ! tp_pay_on_website() ) {
+			return;
+		}
+		echo '<div class="pay-options--form"><p class="field__hint"><strong>' . esc_html__( 'Ways to pay your invoice', 'taxi-peninsula' ) . '</strong> — ' . esc_html__( 'your invoice will show your own reference number.', 'taxi-peninsula' ) . '</p>';
+		echo tp_pay_options_html(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper.
+		echo '</div>';
+	}
+);
+
+// Manage My Booking: account trips show how to pay, with their reference.
+add_action(
+	'tp_booking_status_after',
+	static function ( $post_id ) {
+		$b = tp_get_booking( $post_id );
+		if ( ! tp_pay_on_website() || 'account' !== $b['payment'] || 'cancelled' === $b['status'] || 'paid' === $b['invoice'] ) {
+			return;
+		}
+		echo '<section class="pay-options-section"><h2>' . esc_html__( 'How to pay your invoice', 'taxi-peninsula' ) . '</h2>';
+		echo tp_pay_options_html( 'trip', (int) $b['id'], $b['reference'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper.
+		echo '</section>';
+	},
+	25
 );
 
 // Tax invoices with money owing: how to pay.

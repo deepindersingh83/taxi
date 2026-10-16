@@ -2140,3 +2140,6 @@ html[data-contrast="high"] .tp-alerts-box--front { background: #fff; color: #000
 @media print {
 	.bpay-box { border-color: #000; color: #000; }
 }
+.pay-options--form { margin-top: var(--space-s); }
+.pay-options--form .pay-options { margin-top: var(--space-xs); }
+.pay-options-section { margin-top: var(--space-l); }

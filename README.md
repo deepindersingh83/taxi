@@ -8,6 +8,15 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### v2.7.1 — payment options
+- **BPAY on/off:** tick or untick "Accept BPAY" in Taxi settings → Settings → Payments & invoicing. When it's off, BPAY doesn't appear on invoices, quotes, emails or the website.
+- **Bank transfer on/off:** "Accept bank transfer" shows your BSB, account number, account name and (optionally) bank on invoices, quotes and emails.
+- **Payment details on the website** (switch: "Show payment details on the website"):
+  - a new "How to Pay" starter page, linked in the footer
+  - on the booking form when "Account / invoice" is chosen
+  - on Manage My Booking for unpaid account trips, with the trip's own reference
+  - Only the methods that are switched on are shown.
+
 ### New in v2.7
 **More pages that rank**
 - **Place pages:**

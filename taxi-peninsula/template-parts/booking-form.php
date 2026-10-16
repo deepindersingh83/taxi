@@ -272,6 +272,7 @@ $today       = wp_date( 'Y-m-d' );
 						<input id="bf-ndis" name="ndis_number" type="text" value="<?php echo esc_attr( $val( 'ndis_number' ) ); ?>">
 					</div>
 				</div>
+				<?php do_action( 'tp_booking_form_account_after' ); ?>
 			</div>
 		<?php endif; ?>
 
