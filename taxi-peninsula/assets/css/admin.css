@@ -275,3 +275,10 @@
 .tp-ai__item.is-done .tp-ai__mark { background: #0a6b2d; border-color: #0a6b2d; color: #fff; }
 .tp-ai__send { margin: 0 0 16px; }
 .tp-ai__preview { max-height: 420px; overflow: auto; max-width: 60rem; }
+
+/* v2.6 */
+.tp-ai__check th[scope="row"] { font-weight: 600; min-width: 220px; }
+.tp-ai__check td { white-space: nowrap; }
+.tp-ai__check td a { margin-right: 6px; }
+.tp-ai__history { margin-top: 12px; max-width: 60rem; }
+.tp-search .tp-owner__grid > div { min-width: 0; }

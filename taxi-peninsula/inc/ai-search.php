@@ -77,6 +77,8 @@ function tp_ai_checklist() {
 		'places'    => array( ! empty( $manual['places'] ), __( 'Claim your Bing Places for Business listing', 'taxi-peninsula' ), __( 'Copilot and Bing Maps use it for "wheelchair taxi near me". You can import your Google Business Profile.', 'taxi-peninsula' ), 'https://www.bingplaces.com/', true ),
 		'apple'     => array( ! empty( $manual['apple'] ), __( 'Claim your Apple Business Connect listing', 'taxi-peninsula' ), __( 'Siri and Apple Maps on iPhones use it.', 'taxi-peninsula' ), 'https://businessconnect.apple.com/', true ),
 		'reviews'   => array( ! empty( $manual['reviews'] ), __( 'Ask for reviews and reply to every one', 'taxi-peninsula' ), __( 'AI assistants repeat what reviews say ("patient drivers", "always on time"). Review invites are already sent after rated trips.', 'taxi-peninsula' ), '', true ),
+		'partners'  => array( function_exists( 'tp_partner_link_counts' ) && tp_partner_link_counts()[0] > 0, __( 'Get partners to link to you', 'taxi-peninsula' ), function_exists( 'tp_partner_link_counts' ) ? sprintf( /* translators: 1: linked 2: total */ __( '%1$d of %2$d partners link to your site. Send each the "link to us" snippet from their partner page.', 'taxi-peninsula' ), tp_partner_link_counts()[0], tp_partner_link_counts()[1] ) : '', admin_url( 'edit.php?post_type=tp_venue' ), false ),
+		'aicheck'   => array( function_exists( 'tp_ai_check_due' ) && ! tp_ai_check_due(), __( 'Do this month’s AI check', 'taxi-peninsula' ), __( 'Ask ChatGPT, Copilot, Perplexity and Google your customers’ questions and note whether you are named (below).', 'taxi-peninsula' ), '#tp-ai-check', false ),
 		'directory' => array( ! empty( $manual['directory'] ), __( 'List the business in local and disability directories', 'taxi-peninsula' ), __( 'e.g. your council\'s community directory, True Local, Yellow Pages, and disability-service directories. The same name, address and phone everywhere.', 'taxi-peninsula' ), '', true ),
 	);
 }
@@ -155,7 +157,7 @@ function tp_render_ai_search_page() {
 							<span class="screen-reader-text"><?php echo esc_html( $item[0] ? __( '(done)', 'taxi-peninsula' ) : __( '(to do)', 'taxi-peninsula' ) ); ?></span>
 							<p><?php echo esc_html( $item[2] ); ?>
 								<?php if ( $item[3] ) : ?>
-									<a href="<?php echo esc_url( $item[3] ); ?>"<?php echo 0 === strpos( $item[3], admin_url() ) ? '' : ' target="_blank" rel="noopener"'; ?>><?php esc_html_e( 'Open', 'taxi-peninsula' ); ?></a>
+									<a href="<?php echo esc_url( $item[3] ); ?>"<?php echo ( 0 === strpos( $item[3], admin_url() ) || 0 === strpos( $item[3], '#' ) ) ? '' : ' target="_blank" rel="noopener"'; ?>><?php esc_html_e( 'Open', 'taxi-peninsula' ); ?></a>
 								<?php endif; ?>
 							</p>
 							<?php if ( $item[4] ) : ?>
@@ -198,6 +200,8 @@ function tp_render_ai_search_page() {
 				</tbody></table>
 			</details>
 		<?php endif; ?>
+
+		<?php do_action( 'tp_ai_search_after' ); ?>
 
 		<?php if ( tp_setting( 'llms_txt' ) ) : ?>
 			<h2><?php esc_html_e( 'What AI assistants read about you', 'taxi-peninsula' ); ?></h2>

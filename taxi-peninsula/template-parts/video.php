@@ -9,6 +9,7 @@
 if ( ! tp_video_configured() ) {
 	return;
 }
+do_action( 'tp_video_shown' );
 $remote     = tp_parse_video_url( tp_opt( 'video_url' ) );
 $file       = (int) tp_opt( 'video_file' );
 $captions   = (int) tp_opt( 'video_captions' );

@@ -262,6 +262,7 @@ function tp_render_venue_box( $post ) {
 		echo '<p class="description">' . esc_html__( 'A link from a hospital or aged-care website to yours is one of the strongest signals for Google and Bing. Send this to their web team for their "Transport" or "Getting here" page:', 'taxi-peninsula' ) . '</p>';
 		echo '<textarea class="large-text code" rows="2" readonly onclick="this.select()">' . esc_textarea( $snippet ) . '</textarea>';
 	}
+	do_action( 'tp_venue_box_after', $post );
 	$stats = tp_venue_stats( $post->ID, 90 );
 	/* translators: 1: visits 2: scans 3: bookings */
 	echo '<p><strong>' . esc_html( sprintf( __( 'Last 90 days: %1$d visits, %2$d QR scans, %3$d bookings.', 'taxi-peninsula' ), $stats['view'], $stats['qr'], $stats['booking'] ) ) . '</strong></p>';

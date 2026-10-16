@@ -8,6 +8,33 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### New in v2.6 — search and AI visibility
+- **Council-area pages** at `/council/{council}/`, plus a list of all council areas at `/council/`. Each page has:
+  - the suburbs you cover in that council area, a map and travel times
+  - a quick answer, questions and answers, reviews that mention the area, and a booking card
+  - business data for Google describing the council as the area served
+  - Suburbs are matched to councils automatically across Melbourne's south-east, the Mornington Peninsula and Geelong. You can set the council by hand in each area's "Council area" box.
+  - Area pages link to their council page. Council pages are added to the sitemap and are sent to Bing.
+- **Quick answer** ("In short") at the top of service, area, local and council pages: who you are, where you go, how to book and the starting price. You can write your own in the "Quick answer" box on services, areas and pages.
+- **Question headings** ("How much does it cost?", "How long does it take to get places from …?"), plus standard questions on area and council pages about power wheelchairs, carers and paying.
+- **"Last updated" dates**, plus article and page details for Google (published and updated dates, author, publisher).
+- **Expertise:**
+  - a "Written by" author box on blog posts, filled in from Users → Profile → "About you as an author" (role, years of experience, bio)
+  - `[tp_credentials]` lists your accreditations and checks
+  - a draft starter page, "Driver Training & Safety", with [CONFIRM] notes
+  - the year you started, shown in the quick answer
+- **Video details for Google** for the wheelchair safety video, from YouTube or Vimeo, or an uploaded file.
+- **Reports → Search performance** shows Google Search Console data, refreshed weekly:
+  - clicks, times shown, click rate and average position
+  - top searches and top landing pages
+  - **"Almost on page 1"**: searches where you rank 8–20, with the page to improve
+  - It uses the same Google OAuth client as Google profile posts. In Google Cloud, enable the Search Console API and add the redirect address shown on the page.
+- **Marketing → AI & Bing search** gains four sections:
+  - **AI and search bots reading your site:** ChatGPT search, Perplexity, Claude, Bing, Google, Apple and others, with visit counts and the pages they read.
+  - **Bing searches:** your Bing searches and clicks, using a Bing Webmaster API key.
+  - **Partner links:** how many partners link to you. Each partner page records the request status and the partner's page, and that page is checked weekly for a link to you.
+  - **Monthly AI check:** questions with one-click "Ask" links for ChatGPT, Copilot, Perplexity and Google. Mark whether you were named, add notes and see the history month by month. A reminder email goes out on the 1st, and the Dashboard shows a notice until the check is done.
+
 ### New in v2.5 — search engines and AI assistants
 - **Marketing → AI & Bing search** (new page). Helps you get recommended by Bing, ChatGPT search and Microsoft Copilot (both get much of their information from Bing).
   - **Results:** calls, bookings, quotes and revenue that came from ChatGPT, Copilot, Perplexity, Gemini, Claude and Bing. AI visits are recognised by where the visitor came from and by tracking tags such as `?utm_source=chatgpt.com`.

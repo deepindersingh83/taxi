@@ -23,6 +23,7 @@ while ( have_posts() ) :
 	?>
 	<div class="container layout-sidebar section">
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'layout-sidebar__main' ); ?>>
+			<?php tp_the_quick_answer( $area, 0, get_the_ID() ); ?>
 			<div class="prose entry-content">
 				<?php if ( '' !== trim( get_the_content() ) ) : ?>
 					<?php the_content(); ?>
@@ -58,7 +59,7 @@ while ( have_posts() ) :
 								<h2>
 									<?php
 									/* translators: %s: suburb */
-									echo esc_html( sprintf( __( 'Travel times from %s', 'taxi-peninsula' ), $area ) );
+									echo esc_html( sprintf( __( 'How long does it take to get places from %s?', 'taxi-peninsula' ), $area ) );
 									?>
 								</h2>
 								<ul class="area-times__list">
@@ -77,7 +78,7 @@ while ( have_posts() ) :
 					<h2>
 						<?php
 						/* translators: %s: suburb */
-						echo esc_html( sprintf( __( 'Places we often travel to around %s', 'taxi-peninsula' ), $area ) );
+						echo esc_html( sprintf( __( 'Where do people often travel to from %s?', 'taxi-peninsula' ), $area ) );
 						?>
 					</h2>
 					<ul class="tick-list">
@@ -91,7 +92,7 @@ while ( have_posts() ) :
 					<h2>
 						<?php
 						/* translators: %s: suburb */
-						echo esc_html( sprintf( __( 'Getting around %s', 'taxi-peninsula' ), $area ) );
+						echo esc_html( sprintf( __( 'What should I know about getting around %s?', 'taxi-peninsula' ), $area ) );
 						?>
 					</h2>
 					<?php echo wp_kses_post( wpautop( esc_html( $local ) ) ); ?>
@@ -100,7 +101,7 @@ while ( have_posts() ) :
 				<h2>
 					<?php
 					/* translators: %s: suburb */
-					echo esc_html( sprintf( __( 'Popular trips from %s', 'taxi-peninsula' ), $area ) );
+					echo esc_html( sprintf( __( 'What trips can I book from %s?', 'taxi-peninsula' ), $area ) );
 					?>
 				</h2>
 				<ul class="service-links">
@@ -130,6 +131,7 @@ while ( have_posts() ) :
 					</ul>
 				<?php endif; ?>
 
+				<?php $local_faq = array_merge( $local_faq, tp_access_faq() ); ?>
 				<?php if ( $local_faq ) : ?>
 					<h2>
 						<?php
@@ -145,6 +147,7 @@ while ( have_posts() ) :
 					</div>
 				<?php endif; ?>
 			</div>
+			<?php do_action( 'tp_area_after_content', get_post() ); ?>
 			<p class="cta-inline">
 				<a class="btn btn--accent btn--lg" href="<?php echo esc_url( $book ); ?>">
 					<?php

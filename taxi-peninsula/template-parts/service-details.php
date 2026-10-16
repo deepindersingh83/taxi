@@ -21,7 +21,7 @@ $note  = trim( (string) get_post_meta( $id, '_tp_fare_note', true ) );
 $faq   = tp_parse_local_faq( get_post_meta( $id, '_tp_faq', true ) );
 ?>
 <section class="service-detail" aria-labelledby="expect-title">
-	<h2 id="expect-title"><?php esc_html_e( 'What to expect', 'taxi-peninsula' ); ?></h2>
+	<h2 id="expect-title"><?php esc_html_e( 'What happens when I book?', 'taxi-peninsula' ); ?></h2>
 	<ol class="timeline">
 		<?php foreach ( $expect as $i => $step ) : ?>
 			<li class="timeline__step"><span class="timeline__dot" aria-hidden="true"><?php echo esc_html( $i + 1 ); ?></span><p><?php echo esc_html( $step ); ?></p></li>
@@ -31,7 +31,7 @@ $faq   = tp_parse_local_faq( get_post_meta( $id, '_tp_faq', true ) );
 
 <?php if ( $price || $note ) : ?>
 	<section class="service-detail fare-card" aria-labelledby="fares-title">
-		<h2 id="fares-title"><?php esc_html_e( 'Typical fares', 'taxi-peninsula' ); ?></h2>
+		<h2 id="fares-title"><?php esc_html_e( 'How much does it cost?', 'taxi-peninsula' ); ?></h2>
 		<?php if ( $price ) : ?>
 			<?php /* translators: %s: price */ ?>
 			<p class="fare-card__from"><?php echo esc_html( sprintf( __( 'From %s', 'taxi-peninsula' ), '$' . number_format_i18n( $price, floor( $price ) == $price ? 0 : 2 ) ) ); ?></p>
@@ -45,7 +45,7 @@ $faq   = tp_parse_local_faq( get_post_meta( $id, '_tp_faq', true ) );
 
 <?php if ( $faq ) : ?>
 	<section class="service-detail" aria-labelledby="sfaq-title">
-		<h2 id="sfaq-title"><?php esc_html_e( 'Common questions', 'taxi-peninsula' ); ?></h2>
+		<h2 id="sfaq-title"><?php esc_html_e( 'What else do people ask?', 'taxi-peninsula' ); ?></h2>
 		<div class="faq">
 			<?php foreach ( $faq as $qa ) : ?>
 				<?php tp_faq_schema_items( array( 'q' => $qa[0], 'a' => $qa[1] ) ); ?>
@@ -57,7 +57,7 @@ $faq   = tp_parse_local_faq( get_post_meta( $id, '_tp_faq', true ) );
 	<?php $more = do_shortcode( '[tp_faq featured="yes" limit="4" search="no"]' ); ?>
 	<?php if ( $more ) : ?>
 		<section class="service-detail" aria-labelledby="sfaq-title">
-			<h2 id="sfaq-title"><?php esc_html_e( 'Common questions', 'taxi-peninsula' ); ?></h2>
+			<h2 id="sfaq-title"><?php esc_html_e( 'What else do people ask?', 'taxi-peninsula' ); ?></h2>
 			<?php echo $more; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in shortcode. ?>
 		</section>
 	<?php endif; ?>

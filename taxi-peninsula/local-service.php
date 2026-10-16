@@ -24,6 +24,7 @@ get_template_part(
 ?>
 <div class="container layout-sidebar section local-service">
 	<article class="layout-sidebar__main">
+		<?php tp_the_quick_answer( $tp_a, $tp_service->ID ); ?>
 		<div class="local-service__book card">
 			<h2>
 				<?php
@@ -67,7 +68,7 @@ get_template_part(
 							<h2>
 								<?php
 								/* translators: %s: suburb */
-								echo esc_html( sprintf( __( 'Travel times from %s', 'taxi-peninsula' ), $tp_a ) );
+								echo esc_html( sprintf( __( 'How long does it take to get places from %s?', 'taxi-peninsula' ), $tp_a ) );
 								?>
 							</h2>
 							<ul class="area-times__list">

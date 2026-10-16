@@ -566,5 +566,5 @@ function tp_all_public_urls() {
 			}
 		}
 	}
-	return array_values( array_unique( $urls ) );
+	return array_values( array_unique( apply_filters( 'tp_all_public_urls', $urls ) ) );
 }
