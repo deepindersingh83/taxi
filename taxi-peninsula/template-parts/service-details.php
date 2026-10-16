@@ -62,3 +62,4 @@ $faq   = tp_parse_local_faq( get_post_meta( $id, '_tp_faq', true ) );
 		</section>
 	<?php endif; ?>
 <?php endif; ?>
+<?php do_action( 'tp_service_details_after', $id ); ?>

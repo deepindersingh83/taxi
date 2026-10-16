@@ -2043,3 +2043,13 @@ body:has(.driver-dock) .whatsapp-button { display: none; }
 .topbar .acct__link:hover, .topbar .acct__link:focus-visible { background: var(--c-bg-alt); text-decoration: none; }
 .topbar .acct__link--primary { font-weight: 700; color: var(--c-heading); }
 .acct__link .icon { color: var(--c-heading); }
+
+/* v2.5 — footer business details, suburbs, official links */
+.site-footer__business { flex-basis: 100%; }
+.site-footer__nap { margin: 0; font-weight: 700; }
+.site-footer__creds { margin: .25rem 0 0; opacity: .85; font-size: var(--step--1); }
+.footer-areas a { text-decoration: none; }
+.footer-areas a:hover { text-decoration: underline; }
+.official-links { margin-top: var(--space-xl); padding: var(--space-m); border: 1px solid var(--c-border); border-radius: var(--radius); background: var(--c-bg-alt); }
+.official-links h2 { margin-top: 0; font-size: var(--step-1); }
+.official-links ul { margin: 0; padding-left: 1.2em; display: grid; gap: .35rem; }

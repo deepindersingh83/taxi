@@ -216,6 +216,7 @@ function tp_output_schema() {
 		);
 	}
 
+	$graph = apply_filters( 'tp_schema_graph', $graph );
 	printf(
 		"<script type=\"application/ld+json\">%s</script>\n",
 		wp_json_encode( array( '@context' => 'https://schema.org', '@graph' => $graph ), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG )

@@ -92,6 +92,33 @@ function tp_visit_source() {
 }
 
 /**
+ * AI assistants that send visitors: host or utm_source fragment => name.
+ */
+function tp_ai_sources() {
+	return array(
+		'chatgpt.com'           => 'chatgpt',
+		'chat.openai.com'       => 'chatgpt',
+		'openai.com'            => 'chatgpt',
+		'copilot.microsoft.com' => 'copilot',
+		'copilot.cloud'         => 'copilot',
+		'perplexity.ai'         => 'perplexity',
+		'gemini.google.com'     => 'gemini',
+		'claude.ai'             => 'claude',
+		'you.com'               => 'you',
+		'meta.ai'               => 'meta-ai',
+	);
+}
+
+function tp_ai_source_name( $host ) {
+	foreach ( tp_ai_sources() as $needle => $name ) {
+		if ( $host === $needle || $host === $name || false !== strpos( $host, $needle ) ) {
+			return $name;
+		}
+	}
+	return '';
+}
+
+/**
  * Source from this request's URL or referrer, or null.
  */
 function tp_source_from_request() {
@@ -100,7 +127,10 @@ function tp_source_from_request() {
 		return isset( $_GET[ $k ] ) ? mb_substr( sanitize_text_field( wp_unslash( $_GET[ $k ] ) ), 0, $len ) : '';
 	};
 	if ( $get( 'utm_source' ) ) {
-		return array( strtolower( $get( 'utm_source' ) ), strtolower( $get( 'utm_medium', 60 ) ), $get( 'utm_campaign' ) );
+		$src = strtolower( $get( 'utm_source' ) );
+		$ai  = tp_ai_source_name( $src );
+		// AI assistants add ?utm_source=chatgpt.com (etc.) to the links they show.
+		return $ai ? array( $ai, 'ai', $get( 'utm_campaign' ) ) : array( $src, strtolower( $get( 'utm_medium', 60 ) ), $get( 'utm_campaign' ) );
 	}
 	if ( $get( 'gclid' ) || $get( 'gbraid' ) || $get( 'wbraid' ) ) {
 		return array( 'google', 'cpc', $get( 'utm_campaign' ) );
@@ -116,6 +146,10 @@ function tp_source_from_request() {
 	$home = (string) wp_parse_url( home_url(), PHP_URL_HOST );
 	if ( $ref && $ref !== $home ) {
 		$ref = preg_replace( '/^www\./', '', strtolower( $ref ) );
+		$ai  = tp_ai_source_name( $ref );
+		if ( $ai ) {
+			return array( $ai, 'ai', '' );
+		}
 		foreach ( array( 'google.' => 'google', 'bing.' => 'bing', 'duckduckgo.' => 'duckduckgo', 'yahoo.' => 'yahoo' ) as $needle => $engine ) {
 			if ( false !== strpos( $ref, $needle ) ) {
 				return array( $engine, 'organic', '' );

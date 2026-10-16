@@ -120,6 +120,51 @@ function tp_health_checks() {
 		? array( 'ok', __( 'Email', 'taxi-peninsula' ), sprintf( __( 'A test email was handed to the mail server for %s. If it does not arrive within a few minutes, set up an SMTP plugin with your email provider.', 'taxi-peninsula' ), wp_get_current_user()->user_email ), '' )
 		: array( 'fail', __( 'Email', 'taxi-peninsula' ), __( 'The server refused to send email. Install an SMTP plugin and connect it to your email provider.', 'taxi-peninsula' ), '' );
 
+	return array_merge( $out, tp_seo_checks() );
+}
+
+/**
+ * Search checks: visibility, verification, sitemap, descriptions, alt text,
+ * duplicate titles, business details, llms.txt and IndexNow.
+ */
+function tp_seo_checks() {
+	global $wpdb;
+	$out = array();
+	$out['seo_visible'] = get_option( 'blog_public' )
+		? array( 'ok', __( 'Search engines allowed', 'taxi-peninsula' ), __( 'The site is open to search engines.', 'taxi-peninsula' ), '' )
+		: array( 'fail', __( 'Search engines allowed', 'taxi-peninsula' ), __( 'Settings → Reading → "Discourage search engines" is ticked, so Google and Bing will not list the site. Untick it when you go live.', 'taxi-peninsula' ), '' );
+	$g = (bool) tp_setting( 'google_site_verification' );
+	$b = (bool) tp_setting( 'bing_site_verification' );
+	$out['seo_verify'] = array( $g && $b ? 'ok' : 'warn', __( 'Google & Bing verification', 'taxi-peninsula' ), $g && $b ? __( 'Both codes are set. Submit your sitemap in each: ', 'taxi-peninsula' ) . home_url( '/wp-sitemap.xml' ) : ( $g ? __( 'Google is set; add Bing (Marketing → AI & Bing search).', 'taxi-peninsula' ) : ( $b ? __( 'Bing is set; add the Google Search Console code.', 'taxi-peninsula' ) : __( 'Add your Google Search Console and Bing Webmaster Tools codes.', 'taxi-peninsula' ) ) ), 'tp-settings' );
+	$sitemaps = function_exists( 'wp_sitemaps_get_server' ) && wp_sitemaps_get_server()->sitemaps_enabled();
+	$out['seo_sitemap'] = $sitemaps
+		? array( 'ok', __( 'Sitemap', 'taxi-peninsula' ), home_url( '/wp-sitemap.xml' ), '' )
+		: array( 'fail', __( 'Sitemap', 'taxi-peninsula' ), __( 'The built-in sitemap is switched off — usually because an SEO plugin provides its own. Submit that plugin\'s sitemap address to Google and Bing instead.', 'taxi-peninsula' ), '' );
+	// Pages with no excerpt use an automatic description; list key pages without their own.
+	$missing = get_posts( array( 'post_type' => array( 'page', 'tp_service', 'tp_area' ), 'post_status' => 'publish', 'numberposts' => 200, 'fields' => 'ids', 'has_password' => false ) );
+	$missing = array_filter( $missing, static fn( $id ) => ! has_excerpt( $id ) );
+	$out['seo_desc'] = count( $missing ) <= 3
+		? array( 'ok', __( 'Page descriptions', 'taxi-peninsula' ), __( 'Your main pages have their own search descriptions.', 'taxi-peninsula' ), '' )
+		/* translators: %d: count */
+		: array( 'warn', __( 'Page descriptions', 'taxi-peninsula' ), sprintf( __( '%d pages, services or areas use an automatic description. Write a 1–2 sentence "Excerpt" for each — it becomes the text under your link in Google.', 'taxi-peninsula' ), count( $missing ) ), '' );
+	// phpcs:disable WordPress.DB.DirectDatabaseQuery
+	$no_alt = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->posts} p LEFT JOIN {$wpdb->postmeta} m ON m.post_id = p.ID AND m.meta_key = '_wp_attachment_image_alt' WHERE p.post_type = 'attachment' AND p.post_mime_type LIKE 'image/%' AND ( m.meta_value IS NULL OR m.meta_value = '' )" );
+	$dupes  = $wpdb->get_col( "SELECT post_title FROM {$wpdb->posts} WHERE post_status = 'publish' AND post_type IN ('page','post','tp_service','tp_area') GROUP BY post_title HAVING COUNT(*) > 1 LIMIT 5" );
+	// phpcs:enable
+	$out['seo_alt'] = $no_alt
+		/* translators: %d: count */
+		? array( 'warn', __( 'Image descriptions (alt text)', 'taxi-peninsula' ), sprintf( __( '%d images have no alt text. Describe each in Media → the image → "Alternative text" (e.g. "Driver securing a wheelchair in the van"). It helps blind visitors and Google Images.', 'taxi-peninsula' ), $no_alt ), '' )
+		: array( 'ok', __( 'Image descriptions (alt text)', 'taxi-peninsula' ), __( 'Every image has alt text.', 'taxi-peninsula' ), '' );
+	$out['seo_dupes'] = $dupes
+		/* translators: %s: titles */
+		? array( 'warn', __( 'Duplicate page titles', 'taxi-peninsula' ), sprintf( __( 'More than one page is called: %s. Give each a different title.', 'taxi-peninsula' ), implode( ', ', $dupes ) ), '' )
+		: array( 'ok', __( 'Duplicate page titles', 'taxi-peninsula' ), __( 'Every page has its own title.', 'taxi-peninsula' ), '' );
+	$out['seo_nap'] = tp_setting( 'biz_suburb' )
+		? array( 'ok', __( 'Business details for Google', 'taxi-peninsula' ), __( 'Address details are set and shown in the footer and business data.', 'taxi-peninsula' ), '' )
+		: array( 'warn', __( 'Business details for Google', 'taxi-peninsula' ), __( 'Add your suburb (and street address if customers can visit) so the footer and business data match your Google profile.', 'taxi-peninsula' ), 'tp-settings' );
+	$out['seo_ai'] = tp_setting( 'llms_txt' ) && tp_setting( 'indexnow' ) && 'none' !== tp_setting( 'ai_crawlers' )
+		? array( 'ok', __( 'AI & Bing search', 'taxi-peninsula' ), __( 'llms.txt, IndexNow and AI search bots are on.', 'taxi-peninsula' ), 'tp-ai-search' )
+		: array( 'warn', __( 'AI & Bing search', 'taxi-peninsula' ), __( 'Some AI search features are off. See Marketing → AI & Bing search.', 'taxi-peninsula' ), 'tp-ai-search' );
 	return $out;
 }
 

@@ -8,6 +8,40 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### New in v2.5 — search engines and AI assistants
+- **Marketing → AI & Bing search** (new page). Helps you get recommended by Bing, ChatGPT search and Microsoft Copilot (both get much of their information from Bing).
+  - **Results:** calls, bookings, quotes and revenue that came from ChatGPT, Copilot, Perplexity, Gemini, Claude and Bing. AI visits are recognised by where the visitor came from and by tracking tags such as `?utm_source=chatgpt.com`.
+  - **Checklist (11 steps):** Bing Webmaster Tools, IndexNow, llms.txt, AI search bots allowed, business details, https, enough FAQs, Bing Places, Apple Business Connect, reviews, directories.
+  - **Settings:** your Bing code, IndexNow, llms.txt and the AI crawler policy.
+  - **"Send all pages to Bing now"** button.
+  - **Preview** of what AI assistants read about you.
+- **IndexNow:** new and changed pages are sent to Bing within a minute. The key file is created and served automatically.
+- **`/llms.txt`:** a plain summary for AI assistants, built from your services, areas, hours, contact details and FAQs.
+- **robots.txt AI rules:** AI search bots are allowed and AI training bots are blocked by default. You can change this.
+- **Search Console and Bing verification:** paste the code, or the whole meta tag, under Taxi settings → Settings → Search engines & AI.
+- **Richer business data for Google:**
+  - street address, map coordinates, opening hours from your schedule, price range, languages
+  - services offered, ABN, CPVV and NDIS numbers, and a booking action
+  - on the home page: a TaxiService entry, plus site search for Google
+- **Footer:**
+  - business name, address and phone, exactly as on your Google profile
+  - ABN, CPVV and NDIS numbers
+  - a "Suburbs we cover" column
+- **"Helpful official information" links** on service and local pages (NDIS, CPVV by default, editable).
+- **Thin pages hidden from search results:** search results, tag, date and author archives, attachment pages.
+- **Speed:** the home page photo loads first, and new uploads are saved as WebP when the server supports it.
+- **Check connections now also checks search:**
+  - search engines allowed
+  - verification codes
+  - sitemap
+  - pages without their own description
+  - images without alt text
+  - duplicate titles
+  - business details
+  - AI search features
+- **Partner pages:** a ready-made "link to us" snippet to send to each hospital's or home's web team.
+- Not included, because free plugins already do it well: a redirect manager (for example the "Redirection" plugin) and page caching (your host's cache or a caching plugin).
+
 ### New in v2.4
 - **Cleaner top bar.** The opening hours are on the left, and one **My account** menu is on the right. The menu holds:
   - sign in and create an account (for passengers, coordinators and drivers alike)
