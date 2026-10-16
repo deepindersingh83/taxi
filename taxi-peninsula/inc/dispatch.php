@@ -104,7 +104,7 @@ function tp_render_dispatch_page() {
 	} elseif ( 'timeline' === get_user_meta( get_current_user_id(), 'tp_dispatch_view', true ) ) {
 		$view = 'timeline';
 	}
-	$base = admin_url( 'edit.php?post_type=tp_booking&page=tp-dispatch' );
+	$base = admin_url( 'admin.php?page=tp-dispatch' );
 
 	$ids = get_posts(
 		array(
@@ -177,7 +177,7 @@ function tp_render_dispatch_page() {
 			<li><span class="tp-tiles__n"><?php echo esc_html( count( $trips ) ); ?></span><?php esc_html_e( 'Trips', 'taxi-peninsula' ); ?></li>
 			<li class="<?php echo $unassigned ? 'is-alert' : ''; ?>"><span class="tp-tiles__n"><?php echo esc_html( count( $unassigned ) ); ?></span><?php esc_html_e( 'Need a driver', 'taxi-peninsula' ); ?></li>
 			<li class="<?php echo $warn_count ? 'is-alert' : ''; ?>"><span class="tp-tiles__n"><?php echo esc_html( $warn_count ); ?></span><?php esc_html_e( 'Warnings', 'taxi-peninsula' ); ?></li>
-			<li><span class="tp-tiles__n"><?php echo esc_html( tp_open_request_count() ); ?></span><a href="<?php echo esc_url( admin_url( 'edit.php?post_type=tp_booking&page=tp-requests' ) ); ?>"><?php esc_html_e( 'Change requests', 'taxi-peninsula' ); ?></a></li>
+			<li><span class="tp-tiles__n"><?php echo esc_html( tp_open_request_count() ); ?></span><a href="<?php echo esc_url( admin_url( 'admin.php?page=tp-requests' ) ); ?>"><?php esc_html_e( 'Change requests', 'taxi-peninsula' ); ?></a></li>
 		</ul>
 
 		<?php if ( 'timeline' === $view ) : ?>
@@ -322,7 +322,7 @@ function tp_dispatch_timeline( $day, array $drivers, array $by_driver, array $un
 								$width = max( 2.5, ( $e - $s ) / $span * 100 );
 								?>
 								<li class="tp-tblock tp-tblock--<?php echo esc_attr( $b['status'] ); ?><?php echo $clash ? ' is-clash' : ''; ?>" style="left: <?php echo esc_attr( round( $left, 3 ) ); ?>%; width: <?php echo esc_attr( round( $width, 3 ) ); ?>%; --lane: <?php echo esc_attr( $lane ); ?>">
-									<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=tp_booking&page=tp-dispatch&view=columns&day=' . rawurlencode( $day ) . '#tp-card-' . $b['id'] ) ); ?>" title="<?php echo esc_attr( tp_format_pickup( $b, 'g:i a' ) . ' · ' . $b['name'] . ' · ' . $b['pickup'] . ' → ' . $b['dropoff'] . ' · ' . ( tp_statuses()[ $b['status'] ] ?? '' ) ); ?>">
+									<a href="<?php echo esc_url( admin_url( 'admin.php?page=tp-dispatch&view=columns&day=' . rawurlencode( $day ) . '#tp-card-' . $b['id'] ) ); ?>" title="<?php echo esc_attr( tp_format_pickup( $b, 'g:i a' ) . ' · ' . $b['name'] . ' · ' . $b['pickup'] . ' → ' . $b['dropoff'] . ' · ' . ( tp_statuses()[ $b['status'] ] ?? '' ) ); ?>">
 										<strong><?php echo esc_html( tp_format_pickup( $b, 'g:i' ) ); ?></strong>
 										<span><?php echo esc_html( $b['name'] ); ?> · <?php echo esc_html( tp_short_place( $b['pickup'] ) . '→' . tp_short_place( $b['dropoff'] ) ); ?></span>
 										<?php if ( $clash ) : ?>
@@ -378,7 +378,7 @@ function tp_dispatch_card( array $b, array $drivers, array $driver_trips, $day )
 			</p>
 		<?php endif; ?>
 		<?php if ( ! empty( $b['request'] ) ) : ?>
-			<p class="tp-dcard__flag"><a href="<?php echo esc_url( admin_url( 'edit.php?post_type=tp_booking&page=tp-requests#req-' . $b['id'] ) ); ?>"><?php esc_html_e( 'Customer has a change request', 'taxi-peninsula' ); ?></a></p>
+			<p class="tp-dcard__flag"><a href="<?php echo esc_url( admin_url( 'admin.php?page=tp-requests#req-' . $b['id'] ) ); ?>"><?php esc_html_e( 'Customer has a change request', 'taxi-peninsula' ); ?></a></p>
 		<?php endif; ?>
 		<?php foreach ( $warnings as $w ) : ?>
 			<p class="tp-dcard__flag tp-dcard__flag--warn"><span class="dashicons dashicons-warning" aria-hidden="true"></span> <?php echo esc_html( $w ); ?></p>
@@ -464,7 +464,7 @@ function tp_handle_dispatch_assign() {
 		),
 		MINUTE_IN_SECONDS
 	);
-	wp_safe_redirect( admin_url( 'edit.php?post_type=tp_booking&page=tp-dispatch&day=' . rawurlencode( $day ) . '#tp-card-' . $post_id ) );
+	wp_safe_redirect( admin_url( 'admin.php?page=tp-dispatch&day=' . rawurlencode( $day ) . '#tp-card-' . $post_id ) );
 	exit;
 }
 
@@ -636,6 +636,6 @@ function tp_handle_request_decide() {
 	delete_post_meta( $post_id, '_tp_request' );
 	tp_notify_customer( $post_id, 'approve' === $decision ? __( 'Your request is approved', 'taxi-peninsula' ) : __( 'About your request', 'taxi-peninsula' ), $msg );
 
-	wp_safe_redirect( admin_url( 'edit.php?post_type=tp_booking&page=tp-requests&decided=' . ( 'approve' === $decision ? 'approved' : 'declined' ) ) );
+	wp_safe_redirect( admin_url( 'admin.php?page=tp-requests&decided=' . ( 'approve' === $decision ? 'approved' : 'declined' ) ) );
 	exit;
 }

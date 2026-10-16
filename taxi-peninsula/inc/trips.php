@@ -144,7 +144,7 @@ function tp_decline_trip_run( $post_id, $driver_id, $reason, $note = '' ) {
 	tp_add_log( $post_id, array( 'note' => sprintf( __( 'Declined by %1$s: %2$s', 'taxi-peninsula' ), $name, $text ) ) );
 
 	$b       = tp_get_booking( $post_id );
-	$board   = admin_url( 'edit.php?post_type=tp_booking&page=tp-dispatch&day=' . rawurlencode( $b['date'] ) );
+	$board   = admin_url( 'admin.php?page=tp-dispatch&day=' . rawurlencode( $b['date'] ) );
 	/* translators: 1: driver, 2: reference, 3: pick-up time, 4: reason */
 	$message = sprintf( __( '%1$s declined %2$s (%3$s): %4$s. Please reassign.', 'taxi-peninsula' ), $name, $b['reference'], tp_format_pickup( $b, 'D j M g:ia' ), $text );
 	wp_mail(

@@ -276,7 +276,7 @@ add_action(
 add_action(
 	'admin_menu',
 	static function () {
-		add_submenu_page( 'edit.php?post_type=tp_booking', __( 'Leads & calls', 'taxi-peninsula' ), __( 'Leads & calls', 'taxi-peninsula' ), 'tp_view_leads', 'tp-leads', 'tp_render_leads_page' );
+		add_submenu_page( tp_admin_parent( 'reports' ), __( 'Leads & calls', 'taxi-peninsula' ), __( 'Leads & calls', 'taxi-peninsula' ), 'tp_view_leads', 'tp-leads', 'tp_render_leads_page' );
 	},
 	42
 );

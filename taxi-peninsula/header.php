@@ -22,24 +22,10 @@
 
 <?php $tp_topbar = tp_design( 'topbar' ); ?>
 <?php if ( 'none' !== $tp_topbar ) : ?>
-<div class="topbar" role="region" aria-label="<?php esc_attr_e( 'Contact details', 'taxi-peninsula' ); ?>">
+<div class="topbar" role="region" aria-label="<?php esc_attr_e( 'Opening hours and account', 'taxi-peninsula' ); ?>">
 	<div class="container topbar__inner">
-		<ul class="topbar__contact">
-			<li><a href="<?php echo esc_url( tp_phone_href() ); ?>"><?php tp_the_icon( 'phone' ); ?><span><?php echo esc_html( tp_opt( 'phone_display' ) ); ?></span></a></li>
-			<li class="topbar__email"><a href="<?php echo esc_attr( tp_email_href() ); ?>"><?php tp_the_icon( 'mail' ); ?><span><?php echo esc_html( antispambot( tp_opt( 'email' ) ) ); ?></span></a></li>
-			<?php if ( tp_sms_href() ) : ?>
-				<li class="topbar__sms"><a href="<?php echo esc_attr( tp_sms_href() ); ?>"><?php tp_the_icon( 'message' ); ?><span><?php esc_html_e( 'Text us', 'taxi-peninsula' ); ?></span></a></li>
-			<?php endif; ?>
-			<?php $tp_account = tp_page_url_by_template( 'account' ); ?>
-			<?php if ( $tp_account && ( ! is_user_logged_in() || tp_is_account_user() ) ) : ?>
-				<li><a href="<?php echo esc_url( $tp_account ); ?>"><?php tp_the_icon( 'users' ); ?><span><?php echo esc_html( is_user_logged_in() && tp_is_account_user() ? __( 'My account', 'taxi-peninsula' ) : __( 'Sign in', 'taxi-peninsula' ) ); ?></span></a></li>
-			<?php endif; ?>
-			<?php $tp_lookup = tp_page_url_by_template( 'lookup' ); ?>
-			<?php if ( $tp_lookup ) : ?>
-				<li><a href="<?php echo esc_url( $tp_lookup ); ?>"><?php tp_the_icon( 'calendar' ); ?><span><?php esc_html_e( 'Manage my booking', 'taxi-peninsula' ); ?></span></a></li>
-			<?php endif; ?>
-			<li class="topbar__hours"><?php tp_the_icon( 'clock' ); ?><?php tp_the_hours_badge(); ?></li>
-		</ul>
+		<p class="topbar__hours"><?php tp_the_icon( 'clock' ); ?><?php tp_the_hours_badge(); ?></p>
+		<?php tp_the_account_menu(); ?>
 	</div>
 </div>
 <?php endif; ?>

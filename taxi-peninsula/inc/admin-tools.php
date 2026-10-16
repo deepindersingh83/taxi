@@ -12,7 +12,7 @@ function tp_admin_tools_menu() {
 	$parent = 'edit.php?post_type=tp_booking';
 	add_submenu_page( $parent, __( 'Booking calendar', 'taxi-peninsula' ), __( 'Calendar', 'taxi-peninsula' ), 'edit_tp_bookings', 'tp-calendar', 'tp_render_calendar_page' );
 	add_submenu_page( $parent, __( 'Run sheet', 'taxi-peninsula' ), __( 'Run sheet', 'taxi-peninsula' ), 'edit_tp_bookings', 'tp-runsheet', 'tp_render_runsheet_page' );
-	add_submenu_page( $parent, __( 'Booking reports', 'taxi-peninsula' ), __( 'Reports', 'taxi-peninsula' ), 'edit_tp_bookings', 'tp-reports', 'tp_render_reports_page' );
+	add_submenu_page( tp_admin_parent( 'reports' ), __( 'Booking reports', 'taxi-peninsula' ), __( 'Booking reports', 'taxi-peninsula' ), 'edit_tp_bookings', 'tp-reports', 'tp_render_reports_page' );
 }
 
 /**
@@ -82,9 +82,9 @@ function tp_render_calendar_page() {
 		$by_day[ $row['date'] ][] = $row;
 	}
 
-	$base = admin_url( 'edit.php?post_type=tp_booking&page=tp-calendar' );
+	$base = admin_url( 'admin.php?page=tp-calendar' );
 	$list = admin_url( 'edit.php?post_type=tp_booking&orderby=tp_pickup&order=asc' );
-	$run  = admin_url( 'edit.php?post_type=tp_booking&page=tp-runsheet' );
+	$run  = admin_url( 'admin.php?page=tp-runsheet' );
 	global $wp_locale;
 	?>
 	<div class="wrap tp-calendar-page">

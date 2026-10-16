@@ -247,7 +247,7 @@ function tp_handle_test_sms() {
 		is_wp_error( $result ) ? array( 'error', $result->get_error_message() ) : array( 'success', __( 'Test SMS sent.', 'taxi-peninsula' ) ),
 		60
 	);
-	wp_safe_redirect( admin_url( 'edit.php?post_type=tp_booking&page=tp-settings' ) );
+	wp_safe_redirect( admin_url( 'admin.php?page=tp-settings' ) );
 	exit;
 }
 

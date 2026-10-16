@@ -117,7 +117,7 @@ function tp_setting( $key ) {
 add_action( 'admin_menu', 'tp_settings_menu', 20 );
 function tp_settings_menu() {
 	add_submenu_page(
-		'edit.php?post_type=tp_booking',
+		tp_admin_parent( 'settings' ),
 		__( 'Booking settings', 'taxi-peninsula' ),
 		__( 'Settings', 'taxi-peninsula' ),
 		'manage_options',

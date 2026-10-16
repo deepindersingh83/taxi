@@ -121,7 +121,7 @@ function tp_gbp_api( $method, $url, $body = null ) {
 add_action(
 	'admin_menu',
 	static function () {
-		add_submenu_page( 'edit.php?post_type=tp_booking', __( 'Google profile', 'taxi-peninsula' ), __( 'Google profile', 'taxi-peninsula' ), 'tp_manage_offers', 'tp-gbp', 'tp_render_gbp_page' );
+		add_submenu_page( tp_admin_parent( 'marketing' ), __( 'Google profile', 'taxi-peninsula' ), __( 'Google profile', 'taxi-peninsula' ), 'tp_manage_offers', 'tp-gbp', 'tp_render_gbp_page' );
 	},
 	44
 );
@@ -150,7 +150,7 @@ function tp_render_gbp_page() {
 				printf(
 					/* translators: %s: link */
 					esc_html__( 'Paste the client ID and secret in %s.', 'taxi-peninsula' ),
-					'<a href="' . esc_url( admin_url( 'edit.php?post_type=tp_booking&page=tp-settings' ) ) . '">' . esc_html__( 'Bookings → Settings → Google profile posts', 'taxi-peninsula' ) . '</a>'
+					'<a href="' . esc_url( admin_url( 'admin.php?page=tp-settings' ) ) . '">' . esc_html__( 'Bookings → Settings → Google profile posts', 'taxi-peninsula' ) . '</a>'
 				);
 				?>
 			</li>
@@ -206,7 +206,7 @@ function tp_render_gbp_page() {
 }
 
 function tp_gbp_back( $msg ) {
-	wp_safe_redirect( add_query_arg( 'tp_msg', rawurlencode( $msg ), admin_url( 'edit.php?post_type=tp_booking&page=tp-gbp' ) ) );
+	wp_safe_redirect( add_query_arg( 'tp_msg', rawurlencode( $msg ), admin_url( 'admin.php?page=tp-gbp' ) ) );
 	exit;
 }
 

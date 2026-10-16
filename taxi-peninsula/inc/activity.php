@@ -431,7 +431,7 @@ add_action(
 	'admin_menu',
 	static function () {
 		add_submenu_page(
-			'edit.php?post_type=tp_booking',
+			tp_admin_parent( 'reports' ),
 			__( 'Activity log', 'taxi-peninsula' ),
 			__( 'Activity log', 'taxi-peninsula' ),
 			'tp_view_activity',
@@ -517,7 +517,7 @@ function tp_render_activity_page() {
 	$paged   = max( 1, absint( $_GET['paged'] ?? 1 ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$per     = 50;
 	list( $rows, $total ) = tp_activity_query( $f, $per, ( $paged - 1 ) * $per );
-	$base    = admin_url( 'edit.php?post_type=tp_booking&page=tp-activity' );
+	$base    = admin_url( 'admin.php?page=tp-activity' );
 	$staff   = get_users( array( 'capability__in' => array( 'manage_options', 'edit_tp_bookings', 'tp_driver_jobs', 'tp_view_finance' ), 'orderby' => 'display_name', 'fields' => array( 'ID', 'display_name' ) ) );
 	$actions = tp_activity_actions();
 	?>

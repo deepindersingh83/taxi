@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 add_action( 'admin_enqueue_scripts', 'tp_admin_assets' );
 function tp_admin_assets( $hook ) {
 	$screen = get_current_screen();
-	$types  = array( 'tp_booking', 'tp_message', 'tp_fleet', 'tp_service', 'tp_testimonial', 'tp_area', 'tp_faq' );
+	$types  = array( 'tp_booking', 'tp_message', 'tp_fleet', 'tp_service', 'tp_testimonial', 'tp_area', 'tp_faq', 'tp_quote', 'tp_lost', 'tp_promo', 'tp_venue', 'tp_event' );
 	if ( ( $screen && in_array( $screen->post_type, $types, true ) ) || 'index.php' === $hook || false !== strpos( $hook, 'tp-' ) ) {
 		wp_enqueue_style( 'tp-admin', TP_URI . '/assets/css/admin.css', array(), TP_VERSION );
 		tp_admin_brand_vars();
@@ -50,12 +50,6 @@ add_action( 'admin_menu', 'tp_booking_menu_bubble', 99 );
 function tp_booking_menu_bubble() {
 	global $menu;
 	if ( ! current_user_can( 'edit_tp_bookings' ) ) {
-		// Marketing staff see this menu only for their own pages: call it "Marketing", with no booking count.
-		foreach ( (array) $menu as $i => $item ) {
-			if ( isset( $item[2] ) && 'edit.php?post_type=tp_booking' === $item[2] ) {
-				$menu[ $i ][0] = __( 'Marketing', 'taxi-peninsula' );
-			}
-		}
 		return;
 	}
 	$pending = tp_count_by_status()['pending'];
@@ -473,7 +467,7 @@ function tp_render_assign_box( WP_Post $post ) {
 		}
 	}
 	echo '<p class="description">' . esc_html__( 'Assigning a driver sets the status to "Driver assigned" and texts the driver when SMS is set up. The driver then accepts or declines it on their phone.', 'taxi-peninsula' ) . '</p>';
-	printf( '<p><a href="%s">%s</a></p>', esc_url( admin_url( 'edit.php?post_type=tp_booking&page=tp-dispatch&day=' . rawurlencode( $b['date'] ) ) ), esc_html__( 'Open this day on the dispatch board', 'taxi-peninsula' ) );
+	printf( '<p><a href="%s">%s</a></p>', esc_url( admin_url( 'admin.php?page=tp-dispatch&day=' . rawurlencode( $b['date'] ) ) ), esc_html__( 'Open this day on the dispatch board', 'taxi-peninsula' ) );
 
 	printf(
 		'<p><label for="tp_fare"><strong>%1$s</strong></label><input type="number" step="0.01" min="0" id="tp_fare" name="tp_fare" class="widefat" value="%2$s"><span class="description">%3$s</span></p>',
@@ -519,7 +513,7 @@ function tp_render_log_box( WP_Post $post ) {
 	if ( current_user_can( 'tp_view_activity' ) ) {
 		printf(
 			'<p><a href="%s">%s</a></p>',
-			esc_url( admin_url( 'edit.php?post_type=tp_booking&page=tp-activity&b=' . $post->ID ) ),
+			esc_url( admin_url( 'admin.php?page=tp-activity&b=' . $post->ID ) ),
 			esc_html__( 'Full activity, with every edited field →', 'taxi-peninsula' )
 		);
 	}

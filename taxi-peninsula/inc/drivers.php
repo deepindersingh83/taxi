@@ -518,3 +518,128 @@ function tp_short_place( $address ) {
 	}
 	return $parts ? $parts[0] : '';
 }
+
+/* -------------------------------------------------------------------------
+ * Driver accounts are given by the owner, never self-registered.
+ *
+ * Everyone signs up as a passenger or coordinator. To make someone a
+ * driver, the owner opens Users and clicks "Make driver" under their name
+ * (or uses the bulk action). "Make customer" turns it back.
+ * ---------------------------------------------------------------------- */
+
+// Public sign-up through wp-login.php can never create staff or drivers.
+add_filter(
+	'pre_option_default_role',
+	static function ( $role ) {
+		return in_array( $role, array( 'tp_customer', 'subscriber' ), true ) ? $role : 'tp_customer';
+	}
+);
+
+/**
+ * Change a user between customer and driver. Returns true or WP_Error.
+ */
+function tp_set_driver_role( $user_id, $make_driver ) {
+	$user = get_userdata( $user_id );
+	if ( ! $user || ! current_user_can( 'promote_user', $user_id ) ) {
+		return new WP_Error( 'tp_role', __( 'You cannot change this user.', 'taxi-peninsula' ) );
+	}
+	$staff = array_diff( (array) $user->roles, array( 'tp_customer', 'tp_driver', 'subscriber' ) );
+	if ( $staff ) {
+		return new WP_Error( 'tp_role', __( 'Staff and coordinator accounts are not changed here. Use the Role setting on their profile.', 'taxi-peninsula' ) );
+	}
+	$user->set_role( $make_driver ? 'tp_driver' : 'tp_customer' );
+	if ( function_exists( 'tp_activity' ) ) {
+		/* translators: %s: name */
+		tp_activity( 'settings', sprintf( $make_driver ? __( '%s is now a driver', 'taxi-peninsula' ) : __( '%s is now a customer (driver access removed)', 'taxi-peninsula' ), $user->display_name ) );
+	}
+	if ( $make_driver ) {
+		$jobs = tp_page_url_by_template( 'driver', home_url( '/' ) );
+		wp_mail(
+			$user->user_email,
+			/* translators: %s: site */
+			sprintf( __( 'You now have driver access — %s', 'taxi-peninsula' ), wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES ) ),
+			/* translators: %s: name */
+			sprintf( __( 'Hi %s,', 'taxi-peninsula' ), $user->first_name ?: $user->display_name ) . "\n\n" . __( 'Your account can now see the jobs assigned to you. Sign in with your usual email and password.', 'taxi-peninsula' ) . "\n\n" . __( 'My jobs', 'taxi-peninsula' ) . ': ' . $jobs,
+			tp_mail_headers( tp_opt( 'email' ) )
+		);
+	}
+	return true;
+}
+
+add_filter(
+	'user_row_actions',
+	static function ( $actions, $user ) {
+		if ( ! current_user_can( 'promote_user', $user->ID ) || get_current_user_id() === $user->ID ) {
+			return $actions;
+		}
+		$roles = (array) $user->roles;
+		if ( array_diff( $roles, array( 'tp_customer', 'tp_driver', 'subscriber' ) ) ) {
+			return $actions;
+		}
+		$driver = in_array( 'tp_driver', $roles, true );
+		$url    = wp_nonce_url( admin_url( 'admin-post.php?action=tp_driver_role&user=' . $user->ID . '&make=' . ( $driver ? 0 : 1 ) ), 'tp_driver_role_' . $user->ID );
+		$actions['tp_driver'] = sprintf( '<a href="%1$s">%2$s</a>', esc_url( $url ), esc_html( $driver ? __( 'Make customer', 'taxi-peninsula' ) : __( 'Make driver', 'taxi-peninsula' ) ) );
+		return $actions;
+	},
+	10,
+	2
+);
+
+add_action(
+	'admin_post_tp_driver_role',
+	static function () {
+		$user_id = isset( $_GET['user'] ) ? absint( $_GET['user'] ) : 0;
+		check_admin_referer( 'tp_driver_role_' . $user_id );
+		$res = tp_set_driver_role( $user_id, ! empty( $_GET['make'] ) );
+		wp_safe_redirect( add_query_arg( 'tp_role_msg', is_wp_error( $res ) ? 'error' : ( empty( $_GET['make'] ) ? 'customer' : 'driver' ), admin_url( 'users.php' ) ) );
+		exit;
+	}
+);
+
+add_filter(
+	'bulk_actions-users',
+	static function ( $a ) {
+		$a['tp_make_driver']   = __( 'Make driver', 'taxi-peninsula' );
+		$a['tp_make_customer'] = __( 'Make customer', 'taxi-peninsula' );
+		return $a;
+	}
+);
+add_filter(
+	'handle_bulk_actions-users',
+	static function ( $redirect, $action, $ids ) {
+		if ( ! in_array( $action, array( 'tp_make_driver', 'tp_make_customer' ), true ) ) {
+			return $redirect;
+		}
+		$done = 0;
+		foreach ( $ids as $id ) {
+			if ( (int) $id !== get_current_user_id() && true === tp_set_driver_role( (int) $id, 'tp_make_driver' === $action ) ) {
+				++$done;
+			}
+		}
+		return add_query_arg( array( 'tp_role_msg' => 'tp_make_driver' === $action ? 'driver' : 'customer', 'tp_n' => $done ), $redirect );
+	},
+	10,
+	3
+);
+
+add_action(
+	'admin_notices',
+	static function () {
+		$screen = get_current_screen();
+		if ( ! $screen || 'users' !== $screen->id ) {
+			return;
+		}
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended
+		$msg = isset( $_GET['tp_role_msg'] ) ? sanitize_key( wp_unslash( $_GET['tp_role_msg'] ) ) : '';
+		// phpcs:enable
+		if ( 'driver' === $msg ) {
+			echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( 'Driver access given. They have been emailed and can now see their jobs after signing in.', 'taxi-peninsula' ) . '</p></div>';
+		} elseif ( 'customer' === $msg ) {
+			echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( 'Driver access removed. The account is a customer account again.', 'taxi-peninsula' ) . '</p></div>';
+		} elseif ( 'error' === $msg ) {
+			echo '<div class="notice notice-error"><p>' . esc_html__( 'That account could not be changed. Staff and coordinator accounts are changed with the Role setting on their profile.', 'taxi-peninsula' ) . '</p></div>';
+		} else {
+			echo '<div class="notice notice-info"><p>' . esc_html__( 'Drivers cannot sign up themselves. Ask the driver to create a normal account on the website, then click "Make driver" under their name here.', 'taxi-peninsula' ) . '</p></div>';
+		}
+	}
+);

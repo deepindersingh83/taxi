@@ -372,7 +372,7 @@ function tp_account_shortcode() {
 	if ( ! tp_is_account_user() ) {
 		echo '<div class="card"><p>' . esc_html__( 'You are signed in as staff. Customer accounts are for passengers and coordinators.', 'taxi-peninsula' ) . '</p>';
 		if ( current_user_can( 'edit_tp_bookings' ) ) {
-			echo '<p><a class="btn btn--primary" href="' . esc_url( admin_url( 'edit.php?post_type=tp_booking&page=tp-dispatch' ) ) . '">' . esc_html__( 'Open the dispatch board', 'taxi-peninsula' ) . '</a></p>';
+			echo '<p><a class="btn btn--primary" href="' . esc_url( admin_url( 'admin.php?page=tp-dispatch' ) ) . '">' . esc_html__( 'Open the dispatch board', 'taxi-peninsula' ) . '</a></p>';
 		} elseif ( current_user_can( 'tp_driver_jobs' ) ) {
 			echo '<p><a class="btn btn--primary" href="' . esc_url( tp_page_url_by_template( 'driver', home_url( '/' ) ) ) . '">' . esc_html__( 'Go to my jobs', 'taxi-peninsula' ) . '</a></p>';
 		}
@@ -498,6 +498,15 @@ function tp_account_signin( array $state ) {
 				<li><?php tp_the_icon( 'check' ); ?><?php esc_html_e( 'Save passengers, wheelchair details and addresses', 'taxi-peninsula' ); ?></li>
 				<li><?php tp_the_icon( 'check' ); ?><?php esc_html_e( 'Download receipts and invoices', 'taxi-peninsula' ); ?></li>
 			</ul>
+			<p class="field__hint acc-driver-note">
+				<?php
+				$tp_careers = tp_page_url_by_template( 'careers' );
+				esc_html_e( 'Drivers: create a normal account, then the office gives it driver access.', 'taxi-peninsula' );
+				if ( $tp_careers ) {
+					echo ' <a href="' . esc_url( $tp_careers ) . '">' . esc_html__( 'Want to drive with us? Apply here.', 'taxi-peninsula' ) . '</a>';
+				}
+				?>
+			</p>
 			<form class="booking-form account__join" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" novalidate>
 				<?php tp_account_form_fields( 'tp_account_register' ); ?>
 				<fieldset class="radio-list">
@@ -1436,4 +1445,69 @@ function tp_render_receipt() {
 </html>
 	<?php
 	exit;
+}
+
+/**
+ * Header "My account" menu: one place for everyone — passengers,
+ * coordinators, drivers and staff — to sign in or register, plus the
+ * contact details.
+ */
+function tp_the_account_menu() {
+	$account = tp_page_url_by_template( 'account' );
+	$lookup  = tp_page_url_by_template( 'lookup' );
+	$driver  = tp_page_url_by_template( 'driver' );
+	$user    = wp_get_current_user();
+	$label   = $user->exists() ? ( $user->first_name ?: $user->display_name ) : __( 'My account', 'taxi-peninsula' );
+	$links   = array();
+	if ( ! $user->exists() ) {
+		$signin = $account ?: wp_login_url();
+		$links[] = array( $signin . ( $account ? '#acc-signin' : '' ), __( 'Sign in', 'taxi-peninsula' ), 'users', 'primary' );
+		if ( $account ) {
+			$links[] = array( $account . '#acc-join', __( 'Create an account', 'taxi-peninsula' ), 'check', '' );
+		}
+	} else {
+		if ( tp_is_account_user() && $account ) {
+			$links[] = array( $account, tp_is_coordinator() ? __( 'My clients’ trips', 'taxi-peninsula' ) : __( 'My trips', 'taxi-peninsula' ), 'calendar', 'primary' );
+		}
+		if ( current_user_can( 'tp_driver_jobs' ) && $driver ) {
+			$links[] = array( $driver, __( 'My jobs', 'taxi-peninsula' ), 'wheelchair', 'primary' );
+		}
+		if ( current_user_can( 'edit_tp_bookings' ) ) {
+			$links[] = array( admin_url( 'admin.php?page=tp-dispatch' ), __( 'Dispatch board', 'taxi-peninsula' ), 'calendar', 'primary' );
+		} elseif ( current_user_can( 'edit_posts' ) || current_user_can( 'tp_view_finance' ) ) {
+			$links[] = array( admin_url(), __( 'Dashboard', 'taxi-peninsula' ), 'calendar', 'primary' );
+		}
+	}
+	if ( $lookup ) {
+		$links[] = array( $lookup, __( 'Manage a booking', 'taxi-peninsula' ), 'search', '' );
+	}
+	$id = 'acct-menu';
+	?>
+	<div class="acct" data-acct>
+		<button type="button" class="acct__btn" aria-expanded="false" aria-controls="<?php echo esc_attr( $id ); ?>">
+			<?php tp_the_icon( 'users' ); ?><span class="acct__label"><?php echo esc_html( $label ); ?></span><?php tp_the_icon( 'chevron-down', 'acct__chev' ); ?>
+		</button>
+		<div class="acct__menu" id="<?php echo esc_attr( $id ); ?>" hidden>
+			<?php if ( ! $user->exists() ) : ?>
+				<p class="acct__intro"><?php esc_html_e( 'Passengers, coordinators and drivers all sign in here.', 'taxi-peninsula' ); ?></p>
+			<?php endif; ?>
+			<ul class="acct__list">
+				<?php foreach ( $links as $l ) : ?>
+					<li><a class="acct__link<?php echo 'primary' === $l[3] ? ' acct__link--primary' : ''; ?>" href="<?php echo esc_url( $l[0] ); ?>"><?php tp_the_icon( $l[2] ); ?><span><?php echo esc_html( $l[1] ); ?></span></a></li>
+				<?php endforeach; ?>
+				<?php if ( $user->exists() ) : ?>
+					<li><a class="acct__link" href="<?php echo esc_url( wp_logout_url( home_url( '/' ) ) ); ?>"><?php tp_the_icon( 'arrow' ); ?><span><?php esc_html_e( 'Sign out', 'taxi-peninsula' ); ?></span></a></li>
+				<?php endif; ?>
+			</ul>
+			<p class="acct__heading"><?php esc_html_e( 'Contact us', 'taxi-peninsula' ); ?></p>
+			<ul class="acct__list">
+				<li><a class="acct__link" href="<?php echo esc_url( tp_phone_href() ); ?>"><?php tp_the_icon( 'phone' ); ?><span><?php echo esc_html( tp_opt( 'phone_display' ) ); ?></span></a></li>
+				<li><a class="acct__link" href="<?php echo esc_attr( tp_email_href() ); ?>"><?php tp_the_icon( 'mail' ); ?><span><?php echo esc_html( antispambot( tp_opt( 'email' ) ) ); ?></span></a></li>
+				<?php if ( tp_sms_href() ) : ?>
+					<li><a class="acct__link" href="<?php echo esc_attr( tp_sms_href() ); ?>"><?php tp_the_icon( 'message' ); ?><span><?php esc_html_e( 'Text us', 'taxi-peninsula' ); ?></span></a></li>
+				<?php endif; ?>
+			</ul>
+		</div>
+	</div>
+	<?php
 }

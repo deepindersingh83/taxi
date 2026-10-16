@@ -196,7 +196,7 @@ a:hover { text-decoration-thickness: 0.15em; }
 /* ---------- Top bar ---------- */
 
 .topbar { background: var(--c-primary); color: #fff; font-size: var(--step--1); }
-.topbar__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-xs) var(--space-l); padding-block: var(--space-xs); }
+.topbar__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-xs) var(--space-l); padding-block: .3rem; }
 .topbar a { color: #fff; text-decoration: none; }
 .topbar a:hover { text-decoration: underline; }
 .topbar__contact { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-l); margin: 0; padding: 0; list-style: none; }
@@ -2026,3 +2026,20 @@ body:has(.driver-dock) .whatsapp-button { display: none; }
 .event-card__title { margin: var(--space-xs) 0; font-size: var(--step-1); }
 .event-card__title a::after { content: ""; position: absolute; inset: 0; }
 .event-card__meta { margin: 0 0 var(--space-xs); color: var(--c-muted); }
+
+/* Top bar: opening hours on the left, one "My account" menu on the right. */
+.topbar__hours { display: inline-flex; align-items: center; gap: .45em; margin: 0; }
+.acct { position: relative; margin-inline-start: auto; }
+.acct__btn { display: inline-flex; align-items: center; gap: .45em; min-height: 2.5rem; padding: 0 .85rem; font: inherit; font-weight: 700; color: #fff; background: rgb(255 255 255 / .1); border: 1px solid rgb(255 255 255 / .35); border-radius: 999px; cursor: pointer; }
+.acct__btn:hover, .acct__btn[aria-expanded="true"] { background: rgb(255 255 255 / .2); }
+.acct__chev { width: 1em; height: 1em; transition: transform .2s; }
+.acct__btn[aria-expanded="true"] .acct__chev { transform: rotate(-180deg); }
+.acct__menu { position: absolute; inset-inline-end: 0; top: calc(100% + .4rem); z-index: 60; width: min(20rem, calc(100vw - 2rem)); padding: var(--space-s); background: var(--c-surface); color: var(--c-text); border: 1px solid var(--c-border); border-radius: var(--radius); box-shadow: 0 12px 32px rgb(6 23 50 / .18); font-size: 1rem; }
+.acct__menu[hidden] { display: none; }
+.acct__intro { margin: 0 .5rem var(--space-xs); color: var(--c-muted); font-size: var(--step--1); }
+.acct__heading { margin: var(--space-s) .5rem .25rem; padding-top: var(--space-s); border-top: 1px solid var(--c-border); font-size: var(--step--1); font-weight: 700; color: var(--c-muted); text-transform: uppercase; letter-spacing: .05em; }
+.acct__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.topbar .acct__link { display: flex; align-items: center; gap: .6em; min-height: 2.75rem; padding: .35rem .5rem; border-radius: .5rem; color: var(--c-text); text-decoration: none; overflow-wrap: anywhere; }
+.topbar .acct__link:hover, .topbar .acct__link:focus-visible { background: var(--c-bg-alt); text-decoration: none; }
+.topbar .acct__link--primary { font-weight: 700; color: var(--c-heading); }
+.acct__link .icon { color: var(--c-heading); }

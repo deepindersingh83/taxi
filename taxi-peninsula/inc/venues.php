@@ -44,7 +44,7 @@ add_action(
 				'exclude_from_search' => true,
 				'show_in_nav_menus'   => false,
 				'show_ui'             => true,
-				'show_in_menu'        => current_user_can( 'edit_tp_bookings' ) ? 'edit.php?post_type=tp_booking' : true,
+				'show_in_menu'        => 'tp-offers',
 				'menu_icon'           => 'dashicons-building',
 				'show_in_rest'        => true,
 				'supports'            => array( 'title', 'editor', 'thumbnail', 'excerpt' ),

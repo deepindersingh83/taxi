@@ -8,6 +8,25 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### New in v2.4
+- **Cleaner top bar.** The opening hours are on the left, and one **My account** menu is on the right. The menu holds:
+  - sign in and create an account (for passengers, coordinators and drivers alike)
+  - a link to manage a booking
+  - the phone number, email address and "Text us"
+  - once someone is signed in: My trips, My jobs (for drivers) or the dispatch board (for staff), plus sign out
+- **Drivers are approved by the owner.** Nobody can sign up as a driver.
+  - A driver first creates a normal account. The owner then clicks **Make driver** under their name in Users, either one at a time or as a bulk action.
+  - The driver is emailed and sees their jobs after signing in.
+  - **Make customer** removes driver access.
+  - Public sign-up can never create a staff or driver account.
+- **Admin menus split by job.** Each screen keeps its address, so old links and bookmarks still work.
+  - **Bookings:** all bookings, add, dispatch board, change requests, calendar, run sheet, quotes, enquiries, lost property
+  - **Invoices:** invoices & payments, NDIS trip log
+  - **Reports:** owner dashboard, booking reports, leads & calls, activity log
+  - **Marketing:** news & offers, promo codes, partner pages, events, destinations, Google profile
+  - **Website content:** an overview page, plus services, areas, fleet, FAQs and topics, testimonials, partner logos and announcements
+  - **Taxi settings:** settings, setup, check connections, privacy
+
 ### New in v2.3
 - **Drivers log found items:** a "Found an item?" button on each finished job, plus one for items not linked to a trip.
   - The driver takes or picks a photo, types what it is and where it is now.

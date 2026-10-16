@@ -27,6 +27,7 @@ add_action( 'admin_menu', static function () {
 		'dashicons-money-alt',
 		4
 	);
+	add_submenu_page( 'tp-finance', __( 'Invoices & payments', 'taxi-peninsula' ), __( 'Invoices & payments', 'taxi-peninsula' ), 'tp_view_finance', 'tp-finance', 'tp_render_finance_page', 0 );
 } );
 
 add_action( 'admin_enqueue_scripts', static function ( $hook ) {

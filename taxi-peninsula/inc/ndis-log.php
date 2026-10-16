@@ -115,7 +115,7 @@ function tp_ndis_log_url( $month, $key, $format, $cancelled = false ) {
 add_action(
 	'admin_menu',
 	static function () {
-		add_submenu_page( 'edit.php?post_type=tp_booking', __( 'NDIS trip log', 'taxi-peninsula' ), __( 'NDIS trip log', 'taxi-peninsula' ), 'tp_view_finance', 'tp-ndis-log', 'tp_render_ndis_log_page' );
+		add_submenu_page( tp_admin_parent( 'invoices' ), __( 'NDIS trip log', 'taxi-peninsula' ), __( 'NDIS trip log', 'taxi-peninsula' ), 'tp_view_finance', 'tp-ndis-log', 'tp_render_ndis_log_page' );
 	},
 	41
 );
@@ -300,7 +300,7 @@ function tp_handle_ndis_log() {
 			array( $file )
 		);
 		wp_delete_file( $file );
-		wp_safe_redirect( admin_url( 'edit.php?post_type=tp_booking&page=tp-ndis-log&month=' . $month . '&emailed=' . rawurlencode( $p['invoice_email'] ) ) );
+		wp_safe_redirect( admin_url( 'admin.php?page=tp-ndis-log&month=' . $month . '&emailed=' . rawurlencode( $p['invoice_email'] ) ) );
 		exit;
 	}
 	tp_ndis_log_print( $rows, $month );

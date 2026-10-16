@@ -580,7 +580,7 @@ add_action(
 	'admin_menu',
 	static function () {
 		add_submenu_page(
-			'edit.php?post_type=tp_booking',
+			tp_admin_parent( 'settings' ),
 			__( 'Privacy', 'taxi-peninsula' ),
 			__( 'Privacy', 'taxi-peninsula' ),
 			'manage_options',
@@ -647,7 +647,7 @@ function tp_render_privacy_page() {
 				<h2><?php esc_html_e( 'Automatic clean-up', 'taxi-peninsula' ); ?></h2>
 				<p>
 					<?php echo tp_setting( 'privacy_cleanup' ) ? esc_html__( 'On — runs once a day.', 'taxi-peninsula' ) : esc_html__( 'Off.', 'taxi-peninsula' ); ?>
-					<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=tp_booking&page=tp-settings#tp_setting_privacy_contact' ) ); ?>"><?php esc_html_e( 'Change the periods', 'taxi-peninsula' ); ?></a>
+					<a href="<?php echo esc_url( admin_url( 'admin.php?page=tp-settings#tp_setting_privacy_contact' ) ); ?>"><?php esc_html_e( 'Change the periods', 'taxi-peninsula' ); ?></a>
 				</p>
 				<table class="widefat striped">
 					<tbody>
@@ -705,7 +705,7 @@ add_action(
 		}
 		check_admin_referer( 'tp_privacy_run' );
 		tp_privacy_cleanup( false );
-		wp_safe_redirect( admin_url( 'edit.php?post_type=tp_booking&page=tp-privacy&ran=1' ) );
+		wp_safe_redirect( admin_url( 'admin.php?page=tp-privacy&ran=1' ) );
 		exit;
 	}
 );
@@ -718,7 +718,7 @@ add_action(
 		}
 		check_admin_referer( 'tp_privacy_page' );
 		$id = tp_privacy_create_page();
-		wp_safe_redirect( $id ? get_edit_post_link( $id, 'raw' ) : admin_url( 'edit.php?post_type=tp_booking&page=tp-privacy' ) );
+		wp_safe_redirect( $id ? get_edit_post_link( $id, 'raw' ) : admin_url( 'admin.php?page=tp-privacy' ) );
 		exit;
 	}
 );

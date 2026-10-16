@@ -144,7 +144,7 @@ add_action( 'admin_post_tp_find_place', static function () {
 		}
 	}
 	set_transient( 'tp_place_search_' . get_current_user_id(), array( 'q' => $query, 'results' => $results ), 10 * MINUTE_IN_SECONDS );
-	wp_safe_redirect( admin_url( 'edit.php?post_type=tp_booking&page=tp-settings#tp-find-place' ) );
+	wp_safe_redirect( admin_url( 'admin.php?page=tp-settings#tp-find-place' ) );
 	exit;
 } );
 
@@ -160,7 +160,7 @@ add_action( 'admin_post_tp_use_place', static function () {
 	delete_option( 'tp_google_place_cache' );
 	delete_transient( 'tp_google_place_lock' );
 	set_transient( 'tp_admin_notice_' . get_current_user_id(), array( 'success', __( 'Place saved. Your Google reviews will appear on the site shortly.', 'taxi-peninsula' ) ), 60 );
-	wp_safe_redirect( admin_url( 'edit.php?post_type=tp_booking&page=tp-settings' ) );
+	wp_safe_redirect( admin_url( 'admin.php?page=tp-settings' ) );
 	exit;
 } );
 

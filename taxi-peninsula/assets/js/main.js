@@ -1236,6 +1236,25 @@
 		});
 	})();
 
+	/* Header "My account" menu. */
+	(function () {
+		var wrap = document.querySelector('[data-acct]');
+		if (!wrap) { return; }
+		var btn = wrap.querySelector('.acct__btn');
+		var menu = wrap.querySelector('.acct__menu');
+		var set = function (open) { btn.setAttribute('aria-expanded', open ? 'true' : 'false'); menu.hidden = !open; };
+		btn.addEventListener('click', function () {
+			var open = btn.getAttribute('aria-expanded') !== 'true';
+			set(open);
+			if (open) { var first = menu.querySelector('a'); if (first) { first.focus(); } }
+		});
+		document.addEventListener('click', function (e) { if (!wrap.contains(e.target)) { set(false); } });
+		wrap.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { set(false); btn.focus(); }
+		});
+		wrap.addEventListener('focusout', function (e) { if (e.relatedTarget && !wrap.contains(e.relatedTarget)) { set(false); } });
+	})();
+
 	/* Move focus to server-rendered errors / success so screen readers announce them. */
 	var focusTarget = document.querySelector('[data-focus]');
 	if (focusTarget) {

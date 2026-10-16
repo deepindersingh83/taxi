@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 add_action(
 	'admin_menu',
 	static function () {
-		add_submenu_page( 'edit.php?post_type=tp_booking', __( 'Owner dashboard', 'taxi-peninsula' ), __( 'Owner dashboard', 'taxi-peninsula' ), 'tp_view_finance', 'tp-owner', 'tp_render_owner_dashboard', 1 );
+		add_submenu_page( tp_admin_parent( 'reports' ), __( 'Owner dashboard', 'taxi-peninsula' ), __( 'Owner dashboard', 'taxi-peninsula' ), 'tp_view_finance', 'tp-owner', 'tp_render_owner_dashboard', 0 );
 	},
 	12
 );
@@ -317,7 +317,7 @@ function tp_render_owner_dashboard() {
 		</div>
 		<p>
 			<?php if ( current_user_can( 'tp_view_leads' ) ) : ?>
-				<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=tp_booking&page=tp-leads' ) ); ?>"><?php esc_html_e( 'Leads & calls report', 'taxi-peninsula' ); ?></a> ·
+				<a href="<?php echo esc_url( admin_url( 'admin.php?page=tp-leads' ) ); ?>"><?php esc_html_e( 'Leads & calls report', 'taxi-peninsula' ); ?></a> ·
 			<?php endif; ?>
 			<a href="<?php echo esc_url( admin_url( 'admin.php?page=tp-finance' ) ); ?>"><?php esc_html_e( 'Finance', 'taxi-peninsula' ); ?></a>
 		</p>

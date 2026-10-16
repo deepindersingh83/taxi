@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 add_action(
 	'admin_menu',
 	static function () {
-		add_submenu_page( 'edit.php?post_type=tp_booking', __( 'Check connections', 'taxi-peninsula' ), __( 'Check connections', 'taxi-peninsula' ), 'manage_options', 'tp-health', 'tp_render_health_page' );
+		add_submenu_page( tp_admin_parent( 'settings' ), __( 'Check connections', 'taxi-peninsula' ), __( 'Check connections', 'taxi-peninsula' ), 'manage_options', 'tp-health', 'tp_render_health_page' );
 	},
 	60
 );
@@ -164,7 +164,7 @@ function tp_render_health_page() {
 							<td><span class="tp-health__state tp-health__state--<?php echo esc_attr( $r[0] ); ?>"><span aria-hidden="true"><?php echo esc_html( array( 'ok' => '✓', 'warn' => '!', 'fail' => '✕', 'off' => '–' )[ $r[0] ] ); ?></span> <?php echo esc_html( $labels[ $r[0] ] ); ?></span></td>
 							<td><?php echo esc_html( $r[2] ); ?>
 								<?php if ( $r[3] && 'ok' !== $r[0] ) : ?>
-									<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=tp_booking&page=' . $r[3] ) ); ?>"><?php esc_html_e( 'Fix it', 'taxi-peninsula' ); ?></a>
+									<a href="<?php echo esc_url( admin_url( 'admin.php?page=' . $r[3] ) ); ?>"><?php esc_html_e( 'Fix it', 'taxi-peninsula' ); ?></a>
 								<?php endif; ?>
 							</td>
 						</tr>
@@ -186,7 +186,7 @@ add_action(
 		$results          = tp_health_checks();
 		$results['_time'] = time();
 		set_transient( 'tp_health_' . get_current_user_id(), $results, DAY_IN_SECONDS );
-		wp_safe_redirect( admin_url( 'edit.php?post_type=tp_booking&page=tp-health' ) );
+		wp_safe_redirect( admin_url( 'admin.php?page=tp-health' ) );
 		exit;
 	}
 );

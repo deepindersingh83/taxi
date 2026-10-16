@@ -582,13 +582,6 @@ function tp_marketing_batch() {
  * Admin: Bookings → News & offers.
  * ---------------------------------------------------------------------- */
 
-add_action(
-	'admin_menu',
-	static function () {
-		add_submenu_page( 'edit.php?post_type=tp_booking', __( 'News & offers', 'taxi-peninsula' ), __( 'News & offers', 'taxi-peninsula' ), 'tp_manage_offers', 'tp-offers', 'tp_render_offers_page' );
-	},
-	43
-);
 
 function tp_sub_counts() {
 	global $wpdb;
@@ -618,7 +611,7 @@ function tp_render_offers_page() {
 	<div class="wrap tp-offers">
 		<h1><?php esc_html_e( 'News & offers', 'taxi-peninsula' ); ?></h1>
 		<?php if ( ! tp_marketing_enabled() ) : ?>
-			<div class="notice notice-warning"><p><?php printf( /* translators: %s: link */ esc_html__( 'Sign-up is switched off. Turn it on in %s.', 'taxi-peninsula' ), '<a href="' . esc_url( admin_url( 'edit.php?post_type=tp_booking&page=tp-settings#tp-section-marketing' ) ) . '">' . esc_html__( 'Bookings → Settings → News & offers', 'taxi-peninsula' ) . '</a>' ); ?></p></div>
+			<div class="notice notice-warning"><p><?php printf( /* translators: %s: link */ esc_html__( 'Sign-up is switched off. Turn it on in %s.', 'taxi-peninsula' ), '<a href="' . esc_url( admin_url( 'admin.php?page=tp-settings#tp-section-marketing' ) ) . '">' . esc_html__( 'Bookings → Settings → News & offers', 'taxi-peninsula' ) . '</a>' ); ?></p></div>
 		<?php endif; ?>
 		<?php if ( 'queued' === $notice ) : ?>
 			<div class="notice notice-success"><p><?php esc_html_e( 'Your message is being sent in small batches over the next few minutes.', 'taxi-peninsula' ); ?></p></div>
@@ -734,7 +727,7 @@ function tp_handle_offer_send() {
 		'started' => current_time( 'mysql' ),
 		'by'      => wp_get_current_user()->display_name,
 	);
-	$back = admin_url( 'edit.php?post_type=tp_booking&page=tp-offers' );
+	$back = admin_url( 'admin.php?page=tp-offers' );
 	if ( ( 'sms' !== $c['channel'] && ( '' === $c['subject'] || '' === $c['message'] ) ) || ( 'email' !== $c['channel'] && '' === $c['sms'] ) ) {
 		wp_die( esc_html__( 'Please fill in the subject and message for each way you are sending.', 'taxi-peninsula' ), '', array( 'back_link' => true ) );
 	}
@@ -762,7 +755,7 @@ add_action(
 		}
 		global $wpdb;
 		$wpdb->delete( tp_subs_table(), array( 'id' => $id ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
-		wp_safe_redirect( admin_url( 'edit.php?post_type=tp_booking&page=tp-offers&tp_msg=removed' ) );
+		wp_safe_redirect( admin_url( 'admin.php?page=tp-offers&tp_msg=removed' ) );
 		exit;
 	}
 );

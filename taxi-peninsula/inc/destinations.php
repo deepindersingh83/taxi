@@ -170,7 +170,7 @@ add_shortcode( 'tp_destinations', static function () {
 /* ---- Admin: Bookings → Destinations ---- */
 
 add_action( 'admin_menu', static function () {
-	add_submenu_page( 'edit.php?post_type=tp_booking', __( 'Popular destinations', 'taxi-peninsula' ), __( 'Destinations', 'taxi-peninsula' ), 'edit_tp_bookings', 'tp-destinations', 'tp_render_destinations_page' );
+	add_submenu_page( tp_admin_parent( 'marketing' ), __( 'Popular destinations', 'taxi-peninsula' ), __( 'Destinations', 'taxi-peninsula' ), 'edit_tp_bookings', 'tp-destinations', 'tp_render_destinations_page' );
 }, 16 );
 
 function tp_render_destinations_page() {
@@ -245,6 +245,6 @@ add_action( 'admin_post_tp_save_destinations', static function () {
 	}
 	update_option( 'tp_destinations', $out, false );
 	set_transient( 'tp_admin_notice_' . get_current_user_id(), array( 'success', __( 'Destinations saved.', 'taxi-peninsula' ) ), 60 );
-	wp_safe_redirect( admin_url( 'edit.php?post_type=tp_booking&page=tp-destinations' ) );
+	wp_safe_redirect( admin_url( 'admin.php?page=tp-destinations' ) );
 	exit;
 } );

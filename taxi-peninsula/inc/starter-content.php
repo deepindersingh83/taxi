@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 add_action( 'admin_menu', static function () {
 	add_submenu_page(
-		'edit.php?post_type=tp_booking',
+		tp_admin_parent( 'settings' ),
 		__( 'Website setup', 'taxi-peninsula' ),
 		__( 'Setup', 'taxi-peninsula' ),
 		'manage_options',
@@ -393,7 +393,7 @@ function tp_create_starter_content() {
 
 	$created += tp_create_starter_menus( $pages );
 
-	wp_safe_redirect( admin_url( 'edit.php?post_type=tp_booking&page=tp-setup&created=' . $created ) );
+	wp_safe_redirect( admin_url( 'admin.php?page=tp-setup&created=' . $created ) );
 	exit;
 }
 

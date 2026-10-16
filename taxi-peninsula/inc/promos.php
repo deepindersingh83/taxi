@@ -27,7 +27,7 @@ add_action(
 				),
 				'public'          => false,
 				'show_ui'         => true,
-				'show_in_menu'    => current_user_can( 'edit_tp_bookings' ) ? 'edit.php?post_type=tp_booking' : true,
+				'show_in_menu'    => 'tp-offers',
 				'supports'        => array( 'title' ),
 				'capability_type' => array( 'tp_promo', 'tp_promos' ),
 				'map_meta_cap'    => true,
