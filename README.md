@@ -8,6 +8,11 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### v2.7.2 — area pages editable in WordPress
+- Area pages (Website content → Areas) now open in the classic editor, so the page text, Details (places people travel to, local travel notes, local questions), Quick answer, Council area, Excerpt and Featured image are all on one screen. Before, the boxes were tucked away in a collapsed panel at the bottom of the block editor.
+- The text box starts with the automatic introduction, so you can see and change it. Areas you haven't edited still show the same text as before.
+- A note at the top of the screen says which parts of the page you can change and which are filled in automatically.
+
 ### v2.7.1 — payment options
 - **BPAY on/off:** tick or untick "Accept BPAY" in Taxi settings → Settings → Payments & invoicing. When it's off, BPAY doesn't appear on invoices, quotes, emails or the website.
 - **Bank transfer on/off:** "Accept bank transfer" shows your BSB, account number, account name and (optionally) bank on invoices, quotes and emails.

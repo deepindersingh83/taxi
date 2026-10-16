@@ -33,18 +33,9 @@ while ( have_posts() ) :
 				<?php if ( '' !== trim( get_the_content() ) ) : ?>
 					<?php the_content(); ?>
 				<?php else : ?>
-					<p>
-						<?php
-						/* translators: 1: suburb, 2: site name */
-						echo esc_html( sprintf( __( 'Need an accessible ride in %1$s? %2$s provides wheelchair accessible taxis with ramps or hoists, wheelchair restraints and drivers trained to help you in and out safely.', 'taxi-peninsula' ), $area, get_bloginfo( 'name' ) ) );
-						?>
-					</p>
-					<p>
-						<?php
-						/* translators: %s: suburb */
-						echo esc_html( sprintf( __( 'We pick up from homes, hospitals, aged-care residences and day programs in %s and take you anywhere across Melbourne and the Mornington Peninsula — including Melbourne and Avalon airports.', 'taxi-peninsula' ), $area ) );
-						?>
-					</p>
+					<?php foreach ( tp_area_default_intro( $area ) as $tp_para ) : ?>
+						<p><?php echo esc_html( $tp_para ); ?></p>
+					<?php endforeach; ?>
 				<?php endif; ?>
 
 				<?php

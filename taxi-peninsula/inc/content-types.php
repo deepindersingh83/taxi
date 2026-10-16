@@ -512,3 +512,64 @@ add_action( 'template_redirect', static function () {
 		}
 	}
 } );
+
+/* -------------------------------------------------------------------------
+ * Area pages: everything on one editable screen.
+ * ---------------------------------------------------------------------- */
+
+/**
+ * The intro shown on an area page when its editor is empty.
+ *
+ * @return string[] Paragraphs.
+ */
+function tp_area_default_intro( $area ) {
+	return array(
+		/* translators: 1: suburb, 2: site name */
+		sprintf( __( 'Need an accessible ride in %1$s? %2$s provides wheelchair accessible taxis with ramps or hoists, wheelchair restraints and drivers trained to help you in and out safely.', 'taxi-peninsula' ), $area, get_bloginfo( 'name' ) ),
+		/* translators: %s: suburb */
+		sprintf( __( 'We pick up from homes, hospitals, aged-care residences and day programs in %s and take you anywhere across Melbourne and the Mornington Peninsula — including Melbourne and Avalon airports.', 'taxi-peninsula' ), $area ),
+	);
+}
+
+// The classic editor keeps the page text and all the area boxes on one screen.
+add_filter(
+	'use_block_editor_for_post_type',
+	static function ( $use, $type ) {
+		return 'tp_area' === $type ? false : $use;
+	},
+	10,
+	2
+);
+
+// An area with no text of its own opens with the automatic intro, ready to edit.
+add_filter(
+	'the_editor_content',
+	static function ( $content ) {
+		global $post;
+		if ( '' !== trim( (string) $content ) || ! is_admin() || ! $post || 'tp_area' !== $post->post_type || '' !== trim( (string) $post->post_content ) ) {
+			return $content;
+		}
+		$name = $post->post_title ?: __( 'your suburb', 'taxi-peninsula' );
+		return implode( "\n\n", array_map( 'esc_html', tp_area_default_intro( $name ) ) );
+	}
+);
+
+add_action(
+	'edit_form_after_title',
+	static function ( $post ) {
+		if ( 'tp_area' !== $post->post_type ) {
+			return;
+		}
+		?>
+		<div class="notice notice-info inline" style="margin:12px 0">
+			<p><strong><?php esc_html_e( 'What you can change on this page', 'taxi-peninsula' ); ?></strong></p>
+			<ul class="ul-disc">
+				<li><?php esc_html_e( 'Introduction — the text box below (it starts with the automatic text; change it to anything you like).', 'taxi-peninsula' ); ?></li>
+				<li><?php esc_html_e( 'Places people travel to, local travel notes and local questions — the "Details" box below the text.', 'taxi-peninsula' ); ?></li>
+				<li><?php esc_html_e( '"In short" summary — the "Quick answer" box. Photo — "Featured image". Council — "Council area". Short description for Google — "Excerpt".', 'taxi-peninsula' ); ?></li>
+				<li><?php esc_html_e( 'Filled in automatically: the map and travel times, the list of services, blog guides that mention this suburb, place pages in this suburb, and the standard questions about wheelchairs, carers and paying.', 'taxi-peninsula' ); ?></li>
+			</ul>
+		</div>
+		<?php
+	}
+);
