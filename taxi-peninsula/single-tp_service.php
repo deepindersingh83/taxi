@@ -25,7 +25,12 @@ while ( have_posts() ) :
 				<figure class="featured-image"><?php the_post_thumbnail( 'large', array( 'alt' => tp_thumbnail_alt( get_post() ) ) ); ?></figure>
 			<?php endif; ?>
 			<?php tp_the_quick_answer( '', get_the_ID(), get_the_ID() ); ?>
-			<?php tp_the_scene( tp_service_scene_name() ); ?>
+			<?php
+			// The featured photo already shows the service; the scene is for pages without one.
+			if ( ! has_post_thumbnail() ) {
+				tp_the_scene( tp_service_scene_name() );
+			}
+			?>
 			<div class="prose entry-content"><?php the_content(); ?></div>
 			<?php get_template_part( 'template-parts/service-details' ); ?>
 			<p class="cta-inline">

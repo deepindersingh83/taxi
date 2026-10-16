@@ -170,6 +170,13 @@ function tp_scene_sky( $id ) {
  * @param string $name pickup | airport.
  */
 function tp_scene( $name = 'pickup' ) {
+	/**
+	 * Replace a scene with other markup (e.g. a real photo). Return '' to keep the illustration.
+	 */
+	$custom = (string) apply_filters( 'tp_scene_html', '', $name );
+	if ( '' !== $custom ) {
+		return $custom;
+	}
 	static $n = 0;
 	++$n;
 	$id = 'tp-scene-' . $n;

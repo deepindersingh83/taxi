@@ -69,7 +69,14 @@ function tp_breadcrumb_trail() {
 		}
 		$trail[] = array( wp_strip_all_tags( get_the_archive_title() ), '' );
 	} else {
-		return array();
+		/**
+		 * Crumbs after "Home" for other views (place pages, glossary), as [label, url] pairs.
+		 */
+		$extra = (array) apply_filters( 'tp_breadcrumb_extra', array() );
+		if ( ! $extra ) {
+			return array();
+		}
+		$trail = array_merge( $trail, $extra );
 	}
 	return $trail;
 }

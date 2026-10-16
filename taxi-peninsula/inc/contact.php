@@ -302,6 +302,7 @@ function tp_contact_chooser() {
 	if ( $careers ) {
 		$items[] = array( 'wheelchair', __( 'Drive with us', 'taxi-peninsula' ), __( 'Jobs for patient, reliable drivers.', 'taxi-peninsula' ), $careers );
 	}
+	$items = apply_filters( 'tp_contact_chooser_items', $items );
 	ob_start();
 	?>
 	<nav class="tp-component chooser" aria-labelledby="chooser-title">

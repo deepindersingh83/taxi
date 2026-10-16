@@ -1028,6 +1028,9 @@ function tp_privacy_providers() {
 	if ( function_exists( 'tp_maps_available' ) && tp_maps_available() ) {
 		$list[] = array( 'Google Maps', __( 'address suggestions, maps and fare estimates (the addresses you type are sent to Google)', 'taxi-peninsula' ), __( 'United States and other countries', 'taxi-peninsula' ) );
 	}
+	if ( function_exists( 'tp_addressfinder_on' ) && tp_addressfinder_on() && tp_setting( 'places_enabled' ) ) {
+		$list[] = array( 'Addressfinder', __( 'address suggestions (the addresses you type are sent to Addressfinder)', 'taxi-peninsula' ), __( 'Australia and New Zealand', 'taxi-peninsula' ) );
+	}
 	if ( function_exists( 'tp_ga4_id' ) && tp_ga4_id() ) {
 		$list[] = array( 'Google Analytics', __( 'counting website visits, only if you accept analytics cookies', 'taxi-peninsula' ), __( 'United States and other countries', 'taxi-peninsula' ) );
 	}

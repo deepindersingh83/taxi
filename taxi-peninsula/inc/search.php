@@ -246,6 +246,7 @@ add_action(
 		if ( $all ) {
 			printf( '<li><a href="%1$s"><strong>%2$s</strong></a></li>', esc_url( $all ), esc_html__( 'All areas', 'taxi-peninsula' ) );
 		}
+		do_action( 'tp_footer_area_links' );
 		echo '</ul></div>';
 	},
 	5

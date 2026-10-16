@@ -57,6 +57,42 @@ function tp_settings_schema() {
 		'review_write_url'      => array( 'reviews', __( 'Write-a-review link', 'taxi-peninsula' ), 'url', '', __( 'In Google Business Profile choose "Ask for reviews" and copy the link (it looks like https://g.page/r/…/review). Leave empty to use the reviews link above.', 'taxi-peninsula' ) ),
 		'review_request'        => array( 'reviews', __( 'Invite customers to review you on Google', 'taxi-peninsula' ), 'select', 'happy', __( 'Shown straight after a customer rates a trip. Note: Google’s review policy and the ACCC’s guidance on online reviews say businesses should not invite only happy customers — Google can remove reviews gathered that way. "After any rating" is the safest choice.', 'taxi-peninsula' ), array( 'happy' => __( 'After a 4 or 5 star rating', 'taxi-peninsula' ), 'all' => __( 'After any rating', 'taxi-peninsula' ), 'off' => __( 'Off', 'taxi-peninsula' ) ) ),
 		'review_email'          => array( 'reviews', __( 'Also email the invitation', 'taxi-peninsula' ), 'checkbox', true, __( 'Sent at most once every 6 months to the same email address.', 'taxi-peninsula' ) ),
+		'google_reviews_live'   => array( 'reviews', __( 'Show live Google reviews', 'taxi-peninsula' ), 'checkbox', true, __( 'Needs the Google Maps key below and your Place ID (use "Find your Google Place ID" at the bottom of this page). Refreshed once a day.', 'taxi-peninsula' ) ),
+		'google_place_id'       => array( 'reviews', __( 'Google Place ID', 'taxi-peninsula' ), 'text', '', '' ),
+		'gbp_url'               => array( 'reviews', __( 'Google Business Profile link', 'taxi-peninsula' ), 'url', '', __( 'Your Google Maps listing, e.g. https://maps.app.goo.gl/… — added to your business details for search engines.', 'taxi-peninsula' ) ),
+		'google_logo_url'       => array( 'reviews', __( 'Google logo image (optional)', 'taxi-peninsula' ), 'url', '', __( 'Shown beside the review score. Leave empty to show the word "Google".', 'taxi-peninsula' ) ),
+
+		// Maps & addresses.
+		'google_maps_key'       => array( 'maps', __( 'Google Maps API key', 'taxi-peninsula' ), 'secret', '', __( 'Server-side key with Places API (New) and Routes API enabled. Restrict it to those APIs and your server IP.', 'taxi-peninsula' ) ),
+		'places_enabled'        => array( 'maps', __( 'Suggest addresses as customers type', 'taxi-peninsula' ), 'checkbox', true, '' ),
+		'address_provider'      => array( 'maps', __( 'Address suggestions from', 'taxi-peninsula' ), 'select', 'google', __( 'Addressfinder uses Australia Post and government address data, so unit numbers, rural roads and new estates are more accurate. Google also finds hospitals, shops and other places by name. "Both" shows Addressfinder addresses first, then Google places.', 'taxi-peninsula' ), array( 'google' => 'Google Places', 'addressfinder' => 'Addressfinder (Australian addresses)', 'both' => __( 'Both', 'taxi-peninsula' ) ) ),
+		'addressfinder_key'     => array( 'maps', __( 'Addressfinder licence key', 'taxi-peninsula' ), 'text', '', __( 'From addressfinder.com.au → Account → Credentials. Free plans include a monthly allowance.', 'taxi-peninsula' ) ),
+		'addressfinder_secret'  => array( 'maps', __( 'Addressfinder secret (optional)', 'taxi-peninsula' ), 'secret', '', __( 'Only needed if your key is set to require a secret.', 'taxi-peninsula' ) ),
+		'fare_enabled'          => array( 'maps', __( 'Show a fare estimate on the booking form', 'taxi-peninsula' ), 'checkbox', false, __( 'Needs the Google Maps key and a per-kilometre rate.', 'taxi-peninsula' ) ),
+		'fare_flagfall'         => array( 'maps', __( 'Flagfall (AUD)', 'taxi-peninsula' ), 'number', '', '' ),
+		'fare_per_km'           => array( 'maps', __( 'Rate per kilometre (AUD)', 'taxi-peninsula' ), 'number', '', '' ),
+		'fare_per_min'          => array( 'maps', __( 'Rate per minute of driving (AUD)', 'taxi-peninsula' ), 'number', '', '' ),
+		'fare_booking_fee'      => array( 'maps', __( 'Booking fee (AUD)', 'taxi-peninsula' ), 'number', '', '' ),
+		'fare_airport_fee'      => array( 'maps', __( 'Airport fee (AUD)', 'taxi-peninsula' ), 'number', '', __( 'Added when the trip starts or ends at an airport.', 'taxi-peninsula' ) ),
+		'fare_minimum'          => array( 'maps', __( 'Minimum fare (AUD)', 'taxi-peninsula' ), 'number', '', '' ),
+		'fare_surcharge_pct'    => array( 'maps', __( 'Night / weekend surcharge (%)', 'taxi-peninsula' ), 'number', '', '' ),
+		'fare_night_from'       => array( 'maps', __( 'Night rate starts (HH:MM)', 'taxi-peninsula' ), 'text', '', __( 'e.g. 22:00', 'taxi-peninsula' ) ),
+		'fare_night_to'         => array( 'maps', __( 'Night rate ends (HH:MM)', 'taxi-peninsula' ), 'text', '', __( 'e.g. 06:00', 'taxi-peninsula' ) ),
+		'fare_weekends'         => array( 'maps', __( 'Apply the surcharge all weekend', 'taxi-peninsula' ), 'checkbox', false, '' ),
+		'fare_range_pct'        => array( 'maps', __( 'Show the estimate as a range of ± (%)', 'taxi-peninsula' ), 'number', 10, '' ),
+
+		// Analytics & cookies.
+		'ga4_id'                => array( 'analytics', __( 'Google Analytics 4 measurement ID', 'taxi-peninsula' ), 'text', '', __( 'Starts with G-. Leave empty for no analytics.', 'taxi-peninsula' ) ),
+		'consent_banner'        => array( 'analytics', __( 'Ask visitors before loading analytics', 'taxi-peninsula' ), 'checkbox', true, __( 'Shows an Accept / Reject banner. Analytics loads only after "Accept".', 'taxi-peninsula' ) ),
+
+		// Security hardening.
+		'sec_headers'           => array( 'security', __( 'Send security headers', 'taxi-peninsula' ), 'checkbox', true, '' ),
+		'sec_hsts'              => array( 'security', __( 'Force HTTPS in browsers (HSTS)', 'taxi-peninsula' ), 'checkbox', false, __( 'Turn on only once the whole site, including subdomains, works on HTTPS.', 'taxi-peninsula' ) ),
+		'sec_disable_file_edit' => array( 'security', __( 'Turn off the theme and plugin file editors', 'taxi-peninsula' ), 'checkbox', true, '' ),
+		'sec_disable_xmlrpc'    => array( 'security', __( 'Block XML-RPC', 'taxi-peninsula' ), 'checkbox', true, __( 'Only the old WordPress mobile app and Jetpack need it.', 'taxi-peninsula' ) ),
+		'sec_block_user_enum'   => array( 'security', __( 'Hide usernames', 'taxi-peninsula' ), 'checkbox', true, '' ),
+		'sec_hide_version'      => array( 'security', __( 'Hide the WordPress version number', 'taxi-peninsula' ), 'checkbox', true, '' ),
+		'sec_trusted_proxy'     => array( 'security', __( 'The site is behind Cloudflare', 'taxi-peninsula' ), 'checkbox', false, __( 'Uses the visitor’s real IP for rate limits, only for requests that really come from Cloudflare.', 'taxi-peninsula' ) ),
 
 		// Privacy.
 		'privacy_contact'           => array( 'privacy', __( 'Privacy contact', 'taxi-peninsula' ), 'text', '', __( 'Name or role shown in the privacy policy, e.g. "Privacy Officer". Leave empty to use the business name.', 'taxi-peninsula' ) ),
@@ -86,6 +122,9 @@ function tp_settings_sections() {
 		'payments'  => array( __( 'Payments & invoicing', 'taxi-peninsula' ), sprintf( /* translators: %s: webhook URL */ __( 'In Stripe, add a webhook for the "checkout.session.completed" event pointing to: %s', 'taxi-peninsula' ), '<code>' . esc_html( rest_url( 'taxi-peninsula/v1/stripe' ) ) . '</code>' ) ),
 		'captcha'   => array( __( 'Spam protection', 'taxi-peninsula' ), '' ),
 		'reviews'   => array( __( 'Google reviews', 'taxi-peninsula' ), __( 'Shown with your testimonials on the home page.', 'taxi-peninsula' ) ),
+		'maps'      => array( __( 'Maps, addresses & fare estimates', 'taxi-peninsula' ), __( 'All requests go through your website, so keys never reach visitors’ browsers.', 'taxi-peninsula' ) ),
+		'analytics' => array( __( 'Analytics & cookies', 'taxi-peninsula' ), '' ),
+		'security'  => array( __( 'Security hardening', 'taxi-peninsula' ), '' ),
 		'privacy'   => array( __( 'Privacy & data retention', 'taxi-peninsula' ), __( 'The Australian Privacy Principles ask you to keep personal information only while you need it. Tax invoices are kept for 5 years, as the ATO requires.', 'taxi-peninsula' ) ),
 		'recurring' => array( __( 'Recurring trips', 'taxi-peninsula' ), '' ),
 	);

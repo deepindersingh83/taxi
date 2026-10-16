@@ -300,6 +300,7 @@ function tp_send_new_booking_emails( $post_id, $ids = array() ) {
 		$body .= __( 'Thanks for booking with us. We have received your request and will confirm it shortly.', 'taxi-peninsula' ) . "\n\n";
 		$body .= $summary . $series . "\n";
 		$body .= __( 'View or manage your booking:', 'taxi-peninsula' ) . ' ' . tp_booking_manage_url( $post_id ) . "\n\n";
+		$body .= apply_filters( 'tp_customer_email_footer', '' ) . "\n";
 		$body .= sprintf(
 			/* translators: 1: phone, 2: email */
 			__( 'Need to change something? Call %1$s or email %2$s and quote your reference.', 'taxi-peninsula' ),

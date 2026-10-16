@@ -19,6 +19,7 @@
 <a class="skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'taxi-peninsula' ); ?></a>
 
 <?php tp_render_notices(); ?>
+<?php do_action( 'tp_after_notices' ); ?>
 
 <?php $tp_topbar = tp_design( 'topbar' ); ?>
 <?php if ( 'none' !== $tp_topbar ) : ?>

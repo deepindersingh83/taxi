@@ -8,6 +8,72 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### New in v2.7
+**More pages that rank**
+- **Place pages:**
+  - "Going to" pages for hospitals, clinics, airports and venues at `/wheelchair-taxi-to/{place}/`, for searches like "wheelchair taxi to Frankston Hospital"
+  - "Picking up from" pages for railway stations and shopping centres at `/wheelchair-taxi-from/{place}/`
+  - Each page has the accessible entrance, the exact drop-off or pick-up spot, parking, driver tips, a booking card with the address filled in, travel times from nearby suburbs, questions and answers, reviews and business data for Google.
+  - Manage them under Website content → Place pages. One click adds suggested hospitals, stations and shopping centres as drafts, or drafts from Popular destinations.
+  - A page with [CONFIRM] notes stays a draft until you remove them.
+  - `[tp_places]` lists them on the "Places We Go" starter page. Suburb pages and the footer link to them.
+- **Glossary** at `/glossary/`: short answers to terms such as MPTP, WAT, maxi taxi, NDIS transport funding, plan manager, four-point restraint, ramp vs hoist and CPVV.
+  - One click adds 14 starter terms as drafts.
+  - Each term is marked up for Google as a defined term.
+  - The first mention of a term in your blog posts and pages links to it automatically.
+- **Seasonal content plan** (Marketing → Content plan) lists the next date for each Victorian event and season: Australian Open, Moomba, Easter, ANZAC Day, Mother's Day, the AFL Grand Final, the Royal Melbourne Show, Melbourne Cup, Christmas and more.
+  - "Create draft guide" starts a blog post with question headings ready to fill in.
+  - The Dashboard reminds you 6 weeks ahead.
+
+**Real photos**
+- **Website content → Photo checklist** shows every service, suburb, vehicle, driver, partner, place page and blog post still without a photo. It also has a shot list and consent guidance.
+- Real photos can replace the illustrated pick-up and airport scenes.
+- Suburb and place pages now show their featured photo. Service pages that have a photo no longer show the illustrated scene as well.
+
+**Bookings and payments**
+- **Australian address suggestions from Addressfinder:** under Taxi settings → Settings → Maps, addresses & fare estimates, choose Google, Addressfinder or both. Addressfinder handles unit numbers and new estates better; Google also finds places by name.
+- **BPAY, PayID and bank transfer details** on account invoices (receipts with money owing), in quote emails and in `[tp_pay_options]`.
+  - Set them in Taxi settings → Settings → Payments & invoicing.
+  - Each trip or quote gets its own BPAY reference number with a check digit.
+- **Clear cancellation and no-show fees:**
+  - shown above the terms on the booking form, on active bookings and in booking and quote emails, and in `[tp_cancellation_policy]`
+  - Set the free-cancellation window, fees and free waiting time in Taxi settings → Settings → Recurring trips.
+  - The fees shown are saved with each booking.
+- **Call-back requests** (`[tp_callback]`, starter page "Request a Call Back"):
+  - The form asks for a name, phone number, best time and what it's about.
+  - The office gets an email and an SMS, and the customer gets an SMS confirmation.
+  - Out of hours, the form says when you'll call.
+  - Linked from the account menu, the contact chooser and the booking form.
+  - Bookings → Call-backs lists requests with their status (new, no answer, called, done) and a count on the menu.
+- **Weather and road alerts:**
+  - Bureau of Meteorology warnings for your districts are checked every hour.
+  - Road alerts the office types in under Bookings → Alerts disappear when they expire.
+  - Both show on the driver screen and the dispatch board. Road alerts can also show as a banner on the website, and so can weather warnings if you turn that on.
+
+**Partner portal**
+- Link coordinator accounts to a partner page (hospital, aged-care home, NDIS provider) in its "Portal users" box.
+- They see an **Our organisation** tab in My Account with:
+  - the month's trips, completed, upcoming and cancelled trips, fares and the account balance
+  - every trip booked from the partner page, its QR code or by its portal users, with receipt and invoice links
+  - the last 6 months, a CSV download and a "Book from {organisation}" button
+
+**Legal and compliance (Australia)**
+- **Incident and complaint register** (Bookings → Incidents):
+  - Covers safety incidents, injuries, near misses, vehicle problems, complaints, driver conduct and privacy breaches.
+  - Each entry has the booking, driver and vehicle (filled in from the booking reference), what happened, the action taken, the outcome, a follow-up date and who it was reported to (CPVV, NDIS Commission, OAIC, WorkSafe, police, insurer).
+  - Complaints sent through the contact form are added automatically.
+  - Includes a CSV export and an open-items count on the menu.
+- **Data breach response plan** (Taxi settings → Data breach plan):
+  - the four steps (contain, assess within 30 days, notify, review) under the Notifiable Data Breaches scheme, with a checklist and a notice template
+  - your response team, and a list of recorded breaches
+  - a "Record a data breach now" button
+  - a print-friendly layout
+
+**Fixes**
+- The settings for Google Maps and fare estimates, Google Analytics and the cookie banner, live Google reviews and security hardening were described in this guide but never appeared on the settings page. They are now there. Security hardening is on by default, except HSTS and the Cloudflare option.
+- Tables and month pickers in My Account (NDIS trip log, Our organisation) are now styled.
+- Activity log CSV export no longer logs a PHP 8.4 deprecation warning.
+
 ### v2.6.1 — fixes from a full error sweep
 - Driver "Found an item?" no longer lands on "Page not found". It returns to the driver's day view.
 - The language links on the "Page not found" page now go to the home page in that language, instead of to more missing pages.
@@ -618,8 +684,12 @@ Payments happen on Stripe's hosted checkout, so card details never touch your si
 ### Google Maps (address suggestions & fare estimates)
 1. In Google Cloud, create a project with billing, and enable **Places API (New)** and **Routes API**.
 2. Create an API key and **restrict it** to those two APIs and to your server's IP address. The key is only used server-side.
-3. Paste the key in Bookings → Settings (or use `TP_GOOGLE_MAPS_KEY` in wp-config.php).
+3. Paste the key in Taxi settings → Settings → Maps, addresses & fare estimates (or use `TP_GOOGLE_MAPS_KEY` in wp-config.php).
 4. Enter your fare rates, then tick **Show a fare estimate**.
+
+### Addressfinder (Australian address suggestions)
+1. Sign up at addressfinder.com.au and copy your licence key from Account → Credentials.
+2. Paste it in Taxi settings → Settings → Maps, addresses & fare estimates, and choose "Addressfinder" or "Both".
 
 ### Google Analytics
 Paste your GA4 measurement ID (`G-…`) in Bookings → Settings → Analytics & cookies. The consent banner appears automatically.
@@ -677,7 +747,7 @@ location ~* /wp-content/uploads/.*\.php$ { deny all; }
 - Don't use an account called `admin`.
 
 ## Shortcodes
-`[tp_booking_form]` `[tp_booking_lookup]` `[tp_contact_form]` `[tp_faq]` `[tp_faq topic="booking"]` `[tp_fleet]` `[tp_fleet limit="2"]` `[tp_ndis]` `[tp_testimonials]` `[tp_driver_jobs]` `[tp_services]` `[tp_areas]` `[tp_contact_details]` `[tp_map]` `[tp_map q="Frankston VIC"]` `[tp_stats]` `[tp_suburb_checker]` `[tp_destinations]` `[tp_drivers]` `[tp_video]` `[tp_partners]` `[tp_driver_apply]` `[tp_contact_chooser]` `[tp_faq featured="yes" limit="4" search="no"]` `[tp_quote_request]` `[tp_lost_property]` `[tp_newsletter]`
+`[tp_booking_form]` `[tp_booking_lookup]` `[tp_contact_form]` `[tp_faq]` `[tp_faq topic="booking"]` `[tp_fleet]` `[tp_fleet limit="2"]` `[tp_ndis]` `[tp_testimonials]` `[tp_driver_jobs]` `[tp_services]` `[tp_areas]` `[tp_contact_details]` `[tp_map]` `[tp_map q="Frankston VIC"]` `[tp_stats]` `[tp_suburb_checker]` `[tp_destinations]` `[tp_drivers]` `[tp_video]` `[tp_partners]` `[tp_driver_apply]` `[tp_contact_chooser]` `[tp_faq featured="yes" limit="4" search="no"]` `[tp_quote_request]` `[tp_lost_property]` `[tp_newsletter]` `[tp_callback]` `[tp_places]` `[tp_places kind="to"]` `[tp_pay_options]` `[tp_cancellation_policy]`
 
 ## Before going live
 - **Complaints page:** replace the [CONFIRM] response times and add the regulators' current contact details, then publish it. The chooser and the auto-reply link to it once it's published.
@@ -688,4 +758,8 @@ location ~* /wp-content/uploads/.*\.php$ { deny all; }
 - **Fare estimates:** switch them on only when the rates match your real fares.
 - **Check the wording against your real service.** This covers the starter FAQs and service text, and home page claims such as "24 hours", "accredited drivers" and "ramp & hoist vehicles".
 - **Add local detail to suburb pages** (nearby hospitals, landmarks). Pages that only use the default text are thin content for Google.
+- **Place pages and glossary terms:** check every [CONFIRM] detail on site (entrances, drop-off points, MPTP subsidy amounts) before publishing.
+- **BPAY:** you need a biller code from your bank before the BPAY box appears. Check whether your bank uses the standard check digit (MOD10V01) for reference numbers; if not, choose "No check digit".
+- **Cancellation fees:** make the fees in Taxi settings → Settings → Recurring trips match your published terms.
+- **Security hardening** is now on by default. If you use Jetpack or the WordPress mobile app, untick "Block XML-RPC".
 - **Exclude the booking, Manage My Booking and Contact pages from page caching.** Their forms use security tokens that go stale when cached.

@@ -1421,6 +1421,8 @@ function tp_render_receipt() {
 				</tfoot>
 			<?php endif; ?>
 		</table>
+		<style>.bpay-box{display:inline-block;margin:8px 0;padding:10px 16px;border:2px solid #1b3664;border-radius:8px;min-width:260px}.bpay-box p{margin:2px 0}.bpay-box__brand{font-weight:800;font-style:italic;color:#1b3664;font-size:18px}.bpay-box__small{font-size:11px;color:#4a5670;max-width:340px}.pay-options__list{padding-left:18px}</style>
+		<?php do_action( 'tp_receipt_after_totals', $b, ( null !== $fare && 'account' === $b['payment'] && ! $paid_in ) ? (float) $balance : 0 ); ?>
 
 		<?php if ( $paid_in && null !== $fare ) : ?>
 			<p><span class="stamp"><?php esc_html_e( 'Paid', 'taxi-peninsula' ); ?></span></p>
@@ -1506,6 +1508,7 @@ function tp_the_account_menu() {
 				<?php if ( tp_sms_href() ) : ?>
 					<li><a class="acct__link" href="<?php echo esc_attr( tp_sms_href() ); ?>"><?php tp_the_icon( 'message' ); ?><span><?php esc_html_e( 'Text us', 'taxi-peninsula' ); ?></span></a></li>
 				<?php endif; ?>
+				<?php do_action( 'tp_account_menu_contact' ); ?>
 			</ul>
 		</div>
 	</div>

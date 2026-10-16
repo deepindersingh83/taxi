@@ -76,6 +76,8 @@ add_filter(
 			'tp_testimonial' => 'website',
 			'tp_partner'     => 'website',
 			'tp_notice'      => 'website',
+			'tp_place'       => 'website',
+			'tp_term'        => 'website',
 		);
 		if ( isset( $map[ $type ] ) && ( ! isset( $args['show_ui'] ) || $args['show_ui'] ) ) {
 			$args['show_in_menu'] = tp_admin_parent( $map[ $type ] );

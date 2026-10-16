@@ -13,7 +13,73 @@ function tp_maps_available() {
 }
 
 function tp_places_available() {
-	return tp_maps_available() && tp_setting( 'places_enabled' );
+	return tp_setting( 'places_enabled' ) && ( tp_google_places_on() || tp_addressfinder_on() );
+}
+
+function tp_google_places_on() {
+	return tp_maps_available() && 'addressfinder' !== tp_setting( 'address_provider' );
+}
+
+function tp_addressfinder_on() {
+	return '' !== trim( (string) tp_setting( 'addressfinder_key' ) ) && 'google' !== tp_setting( 'address_provider' );
+}
+
+/**
+ * Australian address suggestions from Addressfinder (Australia Post + G-NAF data).
+ *
+ * @return array|null List of suggestions, or null when the request failed.
+ */
+function tp_addressfinder_suggest( $q ) {
+	$args = array(
+		'key'         => trim( (string) tp_setting( 'addressfinder_key' ) ),
+		'q'           => $q,
+		'format'      => 'json',
+		'source'      => 'gnaf,paf',
+		'max'         => 6,
+		'state_codes' => 'VIC',
+	);
+	if ( tp_setting( 'addressfinder_secret' ) ) {
+		$args['secret'] = tp_setting( 'addressfinder_secret' );
+	}
+	$response = wp_remote_get(
+		add_query_arg( array_map( 'rawurlencode', $args ), 'https://api.addressfinder.io/api/au/address/autocomplete/' ),
+		array(
+			'timeout' => 6,
+			'headers' => array( 'Referer' => home_url( '/' ) ),
+		)
+	);
+	if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
+		return null;
+	}
+	$data = json_decode( wp_remote_retrieve_body( $response ), true );
+	$out  = array();
+	foreach ( (array) ( $data['completions'] ?? array() ) as $c ) {
+		$full = sanitize_text_field( $c['full_address'] ?? '' );
+		if ( '' === $full ) {
+			continue;
+		}
+		// "Unit 4, 12 Smith Street, FRANKSTON VIC 3199" → main "Unit 4, 12 Smith Street", secondary "FRANKSTON VIC 3199".
+		$cut   = strrpos( $full, ',' );
+		$out[] = array(
+			'text'      => $full,
+			'main'      => false === $cut ? $full : trim( substr( $full, 0, $cut ) ),
+			'secondary' => false === $cut ? '' : trim( substr( $full, $cut + 1 ) ),
+		);
+		if ( count( $out ) >= 6 ) {
+			break;
+		}
+	}
+	return $out;
+}
+
+/**
+ * Credit line under the suggestions list.
+ */
+function tp_places_credit() {
+	if ( tp_addressfinder_on() && tp_google_places_on() ) {
+		return __( 'Address suggestions by Addressfinder and Google', 'taxi-peninsula' );
+	}
+	return tp_addressfinder_on() ? __( 'Address suggestions by Addressfinder', 'taxi-peninsula' ) : __( 'Address suggestions by Google', 'taxi-peninsula' );
 }
 
 /**
@@ -75,6 +141,17 @@ function tp_rest_places( WP_REST_Request $req ) {
 		return new WP_REST_Response( array( 'suggestions' => array() ), 429 );
 	}
 
+	$out = array();
+	if ( tp_addressfinder_on() ) {
+		$out = (array) tp_addressfinder_suggest( $q );
+		// Addresses only: fall through to Google for places such as "Frankston Hospital".
+		if ( ! tp_google_places_on() || count( $out ) >= 4 ) {
+			set_transient( $cache_key, $out, DAY_IN_SECONDS );
+			return array( 'suggestions' => $out );
+		}
+	}
+	$from_af = $out;
+
 	$body = array(
 		'input'               => $q,
 		'includedRegionCodes' => array( 'au' ),
@@ -103,14 +180,14 @@ function tp_rest_places( WP_REST_Request $req ) {
 		)
 	);
 	if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
-		return array( 'suggestions' => array() );
+		return array( 'suggestions' => $from_af );
 	}
 
 	$data = json_decode( wp_remote_retrieve_body( $response ), true );
-	$out  = array();
+	$seen = array_map( 'strtolower', wp_list_pluck( $out, 'main' ) );
 	foreach ( (array) ( $data['suggestions'] ?? array() ) as $s ) {
 		$p = $s['placePrediction'] ?? null;
-		if ( ! $p ) {
+		if ( ! $p || in_array( strtolower( $p['structuredFormat']['mainText']['text'] ?? '' ), $seen, true ) ) {
 			continue;
 		}
 		$out[] = array(
@@ -309,7 +386,7 @@ function tp_booking_script_config() {
 					'estimating' => __( 'Calculating fare estimate…', 'taxi-peninsula' ),
 					'estimate'   => __( 'Estimated fare', 'taxi-peninsula' ),
 					'noEstimate' => __( 'We could not estimate this trip online. We will confirm the fare with you.', 'taxi-peninsula' ),
-					'powered'    => __( 'Address suggestions by Google', 'taxi-peninsula' ),
+					'powered'    => tp_places_credit(),
 				),
 			)
 		) . ';',

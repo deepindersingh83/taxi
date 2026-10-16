@@ -660,10 +660,10 @@ function tp_activity_csv() {
 		$v = (string) $v;
 		return preg_match( '/^[=+\-@\t\r]/', $v ) ? "'" . $v : $v;
 	};
-	fputcsv( $out, array( 'When', 'Who', 'User ID', 'IP', 'Action', 'Booking', 'Details' ) );
+	fputcsv( $out, array( 'When', 'Who', 'User ID', 'IP', 'Action', 'Booking', 'Details' ), ',', '"', '' );
 	$actions = tp_activity_actions();
 	foreach ( $rows as $r ) {
-		fputcsv( $out, array_map( $safe, array( $r->created, $r->actor, $r->user_id, $r->ip, $actions[ $r->action ] ?? $r->action, $r->reference, $r->summary ) ) );
+		fputcsv( $out, array_map( $safe, array( $r->created, $r->actor, $r->user_id, $r->ip, $actions[ $r->action ] ?? $r->action, $r->reference, $r->summary ) ), ',', '"', '' );
 	}
 	fclose( $out ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fclose
 	exit;

@@ -24,6 +24,11 @@ while ( have_posts() ) :
 	<div class="container layout-sidebar section">
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'layout-sidebar__main' ); ?>>
 			<?php tp_the_quick_answer( $area, 0, get_the_ID() ); ?>
+			<?php if ( tp_show_featured_image() ) : ?>
+				<figure class="featured-image area-photo"><?php the_post_thumbnail( 'large', array( 'alt' => tp_thumbnail_alt( get_post() ) ) ); ?>
+					<?php if ( get_the_post_thumbnail_caption() ) : ?><figcaption><?php the_post_thumbnail_caption(); ?></figcaption><?php endif; ?>
+				</figure>
+			<?php endif; ?>
 			<div class="prose entry-content">
 				<?php if ( '' !== trim( get_the_content() ) ) : ?>
 					<?php the_content(); ?>

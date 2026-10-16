@@ -381,6 +381,10 @@ function tp_quote_send( $id ) {
 	}
 	$body .= tp_quote_summary( $q ) . "\n";
 	$body .= __( 'Book this trip', 'taxi-peninsula' ) . ': ' . tp_quote_book_url( $id ) . "\n\n";
+	if ( function_exists( 'tp_pay_options_text' ) && tp_pay_options_available() ) {
+		$body .= tp_pay_options_text( 'quote', $id, $q['ref'] ) . "\n";
+	}
+	$body .= apply_filters( 'tp_customer_email_footer', '' ) . "\n";
 	/* translators: %s: phone */
 	$body .= sprintf( __( 'Questions? Reply to this email or call %s.', 'taxi-peninsula' ), tp_opt( 'phone_display' ) ) . "\n\n" . $site;
 	wp_mail(

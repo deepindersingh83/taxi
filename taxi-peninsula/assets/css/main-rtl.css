@@ -2070,3 +2070,73 @@ body:has(.driver-dock) .whatsapp-button { display: none; }
 .council-card h2 { margin: 0 0 var(--space-xs); font-size: var(--step-1); }
 .council-card p { margin: 0; color: var(--c-muted); }
 .area-council { margin-top: var(--space-l); font-weight: 600; }
+
+/* v2.7 — shared account tables and forms */
+.data-table { width: 100%; border-collapse: collapse; font-size: var(--step--1); }
+.data-table th, .data-table td { padding: .6rem .75rem; border-bottom: 1px solid var(--c-border); text-align: start; vertical-align: top; }
+.data-table thead th { background: var(--c-bg-alt); color: var(--c-heading); font-weight: 700; white-space: nowrap; }
+.inline-form { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--space-s); margin-bottom: var(--space-m); }
+.inline-form .field { margin: 0; }
+.empty-note { color: var(--c-muted); font-style: italic; }
+.notice--warning { background: #fff4d6; border-color: #b7791f; color: #3d2e00; }
+html[data-contrast="high"] .notice--warning { background: #fff; color: #000; }
+
+/* Payment options & cancellation fees */
+.pay-options { margin-top: var(--space-m); }
+.pay-options__list { list-style: none; margin: var(--space-s) 0 0; padding: 0; display: grid; gap: var(--space-s); }
+.pay-options__ref { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 700; letter-spacing: .04em; }
+.bpay-box { display: inline-block; min-width: min(100%, 18rem); padding: .75rem 1rem; border: 2px solid #1b3c6e; border-radius: .5rem; background: #fff; color: #1b3c6e; }
+.bpay-box__brand { margin: 0 0 .35rem; font-weight: 800; font-size: 1.15rem; font-style: italic; }
+.bpay-box__line { margin: 0; font-weight: 700; }
+.bpay-box__small { margin: .4rem 0 0; font-size: .8rem; color: #33475b; }
+.cancel-policy { margin: var(--space-m) 0; padding: var(--space-m); border: 1px solid var(--c-border); border-right: 6px solid var(--c-link); border-radius: var(--radius); background: var(--c-surface); }
+.cancel-policy__title { margin: 0 0 var(--space-xs); font-size: var(--step-0); }
+.cancel-policy ul { margin: 0; padding-inline-start: 1.2em; }
+
+/* Call-backs & alerts */
+.callback-form .booking-form { max-width: 40rem; }
+.announce--alert .announce__inner { justify-content: flex-start; }
+.tp-alerts-box--front { margin-bottom: var(--space-m); padding: var(--space-s) var(--space-m); border-right: 6px solid #b7791f; border-radius: var(--radius); background: #fff4d6; color: #3d2e00; }
+.tp-alerts-box--front a { color: inherit; }
+html[data-contrast="high"] .tp-alerts-box--front { background: #fff; color: #000; }
+.tp-alerts-box__list { margin: 0; padding-inline-start: 1.2em; }
+
+/* Partner portal */
+.portal__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-s); margin-bottom: var(--space-m); }
+.portal__head h2 { margin: 0; }
+.portal__stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 10rem), 1fr)); gap: var(--space-s); margin: var(--space-s) 0 var(--space-l); }
+.portal__stats div { padding: var(--space-s) var(--space-m); border: 1px solid var(--c-border); border-radius: var(--radius); background: var(--c-surface); }
+.portal__stats dt { font-size: var(--step--1); color: var(--c-muted); }
+.portal__stats dd { margin: 0; font-size: var(--step-2); font-weight: 800; color: var(--c-heading); font-variant-numeric: tabular-nums; }
+
+/* Place pages */
+.place-page__photo { margin: 0 0 var(--space-l); }
+.place-page__photo img, .area-photo img { width: 100%; height: auto; border-radius: var(--radius-lg); }
+.place-page__photo figcaption, .area-photo figcaption { margin-top: var(--space-xs); font-size: var(--step--1); color: var(--c-muted); }
+.place-facts { display: grid; gap: var(--space-s); margin: 0 0 var(--space-l); }
+.place-facts div { padding: var(--space-s) var(--space-m); border: 1px solid var(--c-border); border-radius: var(--radius); background: var(--c-surface); }
+.place-facts dt { display: flex; align-items: center; gap: .5em; font-weight: 700; color: var(--c-heading); }
+.place-facts dd { margin: .25rem 0 0; }
+.place-links { margin-top: var(--space-l); }
+.places-list__grid { list-style: none; margin: 0 0 var(--space-xl); padding: 0; display: grid; gap: var(--space-m); grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); }
+.places-list__item h3 { margin: 0 0 var(--space-2xs, .25rem); font-size: var(--step-1); }
+.places-list__item p { margin: 0; color: var(--c-muted); }
+.places-list__item img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius); margin-bottom: var(--space-s); }
+
+/* Glossary */
+.glossary__letters { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: var(--space-l); }
+.glossary__letters a { display: grid; place-items: center; min-width: 2.75rem; min-height: 2.75rem; border: 1px solid var(--c-border); border-radius: var(--radius); font-weight: 800; text-decoration: none; }
+.glossary__letter { font-size: var(--step-2); border-bottom: 2px solid var(--c-border); padding-bottom: var(--space-2xs, .25rem); }
+.glossary__list { margin: 0 0 var(--space-l); display: grid; gap: var(--space-m); }
+.glossary__item dt { font-weight: 700; font-size: var(--step-1); }
+.glossary__item dd { margin: .25rem 0 0; max-width: 70ch; }
+.glossary-link { text-decoration-style: dotted; }
+
+/* Photo in place of an illustrated scene */
+.tp-scene--photo { overflow: hidden; border-radius: var(--radius-lg); }
+.tp-scene__photo { display: block; width: 100%; height: auto; aspect-ratio: 10 / 3; object-fit: cover; }
+.hero__scene .tp-scene__photo { aspect-ratio: 4 / 3; }
+
+@media print {
+	.bpay-box { border-color: #000; color: #000; }
+}

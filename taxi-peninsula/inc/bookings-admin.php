@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 add_action( 'admin_enqueue_scripts', 'tp_admin_assets' );
 function tp_admin_assets( $hook ) {
 	$screen = get_current_screen();
-	$types  = array( 'tp_booking', 'tp_message', 'tp_fleet', 'tp_service', 'tp_testimonial', 'tp_area', 'tp_faq', 'tp_quote', 'tp_lost', 'tp_promo', 'tp_venue', 'tp_event' );
+	$types  = array( 'tp_booking', 'tp_message', 'tp_fleet', 'tp_service', 'tp_testimonial', 'tp_area', 'tp_faq', 'tp_quote', 'tp_lost', 'tp_promo', 'tp_venue', 'tp_event', 'tp_incident', 'tp_callback', 'tp_place', 'tp_term' );
 	if ( ( $screen && in_array( $screen->post_type, $types, true ) ) || 'index.php' === $hook || false !== strpos( $hook, 'tp-' ) ) {
 		wp_enqueue_style( 'tp-admin', TP_URI . '/assets/css/admin.css', array(), TP_VERSION );
 		tp_admin_brand_vars();

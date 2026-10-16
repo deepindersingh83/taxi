@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TP_VERSION', '2.6.1' );
+define( 'TP_VERSION', '2.7.0' );
 define( 'TP_DIR', get_template_directory() );
 define( 'TP_URI', get_template_directory_uri() );
 
@@ -67,6 +67,15 @@ require TP_DIR . '/inc/ai-search.php';
 require TP_DIR . '/inc/eeat.php';
 require TP_DIR . '/inc/councils.php';
 require TP_DIR . '/inc/search-data.php';
+require TP_DIR . '/inc/payment-info.php';
+require TP_DIR . '/inc/incidents.php';
+require TP_DIR . '/inc/callbacks.php';
+require TP_DIR . '/inc/alerts.php';
+require TP_DIR . '/inc/partner-portal.php';
+require TP_DIR . '/inc/places.php';
+require TP_DIR . '/inc/glossary.php';
+require TP_DIR . '/inc/content-plan.php';
+require TP_DIR . '/inc/photos.php';
 require TP_DIR . '/inc/hours.php';
 require TP_DIR . '/inc/design.php';
 require TP_DIR . '/inc/illustrations.php';

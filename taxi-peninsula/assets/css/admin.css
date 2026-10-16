@@ -282,3 +282,15 @@
 .tp-ai__check td a { margin-right: 6px; }
 .tp-ai__history { margin-top: 12px; max-width: 60rem; }
 .tp-search .tp-owner__grid > div { min-width: 0; }
+
+/* v2.7 */
+.tp-pill { display: inline-block; padding: 2px 8px; border-radius: 999px; background: #f0f0f1; font-size: 12px; font-weight: 600; }
+.tp-pill--new, .tp-pill--due { background: #fcf0d0; color: #6b4b00; }
+.tp-pill--no_answer { background: #fde2e1; color: #8a1c14; }
+.tp-pill--called, .tp-pill--done { background: #d9f2df; color: #0f5223; }
+.tp-alerts-box__list { margin: .5em 0 .5em 1.2em; list-style: disc; }
+.tp-breach ol li, .tp-breach ul li { margin-bottom: .4em; }
+@media print {
+	#adminmenumain, #wpadminbar, #wpfooter, .tp-breach .button, .notice { display: none !important; }
+	#wpcontent { margin: 0 !important; }
+}

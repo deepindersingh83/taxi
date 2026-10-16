@@ -346,6 +346,7 @@ $today       = wp_date( 'Y-m-d' );
 			</div>
 		<?php endif; ?>
 
+		<?php do_action( 'tp_booking_form_before_terms' ); ?>
 		<?php if ( $terms_url ) : ?>
 			<div class="field field--wide field--check">
 				<input id="bf-terms" name="terms" type="checkbox" value="1" required <?php checked( $val( 'terms' ), '1' ); ?><?php $invalid( 'terms' ); ?>>
@@ -379,5 +380,6 @@ $today       = wp_date( 'Y-m-d' );
 			);
 			?>
 		</p>
+		<?php do_action( 'tp_booking_form_after_submit' ); ?>
 	</div>
 </form>

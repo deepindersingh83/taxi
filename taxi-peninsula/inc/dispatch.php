@@ -156,6 +156,7 @@ function tp_render_dispatch_page() {
 				<?php endif; ?>
 			</div>
 		<?php endif; ?>
+		<?php do_action( 'tp_dispatch_top' ); ?>
 
 		<form class="tp-dispatch__nav" method="get" action="<?php echo esc_url( admin_url( 'edit.php' ) ); ?>">
 			<input type="hidden" name="post_type" value="tp_booking">
