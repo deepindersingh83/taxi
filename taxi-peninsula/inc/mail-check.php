@@ -169,12 +169,73 @@ function tp_mail_smtp_plugin() {
 }
 
 /**
+ * WP Mail SMTP's settings (constants in wp-config.php win), or null.
+ *
+ * @return array|null mailer, from, force, host, user
+ */
+function tp_wpms_settings() {
+	if ( 'WP Mail SMTP' !== tp_mail_smtp_plugin() && 'WP Mail SMTP Pro' !== tp_mail_smtp_plugin() ) {
+		return null;
+	}
+	$o   = (array) get_option( 'wp_mail_smtp', array() );
+	$get = static function ( $group, $key, $const ) use ( $o ) {
+		return defined( $const ) ? constant( $const ) : ( $o[ $group ][ $key ] ?? '' );
+	};
+	return array(
+		'mailer' => (string) $get( 'mail', 'mailer', 'WPMS_MAILER' ),
+		'from'   => (string) $get( 'mail', 'from_email', 'WPMS_MAIL_FROM' ),
+		'force'  => (bool) $get( 'mail', 'from_email_force', 'WPMS_MAIL_FROM_FORCE' ),
+		'host'   => (string) $get( 'smtp', 'host', 'WPMS_SMTP_HOST' ),
+		'user'   => (string) $get( 'smtp', 'user', 'WPMS_SMTP_USER' ),
+	);
+}
+
+/**
  * The address WordPress will send from right now.
  */
 function tp_mail_from_now() {
+	$w = tp_wpms_settings();
+	if ( $w && $w['force'] && is_email( $w['from'] ) ) {
+		return $w['from'];
+	}
 	$domain = wp_parse_url( network_home_url(), PHP_URL_HOST );
 	$domain = preg_replace( '/^www\./', '', (string) $domain );
 	return (string) apply_filters( 'wp_mail_from', 'wordpress@' . $domain );
+}
+
+/**
+ * Extra checks for WP Mail SMTP: is it really using SMTP, and does the
+ * mailbox it logs into match the address it sends from?
+ */
+function tp_wpms_checks( $from ) {
+	$w = tp_wpms_settings();
+	if ( ! $w ) {
+		return array();
+	}
+	$out   = array();
+	$label = __( 'WP Mail SMTP setup', 'taxi-peninsula' );
+	if ( '' === $w['mailer'] || 'mail' === $w['mailer'] ) {
+		return array( array( 'fail', $label, __( 'The plugin is installed but its Mailer is "Default (none)", so email still goes out through the web server’s PHP mail. In WP Mail SMTP → Settings choose "Other SMTP" (or your provider) and enter the mailbox details.', 'taxi-peninsula' ) ) );
+	}
+	$names = array( 'smtp' => 'Other SMTP', 'gmail' => 'Google / Gmail', 'outlook' => 'Microsoft 365 / Outlook', 'smtpcom' => 'SMTP.com', 'sendinblue' => 'Brevo', 'mailgun' => 'Mailgun', 'sendgrid' => 'SendGrid', 'postmark' => 'Postmark', 'sparkpost' => 'SparkPost', 'amazonses' => 'Amazon SES', 'zoho' => 'Zoho Mail', 'smtp2go' => 'SMTP2GO', 'elasticemail' => 'Elastic Email', 'mailjet' => 'Mailjet' );
+	$what  = $names[ $w['mailer'] ] ?? $w['mailer'];
+	if ( 'smtp' === $w['mailer'] ) {
+		/* translators: 1: host 2: user */
+		$what .= ' — ' . sprintf( __( 'server %1$s, logged in as %2$s', 'taxi-peninsula' ), $w['host'] ?: '?', $w['user'] ?: __( '(no login)', 'taxi-peninsula' ) );
+	}
+	$out[] = array( 'ok', $label, $what );
+
+	$from_domain = strtolower( (string) substr( strrchr( $from, '@' ), 1 ) );
+	$user_domain = strtolower( (string) substr( strrchr( $w['user'], '@' ), 1 ) );
+	if ( 'smtp' === $w['mailer'] && $user_domain && $from_domain && $user_domain !== $from_domain ) {
+		/* translators: 1: login 2: from address */
+		$out[] = array( 'fail', __( 'Mailbox and sender match', 'taxi-peninsula' ), sprintf( __( 'The plugin logs in as %1$s but sends as %2$s. Mail sent "as" a different domain fails that domain’s SPF/DKIM checks, so Gmail and Outlook junk it or drop it — and some servers silently discard it. Log in with the same mailbox you send from (change both together).', 'taxi-peninsula' ), $w['user'], $from ) );
+	}
+	if ( $w['force'] && is_email( $w['from'] ) && tp_setting( 'mail_from' ) && strtolower( $w['from'] ) !== strtolower( (string) tp_setting( 'mail_from' ) ) ) {
+		/* translators: 1: forced address 2: theme setting */
+		$out[] = array( 'warn', __( 'Two "from" settings', 'taxi-peninsula' ), sprintf( __( 'WP Mail SMTP has "Force From Email" on, so every email goes from %1$s and the theme’s "Send emails from" (%2$s) is ignored. Change the address in WP Mail SMTP → Settings.', 'taxi-peninsula' ), $w['from'], tp_setting( 'mail_from' ) ) );
+	}
+	return $out;
 }
 
 /**
@@ -225,6 +286,8 @@ function tp_mail_checks() {
 		$out[] = array( 'ok', __( 'Sender address', 'taxi-peninsula' ), sprintf( __( 'Emails come from %s.', 'taxi-peninsula' ), $from ) );
 	}
 
+	$out = array_merge( $out, tp_wpms_checks( $from ) );
+
 	if ( in_array( $domain, array( 'gmail.com', 'outlook.com', 'hotmail.com', 'bigpond.com', 'yahoo.com', 'icloud.com', 'live.com' ), true ) && ! $smtp ) {
 		/* translators: %s: domain */
 		$out[] = array( 'fail', __( 'Free email address', 'taxi-peninsula' ), sprintf( __( 'Mail "from" a %s address sent by your web server fails the provider’s security checks and is rejected. Use an address at your own domain, or connect an SMTP plugin to that mailbox.', 'taxi-peninsula' ), $domain ) );
@@ -259,7 +322,7 @@ function tp_mail_checks() {
 		/* translators: 1: count 2: error */
 		$out[] = array( 'fail', __( 'Recent emails', 'taxi-peninsula' ), sprintf( _n( '%1$d email failed in the last 7 days. Latest error: %2$s', '%1$d emails failed in the last 7 days. Latest error: %2$s', count( $failed ), 'taxi-peninsula' ), count( $failed ), $first['error'] ) );
 	} else {
-		$out[] = array( 'ok', __( 'Recent emails', 'taxi-peninsula' ), __( 'The mail server accepted every recent email. If customers still get nothing, it is being junked or dropped after leaving your site — see "Sending service", "SPF" and "DMARC" above.', 'taxi-peninsula' ) );
+		$out[] = array( 'ok', __( 'Recent emails', 'taxi-peninsula' ), __( 'The mail server accepted every recent email, so they left your website. If customers still get nothing, the mail server or the customer’s provider is junking or dropping them. Your host’s control panel shows what happened to each one: in cPanel, Email → Track Delivery (look for "rejected", "deferred" or "bounced"). Also check the sending mailbox for bounce messages.', 'taxi-peninsula' ) );
 	}
 	return $out;
 }

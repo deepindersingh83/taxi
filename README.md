@@ -8,6 +8,13 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### v2.7.4 — Email check reads WP Mail SMTP
+- Shows the WP Mail SMTP mailer, server and login it uses.
+- Warns when its Mailer is still "Default (none)", which means it isn't really using SMTP.
+- Warns when the mailbox it logs into is on a different domain from the "from" address (e.g. logs in as admin@syberinfo.com.au but sends as support@taxipeninsula.com.au). Gmail and Outlook junk or drop that mail.
+- Warns when "Force From Email" overrides the theme's "Send emails from".
+- Points to cPanel → Email → Track Delivery for emails the server accepted but never delivered.
+
 ### v2.7.3 — Email check (why customers aren't getting emails)
 - **Taxi settings → Email check:**
   - checks whether customer emails are switched on, whether an SMTP plugin is sending your mail, the "from" address, and your domain's SPF and DMARC records
