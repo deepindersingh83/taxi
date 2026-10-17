@@ -117,8 +117,8 @@ function tp_health_checks() {
 	$ok           = wp_mail( wp_get_current_user()->user_email, __( 'Connection check: email works', 'taxi-peninsula' ), __( 'This is a test from Bookings → Check connections. If you can read this, the website can send email.', 'taxi-peninsula' ), tp_mail_headers() );
 	$out['email'] = $ok
 		/* translators: %s: email */
-		? array( 'ok', __( 'Email', 'taxi-peninsula' ), sprintf( __( 'A test email was handed to the mail server for %s. If it does not arrive within a few minutes, set up an SMTP plugin with your email provider.', 'taxi-peninsula' ), wp_get_current_user()->user_email ), '' )
-		: array( 'fail', __( 'Email', 'taxi-peninsula' ), __( 'The server refused to send email. Install an SMTP plugin and connect it to your email provider.', 'taxi-peninsula' ), '' );
+		? array( 'ok', __( 'Email', 'taxi-peninsula' ), sprintf( __( 'A test email was handed to the mail server for %s. If it does not arrive within a few minutes, set up an SMTP plugin with your email provider.', 'taxi-peninsula' ), wp_get_current_user()->user_email ), 'tp-email-check' )
+		: array( 'fail', __( 'Email', 'taxi-peninsula' ), __( 'The server refused to send email. Install an SMTP plugin and connect it to your email provider.', 'taxi-peninsula' ), 'tp-email-check' );
 
 	return array_merge( $out, tp_seo_checks() );
 }

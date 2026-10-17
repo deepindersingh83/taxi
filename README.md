@@ -8,6 +8,16 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### v2.7.3 — Email check (why customers aren't getting emails)
+- **Taxi settings → Email check:**
+  - checks whether customer emails are switched on, whether an SMTP plugin is sending your mail, the "from" address, and your domain's SPF and DMARC records
+  - sends a test that looks like a real "booking received" email
+  - lists every email the site sent in the last 30 days, and whether the mail server accepted it (with the error if not)
+- Each booking's history now says whether its confirmation email went, or why not.
+- The Dashboard warns when emails have failed in the last 2 days.
+- **New setting:** Taxi settings → Settings → Email sending → "Send emails from". Use an address at your own domain (e.g. bookings@taxipeninsula.com.au) instead of WordPress's default wordpress@…, which spam filters distrust.
+- **The usual fix:** install the free WP Mail SMTP or FluentSMTP plugin, connect it to the mailbox you already use (Microsoft 365, Google Workspace or your host), and add SPF, DKIM and DMARC records for your domain.
+
 ### v2.7.2 — area pages editable in WordPress
 - Area pages (Website content → Areas) now open in the classic editor, so the page text, Details (places people travel to, local travel notes, local questions), Quick answer, Council area, Excerpt and Featured image are all on one screen. Before, the boxes were tucked away in a collapsed panel at the bottom of the block editor.
 - The text box starts with the automatic introduction, so you can see and change it. Areas you haven't edited still show the same text as before.
