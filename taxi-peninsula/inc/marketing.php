@@ -611,7 +611,7 @@ function tp_render_offers_page() {
 	<div class="wrap tp-offers">
 		<h1><?php esc_html_e( 'News & offers', 'taxi-peninsula' ); ?></h1>
 		<?php if ( ! tp_marketing_enabled() ) : ?>
-			<div class="notice notice-warning"><p><?php printf( /* translators: %s: link */ esc_html__( 'Sign-up is switched off. Turn it on in %s.', 'taxi-peninsula' ), '<a href="' . esc_url( admin_url( 'admin.php?page=tp-settings#tp-section-marketing' ) ) . '">' . esc_html__( 'Bookings → Settings → News & offers', 'taxi-peninsula' ) . '</a>' ); ?></p></div>
+			<div class="notice notice-warning"><p><?php printf( /* translators: %s: link */ esc_html__( 'Sign-up is switched off. Turn it on in %s.', 'taxi-peninsula' ), '<a href="' . esc_url( tp_settings_url( 'marketing', 'tp-section-marketing' ) ) . '">' . esc_html__( 'Bookings → Settings → News & offers', 'taxi-peninsula' ) . '</a>' ); ?></p></div>
 		<?php endif; ?>
 		<?php if ( 'queued' === $notice ) : ?>
 			<div class="notice notice-success"><p><?php esc_html_e( 'Your message is being sent in small batches over the next few minutes.', 'taxi-peninsula' ); ?></p></div>

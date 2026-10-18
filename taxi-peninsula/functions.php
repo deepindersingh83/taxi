@@ -7,13 +7,14 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TP_VERSION', '2.7.5' );
+define( 'TP_VERSION', '2.7.6' );
 define( 'TP_DIR', get_template_directory() );
 define( 'TP_URI', get_template_directory_uri() );
 
 require TP_DIR . '/inc/helpers.php';
 require TP_DIR . '/inc/admin-menus.php';
 require TP_DIR . '/inc/settings.php';
+require TP_DIR . '/inc/settings-tabs.php';
 require TP_DIR . '/inc/languages.php';
 require TP_DIR . '/inc/setup.php';
 require TP_DIR . '/inc/customizer.php';

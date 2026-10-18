@@ -647,7 +647,7 @@ function tp_render_privacy_page() {
 				<h2><?php esc_html_e( 'Automatic clean-up', 'taxi-peninsula' ); ?></h2>
 				<p>
 					<?php echo tp_setting( 'privacy_cleanup' ) ? esc_html__( 'On — runs once a day.', 'taxi-peninsula' ) : esc_html__( 'Off.', 'taxi-peninsula' ); ?>
-					<a href="<?php echo esc_url( admin_url( 'admin.php?page=tp-settings#tp_setting_privacy_contact' ) ); ?>"><?php esc_html_e( 'Change the periods', 'taxi-peninsula' ); ?></a>
+					<a href="<?php echo esc_url( tp_settings_url( 'privacy' ) ); ?>"><?php esc_html_e( 'Change the periods', 'taxi-peninsula' ); ?></a>
 				</p>
 				<table class="widefat striped">
 					<tbody>

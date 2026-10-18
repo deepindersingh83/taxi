@@ -26,6 +26,38 @@ function tp_sms_enabled() {
  * @return true|WP_Error
  */
 function tp_send_sms( $to, $message ) {
+	$result = tp_send_sms_now( $to, $message );
+	tp_sms_log_add( $to, $message, $result );
+	return $result;
+}
+
+/**
+ * Recent SMS (last 100, kept 30 days) for Taxi settings → SMS.
+ */
+function tp_sms_log_add( $to, $message, $result ) {
+	$log = (array) get_option( 'tp_sms_log', array() );
+	array_unshift(
+		$log,
+		array(
+			'time'  => time(),
+			'to'    => (string) ( tp_e164( $to ) ?: $to ),
+			'text'  => mb_substr( wp_strip_all_tags( (string) $message ), 0, 80 ),
+			'ok'    => ! is_wp_error( $result ),
+			'error' => is_wp_error( $result ) ? $result->get_error_message() : '',
+		)
+	);
+	update_option( 'tp_sms_log', array_slice( $log, 0, 100 ), false );
+}
+
+add_action(
+	'tp_privacy_cleanup',
+	static function () {
+		$log = array_filter( (array) get_option( 'tp_sms_log', array() ), static fn( $e ) => ( $e['time'] ?? 0 ) > time() - 30 * DAY_IN_SECONDS );
+		update_option( 'tp_sms_log', array_values( $log ), false );
+	}
+);
+
+function tp_send_sms_now( $to, $message ) {
 	if ( ! tp_sms_enabled() ) {
 		return new WP_Error( 'tp_sms_disabled', __( 'SMS is not configured.', 'taxi-peninsula' ) );
 	}
@@ -247,7 +279,7 @@ function tp_handle_test_sms() {
 		is_wp_error( $result ) ? array( 'error', $result->get_error_message() ) : array( 'success', __( 'Test SMS sent.', 'taxi-peninsula' ) ),
 		60
 	);
-	wp_safe_redirect( admin_url( 'admin.php?page=tp-settings' ) );
+	wp_safe_redirect( tp_settings_url( 'sms' ) );
 	exit;
 }
 

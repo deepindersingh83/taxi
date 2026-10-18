@@ -457,7 +457,7 @@ function tp_render_breach_plan() {
 		<?php if ( $team ) : ?>
 			<ul class="ul-disc"><?php foreach ( $team as $t ) : ?><li><?php echo esc_html( $t ); ?></li><?php endforeach; ?></ul>
 		<?php else : ?>
-			<p class="description"><?php printf( /* translators: %s: link */ esc_html__( 'Add the people to call in %s.', 'taxi-peninsula' ), '<a href="' . esc_url( admin_url( 'admin.php?page=tp-settings' ) ) . '">' . esc_html__( 'Taxi settings → Settings → Privacy', 'taxi-peninsula' ) . '</a>' ); ?></p>
+			<p class="description"><?php printf( /* translators: %s: link */ esc_html__( 'Add the people to call in %s.', 'taxi-peninsula' ), '<a href="' . esc_url( tp_settings_url( 'privacy' ) ) . '">' . esc_html__( 'Taxi settings → Settings → Privacy', 'taxi-peninsula' ) . '</a>' ); ?></p>
 		<?php endif; ?>
 		<?php foreach ( tp_breach_steps() as $step ) : ?>
 			<h2><?php echo esc_html( $step[0] ); ?></h2>

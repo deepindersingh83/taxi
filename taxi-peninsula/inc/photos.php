@@ -132,7 +132,7 @@ function tp_render_photo_checklist() {
 		<table class="widefat striped" style="max-width:900px">
 			<tbody>
 				<tr><td><strong><?php esc_html_e( 'Hero photo', 'taxi-peninsula' ); ?></strong><br><small><?php esc_html_e( 'The big image at the top of the home page. A real vehicle with a passenger works best.', 'taxi-peninsula' ); ?></small></td>
-					<td><?php echo $hero ? '✅ ' . esc_html__( 'Done', 'taxi-peninsula' ) : '⬜ ' . esc_html__( 'Missing', 'taxi-peninsula' ); ?></td>
+					<td><?php echo tp_settings_status_icon( $hero ? 'ok' : 'warn' ) . ' ' . ( $hero ? esc_html__( 'Done', 'taxi-peninsula' ) : esc_html__( 'Missing', 'taxi-peninsula' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped. ?></td>
 					<td><a class="button" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[control]=tp_hero_image' ) ); ?>"><?php esc_html_e( 'Choose in the Customizer', 'taxi-peninsula' ); ?></a></td></tr>
 			</tbody>
 		</table>
@@ -167,7 +167,7 @@ function tp_render_photo_checklist() {
 			?>
 			<h3><?php echo esc_html( $g[0] ); ?> <small>(<?php /* translators: 1: missing 2: total */ echo esc_html( sprintf( __( '%1$d of %2$d missing', 'taxi-peninsula' ), $g[3], $g[2] ) ); ?>)</small></h3>
 			<?php if ( ! $g[1] ) : ?>
-				<p>✅ <?php esc_html_e( 'All done.', 'taxi-peninsula' ); ?></p>
+				<p><?php echo tp_settings_status_icon( 'ok' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper. ?> <?php esc_html_e( 'All done.', 'taxi-peninsula' ); ?></p>
 			<?php else : ?>
 				<ul class="ul-disc">
 					<?php foreach ( $g[1] as $item ) : ?>

@@ -150,7 +150,7 @@ function tp_render_gbp_page() {
 				printf(
 					/* translators: %s: link */
 					esc_html__( 'Paste the client ID and secret in %s.', 'taxi-peninsula' ),
-					'<a href="' . esc_url( admin_url( 'admin.php?page=tp-settings' ) ) . '">' . esc_html__( 'Bookings → Settings → Google profile posts', 'taxi-peninsula' ) . '</a>'
+					'<a href="' . esc_url( tp_settings_url( 'gbp' ) ) . '">' . esc_html__( 'Taxi settings → Google reviews → Google profile posts', 'taxi-peninsula' ) . '</a>'
 				);
 				?>
 			</li>

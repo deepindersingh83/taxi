@@ -294,3 +294,21 @@
 	#adminmenumain, #wpadminbar, #wpfooter, .tp-breach .button, .notice { display: none !important; }
 	#wpcontent { margin: 0 !important; }
 }
+
+/* Settings tabs */
+.tp-settings .nav-tab-wrapper { margin-bottom: 16px; }
+.tp-tab-flag { display: inline-grid; place-items: center; min-width: 16px; height: 16px; margin-left: 4px; border-radius: 8px; font-size: 11px; line-height: 1; color: #fff; vertical-align: 1px; }
+.tp-tab-flag--fail { background: #b32d2e; }
+.tp-tab-flag--warn { background: #996800; }
+.tp-settings__layout { display: grid; gap: 24px; align-items: start; }
+@media (min-width: 1280px) { .tp-settings__layout { grid-template-columns: minmax(0, 1fr) 380px; } .tp-settings__help { position: sticky; top: 46px; } }
+.tp-settings__help { padding: 4px 16px 16px; background: #fff; border: 1px solid #c3c4c7; border-left: 4px solid #2271b1; }
+.tp-checks { margin: 0 0 12px; }
+.tp-checks__item { margin: 0 0 8px; }
+.tp-settings__test { display: inline-block; margin: 0 6px 8px 0; }
+.tp-settings__preview { padding: 12px; background: #f6f7f7; border-radius: 4px; }
+.tp-settings__help table td { font-size: 12px; vertical-align: top; }
+.tp-status--ok { color: #00a32a; }
+.tp-status--warn { color: #996800; }
+.tp-status--fail { color: #d63638; }
+.tp-status--off { color: #8c8f94; }

@@ -389,7 +389,6 @@ add_action(
 );
 
 function tp_render_mail_check() {
-	$icons = array( 'ok' => '✅', 'warn' => '⚠️', 'fail' => '❌', 'off' => '➖' );
 	$log   = (array) get_option( 'tp_mail_log', array() );
 	?>
 	<div class="wrap tp-mail-check">
@@ -399,7 +398,7 @@ function tp_render_mail_check() {
 		<table class="widefat striped" style="max-width:1000px">
 			<tbody>
 				<?php foreach ( tp_mail_checks() as $c ) : ?>
-					<tr><td style="width:2em"><?php echo esc_html( $icons[ $c[0] ] ); ?></td><td style="width:12em"><strong><?php echo esc_html( $c[1] ); ?></strong></td><td><?php echo esc_html( $c[2] ); ?></td></tr>
+					<tr><td style="width:2em"><?php echo tp_settings_status_icon( $c[0] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper. ?></td><td style="width:12em"><strong><?php echo esc_html( $c[1] ); ?></strong></td><td><?php echo esc_html( $c[2] ); ?></td></tr>
 				<?php endforeach; ?>
 			</tbody>
 		</table>
@@ -426,7 +425,7 @@ function tp_render_mail_check() {
 							<td><?php echo esc_html( wp_date( 'D j M g:ia', (int) $e['time'] ) ); ?></td>
 							<td><?php echo esc_html( $e['to'] ); ?></td>
 							<td><?php echo esc_html( $e['subject'] ); ?></td>
-							<td><?php echo $e['ok'] ? '✅ ' . esc_html__( 'Accepted by mail server', 'taxi-peninsula' ) : '❌ ' . esc_html( $e['error'] ?: __( 'Failed', 'taxi-peninsula' ) ); ?></td>
+							<td><?php echo $e['ok'] ? tp_settings_status_icon( 'ok' ) . ' ' . esc_html__( 'Accepted by mail server', 'taxi-peninsula' ) : tp_settings_status_icon( 'fail' ) . ' ' . esc_html( $e['error'] ?: __( 'Failed', 'taxi-peninsula' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper. ?></td>
 						</tr>
 					<?php endforeach; ?>
 				</tbody>

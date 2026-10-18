@@ -8,6 +8,27 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### v2.7.6 — settings split into tabs, each with tests and troubleshooting
+- **Taxi settings → Settings** is now split into tabs: Overview, SMS, Email, Payments & invoices, Bookings & fees, Maps & addresses, Google reviews, Spam & security, Privacy, Marketing & SEO.
+- Each tab saves only its own settings. A red **!** or amber **•** on a tab means something there needs attention.
+- **Overview** shows every area at a glance, with the most important problem in each.
+- Every tab has a **Test & troubleshoot** box: plain-English checks of what's set up and what to do about anything missing, plus live tests:
+  - **SMS:**
+    - "Check login" (shows the ClickSend balance) and "Send a test text"
+    - a list of recent texts with errors
+    - sender-name rules (1–11 letters or numbers)
+    - tips for when texts don't arrive
+  - **Email:** links to Email check.
+  - **Payments:** "Check Stripe", test-key and webhook warnings, missing ABN, BPAY/bank details that won't show, and a preview of the invoice payment box.
+  - **Bookings & fees:**
+    - "Check flight data" and "Check weather now"
+    - whether the terms page is published
+    - a preview of the cancellation box customers see
+  - **Maps & addresses:** "Test address suggestions" and "Test a fare estimate" (Frankston → Melbourne Airport).
+  - **Google reviews:** "Fetch reviews now", plus the Place ID finder.
+  - **Spam & security, Privacy, Marketing:** status checks.
+- Every text message is now logged (last 30 days), like emails.
+
 ### v2.7.5 — footer logo follows the header logo
 - New **"Logo in the footer"** choice in Appearance → Customize → Site Identity:
   - **Same as the header logo, unless I upload a footer logo** (default): changing the logo now changes the footer too.

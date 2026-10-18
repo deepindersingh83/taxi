@@ -273,7 +273,21 @@ function tp_sanitize_settings( $input ) {
 	$old   = (array) get_option( 'tp_settings', array() );
 	$clean = array();
 
+	// Saving one tab only changes that tab's fields; the rest stay as they were.
+	$only = null;
+	if ( ! empty( $input['_tab'] ) && function_exists( 'tp_settings_tabs' ) ) {
+		$tabs = tp_settings_tabs();
+		$only = $tabs[ sanitize_key( $input['_tab'] ) ][1] ?? array();
+	}
+	unset( $input['_tab'] );
+
 	foreach ( tp_settings_schema() as $key => $field ) {
+		if ( null !== $only && ! in_array( $field[0], $only, true ) ) {
+			if ( array_key_exists( $key, $old ) ) {
+				$clean[ $key ] = $old[ $key ];
+			}
+			continue;
+		}
 		$raw = isset( $input[ $key ] ) ? $input[ $key ] : null;
 		switch ( $field[2] ) {
 			case 'checkbox':
@@ -306,34 +320,5 @@ function tp_sanitize_settings( $input ) {
 }
 
 function tp_render_settings_page() {
-	if ( ! current_user_can( 'manage_options' ) ) {
-		return;
-	}
-	?>
-	<div class="wrap tp-settings">
-		<h1><?php esc_html_e( 'Booking settings', 'taxi-peninsula' ); ?></h1>
-		<p><?php esc_html_e( 'Contact details, hero text and service areas are under Appearance → Customize → Taxi Peninsula.', 'taxi-peninsula' ); ?></p>
-		<form method="post" action="options.php">
-			<?php
-			settings_fields( 'tp_settings' );
-			do_settings_sections( 'tp-settings' );
-			submit_button();
-			?>
-		</form>
-
-		<?php tp_render_place_finder(); ?>
-
-		<?php if ( 'none' !== tp_setting( 'sms_provider' ) ) : ?>
-			<hr>
-			<h2><?php esc_html_e( 'Send a test SMS', 'taxi-peninsula' ); ?></h2>
-			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
-				<input type="hidden" name="action" value="tp_test_sms">
-				<?php wp_nonce_field( 'tp_test_sms' ); ?>
-				<label for="tp_test_to" class="screen-reader-text"><?php esc_html_e( 'Mobile number', 'taxi-peninsula' ); ?></label>
-				<input type="tel" id="tp_test_to" name="to" placeholder="04xx xxx xxx" required>
-				<?php submit_button( __( 'Send test', 'taxi-peninsula' ), 'secondary', 'submit', false ); ?>
-			</form>
-		<?php endif; ?>
-	</div>
-	<?php
+	tp_render_settings_tabs_page();
 }

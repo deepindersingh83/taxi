@@ -236,7 +236,7 @@ function tp_render_alerts_page() {
 
 		<h2><?php esc_html_e( 'Bureau of Meteorology warnings', 'taxi-peninsula' ); ?></h2>
 		<?php if ( ! tp_setting( 'alerts_weather' ) ) : ?>
-			<p><?php printf( /* translators: %s: settings link */ esc_html__( 'Weather checks are off. Turn them on in %s.', 'taxi-peninsula' ), '<a href="' . esc_url( admin_url( 'admin.php?page=tp-settings' ) ) . '">' . esc_html__( 'Settings', 'taxi-peninsula' ) . '</a>' ); ?></p>
+			<p><?php printf( /* translators: %s: settings link */ esc_html__( 'Weather checks are off. Turn them on in %s.', 'taxi-peninsula' ), '<a href="' . esc_url( tp_settings_url( 'alerts' ) ) . '">' . esc_html__( 'Settings', 'taxi-peninsula' ) . '</a>' ); ?></p>
 		<?php else : ?>
 			<p class="description">
 				<?php
