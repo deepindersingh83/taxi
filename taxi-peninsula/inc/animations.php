@@ -279,7 +279,7 @@ function tp_service_scene_name( $post = null ) {
  * ----------------------------------------------------------------------- */
 
 add_action( 'wp_enqueue_scripts', static function () {
-	wp_enqueue_style( 'tp-animations', TP_URI . '/assets/css/animations.css', array( 'tp-main' ), TP_VERSION );
+	tp_enqueue_style( 'tp-animations', 'assets/css/animations.css', array( 'tp-main' ) );
 }, 15 );
 
 add_filter( 'body_class', static function ( $classes ) {

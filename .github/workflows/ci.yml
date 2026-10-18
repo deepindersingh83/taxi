@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    name: PHP ${{ matrix.php }} syntax
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['7.4', '8.0', '8.1', '8.2', '8.3', '8.4']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+      - name: Lint every PHP file
+        run: |
+          find taxi-peninsula taxi-peninsula-core -name '*.php' -print0 \
+            | xargs -0 -n1 -P4 php -l -d display_errors=1 > lint.txt || { grep -v '^No syntax errors' lint.txt; exit 1; }
+
+  assets:
+    name: Built CSS/JS up to date
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci --prefix tools
+      - name: Minified and right-to-left files match their sources
+        run: node tools/build.js --check
+
+  smoke:
+    name: WordPress smoke test
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: wp
+        ports: ['3306:3306']
+        options: --health-cmd="mysqladmin ping -proot" --health-interval=5s --health-retries=20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mysqli
+          coverage: none
+          tools: wp-cli
+      - name: Install WordPress with the theme and plugin
+        run: |
+          mkdir site && cd site
+          wp core download --quiet
+          wp config create --dbname=wp --dbuser=root --dbpass=root --dbhost=127.0.0.1 --quiet
+          wp config set WP_DEBUG true --raw && wp config set WP_DEBUG_LOG true --raw && wp config set WP_DEBUG_DISPLAY false --raw
+          wp core install --url=http://localhost:8080 --title='Taxi Peninsula' --admin_user=admin --admin_password=admin --admin_email=ci@example.com --skip-email --quiet
+          ln -s "$GITHUB_WORKSPACE/taxi-peninsula" wp-content/themes/taxi-peninsula
+          ln -s "$GITHUB_WORKSPACE/taxi-peninsula-core" wp-content/plugins/taxi-peninsula-core
+          wp theme activate taxi-peninsula && wp plugin activate taxi-peninsula-core
+          wp rewrite structure '/%postname%/' --hard
+          wp post create --post_type=page --post_status=publish --post_title='Book a taxi' --post_name=book-a-taxi --post_content='[tp_booking_form]' --quiet
+      - name: Load the main pages
+        run: |
+          cd site
+          php -S localhost:8080 > /dev/null 2>&1 &
+          sleep 2
+          wp eval 'tp_trips_backfill();'
+          fail=0
+          for path in / /book-a-taxi/ /my-account/ /contact/ '/?lang=ar' '/?lang=vi' /wp-login.php '/?s=wheelchair' /nope-404/; do
+            code=$(curl -s -o page.html -w '%{http_code}' "http://localhost:8080$path")
+            echo "$code $path"
+            case "$code" in 200|404) ;; *) fail=1 ;; esac
+            grep -q 'site-header' page.html || { [ "$path" = /wp-login.php ] || { echo "  missing header"; fail=1; }; }
+          done
+          grep -q 'id="bf-pickup"' <(curl -s http://localhost:8080/book-a-taxi/) || { echo "booking form missing"; fail=1; }
+          wp eval-file "$GITHUB_WORKSPACE/.github/smoke-booking.php"
+          wp theme activate twentytwentyfive
+          wp eval 'echo post_type_exists("tp_booking") ? "plugin keeps bookings visible without the theme\n" : exit(1);'
+          if [ -s wp-content/debug.log ]; then echo "PHP errors:"; cat wp-content/debug.log; fail=1; fi
+          exit $fail

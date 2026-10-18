@@ -182,6 +182,7 @@ function tp_booking_fields() {
 		'dropoff'       => array( __( 'Drop-off address', 'taxi-peninsula' ), 'text' ),
 		'date'          => array( __( 'Pick-up date', 'taxi-peninsula' ), 'date' ),
 		'time'          => array( __( 'Pick-up time', 'taxi-peninsula' ), 'time' ),
+		'when_ready'    => array( __( 'Pick up when ready (e.g. hospital discharge — the time is the earliest likely)', 'taxi-peninsula' ), 'checkbox' ),
 		'passengers'    => array( __( 'Passengers', 'taxi-peninsula' ), 'number' ),
 		'wheelchairs'   => array( __( 'Wheelchairs', 'taxi-peninsula' ), 'number' ),
 		'vehicle'       => array( __( 'Vehicle', 'taxi-peninsula' ), 'vehicle' ),
@@ -244,6 +245,7 @@ function tp_get_booking( $post_id ) {
 		'fare'        => get_post_meta( $post_id, '_tp_fare', true ),
 		'rating'      => (int) get_post_meta( $post_id, '_tp_rating', true ),
 		'invoice'     => get_post_meta( $post_id, '_tp_invoice_status', true ),
+		'ready_at'    => (int) get_post_meta( $post_id, '_tp_ready_at', true ),
 	);
 	foreach ( array_keys( tp_booking_fields() ) as $key ) {
 		$data[ $key ] = get_post_meta( $post_id, '_tp_' . $key, true );
@@ -291,6 +293,7 @@ function tp_sanitize_booking( array $raw, $strict = true ) {
 		'dropoff'       => sanitize_text_field( $raw['dropoff'] ?? '' ),
 		'date'          => sanitize_text_field( $raw['date'] ?? '' ),
 		'time'          => sanitize_text_field( $raw['time'] ?? '' ),
+		'when_ready'    => empty( $raw['when_ready'] ) ? 0 : 1,
 		'passengers'    => max( 1, min( 11, absint( $raw['passengers'] ?? 1 ) ) ),
 		'wheelchairs'   => min( 4, absint( $raw['wheelchairs'] ?? 0 ) ),
 		'vehicle'       => sanitize_key( $raw['vehicle'] ?? 'wat' ),
@@ -308,6 +311,11 @@ function tp_sanitize_booking( array $raw, $strict = true ) {
 	);
 
 	$errors = array();
+
+	// "Pick up when ready": the time is only the earliest likely time, and may be left empty.
+	if ( $d['when_ready'] && '' === $d['time'] ) {
+		$d['time'] = '08:00';
+	}
 
 	foreach ( array( 'name', 'phone', 'pickup', 'dropoff', 'date', 'time' ) as $req ) {
 		if ( '' === $d[ $req ] ) {
@@ -360,7 +368,10 @@ function tp_sanitize_booking( array $raw, $strict = true ) {
 	if ( $strict && $date_ok && $time_ok ) {
 		$pickup = DateTimeImmutable::createFromFormat( 'Y-m-d H:i', $d['date'] . ' ' . $d['time'], wp_timezone() );
 		$min    = ( new DateTimeImmutable( 'now', wp_timezone() ) )->modify( '+' . absint( tp_opt( 'min_notice' ) ) . ' minutes' );
-		if ( ! $pickup || $pickup < $min ) {
+		if ( $pickup && $pickup < $min && $d['when_ready'] && $d['date'] === $min->format( 'Y-m-d' ) ) {
+			// Waiting to be discharged today: the earliest pick-up is simply the minimum notice from now.
+			$d['time'] = wp_date( 'H:i', (int) ( ceil( $min->getTimestamp() / 900 ) * 900 ) );
+		} elseif ( ! $pickup || $pickup < $min ) {
 			$errors['time'] = sprintf(
 				/* translators: %s: phone number */
 				__( 'Online bookings need a little notice. For an urgent pick-up please call %s.', 'taxi-peninsula' ),
@@ -596,7 +607,12 @@ function tp_format_pickup( array $b, $format = 'D j M Y, g:i a' ) {
 		return '';
 	}
 	$dt = DateTimeImmutable::createFromFormat( 'Y-m-d H:i', $b['date'] . ' ' . ( $b['time'] ?: '00:00' ), wp_timezone() );
-	return $dt ? wp_date( $format, $dt->getTimestamp() ) : $b['date'] . ' ' . $b['time'];
+	$out = $dt ? wp_date( $format, $dt->getTimestamp() ) : $b['date'] . ' ' . $b['time'];
+	if ( ! empty( $b['when_ready'] ) && empty( $b['ready_at'] ) ) {
+		/* translators: %s: date and earliest time */
+		$out = sprintf( __( '%s or later — when ready', 'taxi-peninsula' ), $out );
+	}
+	return $out;
 }
 
 /**

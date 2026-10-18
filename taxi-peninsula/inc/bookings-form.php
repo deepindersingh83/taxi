@@ -337,7 +337,8 @@ function tp_send_status_email( $post_id ) {
 
 function tp_send_status_email_run( $post_id ) {
 	$b = tp_get_booking( $post_id );
-	if ( ! is_email( $b['email'] ) ) {
+	// "Email customers a confirmation and status updates" (Customize → Bookings) switches these off; SMS is separate.
+	if ( ! tp_opt( 'customer_emails' ) || ! is_email( $b['email'] ) ) {
 		return false;
 	}
 	$site   = wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );

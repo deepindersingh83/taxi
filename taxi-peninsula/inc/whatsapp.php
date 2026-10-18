@@ -93,11 +93,13 @@ add_action(
 			$message = sprintf( __( 'Hi, I have a question about my booking %s.', 'taxi-peninsula' ), $ref );
 		}
 		?>
+		<aside class="whatsapp-wrap" aria-label="<?php esc_attr_e( 'WhatsApp', 'taxi-peninsula' ); ?>">
 		<a class="whatsapp-button" href="<?php echo esc_url( tp_whatsapp_link( $message ) ); ?>" target="_blank" rel="noopener">
 			<?php echo tp_whatsapp_icon(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG. ?>
 			<span class="whatsapp-button__label"><?php esc_html_e( 'WhatsApp us', 'taxi-peninsula' ); ?></span>
 			<span class="screen-reader-text"><?php esc_html_e( '(opens WhatsApp)', 'taxi-peninsula' ); ?></span>
 		</a>
+		</aside>
 		<?php
 	},
 	5

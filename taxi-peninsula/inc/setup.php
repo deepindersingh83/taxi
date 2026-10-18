@@ -75,12 +75,44 @@ function tp_widgets_init() {
 	);
 }
 
+/**
+ * URL of a theme asset, using the minified copy (built by tools/build.js)
+ * unless SCRIPT_DEBUG is on or the copy is missing.
+ *
+ * @param string $path e.g. 'assets/css/main.css'.
+ */
+function tp_asset( $path ) {
+	return TP_URI . '/' . ( tp_asset_min( $path ) ? preg_replace( '/\.(css|js)$/', '.min.$1', $path ) : $path );
+}
+
+function tp_asset_min( $path ) {
+	return ! ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) && file_exists( TP_DIR . '/' . preg_replace( '/\.(css|js)$/', '.min.$1', $path ) );
+}
+
+/**
+ * Enqueue a theme stylesheet; the Arabic swap (inc/languages.php) then picks
+ * the matching -rtl(.min) file.
+ */
+function tp_enqueue_style( $handle, $path, $deps = array() ) {
+	wp_enqueue_style( $handle, tp_asset( $path ), $deps, TP_VERSION );
+	if ( tp_asset_min( $path ) ) {
+		wp_style_add_data( $handle, 'suffix', '.min' );
+	}
+}
+
+// No emoji script: the theme uses its own icons and every browser draws emoji.
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+add_filter( 'emoji_svg_url', '__return_false' );
+
 add_action( 'wp_enqueue_scripts', 'tp_enqueue' );
 function tp_enqueue() {
-	// Fonts are self-hosted; the chosen one is enqueued in inc/design.php.
-	wp_enqueue_style( 'tp-main', TP_URI . '/assets/css/main.css', array(), TP_VERSION );
-	wp_enqueue_style( 'tp-patterns', TP_URI . '/assets/css/patterns.css', array( 'tp-main' ), TP_VERSION );
-	wp_enqueue_script( 'tp-main', TP_URI . '/assets/js/main.js', array(), TP_VERSION, true );
+	// Fonts are self-hosted; the chosen one is inlined in inc/design.php.
+	tp_enqueue_style( 'tp-main', 'assets/css/main.css' );
+	tp_enqueue_style( 'tp-patterns', 'assets/css/patterns.css', array( 'tp-main' ) );
+	wp_enqueue_script( 'tp-main', tp_asset( 'assets/js/main.js' ), array(), TP_VERSION, array( 'in_footer' => true, 'strategy' => 'defer' ) );
 	wp_add_inline_script(
 		'tp-main',
 		'window.tpI18n = ' . wp_json_encode(

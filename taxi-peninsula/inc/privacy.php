@@ -1031,6 +1031,9 @@ function tp_privacy_providers() {
 	if ( function_exists( 'tp_addressfinder_on' ) && tp_addressfinder_on() && tp_setting( 'places_enabled' ) ) {
 		$list[] = array( 'Addressfinder', __( 'address suggestions (the addresses you type are sent to Addressfinder)', 'taxi-peninsula' ), __( 'Australia and New Zealand', 'taxi-peninsula' ) );
 	}
+	if ( tp_setting( 'live_location' ) ) {
+		$list[] = array( 'OpenStreetMap', __( 'the map showing where your driver is on your booking page (your browser loads the map pictures from OpenStreetMap). The driver’s location is only shared while they are on the way to you and is deleted when the trip ends', 'taxi-peninsula' ), __( 'United Kingdom and other countries', 'taxi-peninsula' ) );
+	}
 	if ( function_exists( 'tp_ga4_id' ) && tp_ga4_id() ) {
 		$list[] = array( 'Google Analytics', __( 'counting website visits, only if you accept analytics cookies', 'taxi-peninsula' ), __( 'United States and other countries', 'taxi-peninsula' ) );
 	}

@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 1.9.0\n"
+"Project-Id-Version: Taxi Peninsula 2.8.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -20,8 +20,23 @@ msgid "https://taxipeninsula.com.au"
 msgstr "https://taxipeninsula.com.au"
 
 #. Description of the theme
-msgid "Accessible wheelchair-taxi booking theme for Melbourne. Online bookings with repeat trips, account/invoice and Stripe deposits; customer booking lookup; wp-admin bookings manager with calendar, run sheet, reports, driver & vehicle assignment and CSV export; SMS (ClickSend/Twilio) and email notifications; driver job pages; FAQ, fleet, NDIS, service and suburb pages; SEO structured data; spam protection; page templates (About, Contact, Services, Blog, Policy, Full width, Canvas) and block patterns; Google address suggestions and fare estimates; cookie consent + GA4; breadcrumbs and local SEO; security hardening; fluid \"dynamic type\" with text-size and high-contrast controls."
-msgstr "适用于墨尔本的无障碍轮椅出租车预约主题。支持在线预约（含定期行程）、账户/发票付款及 Stripe 订金；客户预约查询；后台预约管理（含日历、出车单、报表、司机与车辆分配及 CSV 导出）；SMS（ClickSend/Twilio）和电子邮件通知；司机工单页面；常见问题、车队、NDIS、服务及区域页面；SEO 结构化数据；防垃圾信息；页面模板（关于我们、联系我们、服务、博客、政策、全宽、空白画布）及区块样式；Google 地址提示与车费估算；Cookie 同意 + GA4；面包屑导航与本地 SEO；安全加固；流式“动态字体”，并提供字号和高对比度控制。"
+msgid ""
+"Accessible wheelchair-taxi booking theme for Melbourne. Online bookings with"
+" repeat trips, account/invoice and Stripe deposits; customer booking lookup;"
+" wp-admin bookings manager with calendar, run sheet, reports, driver & "
+"vehicle assignment and CSV export; SMS (ClickSend/Twilio) and email "
+"notifications; driver job pages; FAQ, fleet, NDIS, service and suburb pages;"
+" SEO structured data; spam protection; page templates (About, Contact, "
+"Services, Blog, Policy, Full width, Canvas) and block patterns; Google "
+"address suggestions and fare estimates; cookie consent + GA4; breadcrumbs "
+"and local SEO; security hardening; fluid \"dynamic type\" with text-size and"
+" high-contrast controls."
+msgstr ""
+"适用于墨尔本的无障碍轮椅出租车预约主题。支持在线预约（含定期行程）、账户/发票付款及 Stripe "
+"订金；客户预约查询；后台预约管理（含日历、出车单、报表、司机与车辆分配及 CSV "
+"导出）；SMS（ClickSend/Twilio）和电子邮件通知；司机工单页面；常见问题、车队、NDIS、服务及区域页面；SEO "
+"结构化数据；防垃圾信息；页面模板（关于我们、联系我们、服务、博客、政策、全宽、空白画布）及区块样式；Google 地址提示与车费估算；Cookie 同意"
+" + GA4；面包屑导航与本地 SEO；安全加固；流式“动态字体”，并提供字号和高对比度控制。"
 
 msgid "Page not found"
 msgstr "找不到页面"
@@ -38,8 +53,12 @@ msgstr "预约出租车"
 msgid "Areas we cover"
 msgstr "服务区域"
 
-msgid "Wheelchair accessible taxis across Melbourne and the Mornington Peninsula. Not listed? Call us — we travel further on request."
-msgstr "我们在墨尔本和莫宁顿半岛（Mornington Peninsula）各地提供无障碍轮椅出租车。您的地区不在列表中？请致电我们——我们可应要求前往更远的地方。"
+msgid ""
+"Wheelchair accessible taxis across Melbourne and the Mornington Peninsula. "
+"Not listed? Call us — we travel further on request."
+msgstr ""
+"我们在墨尔本和莫宁顿半岛（Mornington "
+"Peninsula）各地提供无障碍轮椅出租车。您的地区不在列表中？请致电我们——我们可应要求前往更远的地方。"
 
 #. translators: %s: suburb translators: %s: area
 msgid "Wheelchair taxi %s"
@@ -48,7 +67,9 @@ msgstr "%s 轮椅出租车"
 msgid "Our services"
 msgstr "我们的服务"
 
-msgid "Reliable wheelchair accessible transport for everyday trips and important appointments."
+msgid ""
+"Reliable wheelchair accessible transport for everyday trips and important "
+"appointments."
 msgstr "可靠的无障碍轮椅交通，适合日常出行和重要预约。"
 
 #. translators: %s: number of comments
@@ -56,7 +77,8 @@ msgid "%s comment"
 msgid_plural "%s comments"
 msgstr[0] "%s 条评论"
 
-msgid "Wheelchair accessible taxis for Melbourne and the Mornington Peninsula."
+msgid ""
+"Wheelchair accessible taxis for Melbourne and the Mornington Peninsula."
 msgstr "服务墨尔本和莫宁顿半岛的无障碍轮椅出租车。"
 
 msgid "Book a taxi online"
@@ -164,7 +186,8 @@ msgid "Who is travelling?"
 msgstr "谁乘车？"
 
 #. translators: %s: booking reference
-msgid "Details copied from %s. Choose the date and check the times, then send."
+msgid ""
+"Details copied from %s. Choose the date and check the times, then send."
 msgstr "已从 %s 复制详情。请选择日期并核对时间，然后提交。"
 
 msgid "Me"
@@ -176,7 +199,8 @@ msgstr "— 新客户 —"
 msgid "Choosing a client fills in their details and wheelchair notes."
 msgstr "选择客户后，系统会自动填入其详情和轮椅备注。"
 
-msgid "Choosing a saved passenger fills in their details and wheelchair notes."
+msgid ""
+"Choosing a saved passenger fills in their details and wheelchair notes."
 msgstr "选择已保存的乘客后，系统会自动填入其详情和轮椅备注。"
 
 msgid "Save this person as a client in my account"
@@ -201,7 +225,9 @@ msgstr "由 %1$s（%2$s）预约"
 msgid "Your account has been deleted. Thank you for travelling with us."
 msgstr "您的账户已删除。感谢您一直以来选择我们。"
 
-msgid "You are signed in as staff. Customer accounts are for passengers and coordinators."
+msgid ""
+"You are signed in as staff. Customer accounts are for passengers and "
+"coordinators."
 msgstr "您当前以员工身份登录。客户账户仅供乘客和协调员使用。"
 
 msgid "Open the dispatch board"
@@ -259,7 +285,9 @@ msgstr "预约已添加到您的账户。"
 msgid "Thank you for rating your trip!"
 msgstr "感谢您为本次行程评分！"
 
-msgid "Welcome! Your account is ready. Your next booking will appear here automatically."
+msgid ""
+"Welcome! Your account is ready. Your next booking will appear here "
+"automatically."
 msgstr "欢迎！您的账户已准备就绪。您的下一个预约会自动显示在这里。"
 
 msgid "Email address"
@@ -413,10 +441,14 @@ msgstr "预约回程"
 msgid "(opens in a new tab)"
 msgstr "（在新标签页中打开）"
 
-msgid "Save each client once — their details and wheelchair notes fill in automatically when you book for them."
+msgid ""
+"Save each client once — their details and wheelchair notes fill in "
+"automatically when you book for them."
 msgstr "每位客户只需保存一次——为他们预约时，其详情和轮椅备注会自动填入。"
 
-msgid "Save the people you book for, with their wheelchair details, so booking takes seconds."
+msgid ""
+"Save the people you book for, with their wheelchair details, so booking "
+"takes seconds."
 msgstr "保存您经常为之预约的人士及其轮椅详情，预约只需几秒钟。"
 
 msgid "Edit"
@@ -434,7 +466,9 @@ msgstr "添加客户"
 msgid "Add a passenger"
 msgstr "添加乘客"
 
-msgid "e.g. needs help with the front door, carer travels on Tuesdays, hearing impaired — please text"
+msgid ""
+"e.g. needs help with the front door, carer travels on Tuesdays, hearing "
+"impaired — please text"
 msgstr "例如：需要协助出入前门、周二有护理人员同行、听力障碍——请发短信联系"
 
 msgid "Save"
@@ -443,7 +477,9 @@ msgstr "保存"
 msgid "Cancel"
 msgstr "取消"
 
-msgid "Addresses you use often — home, the hospital, a day program. Pick them from a list when you book."
+msgid ""
+"Addresses you use often — home, the hospital, a day program. Pick them from "
+"a list when you book."
 msgstr "您常用的地址——家、医院、日间活动中心等。预约时可从列表中选择。"
 
 msgid "Add an address"
@@ -498,7 +534,8 @@ msgstr "当前密码"
 msgid "New password (10+ characters)"
 msgstr "新密码（至少 10 个字符）"
 
-msgid "Too many sign-ups from your connection. Please try again later or call us."
+msgid ""
+"Too many sign-ups from your connection. Please try again later or call us."
 msgstr "您的网络注册次数过多。请稍后再试或致电我们。"
 
 msgid "Please enter your name."
@@ -507,7 +544,9 @@ msgstr "请输入您的姓名。"
 msgid "Please enter a valid email address."
 msgstr "请输入有效的电子邮箱地址。"
 
-msgid "There is already an account with that email. Please sign in, or use “Forgotten your password?”."
+msgid ""
+"There is already an account with that email. Please sign in, or use "
+"“Forgotten your password?”."
 msgstr "该电子邮箱已有账户。请登录，或点击“忘记密码？”。"
 
 msgid "Please enter a valid mobile number."
@@ -622,7 +661,9 @@ msgstr "已付总额"
 msgid "Paid"
 msgstr "已付款"
 
-msgid "The fare has not been entered yet. If you need a tax invoice for this trip, please contact us and quote the number above."
+msgid ""
+"The fare has not been entered yet. If you need a tax invoice for this trip, "
+"please contact us and quote the number above."
 msgstr "车费尚未录入。如您需要本次行程的税务发票，请联系我们并提供上面的编号。"
 
 msgid "This is a receipt, not a tax invoice."
@@ -699,8 +740,13 @@ msgstr "已完成"
 msgid "Can we use analytics cookies?"
 msgstr "我们可以使用分析类 Cookie 吗？"
 
-msgid "We would like to use Google Analytics to understand how people use this site so we can improve it. These cookies are optional — the site and online booking work the same either way."
-msgstr "我们希望使用 Google Analytics 了解大家如何使用本网站，以便加以改进。这些 Cookie 是可选的——无论您是否同意，网站和在线预约都能正常使用。"
+msgid ""
+"We would like to use Google Analytics to understand how people use this site"
+" so we can improve it. These cookies are optional — the site and online "
+"booking work the same either way."
+msgstr ""
+"我们希望使用 Google Analytics 了解大家如何使用本网站，以便加以改进。这些 Cookie "
+"是可选的——无论您是否同意，网站和在线预约都能正常使用。"
 
 msgid "Privacy policy"
 msgstr "隐私政策"
@@ -717,13 +763,18 @@ msgstr "Cookie 设置"
 msgid "Airport drop-offs and pickups"
 msgstr "机场送机和接机"
 
-msgid "A taxi drops a traveller at Departures while a plane takes off. Then a maxi taxi pulls up at Arrivals, lowers its ramp and a passenger in a wheelchair rolls aboard."
+msgid ""
+"A taxi drops a traveller at Departures while a plane takes off. Then a maxi "
+"taxi pulls up at Arrivals, lowers its ramp and a passenger in a wheelchair "
+"rolls aboard."
 msgstr "一辆出租车在出发大厅送下一位旅客，一架飞机正在起飞。随后一辆大型出租车停在到达大厅，放下坡道，一位坐轮椅的乘客顺利上车。"
 
 msgid "Door-to-door wheelchair pickup"
 msgstr "门到门轮椅接送"
 
-msgid "A maxi taxi pulls up outside a house, lowers its rear ramp, and a passenger in a wheelchair rolls aboard before the taxi drives away."
+msgid ""
+"A maxi taxi pulls up outside a house, lowers its rear ramp, and a passenger "
+"in a wheelchair rolls aboard before the taxi drives away."
 msgstr "一辆大型出租车停在一所房子外，放下后部坡道，一位坐轮椅的乘客上车后，出租车开走了。"
 
 msgid "Pause animations"
@@ -732,13 +783,22 @@ msgstr "暂停动画"
 msgid "Animations"
 msgstr "动画"
 
-msgid "Moving taxis and the pickup/airport scenes. Visitors can pause them, and they stay still for anyone whose device asks for reduced motion. The scenes are also on the home page (Home page layout → “How a trip works”), on service pages, and anywhere you add the shortcode [tp_scene name=\"pickup\"], [tp_scene name=\"airport\"] or [tp_scene name=\"road\"]."
-msgstr "行驶中的出租车以及接送/机场场景。访客可以暂停动画；如果访客的设备要求减少动态效果，动画也会保持静止。这些场景还会出现在首页（首页布局 →“行程如何进行”）、服务页面，以及您添加短代码 [tp_scene name=\"pickup\"]、[tp_scene name=\"airport\"] 或 [tp_scene name=\"road\"] 的任何位置。"
+msgid ""
+"Moving taxis and the pickup/airport scenes. Visitors can pause them, and "
+"they stay still for anyone whose device asks for reduced motion. The scenes "
+"are also on the home page (Home page layout → “How a trip works”), on "
+"service pages, and anywhere you add the shortcode [tp_scene "
+"name=\"pickup\"], [tp_scene name=\"airport\"] or [tp_scene name=\"road\"]."
+msgstr ""
+"行驶中的出租车以及接送/机场场景。访客可以暂停动画；如果访客的设备要求减少动态效果，动画也会保持静止。这些场景还会出现在首页（首页布局 "
+"→“行程如何进行”）、服务页面，以及您添加短代码 [tp_scene name=\"pickup\"]、[tp_scene "
+"name=\"airport\"] 或 [tp_scene name=\"road\"] 的任何位置。"
 
 msgid "Turn animations on"
 msgstr "开启动画"
 
-msgid "When off, the scenes show as still pictures and the moving road is hidden."
+msgid ""
+"When off, the scenes show as still pictures and the moving road is hidden."
 msgstr "关闭后，场景会显示为静态图片，并隐藏行驶的道路。"
 
 msgid "Taxis driving along the bottom of the home page hero"
@@ -861,7 +921,8 @@ msgid "Please choose a valid time."
 msgstr "请选择有效的时间。"
 
 #. translators: %s: phone number
-msgid "Online bookings need a little notice. For an urgent pick-up please call %s."
+msgid ""
+"Online bookings need a little notice. For an urgent pick-up please call %s."
 msgstr "在线预约需要提前一些时间。如需紧急接送，请致电 %s。"
 
 msgid "Choose which days the trip repeats."
@@ -871,7 +932,9 @@ msgid "Choose an end date after the first trip."
 msgstr "请选择晚于首次行程的结束日期。"
 
 #. translators: %d: number of weeks
-msgid "Repeat bookings can run for up to %d weeks. Call us to arrange a longer schedule."
+msgid ""
+"Repeat bookings can run for up to %d weeks. Call us to arrange a longer "
+"schedule."
 msgstr "重复预约最长可持续 %d 周。如需更长的安排，请致电我们。"
 
 #. translators: %s: driver name
@@ -933,7 +996,8 @@ msgid "Repeat booking — %d trips:"
 msgstr "重复预约——共 %d 次行程："
 
 #. translators: %s: language name
-msgid "Booked in %s — emails and texts to the customer are sent in this language."
+msgid ""
+"Booked in %s — emails and texts to the customer are sent in this language."
 msgstr "以%s预约——发给客户的电子邮件和短信将使用此语言。"
 
 #. translators: 1: reference, 2: pick-up time
@@ -947,18 +1011,22 @@ msgstr "（重复）"
 msgid "Manage this booking:"
 msgstr "管理此预约："
 
-#. translators: %s: passenger name translators: %s: name translators: %s: first name
+#. translators: %s: passenger name translators: %s: name translators: %s:
+#. first name
 msgid "Hi %s,"
 msgstr "%s，您好："
 
-msgid "Thanks for booking with us. We have received your request and will confirm it shortly."
+msgid ""
+"Thanks for booking with us. We have received your request and will confirm "
+"it shortly."
 msgstr "感谢您的预约。我们已收到您的请求，很快会与您确认。"
 
 msgid "View or manage your booking:"
 msgstr "查看或管理您的预约："
 
 #. translators: 1: phone, 2: email
-msgid "Need to change something? Call %1$s or email %2$s and quote your reference."
+msgid ""
+"Need to change something? Call %1$s or email %2$s and quote your reference."
 msgstr "需要更改？请致电 %1$s 或发送电子邮件至 %2$s，并提供您的预约编号。"
 
 #. translators: 1: site name, 2: reference
@@ -974,10 +1042,13 @@ msgstr "已为您的预约指派司机。"
 msgid "Thanks for travelling with us. We hope to see you again soon."
 msgstr "感谢您乘坐我们的车。期待很快再次为您服务。"
 
-msgid "Your booking has been cancelled. If this is unexpected, please call us."
+msgid ""
+"Your booking has been cancelled. If this is unexpected, please call us."
 msgstr "您的预约已取消。如果这出乎您的意料，请致电我们。"
 
-msgid "Our driver arrived but could not find you, so the trip was marked as a no-show. Please call us if this is a mistake or you would like to rebook."
+msgid ""
+"Our driver arrived but could not find you, so the trip was marked as a no-"
+"show. Please call us if this is a mistake or you would like to rebook."
 msgstr "我们的司机已到达，但没有找到您，因此本次行程被记录为“乘客未到”。如有误会或您想重新预约，请致电我们。"
 
 msgid "Your booking is being reviewed."
@@ -1055,7 +1126,9 @@ msgstr "夜间"
 msgid "Application received — thank you!"
 msgstr "已收到申请——谢谢您！"
 
-msgid "We read every application and will be in touch if there is a suitable opening."
+msgid ""
+"We read every application and will be in touch if there is a suitable "
+"opening."
 msgstr "我们会认真阅读每一份申请，如有合适的职位会与您联系。"
 
 msgid "Apply to drive with us"
@@ -1097,10 +1170,13 @@ msgstr "您什么时间可以出车？"
 msgid "Tell us a little about yourself"
 msgstr "简单介绍一下您自己"
 
-msgid "Driving history, disability or aged-care experience, why you would like to join…"
+msgid ""
+"Driving history, disability or aged-care experience, why you would like to "
+"join…"
 msgstr "驾驶经历、残障或养老护理经验、您想加入我们的原因…"
 
-msgid "I agree to you keeping my application to consider me for driving roles."
+msgid ""
+"I agree to you keeping my application to consider me for driving roles."
 msgstr "我同意你们保留我的申请，以便考虑我担任司机职位。"
 
 msgid "Send application"
@@ -1112,7 +1188,8 @@ msgstr "您的会话已过期。请重试。"
 msgid "Too many applications from your connection. Please try again later."
 msgstr "您的网络提交的申请过多。请稍后再试。"
 
-msgid "Please fill in your name, mobile, a valid email and tick the consent box."
+msgid ""
+"Please fill in your name, mobile, a valid email and tick the consent box."
 msgstr "请填写您的姓名、手机号码、有效的电子邮箱，并勾选同意框。"
 
 msgid "Holds accreditation"
@@ -1155,7 +1232,8 @@ msgstr "搜索问题"
 msgid "e.g. power wheelchair, airport, NDIS"
 msgstr "例如：电动轮椅、机场、NDIS"
 
-msgid "No questions match. Try another word, or call us — we are happy to help."
+msgid ""
+"No questions match. Try another word, or call us — we are happy to help."
 msgstr "没有匹配的问题。请换个词试试，或致电我们——我们很乐意帮助您。"
 
 msgid "FAQ topics"
@@ -1306,7 +1384,9 @@ msgstr "感谢您与我们联系——我们已收到您的留言。"
 msgid "We aim to reply %s."
 msgstr "我们力争%s回复。"
 
-msgid "We take every complaint seriously and will keep you updated until it is resolved."
+msgid ""
+"We take every complaint seriously and will keep you updated until it is "
+"resolved."
 msgstr "我们认真对待每一项投诉，并会随时向您通报进展，直到问题解决。"
 
 msgid "How we handle complaints:"
@@ -1390,8 +1470,14 @@ msgstr "热门目的地"
 msgid "Destinations"
 msgstr "目的地"
 
-msgid "Built automatically from bookings in the last 12 months. To protect privacy, only places that look public (hospitals, airports, centres…) and that at least three different passengers travelled to can appear on the website. Visitor counts are never shown."
-msgstr "根据过去 12 个月的预约自动生成。为保护隐私，只有看起来属于公共场所（医院、机场、各类中心…）且至少有三位不同乘客去过的地点，才会出现在网站上。网站从不显示访问人数。"
+msgid ""
+"Built automatically from bookings in the last 12 months. To protect privacy,"
+" only places that look public (hospitals, airports, centres…) and that at "
+"least three different passengers travelled to can appear on the website. "
+"Visitor counts are never shown."
+msgstr ""
+"根据过去 12 "
+"个月的预约自动生成。为保护隐私，只有看起来属于公共场所（医院、机场、各类中心…）且至少有三位不同乘客去过的地点，才会出现在网站上。网站从不显示访问人数。"
 
 msgid "Nothing yet — destinations appear here as bookings build up."
 msgstr "暂无——随着预约增多，目的地会显示在这里。"
@@ -1439,7 +1525,9 @@ msgstr "常用车辆"
 msgid "— None —"
 msgstr "— 无 —"
 
-msgid "Used on the dispatch board when you assign this driver without choosing a vehicle."
+msgid ""
+"Used on the dispatch board when you assign this driver without choosing a "
+"vehicle."
 msgstr "在调度面板上为该司机派单但未选择车辆时使用。"
 
 msgid "Driver sign in"
@@ -1464,13 +1552,16 @@ msgstr "行程已更新：%s。"
 msgid "Trip declined. The office has been told so they can reassign it."
 msgstr "已拒绝此行程。已通知办公室重新安排。"
 
-msgid "That trip had already changed, so nothing was updated. Here is its latest status."
+msgid ""
+"That trip had already changed, so nothing was updated. Here is its latest "
+"status."
 msgstr "该行程已有变化，因此未作任何更新。以下是它的最新状态。"
 
 msgid "No jobs for this day"
 msgstr "当天没有工单"
 
-msgid "Swipe or use the arrows to check other days. New jobs are texted to you."
+msgid ""
+"Swipe or use the arrows to check other days. New jobs are texted to you."
 msgstr "左右滑动或使用箭头查看其他日期。新工单会以短信通知您。"
 
 msgid "Change day"
@@ -1672,7 +1763,9 @@ msgstr "自动取消发布"
 msgid "Move to drafts on"
 msgstr "转为草稿的日期"
 
-msgid "For seasonal pages and promotions. Use \"Publish → Schedule\" to choose when it goes live."
+msgid ""
+"For seasonal pages and promotions. Use \"Publish → Schedule\" to choose when"
+" it goes live."
 msgstr "适用于季节性页面和促销活动。请使用“发布 → 定时”选择上线时间。"
 
 msgid "Google did not return your reviews."
@@ -1687,7 +1780,9 @@ msgstr "地点已保存。您的 Google 评价很快会显示在网站上。"
 msgid "Find your Google Place ID"
 msgstr "查找您的 Google 地点 ID"
 
-msgid "Search for your business as it appears on Google Maps, then choose it. This connects live reviews and your star rating."
+msgid ""
+"Search for your business as it appears on Google Maps, then choose it. This "
+"connects live reviews and your star rating."
 msgstr "按照 Google 地图上显示的名称搜索您的商家，然后选择它。这样可以连接实时评价和您的星级评分。"
 
 msgid "Business name and suburb"
@@ -1718,7 +1813,10 @@ msgstr "无障碍轮椅出租车 · 墨尔本"
 msgid "Accessible rides, booked in minutes."
 msgstr "无障碍出行，几分钟即可预约。"
 
-msgid "Ramp and hoist equipped taxis with trained, patient drivers. Door-to-door across Melbourne and the Mornington Peninsula, including hospital, airport and NDIS trips."
+msgid ""
+"Ramp and hoist equipped taxis with trained, patient drivers. Door-to-door "
+"across Melbourne and the Mornington Peninsula, including hospital, airport "
+"and NDIS trips."
 msgstr "配备坡道和升降机的出租车，司机训练有素、耐心周到。墨尔本和莫宁顿半岛全境门到门服务，包括就医、机场和 NDIS 行程。"
 
 msgid ""
@@ -1792,13 +1890,17 @@ msgstr "行程如何进行（动画场景）"
 msgid "From your door to the departure gate"
 msgstr "从您家门口到登机口"
 
-msgid "We back right up to your door, lower the ramp and help you aboard — and we are waiting at Arrivals when you land."
+msgid ""
+"We back right up to your door, lower the ramp and help you aboard — and we "
+"are waiting at Arrivals when you land."
 msgstr "我们会把车倒到您家门口，放下坡道并扶您上车——您落地时，我们也会在到达大厅等候。"
 
 msgid "Who we help"
 msgstr "我们服务的对象"
 
-msgid "Whether you are travelling yourself or arranging transport for someone else, we make it simple."
+msgid ""
+"Whether you are travelling yourself or arranging transport for someone else,"
+" we make it simple."
 msgstr "无论您是自己出行，还是为他人安排交通，我们都让一切变得简单。"
 
 msgid "Booking form"
@@ -1807,7 +1909,9 @@ msgstr "预约表格"
 msgid "Book your accessible taxi"
 msgstr "预约您的无障碍出租车"
 
-msgid "Tell us where you are going and what you need. We will confirm your booking and let you know when your driver is on the way."
+msgid ""
+"Tell us where you are going and what you need. We will confirm your booking "
+"and let you know when your driver is on the way."
 msgstr "告诉我们您要去哪里、有什么需要。我们会确认您的预约，并在司机出发时通知您。"
 
 msgid "Where our passengers go"
@@ -1819,7 +1923,9 @@ msgstr "今年预约最多的目的地。点按其中一个即可预约前往。
 msgid "Areas we cover + suburb checker"
 msgstr "服务区域 + 区域查询"
 
-msgid "Based on the Mornington Peninsula and servicing greater Melbourne. Not listed? Call us — we travel further on request."
+msgid ""
+"Based on the Mornington Peninsula and servicing greater Melbourne. Not "
+"listed? Call us — we travel further on request."
 msgstr "我们立足莫宁顿半岛，服务整个大墨尔本地区。您的地区不在列表中？请致电我们——我们可应要求前往更远的地方。"
 
 msgid "Top questions (FAQ strip)"
@@ -1858,13 +1964,16 @@ msgstr "今天需要轮椅出租车？"
 msgid "Call our friendly team and we will get you moving."
 msgstr "请致电我们友善的团队，我们会帮您顺利出行。"
 
-msgid "Book your own trip online or by phone. We help you from your door to theirs."
+msgid ""
+"Book your own trip online or by phone. We help you from your door to theirs."
 msgstr "您可以在线或通过电话自行预约行程。我们从您的家门口一直帮您送到目的地门口。"
 
 msgid "Family & carers"
 msgstr "家人和护理人员"
 
-msgid "Booking for a parent, partner or client? Carers can travel too, and you can manage the booking online."
+msgid ""
+"Booking for a parent, partner or client? Carers can travel too, and you can "
+"manage the booking online."
 msgstr "为父母、伴侣或客户预约？护理人员也可以同行，您还可以在线管理预约。"
 
 msgid "Tips for carers"
@@ -1873,7 +1982,9 @@ msgstr "给护理人员的小贴士"
 msgid "NDIS coordinators & plan managers"
 msgstr "NDIS 协调员和计划管理人"
 
-msgid "Set up regular trips for participants and have them invoiced to the right place."
+msgid ""
+"Set up regular trips for participants and have them invoiced to the right "
+"place."
 msgstr "为参与者设置定期行程，并把发票开到正确的地方。"
 
 msgid "NDIS & accounts"
@@ -1882,7 +1993,9 @@ msgstr "NDIS 和账户"
 msgid "Hospitals & aged care"
 msgstr "医院和养老机构"
 
-msgid "Discharges, appointments and outings for your patients and residents. Ask us about an account."
+msgid ""
+"Discharges, appointments and outings for your patients and residents. Ask us"
+" about an account."
 msgstr "为您的病人和住户提供出院、就诊和外出接送。欢迎咨询开设账户。"
 
 msgid "Talk to us"
@@ -1899,7 +2012,9 @@ msgstr "将%s下移"
 msgid "Home page layout"
 msgstr "首页布局"
 
-msgid "Tick to show a section, untick to hide it, and use ▲ ▼ to reorder. The hero banner always stays at the top."
+msgid ""
+"Tick to show a section, untick to hide it, and use ▲ ▼ to reorder. The hero "
+"banner always stays at the top."
 msgstr "勾选以显示某个版块，取消勾选以隐藏，并使用 ▲ ▼ 调整顺序。主横幅始终位于顶部。"
 
 msgid "Sections"
@@ -1925,7 +2040,9 @@ msgstr "%s — 简介"
 msgid "Who we help panels"
 msgstr "“我们服务的对象”面板"
 
-msgid "Four short panels for different audiences. Clear a heading to hide that panel. Leave a link empty to use the matching page automatically."
+msgid ""
+"Four short panels for different audiences. Clear a heading to hide that "
+"panel. Leave a link empty to use the matching page automatically."
 msgstr "四个面向不同人群的简短面板。清空标题即可隐藏该面板。链接留空则自动使用对应的页面。"
 
 msgid "heading"
@@ -1962,7 +2079,9 @@ msgstr "设置主横幅照片"
 msgid "When to show it"
 msgstr "显示时间"
 
-msgid "Set the photo with \"Hero photo\" on the right (give it alt text in the Media Library). It replaces the normal hero image between these dates."
+msgid ""
+"Set the photo with \"Hero photo\" on the right (give it alt text in the "
+"Media Library). It replaces the normal hero image between these dates."
 msgstr "请使用右侧的“主横幅照片”设置照片（并在媒体库中为其添加替代文字）。在这两个日期之间，它会替换常规的主横幅图片。"
 
 msgid "Until (inclusive)"
@@ -1986,7 +2105,9 @@ msgstr "正在显示"
 msgid "Opening hours by day (used when not open 24/7)"
 msgstr "每日营业时间（非全天候营业时使用）"
 
-msgid "One line per day or range, e.g. \"Mon-Fri 06:00-22:00\", \"Sat 07:00-20:00\", \"Sun closed\"."
+msgid ""
+"One line per day or range, e.g. \"Mon-Fri 06:00-22:00\", \"Sat "
+"07:00-20:00\", \"Sun closed\"."
 msgstr "每天或每个时段占一行，例如“Mon-Fri 06:00-22:00”、“Sat 07:00-20:00”、“Sun closed”。"
 
 msgid "Message shown while closed"
@@ -2024,24 +2145,35 @@ msgstr "电话服务时间"
 msgid "Languages"
 msgstr "语言"
 
-msgid "Visitors can switch the website to these languages. Menus, the booking form, booking pages, emails and texts are translated. For your own page text, open the page and use the Languages box to make a translated copy."
-msgstr "访客可以将网站切换为这些语言。菜单、预约表格、预约页面、电子邮件和短信均已翻译。对于您自己的页面文字，请打开该页面，使用“语言”框创建翻译副本。"
+msgid ""
+"Visitors can switch the website to these languages. Menus, the booking form,"
+" booking pages, emails and texts are translated. For your own page text, "
+"open the page and use the Languages box to make a translated copy."
+msgstr ""
+"访客可以将网站切换为这些语言。菜单、预约表格、预约页面、电子邮件和短信均已翻译。对于您自己的页面文字，请打开该页面，使用“语言”框创建翻译副本。"
 
 #. translators: 1: language name in English, 2: native name
 msgid "Offer %1$s (%2$s)"
 msgstr "提供%1$s（%2$s）"
 
-msgid "Show the free interpreter (TIS National 131 450) and National Relay Service details"
+msgid ""
+"Show the free interpreter (TIS National 131 450) and National Relay Service "
+"details"
 msgstr "显示免费口译服务（TIS National 131 450）和国家中继服务（National Relay Service）信息"
 
-msgid "Shown in the footer and on pages that are not translated yet. Register your business with TIS National so their interpreters can call you."
+msgid ""
+"Shown in the footer and on pages that are not translated yet. Register your "
+"business with TIS National so their interpreters can call you."
 msgstr "显示在页脚以及尚未翻译的页面上。请在 TIS National 登记您的商家，以便其口译员可以致电您。"
 
 msgid "Auslan video (YouTube or Vimeo link)"
 msgstr "Auslan 视频（YouTube 或 Vimeo 链接）"
 
-msgid "A short video in Auslan explaining how to book. Shown with [tp_auslan] (it is on the Accessibility Statement page) and linked from the language menu."
-msgstr "一段用 Auslan（澳大利亚手语）讲解如何预约的短视频。通过 [tp_auslan] 显示（位于“无障碍声明”页面），并可从语言菜单中打开。"
+msgid ""
+"A short video in Auslan explaining how to book. Shown with [tp_auslan] (it "
+"is on the Accessibility Statement page) and linked from the language menu."
+msgstr ""
+"一段用 Auslan（澳大利亚手语）讲解如何预约的短视频。通过 [tp_auslan] 显示（位于“无障碍声明”页面），并可从语言菜单中打开。"
 
 msgid "Auslan video: English transcript"
 msgstr "Auslan 视频：英文文字稿"
@@ -2049,7 +2181,10 @@ msgstr "Auslan 视频：英文文字稿"
 msgid "Translated home page text"
 msgstr "首页文字翻译"
 
-msgid "If you changed the hero text or opening hours, add the translated versions here. Leave a box empty to use the theme’s built-in translation of the original wording."
+msgid ""
+"If you changed the hero text or opening hours, add the translated versions "
+"here. Leave a box empty to use the theme’s built-in translation of the "
+"original wording."
 msgstr "如果您更改了主横幅文字或营业时间，请在此添加翻译版本。留空则使用主题内置的原文翻译。"
 
 msgid "This page is in English."
@@ -2062,13 +2197,17 @@ msgstr "预约表格和您的预约详情使用您选择的语言。"
 msgid "This is the %1$s version of “%2$s”."
 msgstr "这是“%2$s”的%1$s版本。"
 
-msgid "Visitors who choose this language are sent here automatically once it is published."
+msgid ""
+"Visitors who choose this language are sent here automatically once it is "
+"published."
 msgstr "发布后，选择此语言的访客会被自动转到这里。"
 
 msgid "Save the page first, then you can add translated copies."
 msgstr "请先保存页面，然后才能添加翻译副本。"
 
-msgid "Make a copy of this page for each language and translate the text in the editor. Menus and links switch to the right copy by themselves."
+msgid ""
+"Make a copy of this page for each language and translate the text in the "
+"editor. Menus and links switch to the right copy by themselves."
 msgstr "为每种语言创建一份此页面的副本，并在编辑器中翻译文字。菜单和链接会自动切换到对应的副本。"
 
 msgid "Edit draft"
@@ -2088,10 +2227,14 @@ msgid "video"
 msgstr "视频"
 
 #. translators: 1: business name, 2: phone number
-msgid "Need an interpreter? Call TIS National on 131 450 and ask them to call %1$s on %2$s."
+msgid ""
+"Need an interpreter? Call TIS National on 131 450 and ask them to call %1$s "
+"on %2$s."
 msgstr "需要口译员？请致电 TIS National（131 450），请他们拨打 %2$s 联系 %1$s。"
 
-msgid "Deaf, hard of hearing or speech impaired? Use the National Relay Service on 133 677."
+msgid ""
+"Deaf, hard of hearing or speech impaired? Use the National Relay Service on "
+"133 677."
 msgstr "您是聋人、听力或言语障碍人士？请使用国家中继服务（National Relay Service），电话 133 677。"
 
 msgid "Language"
@@ -2109,10 +2252,14 @@ msgstr "播放：如何向我们预约（Auslan 手语讲解）"
 msgid "Read the English transcript"
 msgstr "阅读英文文字稿"
 
-msgid "[Add your Auslan video link under Appearance → Customize → Taxi Peninsula → Languages. Only staff see this note.]"
+msgid ""
+"[Add your Auslan video link under Appearance → Customize → Taxi Peninsula → "
+"Languages. Only staff see this note.]"
 msgstr "[请在“外观 → 自定义 → Taxi Peninsula → 语言”下添加您的 Auslan 视频链接。此提示仅员工可见。]"
 
-msgid "Book online — the booking form has no time limit and works with screen readers."
+msgid ""
+"Book online — the booking form has no time limit and works with screen "
+"readers."
 msgstr "在线预约——预约表格没有时间限制，并支持屏幕阅读器。"
 
 #. translators: %s: SMS link
@@ -2120,10 +2267,16 @@ msgid "Text us on %s — we reply by text."
 msgstr "发短信至 %s——我们会用短信回复。"
 
 #. translators: %s: phone
-msgid "National Relay Service: use the NRS app or nrschat.nrscall.gov.au, or call 133 677, and give our number %s."
-msgstr "国家中继服务（National Relay Service）：请使用 NRS 应用或 nrschat.nrscall.gov.au，或致电 133 677，并提供我们的号码 %s。"
+msgid ""
+"National Relay Service: use the NRS app or nrschat.nrscall.gov.au, or call "
+"133 677, and give our number %s."
+msgstr ""
+"国家中继服务（National Relay Service）：请使用 NRS 应用或 nrschat.nrscall.gov.au，或致电 133 "
+"677，并提供我们的号码 %s。"
 
-msgid "Ask for SMS updates: we text you when your driver is on the way and when they arrive."
+msgid ""
+"Ask for SMS updates: we text you when your driver is on the way and when "
+"they arrive."
 msgstr "可要求短信通知：司机出发前往和到达时，我们会发短信告诉您。"
 
 msgid "Home"
@@ -2137,7 +2290,9 @@ msgstr "博客"
 msgid "Too many attempts. Please wait a few minutes or call %s."
 msgstr "尝试次数过多。请稍等几分钟或致电 %s。"
 
-msgid "We could not find a booking with that reference and phone number. Please check both and try again."
+msgid ""
+"We could not find a booking with that reference and phone number. Please "
+"check both and try again."
 msgstr "我们找不到与该预约编号和电话号码相符的预约。请核对后重试。"
 
 msgid "Please choose an option and tell us what you would like to change."
@@ -2162,7 +2317,8 @@ msgid "%1$s km, about %2$d min drive"
 msgstr "%1$s 公里，车程约 %2$d 分钟"
 
 #. translators: %d: number of suggestions
-msgid "%d address suggestions available. Use the up and down arrow keys to choose."
+msgid ""
+"%d address suggestions available. Use the up and down arrow keys to choose."
 msgstr "有 %d 条地址建议。请使用上下方向键选择。"
 
 msgid "No address suggestions."
@@ -2171,7 +2327,8 @@ msgstr "没有地址建议。"
 msgid "Calculating fare estimate…"
 msgstr "正在计算预估车费…"
 
-msgid "We could not estimate this trip online. We will confirm the fare with you."
+msgid ""
+"We could not estimate this trip online. We will confirm the fare with you."
 msgstr "我们无法在线估算此行程的车费。我们会与您确认车费。"
 
 msgid "Address suggestions by Google"
@@ -2201,25 +2358,32 @@ msgstr "%1$s 已付订金（%2$s）"
 msgid "Public driver profile"
 msgstr "司机公开资料"
 
-msgid "Shown on the \"Meet the drivers\" section and to passengers once this driver is assigned to their trip. Only the first name is used."
+msgid ""
+"Shown on the \"Meet the drivers\" section and to passengers once this driver"
+" is assigned to their trip. Only the first name is used."
 msgstr "显示在“认识我们的司机”版块；当该司机被派给乘客的行程后，也会向乘客显示。只使用名字。"
 
 msgid "Show on the website"
 msgstr "在网站上显示"
 
-msgid "Yes — the driver has agreed to their first name, photo and bio being shown publicly."
+msgid ""
+"Yes — the driver has agreed to their first name, photo and bio being shown "
+"publicly."
 msgstr "是——司机已同意公开显示其名字、照片和简介。"
 
 msgid "Short bio"
 msgstr "简短介绍"
 
-msgid "e.g. Driving on the Peninsula for 8 years. Loves the footy and a good chat."
+msgid ""
+"e.g. Driving on the Peninsula for 8 years. Loves the footy and a good chat."
 msgstr "例如：在半岛开车 8 年。热爱澳式足球，也喜欢聊天。"
 
 msgid "Choose photo"
 msgstr "选择照片"
 
-msgid "A friendly, well-lit head-and-shoulders photo works best. Add alt text in the Media Library."
+msgid ""
+"A friendly, well-lit head-and-shoulders photo works best. Add alt text in "
+"the Media Library."
 msgstr "光线充足、亲切友好的半身照效果最好。请在媒体库中添加替代文字。"
 
 #. translators: %s: first name
@@ -2235,7 +2399,10 @@ msgstr "选择照片"
 msgid "Clear"
 msgstr "清除"
 
-msgid "Show the ramp or hoist, the restraints and the inside of the vehicle. Give every photo alt text and a caption — they are read out in the full-screen viewer."
+msgid ""
+"Show the ramp or hoist, the restraints and the inside of the vehicle. Give "
+"every photo alt text and a caption — they are read out in the full-screen "
+"viewer."
 msgstr "请展示坡道或升降机、固定带以及车内情况。为每张照片添加替代文字和说明——全屏查看时会朗读这些内容。"
 
 msgid "Partners"
@@ -2271,14 +2438,19 @@ msgstr "勾选此项之前，标志不会显示。"
 msgid "Ask for a copy of your information, or for it to be deleted"
 msgstr "申请获取您的个人信息副本，或申请删除您的信息"
 
-msgid "Thank you. Please check your email and click the link to confirm the request — we then reply within 30 days."
+msgid ""
+"Thank you. Please check your email and click the link to confirm the request"
+" — we then reply within 30 days."
 msgstr "谢谢您。请查收电子邮件并点击链接确认申请——之后我们会在 30 天内回复。"
 
-msgid "Sorry, we could not send that. Please check the email address, or call us."
+msgid ""
+"Sorry, we could not send that. Please check the email address, or call us."
 msgstr "抱歉，我们无法发送。请检查电子邮箱地址，或致电我们。"
 
 #. translators: %s: link to My Account
-msgid "You are signed in, so you can download your data or delete your account straight away under %s."
+msgid ""
+"You are signed in, so you can download your data or delete your account "
+"straight away under %s."
 msgstr "您已登录，可以直接在 %s 下载您的数据或删除您的账户。"
 
 msgid "My Account → My details"
@@ -2303,7 +2475,8 @@ msgid "Send request"
 msgstr "提交申请"
 
 #. translators: 1: request type, 2: masked email
-msgid "Privacy request received (%1$s) from %2$s — waiting for email confirmation"
+msgid ""
+"Privacy request received (%1$s) from %2$s — waiting for email confirmation"
 msgstr "已收到来自 %2$s 的隐私申请（%1$s）——等待电子邮件确认"
 
 msgid "delete"
@@ -2331,11 +2504,19 @@ msgid "Delete my account"
 msgstr "删除我的账户"
 
 #. translators: %s: phone
-msgid "You have upcoming trips. Please cancel them first, or call us on %s, then come back to delete your account."
+msgid ""
+"You have upcoming trips. Please cancel them first, or call us on %s, then "
+"come back to delete your account."
 msgstr "您还有即将到来的行程。请先取消这些行程，或致电 %s，然后再回来删除您的账户。"
 
-msgid "This signs you out and deletes your account, saved passengers, clients and addresses. Names, contact details and street addresses are removed from your past trips. We keep the trip reference, date, suburbs and fare for our records, and invoice details for 5 years because tax law requires it."
-msgstr "此操作会让您退出登录，并删除您的账户、已保存的乘客、客户和地址。您过往行程中的姓名、联系方式和街道地址将被删除。我们会保留行程编号、日期、所在区和车费作为记录；根据税法要求，发票信息将保留 5 年。"
+msgid ""
+"This signs you out and deletes your account, saved passengers, clients and "
+"addresses. Names, contact details and street addresses are removed from your"
+" past trips. We keep the trip reference, date, suburbs and fare for our "
+"records, and invoice details for 5 years because tax law requires it."
+msgstr ""
+"此操作会让您退出登录，并删除您的账户、已保存的乘客、客户和地址。您过往行程中的姓名、联系方式和街道地址将被删除。我们会保留行程编号、日期、所在区和车费作为记录；根据税法要求，发票信息将保留"
+" 5 年。"
 
 msgid "Your password"
 msgstr "您的密码"
@@ -2363,7 +2544,9 @@ msgid "A customer deleted their account"
 msgstr "一位客户删除了其账户"
 
 #. translators: %d: number of trips
-msgid "A customer account was deleted from My Account. Personal details were removed from %d trips; references, dates, suburbs and fares were kept."
+msgid ""
+"A customer account was deleted from My Account. Personal details were "
+"removed from %d trips; references, dates, suburbs and fares were kept."
 msgstr "一位客户在“我的账户”中删除了其账户。已从 %d 次行程中删除个人信息；编号、日期、所在区和车费已保留。"
 
 msgid "Thanks for sharing your experience on Google!"
@@ -2372,7 +2555,9 @@ msgstr "感谢您在 Google 上分享您的体验！"
 msgid "Would you share your experience on Google?"
 msgstr "您愿意在 Google 上分享您的体验吗？"
 
-msgid "A short review helps other families and carers find accessible transport they can trust. It takes about a minute."
+msgid ""
+"A short review helps other families and carers find accessible transport "
+"they can trust. It takes about a minute."
 msgstr "一条简短的评价可以帮助其他家庭和护理人员找到值得信赖的无障碍交通服务。只需大约一分钟。"
 
 msgid "Write a Google review"
@@ -2387,7 +2572,9 @@ msgstr "尊敬的顾客"
 msgid "Thank you for rating your trip with us — it really helps."
 msgstr "感谢您为我们的行程评分——这对我们帮助很大。"
 
-msgid "Would you also share your experience on Google? A short review helps other families and carers find accessible transport they can trust."
+msgid ""
+"Would you also share your experience on Google? A short review helps other "
+"families and carers find accessible transport they can trust."
 msgstr "您愿意也在 Google 上分享您的体验吗？一条简短的评价可以帮助其他家庭和护理人员找到值得信赖的无障碍交通服务。"
 
 msgid "Thank you for travelling with us."
@@ -2403,20 +2590,31 @@ msgid "Please complete the \"I am human\" check and try again."
 msgstr "请完成“我是真人”验证后重试。"
 
 #. translators: 1: area, 2: phone
-msgid "Wheelchair accessible taxi in %1$s. Ramp and hoist vehicles, trained drivers, door-to-door. Book online or call %2$s."
+msgid ""
+"Wheelchair accessible taxi in %1$s. Ramp and hoist vehicles, trained "
+"drivers, door-to-door. Book online or call %2$s."
 msgstr "%1$s 的无障碍轮椅出租车。配备坡道和升降机的车辆，训练有素的司机，门到门服务。请在线预约或致电 %2$s。"
 
-msgid "Wheelchair accessible taxi services in Melbourne: hospital and medical trips, airport transfers, NDIS and aged-care transport, group travel and events."
+msgid ""
+"Wheelchair accessible taxi services in Melbourne: hospital and medical "
+"trips, airport transfers, NDIS and aged-care transport, group travel and "
+"events."
 msgstr "墨尔本无障碍轮椅出租车服务：就医接送、机场接送、NDIS 和养老服务交通、团体出行及活动。"
 
-msgid "Suburbs we cover with wheelchair accessible taxis across Melbourne and the Mornington Peninsula."
+msgid ""
+"Suburbs we cover with wheelchair accessible taxis across Melbourne and the "
+"Mornington Peninsula."
 msgstr "我们的无障碍轮椅出租车覆盖墨尔本和莫宁顿半岛的各个区。"
 
-msgid "News and travel tips for passengers using wheelchair accessible taxis in Melbourne."
+msgid ""
+"News and travel tips for passengers using wheelchair accessible taxis in "
+"Melbourne."
 msgstr "为在墨尔本乘坐无障碍轮椅出租车的乘客提供新闻和出行小贴士。"
 
 #. translators: 1: site name, 2: phone
-msgid "%1$s — wheelchair accessible taxis in Melbourne and the Mornington Peninsula. Book online or call %2$s."
+msgid ""
+"%1$s — wheelchair accessible taxis in Melbourne and the Mornington "
+"Peninsula. Book online or call %2$s."
 msgstr "%1$s——墨尔本和莫宁顿半岛的无障碍轮椅出租车。请在线预约或致电 %2$s。"
 
 msgid "Mobile number"
@@ -2522,7 +2720,8 @@ msgstr "发给%1$s的 SMS 发送失败：%2$s"
 msgid "SMS sent to %s"
 msgstr "SMS 已发送给%s"
 
-#. translators: 1: reference, 2: pick-up time, 3: name, 4: phone, 5: from, 6: to
+#. translators: 1: reference, 2: pick-up time, 3: name, 4: phone, 5: from, 6:
+#. to
 msgid "New booking %1$s: %2$s, %3$s (%4$s). %5$s → %6$s"
 msgstr "新预约 %1$s：%2$s，%3$s（%4$s）。%5$s → %6$s"
 
@@ -2531,7 +2730,9 @@ msgid "(repeat: %d trips)"
 msgstr "（重复：%d 次行程）"
 
 #. translators: 1: site, 2: reference, 3: pick-up time, 4: link
-msgid "%1$s: we received your booking %2$s for %3$s. We will confirm shortly. Manage it: %4$s"
+msgid ""
+"%1$s: we received your booking %2$s for %3$s. We will confirm shortly. "
+"Manage it: %4$s"
 msgstr "%1$s：我们已收到您 %3$s 的预约 %2$s，很快会与您确认。管理预约：%4$s"
 
 #. translators: 1: site, 2: reference, 3: pick-up time
@@ -2554,7 +2755,8 @@ msgstr "车辆：%s。"
 msgid "%1$s: booking %2$s has been cancelled. Questions? Call %3$s."
 msgstr "%1$s：预约 %2$s 已取消。有疑问？请致电 %3$s。"
 
-#. translators: 1: reference, 2: pick-up time, 3: from, 4: to, 5: name, 6: phone
+#. translators: 1: reference, 2: pick-up time, 3: from, 4: to, 5: name, 6:
+#. phone
 msgid "New job %1$s: %2$s. %3$s → %4$s. %5$s %6$s"
 msgstr "新工单 %1$s：%2$s。%3$s → %4$s。%5$s %6$s"
 
@@ -2621,7 +2823,9 @@ msgstr "查看全部车队"
 msgid "Posts"
 msgstr "文章"
 
-msgid "Request a wheelchair accessible taxi anywhere in Melbourne and the Mornington Peninsula."
+msgid ""
+"Request a wheelchair accessible taxi anywhere in Melbourne and the "
+"Mornington Peninsula."
 msgstr "在墨尔本和莫宁顿半岛任何地方预约无障碍轮椅出租车。"
 
 msgid "Urgent or same-hour trip?"
@@ -2702,7 +2906,8 @@ msgid "Popular destinations"
 msgstr "热门目的地"
 
 msgctxt "Pattern description"
-msgid "Most-booked destinations from real (anonymised) bookings, with Book buttons."
+msgid ""
+"Most-booked destinations from real (anonymised) bookings, with Book buttons."
 msgstr "根据真实（已匿名处理）预约统计的最常预约目的地，附带“预约”按钮。"
 
 msgctxt "Pattern title"
@@ -2737,7 +2942,9 @@ msgid "Hero banner"
 msgstr "主横幅"
 
 msgctxt "Pattern description"
-msgid "Large navy banner with headline, intro and booking buttons. Use at the top of a \"Blank canvas\" page."
+msgid ""
+"Large navy banner with headline, intro and booking buttons. Use at the top "
+"of a \"Blank canvas\" page."
 msgstr "大型深蓝色横幅，含主标题、简介和预约按钮。请放在“空白画布”页面的顶部。"
 
 msgctxt "Pattern title"
@@ -2753,7 +2960,9 @@ msgid "Accessibility statement page"
 msgstr "无障碍声明页面"
 
 msgctxt "Pattern description"
-msgid "Accessibility statement draft covering your commitment, features, known limitations and how to give feedback."
+msgid ""
+"Accessibility statement draft covering your commitment, features, known "
+"limitations and how to give feedback."
 msgstr "无障碍声明草稿，涵盖您的承诺、无障碍功能、已知局限以及如何提供反馈。"
 
 msgctxt "Pattern title"
@@ -2761,7 +2970,9 @@ msgid "Drive with us page"
 msgstr "“加入我们当司机”页面"
 
 msgctxt "Pattern description"
-msgid "Starter content for a driver recruitment page, with [CONFIRM] notes for pay and conditions."
+msgid ""
+"Starter content for a driver recruitment page, with [CONFIRM] notes for pay "
+"and conditions."
 msgstr "司机招聘页面的初始内容，薪酬和工作条件处附有 [CONFIRM] 提示。"
 
 msgctxt "Pattern title"
@@ -2769,7 +2980,9 @@ msgid "Complaints & feedback page"
 msgstr "投诉和反馈页面"
 
 msgctxt "Pattern description"
-msgid "A clear complaints process with steps, response times ([CONFIRM]) and how to escalate to regulators."
+msgid ""
+"A clear complaints process with steps, response times ([CONFIRM]) and how to"
+" escalate to regulators."
 msgstr "清晰的投诉流程，包括步骤、回复时限（[CONFIRM]）以及如何向监管机构申诉。"
 
 msgid "What happens next"
@@ -2780,7 +2993,9 @@ msgid "Privacy policy page"
 msgstr "隐私政策页面"
 
 msgctxt "Pattern description"
-msgid "Privacy policy that follows the Australian Privacy Principles and updates from your settings, with a request form."
+msgid ""
+"Privacy policy that follows the Australian Privacy Principles and updates "
+"from your settings, with a request form."
 msgstr "遵循《澳大利亚隐私原则》并根据您的设置自动更新的隐私政策，附申请表。"
 
 msgctxt "Pattern title"
@@ -2788,7 +3003,10 @@ msgid "Seasonal / event landing page"
 msgstr "季节性 / 活动着陆页"
 
 msgctxt "Pattern description"
-msgid "Landing page for an event or season (footy finals, Christmas, spring racing). Schedule it with Publish → Schedule and set \"Unpublish automatically\"."
+msgid ""
+"Landing page for an event or season (footy finals, Christmas, spring "
+"racing). Schedule it with Publish → Schedule and set \"Unpublish "
+"automatically\"."
 msgstr "用于某项活动或季节的着陆页（澳式足球决赛、圣诞节、春季赛马）。请通过“发布 → 定时”安排上线时间，并设置“自动取消发布”。"
 
 msgctxt "Pattern title"
@@ -2796,7 +3014,9 @@ msgid "Terms & cancellation policy page"
 msgstr "条款和取消政策页面"
 
 msgctxt "Pattern description"
-msgid "Structured draft for your booking terms and cancellation policy, with [CONFIRM] notes where your real policy is needed."
+msgid ""
+"Structured draft for your booking terms and cancellation policy, with "
+"[CONFIRM] notes where your real policy is needed."
 msgstr "预约条款和取消政策的结构化草稿，需要填写您实际政策的地方附有 [CONFIRM] 提示。"
 
 msgctxt "Pattern title"
@@ -2831,7 +3051,9 @@ msgid "Animated scene: airport drop-off and pickup"
 msgstr "动画场景：机场送机和接机"
 
 msgctxt "Pattern description"
-msgid "Drop-off at Departures, pickup at Arrivals, and a plane taking off. Follows your colours, and visitors can pause it."
+msgid ""
+"Drop-off at Departures, pickup at Arrivals, and a plane taking off. Follows "
+"your colours, and visitors can pause it."
 msgstr "在出发大厅送客、在到达大厅接客，还有一架正在起飞的飞机。会跟随您的配色，访客可以暂停。"
 
 msgctxt "Pattern title"
@@ -2839,7 +3061,9 @@ msgid "Animated scene: door-to-door wheelchair pickup"
 msgstr "动画场景：门到门轮椅接送"
 
 msgctxt "Pattern description"
-msgid "A maxi taxi pulls up, lowers its ramp and a passenger rolls aboard. Follows your colours, and visitors can pause it."
+msgid ""
+"A maxi taxi pulls up, lowers its ramp and a passenger rolls aboard. Follows "
+"your colours, and visitors can pause it."
 msgstr "一辆大型出租车停下，放下坡道，一位乘客坐着轮椅上车。会跟随您的配色，访客可以暂停。"
 
 msgctxt "Pattern title"
@@ -2847,7 +3071,9 @@ msgid "Animated strip: taxis driving by"
 msgstr "动画横条：驶过的出租车"
 
 msgctxt "Pattern description"
-msgid "A narrow road with a maxi taxi and taxis driving past. Follows your colours, and visitors can pause it."
+msgid ""
+"A narrow road with a maxi taxi and taxis driving past. Follows your colours,"
+" and visitors can pause it."
 msgstr "一条窄窄的道路，一辆大型出租车和几辆出租车驶过。会跟随您的配色，访客可以暂停。"
 
 msgctxt "Pattern title"
@@ -2863,7 +3089,9 @@ msgid "Live trust numbers"
 msgstr "实时信誉数据"
 
 msgctxt "Pattern description"
-msgid "Trips completed, suburbs served and years in business — updates itself from your bookings."
+msgid ""
+"Trips completed, suburbs served and years in business — updates itself from "
+"your bookings."
 msgstr "已完成行程、已服务的区和经营年数——根据您的预约自动更新。"
 
 msgctxt "Pattern title"
@@ -2885,7 +3113,8 @@ msgid "Do you cover my suburb? checker"
 msgstr "“你们的服务覆盖我所在的区吗？”查询工具"
 
 msgctxt "Pattern description"
-msgid "Instant answer for visitors checking if you cover their suburb or postcode."
+msgid ""
+"Instant answer for visitors checking if you cover their suburb or postcode."
 msgstr "访客查询您是否覆盖其所在区或邮编时，可立即得到答案。"
 
 msgctxt "Pattern title"
@@ -2909,7 +3138,9 @@ msgid "Wheelchair safety video"
 msgstr "轮椅安全视频"
 
 msgctxt "Pattern description"
-msgid "Captioned video with transcript — set it up in Customize → Taxi Peninsula → Wheelchair safety video."
+msgid ""
+"Captioned video with transcript — set it up in Customize → Taxi Peninsula → "
+"Wheelchair safety video."
 msgstr "带字幕和文字稿的视频——请在“自定义 → Taxi Peninsula → 轮椅安全视频”中设置。"
 
 msgid "Search for:"
@@ -2928,12 +3159,19 @@ msgid "Categories"
 msgstr "分类"
 
 #. translators: 1: suburb, 2: site name
-msgid "Need an accessible ride in %1$s? %2$s provides wheelchair accessible taxis with ramps or hoists, wheelchair restraints and drivers trained to help you in and out safely."
+msgid ""
+"Need an accessible ride in %1$s? %2$s provides wheelchair accessible taxis "
+"with ramps or hoists, wheelchair restraints and drivers trained to help you "
+"in and out safely."
 msgstr "在 %1$s 需要无障碍出行？%2$s 提供无障碍轮椅出租车，配备坡道或升降机和轮椅固定带，司机经过培训，可以安全地协助您上下车。"
 
 #. translators: %s: suburb
-msgid "We pick up from homes, hospitals, aged-care residences and day programs in %s and take you anywhere across Melbourne and the Mornington Peninsula — including Melbourne and Avalon airports."
-msgstr "我们可从 %s 的住家、医院、养老院和日间活动中心接您，送您前往墨尔本和莫宁顿半岛的任何地方——包括墨尔本机场和阿瓦隆（Avalon）机场。"
+msgid ""
+"We pick up from homes, hospitals, aged-care residences and day programs in "
+"%s and take you anywhere across Melbourne and the Mornington Peninsula — "
+"including Melbourne and Avalon airports."
+msgstr ""
+"我们可从 %s 的住家、医院、养老院和日间活动中心接您，送您前往墨尔本和莫宁顿半岛的任何地方——包括墨尔本机场和阿瓦隆（Avalon）机场。"
 
 #. translators: %s: suburb
 msgid "Places we often travel to around %s"
@@ -2988,7 +3226,10 @@ msgstr "街道地址，区名"
 msgid "e.g. Frankston Hospital, Melbourne Airport"
 msgstr "例如：Frankston 医院、墨尔本机场"
 
-msgid "Estimate only, based on the usual driving route. The final fare depends on traffic, waiting time and route, and any MPTP subsidy is applied by the driver."
+msgid ""
+"Estimate only, based on the usual driving route. The final fare depends on "
+"traffic, waiting time and route, and any MPTP subsidy is applied by the "
+"driver."
 msgstr "仅为估算，根据通常的行车路线计算。最终车费取决于交通状况、等候时间和路线，MPTP 补贴（如有）由司机计算扣除。"
 
 msgid "I need a return trip"
@@ -3007,7 +3248,9 @@ msgid "Until"
 msgstr "截至"
 
 #. translators: %d: weeks
-msgid "Same times each day, for up to %d weeks. Each trip gets its own reference so it can be changed separately."
+msgid ""
+"Same times each day, for up to %d weeks. Each trip gets its own reference so"
+" it can be changed separately."
 msgstr "每天时间相同，最长 %d 周。每次行程都有自己的预约编号，可以单独更改。"
 
 msgid "Accessibility needs"
@@ -3019,7 +3262,9 @@ msgstr "我是多用途出租车计划（MPTP）会员"
 msgid "Anything we should know?"
 msgstr "还有什么需要我们知道的吗？"
 
-msgid "e.g. wheelchair dimensions, carer travelling, assistance to the door, flight number"
+msgid ""
+"e.g. wheelchair dimensions, carer travelling, assistance to the door, flight"
+" number"
 msgstr "例如：轮椅尺寸、有护理人员同行、需协助到门口、航班号"
 
 msgid "How will you pay?"
@@ -3031,13 +3276,17 @@ msgstr "计划管理人、服务提供者或公司"
 msgid "NDIS number or purchase order (optional)"
 msgstr "NDIS 号码或采购订单号（选填）"
 
-msgid "After you submit, you will be taken to Stripe’s secure checkout to pay the deposit. The rest of the fare is paid at the end of the trip."
+msgid ""
+"After you submit, you will be taken to Stripe’s secure checkout to pay the "
+"deposit. The rest of the fare is paid at the end of the trip."
 msgstr "提交后，您将被转到 Stripe 的安全付款页面支付订金。其余车费在行程结束时支付。"
 
 msgid "Your details"
 msgstr "您的资料"
 
-msgid "I agree to be contacted by phone, SMS or email about this booking, and for you to use the mobility and health details I give to arrange the trip."
+msgid ""
+"I agree to be contacted by phone, SMS or email about this booking, and for "
+"you to use the mobility and health details I give to arrange the trip."
 msgstr "我同意你们就此预约通过电话、短信或电子邮件与我联系，并同意你们使用我提供的行动能力和健康信息来安排行程。"
 
 #. translators: %s: link to the terms page
@@ -3057,7 +3306,9 @@ msgstr "一小时内出行？请致电 %s"
 msgid "Find your booking"
 msgstr "查找您的预约"
 
-msgid "Enter the reference from your confirmation (it starts with TP-) and the mobile number you booked with."
+msgid ""
+"Enter the reference from your confirmation (it starts with TP-) and the "
+"mobile number you booked with."
 msgstr "请输入确认信息中的预约编号（以 TP- 开头）以及预约时使用的手机号码。"
 
 msgid "Show my booking"
@@ -3082,13 +3333,16 @@ msgstr "付款完成——谢谢您。"
 msgid "It can take a minute for the payment to show below."
 msgstr "付款可能需要一分钟左右才会显示在下方。"
 
-msgid "The payment was not completed. You can try again below or pay the driver."
+msgid ""
+"The payment was not completed. You can try again below or pay the driver."
 msgstr "付款未完成。您可以在下方重试，或向司机付款。"
 
 msgid "This booking has been cancelled."
 msgstr "此预约已取消。"
 
-msgid "Our driver arrived but could not find you, so this trip was marked as a no-show. Please call us if this is a mistake."
+msgid ""
+"Our driver arrived but could not find you, so this trip was marked as a no-"
+"show. Please call us if this is a mistake."
 msgstr "我们的司机已到达，但没有找到您，因此本次行程被记录为“乘客未到”。如有误会，请致电我们。"
 
 msgid "Your driver is on the way."
@@ -3143,7 +3397,9 @@ msgstr "取消此重复预约中所有剩余的行程"
 msgid "e.g. Please change the pick-up to 10:15am"
 msgstr "例如：请把上车时间改为上午 10:15"
 
-msgid "Requests are handled by our team. For changes within the next two hours, please call us."
+msgid ""
+"Requests are handled by our team. For changes within the next two hours, "
+"please call us."
 msgstr "申请由我们的团队处理。如需更改两小时内的行程，请致电我们。"
 
 #. translators: %s: phone link
@@ -3164,7 +3420,9 @@ msgstr[0] "已申请 %d 次行程。"
 msgid "Each trip has its own reference, listed in your confirmation email."
 msgstr "每次行程都有自己的预约编号，列在您的确认电子邮件中。"
 
-msgid "We saved your booking but could not open the online payment page. You can pay the driver instead, or try again from your booking page."
+msgid ""
+"We saved your booking but could not open the online payment page. You can "
+"pay the driver instead, or try again from your booking page."
 msgstr "我们已保存您的预约，但无法打开在线付款页面。您可以改为向司机付款，或在预约页面重试。"
 
 msgid "We confirm your booking"
@@ -3228,25 +3486,31 @@ msgstr "指南"
 msgid "to travelling to %s"
 msgstr "：前往 %s 出行"
 
-msgid "Rear-entry ramps or hoists and four-point restraints, so you can stay in your own chair."
+msgid ""
+"Rear-entry ramps or hoists and four-point restraints, so you can stay in "
+"your own chair."
 msgstr "后门进入的坡道或升降机，以及四点式固定带，让您可以一直坐在自己的轮椅上。"
 
 msgid "Trained, accredited drivers"
 msgstr "训练有素的持证司机"
 
-msgid "Our drivers are experienced in loading, securing and assisting passengers with a disability."
+msgid ""
+"Our drivers are experienced in loading, securing and assisting passengers "
+"with a disability."
 msgstr "我们的司机在协助残障乘客上车、固定轮椅和提供帮助方面经验丰富。"
 
 msgid "Punctual, 24/7"
 msgstr "准时守约，全天候服务"
 
-msgid "Book ahead for appointments and flights, or call us for a same-day pick-up."
+msgid ""
+"Book ahead for appointments and flights, or call us for a same-day pick-up."
 msgstr "就医预约和航班请提前预约，当天接送请致电我们。"
 
 msgid "Carers welcome"
 msgstr "欢迎护理人员同行"
 
-msgid "Family members and support workers can travel with you at no extra hassle."
+msgid ""
+"Family members and support workers can travel with you at no extra hassle."
 msgstr "家人和支持工作者可以轻松地与您同行。"
 
 msgid "Prefer to talk to someone?"
@@ -3258,7 +3522,9 @@ msgstr "查看所有常见问题"
 msgid "Pickups from your door"
 msgstr "上门接送"
 
-msgid "Our maxi taxis back up close, lower the ramp and help you aboard. You stay in your own chair, secured with four-point restraints."
+msgid ""
+"Our maxi taxis back up close, lower the ramp and help you aboard. You stay "
+"in your own chair, secured with four-point restraints."
 msgstr "我们的大型出租车会倒车靠近，放下坡道并扶您上车。您可以一直坐在自己的轮椅上，并用四点式固定带固定。"
 
 msgid "Book a pickup"
@@ -3267,7 +3533,9 @@ msgstr "预约接送"
 msgid "Airport drop-offs & pickups"
 msgstr "机场送机和接机"
 
-msgid "Straight to Departures, and waiting at Arrivals when you land — with room for luggage and mobility equipment."
+msgid ""
+"Straight to Departures, and waiting at Arrivals when you land — with room "
+"for luggage and mobility equipment."
 msgstr "直接送到出发大厅，您落地时我们在到达大厅等候——还有足够空间放行李和助行设备。"
 
 msgid "Book an airport transfer"
@@ -3343,7 +3611,9 @@ msgstr "估算"
 msgid "Return"
 msgstr "回程"
 
-msgid "See exactly how our drivers load, secure and unload a wheelchair — so you know what to expect before your first trip."
+msgid ""
+"See exactly how our drivers load, secure and unload a wheelchair — so you "
+"know what to expect before your first trip."
 msgstr "看看我们的司机如何让轮椅上车、固定轮椅和下车——让您在第一次乘车前就心中有数。"
 
 msgid "Read the transcript"
@@ -3418,3 +3688,1395 @@ msgstr "投诉与反馈"
 #. Built-in page title
 msgid "Drive With Us"
 msgstr "加入我们当司机"
+
+#. translators: %s: suburbs
+msgid " and more"
+msgstr " 等地区"
+
+#. translators: 1: suburb 2: council
+msgid "%1$s is in %2$s."
+msgstr "%1$s 位于 %2$s。"
+
+#. translators: 1: business 2: place
+msgid ""
+"%1$s picks up wheelchair users from %2$s in ramp and hoist vans, with the "
+"driver meeting you at the pick-up point and helping you on board."
+msgstr "%1$s 使用配有坡道和升降机的车辆，从 %2$s 接载轮椅乘客，司机会在上车地点与您会合，并协助您上车。"
+
+#. translators: 1: business 2: service 3: place 4: " since 2012" or ""
+msgid ""
+"%1$s provides %2$s in %3$s%4$s, using ramp and hoist vans with wheelchair "
+"restraints and drivers who help you from door to door."
+msgstr "%1$s 在 %3$s 提供%2$s%4$s，使用配有坡道、升降机和轮椅固定装置的车辆，司机会协助您门到门出行。"
+
+#. translators: 1: business 2: place
+msgid ""
+"%1$s takes wheelchair users to %2$s in ramp and hoist vans and drops you at "
+"the accessible entrance, with help from the driver."
+msgstr "%1$s 使用配有坡道和升降机的车辆，送轮椅乘客前往 %2$s，并由司机协助您在无障碍入口下车。"
+
+#. translators: 1: site name 2: link
+msgid "%1$s: thanks for travelling with us. How was your trip? %2$s"
+msgstr "%1$s：感谢您乘坐我们的车。这次行程怎么样？%2$s"
+
+#. translators: %d: minutes
+msgid "%d min read"
+msgid_plural "%d min read"
+msgstr[0] "约 %d 分钟阅读"
+
+#. translators: %d: seats
+msgid "%d seat"
+msgid_plural "%d seats"
+msgstr[0] "%d 个座位"
+
+#. translators: %s: business name
+msgid ""
+"%s (\"we\", \"us\") provides wheelchair accessible taxi transport. This "
+"policy explains what personal information we collect, why, who we share it "
+"with and how you can see, correct or delete it. We follow the Privacy Act "
+"1988 (Cth) and the Australian Privacy Principles (APPs)."
+msgstr ""
+"%s（“我们”）提供轮椅无障碍出租车服务。本政策说明我们收集哪些个人信息、收集原因、与谁共享，以及您如何查看、更正或删除这些信息。我们遵守《1988 "
+"年隐私法》（联邦）和《澳大利亚隐私原则》（APPs）。"
+
+#. translators: %s: discount
+msgid "%s off"
+msgstr "优惠 %s"
+
+#. translators: %s: date and earliest time
+msgid "%s or later — when ready"
+msgstr "%s 或之后 — 准备好时"
+
+msgid "(opens WhatsApp)"
+msgstr "（打开 WhatsApp）"
+
+msgid "1 wheelchair"
+msgstr "1 辆轮椅"
+
+msgid "2 wheelchairs"
+msgstr "2 辆轮椅"
+
+msgid "7 days"
+msgstr "每周 7 天"
+
+msgid ""
+"A guide only, not to scale. Not on the map? Ask us — we travel further on "
+"request."
+msgstr "仅供参考，未按比例绘制。地图上没有您的地点？请询问我们 — 如有需要，我们可以去更远的地方。"
+
+msgid "A question about a booking"
+msgstr "关于预订的问题"
+
+msgid ""
+"A rough guide without traffic. We allow extra time for loading your "
+"wheelchair."
+msgstr "不含交通拥堵的大致时间。我们会预留额外时间安置您的轮椅。"
+
+msgid "ABN"
+msgstr "ABN"
+
+msgid "About the author"
+msgstr "关于作者"
+
+msgid "About this policy"
+msgstr "关于本政策"
+
+msgid "Access"
+msgstr "无障碍设施"
+
+msgid "Accessible drop-off and pick-up points"
+msgstr "无障碍下车点和上车点"
+
+msgid "Accessible entrance"
+msgstr "无障碍入口"
+
+#. translators: %s: suburbs
+msgid "Accessible taxis for %s."
+msgstr "为 %s 提供无障碍出租车。"
+
+msgid "Accessible transport glossary"
+msgstr "无障碍交通术语表"
+
+msgid "Account"
+msgstr "账户"
+
+msgid "Accounts: until you delete your account."
+msgstr "账户信息：保留至您删除账户为止。"
+
+#. translators: %s: item type
+msgid "Add %s"
+msgstr "添加%s"
+
+msgid "Add to home screen"
+msgstr "添加到主屏幕"
+
+msgid "Afternoon (12pm – 5pm)"
+msgstr "下午（中午 12 点 – 下午 5 点）"
+
+msgid "Airport"
+msgstr "机场"
+
+msgid "All glossary terms"
+msgstr "所有术语"
+
+msgid "Anything else we should know"
+msgstr "还有其他需要我们了解的情况吗"
+
+msgid "Anything that helps us recognise it"
+msgstr "任何有助于我们辨认的信息"
+
+msgid "Anything we should know before we call? (optional)"
+msgstr "我们致电之前，有什么需要了解的吗？（可选）"
+
+msgid "Area"
+msgstr "地区"
+
+msgid "Arriving by plane? Flight number (optional)"
+msgstr "乘飞机抵达？航班号（可选）"
+
+msgid "Articles"
+msgstr "文章"
+
+msgid "As soon as possible"
+msgstr "尽快"
+
+msgid "Ask us to call you"
+msgstr "请我们给您回电"
+
+msgid "At the other end we help you to the door, reception or check-in."
+msgstr "到达目的地后，我们会协助您到门口、前台或登记处。"
+
+msgid "Australia, with some processing overseas"
+msgstr "澳大利亚，部分在海外处理"
+
+#. translators: %s: date
+msgid "Automatic booking is paused until %s."
+msgstr "自动预订已暂停，直至 %s。"
+
+msgid "Bank transfer"
+msgstr "银行转账"
+
+msgid "Bass Strait"
+msgstr "巴斯海峡"
+
+msgid "Best time to call"
+msgstr "方便接听电话的时间"
+
+msgid "Biller Code"
+msgstr "Biller Code（缴费机构代码）"
+
+#. translators: %s: date
+msgid "Book %s"
+msgstr "预订 %s"
+
+#. translators: %s: place
+msgid "Book a pick-up from %s"
+msgstr "预订从 %s 出发的接载"
+
+msgid "Book a ride"
+msgstr "预订行程"
+
+msgid "Book a ride home from here"
+msgstr "从这里预订回家的车"
+
+msgid "Book a trip first — then you can save it here as a regular trip."
+msgstr "请先预订一次行程，之后即可在此将其保存为常用行程。"
+
+msgid "Book a trip here"
+msgstr "在此预订行程"
+
+#. translators: %s: place
+msgid "Book a trip to %s"
+msgstr "预订前往 %s 的行程"
+
+msgid ""
+"Book an accessible taxi home, to an appointment or anywhere you need to go. "
+"Your pick-up address is already filled in."
+msgstr "预订无障碍出租车回家、去看病或去任何您需要去的地方。您的上车地址已自动填好。"
+
+#. translators: 1: phone 2: price sentence
+msgid "Book online in about two minutes or call %1$s. %2$s"
+msgstr "在线预订大约只需两分钟，或致电 %1$s。%2$s"
+
+#. translators: %s: phone
+msgid ""
+"Book online in about two minutes or call %s; carers travel with you and "
+"MPTP, NDIS and aged-care accounts are accepted."
+msgstr "在线预订大约只需两分钟，或致电 %s；护理人员可与您同行，并接受 MPTP、NDIS 和养老护理账户。"
+
+msgid ""
+"Book online or by phone, we confirm, and your driver helps you from door to "
+"door."
+msgstr "在线或电话预订，我们会确认，司机会协助您门到门出行。"
+
+msgid ""
+"Book online or call us — tell us about your wheelchair and anything the "
+"driver should know."
+msgstr "在线预订或致电我们 — 告诉我们您的轮椅情况，以及司机需要了解的任何事项。"
+
+msgid "Book these trips for me automatically, a week ahead"
+msgstr "提前一周为我自动预订这些行程"
+
+msgid "Book your trip"
+msgstr "预订您的行程"
+
+msgid ""
+"Booked automatically a week ahead. You get an email for each trip and can "
+"cancel any of them."
+msgstr "提前一周自动预订。每次行程您都会收到一封电子邮件，并可取消其中任何一次。"
+
+msgid "Booking reference (if you have it)"
+msgstr "预订编号（如有）"
+
+msgid "Booking takes about two minutes"
+msgstr "预订大约只需两分钟"
+
+msgid "Booking takes about two minutes. We confirm by SMS or email."
+msgstr "预订大约只需两分钟。我们会通过 SMS 或电子邮件确认。"
+
+msgid "By SMS or email, with your driver’s name and vehicle once assigned."
+msgstr "通过 SMS 或电子邮件通知，分配司机后会告知司机姓名和车辆信息。"
+
+#. translators: %s: number
+msgid "CPVV registration %s"
+msgstr "CPVV 注册号 %s"
+
+msgid "Call me back"
+msgstr "请给我回电"
+
+msgid "Can I travel in my power wheelchair or scooter?"
+msgstr "我可以坐电动轮椅或代步车乘车吗？"
+
+msgid "Can a carer or family member come too?"
+msgstr "护理人员或家人可以同行吗？"
+
+#. translators: %s: council
+msgid "Can community transport or care staff in %s book for clients?"
+msgstr "%s 的社区交通或护理人员可以为客户预订吗？"
+
+#. translators: %s: place
+msgid "Can you pick me up from %s straight after my train or shopping?"
+msgstr "我刚下火车或购物完，可以从 %s 接我吗？"
+
+#. translators: %s: place
+msgid "Can you wait or pick me up after my appointment at %s?"
+msgstr "在 %s 看完病后，你们可以等我或来接我吗？"
+
+msgid "Cancellations and fees"
+msgstr "取消和费用"
+
+#. translators: 1: fee 2: hours
+msgid "Cancelling later than that: %1$s fee."
+msgstr "超过上述时间取消：收取 %1$s 费用。"
+
+msgid "Carers and family travel with you"
+msgstr "护理人员和家人可与您同行"
+
+#. translators: %s: maximum wheelchair size
+msgid "Chairs up to %s"
+msgstr "轮椅尺寸最大 %s"
+
+msgid "Change"
+msgstr "更改"
+
+msgid "Choose at least one day."
+msgstr "请至少选择一天。"
+
+msgid "Colour and brand (if known)"
+msgstr "颜色和品牌（如知道）"
+
+msgid ""
+"Concerts, the footy, festivals and the Christmas lights — book an accessible"
+" taxi to the right gate and home again."
+msgstr "音乐会、足球赛、节日活动和圣诞灯饰 — 预订无障碍出租车，直达正确入口，再送您回家。"
+
+msgid "Contact details: name, mobile number and email address."
+msgstr "联系方式：姓名、手机号码和电子邮件地址。"
+
+msgid "Contact us"
+msgstr "联系我们"
+
+msgid ""
+"Contact your bank or financial institution to make this payment from your "
+"cheque, savings, debit or transaction account. More info: www.bpay.com.au"
+msgstr "请联系您的银行或金融机构，从您的支票、储蓄、借记或交易账户付款。更多信息：www.bpay.com.au"
+
+msgid "Copy the details from"
+msgstr "复制以下行程的详情："
+
+msgid "Council areas we cover"
+msgstr "我们服务的市议会区域"
+
+msgid "Date of the trip"
+msgstr "行程日期"
+
+msgid "Days"
+msgstr "日期"
+
+msgid ""
+"Deaf, hard of hearing or speech impaired? Contact us through the National "
+"Relay Service: nrschat.nrscall.gov.au or call 133 677 and ask for our "
+"number."
+msgstr ""
+"失聪、听力障碍或言语障碍？请通过国家中继服务（National Relay "
+"Service）联系我们：nrschat.nrscall.gov.au，或致电 133 677 并告知我们的电话号码。"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid ""
+"Drivers: create a normal account, then the office gives it driver access."
+msgstr "司机：请先创建普通账户，然后由办公室为其开通司机权限。"
+
+msgid "Drop-off point"
+msgstr "下车地点"
+
+msgid "Drop-off point:"
+msgstr "下车地点："
+
+msgid "Earliest likely time (optional)"
+msgstr "最早可能的时间（可选）"
+
+#. translators: %s: item type
+msgid "Edit %s"
+msgstr "编辑%s"
+
+msgid "Email (optional)"
+msgstr "电子邮件（可选）"
+
+msgid "Email:"
+msgstr "电子邮件："
+
+msgid "Evening (5pm – 8pm)"
+msgstr "晚上（下午 5 点 – 晚上 8 点）"
+
+msgid "Event"
+msgstr "活动"
+
+#. translators: 1: offer 2: code
+msgid ""
+"Event offer: %1$s with code %2$s — already added when you book from this "
+"page."
+msgstr "活动优惠：%1$s，优惠码 %2$s — 从本页预订时已自动添加。"
+
+msgid "Events"
+msgstr "活动"
+
+msgid ""
+"Every staff member and driver has their own login, and each person can only "
+"see what their job needs."
+msgstr "每位员工和司机都有自己的登录账户，每个人只能查看其工作所需的信息。"
+
+msgid ""
+"Fares depend on distance, time of day and waiting time. Ask us for a quote "
+"before you book."
+msgstr "车费取决于距离、时段和等候时间。预订前请向我们询价。"
+
+#. translators: %s: price
+msgid ""
+"Fares start from %s and depend on distance and waiting time; MPTP, NDIS and "
+"aged-care accounts are accepted."
+msgstr "车费 %s 起，取决于距离和等候时间；接受 MPTP、NDIS 和养老护理账户。"
+
+msgid "Find what you need"
+msgstr "查找您需要的信息"
+
+msgid ""
+"For airport pick-ups we watch your flight and move the pick-up if it lands "
+"early or late. Set the pick-up time to when you expect to be ready."
+msgstr "机场接机时，我们会关注您的航班，如航班提前或延误，我们会调整接载时间。请将接载时间设为您预计准备好的时间。"
+
+#. translators: %s: phone number
+msgid ""
+"For more than two wheelchairs we send more than one vehicle — please call "
+"%s."
+msgstr "超过两辆轮椅时，我们会派出多辆车 — 请致电 %s。"
+
+msgid ""
+"For safety, to handle complaints and incidents, and to improve our service "
+"using your ratings."
+msgstr "用于保障安全、处理投诉和事故，以及根据您的评分改进服务。"
+
+msgid "Frankston Hospital"
+msgstr "Frankston 医院"
+
+#. translators: %d: hours
+msgid "Free cancellation up to %d hour before pick-up."
+msgid_plural "Free cancellation up to %d hours before pick-up."
+msgstr[0] "上车前 %d 小时以上取消免费。"
+
+#. translators: %s: price
+msgid "From %s"
+msgstr "%s 起"
+
+msgid "From and to"
+msgstr "出发地和目的地"
+
+msgid "Get a notification when your driver is on the way"
+msgstr "司机出发时通知我"
+
+msgid "Glossary"
+msgstr "术语表"
+
+msgid "Going home after"
+msgstr "之后回家"
+
+msgid "Good to know"
+msgstr "温馨提示"
+
+msgid ""
+"Government bodies and police when the law requires it, for example the "
+"regulator or police after an incident."
+msgstr "法律要求时提供给政府机构和警方，例如发生事故后提供给监管机构或警方。"
+
+msgid "Group or event (formal, outing, conference)"
+msgstr "团体或活动（正式活动、外出、会议）"
+
+msgid "Health and mobility information"
+msgstr "健康和行动能力信息"
+
+msgid "Hospital"
+msgstr "医院"
+
+msgid "Hospital discharge"
+msgstr "出院"
+
+msgid "Hospital or clinic"
+msgstr "医院或诊所"
+
+msgid "Hospitals, clinics, airports and venues"
+msgstr "医院、诊所、机场和场馆"
+
+#. translators: %s: suburb
+msgid "Hospitals, stations and places in %s"
+msgstr "%s 的医院、车站和地点"
+
+msgid "How can we reach you?"
+msgstr "我们如何联系您？"
+
+msgid "How do I pay?"
+msgstr "如何付款？"
+
+#. translators: %s: suburb
+msgid "How long does it take to get places from %s?"
+msgstr "从 %s 出发到各地需要多长时间？"
+
+#. translators: %s: place
+msgid "How long does it take to get to %s?"
+msgstr "到 %s 需要多长时间？"
+
+#. translators: %s: place
+msgid "How long is the trip home from %s?"
+msgstr "从 %s 回家需要多长时间？"
+
+msgid "How long we keep it"
+msgstr "保存期限"
+
+msgid "How much does it cost?"
+msgstr "费用是多少？"
+
+msgid "How to pay"
+msgstr "付款方式"
+
+msgid "How we collect it"
+msgstr "我们如何收集信息"
+
+msgid "How we keep it safe"
+msgstr "我们如何保护信息安全"
+
+msgid "How we use your details"
+msgstr "我们如何使用您的信息"
+
+msgid "Hydraulic hoist / lift"
+msgstr "液压升降机"
+
+msgid "I am the passenger — use my account details"
+msgstr "我是乘客 — 使用我的账户信息"
+
+msgid ""
+"I don’t know the exact time yet — e.g. waiting to be discharged from "
+"hospital"
+msgstr "我还不知道确切时间 — 例如正在等待出院"
+
+msgid "I need a return trip too"
+msgstr "我还需要回程"
+
+msgid ""
+"If a data breach is likely to cause you serious harm, we will tell you and "
+"the Office of the Australian Information Commissioner."
+msgstr "如果数据泄露可能对您造成严重伤害，我们会通知您和澳大利亚信息专员办公室。"
+
+msgid ""
+"If you apply to drive with us: the details in your application, including "
+"your accreditation."
+msgstr "如果您申请成为我们的司机：您申请中的信息，包括您的资质认证。"
+
+msgid ""
+"If you are not happy with our answer, you can complain to the Office of the "
+"Australian Information Commissioner (OAIC): www.oaic.gov.au or 1300 363 992."
+msgstr "如果您对我们的答复不满意，可以向澳大利亚信息专员办公室（OAIC）投诉：www.oaic.gov.au 或 1300 363 992。"
+
+msgid ""
+"If you open an account: your saved passengers or clients and saved "
+"addresses."
+msgstr "如果您开设账户：您保存的乘客或客户以及保存的地址。"
+
+msgid "In short"
+msgstr "简而言之"
+
+msgid "In this article"
+msgstr "本文内容"
+
+msgid "Information sent overseas"
+msgstr "发送到海外的信息"
+
+msgid "Interstate trip"
+msgstr "跨州行程"
+
+msgid "Invoices and payment records: 5 years, as tax law requires."
+msgstr "发票和付款记录：按税法要求保存 5 年。"
+
+#. translators: %s: place
+msgid "Is there step-free access at %s?"
+msgstr "%s 有无台阶通道吗？"
+
+msgid "Item"
+msgstr "项目"
+
+msgid "I’m a passenger"
+msgstr "我是乘客"
+
+msgid "I’m booking for someone"
+msgstr "我在为他人预订"
+
+msgid "I’m ready"
+msgstr "我准备好了"
+
+msgid "Last updated"
+msgstr "最后更新"
+
+#. translators: %s: date
+msgid "Last updated: %s"
+msgstr "最后更新：%s"
+
+msgid "Learn more"
+msgstr "了解更多"
+
+msgid "Leave your number and a good time."
+msgstr "请留下您的电话号码和方便的时间。"
+
+msgid "Long-distance trip (Geelong, regional Victoria)"
+msgstr "长途行程（Geelong、维多利亚州地区）"
+
+msgid "Looks like we took a wrong turn"
+msgstr "看起来我们走错路了"
+
+msgid "MPTP accepted"
+msgstr "接受 MPTP"
+
+msgid "Manage a booking"
+msgstr "管理预订"
+
+msgid "Map of the areas we cover"
+msgstr "我们服务区域的地图"
+
+msgid "Map showing your driver’s location"
+msgstr "显示司机位置的地图"
+
+msgid "Meet some of our drivers"
+msgstr "认识我们的部分司机"
+
+msgid "Melbourne Airport"
+msgstr "墨尔本机场"
+
+msgid "Melbourne CBD"
+msgstr "墨尔本市中心（CBD）"
+
+msgid "Mobile (for SMS offers, optional)"
+msgstr "手机（用于接收 SMS 优惠，可选）"
+
+msgid "Monash Medical Centre"
+msgstr "Monash 医疗中心"
+
+msgid "More events"
+msgstr "更多活动"
+
+msgid "More terms"
+msgstr "更多术语"
+
+msgid "Morning (9am – 12pm)"
+msgstr "上午（上午 9 点 – 中午 12 点）"
+
+msgid "Mornington Peninsula"
+msgstr "莫宁顿半岛（Mornington Peninsula）"
+
+msgid "NDIS & aged care"
+msgstr "NDIS 与养老护理"
+
+msgid "NDIS, aged care or business account"
+msgstr "NDIS、养老护理或企业账户"
+
+msgid "NDIS-friendly"
+msgstr "支持 NDIS"
+
+#. translators: %s: phone
+msgid "Need a taxi in the next hour? Call %s now."
+msgstr "一小时内需要出租车？请立即致电 %s。"
+
+#. translators: %s: item type
+msgid "New %s"
+msgstr "新建%s"
+
+msgid "News & offers"
+msgstr "新闻与优惠"
+
+msgid "Next reviews"
+msgstr "下一组评价"
+
+msgid "No wheelchair"
+msgstr "无轮椅"
+
+#. translators: %s: fee
+msgid ""
+"No-show (the driver arrives and the passenger is not there and cannot be "
+"contacted): %s fee."
+msgstr "未到场（司机到达后乘客不在，且无法联系）：收取 %s 费用。"
+
+msgid ""
+"Notifications are blocked in your browser settings. We will still text you."
+msgstr "您的浏览器设置已屏蔽通知。我们仍会给您发短信。"
+
+msgid "Notifications are on for this trip."
+msgstr "本次行程已开启通知。"
+
+msgid "Notify me"
+msgstr "通知我"
+
+msgid ""
+"On iPhone or iPad: tap Share, then \"Add to Home Screen\". Open the site "
+"from the new icon and tap the button again."
+msgstr "在 iPhone 或 iPad 上：点按“共享”，然后点“添加到主屏幕”。从新图标打开网站，再点按此按钮。"
+
+msgid ""
+"On the day we text you when the driver is on the way and when they arrive."
+msgstr "行程当天，司机出发时和到达时我们都会给您发短信。"
+
+msgid "Opening hours and account"
+msgstr "营业时间和账户"
+
+#. translators: %s: phone
+msgid "Or call us on %s."
+msgstr "或致电 %s 联系我们。"
+
+msgid "Or call us — we are happy to book for you:"
+msgstr "或致电我们 — 我们很乐意为您预订："
+
+msgid "Organisation (optional)"
+msgstr "机构名称（可选）"
+
+msgid "Other council areas"
+msgstr "其他市议会区域"
+
+msgid "Other places"
+msgstr "其他地点"
+
+msgid "Other places we go"
+msgstr "我们前往的其他地点"
+
+msgid ""
+"Our website uses an encrypted (HTTPS) connection, and links to your booking "
+"are protected with a secret code."
+msgstr "我们的网站使用加密（HTTPS）连接，您的预订链接受密码保护。"
+
+msgid "Passengers, coordinators and drivers all sign in here."
+msgstr "乘客、协调员和司机都在此登录。"
+
+msgid "Pause automatic booking until (optional)"
+msgstr "暂停自动预订，直至（可选）"
+
+msgid ""
+"Pay the driver by card or cash, use your Multi Purpose Taxi Program (MPTP) "
+"card, or choose \"Account / invoice\" for NDIS plan managers, aged-care "
+"providers and businesses."
+msgstr ""
+"您可以用银行卡或现金向司机付款，使用您的多用途出租车计划（MPTP）卡，或为 NDIS 计划管理人、养老护理机构和企业选择“账户 / 发票”。"
+
+msgid ""
+"Pay the driver, use your MPTP card, or ask for an NDIS / aged-care invoice"
+msgstr "向司机付款、使用您的 MPTP 卡，或申请 NDIS / 养老护理发票"
+
+msgid "PayID"
+msgstr "PayID"
+
+msgid ""
+"Payment and funding details: how you pay, Multi Purpose Taxi Program "
+"membership, and for account trips the organisation or plan manager we "
+"invoice and an NDIS number or purchase order."
+msgstr ""
+"付款和资助信息：您的付款方式、多用途出租车计划（MPTP）会员资格；如为账户行程，还包括我们开具发票的机构或计划管理人，以及 NDIS "
+"编号或采购订单号。"
+
+msgid "People travelling"
+msgstr "乘车人员"
+
+msgid ""
+"People you ask us to deal with, such as the coordinator, plan manager or "
+"facility that booked or pays for your trip."
+msgstr "您要求我们联系的人，例如为您预订或支付行程费用的协调员、计划管理人或机构。"
+
+msgid "Phone number"
+msgstr "电话号码"
+
+msgid "Phone:"
+msgstr "电话："
+
+msgid "Pick up when ready"
+msgstr "准备好后接载"
+
+msgid "Pick-up point"
+msgstr "上车地点"
+
+msgid "Pick-up point:"
+msgstr "上车地点："
+
+msgid "Pick-up time (if known)"
+msgstr "上车时间（如知道）"
+
+msgid "Places we go"
+msgstr "我们前往的地点"
+
+#. translators: 1: minutes 2: time
+msgid ""
+"Plan to arrive about %1$d minutes early — by %2$s. Choose a point and we "
+"will fill in the booking for you."
+msgstr "请计划提前约 %1$d 分钟到达 — 即 %2$s 之前。选择一个地点，我们会为您填写预订信息。"
+
+msgid "Please call us."
+msgstr "请致电我们。"
+
+msgid "Please choose a pick-up time."
+msgstr "请选择上车时间。"
+
+msgid "Please choose one of your trips."
+msgstr "请选择您的一次行程。"
+
+#. translators: %s: privacy contact
+msgid ""
+"Please contact %s first. We will look into your concern and reply within 30 "
+"days."
+msgstr "请先联系 %s。我们会调查您的问题，并在 30 天内答复。"
+
+msgid "Popular pages"
+msgstr "热门页面"
+
+msgid "Port Phillip Bay"
+msgstr "菲利普港湾（Port Phillip Bay）"
+
+#. translators: %s: list of suburbs
+msgid ""
+"Port Phillip Bay and the Mornington Peninsula, with these places marked: %s."
+msgstr "菲利普港湾和莫宁顿半岛，图中标出以下地点：%s。"
+
+msgid "Post:"
+msgstr "邮寄地址："
+
+#. translators: %s: phone
+msgid "Prefer to talk? Call %s."
+msgstr "想直接通话？请致电 %s。"
+
+msgid "Previous reviews"
+msgstr "上一组评价"
+
+msgid "Prices and quotes"
+msgstr "价格和报价"
+
+msgid "Print"
+msgstr "打印"
+
+msgid "Print trip confirmation"
+msgstr "打印行程确认单"
+
+msgid "Promo code"
+msgstr "优惠码"
+
+msgid "Promo code (optional)"
+msgstr "优惠码（可选）"
+
+msgid ""
+"Put the earliest likely time above (or leave it empty). When you are ready, "
+"tap \"I’m ready\" on your booking page or call us, and we will send the "
+"driver."
+msgstr "请在上方填写最早可能的时间（或留空）。准备好后，请在预订页面点按“我准备好了”或致电我们，我们会派司机过来。"
+
+#. translators: %s: place
+msgid "Questions about wheelchair taxis and %s"
+msgstr "关于轮椅出租车和 %s 的问题"
+
+#. translators: %s: council
+msgid "Questions about wheelchair taxis in %s"
+msgstr "关于 %s 轮椅出租车的问题"
+
+msgid "Questions and complaints"
+msgstr "问题和投诉"
+
+msgid "Quote"
+msgstr "报价"
+
+msgid "Railway station"
+msgstr "火车站"
+
+msgid "Railway stations and shopping centres"
+msgstr "火车站和购物中心"
+
+msgid "Ramps or hoists and wheelchair restraints in every vehicle"
+msgstr "每辆车都配有坡道或升降机以及轮椅固定装置"
+
+msgid "Rather talk to someone? Ask us to call you back."
+msgstr "想和工作人员通话？请让我们给您回电。"
+
+msgid "Ratings and comments you give about a trip, and messages you send us."
+msgstr "您对行程的评分和意见，以及您发给我们的信息。"
+
+msgid "Read all reviews on Google"
+msgstr "在 Google 上阅读所有评价"
+
+msgid "Ready to be picked up?"
+msgstr "准备好上车了吗？"
+
+msgid "Rear ramp"
+msgstr "后置坡道"
+
+msgid "Ref"
+msgstr "编号"
+
+msgid "Regular trip"
+msgstr "常用行程"
+
+msgid "Regular trips"
+msgstr "常用行程"
+
+msgid "Regular trips for an organisation"
+msgstr "机构的常用行程"
+
+msgid "Report lost item"
+msgstr "报告遗失物品"
+
+msgid "Request a quote"
+msgstr "申请报价"
+
+msgid "Return pick-up (optional)"
+msgstr "回程接载（可选）"
+
+msgid "Reviews — scroll sideways for more"
+msgstr "评价 — 左右滑动查看更多"
+
+msgid "Rosebud Hospital"
+msgstr "Rosebud 医院"
+
+msgid "Save a regular trip"
+msgstr "保存常用行程"
+
+msgid "Save changes"
+msgstr "保存更改"
+
+msgid "Save regular trip"
+msgstr "保存常用行程"
+
+msgid ""
+"Save trips you make often — dialysis, day programs, work — and book the next"
+" one in one tap, or let us book them automatically a week ahead."
+msgstr "保存您经常乘坐的行程 — 透析、日间活动、上班 — 一键预订下一次，或让我们提前一周自动为您预订。"
+
+#. translators: %s: item types
+msgid "Search %s"
+msgstr "搜索%s"
+
+#. translators: 1: suburb 2: council
+msgid "See all suburbs we cover there"
+msgstr "查看我们在该地区服务的所有城区"
+
+msgid "See our fleet"
+msgstr "查看我们的车队"
+
+msgid "See upcoming events"
+msgstr "查看即将举行的活动"
+
+msgid "Seeing, correcting or deleting your information"
+msgstr "查看、更正或删除您的信息"
+
+msgid ""
+"Send me occasional news and offers by email and SMS. You can unsubscribe at "
+"any time."
+msgstr "通过电子邮件和 SMS 偶尔向我发送新闻和优惠。您可以随时取消订阅。"
+
+msgid "Service"
+msgstr "服务"
+
+msgid "Service providers who help us run the business:"
+msgstr "协助我们运营业务的服务提供商："
+
+#. translators: %s: menu item
+msgid "Show more: %s"
+msgstr "显示更多：%s"
+
+msgid "Sign up"
+msgstr "注册"
+
+msgid ""
+"Some of our service providers store or process information outside "
+"Australia:"
+msgstr "我们的部分服务提供商在澳大利亚境外存储或处理信息："
+
+msgid "Something else"
+msgstr "其他事项"
+
+msgid "Something went wrong — please contact me about this trip"
+msgstr "出现问题 — 请就此行程与我联系"
+
+msgid "Sorry, that did not work on this device. We will still text you."
+msgstr "抱歉，此功能在本设备上无法使用。我们仍会给您发短信。"
+
+msgid "Suburb"
+msgstr "城区"
+
+msgid ""
+"Tap the button once you have been discharged or your appointment is "
+"finished. We will send the driver straight away."
+msgstr "出院或看完病后，请点按此按钮。我们会立即派司机过来。"
+
+msgid ""
+"Tell us about your chair when you book and we will send the right vehicle."
+msgstr "预订时请告诉我们您的轮椅情况，我们会派出合适的车辆。"
+
+msgid "Tell us where and when — the next step takes about a minute."
+msgstr "告诉我们地点和时间 — 下一步大约只需一分钟。"
+
+msgid ""
+"Tell us where, when and about your wheelchair. It takes about two minutes."
+msgstr "告诉我们地点、时间和您的轮椅情况。大约只需两分钟。"
+
+msgid ""
+"Thanks — we have let the office and your driver know you are ready. We will "
+"text you when the driver is on the way."
+msgstr "谢谢 — 我们已通知办公室和您的司机您已准备好。司机出发时我们会给您发短信。"
+
+msgid ""
+"That page has moved or no longer exists. You can still book, check a booking"
+" or call us — we are happy to help."
+msgstr "该页面已移动或不存在。您仍然可以预订、查看预订或致电我们 — 我们很乐意为您提供帮助。"
+
+msgid ""
+"The driver doing your trip sees your name, phone number, addresses and the "
+"needs you have told us about. Drivers only see their own trips."
+msgstr "负责您行程的司机可以看到您的姓名、电话号码、地址以及您告诉我们的需求。司机只能看到自己负责的行程。"
+
+#. translators: %s: phone number
+msgid "The return pick-up needs to be after the first pick-up time."
+msgstr "回程接载时间需要晚于第一次接载时间。"
+
+msgid "This event has finished."
+msgstr "此活动已结束。"
+
+msgid "This link has expired. Please call us."
+msgstr "此链接已过期。请致电我们。"
+
+#. translators: %s: place
+msgid "Tips from our drivers for %s"
+msgstr "我们的司机关于 %s 的小贴士"
+
+msgid "To arrange, run and change your trips, and send the right vehicle."
+msgstr "用于安排、执行和更改您的行程，并派出合适的车辆。"
+
+msgid ""
+"To meet our legal obligations, including commercial passenger vehicle and "
+"tax laws."
+msgstr "用于履行我们的法律义务，包括商业载客车辆法规和税法。"
+
+msgid ""
+"To send booking confirmations and updates by SMS and email, such as when "
+"your driver is on the way."
+msgstr "通过 SMS 和电子邮件发送预订确认和最新动态，例如司机出发时通知您。"
+
+msgid ""
+"To take payment, issue receipts and invoices, and process MPTP and NDIS "
+"claims."
+msgstr "用于收款、开具收据和发票，以及处理 MPTP 和 NDIS 报销。"
+
+msgid "Trained, patient and local — the people who will help you aboard."
+msgstr "训练有素、耐心细致的本地司机 — 他们会协助您上车。"
+
+msgid ""
+"Trip details: pick-up and drop-off addresses, dates and times, number of "
+"passengers, and the vehicle you need."
+msgstr "行程信息：上车和下车地址、日期和时间、乘客人数以及您需要的车辆。"
+
+msgid ""
+"Trips: we keep trip records while we need them to run the business, and "
+"remove details when you ask."
+msgstr "行程记录：在业务运营需要期间，我们会保存行程记录；如您要求，我们会删除相关信息。"
+
+msgid "United Kingdom and other countries"
+msgstr "英国及其他国家"
+
+msgid "United States and other countries"
+msgstr "美国及其他国家"
+
+msgid "Updates every 20 seconds. Map © OpenStreetMap contributors."
+msgstr "每 20 秒更新一次。地图 © OpenStreetMap 贡献者。"
+
+#. translators: %s: phone
+msgid "Urgent — medication, keys, a mobility aid? Call %s."
+msgstr "急需 — 药物、钥匙、助行器？请致电 %s。"
+
+msgid "Vehicles built for wheelchairs"
+msgstr "专为轮椅设计的车辆"
+
+#. translators: %s: item type
+msgid "View %s"
+msgstr "查看%s"
+
+#. translators: %s: place
+msgid "Visiting hours, maps and contacts for %s (official website)"
+msgstr "%s 的探视时间、地图和联系方式（官方网站）"
+
+msgid "Want to drive with us? Apply here."
+msgstr "想成为我们的司机？请在此申请。"
+
+msgid "Ways to pay your invoice"
+msgstr "支付发票的方式"
+
+msgid ""
+"We choose providers with strong security and privacy commitments, and only "
+"share what they need to do their job."
+msgstr "我们选择在安全和隐私方面有严格承诺的服务提供商，并且只向他们提供完成工作所需的信息。"
+
+msgid ""
+"We confirm by SMS or email, then text you your driver’s name and vehicle."
+msgstr "我们会通过 SMS 或电子邮件确认，然后发短信告知您司机的姓名和车辆信息。"
+
+#. translators: %s: list of suburbs
+msgid "We cover %s and more — type the full street address."
+msgstr "我们的服务范围包括 %s 等地区 — 请输入完整的街道地址。"
+
+msgid ""
+"We do not sell your information, and we do not send marketing messages "
+"without your permission."
+msgstr "我们不会出售您的信息，未经您的许可也不会向您发送营销信息。"
+
+msgid "We keep a log of who changes each booking and when."
+msgstr "我们会记录每项预订由谁、在何时更改。"
+
+#. translators: 1: council 2: suburbs
+msgid "We pick up from every address in %1$s, including %2$s."
+msgstr "我们在 %1$s 的所有地址接载乘客，包括 %2$s。"
+
+msgid ""
+"We text you when they are on the way, then help you aboard and secure your "
+"chair."
+msgstr "司机出发时我们会给您发短信，然后司机会协助您上车并固定好您的轮椅。"
+
+msgid "We text you when your driver is on the way"
+msgstr "司机出发时我们会给您发短信"
+
+#. translators: %d: year
+msgid ""
+"We travel anywhere across Melbourne and the Mornington Peninsula, including "
+"hospitals, day programs and Melbourne and Avalon airports, and carers travel"
+" with you."
+msgstr "我们的服务覆盖墨尔本和莫宁顿半岛各地，包括医院、日间活动中心以及墨尔本机场和 Avalon 机场，护理人员可与您同行。"
+
+msgid ""
+"Website information: your IP address (to stop spam and misuse) and, only if "
+"you accept analytics cookies, how you use the website."
+msgstr "网站信息：您的 IP 地址（用于防止垃圾信息和滥用），以及仅在您接受分析 Cookie 的情况下，您使用网站的方式。"
+
+msgid "Wedding"
+msgstr "婚礼"
+
+msgid "Western Port"
+msgstr "西港湾（Western Port）"
+
+msgid "What did you lose?"
+msgstr "您遗失了什么物品？"
+
+msgid "What else do people ask?"
+msgstr "人们还会问什么？"
+
+msgid "What happens when I book?"
+msgstr "预订后会怎样？"
+
+#. translators: %s: term
+msgid "What is %s?"
+msgstr "什么是 %s？"
+
+msgid "What is it about?"
+msgstr "是关于什么的？"
+
+msgid "What is it for?"
+msgstr "用途是什么？"
+
+msgid "What passengers say"
+msgstr "乘客评价"
+
+#. translators: %s: place
+msgid "What passengers say about trips from %s"
+msgstr "乘客对从 %s 出发的行程的评价"
+
+#. translators: %s: suburb
+msgid "What should I know about getting around %s?"
+msgstr "在 %s 出行需要了解什么？"
+
+#. translators: %s: suburb
+msgid "What trips can I book from %s?"
+msgstr "我可以预订从 %s 出发的哪些行程？"
+
+#. translators: %s: council
+msgid "What trips can I book in %s?"
+msgstr "我可以在 %s 预订哪些行程？"
+
+msgid "What we collect"
+msgstr "我们收集哪些信息"
+
+msgid "WhatsApp us"
+msgstr "通过 WhatsApp 联系我们"
+
+msgid "Wheelchair Accessible Taxis"
+msgstr "轮椅无障碍出租车"
+
+#. translators: 1: place 2: phone
+msgid ""
+"Wheelchair accessible taxi pick-ups from %1$s: where to wait, step-free "
+"access and how to book. Ramp and hoist vans. Call %2$s."
+msgstr "从 %1$s 出发的轮椅无障碍出租车接载：在哪里等候、无台阶通道以及如何预订。配有坡道和升降机的车辆。请致电 %2$s。"
+
+msgid "Wheelchair accessible taxi services"
+msgstr "轮椅无障碍出租车服务"
+
+#. translators: 1: place 2: phone
+msgid ""
+"Wheelchair accessible taxi to %1$s: the accessible entrance, where we drop "
+"you off, parking and how to book. Ramp and hoist vans. Call %2$s."
+msgstr "前往 %1$s 的轮椅无障碍出租车：无障碍入口、下车地点、停车以及如何预订。配有坡道和升降机的车辆。请致电 %2$s。"
+
+#. translators: 1: council 2: suburbs 3: phone
+msgid ""
+"Wheelchair accessible taxis across %1$s: %2$s. Ramp and hoist vans, trained "
+"drivers. Book online or call %3$s."
+msgstr "覆盖 %1$s 各地的轮椅无障碍出租车：%2$s。配有坡道和升降机的车辆，训练有素的司机。在线预订或致电 %3$s。"
+
+msgid ""
+"Wheelchair accessible taxis in every council area we cover across Melbourne "
+"and the Mornington Peninsula."
+msgstr "我们在墨尔本和莫宁顿半岛服务的每个市议会区域提供轮椅无障碍出租车。"
+
+msgid "Wheelchair accessible taxis in every suburb of these council areas."
+msgstr "在这些市议会区域的每个城区提供轮椅无障碍出租车。"
+
+msgid "Wheelchair taxi booking"
+msgstr "轮椅出租车预订"
+
+#. translators: %s: place
+#. translators: %s: partner name
+msgid "Wheelchair taxi from %s"
+msgstr "从 %s 出发的轮椅出租车"
+
+#. translators: %s: council name
+msgid "Wheelchair taxi in %s"
+msgstr "%s 的轮椅出租车"
+
+#. translators: %s: place
+msgid "Wheelchair taxi to %s"
+msgstr "前往 %s 的轮椅出租车"
+
+msgid "Wheelchair taxi to the event"
+msgstr "乘坐轮椅出租车前往活动"
+
+msgid "Wheelchair taxis to events"
+msgstr "前往活动的轮椅出租车"
+
+msgid "Wheelchair?"
+msgstr "使用轮椅？"
+
+#. translators: %s: place
+msgid "Where do I wait for my taxi at %s?"
+msgstr "在 %s 我应该在哪里等出租车？"
+
+#. translators: %s: suburb
+msgid "Where do people often travel to from %s?"
+msgstr "人们通常从 %s 去哪里？"
+
+#. translators: %s: place
+msgid "Where do we drop you off at %s?"
+msgstr "我们在 %s 的哪里送您下车？"
+
+#. translators: %s: place
+msgid "Where do we pick you up at %s?"
+msgstr "我们在 %s 的哪里接您？"
+
+msgid "Where is my driver?"
+msgstr "我的司机在哪里？"
+
+msgid "Where we pick you up"
+msgstr "我们在哪里接您"
+
+#. translators: %s: place
+msgid "Where will you drop me off at %s?"
+msgstr "在 %s 你们会在哪里让我下车？"
+
+#. translators: 1: council 2: suburbs
+msgid "Which parts of %s do you cover?"
+msgstr "你们服务 %s 的哪些地区？"
+
+#. translators: %s: council
+msgid "Which suburbs in %s do you cover?"
+msgstr "你们服务 %s 的哪些城区？"
+
+msgid "Who we share it with"
+msgstr "我们与谁共享信息"
+
+msgid "Why book with us"
+msgstr "为什么选择我们"
+
+msgid "Why we use it"
+msgstr "我们为什么使用这些信息"
+
+msgid "Written by"
+msgstr "作者"
+
+#. translators: %s: place
+msgid ""
+"Yes. Book a return trip with an approximate time, then call or text us when "
+"you are ready. Appointments often run late, so we keep return pick-ups "
+"flexible."
+msgstr "可以。请预订回程并填写大致时间，准备好后致电或发短信给我们。看病常常会延误，所以我们的回程接载时间很灵活。"
+
+#. translators: %s: place
+msgid ""
+"Yes. Book a time, or call us when you are ready. If your train is running "
+"late, just let us know and we will adjust the pick-up."
+msgstr "可以。请预订时间，或准备好后致电我们。如果您的火车晚点，请告诉我们，我们会调整接载时间。"
+
+msgid ""
+"Yes. Carers, family and assistance animals are welcome. Include everyone in "
+"the passenger count so we send a vehicle with enough seats."
+msgstr "可以。欢迎护理人员、家人和辅助动物同行。请把所有人都计入乘客人数，以便我们派出座位足够的车辆。"
+
+#. translators: %s: council
+msgid ""
+"Yes. Coordinators, case managers and aged-care staff can open a coordinator "
+"account to book for several clients, see every trip and download monthly "
+"trip logs and invoices."
+msgstr "可以。协调员、个案经理和养老护理人员可以开设协调员账户，为多位客户预订、查看每次行程，并下载每月行程记录和发票。"
+
+msgid ""
+"Yes. Most manual and power wheelchairs fit, and you stay seated in your "
+"chair. Tell us the make, width and weight when you book so we send the right"
+" vehicle. Mobility scooters can travel when they can be safely restrained — "
+"please check with us first."
+msgstr ""
+"可以。大多数手动轮椅和电动轮椅都可以上车，您可以一直坐在自己的轮椅上。预订时请告诉我们轮椅的品牌、宽度和重量，以便我们派出合适的车辆。代步车在能够安全固定的情况下可以乘车"
+" — 请先与我们确认。"
+
+msgid ""
+"You can ask about our services without giving your name. To book a trip we "
+"need enough detail to collect you and contact you."
+msgstr "您可以在不提供姓名的情况下咨询我们的服务。预订行程时，我们需要足够的信息来接载和联系您。"
+
+msgid ""
+"You can ask for a copy of the information we hold about you, ask us to "
+"correct it, or ask us to delete it. It is free. If you have an account, you "
+"can update your details, download your data and delete your account yourself"
+" in My Account. Otherwise use the form below or contact us. We will check it"
+" is really you and reply within 30 days. If we cannot do what you ask — for "
+"example because the law requires us to keep invoices — we will tell you why."
+msgstr ""
+"您可以要求获取我们所持有的您的信息副本，要求我们更正或删除这些信息。这是免费的。如果您有账户，可以在“我的账户”中自行更新信息、下载数据和删除账户。否则，请使用下方表格或联系我们。我们会核实您的身份，并在"
+" 30 天内答复。如果我们无法满足您的要求 — 例如法律要求我们保留发票 — 我们会告诉您原因。"
+
+msgid ""
+"You will see your driver here once they are on the way and sharing their "
+"location."
+msgstr "司机出发并共享位置后，您可以在此看到司机。"
+
+msgid "Your driver arrives"
+msgstr "司机到达"
+
+#. translators: %d: minutes
+msgid "Your driver is about %d minute away."
+msgid_plural "Your driver is about %d minutes away."
+msgstr[0] "您的司机大约还有 %d 分钟到达。"
+
+msgid ""
+"Your driver lowers the ramp, helps you aboard and secures your chair with "
+"four-point restraints."
+msgstr "司机会放下坡道，协助您上车，并用四点式固定装置固定好您的轮椅。"
+
+#. translators: %d: minutes
+msgid "about %d min"
+msgstr "约 %d 分钟"
+
+msgid "e.g. Dialysis"
+msgstr "例如：透析"
+
+msgid "e.g. Frankston Hospital to Mornington"
+msgstr "例如：Frankston 医院到 Mornington"
+
+msgid "e.g. QF432"
+msgstr "例如：QF432"
+
+msgid "e.g. black handbag, hearing aid, phone"
+msgstr "例如：黑色手提包、助听器、手机"
+
+msgid ""
+"e.g. waiting time, stops on the way, wedding schedule, wheelchair size."
+msgstr "例如：等候时间、途中停靠、婚礼日程、轮椅尺寸。"
+
+msgid "on your invoice"
+msgstr "在您的发票上"
+
+#. translators: %s: time
+msgid "return %s"
+msgstr "回程 %s"
+
+msgid "sending booking text messages"
+msgstr "发送预订短信"
+
+#. translators: %d: year
+msgid "since %d"
+msgstr "自 %d 年起"
+
+msgid "taking card payments — we never see or store your card number"
+msgstr "处理银行卡付款 — 我们从不查看或存储您的卡号"
+
+msgid ""
+"the map showing where your driver is on your booking page (your browser "
+"loads the map pictures from OpenStreetMap). The driver’s location is only "
+"shared while they are on the way to you and is deleted when the trip ends"
+msgstr ""
+"预订页面上显示司机位置的地图（您的浏览器会从 OpenStreetMap 加载地图图片）。司机的位置仅在其前往接您的途中共享，并在行程结束后删除"
+
+msgid "we will call you when the office opens."
+msgstr "办公室开门后我们会给您回电。"
+
+msgid "wheelchair accessible taxis"
+msgstr "轮椅无障碍出租车"
+
+msgid "your invoice will show your own reference number."
+msgstr "您的发票上会显示您自己的参考编号。"
+
+msgid ""
+"your mobility aid, chair size and weight, and any needs you tell us about so"
+" the driver can help you safely. This is \"sensitive information\" under the"
+" APPs. We only collect it with your consent, and only what we need for your "
+"trip."
+msgstr ""
+"您的助行器、轮椅尺寸和重量，以及您告诉我们的任何需求，以便司机能安全地协助您。根据 "
+"APPs，这属于“敏感信息”。我们只在征得您同意后收集，并且只收集您的行程所需的信息。"
+
+msgctxt "Font family name"
+msgid "Atkinson Hyperlegible"
+msgstr "Atkinson Hyperlegible"
+
+msgctxt "Font size name"
+msgid "Large"
+msgstr "大"

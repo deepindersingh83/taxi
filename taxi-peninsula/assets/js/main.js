@@ -190,6 +190,19 @@
 			});
 		}
 	}
+	// "Pick up when ready": the time becomes the optional earliest time.
+	document.querySelectorAll('[data-when-ready]').forEach(function (box) {
+		var time = document.getElementById('bf-time');
+		var label = time && document.querySelector('label[for="bf-time"]');
+		if (!time || !label) { return; }
+		var original = label.innerHTML;
+		var sync = function () {
+			time.required = !box.checked;
+			label.innerHTML = box.checked ? (window.tpBookingI18n && window.tpBookingI18n.earliest || 'Earliest likely time (optional)') : original;
+		};
+		box.addEventListener('change', sync);
+		sync();
+	});
 	document.querySelectorAll('[data-address-for]').forEach(function (sel) {
 		sel.addEventListener('change', function () {
 			var input = document.getElementById(sel.getAttribute('data-address-for'));

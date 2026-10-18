@@ -369,6 +369,7 @@ function tp_dispatch_card( array $b, array $drivers, array $driver_trips, $day )
 			?>
 		</p>
 		<?php echo tp_flight_badge( $b ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper. ?>
+		<?php do_action( 'tp_dispatch_card_flags', $b ); ?>
 		<?php if ( $last && ! $b['driver_id'] ) : ?>
 			<?php $who = get_userdata( $last['driver'] ); ?>
 			<p class="tp-dcard__flag tp-dcard__flag--declined">

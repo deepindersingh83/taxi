@@ -355,7 +355,17 @@ function tp_design_css() {
 }
 
 add_action( 'wp_enqueue_scripts', static function () {
-	wp_enqueue_style( 'tp-fonts', TP_URI . '/assets/fonts/' . tp_font_slug() . '/font.css', array(), TP_VERSION );
+	// The font rules are small, so print them inline (one request fewer before text shows).
+	$base = TP_URI . '/assets/fonts/' . tp_font_slug() . '/';
+	$css  = @file_get_contents( TP_DIR . '/assets/fonts/' . tp_font_slug() . '/font.css' ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged,WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+	if ( $css ) {
+		$css = preg_replace( '#/\*.*?\*/#s', '', $css );
+		$css = preg_replace( '#url\(([a-z0-9_.-]+\.woff2?)\)#i', 'url(' . $base . '$1)', $css );
+		$css = preg_replace( '/\s*([{};:,])\s*/', '$1', $css );
+		wp_add_inline_style( 'tp-main', trim( $css ) );
+	} else {
+		wp_enqueue_style( 'tp-fonts', $base . 'font.css', array(), TP_VERSION );
+	}
 	wp_add_inline_style( 'tp-main', tp_design_css() );
 }, 20 );
 

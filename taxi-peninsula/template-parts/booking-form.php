@@ -120,6 +120,12 @@ $today       = wp_date( 'Y-m-d' );
 			<?php $err( 'time' ); ?>
 		</div>
 
+		<div class="field field--wide field--check when-ready">
+			<label><input type="checkbox" name="when_ready" value="1" id="bf-when-ready" data-when-ready <?php checked( (int) $val( 'when_ready' ), 1 ); ?>> <?php esc_html_e( 'I don’t know the exact time yet — e.g. waiting to be discharged from hospital', 'taxi-peninsula' ); ?></label>
+			<script>window.tpBookingI18n = <?php echo wp_json_encode( array( 'earliest' => esc_html__( 'Earliest likely time (optional)', 'taxi-peninsula' ) ) ); ?>;</script>
+			<p class="field__hint" id="bf-when-ready-hint"><?php esc_html_e( 'Put the earliest likely time above (or leave it empty). When you are ready, tap "I’m ready" on your booking page or call us, and we will send the driver.', 'taxi-peninsula' ); ?></p>
+		</div>
+
 		<div class="field field--wide">
 			<label for="bf-flight"><?php esc_html_e( 'Arriving by plane? Flight number (optional)', 'taxi-peninsula' ); ?></label>
 			<input id="bf-flight" name="flight" type="text" autocomplete="off" inputmode="text" maxlength="9" placeholder="<?php esc_attr_e( 'e.g. QF432', 'taxi-peninsula' ); ?>" value="<?php echo esc_attr( $val( 'flight' ) ); ?>" aria-describedby="bf-flight-hint"<?php $invalid( 'flight' ); ?>>

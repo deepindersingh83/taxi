@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TP_VERSION', '2.7.6' );
+define( 'TP_VERSION', '2.8.0' );
 define( 'TP_DIR', get_template_directory() );
 define( 'TP_URI', get_template_directory_uri() );
 
@@ -78,6 +78,13 @@ require TP_DIR . '/inc/glossary.php';
 require TP_DIR . '/inc/content-plan.php';
 require TP_DIR . '/inc/photos.php';
 require TP_DIR . '/inc/mail-check.php';
+require TP_DIR . '/inc/discharge.php';
+require TP_DIR . '/inc/saved-trips.php';
+require TP_DIR . '/inc/live-location.php';
+require TP_DIR . '/inc/feedback.php';
+require TP_DIR . '/inc/statements.php';
+require TP_DIR . '/inc/booking-index.php';
+require TP_DIR . '/inc/review-replies.php';
 require TP_DIR . '/inc/hours.php';
 require TP_DIR . '/inc/design.php';
 require TP_DIR . '/inc/illustrations.php';

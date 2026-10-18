@@ -378,6 +378,7 @@ function tp_driver_job_card( array $b, $day, $is_manager, $is_next = false ) {
 				</form>
 			</details>
 		<?php endif; ?>
+		<?php do_action( 'tp_driver_job_card_after', $b ); ?>
 		<?php if ( $b['driver_id'] && in_array( $b['status'], array( 'onboard', 'completed', 'no_show', 'arrived' ), true ) ) : ?>
 			<?php tp_driver_found_form( $b, $day ); ?>
 		<?php endif; ?>

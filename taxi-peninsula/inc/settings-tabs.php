@@ -18,7 +18,7 @@ function tp_settings_tabs() {
 		'sms'       => array( __( 'SMS', 'taxi-peninsula' ), array( 'sms' ) ),
 		'email'     => array( __( 'Email', 'taxi-peninsula' ), array( 'email' ) ),
 		'payments'  => array( __( 'Payments & invoices', 'taxi-peninsula' ), array( 'payments' ) ),
-		'bookings'  => array( __( 'Bookings & fees', 'taxi-peninsula' ), array( 'recurring', 'flights', 'alerts' ) ),
+		'bookings'  => array( __( 'Bookings & fees', 'taxi-peninsula' ), array( 'recurring', 'live', 'flights', 'alerts' ) ),
 		'maps'      => array( __( 'Maps & addresses', 'taxi-peninsula' ), array( 'maps' ) ),
 		'reviews'   => array( __( 'Google reviews', 'taxi-peninsula' ), array( 'reviews', 'gbp' ) ),
 		'security'  => array( __( 'Spam & security', 'taxi-peninsula' ), array( 'captcha', 'security' ) ),
@@ -211,6 +211,12 @@ function tp_settings_checks( $tab ) {
 			$c[] = is_ssl() || 0 === strpos( home_url(), 'https://' )
 				? array( 'ok', 'HTTPS', __( 'The site uses https://.', 'taxi-peninsula' ) )
 				: array( 'fail', 'HTTPS', __( 'The site is not on https://. Ask your host for a free SSL certificate.', 'taxi-peninsula' ) );
+			if ( ! function_exists( 'is_plugin_active' ) ) {
+				require_once ABSPATH . 'wp-admin/includes/plugin.php';
+			}
+			$c[] = function_exists( 'tpc_theme_active' )
+				? array( 'ok', __( 'Taxi Peninsula Core plugin', 'taxi-peninsula' ), __( 'Active: bookings and records stay visible even if the theme is ever switched off, and Tools → Taxi data export downloads them.', 'taxi-peninsula' ) )
+				: array( 'warn', __( 'Taxi Peninsula Core plugin', 'taxi-peninsula' ), __( 'Not installed. Without it, switching themes (even by accident) hides every booking from the admin until the theme is back. Install taxi-peninsula-core.zip under Plugins → Add New → Upload.', 'taxi-peninsula' ) );
 			$off = array_filter( array( 'sec_headers', 'sec_disable_file_edit', 'sec_disable_xmlrpc', 'sec_block_user_enum', 'sec_hide_version' ), static fn( $k ) => ! tp_setting( $k ) );
 			/* translators: %d: count */
 			$c[] = array( $off ? 'warn' : 'ok', __( 'Hardening', 'taxi-peninsula' ), $off ? sprintf( _n( '%d protection is switched off.', '%d protections are switched off.', count( $off ), 'taxi-peninsula' ), count( $off ) ) : __( 'All recommended protections are on.', 'taxi-peninsula' ) );

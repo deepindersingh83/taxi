@@ -24,6 +24,10 @@ add_action(
  * { id, date, time, status, fare, venue, source }.
  */
 function tp_owner_rows( $from, $to ) {
+	$fast = function_exists( 'tp_trips_owner_rows' ) ? tp_trips_owner_rows( $from, $to ) : null;
+	if ( null !== $fast ) {
+		return $fast;
+	}
 	global $wpdb;
 	// phpcs:ignore WordPress.DB.DirectDatabaseQuery
 	$rows = $wpdb->get_results(

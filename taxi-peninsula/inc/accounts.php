@@ -1193,6 +1193,7 @@ function tp_rating_block( array $b, $return ) {
 				<label for="<?php echo esc_attr( $id ); ?>-c"><?php esc_html_e( 'Anything you would like to tell us? (optional)', 'taxi-peninsula' ); ?></label>
 				<textarea id="<?php echo esc_attr( $id ); ?>-c" name="comment" rows="2" maxlength="1000"></textarea>
 			</div>
+			<?php do_action( 'tp_rating_form_fields', $id ); ?>
 			<button type="submit" class="btn btn--primary"><?php esc_html_e( 'Send rating', 'taxi-peninsula' ); ?></button>
 		</form>
 	</details>
@@ -1221,6 +1222,14 @@ function tp_handle_rate_trip() {
 			}
 		);
 		tp_review_invite_email( $post_id );
+		/**
+		 * A completed trip was rated.
+		 *
+		 * @param int    $post_id Booking.
+		 * @param int    $rating  1–5.
+		 * @param string $comment Customer comment.
+		 */
+		do_action( 'tp_trip_rated', $post_id, $rating, $comment );
 		if ( $rating <= 3 ) {
 			$b = tp_get_booking( $post_id );
 			wp_mail(

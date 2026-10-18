@@ -31,6 +31,7 @@ add_filter(
 	static function ( $s ) {
 		$s['gbp_client_id']     = array( 'gbp', __( 'Google OAuth client ID', 'taxi-peninsula' ), 'text', '', '' );
 		$s['gbp_client_secret'] = array( 'gbp', __( 'Google OAuth client secret', 'taxi-peninsula' ), 'secret', '', '' );
+		$s['gbp_auto_posts']    = array( 'gbp', __( 'Post new blog posts to Google automatically', 'taxi-peninsula' ), 'checkbox', true, __( 'When a blog post (including seasonal guides) is published, it is posted to your Google Business Profile with its photo and a "Learn more" link. You can skip any post in its "Google profile" box.', 'taxi-peninsula' ) );
 		return $s;
 	}
 );
@@ -384,7 +385,12 @@ function tp_render_gbp_box( $post ) {
 	$text   = (string) get_post_meta( $post->ID, '_tp_gbp_text', true );
 	$button = (string) get_post_meta( $post->ID, '_tp_gbp_button', true ) ?: ( 'tp_promo' === $post->post_type ? 'BOOK' : 'LEARN_MORE' );
 	?>
-	<p><label><input type="checkbox" name="tp_gbp_send" value="1"> <strong><?php echo esc_html( $status ? __( 'Post to Google again', 'taxi-peninsula' ) : __( 'Post to Google', 'taxi-peninsula' ) ); ?></strong></label></p>
+	<?php if ( 'post' === $post->post_type && tp_setting( 'gbp_auto_posts' ) && ! $status ) : ?>
+		<p class="description"><?php esc_html_e( 'This post goes to Google automatically when it is published.', 'taxi-peninsula' ); ?></p>
+		<p><label><input type="checkbox" name="tp_gbp_skip" value="1" <?php checked( (bool) get_post_meta( $post->ID, '_tp_gbp_skip', true ) ); ?>> <?php esc_html_e( 'Don’t post this one to Google', 'taxi-peninsula' ); ?></label></p>
+	<?php else : ?>
+		<p><label><input type="checkbox" name="tp_gbp_send" value="1"> <strong><?php echo esc_html( $status ? __( 'Post to Google again', 'taxi-peninsula' ) : __( 'Post to Google', 'taxi-peninsula' ) ); ?></strong></label></p>
+	<?php endif; ?>
 	<p class="description"><?php echo esc_html( 'tp_promo' === $post->post_type ? __( 'Posted as an Offer with this code and its dates.', 'taxi-peninsula' ) : __( 'Posted as an Update when you save or publish.', 'taxi-peninsula' ) ); ?></p>
 	<p><label for="tp_gbp_text"><?php esc_html_e( 'Text for Google (optional)', 'taxi-peninsula' ); ?></label>
 		<textarea id="tp_gbp_text" name="tp_gbp_text" rows="3" class="widefat" maxlength="1500"><?php echo esc_textarea( $text ); ?></textarea>
@@ -408,6 +414,7 @@ add_action(
 			return;
 		}
 		update_post_meta( $post_id, '_tp_gbp_text', isset( $_POST['tp_gbp_text'] ) ? sanitize_textarea_field( wp_unslash( $_POST['tp_gbp_text'] ) ) : '' );
+		update_post_meta( $post_id, '_tp_gbp_skip', empty( $_POST['tp_gbp_skip'] ) ? '' : '1' );
 		$button = isset( $_POST['tp_gbp_button'] ) ? sanitize_key( wp_unslash( $_POST['tp_gbp_button'] ) ) : 'LEARN_MORE';
 		update_post_meta( $post_id, '_tp_gbp_button', in_array( strtoupper( $button ), array( 'BOOK', 'LEARN_MORE', 'CALL', 'NONE' ), true ) ? strtoupper( $button ) : 'LEARN_MORE' );
 		if ( ! empty( $_POST['tp_gbp_send'] ) && 'publish' === $post->post_status ) {
@@ -503,3 +510,30 @@ function tp_gbp_publish( $post_id ) {
 	}
 	return true;
 }
+
+// New blog posts go to Google automatically when they are first published.
+add_action(
+	'transition_post_status',
+	static function ( $new, $old, $post ) {
+		if ( 'publish' !== $new || 'publish' === $old || 'post' !== $post->post_type || ! tp_setting( 'gbp_auto_posts' ) || ! tp_gbp_connected() ) {
+			return;
+		}
+		$post_id = $post->ID;
+		// At the end of the request, once the photo, excerpt and the "skip" box are saved.
+		add_action(
+			'shutdown',
+			static function () use ( $post_id ) {
+				if ( get_post_meta( $post_id, '_tp_gbp_skip', true ) || get_post_meta( $post_id, '_tp_gbp_name', true ) || 'publish' !== get_post_status( $post_id ) ) {
+					return;
+				}
+				if ( ! get_post_meta( $post_id, '_tp_gbp_button', true ) ) {
+					update_post_meta( $post_id, '_tp_gbp_button', 'LEARN_MORE' );
+				}
+				tp_gbp_publish( $post_id );
+			},
+			2
+		);
+	},
+	10,
+	3
+);

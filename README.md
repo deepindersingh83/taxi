@@ -8,6 +8,58 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### New in v2.8
+**For customers**
+- **"Pick up when ready" (hospital discharge):** tick "I don't know the time yet — I'll call or tap when ready" on the booking form.
+  - On the day, the booking page shows an **I'm ready** button. Tapping it tells the office (email and SMS) and the assigned driver (SMS), and sets the pick-up time to now.
+  - Staff can mark a trip ready from the booking screen. The dispatch board shows a **Pick up when ready — today** list, with WAITING / READY flags.
+- **Regular trips (My Account → Regular trips):** save a trip such as "Dialysis, Mon/Wed/Fri 7:30am, with return".
+  - With "Book automatically" on, the trips are booked a week ahead every night. The customer gets the normal email for each one and can cancel any of them.
+  - Automatic booking can be paused until a date. There is also a one-tap "Book" link for the next date.
+- **Where is my driver?** While the driver is on the way, the booking page shows a map with the driver's position and an arrival estimate, updated every 20 seconds.
+  - Drivers tap **Share my location** once on their job card.
+  - Positions are deleted once the trip moves on, and nothing is shared at other times.
+  - Turn it off under Settings → Bookings & fees.
+- **Feedback goes to the complaint register:** any of these is added to Incidents & complaints automatically, linked to the trip, driver and vehicle, with a follow-up date:
+  - a rating of 1–2 stars
+  - a comment that mentions a problem (late, rude, unsafe, hurt…)
+  - ticking "please contact me"
+
+  Safety concerns and contact requests also email the office straight away. An optional SMS after each completed trip asks "How was your trip?" (Settings → SMS).
+- **Status emails now respect the "Email customers" switch** (they were sent even when it was off).
+- **Translations:** about 375 more customer-facing phrases are now in Vietnamese, Chinese, Greek, Italian and Arabic. This covers booking steps, the booking page, My Account, regular trips, emails and texts. Have a native speaker check them before going live.
+
+**For the office**
+- **Monthly statements (Invoices → Monthly statements):** one statement per account customer (grouped by invoice email), listing the month's completed and no-show trips, with paid amounts and the balance.
+  - Statements are numbered S-00001…, include BPAY/bank details, and have a printable web link.
+  - Send them one at a time or all at once. You can also have them emailed automatically on the 1st of each month.
+- **Google reviews (Marketing → Google reviews):** see every review, filter to unanswered or 1–3 stars, and reply or edit/delete a reply without leaving WordPress.
+  - A suggested reply is filled in for you. Needs the Google Business Profile connection.
+- **Automatic Google posts:** new blog posts and seasonal guides are posted to your Google Business Profile when published. Tick "Don't post this one to Google" on a post to skip it, or turn auto-posting off under Settings → Google reviews.
+- **Faster admin:** reports, the owner dashboard, the finance list and statements now read a dedicated trip table (`wp_tp_trips`) instead of searching thousands of booking fields. It fills itself in the background after updating.
+
+**Safety net: Taxi Peninsula Core plugin**
+- Install `taxi-peninsula-core.zip` (Plugins → Add New → Upload) and activate it.
+- If the theme is ever switched off, bookings, invoices, fleet, incidents and every other record stay visible under **Taxi data** in the admin, read-only. Nothing is lost.
+- **Tools → Taxi data export** downloads any record type as a spreadsheet (CSV) at any time.
+
+**Speed and accessibility**
+- Pages load the minified CSS/JS, the script no longer blocks the page, fonts are inlined, and the WordPress emoji script is gone.
+  - On a mid-range phone on a slow connection, pages appear about 11–15% sooner, with two fewer requests and about 75 KB less to download.
+  - Splitting the CSS per page was tested and left out: it saved only about 4 KB compressed and risked unstyled pages.
+  - **Hosting tip:** make sure your host has gzip/Brotli compression and browser caching turned on (most do; WP Rocket, LiteSpeed Cache or W3 Total Cache handle it if not).
+- WCAG 2.2 AA check:
+  - focused fields can no longer hide behind the sticky header or the phone bottom bar (2.4.11)
+  - the WhatsApp button now sits in its own labelled region
+  - tap targets and contrast passed
+
+**For developers**
+- `tools/build.js` builds the `.min` files and the right-to-left (Arabic) stylesheets. Run `npm ci --prefix tools && node tools/build.js` after editing CSS/JS. Set `SCRIPT_DEBUG` to load the unminified files.
+- GitHub Actions (`.github/workflows/ci.yml`) runs on every push:
+  - PHP 7.4–8.4 syntax checks
+  - a check that built files are up to date
+  - a WordPress smoke test: install, load the main pages, save a booking through all statuses, check the trip index, and check the plugin keeps data visible without the theme
+
 ### v2.7.6 — settings split into tabs, each with tests and troubleshooting
 - **Taxi settings → Settings** is now split into tabs: Overview, SMS, Email, Payments & invoices, Bookings & fees, Maps & addresses, Google reviews, Spam & security, Privacy, Marketing & SEO.
 - Each tab saves only its own settings. A red **!** or amber **•** on a tab means something there needs attention.

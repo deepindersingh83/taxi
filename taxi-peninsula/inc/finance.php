@@ -32,7 +32,7 @@ add_action( 'admin_menu', static function () {
 
 add_action( 'admin_enqueue_scripts', static function ( $hook ) {
 	if ( false !== strpos( $hook, 'tp-finance' ) ) {
-		wp_enqueue_style( 'tp-admin', TP_URI . '/assets/css/admin.css', array(), TP_VERSION );
+		wp_enqueue_style( 'tp-admin', tp_asset( 'assets/css/admin.css' ), array(), TP_VERSION );
 		tp_admin_brand_vars();
 	}
 } );
@@ -76,7 +76,17 @@ function tp_finance_rows( array $f ) {
 	} elseif ( $f['inv'] ) {
 		$meta[] = array( 'key' => '_tp_invoice_status', 'value' => $f['inv'] );
 	}
-	$ids  = get_posts(
+	$where = array( 'from' => $f['from'], 'to' => $f['to'], 'status' => tp_finished_statuses() );
+	if ( $f['pay'] ) {
+		$where['payment'] = $f['pay'];
+	}
+	if ( 'none' === $f['inv'] ) {
+		$where['invoice_status'] = '';
+	} elseif ( $f['inv'] ) {
+		$where['invoice_status'] = $f['inv'];
+	}
+	$ids = function_exists( 'tp_trips_ids' ) ? tp_trips_ids( $where, true ) : null;
+	$ids = null !== $ids ? $ids : get_posts(
 		array(
 			'post_type'   => 'tp_booking',
 			'numberposts' => 1000,

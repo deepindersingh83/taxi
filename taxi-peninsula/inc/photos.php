@@ -59,7 +59,7 @@ add_action(
 		$s = get_current_screen();
 		if ( $s && false !== strpos( $s->id, 'tp-photos' ) && current_user_can( 'upload_files' ) ) {
 			wp_enqueue_media();
-			wp_enqueue_script( 'tp-admin', TP_URI . '/assets/js/admin.js', array( 'jquery' ), TP_VERSION, true );
+			wp_enqueue_script( 'tp-admin', tp_asset( 'assets/js/admin.js' ), array( 'jquery' ), TP_VERSION, true );
 		}
 	}
 );

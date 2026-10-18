@@ -261,7 +261,7 @@ function tp_notify_customer( $post_id, $subject, $message ) {
 function tp_notify_customer_run( $post_id, $subject, $message ) {
 	$b    = tp_get_booking( $post_id );
 	$site = wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );
-	if ( is_email( $b['email'] ) ) {
+	if ( tp_opt( 'customer_emails' ) && is_email( $b['email'] ) ) {
 		/* translators: %s: passenger name */
 		$body = sprintf( __( 'Hi %s,', 'taxi-peninsula' ), $b['name'] ) . "\n\n" . $message . "\n\n"
 			. tp_booking_summary( $b ) . "\n"

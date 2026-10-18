@@ -17,7 +17,7 @@ add_action( 'admin_enqueue_scripts', static function ( $hook ) {
 	$needs  = in_array( $hook, array( 'profile.php', 'user-edit.php' ), true ) || ( $screen && 'tp_fleet' === $screen->post_type );
 	if ( $needs && current_user_can( 'upload_files' ) ) {
 		wp_enqueue_media();
-		wp_enqueue_script( 'tp-admin', TP_URI . '/assets/js/admin.js', array( 'jquery' ), TP_VERSION, true );
+		wp_enqueue_script( 'tp-admin', tp_asset( 'assets/js/admin.js' ), array( 'jquery' ), TP_VERSION, true );
 	}
 } );
 
