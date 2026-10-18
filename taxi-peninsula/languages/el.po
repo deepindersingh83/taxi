@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 1.9.0\n"
+"Project-Id-Version: Taxi Peninsula 2.8.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -20,14 +20,39 @@ msgid "https://taxipeninsula.com.au"
 msgstr "https://taxipeninsula.com.au"
 
 #. Description of the theme
-msgid "Accessible wheelchair-taxi booking theme for Melbourne. Online bookings with repeat trips, account/invoice and Stripe deposits; customer booking lookup; wp-admin bookings manager with calendar, run sheet, reports, driver & vehicle assignment and CSV export; SMS (ClickSend/Twilio) and email notifications; driver job pages; FAQ, fleet, NDIS, service and suburb pages; SEO structured data; spam protection; page templates (About, Contact, Services, Blog, Policy, Full width, Canvas) and block patterns; Google address suggestions and fare estimates; cookie consent + GA4; breadcrumbs and local SEO; security hardening; fluid \"dynamic type\" with text-size and high-contrast controls."
-msgstr "Θέμα κρατήσεων για ταξί προσβάσιμα με αναπηρικό αμαξίδιο στη Μελβούρνη. Online κρατήσεις με επαναλαμβανόμενες διαδρομές, χρέωση σε λογαριασμό/τιμολόγιο και προκαταβολές μέσω Stripe· αναζήτηση κράτησης από τον πελάτη· διαχείριση κρατήσεων στο wp-admin με ημερολόγιο, φύλλο διαδρομών, αναφορές, ανάθεση οδηγού και οχήματος και εξαγωγή CSV· ειδοποιήσεις SMS (ClickSend/Twilio) και email· σελίδες εργασιών για οδηγούς· σελίδες συχνών ερωτήσεων, στόλου, NDIS, υπηρεσιών και προαστίων· δομημένα δεδομένα SEO· προστασία από ανεπιθύμητα μηνύματα· πρότυπα σελίδων (Σχετικά, Επικοινωνία, Υπηρεσίες, Ιστολόγιο, Πολιτική, Πλήρες πλάτος, Καμβάς) και μοτίβα μπλοκ· προτάσεις διευθύνσεων και εκτιμήσεις κόμιστρου από τη Google· συναίνεση cookies + GA4· διαδρομή πλοήγησης και τοπικό SEO· ενισχυμένη ασφάλεια· ρευστή «δυναμική τυπογραφία» με ρυθμίσεις μεγέθους κειμένου και υψηλής αντίθεσης."
+msgid ""
+"Accessible wheelchair-taxi booking theme for Melbourne. Online bookings with"
+" repeat trips, account/invoice and Stripe deposits; customer booking lookup;"
+" wp-admin bookings manager with calendar, run sheet, reports, driver & "
+"vehicle assignment and CSV export; SMS (ClickSend/Twilio) and email "
+"notifications; driver job pages; FAQ, fleet, NDIS, service and suburb pages;"
+" SEO structured data; spam protection; page templates (About, Contact, "
+"Services, Blog, Policy, Full width, Canvas) and block patterns; Google "
+"address suggestions and fare estimates; cookie consent + GA4; breadcrumbs "
+"and local SEO; security hardening; fluid \"dynamic type\" with text-size and"
+" high-contrast controls."
+msgstr ""
+"Θέμα κρατήσεων για ταξί προσβάσιμα με αναπηρικό αμαξίδιο στη Μελβούρνη. "
+"Online κρατήσεις με επαναλαμβανόμενες διαδρομές, χρέωση σε "
+"λογαριασμό/τιμολόγιο και προκαταβολές μέσω Stripe· αναζήτηση κράτησης από "
+"τον πελάτη· διαχείριση κρατήσεων στο wp-admin με ημερολόγιο, φύλλο "
+"διαδρομών, αναφορές, ανάθεση οδηγού και οχήματος και εξαγωγή CSV· "
+"ειδοποιήσεις SMS (ClickSend/Twilio) και email· σελίδες εργασιών για οδηγούς·"
+" σελίδες συχνών ερωτήσεων, στόλου, NDIS, υπηρεσιών και προαστίων· δομημένα "
+"δεδομένα SEO· προστασία από ανεπιθύμητα μηνύματα· πρότυπα σελίδων (Σχετικά, "
+"Επικοινωνία, Υπηρεσίες, Ιστολόγιο, Πολιτική, Πλήρες πλάτος, Καμβάς) και "
+"μοτίβα μπλοκ· προτάσεις διευθύνσεων και εκτιμήσεις κόμιστρου από τη Google· "
+"συναίνεση cookies + GA4· διαδρομή πλοήγησης και τοπικό SEO· ενισχυμένη "
+"ασφάλεια· ρευστή «δυναμική τυπογραφία» με ρυθμίσεις μεγέθους κειμένου και "
+"υψηλής αντίθεσης."
 
 msgid "Page not found"
 msgstr "Η σελίδα δεν βρέθηκε"
 
 msgid "Sorry, we could not find that page. Try a search, or head back home."
-msgstr "Λυπούμαστε, δεν βρήκαμε αυτή τη σελίδα. Δοκιμάστε μια αναζήτηση ή επιστρέψτε στην αρχική σελίδα."
+msgstr ""
+"Λυπούμαστε, δεν βρήκαμε αυτή τη σελίδα. Δοκιμάστε μια αναζήτηση ή επιστρέψτε"
+" στην αρχική σελίδα."
 
 msgid "Back to home"
 msgstr "Επιστροφή στην αρχική"
@@ -38,8 +63,13 @@ msgstr "Κράτηση ταξί"
 msgid "Areas we cover"
 msgstr "Περιοχές που εξυπηρετούμε"
 
-msgid "Wheelchair accessible taxis across Melbourne and the Mornington Peninsula. Not listed? Call us — we travel further on request."
-msgstr "Ταξί προσβάσιμα με αναπηρικό αμαξίδιο σε όλη τη Μελβούρνη και τη χερσόνησο Mornington. Η περιοχή σας δεν αναφέρεται; Τηλεφωνήστε μας — πηγαίνουμε και πιο μακριά κατόπιν αιτήματος."
+msgid ""
+"Wheelchair accessible taxis across Melbourne and the Mornington Peninsula. "
+"Not listed? Call us — we travel further on request."
+msgstr ""
+"Ταξί προσβάσιμα με αναπηρικό αμαξίδιο σε όλη τη Μελβούρνη και τη χερσόνησο "
+"Mornington. Η περιοχή σας δεν αναφέρεται; Τηλεφωνήστε μας — πηγαίνουμε και "
+"πιο μακριά κατόπιν αιτήματος."
 
 #. translators: %s: suburb translators: %s: area
 msgid "Wheelchair taxi %s"
@@ -48,8 +78,12 @@ msgstr "Ταξί για αναπηρικό αμαξίδιο %s"
 msgid "Our services"
 msgstr "Οι υπηρεσίες μας"
 
-msgid "Reliable wheelchair accessible transport for everyday trips and important appointments."
-msgstr "Αξιόπιστη μεταφορά προσβάσιμη με αναπηρικό αμαξίδιο για καθημερινές διαδρομές και σημαντικά ραντεβού."
+msgid ""
+"Reliable wheelchair accessible transport for everyday trips and important "
+"appointments."
+msgstr ""
+"Αξιόπιστη μεταφορά προσβάσιμη με αναπηρικό αμαξίδιο για καθημερινές "
+"διαδρομές και σημαντικά ραντεβού."
 
 #. translators: %s: number of comments
 msgid "%s comment"
@@ -57,8 +91,11 @@ msgid_plural "%s comments"
 msgstr[0] "%s σχόλιο"
 msgstr[1] "%s σχόλια"
 
-msgid "Wheelchair accessible taxis for Melbourne and the Mornington Peninsula."
-msgstr "Ταξί προσβάσιμα με αναπηρικό αμαξίδιο για τη Μελβούρνη και τη χερσόνησο Mornington."
+msgid ""
+"Wheelchair accessible taxis for Melbourne and the Mornington Peninsula."
+msgstr ""
+"Ταξί προσβάσιμα με αναπηρικό αμαξίδιο για τη Μελβούρνη και τη χερσόνησο "
+"Mornington."
 
 msgid "Book a taxi online"
 msgstr "Κλείστε ταξί online"
@@ -165,8 +202,11 @@ msgid "Who is travelling?"
 msgstr "Ποιος ταξιδεύει;"
 
 #. translators: %s: booking reference
-msgid "Details copied from %s. Choose the date and check the times, then send."
-msgstr "Τα στοιχεία αντιγράφηκαν από την κράτηση %s. Επιλέξτε ημερομηνία, ελέγξτε τις ώρες και μετά στείλτε."
+msgid ""
+"Details copied from %s. Choose the date and check the times, then send."
+msgstr ""
+"Τα στοιχεία αντιγράφηκαν από την κράτηση %s. Επιλέξτε ημερομηνία, ελέγξτε "
+"τις ώρες και μετά στείλτε."
 
 msgid "Me"
 msgstr "Εγώ"
@@ -175,10 +215,15 @@ msgid "— New client —"
 msgstr "— Νέος πελάτης —"
 
 msgid "Choosing a client fills in their details and wheelchair notes."
-msgstr "Όταν επιλέγετε πελάτη, συμπληρώνονται τα στοιχεία του και οι σημειώσεις για το αμαξίδιο."
+msgstr ""
+"Όταν επιλέγετε πελάτη, συμπληρώνονται τα στοιχεία του και οι σημειώσεις για "
+"το αμαξίδιο."
 
-msgid "Choosing a saved passenger fills in their details and wheelchair notes."
-msgstr "Όταν επιλέγετε αποθηκευμένο επιβάτη, συμπληρώνονται τα στοιχεία του και οι σημειώσεις για το αμαξίδιο."
+msgid ""
+"Choosing a saved passenger fills in their details and wheelchair notes."
+msgstr ""
+"Όταν επιλέγετε αποθηκευμένο επιβάτη, συμπληρώνονται τα στοιχεία του και οι "
+"σημειώσεις για το αμαξίδιο."
 
 msgid "Save this person as a client in my account"
 msgstr "Αποθήκευση αυτού του ατόμου ως πελάτη στον λογαριασμό μου"
@@ -200,10 +245,15 @@ msgid "Booked by %1$s (%2$s)"
 msgstr "Κράτηση από: %1$s (%2$s)"
 
 msgid "Your account has been deleted. Thank you for travelling with us."
-msgstr "Ο λογαριασμός σας διαγράφηκε. Σας ευχαριστούμε που ταξιδέψατε μαζί μας."
+msgstr ""
+"Ο λογαριασμός σας διαγράφηκε. Σας ευχαριστούμε που ταξιδέψατε μαζί μας."
 
-msgid "You are signed in as staff. Customer accounts are for passengers and coordinators."
-msgstr "Έχετε συνδεθεί ως προσωπικό. Οι λογαριασμοί πελατών είναι για επιβάτες και συντονιστές."
+msgid ""
+"You are signed in as staff. Customer accounts are for passengers and "
+"coordinators."
+msgstr ""
+"Έχετε συνδεθεί ως προσωπικό. Οι λογαριασμοί πελατών είναι για επιβάτες και "
+"συντονιστές."
 
 msgid "Open the dispatch board"
 msgstr "Άνοιγμα πίνακα διανομής"
@@ -260,8 +310,12 @@ msgstr "Η κράτηση προστέθηκε στον λογαριασμό σ�
 msgid "Thank you for rating your trip!"
 msgstr "Σας ευχαριστούμε που βαθμολογήσατε τη διαδρομή σας!"
 
-msgid "Welcome! Your account is ready. Your next booking will appear here automatically."
-msgstr "Καλώς ήρθατε! Ο λογαριασμός σας είναι έτοιμος. Η επόμενη κράτησή σας θα εμφανιστεί εδώ αυτόματα."
+msgid ""
+"Welcome! Your account is ready. Your next booking will appear here "
+"automatically."
+msgstr ""
+"Καλώς ήρθατε! Ο λογαριασμός σας είναι έτοιμος. Η επόμενη κράτησή σας θα "
+"εμφανιστεί εδώ αυτόματα."
 
 msgid "Email address"
 msgstr "Διεύθυνση email"
@@ -291,7 +345,8 @@ msgid "Myself or a family member"
 msgstr "Εμένα ή μέλος της οικογένειάς μου"
 
 msgid "Clients or residents (NDIS coordinator, aged care, hospital)"
-msgstr "Πελάτες ή διαμένοντες (συντονιστής NDIS, φροντίδα ηλικιωμένων, νοσοκομείο)"
+msgstr ""
+"Πελάτες ή διαμένοντες (συντονιστής NDIS, φροντίδα ηλικιωμένων, νοσοκομείο)"
 
 msgid "Organisation name"
 msgstr "Όνομα οργανισμού"
@@ -352,7 +407,8 @@ msgid "Past trips"
 msgstr "Προηγούμενες διαδρομές"
 
 msgid "Your finished trips will appear here, with receipts."
-msgstr "Οι ολοκληρωμένες διαδρομές σας θα εμφανίζονται εδώ, μαζί με τις αποδείξεις."
+msgstr ""
+"Οι ολοκληρωμένες διαδρομές σας θα εμφανίζονται εδώ, μαζί με τις αποδείξεις."
 
 msgid "Add a booking you made before you had an account"
 msgstr "Προσθέστε μια κράτηση που κάνατε πριν αποκτήσετε λογαριασμό"
@@ -414,11 +470,19 @@ msgstr "Κράτηση επιστροφής"
 msgid "(opens in a new tab)"
 msgstr "(ανοίγει σε νέα καρτέλα)"
 
-msgid "Save each client once — their details and wheelchair notes fill in automatically when you book for them."
-msgstr "Αποθηκεύστε κάθε πελάτη μία φορά — τα στοιχεία του και οι σημειώσεις για το αμαξίδιο συμπληρώνονται αυτόματα όταν κάνετε κράτηση για αυτόν."
+msgid ""
+"Save each client once — their details and wheelchair notes fill in "
+"automatically when you book for them."
+msgstr ""
+"Αποθηκεύστε κάθε πελάτη μία φορά — τα στοιχεία του και οι σημειώσεις για το "
+"αμαξίδιο συμπληρώνονται αυτόματα όταν κάνετε κράτηση για αυτόν."
 
-msgid "Save the people you book for, with their wheelchair details, so booking takes seconds."
-msgstr "Αποθηκεύστε τα άτομα για τα οποία κάνετε κρατήσεις, με τα στοιχεία του αμαξιδίου τους, ώστε η κράτηση να γίνεται σε δευτερόλεπτα."
+msgid ""
+"Save the people you book for, with their wheelchair details, so booking "
+"takes seconds."
+msgstr ""
+"Αποθηκεύστε τα άτομα για τα οποία κάνετε κρατήσεις, με τα στοιχεία του "
+"αμαξιδίου τους, ώστε η κράτηση να γίνεται σε δευτερόλεπτα."
 
 msgid "Edit"
 msgstr "Επεξεργασία"
@@ -435,8 +499,12 @@ msgstr "Προσθήκη πελάτη"
 msgid "Add a passenger"
 msgstr "Προσθήκη επιβάτη"
 
-msgid "e.g. needs help with the front door, carer travels on Tuesdays, hearing impaired — please text"
-msgstr "π.χ. χρειάζεται βοήθεια με την εξώπορτα, ο φροντιστής ταξιδεύει τις Τρίτες, έχει πρόβλημα ακοής — στείλτε SMS"
+msgid ""
+"e.g. needs help with the front door, carer travels on Tuesdays, hearing "
+"impaired — please text"
+msgstr ""
+"π.χ. χρειάζεται βοήθεια με την εξώπορτα, ο φροντιστής ταξιδεύει τις Τρίτες, "
+"έχει πρόβλημα ακοής — στείλτε SMS"
 
 msgid "Save"
 msgstr "Αποθήκευση"
@@ -444,8 +512,12 @@ msgstr "Αποθήκευση"
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-msgid "Addresses you use often — home, the hospital, a day program. Pick them from a list when you book."
-msgstr "Διευθύνσεις που χρησιμοποιείτε συχνά — σπίτι, νοσοκομείο, ημερήσιο πρόγραμμα. Τις επιλέγετε από λίστα όταν κάνετε κράτηση."
+msgid ""
+"Addresses you use often — home, the hospital, a day program. Pick them from "
+"a list when you book."
+msgstr ""
+"Διευθύνσεις που χρησιμοποιείτε συχνά — σπίτι, νοσοκομείο, ημερήσιο "
+"πρόγραμμα. Τις επιλέγετε από λίστα όταν κάνετε κράτηση."
 
 msgid "Add an address"
 msgstr "Προσθήκη διεύθυνσης"
@@ -499,8 +571,11 @@ msgstr "Τρέχων κωδικός"
 msgid "New password (10+ characters)"
 msgstr "Νέος κωδικός (10+ χαρακτήρες)"
 
-msgid "Too many sign-ups from your connection. Please try again later or call us."
-msgstr "Πάρα πολλές εγγραφές από τη σύνδεσή σας. Δοκιμάστε ξανά αργότερα ή τηλεφωνήστε μας."
+msgid ""
+"Too many sign-ups from your connection. Please try again later or call us."
+msgstr ""
+"Πάρα πολλές εγγραφές από τη σύνδεσή σας. Δοκιμάστε ξανά αργότερα ή "
+"τηλεφωνήστε μας."
 
 msgid "Please enter your name."
 msgstr "Παρακαλούμε γράψτε το όνομά σας."
@@ -508,8 +583,12 @@ msgstr "Παρακαλούμε γράψτε το όνομά σας."
 msgid "Please enter a valid email address."
 msgstr "Παρακαλούμε γράψτε μια έγκυρη διεύθυνση email."
 
-msgid "There is already an account with that email. Please sign in, or use “Forgotten your password?”."
-msgstr "Υπάρχει ήδη λογαριασμός με αυτό το email. Παρακαλούμε συνδεθείτε ή επιλέξτε «Ξεχάσατε τον κωδικό σας;»."
+msgid ""
+"There is already an account with that email. Please sign in, or use "
+"“Forgotten your password?”."
+msgstr ""
+"Υπάρχει ήδη λογαριασμός με αυτό το email. Παρακαλούμε συνδεθείτε ή επιλέξτε "
+"«Ξεχάσατε τον κωδικό σας;»."
 
 msgid "Please enter a valid mobile number."
 msgstr "Παρακαλούμε γράψτε έναν έγκυρο αριθμό κινητού."
@@ -528,7 +607,8 @@ msgid "Please enter a name."
 msgstr "Παρακαλούμε γράψτε ένα όνομα."
 
 msgid "You have reached the limit of saved people. Please remove some first."
-msgstr "Φτάσατε το όριο αποθηκευμένων ατόμων. Παρακαλούμε αφαιρέστε πρώτα κάποια."
+msgstr ""
+"Φτάσατε το όριο αποθηκευμένων ατόμων. Παρακαλούμε αφαιρέστε πρώτα κάποια."
 
 msgid "Please enter an address."
 msgstr "Παρακαλούμε γράψτε μια διεύθυνση."
@@ -625,8 +705,13 @@ msgstr "Σύνολο πληρωμής"
 msgid "Paid"
 msgstr "Πληρώθηκε"
 
-msgid "The fare has not been entered yet. If you need a tax invoice for this trip, please contact us and quote the number above."
-msgstr "Το κόμιστρο δεν έχει καταχωριστεί ακόμη. Αν χρειάζεστε φορολογικό τιμολόγιο για αυτή τη διαδρομή, επικοινωνήστε μαζί μας και αναφέρετε τον παραπάνω αριθμό."
+msgid ""
+"The fare has not been entered yet. If you need a tax invoice for this trip, "
+"please contact us and quote the number above."
+msgstr ""
+"Το κόμιστρο δεν έχει καταχωριστεί ακόμη. Αν χρειάζεστε φορολογικό τιμολόγιο "
+"για αυτή τη διαδρομή, επικοινωνήστε μαζί μας και αναφέρετε τον παραπάνω "
+"αριθμό."
 
 msgid "This is a receipt, not a tax invoice."
 msgstr "Αυτό είναι απόδειξη, όχι φορολογικό τιμολόγιο."
@@ -702,8 +787,15 @@ msgstr "Ολοκληρώθηκε"
 msgid "Can we use analytics cookies?"
 msgstr "Μπορούμε να χρησιμοποιούμε cookies στατιστικών;"
 
-msgid "We would like to use Google Analytics to understand how people use this site so we can improve it. These cookies are optional — the site and online booking work the same either way."
-msgstr "Θα θέλαμε να χρησιμοποιούμε το Google Analytics για να καταλαβαίνουμε πώς χρησιμοποιείται αυτός ο ιστότοπος, ώστε να τον βελτιώνουμε. Αυτά τα cookies είναι προαιρετικά — ο ιστότοπος και οι online κρατήσεις λειτουργούν το ίδιο σε κάθε περίπτωση."
+msgid ""
+"We would like to use Google Analytics to understand how people use this site"
+" so we can improve it. These cookies are optional — the site and online "
+"booking work the same either way."
+msgstr ""
+"Θα θέλαμε να χρησιμοποιούμε το Google Analytics για να καταλαβαίνουμε πώς "
+"χρησιμοποιείται αυτός ο ιστότοπος, ώστε να τον βελτιώνουμε. Αυτά τα cookies "
+"είναι προαιρετικά — ο ιστότοπος και οι online κρατήσεις λειτουργούν το ίδιο "
+"σε κάθε περίπτωση."
 
 msgid "Privacy policy"
 msgstr "Πολιτική απορρήτου"
@@ -720,14 +812,24 @@ msgstr "Ρυθμίσεις cookies"
 msgid "Airport drop-offs and pickups"
 msgstr "Μεταφορές από και προς το αεροδρόμιο"
 
-msgid "A taxi drops a traveller at Departures while a plane takes off. Then a maxi taxi pulls up at Arrivals, lowers its ramp and a passenger in a wheelchair rolls aboard."
-msgstr "Ένα ταξί αφήνει έναν ταξιδιώτη στις Αναχωρήσεις καθώς ένα αεροπλάνο απογειώνεται. Έπειτα ένα maxi ταξί σταματά στις Αφίξεις, κατεβάζει τη ράμπα του και ένας επιβάτης σε αναπηρικό αμαξίδιο ανεβαίνει."
+msgid ""
+"A taxi drops a traveller at Departures while a plane takes off. Then a maxi "
+"taxi pulls up at Arrivals, lowers its ramp and a passenger in a wheelchair "
+"rolls aboard."
+msgstr ""
+"Ένα ταξί αφήνει έναν ταξιδιώτη στις Αναχωρήσεις καθώς ένα αεροπλάνο "
+"απογειώνεται. Έπειτα ένα maxi ταξί σταματά στις Αφίξεις, κατεβάζει τη ράμπα "
+"του και ένας επιβάτης σε αναπηρικό αμαξίδιο ανεβαίνει."
 
 msgid "Door-to-door wheelchair pickup"
 msgstr "Παραλαβή αναπηρικού αμαξιδίου από πόρτα σε πόρτα"
 
-msgid "A maxi taxi pulls up outside a house, lowers its rear ramp, and a passenger in a wheelchair rolls aboard before the taxi drives away."
-msgstr "Ένα maxi ταξί σταματά έξω από ένα σπίτι, κατεβάζει την πίσω ράμπα του και ένας επιβάτης σε αναπηρικό αμαξίδιο ανεβαίνει πριν το ταξί ξεκινήσει."
+msgid ""
+"A maxi taxi pulls up outside a house, lowers its rear ramp, and a passenger "
+"in a wheelchair rolls aboard before the taxi drives away."
+msgstr ""
+"Ένα maxi ταξί σταματά έξω από ένα σπίτι, κατεβάζει την πίσω ράμπα του και "
+"ένας επιβάτης σε αναπηρικό αμαξίδιο ανεβαίνει πριν το ταξί ξεκινήσει."
 
 msgid "Pause animations"
 msgstr "Παύση κινούμενων εικόνων"
@@ -735,17 +837,32 @@ msgstr "Παύση κινούμενων εικόνων"
 msgid "Animations"
 msgstr "Κινούμενες εικόνες"
 
-msgid "Moving taxis and the pickup/airport scenes. Visitors can pause them, and they stay still for anyone whose device asks for reduced motion. The scenes are also on the home page (Home page layout → “How a trip works”), on service pages, and anywhere you add the shortcode [tp_scene name=\"pickup\"], [tp_scene name=\"airport\"] or [tp_scene name=\"road\"]."
-msgstr "Κινούμενα ταξί και οι σκηνές παραλαβής/αεροδρομίου. Οι επισκέπτες μπορούν να τα σταματήσουν, και μένουν ακίνητα για όποιον η συσκευή του ζητά μειωμένη κίνηση. Οι σκηνές εμφανίζονται επίσης στην αρχική σελίδα (Διάταξη αρχικής σελίδας → «Πώς γίνεται μια διαδρομή»), στις σελίδες υπηρεσιών και όπου προσθέσετε τον σύντομο κώδικα [tp_scene name=\"pickup\"], [tp_scene name=\"airport\"] ή [tp_scene name=\"road\"]."
+msgid ""
+"Moving taxis and the pickup/airport scenes. Visitors can pause them, and "
+"they stay still for anyone whose device asks for reduced motion. The scenes "
+"are also on the home page (Home page layout → “How a trip works”), on "
+"service pages, and anywhere you add the shortcode [tp_scene "
+"name=\"pickup\"], [tp_scene name=\"airport\"] or [tp_scene name=\"road\"]."
+msgstr ""
+"Κινούμενα ταξί και οι σκηνές παραλαβής/αεροδρομίου. Οι επισκέπτες μπορούν να"
+" τα σταματήσουν, και μένουν ακίνητα για όποιον η συσκευή του ζητά μειωμένη "
+"κίνηση. Οι σκηνές εμφανίζονται επίσης στην αρχική σελίδα (Διάταξη αρχικής "
+"σελίδας → «Πώς γίνεται μια διαδρομή»), στις σελίδες υπηρεσιών και όπου "
+"προσθέσετε τον σύντομο κώδικα [tp_scene name=\"pickup\"], [tp_scene "
+"name=\"airport\"] ή [tp_scene name=\"road\"]."
 
 msgid "Turn animations on"
 msgstr "Ενεργοποίηση κινούμενων εικόνων"
 
-msgid "When off, the scenes show as still pictures and the moving road is hidden."
-msgstr "Όταν είναι απενεργοποιημένες, οι σκηνές εμφανίζονται ως ακίνητες εικόνες και ο κινούμενος δρόμος κρύβεται."
+msgid ""
+"When off, the scenes show as still pictures and the moving road is hidden."
+msgstr ""
+"Όταν είναι απενεργοποιημένες, οι σκηνές εμφανίζονται ως ακίνητες εικόνες και"
+" ο κινούμενος δρόμος κρύβεται."
 
 msgid "Taxis driving along the bottom of the home page hero"
-msgstr "Ταξί που κινούνται στο κάτω μέρος του κεντρικού banner της αρχικής σελίδας"
+msgstr ""
+"Ταξί που κινούνται στο κάτω μέρος του κεντρικού banner της αρχικής σελίδας"
 
 msgid "Taxis driving under page title banners"
 msgstr "Ταξί που κινούνται κάτω από τα banner τίτλων σελίδων"
@@ -864,8 +981,11 @@ msgid "Please choose a valid time."
 msgstr "Παρακαλούμε επιλέξτε μια έγκυρη ώρα."
 
 #. translators: %s: phone number
-msgid "Online bookings need a little notice. For an urgent pick-up please call %s."
-msgstr "Οι online κρατήσεις χρειάζονται λίγο χρόνο από πριν. Για επείγουσα παραλαβή τηλεφωνήστε στο %s."
+msgid ""
+"Online bookings need a little notice. For an urgent pick-up please call %s."
+msgstr ""
+"Οι online κρατήσεις χρειάζονται λίγο χρόνο από πριν. Για επείγουσα παραλαβή "
+"τηλεφωνήστε στο %s."
 
 msgid "Choose which days the trip repeats."
 msgstr "Επιλέξτε ποιες ημέρες επαναλαμβάνεται η διαδρομή."
@@ -874,8 +994,12 @@ msgid "Choose an end date after the first trip."
 msgstr "Επιλέξτε ημερομηνία λήξης μετά την πρώτη διαδρομή."
 
 #. translators: %d: number of weeks
-msgid "Repeat bookings can run for up to %d weeks. Call us to arrange a longer schedule."
-msgstr "Οι επαναλαμβανόμενες κρατήσεις μπορούν να διαρκούν έως %d εβδομάδες. Τηλεφωνήστε μας για μεγαλύτερο πρόγραμμα."
+msgid ""
+"Repeat bookings can run for up to %d weeks. Call us to arrange a longer "
+"schedule."
+msgstr ""
+"Οι επαναλαμβανόμενες κρατήσεις μπορούν να διαρκούν έως %d εβδομάδες. "
+"Τηλεφωνήστε μας για μεγαλύτερο πρόγραμμα."
 
 #. translators: %s: driver name
 msgid "Driver assigned: %s"
@@ -915,29 +1039,39 @@ msgid "Online deposit (Stripe)"
 msgstr "Online προκαταβολή (Stripe)"
 
 msgid "Your session expired. Please check your details and submit again."
-msgstr "Η σύνδεσή σας έληξε. Παρακαλούμε ελέγξτε τα στοιχεία σας και στείλτε ξανά."
+msgstr ""
+"Η σύνδεσή σας έληξε. Παρακαλούμε ελέγξτε τα στοιχεία σας και στείλτε ξανά."
 
 #. translators: %s: phone number
 msgid "Too many bookings from your connection. Please call us on %s."
-msgstr "Πάρα πολλές κρατήσεις από τη σύνδεσή σας. Παρακαλούμε τηλεφωνήστε μας στο %s."
+msgstr ""
+"Πάρα πολλές κρατήσεις από τη σύνδεσή σας. Παρακαλούμε τηλεφωνήστε μας στο "
+"%s."
 
 msgid "Please agree so we can contact you about this booking."
-msgstr "Παρακαλούμε συμφωνήστε, ώστε να μπορούμε να επικοινωνήσουμε μαζί σας για αυτή την κράτηση."
+msgstr ""
+"Παρακαλούμε συμφωνήστε, ώστε να μπορούμε να επικοινωνήσουμε μαζί σας για "
+"αυτή την κράτηση."
 
 msgid "Please accept the terms and cancellation policy."
 msgstr "Παρακαλούμε αποδεχτείτε τους όρους και την πολιτική ακυρώσεων."
 
 #. translators: %s: phone number
 msgid "Sorry, we could not save your booking. Please call %s."
-msgstr "Λυπούμαστε, δεν μπορέσαμε να αποθηκεύσουμε την κράτησή σας. Παρακαλούμε τηλεφωνήστε στο %s."
+msgstr ""
+"Λυπούμαστε, δεν μπορέσαμε να αποθηκεύσουμε την κράτησή σας. Παρακαλούμε "
+"τηλεφωνήστε στο %s."
 
 #. translators: %d: number of trips
 msgid "Repeat booking — %d trips:"
 msgstr "Επαναλαμβανόμενη κράτηση — %d διαδρομές:"
 
 #. translators: %s: language name
-msgid "Booked in %s — emails and texts to the customer are sent in this language."
-msgstr "Κράτηση στα %s — τα email και τα SMS προς τον πελάτη στέλνονται σε αυτή τη γλώσσα."
+msgid ""
+"Booked in %s — emails and texts to the customer are sent in this language."
+msgstr ""
+"Κράτηση στα %s — τα email και τα SMS προς τον πελάτη στέλνονται σε αυτή τη "
+"γλώσσα."
 
 #. translators: 1: reference, 2: pick-up time
 msgid "New booking %1$s — %2$s"
@@ -950,19 +1084,27 @@ msgstr "(επαναλαμβανόμενη)"
 msgid "Manage this booking:"
 msgstr "Διαχείριση αυτής της κράτησης:"
 
-#. translators: %s: passenger name translators: %s: name translators: %s: first name
+#. translators: %s: passenger name translators: %s: name translators: %s:
+#. first name
 msgid "Hi %s,"
 msgstr "Γεια σας %s,"
 
-msgid "Thanks for booking with us. We have received your request and will confirm it shortly."
-msgstr "Σας ευχαριστούμε για την κράτηση. Λάβαμε το αίτημά σας και θα το επιβεβαιώσουμε σύντομα."
+msgid ""
+"Thanks for booking with us. We have received your request and will confirm "
+"it shortly."
+msgstr ""
+"Σας ευχαριστούμε για την κράτηση. Λάβαμε το αίτημά σας και θα το "
+"επιβεβαιώσουμε σύντομα."
 
 msgid "View or manage your booking:"
 msgstr "Δείτε ή διαχειριστείτε την κράτησή σας:"
 
 #. translators: 1: phone, 2: email
-msgid "Need to change something? Call %1$s or email %2$s and quote your reference."
-msgstr "Χρειάζεται να αλλάξετε κάτι; Τηλεφωνήστε στο %1$s ή στείλτε email στο %2$s και αναφέρετε τον κωδικό κράτησης."
+msgid ""
+"Need to change something? Call %1$s or email %2$s and quote your reference."
+msgstr ""
+"Χρειάζεται να αλλάξετε κάτι; Τηλεφωνήστε στο %1$s ή στείλτε email στο %2$s "
+"και αναφέρετε τον κωδικό κράτησης."
 
 #. translators: 1: site name, 2: reference
 msgid "%1$s booking received — %2$s"
@@ -975,13 +1117,22 @@ msgid "A driver has been assigned to your booking."
 msgstr "Ορίστηκε οδηγός για την κράτησή σας."
 
 msgid "Thanks for travelling with us. We hope to see you again soon."
-msgstr "Σας ευχαριστούμε που ταξιδέψατε μαζί μας. Ελπίζουμε να σας ξαναδούμε σύντομα."
+msgstr ""
+"Σας ευχαριστούμε που ταξιδέψατε μαζί μας. Ελπίζουμε να σας ξαναδούμε "
+"σύντομα."
 
-msgid "Your booking has been cancelled. If this is unexpected, please call us."
-msgstr "Η κράτησή σας ακυρώθηκε. Αν δεν το περιμένατε, παρακαλούμε τηλεφωνήστε μας."
+msgid ""
+"Your booking has been cancelled. If this is unexpected, please call us."
+msgstr ""
+"Η κράτησή σας ακυρώθηκε. Αν δεν το περιμένατε, παρακαλούμε τηλεφωνήστε μας."
 
-msgid "Our driver arrived but could not find you, so the trip was marked as a no-show. Please call us if this is a mistake or you would like to rebook."
-msgstr "Ο οδηγός μας έφτασε αλλά δεν σας βρήκε, οπότε η διαδρομή σημειώθηκε ως «Δεν εμφανίστηκε». Παρακαλούμε τηλεφωνήστε μας αν πρόκειται για λάθος ή αν θέλετε να κλείσετε ξανά."
+msgid ""
+"Our driver arrived but could not find you, so the trip was marked as a no-"
+"show. Please call us if this is a mistake or you would like to rebook."
+msgstr ""
+"Ο οδηγός μας έφτασε αλλά δεν σας βρήκε, οπότε η διαδρομή σημειώθηκε ως «Δεν "
+"εμφανίστηκε». Παρακαλούμε τηλεφωνήστε μας αν πρόκειται για λάθος ή αν θέλετε"
+" να κλείσετε ξανά."
 
 msgid "Your booking is being reviewed."
 msgstr "Η κράτησή σας εξετάζεται."
@@ -1058,8 +1209,12 @@ msgstr "Νύχτες"
 msgid "Application received — thank you!"
 msgstr "Η αίτηση ελήφθη — σας ευχαριστούμε!"
 
-msgid "We read every application and will be in touch if there is a suitable opening."
-msgstr "Διαβάζουμε κάθε αίτηση και θα επικοινωνήσουμε μαζί σας αν υπάρξει κατάλληλη θέση."
+msgid ""
+"We read every application and will be in touch if there is a suitable "
+"opening."
+msgstr ""
+"Διαβάζουμε κάθε αίτηση και θα επικοινωνήσουμε μαζί σας αν υπάρξει κατάλληλη "
+"θέση."
 
 msgid "Apply to drive with us"
 msgstr "Κάντε αίτηση για να οδηγείτε μαζί μας"
@@ -1074,7 +1229,8 @@ msgid "Driver accreditation"
 msgstr "Άδεια οδηγού"
 
 msgid "I hold Victorian commercial passenger vehicle driver accreditation"
-msgstr "Έχω άδεια οδηγού επαγγελματικού οχήματος μεταφοράς επιβατών της Βικτώριας"
+msgstr ""
+"Έχω άδεια οδηγού επαγγελματικού οχήματος μεταφοράς επιβατών της Βικτώριας"
 
 msgid "I have applied / am applying"
 msgstr "Έχω κάνει / κάνω αίτηση"
@@ -1100,11 +1256,17 @@ msgstr "Πότε μπορείτε να οδηγείτε;"
 msgid "Tell us a little about yourself"
 msgstr "Πείτε μας λίγα λόγια για εσάς"
 
-msgid "Driving history, disability or aged-care experience, why you would like to join…"
-msgstr "Ιστορικό οδήγησης, εμπειρία σε αναπηρία ή φροντίδα ηλικιωμένων, γιατί θέλετε να έρθετε στην ομάδα μας…"
+msgid ""
+"Driving history, disability or aged-care experience, why you would like to "
+"join…"
+msgstr ""
+"Ιστορικό οδήγησης, εμπειρία σε αναπηρία ή φροντίδα ηλικιωμένων, γιατί θέλετε"
+" να έρθετε στην ομάδα μας…"
 
-msgid "I agree to you keeping my application to consider me for driving roles."
-msgstr "Συμφωνώ να κρατήσετε την αίτησή μου για να με εξετάσετε για θέσεις οδηγού."
+msgid ""
+"I agree to you keeping my application to consider me for driving roles."
+msgstr ""
+"Συμφωνώ να κρατήσετε την αίτησή μου για να με εξετάσετε για θέσεις οδηγού."
 
 msgid "Send application"
 msgstr "Αποστολή αίτησης"
@@ -1113,10 +1275,15 @@ msgid "Your session expired. Please try again."
 msgstr "Η σύνδεσή σας έληξε. Παρακαλούμε δοκιμάστε ξανά."
 
 msgid "Too many applications from your connection. Please try again later."
-msgstr "Πάρα πολλές αιτήσεις από τη σύνδεσή σας. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+msgstr ""
+"Πάρα πολλές αιτήσεις από τη σύνδεσή σας. Παρακαλούμε δοκιμάστε ξανά "
+"αργότερα."
 
-msgid "Please fill in your name, mobile, a valid email and tick the consent box."
-msgstr "Παρακαλούμε συμπληρώστε όνομα, κινητό, έγκυρο email και επιλέξτε το πλαίσιο συναίνεσης."
+msgid ""
+"Please fill in your name, mobile, a valid email and tick the consent box."
+msgstr ""
+"Παρακαλούμε συμπληρώστε όνομα, κινητό, έγκυρο email και επιλέξτε το πλαίσιο "
+"συναίνεσης."
 
 msgid "Holds accreditation"
 msgstr "Έχει άδεια"
@@ -1158,8 +1325,11 @@ msgstr "Αναζήτηση στις ερωτήσεις"
 msgid "e.g. power wheelchair, airport, NDIS"
 msgstr "π.χ. ηλεκτρικό αμαξίδιο, αεροδρόμιο, NDIS"
 
-msgid "No questions match. Try another word, or call us — we are happy to help."
-msgstr "Δεν βρέθηκαν ερωτήσεις. Δοκιμάστε άλλη λέξη ή τηλεφωνήστε μας — θα χαρούμε να βοηθήσουμε."
+msgid ""
+"No questions match. Try another word, or call us — we are happy to help."
+msgstr ""
+"Δεν βρέθηκαν ερωτήσεις. Δοκιμάστε άλλη λέξη ή τηλεφωνήστε μας — θα χαρούμε "
+"να βοηθήσουμε."
 
 msgid "FAQ topics"
 msgstr "Θέματα συχνών ερωτήσεων"
@@ -1196,25 +1366,32 @@ msgid "Book online or call"
 msgstr "Κλείστε online ή τηλεφωνήστε"
 
 msgid "Participants, family, support coordinators and providers can all book."
-msgstr "Μπορούν να κλείσουν όλοι: συμμετέχοντες, οικογένεια, συντονιστές υποστήριξης και πάροχοι."
+msgstr ""
+"Μπορούν να κλείσουν όλοι: συμμετέχοντες, οικογένεια, συντονιστές υποστήριξης"
+" και πάροχοι."
 
 msgid "Choose \"Account / invoice\""
 msgstr "Επιλέξτε «Λογαριασμός / τιμολόγιο»"
 
 msgid "Tell us who to invoice and add the NDIS number or purchase order."
-msgstr "Πείτε μας σε ποιον να εκδοθεί το τιμολόγιο και προσθέστε τον αριθμό NDIS ή την εντολή αγοράς."
+msgstr ""
+"Πείτε μας σε ποιον να εκδοθεί το τιμολόγιο και προσθέστε τον αριθμό NDIS ή "
+"την εντολή αγοράς."
 
 msgid "Set up regular trips"
 msgstr "Ορίστε τακτικές διαδρομές"
 
 msgid "Tick \"regular trip\" to book the same run every week."
-msgstr "Επιλέξτε «τακτική διαδρομή» για να κλείσετε την ίδια διαδρομή κάθε εβδομάδα."
+msgstr ""
+"Επιλέξτε «τακτική διαδρομή» για να κλείσετε την ίδια διαδρομή κάθε εβδομάδα."
 
 msgid "Track every trip"
 msgstr "Παρακολουθήστε κάθε διαδρομή"
 
 msgid "Each trip has its own reference you can check on Manage My Booking."
-msgstr "Κάθε διαδρομή έχει δικό της κωδικό, που μπορείτε να ελέγξετε στη Διαχείριση κράτησης."
+msgstr ""
+"Κάθε διαδρομή έχει δικό της κωδικό, που μπορείτε να ελέγξετε στη Διαχείριση "
+"κράτησης."
 
 msgid "Book on account"
 msgstr "Κράτηση με λογαριασμό"
@@ -1260,7 +1437,9 @@ msgid "Message sent"
 msgstr "Το μήνυμα στάλθηκε"
 
 msgid "Thanks for getting in touch. We will reply as soon as we can."
-msgstr "Σας ευχαριστούμε που επικοινωνήσατε μαζί μας. Θα απαντήσουμε το συντομότερο δυνατό."
+msgstr ""
+"Σας ευχαριστούμε που επικοινωνήσατε μαζί μας. Θα απαντήσουμε το συντομότερο "
+"δυνατό."
 
 msgid "Send us a message"
 msgstr "Στείλτε μας μήνυμα"
@@ -1296,7 +1475,8 @@ msgstr "Κλείστε online οποιαδήποτε ώρα — θα επιβε�
 
 #. translators: %s: phone
 msgid "Too many messages from your connection. Please call %s."
-msgstr "Πάρα πολλά μηνύματα από τη σύνδεσή σας. Παρακαλούμε τηλεφωνήστε στο %s."
+msgstr ""
+"Πάρα πολλά μηνύματα από τη σύνδεσή σας. Παρακαλούμε τηλεφωνήστε στο %s."
 
 msgid "Please fill in your name, a valid email and your message."
 msgstr "Παρακαλούμε συμπληρώστε το όνομά σας, έγκυρο email και το μήνυμά σας."
@@ -1312,8 +1492,12 @@ msgstr "Σας ευχαριστούμε που επικοινωνήσατε — 
 msgid "We aim to reply %s."
 msgstr "Στόχος μας είναι να απαντήσουμε %s."
 
-msgid "We take every complaint seriously and will keep you updated until it is resolved."
-msgstr "Παίρνουμε κάθε παράπονο στα σοβαρά και θα σας ενημερώνουμε μέχρι να επιλυθεί."
+msgid ""
+"We take every complaint seriously and will keep you updated until it is "
+"resolved."
+msgstr ""
+"Παίρνουμε κάθε παράπονο στα σοβαρά και θα σας ενημερώνουμε μέχρι να "
+"επιλυθεί."
 
 msgid "How we handle complaints:"
 msgstr "Πώς χειριζόμαστε τα παράπονα:"
@@ -1396,11 +1580,21 @@ msgstr "Δημοφιλείς προορισμοί"
 msgid "Destinations"
 msgstr "Προορισμοί"
 
-msgid "Built automatically from bookings in the last 12 months. To protect privacy, only places that look public (hospitals, airports, centres…) and that at least three different passengers travelled to can appear on the website. Visitor counts are never shown."
-msgstr "Δημιουργείται αυτόματα από τις κρατήσεις των τελευταίων 12 μηνών. Για την προστασία του απορρήτου, στον ιστότοπο μπορούν να εμφανιστούν μόνο μέρη που φαίνονται δημόσια (νοσοκομεία, αεροδρόμια, κέντρα…) και στα οποία ταξίδεψαν τουλάχιστον τρεις διαφορετικοί επιβάτες. Ο αριθμός επισκεπτών δεν εμφανίζεται ποτέ."
+msgid ""
+"Built automatically from bookings in the last 12 months. To protect privacy,"
+" only places that look public (hospitals, airports, centres…) and that at "
+"least three different passengers travelled to can appear on the website. "
+"Visitor counts are never shown."
+msgstr ""
+"Δημιουργείται αυτόματα από τις κρατήσεις των τελευταίων 12 μηνών. Για την "
+"προστασία του απορρήτου, στον ιστότοπο μπορούν να εμφανιστούν μόνο μέρη που "
+"φαίνονται δημόσια (νοσοκομεία, αεροδρόμια, κέντρα…) και στα οποία ταξίδεψαν "
+"τουλάχιστον τρεις διαφορετικοί επιβάτες. Ο αριθμός επισκεπτών δεν "
+"εμφανίζεται ποτέ."
 
 msgid "Nothing yet — destinations appear here as bookings build up."
-msgstr "Τίποτα ακόμη — οι προορισμοί εμφανίζονται εδώ καθώς αυξάνονται οι κρατήσεις."
+msgstr ""
+"Τίποτα ακόμη — οι προορισμοί εμφανίζονται εδώ καθώς αυξάνονται οι κρατήσεις."
 
 msgid "Destination"
 msgstr "Προορισμός"
@@ -1445,8 +1639,12 @@ msgstr "Συνηθισμένο όχημα"
 msgid "— None —"
 msgstr "— Κανένα —"
 
-msgid "Used on the dispatch board when you assign this driver without choosing a vehicle."
-msgstr "Χρησιμοποιείται στον πίνακα διανομής όταν αναθέτετε αυτόν τον οδηγό χωρίς να επιλέξετε όχημα."
+msgid ""
+"Used on the dispatch board when you assign this driver without choosing a "
+"vehicle."
+msgstr ""
+"Χρησιμοποιείται στον πίνακα διανομής όταν αναθέτετε αυτόν τον οδηγό χωρίς να"
+" επιλέξετε όχημα."
 
 msgid "Driver sign in"
 msgstr "Σύνδεση οδηγού"
@@ -1468,16 +1666,24 @@ msgid "Trip updated: %s."
 msgstr "Η διαδρομή ενημερώθηκε: %s."
 
 msgid "Trip declined. The office has been told so they can reassign it."
-msgstr "Η διαδρομή απορρίφθηκε. Το γραφείο ενημερώθηκε για να την αναθέσει σε άλλον."
+msgstr ""
+"Η διαδρομή απορρίφθηκε. Το γραφείο ενημερώθηκε για να την αναθέσει σε άλλον."
 
-msgid "That trip had already changed, so nothing was updated. Here is its latest status."
-msgstr "Η διαδρομή είχε ήδη αλλάξει, οπότε δεν ενημερώθηκε τίποτα. Αυτή είναι η τελευταία της κατάσταση."
+msgid ""
+"That trip had already changed, so nothing was updated. Here is its latest "
+"status."
+msgstr ""
+"Η διαδρομή είχε ήδη αλλάξει, οπότε δεν ενημερώθηκε τίποτα. Αυτή είναι η "
+"τελευταία της κατάσταση."
 
 msgid "No jobs for this day"
 msgstr "Δεν υπάρχουν εργασίες αυτή την ημέρα"
 
-msgid "Swipe or use the arrows to check other days. New jobs are texted to you."
-msgstr "Σύρετε ή χρησιμοποιήστε τα βέλη για να δείτε άλλες ημέρες. Οι νέες εργασίες σας στέλνονται με SMS."
+msgid ""
+"Swipe or use the arrows to check other days. New jobs are texted to you."
+msgstr ""
+"Σύρετε ή χρησιμοποιήστε τα βέλη για να δείτε άλλες ημέρες. Οι νέες εργασίες "
+"σας στέλνονται με SMS."
 
 msgid "Change day"
 msgstr "Αλλαγή ημέρας"
@@ -1611,7 +1817,9 @@ msgid "Edit announcement"
 msgstr "Επεξεργασία ανακοίνωσης"
 
 msgid "Message, e.g. \"Very busy today — please book ahead or call us.\""
-msgstr "Μήνυμα, π.χ. «Πολύ φόρτος σήμερα — παρακαλούμε κλείστε νωρίτερα ή τηλεφωνήστε μας.»"
+msgstr ""
+"Μήνυμα, π.χ. «Πολύ φόρτος σήμερα — παρακαλούμε κλείστε νωρίτερα ή "
+"τηλεφωνήστε μας.»"
 
 msgid "Information (blue)"
 msgstr "Πληροφορία (μπλε)"
@@ -1679,8 +1887,12 @@ msgstr "Αυτόματη απόσυρση"
 msgid "Move to drafts on"
 msgstr "Μεταφορά στα πρόχειρα στις"
 
-msgid "For seasonal pages and promotions. Use \"Publish → Schedule\" to choose when it goes live."
-msgstr "Για εποχικές σελίδες και προσφορές. Χρησιμοποιήστε «Δημοσίευση → Προγραμματισμός» για να επιλέξετε πότε θα εμφανιστεί."
+msgid ""
+"For seasonal pages and promotions. Use \"Publish → Schedule\" to choose when"
+" it goes live."
+msgstr ""
+"Για εποχικές σελίδες και προσφορές. Χρησιμοποιήστε «Δημοσίευση → "
+"Προγραμματισμός» για να επιλέξετε πότε θα εμφανιστεί."
 
 msgid "Google did not return your reviews."
 msgstr "Η Google δεν επέστρεψε τις κριτικές σας."
@@ -1689,13 +1901,20 @@ msgid "Google user"
 msgstr "Χρήστης Google"
 
 msgid "Place saved. Your Google reviews will appear on the site shortly."
-msgstr "Η τοποθεσία αποθηκεύτηκε. Οι κριτικές σας από τη Google θα εμφανιστούν σύντομα στον ιστότοπο."
+msgstr ""
+"Η τοποθεσία αποθηκεύτηκε. Οι κριτικές σας από τη Google θα εμφανιστούν "
+"σύντομα στον ιστότοπο."
 
 msgid "Find your Google Place ID"
 msgstr "Βρείτε το Google Place ID σας"
 
-msgid "Search for your business as it appears on Google Maps, then choose it. This connects live reviews and your star rating."
-msgstr "Αναζητήστε την επιχείρησή σας όπως εμφανίζεται στους Χάρτες Google και επιλέξτε την. Έτσι συνδέονται οι ζωντανές κριτικές και η βαθμολογία σας σε αστέρια."
+msgid ""
+"Search for your business as it appears on Google Maps, then choose it. This "
+"connects live reviews and your star rating."
+msgstr ""
+"Αναζητήστε την επιχείρησή σας όπως εμφανίζεται στους Χάρτες Google και "
+"επιλέξτε την. Έτσι συνδέονται οι ζωντανές κριτικές και η βαθμολογία σας σε "
+"αστέρια."
 
 msgid "Business name and suburb"
 msgstr "Όνομα επιχείρησης και προάστιο"
@@ -1704,14 +1923,17 @@ msgid "Search Google"
 msgstr "Αναζήτηση στη Google"
 
 msgid "No matches. Try the exact name shown on your Google Business Profile."
-msgstr "Δεν βρέθηκαν αποτελέσματα. Δοκιμάστε το ακριβές όνομα που εμφανίζεται στο Προφίλ Επιχείρησης στη Google."
+msgstr ""
+"Δεν βρέθηκαν αποτελέσματα. Δοκιμάστε το ακριβές όνομα που εμφανίζεται στο "
+"Προφίλ Επιχείρησης στη Google."
 
 msgid "Use this"
 msgstr "Χρήση αυτού"
 
 #. translators: 1: place name, 2: rating, 3: count, 4: number of reviews shown
 msgid "Connected: %1$s — %2$s★ from %3$d reviews (%4$d shown on the site)."
-msgstr "Συνδέθηκε: %1$s — %2$s★ από %3$d κριτικές (%4$d εμφανίζονται στον ιστότοπο)."
+msgstr ""
+"Συνδέθηκε: %1$s — %2$s★ από %3$d κριτικές (%4$d εμφανίζονται στον ιστότοπο)."
 
 msgid "Melbourne & the Mornington Peninsula, VIC"
 msgstr "Μελβούρνη και χερσόνησος Mornington, Βικτώρια"
@@ -1725,8 +1947,14 @@ msgstr "Ταξί προσβάσιμα με αναπηρικό αμαξίδιο �
 msgid "Accessible rides, booked in minutes."
 msgstr "Προσβάσιμες διαδρομές, κράτηση σε λίγα λεπτά."
 
-msgid "Ramp and hoist equipped taxis with trained, patient drivers. Door-to-door across Melbourne and the Mornington Peninsula, including hospital, airport and NDIS trips."
-msgstr "Ταξί με ράμπα και ανυψωτικό, με εκπαιδευμένους και υπομονετικούς οδηγούς. Από πόρτα σε πόρτα σε όλη τη Μελβούρνη και τη χερσόνησο Mornington, μαζί με διαδρομές για νοσοκομεία, αεροδρόμιο και NDIS."
+msgid ""
+"Ramp and hoist equipped taxis with trained, patient drivers. Door-to-door "
+"across Melbourne and the Mornington Peninsula, including hospital, airport "
+"and NDIS trips."
+msgstr ""
+"Ταξί με ράμπα και ανυψωτικό, με εκπαιδευμένους και υπομονετικούς οδηγούς. "
+"Από πόρτα σε πόρτα σε όλη τη Μελβούρνη και τη χερσόνησο Mornington, μαζί με "
+"διαδρομές για νοσοκομεία, αεροδρόμιο και NDIS."
 
 msgid ""
 "04:00-08:59 | Early flight or appointment? Book your pick-up the night before.\n"
@@ -1799,14 +2027,22 @@ msgstr "Πώς γίνεται μια διαδρομή (κινούμενες σκ
 msgid "From your door to the departure gate"
 msgstr "Από την πόρτα σας μέχρι την πύλη αναχώρησης"
 
-msgid "We back right up to your door, lower the ramp and help you aboard — and we are waiting at Arrivals when you land."
-msgstr "Πλησιάζουμε με την όπισθεν μέχρι την πόρτα σας, κατεβάζουμε τη ράμπα και σας βοηθάμε να ανεβείτε — και σας περιμένουμε στις Αφίξεις όταν προσγειωθείτε."
+msgid ""
+"We back right up to your door, lower the ramp and help you aboard — and we "
+"are waiting at Arrivals when you land."
+msgstr ""
+"Πλησιάζουμε με την όπισθεν μέχρι την πόρτα σας, κατεβάζουμε τη ράμπα και σας"
+" βοηθάμε να ανεβείτε — και σας περιμένουμε στις Αφίξεις όταν προσγειωθείτε."
 
 msgid "Who we help"
 msgstr "Ποιους βοηθάμε"
 
-msgid "Whether you are travelling yourself or arranging transport for someone else, we make it simple."
-msgstr "Είτε ταξιδεύετε εσείς είτε κανονίζετε μεταφορά για κάποιον άλλον, το κάνουμε απλό."
+msgid ""
+"Whether you are travelling yourself or arranging transport for someone else,"
+" we make it simple."
+msgstr ""
+"Είτε ταξιδεύετε εσείς είτε κανονίζετε μεταφορά για κάποιον άλλον, το κάνουμε"
+" απλό."
 
 msgid "Booking form"
 msgstr "Φόρμα κράτησης"
@@ -1814,20 +2050,31 @@ msgstr "Φόρμα κράτησης"
 msgid "Book your accessible taxi"
 msgstr "Κλείστε το προσβάσιμο ταξί σας"
 
-msgid "Tell us where you are going and what you need. We will confirm your booking and let you know when your driver is on the way."
-msgstr "Πείτε μας πού πηγαίνετε και τι χρειάζεστε. Θα επιβεβαιώσουμε την κράτησή σας και θα σας ενημερώσουμε όταν ο οδηγός σας είναι καθ’ οδόν."
+msgid ""
+"Tell us where you are going and what you need. We will confirm your booking "
+"and let you know when your driver is on the way."
+msgstr ""
+"Πείτε μας πού πηγαίνετε και τι χρειάζεστε. Θα επιβεβαιώσουμε την κράτησή σας"
+" και θα σας ενημερώσουμε όταν ο οδηγός σας είναι καθ’ οδόν."
 
 msgid "Where our passengers go"
 msgstr "Πού πηγαίνουν οι επιβάτες μας"
 
 msgid "Our most-booked destinations this year. Tap one to book a trip there."
-msgstr "Οι πιο συχνοί προορισμοί μας φέτος. Πατήστε έναν για να κλείσετε διαδρομή εκεί."
+msgstr ""
+"Οι πιο συχνοί προορισμοί μας φέτος. Πατήστε έναν για να κλείσετε διαδρομή "
+"εκεί."
 
 msgid "Areas we cover + suburb checker"
 msgstr "Περιοχές που εξυπηρετούμε + έλεγχος προαστίου"
 
-msgid "Based on the Mornington Peninsula and servicing greater Melbourne. Not listed? Call us — we travel further on request."
-msgstr "Έχουμε έδρα στη χερσόνησο Mornington και εξυπηρετούμε την ευρύτερη Μελβούρνη. Η περιοχή σας δεν αναφέρεται; Τηλεφωνήστε μας — πηγαίνουμε και πιο μακριά κατόπιν αιτήματος."
+msgid ""
+"Based on the Mornington Peninsula and servicing greater Melbourne. Not "
+"listed? Call us — we travel further on request."
+msgstr ""
+"Έχουμε έδρα στη χερσόνησο Mornington και εξυπηρετούμε την ευρύτερη "
+"Μελβούρνη. Η περιοχή σας δεν αναφέρεται; Τηλεφωνήστε μας — πηγαίνουμε και "
+"πιο μακριά κατόπιν αιτήματος."
 
 msgid "Top questions (FAQ strip)"
 msgstr "Κύριες ερωτήσεις (λωρίδα συχνών ερωτήσεων)"
@@ -1865,14 +2112,21 @@ msgstr "Χρειάζεστε ταξί για αναπηρικό αμαξίδιο
 msgid "Call our friendly team and we will get you moving."
 msgstr "Τηλεφωνήστε στη φιλική μας ομάδα και θα σας βάλουμε σε κίνηση."
 
-msgid "Book your own trip online or by phone. We help you from your door to theirs."
-msgstr "Κλείστε τη διαδρομή σας ηλεκτρονικά ή τηλεφωνικά. Σας βοηθάμε από τη δική σας πόρτα μέχρι την πόρτα του προορισμού σας."
+msgid ""
+"Book your own trip online or by phone. We help you from your door to theirs."
+msgstr ""
+"Κλείστε τη διαδρομή σας ηλεκτρονικά ή τηλεφωνικά. Σας βοηθάμε από τη δική "
+"σας πόρτα μέχρι την πόρτα του προορισμού σας."
 
 msgid "Family & carers"
 msgstr "Οικογένεια και φροντιστές"
 
-msgid "Booking for a parent, partner or client? Carers can travel too, and you can manage the booking online."
-msgstr "Κλείνετε για γονιό, σύντροφο ή πελάτη; Μπορούν να ταξιδέψουν και φροντιστές, και μπορείτε να διαχειριστείτε την κράτηση ηλεκτρονικά."
+msgid ""
+"Booking for a parent, partner or client? Carers can travel too, and you can "
+"manage the booking online."
+msgstr ""
+"Κλείνετε για γονιό, σύντροφο ή πελάτη; Μπορούν να ταξιδέψουν και φροντιστές,"
+" και μπορείτε να διαχειριστείτε την κράτηση ηλεκτρονικά."
 
 msgid "Tips for carers"
 msgstr "Συμβουλές για φροντιστές"
@@ -1880,8 +2134,12 @@ msgstr "Συμβουλές για φροντιστές"
 msgid "NDIS coordinators & plan managers"
 msgstr "Συντονιστές NDIS και διαχειριστές προγραμμάτων"
 
-msgid "Set up regular trips for participants and have them invoiced to the right place."
-msgstr "Ορίστε τακτικές διαδρομές για συμμετέχοντες και φροντίστε να τιμολογούνται στο σωστό μέρος."
+msgid ""
+"Set up regular trips for participants and have them invoiced to the right "
+"place."
+msgstr ""
+"Ορίστε τακτικές διαδρομές για συμμετέχοντες και φροντίστε να τιμολογούνται "
+"στο σωστό μέρος."
 
 msgid "NDIS & accounts"
 msgstr "NDIS και λογαριασμοί"
@@ -1889,8 +2147,12 @@ msgstr "NDIS και λογαριασμοί"
 msgid "Hospitals & aged care"
 msgstr "Νοσοκομεία και φροντίδα ηλικιωμένων"
 
-msgid "Discharges, appointments and outings for your patients and residents. Ask us about an account."
-msgstr "Εξιτήρια, ραντεβού και έξοδοι για τους ασθενείς και τους διαμένοντές σας. Ρωτήστε μας για λογαριασμό."
+msgid ""
+"Discharges, appointments and outings for your patients and residents. Ask us"
+" about an account."
+msgstr ""
+"Εξιτήρια, ραντεβού και έξοδοι για τους ασθενείς και τους διαμένοντές σας. "
+"Ρωτήστε μας για λογαριασμό."
 
 msgid "Talk to us"
 msgstr "Μιλήστε μαζί μας"
@@ -1906,20 +2168,28 @@ msgstr "Μετακίνηση %s προς τα κάτω"
 msgid "Home page layout"
 msgstr "Διάταξη αρχικής σελίδας"
 
-msgid "Tick to show a section, untick to hide it, and use ▲ ▼ to reorder. The hero banner always stays at the top."
-msgstr "Επιλέξτε για να εμφανίσετε μια ενότητα, αποεπιλέξτε για να την κρύψετε, και χρησιμοποιήστε τα ▲ ▼ για αλλαγή σειράς. Η κεντρική ενότητα μένει πάντα στην κορυφή."
+msgid ""
+"Tick to show a section, untick to hide it, and use ▲ ▼ to reorder. The hero "
+"banner always stays at the top."
+msgstr ""
+"Επιλέξτε για να εμφανίσετε μια ενότητα, αποεπιλέξτε για να την κρύψετε, και "
+"χρησιμοποιήστε τα ▲ ▼ για αλλαγή σειράς. Η κεντρική ενότητα μένει πάντα στην"
+" κορυφή."
 
 msgid "Sections"
 msgstr "Ενότητες"
 
 msgid "Show the quick-book bar in the hero (From, To, Date)"
-msgstr "Εμφάνιση της γραμμής γρήγορης κράτησης στην κεντρική ενότητα (Από, Προς, Ημερομηνία)"
+msgstr ""
+"Εμφάνιση της γραμμής γρήγορης κράτησης στην κεντρική ενότητα (Από, Προς, "
+"Ημερομηνία)"
 
 msgid "Home page headings & text"
 msgstr "Επικεφαλίδες και κείμενα αρχικής σελίδας"
 
 msgid "Leave a field empty to use the default wording."
-msgstr "Αφήστε ένα πεδίο κενό για να χρησιμοποιηθεί η προεπιλεγμένη διατύπωση."
+msgstr ""
+"Αφήστε ένα πεδίο κενό για να χρησιμοποιηθεί η προεπιλεγμένη διατύπωση."
 
 #. translators: %s: section
 msgid "%s — heading"
@@ -1932,8 +2202,13 @@ msgstr "%s — εισαγωγή"
 msgid "Who we help panels"
 msgstr "Πλαίσια «Ποιους βοηθάμε»"
 
-msgid "Four short panels for different audiences. Clear a heading to hide that panel. Leave a link empty to use the matching page automatically."
-msgstr "Τέσσερα σύντομα πλαίσια για διαφορετικό κοινό. Σβήστε μια επικεφαλίδα για να κρύψετε αυτό το πλαίσιο. Αφήστε έναν σύνδεσμο κενό για να χρησιμοποιηθεί αυτόματα η αντίστοιχη σελίδα."
+msgid ""
+"Four short panels for different audiences. Clear a heading to hide that "
+"panel. Leave a link empty to use the matching page automatically."
+msgstr ""
+"Τέσσερα σύντομα πλαίσια για διαφορετικό κοινό. Σβήστε μια επικεφαλίδα για να"
+" κρύψετε αυτό το πλαίσιο. Αφήστε έναν σύνδεσμο κενό για να χρησιμοποιηθεί "
+"αυτόματα η αντίστοιχη σελίδα."
 
 msgid "heading"
 msgstr "επικεφαλίδα"
@@ -1969,8 +2244,13 @@ msgstr "Ορισμός φωτογραφίας κεντρικής ενότητα�
 msgid "When to show it"
 msgstr "Πότε να εμφανίζεται"
 
-msgid "Set the photo with \"Hero photo\" on the right (give it alt text in the Media Library). It replaces the normal hero image between these dates."
-msgstr "Ορίστε τη φωτογραφία με το «Φωτογραφία κεντρικής ενότητας» στα δεξιά (δώστε της εναλλακτικό κείμενο στη Βιβλιοθήκη πολυμέσων). Αντικαθιστά την κανονική εικόνα της κεντρικής ενότητας ανάμεσα σε αυτές τις ημερομηνίες."
+msgid ""
+"Set the photo with \"Hero photo\" on the right (give it alt text in the "
+"Media Library). It replaces the normal hero image between these dates."
+msgstr ""
+"Ορίστε τη φωτογραφία με το «Φωτογραφία κεντρικής ενότητας» στα δεξιά (δώστε "
+"της εναλλακτικό κείμενο στη Βιβλιοθήκη πολυμέσων). Αντικαθιστά την κανονική "
+"εικόνα της κεντρικής ενότητας ανάμεσα σε αυτές τις ημερομηνίες."
 
 msgid "Until (inclusive)"
 msgstr "Έως (συμπεριλαμβανομένης)"
@@ -1993,8 +2273,12 @@ msgstr "Εμφανίζεται τώρα"
 msgid "Opening hours by day (used when not open 24/7)"
 msgstr "Ώρες λειτουργίας ανά ημέρα (όταν δεν είμαστε ανοιχτά 24/7)"
 
-msgid "One line per day or range, e.g. \"Mon-Fri 06:00-22:00\", \"Sat 07:00-20:00\", \"Sun closed\"."
-msgstr "Μία γραμμή ανά ημέρα ή εύρος ημερών, π.χ. «Mon-Fri 06:00-22:00», «Sat 07:00-20:00», «Sun closed»."
+msgid ""
+"One line per day or range, e.g. \"Mon-Fri 06:00-22:00\", \"Sat "
+"07:00-20:00\", \"Sun closed\"."
+msgstr ""
+"Μία γραμμή ανά ημέρα ή εύρος ημερών, π.χ. «Mon-Fri 06:00-22:00», «Sat "
+"07:00-20:00», «Sun closed»."
 
 msgid "Message shown while closed"
 msgstr "Μήνυμα που εμφανίζεται όταν είμαστε κλειστά"
@@ -2031,24 +2315,46 @@ msgstr "Ώρες τηλεφωνικής εξυπηρέτησης"
 msgid "Languages"
 msgstr "Γλώσσες"
 
-msgid "Visitors can switch the website to these languages. Menus, the booking form, booking pages, emails and texts are translated. For your own page text, open the page and use the Languages box to make a translated copy."
-msgstr "Οι επισκέπτες μπορούν να αλλάξουν τη γλώσσα του ιστότοπου σε αυτές τις γλώσσες. Μεταφράζονται τα μενού, η φόρμα κράτησης, οι σελίδες κρατήσεων, τα email και τα SMS. Για το δικό σας κείμενο σελίδας, ανοίξτε τη σελίδα και χρησιμοποιήστε το πλαίσιο «Γλώσσες» για να δημιουργήσετε μεταφρασμένο αντίγραφο."
+msgid ""
+"Visitors can switch the website to these languages. Menus, the booking form,"
+" booking pages, emails and texts are translated. For your own page text, "
+"open the page and use the Languages box to make a translated copy."
+msgstr ""
+"Οι επισκέπτες μπορούν να αλλάξουν τη γλώσσα του ιστότοπου σε αυτές τις "
+"γλώσσες. Μεταφράζονται τα μενού, η φόρμα κράτησης, οι σελίδες κρατήσεων, τα "
+"email και τα SMS. Για το δικό σας κείμενο σελίδας, ανοίξτε τη σελίδα και "
+"χρησιμοποιήστε το πλαίσιο «Γλώσσες» για να δημιουργήσετε μεταφρασμένο "
+"αντίγραφο."
 
 #. translators: 1: language name in English, 2: native name
 msgid "Offer %1$s (%2$s)"
 msgstr "Διάθεση: %1$s (%2$s)"
 
-msgid "Show the free interpreter (TIS National 131 450) and National Relay Service details"
-msgstr "Εμφάνιση στοιχείων για τον δωρεάν διερμηνέα (TIS National 131 450) και την Εθνική Υπηρεσία Αναμετάδοσης (National Relay Service)"
+msgid ""
+"Show the free interpreter (TIS National 131 450) and National Relay Service "
+"details"
+msgstr ""
+"Εμφάνιση στοιχείων για τον δωρεάν διερμηνέα (TIS National 131 450) και την "
+"Εθνική Υπηρεσία Αναμετάδοσης (National Relay Service)"
 
-msgid "Shown in the footer and on pages that are not translated yet. Register your business with TIS National so their interpreters can call you."
-msgstr "Εμφανίζεται στο υποσέλιδο και σε σελίδες που δεν έχουν μεταφραστεί ακόμη. Εγγράψτε την επιχείρησή σας στην TIS National ώστε οι διερμηνείς της να μπορούν να σας καλούν."
+msgid ""
+"Shown in the footer and on pages that are not translated yet. Register your "
+"business with TIS National so their interpreters can call you."
+msgstr ""
+"Εμφανίζεται στο υποσέλιδο και σε σελίδες που δεν έχουν μεταφραστεί ακόμη. "
+"Εγγράψτε την επιχείρησή σας στην TIS National ώστε οι διερμηνείς της να "
+"μπορούν να σας καλούν."
 
 msgid "Auslan video (YouTube or Vimeo link)"
 msgstr "Βίντεο σε Auslan (σύνδεσμος YouTube ή Vimeo)"
 
-msgid "A short video in Auslan explaining how to book. Shown with [tp_auslan] (it is on the Accessibility Statement page) and linked from the language menu."
-msgstr "Ένα σύντομο βίντεο σε Auslan που εξηγεί πώς γίνεται η κράτηση. Εμφανίζεται με το [tp_auslan] (βρίσκεται στη σελίδα «Δήλωση προσβασιμότητας») και συνδέεται από το μενού γλωσσών."
+msgid ""
+"A short video in Auslan explaining how to book. Shown with [tp_auslan] (it "
+"is on the Accessibility Statement page) and linked from the language menu."
+msgstr ""
+"Ένα σύντομο βίντεο σε Auslan που εξηγεί πώς γίνεται η κράτηση. Εμφανίζεται "
+"με το [tp_auslan] (βρίσκεται στη σελίδα «Δήλωση προσβασιμότητας») και "
+"συνδέεται από το μενού γλωσσών."
 
 msgid "Auslan video: English transcript"
 msgstr "Βίντεο σε Auslan: απομαγνητοφώνηση στα αγγλικά"
@@ -2056,27 +2362,46 @@ msgstr "Βίντεο σε Auslan: απομαγνητοφώνηση στα αγγ
 msgid "Translated home page text"
 msgstr "Μεταφρασμένο κείμενο αρχικής σελίδας"
 
-msgid "If you changed the hero text or opening hours, add the translated versions here. Leave a box empty to use the theme’s built-in translation of the original wording."
-msgstr "Αν αλλάξατε το κείμενο της κεντρικής ενότητας ή τις ώρες λειτουργίας, προσθέστε εδώ τις μεταφρασμένες εκδοχές. Αφήστε ένα πλαίσιο κενό για να χρησιμοποιηθεί η ενσωματωμένη μετάφραση του θέματος για την αρχική διατύπωση."
+msgid ""
+"If you changed the hero text or opening hours, add the translated versions "
+"here. Leave a box empty to use the theme’s built-in translation of the "
+"original wording."
+msgstr ""
+"Αν αλλάξατε το κείμενο της κεντρικής ενότητας ή τις ώρες λειτουργίας, "
+"προσθέστε εδώ τις μεταφρασμένες εκδοχές. Αφήστε ένα πλαίσιο κενό για να "
+"χρησιμοποιηθεί η ενσωματωμένη μετάφραση του θέματος για την αρχική "
+"διατύπωση."
 
 msgid "This page is in English."
 msgstr "Αυτή η σελίδα είναι στα αγγλικά."
 
 msgid "The booking form and your booking details are in your language."
-msgstr "Η φόρμα κράτησης και τα στοιχεία της κράτησής σας είναι στη γλώσσα σας."
+msgstr ""
+"Η φόρμα κράτησης και τα στοιχεία της κράτησής σας είναι στη γλώσσα σας."
 
 #. translators: 1: language, 2: page title
 msgid "This is the %1$s version of “%2$s”."
 msgstr "Αυτή είναι η έκδοση στα %1$s της σελίδας «%2$s»."
 
-msgid "Visitors who choose this language are sent here automatically once it is published."
-msgstr "Οι επισκέπτες που επιλέγουν αυτή τη γλώσσα μεταφέρονται εδώ αυτόματα μόλις δημοσιευτεί."
+msgid ""
+"Visitors who choose this language are sent here automatically once it is "
+"published."
+msgstr ""
+"Οι επισκέπτες που επιλέγουν αυτή τη γλώσσα μεταφέρονται εδώ αυτόματα μόλις "
+"δημοσιευτεί."
 
 msgid "Save the page first, then you can add translated copies."
-msgstr "Αποθηκεύστε πρώτα τη σελίδα και μετά μπορείτε να προσθέσετε μεταφρασμένα αντίγραφα."
+msgstr ""
+"Αποθηκεύστε πρώτα τη σελίδα και μετά μπορείτε να προσθέσετε μεταφρασμένα "
+"αντίγραφα."
 
-msgid "Make a copy of this page for each language and translate the text in the editor. Menus and links switch to the right copy by themselves."
-msgstr "Δημιουργήστε ένα αντίγραφο αυτής της σελίδας για κάθε γλώσσα και μεταφράστε το κείμενο στον επεξεργαστή. Τα μενού και οι σύνδεσμοι μεταβαίνουν αυτόματα στο σωστό αντίγραφο."
+msgid ""
+"Make a copy of this page for each language and translate the text in the "
+"editor. Menus and links switch to the right copy by themselves."
+msgstr ""
+"Δημιουργήστε ένα αντίγραφο αυτής της σελίδας για κάθε γλώσσα και μεταφράστε "
+"το κείμενο στον επεξεργαστή. Τα μενού και οι σύνδεσμοι μεταβαίνουν αυτόματα "
+"στο σωστό αντίγραφο."
 
 msgid "Edit draft"
 msgstr "Επεξεργασία προχείρου"
@@ -2095,11 +2420,19 @@ msgid "video"
 msgstr "βίντεο"
 
 #. translators: 1: business name, 2: phone number
-msgid "Need an interpreter? Call TIS National on 131 450 and ask them to call %1$s on %2$s."
-msgstr "Χρειάζεστε διερμηνέα; Τηλεφωνήστε στην TIS National στο 131 450 και ζητήστε τους να καλέσουν την %1$s στο %2$s."
+msgid ""
+"Need an interpreter? Call TIS National on 131 450 and ask them to call %1$s "
+"on %2$s."
+msgstr ""
+"Χρειάζεστε διερμηνέα; Τηλεφωνήστε στην TIS National στο 131 450 και ζητήστε "
+"τους να καλέσουν την %1$s στο %2$s."
 
-msgid "Deaf, hard of hearing or speech impaired? Use the National Relay Service on 133 677."
-msgstr "Είστε κωφός, βαρήκοος ή έχετε δυσκολία στην ομιλία; Χρησιμοποιήστε την Εθνική Υπηρεσία Αναμετάδοσης (National Relay Service) στο 133 677."
+msgid ""
+"Deaf, hard of hearing or speech impaired? Use the National Relay Service on "
+"133 677."
+msgstr ""
+"Είστε κωφός, βαρήκοος ή έχετε δυσκολία στην ομιλία; Χρησιμοποιήστε την "
+"Εθνική Υπηρεσία Αναμετάδοσης (National Relay Service) στο 133 677."
 
 msgid "Language"
 msgstr "Γλώσσα"
@@ -2116,22 +2449,39 @@ msgstr "Αναπαραγωγή: πώς κάνετε κράτηση μαζί μα
 msgid "Read the English transcript"
 msgstr "Διαβάστε την απομαγνητοφώνηση στα αγγλικά"
 
-msgid "[Add your Auslan video link under Appearance → Customize → Taxi Peninsula → Languages. Only staff see this note.]"
-msgstr "[Προσθέστε τον σύνδεσμο του βίντεο σε Auslan στο Εμφάνιση → Προσαρμογή → Taxi Peninsula → Γλώσσες. Αυτή τη σημείωση τη βλέπει μόνο το προσωπικό.]"
+msgid ""
+"[Add your Auslan video link under Appearance → Customize → Taxi Peninsula → "
+"Languages. Only staff see this note.]"
+msgstr ""
+"[Προσθέστε τον σύνδεσμο του βίντεο σε Auslan στο Εμφάνιση → Προσαρμογή → "
+"Taxi Peninsula → Γλώσσες. Αυτή τη σημείωση τη βλέπει μόνο το προσωπικό.]"
 
-msgid "Book online — the booking form has no time limit and works with screen readers."
-msgstr "Κλείστε ηλεκτρονικά — η φόρμα κράτησης δεν έχει χρονικό όριο και λειτουργεί με αναγνώστες οθόνης."
+msgid ""
+"Book online — the booking form has no time limit and works with screen "
+"readers."
+msgstr ""
+"Κλείστε ηλεκτρονικά — η φόρμα κράτησης δεν έχει χρονικό όριο και λειτουργεί "
+"με αναγνώστες οθόνης."
 
 #. translators: %s: SMS link
 msgid "Text us on %s — we reply by text."
 msgstr "Στείλτε μας SMS στο %s — απαντάμε με SMS."
 
 #. translators: %s: phone
-msgid "National Relay Service: use the NRS app or nrschat.nrscall.gov.au, or call 133 677, and give our number %s."
-msgstr "Εθνική Υπηρεσία Αναμετάδοσης (National Relay Service): χρησιμοποιήστε την εφαρμογή NRS ή το nrschat.nrscall.gov.au, ή καλέστε το 133 677, και δώστε τον αριθμό μας %s."
+msgid ""
+"National Relay Service: use the NRS app or nrschat.nrscall.gov.au, or call "
+"133 677, and give our number %s."
+msgstr ""
+"Εθνική Υπηρεσία Αναμετάδοσης (National Relay Service): χρησιμοποιήστε την "
+"εφαρμογή NRS ή το nrschat.nrscall.gov.au, ή καλέστε το 133 677, και δώστε "
+"τον αριθμό μας %s."
 
-msgid "Ask for SMS updates: we text you when your driver is on the way and when they arrive."
-msgstr "Ζητήστε ενημερώσεις με SMS: σας στέλνουμε μήνυμα όταν ο οδηγός σας είναι καθ’ οδόν και όταν φτάσει."
+msgid ""
+"Ask for SMS updates: we text you when your driver is on the way and when "
+"they arrive."
+msgstr ""
+"Ζητήστε ενημερώσεις με SMS: σας στέλνουμε μήνυμα όταν ο οδηγός σας είναι "
+"καθ’ οδόν και όταν φτάσει."
 
 msgid "Home"
 msgstr "Αρχική"
@@ -2142,10 +2492,16 @@ msgstr "Ιστολόγιο"
 
 #. translators: %s: phone
 msgid "Too many attempts. Please wait a few minutes or call %s."
-msgstr "Πάρα πολλές προσπάθειες. Παρακαλούμε περιμένετε λίγα λεπτά ή τηλεφωνήστε στο %s."
+msgstr ""
+"Πάρα πολλές προσπάθειες. Παρακαλούμε περιμένετε λίγα λεπτά ή τηλεφωνήστε στο"
+" %s."
 
-msgid "We could not find a booking with that reference and phone number. Please check both and try again."
-msgstr "Δεν βρήκαμε κράτηση με αυτόν τον κωδικό και αριθμό τηλεφώνου. Παρακαλούμε ελέγξτε και τα δύο και δοκιμάστε ξανά."
+msgid ""
+"We could not find a booking with that reference and phone number. Please "
+"check both and try again."
+msgstr ""
+"Δεν βρήκαμε κράτηση με αυτόν τον κωδικό και αριθμό τηλεφώνου. Παρακαλούμε "
+"ελέγξτε και τα δύο και δοκιμάστε ξανά."
 
 msgid "Please choose an option and tell us what you would like to change."
 msgstr "Παρακαλούμε επιλέξτε μια επιλογή και πείτε μας τι θέλετε να αλλάξετε."
@@ -2169,8 +2525,11 @@ msgid "%1$s km, about %2$d min drive"
 msgstr "%1$s km, περίπου %2$d λεπτά οδήγηση"
 
 #. translators: %d: number of suggestions
-msgid "%d address suggestions available. Use the up and down arrow keys to choose."
-msgstr "Υπάρχουν %d προτάσεις διευθύνσεων. Χρησιμοποιήστε τα πλήκτρα με το πάνω και το κάτω βέλος για να επιλέξετε."
+msgid ""
+"%d address suggestions available. Use the up and down arrow keys to choose."
+msgstr ""
+"Υπάρχουν %d προτάσεις διευθύνσεων. Χρησιμοποιήστε τα πλήκτρα με το πάνω και "
+"το κάτω βέλος για να επιλέξετε."
 
 msgid "No address suggestions."
 msgstr "Δεν υπάρχουν προτάσεις διευθύνσεων."
@@ -2178,8 +2537,11 @@ msgstr "Δεν υπάρχουν προτάσεις διευθύνσεων."
 msgid "Calculating fare estimate…"
 msgstr "Υπολογισμός εκτίμησης κόμιστρου…"
 
-msgid "We could not estimate this trip online. We will confirm the fare with you."
-msgstr "Δεν μπορέσαμε να εκτιμήσουμε αυτή τη διαδρομή ηλεκτρονικά. Θα σας επιβεβαιώσουμε το κόμιστρο."
+msgid ""
+"We could not estimate this trip online. We will confirm the fare with you."
+msgstr ""
+"Δεν μπορέσαμε να εκτιμήσουμε αυτή τη διαδρομή ηλεκτρονικά. Θα σας "
+"επιβεβαιώσουμε το κόμιστρο."
 
 msgid "Address suggestions by Google"
 msgstr "Προτάσεις διευθύνσεων από τη Google"
@@ -2208,26 +2570,41 @@ msgstr "Πληρώθηκε προκαταβολή για %1$s (%2$s)"
 msgid "Public driver profile"
 msgstr "Δημόσιο προφίλ οδηγού"
 
-msgid "Shown on the \"Meet the drivers\" section and to passengers once this driver is assigned to their trip. Only the first name is used."
-msgstr "Εμφανίζεται στην ενότητα «Γνωρίστε τους οδηγούς» και στους επιβάτες μόλις ο οδηγός οριστεί στη διαδρομή τους. Χρησιμοποιείται μόνο το μικρό όνομα."
+msgid ""
+"Shown on the \"Meet the drivers\" section and to passengers once this driver"
+" is assigned to their trip. Only the first name is used."
+msgstr ""
+"Εμφανίζεται στην ενότητα «Γνωρίστε τους οδηγούς» και στους επιβάτες μόλις ο "
+"οδηγός οριστεί στη διαδρομή τους. Χρησιμοποιείται μόνο το μικρό όνομα."
 
 msgid "Show on the website"
 msgstr "Εμφάνιση στον ιστότοπο"
 
-msgid "Yes — the driver has agreed to their first name, photo and bio being shown publicly."
-msgstr "Ναι — ο οδηγός έχει συμφωνήσει να εμφανίζονται δημόσια το μικρό του όνομα, η φωτογραφία και το βιογραφικό του."
+msgid ""
+"Yes — the driver has agreed to their first name, photo and bio being shown "
+"publicly."
+msgstr ""
+"Ναι — ο οδηγός έχει συμφωνήσει να εμφανίζονται δημόσια το μικρό του όνομα, η"
+" φωτογραφία και το βιογραφικό του."
 
 msgid "Short bio"
 msgstr "Σύντομο βιογραφικό"
 
-msgid "e.g. Driving on the Peninsula for 8 years. Loves the footy and a good chat."
-msgstr "π.χ. Οδηγεί στη Χερσόνησο εδώ και 8 χρόνια. Αγαπά το αυστραλιανό ποδόσφαιρο και μια καλή κουβέντα."
+msgid ""
+"e.g. Driving on the Peninsula for 8 years. Loves the footy and a good chat."
+msgstr ""
+"π.χ. Οδηγεί στη Χερσόνησο εδώ και 8 χρόνια. Αγαπά το αυστραλιανό ποδόσφαιρο "
+"και μια καλή κουβέντα."
 
 msgid "Choose photo"
 msgstr "Επιλογή φωτογραφίας"
 
-msgid "A friendly, well-lit head-and-shoulders photo works best. Add alt text in the Media Library."
-msgstr "Ταιριάζει καλύτερα μια φιλική, καλά φωτισμένη φωτογραφία από τους ώμους και πάνω. Προσθέστε εναλλακτικό κείμενο στη Βιβλιοθήκη πολυμέσων."
+msgid ""
+"A friendly, well-lit head-and-shoulders photo works best. Add alt text in "
+"the Media Library."
+msgstr ""
+"Ταιριάζει καλύτερα μια φιλική, καλά φωτισμένη φωτογραφία από τους ώμους και "
+"πάνω. Προσθέστε εναλλακτικό κείμενο στη Βιβλιοθήκη πολυμέσων."
 
 #. translators: %s: first name
 msgid "Photo of %s"
@@ -2242,8 +2619,14 @@ msgstr "Επιλογή φωτογραφιών"
 msgid "Clear"
 msgstr "Καθαρισμός"
 
-msgid "Show the ramp or hoist, the restraints and the inside of the vehicle. Give every photo alt text and a caption — they are read out in the full-screen viewer."
-msgstr "Δείξτε τη ράμπα ή το ανυψωτικό, τους ιμάντες στερέωσης και το εσωτερικό του οχήματος. Δώστε σε κάθε φωτογραφία εναλλακτικό κείμενο και λεζάντα — διαβάζονται φωναχτά στην προβολή πλήρους οθόνης."
+msgid ""
+"Show the ramp or hoist, the restraints and the inside of the vehicle. Give "
+"every photo alt text and a caption — they are read out in the full-screen "
+"viewer."
+msgstr ""
+"Δείξτε τη ράμπα ή το ανυψωτικό, τους ιμάντες στερέωσης και το εσωτερικό του "
+"οχήματος. Δώστε σε κάθε φωτογραφία εναλλακτικό κείμενο και λεζάντα — "
+"διαβάζονται φωναχτά στην προβολή πλήρους οθόνης."
 
 msgid "Partners"
 msgstr "Συνεργάτες"
@@ -2278,15 +2661,26 @@ msgstr "Το λογότυπο μένει κρυφό μέχρι να επιλεγ
 msgid "Ask for a copy of your information, or for it to be deleted"
 msgstr "Ζητήστε αντίγραφο των πληροφοριών σας ή τη διαγραφή τους"
 
-msgid "Thank you. Please check your email and click the link to confirm the request — we then reply within 30 days."
-msgstr "Σας ευχαριστούμε. Παρακαλούμε ελέγξτε το email σας και πατήστε τον σύνδεσμο για να επιβεβαιώσετε το αίτημα — μετά απαντάμε μέσα σε 30 ημέρες."
+msgid ""
+"Thank you. Please check your email and click the link to confirm the request"
+" — we then reply within 30 days."
+msgstr ""
+"Σας ευχαριστούμε. Παρακαλούμε ελέγξτε το email σας και πατήστε τον σύνδεσμο "
+"για να επιβεβαιώσετε το αίτημα — μετά απαντάμε μέσα σε 30 ημέρες."
 
-msgid "Sorry, we could not send that. Please check the email address, or call us."
-msgstr "Λυπούμαστε, δεν μπορέσαμε να το στείλουμε. Παρακαλούμε ελέγξτε τη διεύθυνση email ή τηλεφωνήστε μας."
+msgid ""
+"Sorry, we could not send that. Please check the email address, or call us."
+msgstr ""
+"Λυπούμαστε, δεν μπορέσαμε να το στείλουμε. Παρακαλούμε ελέγξτε τη διεύθυνση "
+"email ή τηλεφωνήστε μας."
 
 #. translators: %s: link to My Account
-msgid "You are signed in, so you can download your data or delete your account straight away under %s."
-msgstr "Έχετε συνδεθεί, οπότε μπορείτε να κατεβάσετε τα δεδομένα σας ή να διαγράψετε τον λογαριασμό σας αμέσως στο %s."
+msgid ""
+"You are signed in, so you can download your data or delete your account "
+"straight away under %s."
+msgstr ""
+"Έχετε συνδεθεί, οπότε μπορείτε να κατεβάσετε τα δεδομένα σας ή να διαγράψετε"
+" τον λογαριασμό σας αμέσως στο %s."
 
 msgid "My Account → My details"
 msgstr "Ο λογαριασμός μου → Τα στοιχεία μου"
@@ -2304,14 +2698,18 @@ msgid "Email address you used for bookings"
 msgstr "Διεύθυνση email που χρησιμοποιήσατε για τις κρατήσεις"
 
 msgid "We email you a link to confirm it is really you."
-msgstr "Σας στέλνουμε email με σύνδεσμο για να επιβεβαιώσουμε ότι είστε πράγματι εσείς."
+msgstr ""
+"Σας στέλνουμε email με σύνδεσμο για να επιβεβαιώσουμε ότι είστε πράγματι "
+"εσείς."
 
 msgid "Send request"
 msgstr "Αποστολή αιτήματος"
 
 #. translators: 1: request type, 2: masked email
-msgid "Privacy request received (%1$s) from %2$s — waiting for email confirmation"
-msgstr "Ελήφθη αίτημα απορρήτου (%1$s) από %2$s — αναμένεται επιβεβαίωση μέσω email"
+msgid ""
+"Privacy request received (%1$s) from %2$s — waiting for email confirmation"
+msgstr ""
+"Ελήφθη αίτημα απορρήτου (%1$s) από %2$s — αναμένεται επιβεβαίωση μέσω email"
 
 msgid "delete"
 msgstr "διαγραφή"
@@ -2323,7 +2721,9 @@ msgid "Your privacy"
 msgstr "Το απόρρητό σας"
 
 msgid "You can download everything we hold about you, or close your account."
-msgstr "Μπορείτε να κατεβάσετε όλα όσα έχουμε για εσάς ή να κλείσετε τον λογαριασμό σας."
+msgstr ""
+"Μπορείτε να κατεβάσετε όλα όσα έχουμε για εσάς ή να κλείσετε τον λογαριασμό "
+"σας."
 
 msgid "Read our privacy policy"
 msgstr "Διαβάστε την πολιτική απορρήτου μας"
@@ -2332,17 +2732,33 @@ msgid "Download my data"
 msgstr "Λήψη των δεδομένων μου"
 
 msgid "A file with your details, trips, saved passengers and addresses."
-msgstr "Ένα αρχείο με τα στοιχεία σας, τις διαδρομές, τους αποθηκευμένους επιβάτες και τις διευθύνσεις σας."
+msgstr ""
+"Ένα αρχείο με τα στοιχεία σας, τις διαδρομές, τους αποθηκευμένους επιβάτες "
+"και τις διευθύνσεις σας."
 
 msgid "Delete my account"
 msgstr "Διαγραφή του λογαριασμού μου"
 
 #. translators: %s: phone
-msgid "You have upcoming trips. Please cancel them first, or call us on %s, then come back to delete your account."
-msgstr "Έχετε επερχόμενες διαδρομές. Παρακαλούμε ακυρώστε τις πρώτα ή τηλεφωνήστε μας στο %s, και μετά επιστρέψτε για να διαγράψετε τον λογαριασμό σας."
+msgid ""
+"You have upcoming trips. Please cancel them first, or call us on %s, then "
+"come back to delete your account."
+msgstr ""
+"Έχετε επερχόμενες διαδρομές. Παρακαλούμε ακυρώστε τις πρώτα ή τηλεφωνήστε "
+"μας στο %s, και μετά επιστρέψτε για να διαγράψετε τον λογαριασμό σας."
 
-msgid "This signs you out and deletes your account, saved passengers, clients and addresses. Names, contact details and street addresses are removed from your past trips. We keep the trip reference, date, suburbs and fare for our records, and invoice details for 5 years because tax law requires it."
-msgstr "Με αυτό αποσυνδέεστε και διαγράφεται ο λογαριασμός σας, οι αποθηκευμένοι επιβάτες, οι πελάτες και οι διευθύνσεις. Τα ονόματα, τα στοιχεία επικοινωνίας και οι διευθύνσεις αφαιρούνται από τις προηγούμενες διαδρομές σας. Κρατάμε τον κωδικό διαδρομής, την ημερομηνία, τα προάστια και το κόμιστρο για τα αρχεία μας, και τα στοιχεία τιμολογίων για 5 χρόνια επειδή το απαιτεί η φορολογική νομοθεσία."
+msgid ""
+"This signs you out and deletes your account, saved passengers, clients and "
+"addresses. Names, contact details and street addresses are removed from your"
+" past trips. We keep the trip reference, date, suburbs and fare for our "
+"records, and invoice details for 5 years because tax law requires it."
+msgstr ""
+"Με αυτό αποσυνδέεστε και διαγράφεται ο λογαριασμός σας, οι αποθηκευμένοι "
+"επιβάτες, οι πελάτες και οι διευθύνσεις. Τα ονόματα, τα στοιχεία "
+"επικοινωνίας και οι διευθύνσεις αφαιρούνται από τις προηγούμενες διαδρομές "
+"σας. Κρατάμε τον κωδικό διαδρομής, την ημερομηνία, τα προάστια και το "
+"κόμιστρο για τα αρχεία μας, και τα στοιχεία τιμολογίων για 5 χρόνια επειδή "
+"το απαιτεί η φορολογική νομοθεσία."
 
 msgid "Your password"
 msgstr "Ο κωδικός πρόσβασής σας"
@@ -2354,7 +2770,8 @@ msgid "Customer downloaded their data from My Account"
 msgstr "Ο πελάτης κατέβασε τα δεδομένα του από τον λογαριασμό του"
 
 msgid "Your password was not right, so your account was not deleted."
-msgstr "Ο κωδικός σας δεν ήταν σωστός, οπότε ο λογαριασμός σας δεν διαγράφηκε."
+msgstr ""
+"Ο κωδικός σας δεν ήταν σωστός, οπότε ο λογαριασμός σας δεν διαγράφηκε."
 
 msgid "You have upcoming trips. Please cancel them first."
 msgstr "Έχετε επερχόμενες διαδρομές. Παρακαλούμε ακυρώστε τις πρώτα."
@@ -2370,8 +2787,13 @@ msgid "A customer deleted their account"
 msgstr "Ένας πελάτης διέγραψε τον λογαριασμό του"
 
 #. translators: %d: number of trips
-msgid "A customer account was deleted from My Account. Personal details were removed from %d trips; references, dates, suburbs and fares were kept."
-msgstr "Ένας λογαριασμός πελάτη διαγράφηκε από τη σελίδα «Ο λογαριασμός μου». Τα προσωπικά στοιχεία αφαιρέθηκαν από %d διαδρομές· οι κωδικοί, οι ημερομηνίες, τα προάστια και τα κόμιστρα διατηρήθηκαν."
+msgid ""
+"A customer account was deleted from My Account. Personal details were "
+"removed from %d trips; references, dates, suburbs and fares were kept."
+msgstr ""
+"Ένας λογαριασμός πελάτη διαγράφηκε από τη σελίδα «Ο λογαριασμός μου». Τα "
+"προσωπικά στοιχεία αφαιρέθηκαν από %d διαδρομές· οι κωδικοί, οι ημερομηνίες,"
+" τα προάστια και τα κόμιστρα διατηρήθηκαν."
 
 msgid "Thanks for sharing your experience on Google!"
 msgstr "Σας ευχαριστούμε που μοιραστήκατε την εμπειρία σας στη Google!"
@@ -2379,8 +2801,13 @@ msgstr "Σας ευχαριστούμε που μοιραστήκατε την �
 msgid "Would you share your experience on Google?"
 msgstr "Θα θέλατε να μοιραστείτε την εμπειρία σας στη Google;"
 
-msgid "A short review helps other families and carers find accessible transport they can trust. It takes about a minute."
-msgstr "Μια σύντομη κριτική βοηθά άλλες οικογένειες και φροντιστές να βρουν προσβάσιμη μεταφορά που μπορούν να εμπιστευτούν. Χρειάζεται περίπου ένα λεπτό."
+msgid ""
+"A short review helps other families and carers find accessible transport "
+"they can trust. It takes about a minute."
+msgstr ""
+"Μια σύντομη κριτική βοηθά άλλες οικογένειες και φροντιστές να βρουν "
+"προσβάσιμη μεταφορά που μπορούν να εμπιστευτούν. Χρειάζεται περίπου ένα "
+"λεπτό."
 
 msgid "Write a Google review"
 msgstr "Γράψτε κριτική στη Google"
@@ -2392,10 +2819,17 @@ msgid "there"
 msgstr "αγαπητέ/ή πελάτη"
 
 msgid "Thank you for rating your trip with us — it really helps."
-msgstr "Σας ευχαριστούμε που βαθμολογήσατε τη διαδρομή σας μαζί μας — μας βοηθά πραγματικά."
+msgstr ""
+"Σας ευχαριστούμε που βαθμολογήσατε τη διαδρομή σας μαζί μας — μας βοηθά "
+"πραγματικά."
 
-msgid "Would you also share your experience on Google? A short review helps other families and carers find accessible transport they can trust."
-msgstr "Θα θέλατε επίσης να μοιραστείτε την εμπειρία σας στη Google; Μια σύντομη κριτική βοηθά άλλες οικογένειες και φροντιστές να βρουν προσβάσιμη μεταφορά που μπορούν να εμπιστευτούν."
+msgid ""
+"Would you also share your experience on Google? A short review helps other "
+"families and carers find accessible transport they can trust."
+msgstr ""
+"Θα θέλατε επίσης να μοιραστείτε την εμπειρία σας στη Google; Μια σύντομη "
+"κριτική βοηθά άλλες οικογένειες και φροντιστές να βρουν προσβάσιμη μεταφορά "
+"που μπορούν να εμπιστευτούν."
 
 msgid "Thank you for travelling with us."
 msgstr "Σας ευχαριστούμε που ταξιδέψατε μαζί μας."
@@ -2407,24 +2841,49 @@ msgid "Google review invitation emailed"
 msgstr "Στάλθηκε με email πρόσκληση για κριτική στη Google"
 
 msgid "Please complete the \"I am human\" check and try again."
-msgstr "Παρακαλούμε ολοκληρώστε τον έλεγχο «Είμαι άνθρωπος» και δοκιμάστε ξανά."
+msgstr ""
+"Παρακαλούμε ολοκληρώστε τον έλεγχο «Είμαι άνθρωπος» και δοκιμάστε ξανά."
 
 #. translators: 1: area, 2: phone
-msgid "Wheelchair accessible taxi in %1$s. Ramp and hoist vehicles, trained drivers, door-to-door. Book online or call %2$s."
-msgstr "Ταξί προσβάσιμο με αναπηρικό αμαξίδιο στο %1$s. Οχήματα με ράμπα και ανυψωτικό, εκπαιδευμένοι οδηγοί, από πόρτα σε πόρτα. Κλείστε ηλεκτρονικά ή τηλεφωνήστε στο %2$s."
+msgid ""
+"Wheelchair accessible taxi in %1$s. Ramp and hoist vehicles, trained "
+"drivers, door-to-door. Book online or call %2$s."
+msgstr ""
+"Ταξί προσβάσιμο με αναπηρικό αμαξίδιο στο %1$s. Οχήματα με ράμπα και "
+"ανυψωτικό, εκπαιδευμένοι οδηγοί, από πόρτα σε πόρτα. Κλείστε ηλεκτρονικά ή "
+"τηλεφωνήστε στο %2$s."
 
-msgid "Wheelchair accessible taxi services in Melbourne: hospital and medical trips, airport transfers, NDIS and aged-care transport, group travel and events."
-msgstr "Υπηρεσίες ταξί προσβάσιμου με αναπηρικό αμαξίδιο στη Μελβούρνη: διαδρομές για νοσοκομεία και ιατρικά ραντεβού, μεταφορές από και προς το αεροδρόμιο, μεταφορά NDIS και φροντίδας ηλικιωμένων, ομαδικές μετακινήσεις και εκδηλώσεις."
+msgid ""
+"Wheelchair accessible taxi services in Melbourne: hospital and medical "
+"trips, airport transfers, NDIS and aged-care transport, group travel and "
+"events."
+msgstr ""
+"Υπηρεσίες ταξί προσβάσιμου με αναπηρικό αμαξίδιο στη Μελβούρνη: διαδρομές "
+"για νοσοκομεία και ιατρικά ραντεβού, μεταφορές από και προς το αεροδρόμιο, "
+"μεταφορά NDIS και φροντίδας ηλικιωμένων, ομαδικές μετακινήσεις και "
+"εκδηλώσεις."
 
-msgid "Suburbs we cover with wheelchair accessible taxis across Melbourne and the Mornington Peninsula."
-msgstr "Προάστια που εξυπηρετούμε με ταξί προσβάσιμα με αναπηρικό αμαξίδιο σε όλη τη Μελβούρνη και τη χερσόνησο Mornington."
+msgid ""
+"Suburbs we cover with wheelchair accessible taxis across Melbourne and the "
+"Mornington Peninsula."
+msgstr ""
+"Προάστια που εξυπηρετούμε με ταξί προσβάσιμα με αναπηρικό αμαξίδιο σε όλη τη"
+" Μελβούρνη και τη χερσόνησο Mornington."
 
-msgid "News and travel tips for passengers using wheelchair accessible taxis in Melbourne."
-msgstr "Νέα και ταξιδιωτικές συμβουλές για επιβάτες που χρησιμοποιούν ταξί προσβάσιμα με αναπηρικό αμαξίδιο στη Μελβούρνη."
+msgid ""
+"News and travel tips for passengers using wheelchair accessible taxis in "
+"Melbourne."
+msgstr ""
+"Νέα και ταξιδιωτικές συμβουλές για επιβάτες που χρησιμοποιούν ταξί "
+"προσβάσιμα με αναπηρικό αμαξίδιο στη Μελβούρνη."
 
 #. translators: 1: site name, 2: phone
-msgid "%1$s — wheelchair accessible taxis in Melbourne and the Mornington Peninsula. Book online or call %2$s."
-msgstr "%1$s — ταξί προσβάσιμα με αναπηρικό αμαξίδιο στη Μελβούρνη και τη χερσόνησο Mornington. Κλείστε ηλεκτρονικά ή τηλεφωνήστε στο %2$s."
+msgid ""
+"%1$s — wheelchair accessible taxis in Melbourne and the Mornington "
+"Peninsula. Book online or call %2$s."
+msgstr ""
+"%1$s — ταξί προσβάσιμα με αναπηρικό αμαξίδιο στη Μελβούρνη και τη χερσόνησο "
+"Mornington. Κλείστε ηλεκτρονικά ή τηλεφωνήστε στο %2$s."
 
 msgid "Mobile number"
 msgstr "Αριθμός κινητού"
@@ -2436,7 +2895,8 @@ msgid "Footer menu"
 msgstr "Μενού υποσέλιδου"
 
 msgid "Ready-made sections and page starters for your taxi website."
-msgstr "Έτοιμες ενότητες και αρχικά σχέδια σελίδων για τον ιστότοπο του ταξί σας."
+msgstr ""
+"Έτοιμες ενότητες και αρχικά σχέδια σελίδων για τον ιστότοπο του ταξί σας."
 
 msgid "Blog sidebar"
 msgstr "Πλαϊνή στήλη ιστολογίου"
@@ -2455,7 +2915,9 @@ msgstr "Ταξί για αναπηρικό αμαξίδιο στο %s"
 
 #. translators: %s: what the visitor typed
 msgid "\"%s\" is not on our regular list, but we often travel further on request."
-msgstr "Η περιοχή «%s» δεν είναι στη συνηθισμένη λίστα μας, αλλά συχνά πηγαίνουμε και πιο μακριά κατόπιν αιτήματος."
+msgstr ""
+"Η περιοχή «%s» δεν είναι στη συνηθισμένη λίστα μας, αλλά συχνά πηγαίνουμε "
+"και πιο μακριά κατόπιν αιτήματος."
 
 #. translators: %s: phone number
 msgid "Call %s to check"
@@ -2529,7 +2991,8 @@ msgstr "Το SMS προς %1$s απέτυχε: %2$s"
 msgid "SMS sent to %s"
 msgstr "Το SMS στάλθηκε σε %s"
 
-#. translators: 1: reference, 2: pick-up time, 3: name, 4: phone, 5: from, 6: to
+#. translators: 1: reference, 2: pick-up time, 3: name, 4: phone, 5: from, 6:
+#. to
 msgid "New booking %1$s: %2$s, %3$s (%4$s). %5$s → %6$s"
 msgstr "Νέα κράτηση %1$s: %2$s, %3$s (%4$s). %5$s → %6$s"
 
@@ -2538,8 +3001,12 @@ msgid "(repeat: %d trips)"
 msgstr "(επαναλαμβανόμενη: %d διαδρομές)"
 
 #. translators: 1: site, 2: reference, 3: pick-up time, 4: link
-msgid "%1$s: we received your booking %2$s for %3$s. We will confirm shortly. Manage it: %4$s"
-msgstr "%1$s: λάβαμε την κράτησή σας %2$s για %3$s. Θα την επιβεβαιώσουμε σύντομα. Διαχείριση: %4$s"
+msgid ""
+"%1$s: we received your booking %2$s for %3$s. We will confirm shortly. "
+"Manage it: %4$s"
+msgstr ""
+"%1$s: λάβαμε την κράτησή σας %2$s για %3$s. Θα την επιβεβαιώσουμε σύντομα. "
+"Διαχείριση: %4$s"
 
 #. translators: 1: site, 2: reference, 3: pick-up time
 msgid "%1$s: booking %2$s is confirmed for %3$s."
@@ -2561,7 +3028,8 @@ msgstr "Όχημα: %s."
 msgid "%1$s: booking %2$s has been cancelled. Questions? Call %3$s."
 msgstr "%1$s: η κράτηση %2$s ακυρώθηκε. Απορίες; Τηλεφωνήστε στο %3$s."
 
-#. translators: 1: reference, 2: pick-up time, 3: from, 4: to, 5: name, 6: phone
+#. translators: 1: reference, 2: pick-up time, 3: from, 4: to, 5: name, 6:
+#. phone
 msgid "New job %1$s: %2$s. %3$s → %4$s. %5$s %6$s"
 msgstr "Νέα εργασία %1$s: %2$s. %3$s → %4$s. %5$s %6$s"
 
@@ -2592,7 +3060,8 @@ msgstr "Δεν μπορείτε να ενημερώσετε αυτή την ερ
 
 #. translators: 1: driver, 2: reference, 3: pick-up time, 4: reason
 msgid "%1$s declined %2$s (%3$s): %4$s. Please reassign."
-msgstr "Ο/Η %1$s απέρριψε την %2$s (%3$s): %4$s. Παρακαλούμε αναθέστε την ξανά."
+msgstr ""
+"Ο/Η %1$s απέρριψε την %2$s (%3$s): %4$s. Παρακαλούμε αναθέστε την ξανά."
 
 #. translators: %s: reference
 msgid "Trip declined — %s needs a driver"
@@ -2628,17 +3097,24 @@ msgstr "Δείτε όλο τον στόλο"
 msgid "Posts"
 msgstr "Άρθρα"
 
-msgid "Request a wheelchair accessible taxi anywhere in Melbourne and the Mornington Peninsula."
-msgstr "Ζητήστε ταξί προσβάσιμο με αναπηρικό αμαξίδιο οπουδήποτε στη Μελβούρνη και τη χερσόνησο Mornington."
+msgid ""
+"Request a wheelchair accessible taxi anywhere in Melbourne and the "
+"Mornington Peninsula."
+msgstr ""
+"Ζητήστε ταξί προσβάσιμο με αναπηρικό αμαξίδιο οπουδήποτε στη Μελβούρνη και "
+"τη χερσόνησο Mornington."
 
 msgid "Urgent or same-hour trip?"
 msgstr "Επείγουσα διαδρομή ή μέσα στην ίδια ώρα;"
 
 msgid "Rewarding work helping people get where they need to be."
-msgstr "Μια δουλειά με νόημα: βοηθάτε ανθρώπους να φτάνουν εκεί που χρειάζονται."
+msgstr ""
+"Μια δουλειά με νόημα: βοηθάτε ανθρώπους να φτάνουν εκεί που χρειάζονται."
 
 msgid "Questions, quotes or account enquiries — we are happy to help."
-msgstr "Ερωτήσεις, προσφορές τιμών ή ερωτήματα για λογαριασμούς — θα χαρούμε να βοηθήσουμε."
+msgstr ""
+"Ερωτήσεις, προσφορές τιμών ή ερωτήματα για λογαριασμούς — θα χαρούμε να "
+"βοηθήσουμε."
 
 msgid "Where we operate"
 msgstr "Πού δραστηριοποιούμαστε"
@@ -2735,3 +3211,2440 @@ msgstr "Παράπονα & Σχόλια"
 #. Built-in page title
 msgid "Drive With Us"
 msgstr "Γίνετε οδηγός μας"
+
+#. translators: %s: suburbs
+msgid " and more"
+msgstr " και άλλες"
+
+#. translators: 1: passengers, 2: wheelchairs
+msgid "%1$d passenger(s), %2$d wheelchair(s)"
+msgstr "%1$d επιβάτης/-ες, %2$d αναπηρικό/-ά αμαξίδιο/-α"
+
+#. translators: 1: suburb 2: council
+msgid "%1$s is in %2$s."
+msgstr "Το %1$s ανήκει στην περιοχή %2$s."
+
+#. translators: 1: business 2: place
+msgid ""
+"%1$s picks up wheelchair users from %2$s in ramp and hoist vans, with the "
+"driver meeting you at the pick-up point and helping you on board."
+msgstr ""
+"Η %1$s παραλαμβάνει χρήστες αναπηρικού αμαξιδίου από %2$s με βαν με ράμπα ή "
+"ανυψωτικό. Ο οδηγός σας συναντά στο σημείο παραλαβής και σας βοηθά να "
+"επιβιβαστείτε."
+
+#. translators: 1: business 2: service 3: place 4: " since 2012" or ""
+msgid ""
+"%1$s provides %2$s in %3$s%4$s, using ramp and hoist vans with wheelchair "
+"restraints and drivers who help you from door to door."
+msgstr ""
+"Η %1$s προσφέρει %2$s στην περιοχή %3$s%4$s, με βαν με ράμπα ή ανυψωτικό, "
+"συστήματα συγκράτησης αμαξιδίου και οδηγούς που σας βοηθούν από πόρτα σε "
+"πόρτα."
+
+#. translators: 1: business 2: place
+msgid ""
+"%1$s takes wheelchair users to %2$s in ramp and hoist vans and drops you at "
+"the accessible entrance, with help from the driver."
+msgstr ""
+"Η %1$s μεταφέρει χρήστες αναπηρικού αμαξιδίου σε %2$s με βαν με ράμπα ή "
+"ανυψωτικό και σας αφήνει στην προσβάσιμη είσοδο, με τη βοήθεια του οδηγού."
+
+#. translators: 1: site name 2: link
+msgid "%1$s: thanks for travelling with us. How was your trip? %2$s"
+msgstr ""
+"%1$s: σας ευχαριστούμε που ταξιδέψατε μαζί μας. Πώς ήταν η διαδρομή σας; "
+"%2$s"
+
+#. translators: %d: minutes
+msgid "%d min read"
+msgid_plural "%d min read"
+msgstr[0] "%d λεπτό ανάγνωσης"
+msgstr[1] "%d λεπτά ανάγνωσης"
+
+#. translators: %d: stars
+msgid "%d out of 5 stars"
+msgstr "%d από 5 αστέρια"
+
+#. translators: %d: seats
+msgid "%d seat"
+msgid_plural "%d seats"
+msgstr[0] "%d θέση"
+msgstr[1] "%d θέσεις"
+
+#. translators: %d: number of trips
+msgid "%d trip has been requested."
+msgid_plural "%d trips have been requested."
+msgstr[0] "Ζητήθηκε %d διαδρομή."
+msgstr[1] "Ζητήθηκαν %d διαδρομές."
+
+#. translators: %s: business name
+msgid ""
+"%s (\"we\", \"us\") provides wheelchair accessible taxi transport. This "
+"policy explains what personal information we collect, why, who we share it "
+"with and how you can see, correct or delete it. We follow the Privacy Act "
+"1988 (Cth) and the Australian Privacy Principles (APPs)."
+msgstr ""
+"Η %s («εμείς») παρέχει μεταφορά με ταξί προσβάσιμα σε αναπηρικό αμαξίδιο. "
+"Αυτή η πολιτική εξηγεί ποια προσωπικά στοιχεία συλλέγουμε, γιατί, με ποιους "
+"τα μοιραζόμαστε και πώς μπορείτε να τα δείτε, να τα διορθώσετε ή να τα "
+"διαγράψετε. Τηρούμε τον Νόμο περί Ιδιωτικότητας του 1988 (Privacy Act 1988 "
+"(Cth)) και τις Αυστραλιανές Αρχές Ιδιωτικότητας (APPs)."
+
+#. translators: %s: discount
+msgid "%s off"
+msgstr "Έκπτωση %s"
+
+#. translators: %s: date and earliest time
+msgid "%s or later — when ready"
+msgstr "%s ή αργότερα — όταν είστε έτοιμοι"
+
+msgid "(opens WhatsApp)"
+msgstr "(ανοίγει το WhatsApp)"
+
+msgid "1 wheelchair"
+msgstr "1 αναπηρικό αμαξίδιο"
+
+msgid "2 wheelchairs"
+msgstr "2 αναπηρικά αμαξίδια"
+
+msgid "7 days"
+msgstr "7 ημέρες"
+
+msgid ""
+"A guide only, not to scale. Not on the map? Ask us — we travel further on "
+"request."
+msgstr ""
+"Ενδεικτικός χάρτης, όχι υπό κλίμακα. Δεν βλέπετε την περιοχή σας; Ρωτήστε "
+"μας — ταξιδεύουμε και πιο μακριά κατόπιν αιτήματος."
+
+msgid "A question about a booking"
+msgstr "Ερώτηση για μια κράτηση"
+
+msgid ""
+"A rough guide without traffic. We allow extra time for loading your "
+"wheelchair."
+msgstr ""
+"Ενδεικτικός χρόνος χωρίς κίνηση. Υπολογίζουμε επιπλέον χρόνο για τη φόρτωση "
+"του αμαξιδίου σας."
+
+msgid "ABN"
+msgstr "ABN"
+
+msgid "About our service in numbers"
+msgstr "Η υπηρεσία μας σε αριθμούς"
+
+msgid "About the author"
+msgstr "Σχετικά με τον συντάκτη"
+
+msgid "About this policy"
+msgstr "Σχετικά με αυτή την πολιτική"
+
+msgid "Access"
+msgstr "Πρόσβαση"
+
+msgid "Accessibility needs"
+msgstr "Ανάγκες προσβασιμότητας"
+
+msgid "Accessible drop-off and pick-up points"
+msgstr "Προσβάσιμα σημεία αποβίβασης και παραλαβής"
+
+msgid "Accessible entrance"
+msgstr "Προσβάσιμη είσοδος"
+
+#. translators: %s: suburbs
+msgid "Accessible taxis for %s."
+msgstr "Προσβάσιμα ταξί για %s."
+
+msgid "Accessible transport glossary"
+msgstr "Γλωσσάριο προσβάσιμης μεταφοράς"
+
+msgid "Account"
+msgstr "Λογαριασμός"
+
+msgid "Accounts: until you delete your account."
+msgstr "Λογαριασμοί: μέχρι να διαγράψετε τον λογαριασμό σας."
+
+#. translators: %s: item type
+msgid "Add %s"
+msgstr "Προσθήκη: %s"
+
+msgid "Add to home screen"
+msgstr "Προσθήκη στην αρχική οθόνη"
+
+msgid ""
+"After you submit, you will be taken to Stripe’s secure checkout to pay the "
+"deposit. The rest of the fare is paid at the end of the trip."
+msgstr ""
+"Αφού υποβάλετε την κράτηση, θα μεταφερθείτε στην ασφαλή σελίδα πληρωμής της "
+"Stripe για να πληρώσετε την προκαταβολή. Το υπόλοιπο του κομίστρου "
+"πληρώνεται στο τέλος της διαδρομής."
+
+msgid "Afternoon (12pm – 5pm)"
+msgstr "Απόγευμα (12 μ.μ. – 5 μ.μ.)"
+
+msgid "Airport"
+msgstr "Αεροδρόμιο"
+
+msgid "Airport drop-offs & pickups"
+msgstr "Μεταφορές από και προς το αεροδρόμιο"
+
+msgid "All articles"
+msgstr "Όλα τα άρθρα"
+
+msgid "All glossary terms"
+msgstr "Όλοι οι όροι του γλωσσαρίου"
+
+msgid "Anything else we should know"
+msgstr "Κάτι άλλο που πρέπει να γνωρίζουμε"
+
+msgid "Anything that helps us recognise it"
+msgstr "Οτιδήποτε μας βοηθά να το αναγνωρίσουμε"
+
+msgid "Anything we should know before we call? (optional)"
+msgstr "Κάτι που πρέπει να γνωρίζουμε πριν σας καλέσουμε; (προαιρετικό)"
+
+msgid "Anything we should know?"
+msgstr "Κάτι που πρέπει να γνωρίζουμε;"
+
+msgid "Area"
+msgstr "Περιοχή"
+
+msgid "Arriving by plane? Flight number (optional)"
+msgstr "Έρχεστε με αεροπλάνο; Αριθμός πτήσης (προαιρετικό)"
+
+msgid "Articles"
+msgstr "Άρθρα"
+
+msgid "As soon as possible"
+msgstr "Το συντομότερο δυνατό"
+
+msgid "Ask us to call you"
+msgstr "Ζητήστε να σας καλέσουμε"
+
+msgid "At the other end we help you to the door, reception or check-in."
+msgstr ""
+"Στον προορισμό σας βοηθάμε μέχρι την πόρτα, τη ρεσεψιόν ή το check-in."
+
+msgid "Australia, with some processing overseas"
+msgstr "Αυστραλία, με κάποια επεξεργασία στο εξωτερικό"
+
+#. translators: %s: date
+msgid "Automatic booking is paused until %s."
+msgstr "Η αυτόματη κράτηση έχει ανασταλεί έως %s."
+
+msgid "Bank transfer"
+msgstr "Τραπεζική μεταφορά"
+
+msgid "Bass Strait"
+msgstr "Στενό του Bass"
+
+msgid "Best time to call"
+msgstr "Καλύτερη ώρα για να σας καλέσουμε"
+
+msgid "Biller Code"
+msgstr "Κωδικός χρεώστη (Biller Code)"
+
+#. translators: %s: date
+msgid "Book %s"
+msgstr "Κράτηση για %s"
+
+#. translators: %s: place
+msgid "Book a pick-up from %s"
+msgstr "Κράτηση παραλαβής από %s"
+
+msgid "Book a pickup"
+msgstr "Κράτηση παραλαβής"
+
+msgid "Book a ride"
+msgstr "Κράτηση διαδρομής"
+
+msgid "Book a ride home from here"
+msgstr "Κράτηση διαδρομής για το σπίτι από εδώ"
+
+msgid "Book a trip first — then you can save it here as a regular trip."
+msgstr ""
+"Κάντε πρώτα μια κράτηση — μετά μπορείτε να την αποθηκεύσετε εδώ ως τακτική "
+"διαδρομή."
+
+msgid "Book a trip here"
+msgstr "Κάντε κράτηση εδώ"
+
+#. translators: %s: place
+msgid "Book a trip to %s"
+msgstr "Κράτηση διαδρομής προς %s"
+
+msgid "Book a wheelchair taxi"
+msgstr "Κράτηση ταξί για αναπηρικό αμαξίδιο"
+
+msgid ""
+"Book ahead for appointments and flights, or call us for a same-day pick-up."
+msgstr ""
+"Κλείστε από πριν για ραντεβού και πτήσεις ή καλέστε μας για παραλαβή την "
+"ίδια μέρα."
+
+msgid ""
+"Book an accessible taxi home, to an appointment or anywhere you need to go. "
+"Your pick-up address is already filled in."
+msgstr ""
+"Κλείστε ένα προσβάσιμο ταξί για το σπίτι, για ένα ραντεβού ή για όπου "
+"χρειάζεται να πάτε. Η διεύθυνση παραλαβής σας έχει ήδη συμπληρωθεί."
+
+msgid "Book an airport transfer"
+msgstr "Κράτηση μεταφοράς για το αεροδρόμιο"
+
+#. translators: %s: link
+msgid "Book often? %s to see every trip in one place and rebook in one tap."
+msgstr ""
+"Κλείνετε συχνά; %s για να βλέπετε όλες τις διαδρομές σας σε ένα σημείο και "
+"να κλείνετε ξανά με ένα πάτημα."
+
+#. translators: 1: phone 2: price sentence
+msgid "Book online in about two minutes or call %1$s. %2$s"
+msgstr "Κλείστε online σε περίπου δύο λεπτά ή καλέστε στο %1$s. %2$s"
+
+#. translators: %s: phone
+msgid ""
+"Book online in about two minutes or call %s; carers travel with you and "
+"MPTP, NDIS and aged-care accounts are accepted."
+msgstr ""
+"Κλείστε online σε περίπου δύο λεπτά ή καλέστε στο %s. Οι συνοδοί ταξιδεύουν "
+"μαζί σας και δεχόμαστε λογαριασμούς MPTP, NDIS και φορέων φροντίδας "
+"ηλικιωμένων."
+
+msgid "Book online in two minutes or call our team."
+msgstr "Κλείστε online σε δύο λεπτά ή καλέστε την ομάδα μας."
+
+msgid ""
+"Book online or by phone, we confirm, and your driver helps you from door to "
+"door."
+msgstr ""
+"Κλείστε online ή τηλεφωνικά, εμείς επιβεβαιώνουμε και ο οδηγός σας βοηθά από"
+" πόρτα σε πόρτα."
+
+msgid ""
+"Book online or call us — tell us about your wheelchair and anything the "
+"driver should know."
+msgstr ""
+"Κλείστε online ή καλέστε μας — πείτε μας για το αμαξίδιό σας και ό,τι άλλο "
+"πρέπει να γνωρίζει ο οδηγός."
+
+msgid "Book the return trip"
+msgstr "Κράτηση διαδρομής επιστροφής"
+
+msgid "Book these trips for me automatically, a week ahead"
+msgstr "Να κλείνετε αυτές τις διαδρομές αυτόματα για μένα, μία εβδομάδα πριν"
+
+msgid "Book this trip"
+msgstr "Κράτηση αυτής της διαδρομής"
+
+msgid "Book your trip"
+msgstr "Κλείστε τη διαδρομή σας"
+
+msgid ""
+"Booked automatically a week ahead. You get an email for each trip and can "
+"cancel any of them."
+msgstr ""
+"Κλείνονται αυτόματα μία εβδομάδα πριν. Λαμβάνετε email για κάθε διαδρομή και"
+" μπορείτε να ακυρώσετε όποια θέλετε."
+
+msgid "Booking progress"
+msgstr "Πρόοδος κράτησης"
+
+msgid "Booking reference (if you have it)"
+msgstr "Κωδικός κράτησης (αν τον έχετε)"
+
+msgid "Booking steps"
+msgstr "Βήματα κράτησης"
+
+msgid "Booking takes about two minutes"
+msgstr "Η κράτηση διαρκεί περίπου δύο λεπτά"
+
+msgid "Booking takes about two minutes. We confirm by SMS or email."
+msgstr "Η κράτηση διαρκεί περίπου δύο λεπτά. Επιβεβαιώνουμε με SMS ή email."
+
+msgid "By SMS or email — usually within the hour during opening times."
+msgstr "Με SMS ή email — συνήθως μέσα σε μία ώρα κατά τις ώρες λειτουργίας."
+
+msgid "By SMS or email, with your driver’s name and vehicle once assigned."
+msgstr "Με SMS ή email, με το όνομα του οδηγού και το όχημα μόλις οριστούν."
+
+msgid "By phone, SMS or email."
+msgstr "Τηλεφωνικά, με SMS ή email."
+
+#. translators: %s: number
+msgid "CPVV registration %s"
+msgstr "Αριθμός εγγραφής CPVV %s"
+
+msgid "Call me back"
+msgstr "Καλέστε με πίσω"
+
+msgid "Can I travel in my power wheelchair or scooter?"
+msgstr "Μπορώ να ταξιδέψω με το ηλεκτρικό αμαξίδιο ή το σκούτερ μου;"
+
+msgid "Can a carer or family member come too?"
+msgstr "Μπορεί να έρθει και ένας συνοδός ή μέλος της οικογένειας;"
+
+#. translators: %s: council
+msgid "Can community transport or care staff in %s book for clients?"
+msgstr ""
+"Μπορούν οι υπηρεσίες κοινοτικής μεταφοράς ή το προσωπικό φροντίδας στην "
+"περιοχή %s να κάνουν κρατήσεις για πελάτες τους;"
+
+#. translators: %s: place
+msgid "Can you pick me up from %s straight after my train or shopping?"
+msgstr "Μπορείτε να με παραλάβετε από %s αμέσως μετά το τρένο ή τα ψώνια μου;"
+
+#. translators: %s: place
+msgid "Can you wait or pick me up after my appointment at %s?"
+msgstr ""
+"Μπορείτε να με περιμένετε ή να με παραλάβετε μετά το ραντεβού μου στο %s;"
+
+msgid "Cancel all remaining trips in this repeat booking"
+msgstr ""
+"Ακύρωση όλων των υπόλοιπων διαδρομών αυτής της επαναλαμβανόμενης κράτησης"
+
+msgid "Cancel this trip"
+msgstr "Ακύρωση αυτής της διαδρομής"
+
+msgid "Cancellations and fees"
+msgstr "Ακυρώσεις και χρεώσεις"
+
+#. translators: 1: fee 2: hours
+msgid "Cancelling later than that: %1$s fee."
+msgstr "Ακύρωση αργότερα: χρέωση %1$s."
+
+msgid "Carers and family travel with you"
+msgstr "Οι συνοδοί και η οικογένεια ταξιδεύουν μαζί σας"
+
+msgid "Carers welcome"
+msgstr "Οι συνοδοί είναι ευπρόσδεκτοι"
+
+msgid "Categories"
+msgstr "Κατηγορίες"
+
+#. translators: %s: maximum wheelchair size
+msgid "Chairs up to %s"
+msgstr "Αμαξίδια έως %s"
+
+msgid "Change"
+msgstr "Αλλαγή"
+
+msgid "Change or cancel this booking"
+msgstr "Αλλαγή ή ακύρωση αυτής της κράτησης"
+
+msgid "Change the time, address or details"
+msgstr "Αλλάξτε την ώρα, τη διεύθυνση ή τα στοιχεία"
+
+msgid "Check back soon for news and travel tips."
+msgstr "Ελάτε ξανά σύντομα για νέα και συμβουλές μετακίνησης."
+
+msgid "Choose at least one day."
+msgstr "Επιλέξτε τουλάχιστον μία ημέρα."
+
+msgid "Colour and brand (if known)"
+msgstr "Χρώμα και μάρκα (αν τα γνωρίζετε)"
+
+msgid ""
+"Concerts, the footy, festivals and the Christmas lights — book an accessible"
+" taxi to the right gate and home again."
+msgstr ""
+"Συναυλίες, ποδόσφαιρο (footy), φεστιβάλ και χριστουγεννιάτικα φώτα — κλείστε"
+" ένα προσβάσιμο ταξί για τη σωστή είσοδο και για την επιστροφή στο σπίτι."
+
+msgid "Contact details: name, mobile number and email address."
+msgstr "Στοιχεία επικοινωνίας: όνομα, αριθμός κινητού και διεύθυνση email."
+
+msgid "Contact us"
+msgstr "Επικοινωνία"
+
+msgid ""
+"Contact your bank or financial institution to make this payment from your "
+"cheque, savings, debit or transaction account. More info: www.bpay.com.au"
+msgstr ""
+"Επικοινωνήστε με την τράπεζα ή το χρηματοπιστωτικό σας ίδρυμα για να κάνετε "
+"αυτή την πληρωμή από τον λογαριασμό όψεως, ταμιευτηρίου, χρεωστικής κάρτας ή"
+" συναλλαγών σας. Περισσότερες πληροφορίες: www.bpay.com.au"
+
+msgid "Continue"
+msgstr "Συνέχεια"
+
+msgid "Copy the details from"
+msgstr "Αντιγραφή στοιχείων από"
+
+msgid "Council areas we cover"
+msgstr "Δήμοι που εξυπηρετούμε"
+
+msgid "Create a free account"
+msgstr "Δημιουργήστε δωρεάν λογαριασμό"
+
+msgid "Date of the trip"
+msgstr "Ημερομηνία διαδρομής"
+
+msgid "Days"
+msgstr "Ημέρες"
+
+msgid ""
+"Deaf, hard of hearing or speech impaired? Contact us through the National "
+"Relay Service: nrschat.nrscall.gov.au or call 133 677 and ask for our "
+"number."
+msgstr ""
+"Είστε κωφός, βαρήκοος ή έχετε δυσκολία στην ομιλία; Επικοινωνήστε μαζί μας "
+"μέσω της National Relay Service: nrschat.nrscall.gov.au ή καλέστε στο 133 "
+"677 και ζητήστε τον αριθμό μας."
+
+msgid "Delete"
+msgstr "Διαγραφή"
+
+msgid ""
+"Drivers: create a normal account, then the office gives it driver access."
+msgstr ""
+"Οδηγοί: δημιουργήστε έναν κανονικό λογαριασμό και το γραφείο θα του δώσει "
+"πρόσβαση οδηγού."
+
+msgid "Drop-off point"
+msgstr "Σημείο αποβίβασης"
+
+msgid "Drop-off point:"
+msgstr "Σημείο αποβίβασης:"
+
+msgid "Each trip has its own reference, listed in your confirmation email."
+msgstr ""
+"Κάθε διαδρομή έχει τον δικό της κωδικό, που αναγράφεται στο email "
+"επιβεβαίωσης."
+
+msgid "Earliest likely time (optional)"
+msgstr "Πιθανή νωρίτερη ώρα (προαιρετικό)"
+
+#. translators: %s: item type
+msgid "Edit %s"
+msgstr "Επεξεργασία: %s"
+
+msgid "Email (optional)"
+msgstr "Email (προαιρετικό)"
+
+msgid "Email:"
+msgstr "Email:"
+
+msgid ""
+"Enter the reference from your confirmation (it starts with TP-) and the "
+"mobile number you booked with."
+msgstr ""
+"Πληκτρολογήστε τον κωδικό από την επιβεβαίωσή σας (ξεκινά με TP-) και τον "
+"αριθμό κινητού με τον οποίο κάνατε την κράτηση."
+
+msgid "Estimate"
+msgstr "Εκτίμηση"
+
+msgid ""
+"Estimate only, based on the usual driving route. The final fare depends on "
+"traffic, waiting time and route, and any MPTP subsidy is applied by the "
+"driver."
+msgstr ""
+"Μόνο εκτίμηση, με βάση τη συνηθισμένη διαδρομή. Το τελικό κόμιστρο εξαρτάται"
+" από την κίνηση, τον χρόνο αναμονής και τη διαδρομή, και τυχόν επιδότηση "
+"MPTP εφαρμόζεται από τον οδηγό."
+
+msgid "Evening (5pm – 8pm)"
+msgstr "Βράδυ (5 μ.μ. – 8 μ.μ.)"
+
+msgid "Event"
+msgstr "Εκδήλωση"
+
+#. translators: 1: offer 2: code
+msgid ""
+"Event offer: %1$s with code %2$s — already added when you book from this "
+"page."
+msgstr ""
+"Προσφορά εκδήλωσης: %1$s με τον κωδικό %2$s — προστίθεται ήδη όταν κάνετε "
+"κράτηση από αυτή τη σελίδα."
+
+msgid "Events"
+msgstr "Εκδηλώσεις"
+
+msgid ""
+"Every staff member and driver has their own login, and each person can only "
+"see what their job needs."
+msgstr ""
+"Κάθε μέλος του προσωπικού και κάθε οδηγός έχει τον δικό του κωδικό σύνδεσης "
+"και ο καθένας βλέπει μόνο ό,τι χρειάζεται για τη δουλειά του."
+
+msgid ""
+"Family members and support workers can travel with you at no extra hassle."
+msgstr ""
+"Μέλη της οικογένειας και βοηθοί υποστήριξης μπορούν να ταξιδέψουν μαζί σας "
+"χωρίς καμία επιπλέον ταλαιπωρία."
+
+msgid ""
+"Fares depend on distance, time of day and waiting time. Ask us for a quote "
+"before you book."
+msgstr ""
+"Το κόμιστρο εξαρτάται από την απόσταση, την ώρα της ημέρας και τον χρόνο "
+"αναμονής. Ζητήστε μας προσφορά πριν κάνετε κράτηση."
+
+#. translators: %s: price
+msgid ""
+"Fares start from %s and depend on distance and waiting time; MPTP, NDIS and "
+"aged-care accounts are accepted."
+msgstr ""
+"Το κόμιστρο ξεκινά από %s και εξαρτάται από την απόσταση και τον χρόνο "
+"αναμονής. Δεχόμαστε λογαριασμούς MPTP, NDIS και φορέων φροντίδας "
+"ηλικιωμένων."
+
+msgid "Find what you need"
+msgstr "Βρείτε αυτό που χρειάζεστε"
+
+msgid "Find your booking"
+msgstr "Βρείτε την κράτησή σας"
+
+msgid ""
+"For airport pick-ups we watch your flight and move the pick-up if it lands "
+"early or late. Set the pick-up time to when you expect to be ready."
+msgstr ""
+"Για παραλαβές από το αεροδρόμιο παρακολουθούμε την πτήση σας και μεταφέρουμε"
+" την ώρα παραλαβής αν προσγειωθεί νωρίτερα ή αργότερα. Ορίστε ως ώρα "
+"παραλαβής την ώρα που περιμένετε να είστε έτοιμοι."
+
+#. translators: %s: phone number
+msgid ""
+"For more than two wheelchairs we send more than one vehicle — please call "
+"%s."
+msgstr ""
+"Για περισσότερα από δύο αναπηρικά αμαξίδια στέλνουμε περισσότερα από ένα "
+"οχήματα — παρακαλούμε καλέστε στο %s."
+
+msgid ""
+"For safety, to handle complaints and incidents, and to improve our service "
+"using your ratings."
+msgstr ""
+"Για την ασφάλεια, για τη διαχείριση παραπόνων και περιστατικών και για τη "
+"βελτίωση της υπηρεσίας μας με βάση τις αξιολογήσεις σας."
+
+msgid "Frankston Hospital"
+msgstr "Νοσοκομείο Frankston"
+
+#. translators: %d: hours
+msgid "Free cancellation up to %d hour before pick-up."
+msgid_plural "Free cancellation up to %d hours before pick-up."
+msgstr[0] "Δωρεάν ακύρωση έως %d ώρα πριν από την παραλαβή."
+msgstr[1] "Δωρεάν ακύρωση έως %d ώρες πριν από την παραλαβή."
+
+#. translators: %s: price
+msgid "From %s"
+msgstr "Από %s"
+
+msgid "From and to"
+msgstr "Από και προς"
+
+msgid "Get a notification when your driver is on the way"
+msgstr "Λάβετε ειδοποίηση όταν ο οδηγός σας είναι καθ’ οδόν"
+
+msgid "Glossary"
+msgstr "Γλωσσάριο"
+
+msgid "Going home after"
+msgstr "Επιστροφή στο σπίτι μετά"
+
+msgid "Good to know"
+msgstr "Καλό να γνωρίζετε"
+
+msgid ""
+"Government bodies and police when the law requires it, for example the "
+"regulator or police after an incident."
+msgstr ""
+"Κρατικοί φορείς και αστυνομία όταν το απαιτεί ο νόμος, για παράδειγμα η "
+"ρυθμιστική αρχή ή η αστυνομία μετά από ένα περιστατικό."
+
+msgid "Group or event (formal, outing, conference)"
+msgstr "Ομάδα ή εκδήλωση (χορός, εκδρομή, συνέδριο)"
+
+msgid "Guide"
+msgstr "Οδηγός"
+
+#. translators: %s: suburb
+msgid "Guides for %s"
+msgstr "Οδηγοί για %s"
+
+msgid "Health and mobility information"
+msgstr "Πληροφορίες υγείας και κινητικότητας"
+
+msgid "Hospital"
+msgstr "Νοσοκομείο"
+
+msgid "Hospital discharge"
+msgstr "Έξοδος από το νοσοκομείο"
+
+msgid "Hospital or clinic"
+msgstr "Νοσοκομείο ή κλινική"
+
+msgid "Hospitals, clinics, airports and venues"
+msgstr "Νοσοκομεία, κλινικές, αεροδρόμια και χώροι εκδηλώσεων"
+
+#. translators: %s: suburb
+msgid "Hospitals, stations and places in %s"
+msgstr "Νοσοκομεία, σταθμοί και άλλα σημεία στο %s"
+
+msgid "How can we reach you?"
+msgstr "Πώς μπορούμε να επικοινωνήσουμε μαζί σας;"
+
+msgid "How do I pay?"
+msgstr "Πώς πληρώνω;"
+
+#. translators: %s: suburb
+msgid "How long does it take to get places from %s?"
+msgstr "Πόσο χρόνο χρειάζεται για να πάτε σε διάφορα μέρη από %s;"
+
+#. translators: %s: place
+msgid "How long does it take to get to %s?"
+msgstr "Πόσο χρόνο χρειάζεται για να φτάσετε στο %s;"
+
+#. translators: %s: place
+msgid "How long is the trip home from %s?"
+msgstr "Πόσο διαρκεί η διαδρομή για το σπίτι από %s;"
+
+msgid "How long we keep it"
+msgstr "Πόσο καιρό τα κρατάμε"
+
+msgid "How much does it cost?"
+msgstr "Πόσο κοστίζει;"
+
+msgid "How to pay"
+msgstr "Τρόποι πληρωμής"
+
+msgid "How we collect it"
+msgstr "Πώς τα συλλέγουμε"
+
+msgid "How we keep it safe"
+msgstr "Πώς τα προστατεύουμε"
+
+msgid "How we use your details"
+msgstr "Πώς χρησιμοποιούμε τα στοιχεία σας"
+
+msgid "How will you pay?"
+msgstr "Πώς θα πληρώσετε;"
+
+msgid "Hydraulic hoist / lift"
+msgstr "Υδραυλικό ανυψωτικό / ανελκυστήρας"
+
+msgid ""
+"I agree to be contacted by phone, SMS or email about this booking, and for "
+"you to use the mobility and health details I give to arrange the trip."
+msgstr ""
+"Συμφωνώ να επικοινωνείτε μαζί μου τηλεφωνικά, με SMS ή email για αυτή την "
+"κράτηση και να χρησιμοποιείτε τα στοιχεία κινητικότητας και υγείας που δίνω "
+"για να οργανώσετε τη διαδρομή."
+
+msgid "I am a Multi Purpose Taxi Program (MPTP) member"
+msgstr "Είμαι μέλος του Multi Purpose Taxi Program (MPTP)"
+
+msgid "I am the passenger — use my account details"
+msgstr "Είμαι ο επιβάτης — χρησιμοποιήστε τα στοιχεία του λογαριασμού μου"
+
+msgid ""
+"I don’t know the exact time yet — e.g. waiting to be discharged from "
+"hospital"
+msgstr ""
+"Δεν γνωρίζω ακόμη την ακριβή ώρα — π.χ. περιμένω να πάρω εξιτήριο από το "
+"νοσοκομείο"
+
+#. translators: %s: link to the terms page
+msgid "I have read and accept the %s."
+msgstr "Έχω διαβάσει και αποδέχομαι τους %s."
+
+msgid "I need a return trip"
+msgstr "Χρειάζομαι διαδρομή επιστροφής"
+
+msgid "I need a return trip too"
+msgstr "Χρειάζομαι και διαδρομή επιστροφής"
+
+msgid ""
+"If a data breach is likely to cause you serious harm, we will tell you and "
+"the Office of the Australian Information Commissioner."
+msgstr ""
+"Αν μια παραβίαση δεδομένων είναι πιθανό να σας προκαλέσει σοβαρή βλάβη, θα "
+"ενημερώσουμε εσάς και το Γραφείο του Αυστραλιανού Επιτρόπου Πληροφοριών "
+"(Office of the Australian Information Commissioner)."
+
+msgid ""
+"If you apply to drive with us: the details in your application, including "
+"your accreditation."
+msgstr ""
+"Αν κάνετε αίτηση για να οδηγήσετε μαζί μας: τα στοιχεία της αίτησής σας, "
+"συμπεριλαμβανομένης της πιστοποίησής σας."
+
+msgid ""
+"If you are not happy with our answer, you can complain to the Office of the "
+"Australian Information Commissioner (OAIC): www.oaic.gov.au or 1300 363 992."
+msgstr ""
+"Αν δεν είστε ικανοποιημένοι με την απάντησή μας, μπορείτε να υποβάλετε "
+"παράπονο στο Γραφείο του Αυστραλιανού Επιτρόπου Πληροφοριών (OAIC): "
+"www.oaic.gov.au ή 1300 363 992."
+
+msgid ""
+"If you open an account: your saved passengers or clients and saved "
+"addresses."
+msgstr ""
+"Αν ανοίξετε λογαριασμό: τους αποθηκευμένους επιβάτες ή πελάτες σας και τις "
+"αποθηκευμένες διευθύνσεις σας."
+
+msgid "In short"
+msgstr "Με λίγα λόγια"
+
+msgid "In this article"
+msgstr "Σε αυτό το άρθρο"
+
+msgid "Information sent overseas"
+msgstr "Πληροφορίες που αποστέλλονται στο εξωτερικό"
+
+msgid "Interstate trip"
+msgstr "Διαπολιτειακή διαδρομή"
+
+msgid "Invoices and payment records: 5 years, as tax law requires."
+msgstr ""
+"Τιμολόγια και αρχεία πληρωμών: 5 χρόνια, όπως απαιτεί η φορολογική "
+"νομοθεσία."
+
+#. translators: %s: place
+msgid "Is there step-free access at %s?"
+msgstr "Υπάρχει πρόσβαση χωρίς σκαλοπάτια στο %s;"
+
+msgid "It can take a minute for the payment to show below."
+msgstr "Μπορεί να χρειαστεί ένα λεπτό για να εμφανιστεί η πληρωμή παρακάτω."
+
+msgid "Item"
+msgstr "Αντικείμενο"
+
+msgid "I’m a passenger"
+msgstr "Είμαι επιβάτης"
+
+msgid "I’m booking for someone"
+msgstr "Κάνω κράτηση για κάποιον άλλον"
+
+msgid "I’m ready"
+msgstr "Είμαι έτοιμος/-η"
+
+msgid "Keep reading"
+msgstr "Συνεχίστε την ανάγνωση"
+
+msgid "Last updated"
+msgstr "Τελευταία ενημέρωση"
+
+#. translators: %s: date
+msgid "Last updated: %s"
+msgstr "Τελευταία ενημέρωση: %s"
+
+msgid "Learn more"
+msgstr "Μάθετε περισσότερα"
+
+msgid "Leave your number and a good time."
+msgstr "Αφήστε τον αριθμό σας και μια βολική ώρα."
+
+msgid "Long-distance trip (Geelong, regional Victoria)"
+msgstr "Διαδρομή μεγάλης απόστασης (Geelong, επαρχία της Βικτώριας)"
+
+msgid "Looks like we took a wrong turn"
+msgstr "Φαίνεται ότι πήραμε λάθος στροφή"
+
+#. translators: %s: phone link
+msgid "Lost your reference? Call %s."
+msgstr "Χάσατε τον κωδικό σας; Καλέστε στο %s."
+
+msgid "MPTP accepted"
+msgstr "Δεκτό το MPTP"
+
+msgid "Make another booking"
+msgstr "Νέα κράτηση"
+
+msgid "Manage a booking"
+msgstr "Διαχείριση κράτησης"
+
+msgid "Map of the areas we cover"
+msgstr "Χάρτης των περιοχών που εξυπηρετούμε"
+
+msgid "Map showing your driver’s location"
+msgstr "Χάρτης με τη θέση του οδηγού σας"
+
+msgid "Meet some of our drivers"
+msgstr "Γνωρίστε μερικούς από τους οδηγούς μας"
+
+msgid "Melbourne Airport"
+msgstr "Αεροδρόμιο της Μελβούρνης"
+
+msgid "Melbourne CBD"
+msgstr "Κέντρο της Μελβούρνης (CBD)"
+
+msgid "Mobile (for SMS offers, optional)"
+msgstr "Κινητό (για προσφορές μέσω SMS, προαιρετικό)"
+
+msgid "Monash Medical Centre"
+msgstr "Monash Medical Centre"
+
+msgid "More events"
+msgstr "Περισσότερες εκδηλώσεις"
+
+msgid "More services"
+msgstr "Περισσότερες υπηρεσίες"
+
+msgid "More terms"
+msgstr "Περισσότεροι όροι"
+
+msgid "Morning (9am – 12pm)"
+msgstr "Πρωί (9 π.μ. – 12 μ.μ.)"
+
+msgid "Mornington Peninsula"
+msgstr "Χερσόνησος Mornington"
+
+msgid "NDIS & aged care"
+msgstr "NDIS και φροντίδα ηλικιωμένων"
+
+msgid "NDIS number or purchase order (optional)"
+msgstr "Αριθμός NDIS ή εντολή αγοράς (προαιρετικό)"
+
+msgid "NDIS, aged care or business account"
+msgstr "Λογαριασμός NDIS, φροντίδας ηλικιωμένων ή επιχείρησης"
+
+msgid "NDIS-friendly"
+msgstr "Φιλικό προς το NDIS"
+
+msgid "Nearby areas"
+msgstr "Κοντινές περιοχές"
+
+#. translators: %s: phone
+msgid "Need a taxi in the next hour? Call %s now."
+msgstr "Χρειάζεστε ταξί μέσα στην επόμενη ώρα; Καλέστε τώρα στο %s."
+
+#. translators: 1: suburb, 2: site name
+msgid ""
+"Need an accessible ride in %1$s? %2$s provides wheelchair accessible taxis "
+"with ramps or hoists, wheelchair restraints and drivers trained to help you "
+"in and out safely."
+msgstr ""
+"Χρειάζεστε προσβάσιμη μετακίνηση στο %1$s; Η %2$s παρέχει ταξί προσβάσιμα σε"
+" αναπηρικό αμαξίδιο, με ράμπες ή ανυψωτικά, συστήματα συγκράτησης αμαξιδίου "
+"και οδηγούς εκπαιδευμένους να σας βοηθούν να επιβιβάζεστε και να "
+"αποβιβάζεστε με ασφάλεια."
+
+#. translators: %s: phone link
+msgid "Need to change something? Call %s and quote your reference."
+msgstr "Θέλετε να αλλάξετε κάτι; Καλέστε στο %s και αναφέρετε τον κωδικό σας."
+
+#. translators: %s: item type
+msgid "New %s"
+msgstr "Νέο: %s"
+
+msgid "News & offers"
+msgstr "Νέα και προσφορές"
+
+msgid "Next reviews"
+msgstr "Επόμενες κριτικές"
+
+msgid "No wheelchair"
+msgstr "Χωρίς αναπηρικό αμαξίδιο"
+
+#. translators: %s: fee
+msgid ""
+"No-show (the driver arrives and the passenger is not there and cannot be "
+"contacted): %s fee."
+msgstr ""
+"Μη εμφάνιση (ο οδηγός φτάνει, ο επιβάτης δεν είναι εκεί και δεν μπορούμε να "
+"επικοινωνήσουμε μαζί του): χρέωση %s."
+
+msgid "Nothing here yet"
+msgstr "Δεν υπάρχει τίποτα εδώ ακόμη"
+
+msgid ""
+"Notifications are blocked in your browser settings. We will still text you."
+msgstr ""
+"Οι ειδοποιήσεις είναι αποκλεισμένες στις ρυθμίσεις του προγράμματος "
+"περιήγησής σας. Θα σας στέλνουμε όμως μηνύματα SMS."
+
+msgid "Notifications are on for this trip."
+msgstr "Οι ειδοποιήσεις είναι ενεργές για αυτή τη διαδρομή."
+
+msgid "Notify me"
+msgstr "Ειδοποιήστε με"
+
+msgid ""
+"On iPhone or iPad: tap Share, then \"Add to Home Screen\". Open the site "
+"from the new icon and tap the button again."
+msgstr ""
+"Σε iPhone ή iPad: πατήστε Κοινή χρήση και μετά «Προσθήκη στην οθόνη "
+"Αφετηρίας». Ανοίξτε τον ιστότοπο από το νέο εικονίδιο και πατήστε ξανά το "
+"κουμπί."
+
+msgid "On the day"
+msgstr "Την ημέρα της διαδρομής"
+
+msgid ""
+"On the day we text you when the driver is on the way and when they arrive."
+msgstr ""
+"Την ημέρα της διαδρομής σας στέλνουμε SMS όταν ο οδηγός είναι καθ’ οδόν και "
+"όταν φτάσει."
+
+msgid "Online deposit"
+msgstr "Online προκαταβολή"
+
+msgid "Opening hours and account"
+msgstr "Ώρες λειτουργίας και λογαριασμός"
+
+#. translators: %s: phone
+msgid "Or call us on %s."
+msgstr "Ή καλέστε μας στο %s."
+
+msgid "Or call us — we are happy to book for you:"
+msgstr "Ή καλέστε μας — με χαρά κάνουμε την κράτηση για εσάς:"
+
+msgid "Organisation (optional)"
+msgstr "Οργανισμός (προαιρετικό)"
+
+msgid "Other areas we cover"
+msgstr "Άλλες περιοχές που εξυπηρετούμε"
+
+msgid "Other council areas"
+msgstr "Άλλοι δήμοι"
+
+msgid "Other places"
+msgstr "Άλλα μέρη"
+
+msgid "Other places we go"
+msgstr "Άλλα μέρη όπου πηγαίνουμε"
+
+msgid "Other services"
+msgstr "Άλλες υπηρεσίες"
+
+msgid ""
+"Our driver arrived but could not find you, so this trip was marked as a no-"
+"show. Please call us if this is a mistake."
+msgstr ""
+"Ο οδηγός μας έφτασε αλλά δεν μπόρεσε να σας βρει, γι’ αυτό η διαδρομή "
+"καταγράφηκε ως μη εμφάνιση. Παρακαλούμε καλέστε μας αν πρόκειται για λάθος."
+
+msgid ""
+"Our drivers are experienced in loading, securing and assisting passengers "
+"with a disability."
+msgstr ""
+"Οι οδηγοί μας έχουν εμπειρία στη φόρτωση, την ασφάλιση και τη βοήθεια "
+"επιβατών με αναπηρία."
+
+msgid ""
+"Our maxi taxis back up close, lower the ramp and help you aboard. You stay "
+"in your own chair, secured with four-point restraints."
+msgstr ""
+"Τα maxi ταξί μας πλησιάζουν με την πίσω πλευρά, κατεβάζουν τη ράμπα και σας "
+"βοηθούν να επιβιβαστείτε. Μένετε στο δικό σας αμαξίδιο, ασφαλισμένοι με "
+"σύστημα συγκράτησης τεσσάρων σημείων."
+
+msgid "Our team will contact you to confirm."
+msgstr "Η ομάδα μας θα επικοινωνήσει μαζί σας για επιβεβαίωση."
+
+msgid ""
+"Our website uses an encrypted (HTTPS) connection, and links to your booking "
+"are protected with a secret code."
+msgstr ""
+"Ο ιστότοπός μας χρησιμοποιεί κρυπτογραφημένη σύνδεση (HTTPS) και οι "
+"σύνδεσμοι προς την κράτησή σας προστατεύονται με μυστικό κωδικό."
+
+msgid "Pages:"
+msgstr "Σελίδες:"
+
+msgid "Passengers, coordinators and drivers all sign in here."
+msgstr "Επιβάτες, συντονιστές και οδηγοί συνδέονται όλοι εδώ."
+
+msgid "Pause automatic booking until (optional)"
+msgstr "Αναστολή αυτόματης κράτησης έως (προαιρετικό)"
+
+#. translators: %s: amount
+msgid "Pay %s deposit securely"
+msgstr "Ασφαλής πληρωμή προκαταβολής %s"
+
+msgid ""
+"Pay the driver by card or cash, use your Multi Purpose Taxi Program (MPTP) "
+"card, or choose \"Account / invoice\" for NDIS plan managers, aged-care "
+"providers and businesses."
+msgstr ""
+"Πληρώστε τον οδηγό με κάρτα ή μετρητά, χρησιμοποιήστε την κάρτα σας του "
+"Multi Purpose Taxi Program (MPTP) ή επιλέξτε «Λογαριασμός / τιμολόγιο» για "
+"διαχειριστές προγραμμάτων NDIS, φορείς φροντίδας ηλικιωμένων και "
+"επιχειρήσεις."
+
+msgid ""
+"Pay the driver, use your MPTP card, or ask for an NDIS / aged-care invoice"
+msgstr ""
+"Πληρώστε τον οδηγό, χρησιμοποιήστε την κάρτα MPTP ή ζητήστε τιμολόγιο NDIS /"
+" φροντίδας ηλικιωμένων"
+
+msgid "PayID"
+msgstr "PayID"
+
+msgid ""
+"Payment and funding details: how you pay, Multi Purpose Taxi Program "
+"membership, and for account trips the organisation or plan manager we "
+"invoice and an NDIS number or purchase order."
+msgstr ""
+"Στοιχεία πληρωμής και χρηματοδότησης: πώς πληρώνετε, συμμετοχή στο Multi "
+"Purpose Taxi Program και, για διαδρομές με λογαριασμό, ο οργανισμός ή ο "
+"διαχειριστής προγράμματος που τιμολογούμε και ένας αριθμός NDIS ή εντολή "
+"αγοράς."
+
+msgid "Payment complete — thank you."
+msgstr "Η πληρωμή ολοκληρώθηκε — σας ευχαριστούμε."
+
+msgid "People travelling"
+msgstr "Άτομα που ταξιδεύουν"
+
+msgid ""
+"People you ask us to deal with, such as the coordinator, plan manager or "
+"facility that booked or pays for your trip."
+msgstr ""
+"Πρόσωπα με τα οποία μας ζητάτε να επικοινωνούμε, όπως ο συντονιστής, ο "
+"διαχειριστής προγράμματος ή η δομή που έκλεισε ή πληρώνει τη διαδρομή σας."
+
+msgid "Phone number"
+msgstr "Αριθμός τηλεφώνου"
+
+msgid "Phone:"
+msgstr "Τηλέφωνο:"
+
+msgid "Pick up when ready"
+msgstr "Παραλαβή όταν είστε έτοιμοι"
+
+msgid "Pick-up point"
+msgstr "Σημείο παραλαβής"
+
+msgid "Pick-up point:"
+msgstr "Σημείο παραλαβής:"
+
+msgid "Pick-up time (if known)"
+msgstr "Ώρα παραλαβής (αν τη γνωρίζετε)"
+
+msgid "Pickups from your door"
+msgstr "Παραλαβή από την πόρτα σας"
+
+msgid "Places we go"
+msgstr "Μέρη όπου πηγαίνουμε"
+
+msgid "Plan manager, provider or company"
+msgstr "Διαχειριστής προγράμματος, πάροχος ή εταιρεία"
+
+#. translators: 1: minutes 2: time
+msgid ""
+"Plan to arrive about %1$d minutes early — by %2$s. Choose a point and we "
+"will fill in the booking for you."
+msgstr ""
+"Υπολογίστε να φτάσετε περίπου %1$d λεπτά νωρίτερα — έως τις %2$s. Επιλέξτε "
+"ένα σημείο και θα συμπληρώσουμε την κράτηση για εσάς."
+
+#. translators: %s: video title
+msgid "Play video: %s (with captions)"
+msgstr "Αναπαραγωγή βίντεο: %s (με υπότιτλους)"
+
+msgid "Plays from Vimeo."
+msgstr "Αναπαράγεται από το Vimeo."
+
+msgid "Plays from YouTube (privacy-enhanced mode)."
+msgstr "Αναπαράγεται από το YouTube (λειτουργία βελτιωμένου απορρήτου)."
+
+msgid "Please call us."
+msgstr "Παρακαλούμε καλέστε μας."
+
+msgid "Please choose a pick-up time."
+msgstr "Παρακαλούμε επιλέξτε ώρα παραλαβής."
+
+msgid "Please choose one of your trips."
+msgstr "Παρακαλούμε επιλέξτε μία από τις διαδρομές σας."
+
+#. translators: %s: privacy contact
+msgid ""
+"Please contact %s first. We will look into your concern and reply within 30 "
+"days."
+msgstr ""
+"Παρακαλούμε επικοινωνήστε πρώτα με %s. Θα εξετάσουμε το θέμα σας και θα "
+"απαντήσουμε μέσα σε 30 ημέρες."
+
+msgid "Popular pages"
+msgstr "Δημοφιλείς σελίδες"
+
+msgid "Port Phillip Bay"
+msgstr "Κόλπος Port Phillip"
+
+#. translators: %s: list of suburbs
+msgid ""
+"Port Phillip Bay and the Mornington Peninsula, with these places marked: %s."
+msgstr ""
+"Ο κόλπος Port Phillip και η χερσόνησος Mornington, με σημειωμένα τα εξής "
+"μέρη: %s."
+
+msgid "Post:"
+msgstr "Ταχυδρομικώς:"
+
+msgid "Prefer to talk to someone?"
+msgstr "Προτιμάτε να μιλήσετε με κάποιον;"
+
+#. translators: %s: phone
+msgid "Prefer to talk? Call %s."
+msgstr "Προτιμάτε να μιλήσετε; Καλέστε στο %s."
+
+msgid "Previous reviews"
+msgstr "Προηγούμενες κριτικές"
+
+msgid "Prices and quotes"
+msgstr "Τιμές και προσφορές"
+
+msgid "Print"
+msgstr "Εκτύπωση"
+
+msgid "Print trip confirmation"
+msgstr "Εκτύπωση επιβεβαίωσης διαδρομής"
+
+msgid "Promo code"
+msgstr "Κωδικός προσφοράς"
+
+msgid "Promo code (optional)"
+msgstr "Κωδικός προσφοράς (προαιρετικό)"
+
+msgid "Punctual, 24/7"
+msgstr "Συνέπεια, 24/7"
+
+msgid "Purpose-built vehicles"
+msgstr "Οχήματα ειδικά σχεδιασμένα"
+
+msgid ""
+"Put the earliest likely time above (or leave it empty). When you are ready, "
+"tap \"I’m ready\" on your booking page or call us, and we will send the "
+"driver."
+msgstr ""
+"Συμπληρώστε παραπάνω την πιθανή νωρίτερη ώρα (ή αφήστε το κενό). Όταν είστε "
+"έτοιμοι, πατήστε «Είμαι έτοιμος/-η» στη σελίδα της κράτησής σας ή καλέστε "
+"μας και θα στείλουμε τον οδηγό."
+
+#. translators: %s: suburb
+msgid "Questions about travelling in %s"
+msgstr "Ερωτήσεις για τις μετακινήσεις στο %s"
+
+#. translators: %s: place
+msgid "Questions about wheelchair taxis and %s"
+msgstr "Ερωτήσεις για τα ταξί αναπηρικού αμαξιδίου και το %s"
+
+#. translators: %s: council
+msgid "Questions about wheelchair taxis in %s"
+msgstr "Ερωτήσεις για τα ταξί αναπηρικού αμαξιδίου στην περιοχή %s"
+
+#. translators: %s: phone link
+msgid "Questions about your trip? Call %s."
+msgstr "Ερωτήσεις για τη διαδρομή σας; Καλέστε στο %s."
+
+msgid "Questions and complaints"
+msgstr "Ερωτήσεις και παράπονα"
+
+msgid "Quote"
+msgstr "Προσφορά"
+
+msgid "Railway station"
+msgstr "Σιδηροδρομικός σταθμός"
+
+msgid "Railway stations and shopping centres"
+msgstr "Σιδηροδρομικοί σταθμοί και εμπορικά κέντρα"
+
+msgid "Ramps or hoists and wheelchair restraints in every vehicle"
+msgstr "Ράμπες ή ανυψωτικά και συστήματα συγκράτησης αμαξιδίου σε κάθε όχημα"
+
+#. translators: 1: rating, 2: count
+msgid "Rated %1$s out of 5 from %2$d Google review"
+msgid_plural "Rated %1$s out of 5 from %2$d Google reviews"
+msgstr[0] "Βαθμολογία %1$s στα 5 από %2$d κριτική στο Google"
+msgstr[1] "Βαθμολογία %1$s στα 5 από %2$d κριτικές στο Google"
+
+#. translators: %s: rating
+msgid "Rated %s out of 5 on Google"
+msgstr "Βαθμολογία %s στα 5 στο Google"
+
+msgid "Rather talk to someone? Ask us to call you back."
+msgstr "Προτιμάτε να μιλήσετε με κάποιον; Ζητήστε να σας καλέσουμε."
+
+msgid "Ratings and comments you give about a trip, and messages you send us."
+msgstr ""
+"Αξιολογήσεις και σχόλια που κάνετε για μια διαδρομή και μηνύματα που μας "
+"στέλνετε."
+
+msgid "Read all reviews on Google"
+msgstr "Διαβάστε όλες τις κριτικές στο Google"
+
+msgid "Read or leave a review on Google"
+msgstr "Διαβάστε ή γράψτε μια κριτική στο Google"
+
+msgid "Read the transcript"
+msgstr "Διαβάστε το απομαγνητοφωνημένο κείμενο"
+
+msgid "Ready to be picked up?"
+msgstr "Είστε έτοιμοι για παραλαβή;"
+
+msgid "Rear ramp"
+msgstr "Πίσω ράμπα"
+
+msgid ""
+"Rear-entry ramps or hoists and four-point restraints, so you can stay in "
+"your own chair."
+msgstr ""
+"Ράμπες ή ανυψωτικά από την πίσω πλευρά και σύστημα συγκράτησης τεσσάρων "
+"σημείων, ώστε να μένετε στο δικό σας αμαξίδιο."
+
+msgid "Ref"
+msgstr "Κωδ."
+
+msgid "Regular trip"
+msgstr "Τακτική διαδρομή"
+
+msgid "Regular trips"
+msgstr "Τακτικές διαδρομές"
+
+msgid "Regular trips for an organisation"
+msgstr "Τακτικές διαδρομές για έναν οργανισμό"
+
+msgid "Repeat every"
+msgstr "Επανάληψη κάθε"
+
+msgid "Report lost item"
+msgstr "Δήλωση απολεσθέντος αντικειμένου"
+
+msgid "Request a quote"
+msgstr "Ζητήστε προσφορά"
+
+msgid "Request booking"
+msgstr "Αίτημα κράτησης"
+
+msgid ""
+"Requests are handled by our team. For changes within the next two hours, "
+"please call us."
+msgstr ""
+"Τα αιτήματα τα χειρίζεται η ομάδα μας. Για αλλαγές μέσα στις επόμενες δύο "
+"ώρες, παρακαλούμε καλέστε μας."
+
+msgid "Return"
+msgstr "Επιστροφή"
+
+msgid "Return pick-up (optional)"
+msgstr "Παραλαβή επιστροφής (προαιρετικό)"
+
+msgid "Return pick-up time (if known)"
+msgstr "Ώρα παραλαβής επιστροφής (αν τη γνωρίζετε)"
+
+msgid "Reviews from Google, shown as written by reviewers."
+msgstr "Κριτικές από το Google, όπως τις έγραψαν οι συντάκτες τους."
+
+msgid "Reviews — scroll sideways for more"
+msgstr "Κριτικές — κάντε κύλιση στο πλάι για περισσότερες"
+
+msgid "Ride in comfort"
+msgstr "Ταξιδέψτε άνετα"
+
+msgid "Rosebud Hospital"
+msgstr "Νοσοκομείο Rosebud"
+
+#. translators: %d: weeks
+msgid ""
+"Same times each day, for up to %d weeks. Each trip gets its own reference so"
+" it can be changed separately."
+msgstr ""
+"Ίδιες ώρες κάθε μέρα, για έως %d εβδομάδες. Κάθε διαδρομή έχει τον δικό της "
+"κωδικό, ώστε να μπορεί να αλλάξει ξεχωριστά."
+
+msgid "Save a regular trip"
+msgstr "Αποθήκευση τακτικής διαδρομής"
+
+msgid "Save changes"
+msgstr "Αποθήκευση αλλαγών"
+
+msgid "Save regular trip"
+msgstr "Αποθήκευση τακτικής διαδρομής"
+
+msgid ""
+"Save trips you make often — dialysis, day programs, work — and book the next"
+" one in one tap, or let us book them automatically a week ahead."
+msgstr ""
+"Αποθηκεύστε τις διαδρομές που κάνετε συχνά — αιμοκάθαρση, ημερήσια "
+"προγράμματα, εργασία — και κλείστε την επόμενη με ένα πάτημα ή αφήστε μας να"
+" τις κλείνουμε αυτόματα μία εβδομάδα πριν."
+
+#. translators: %s: item types
+msgid "Search %s"
+msgstr "Αναζήτηση: %s"
+
+msgid "Search articles…"
+msgstr "Αναζήτηση άρθρων…"
+
+msgid "Search for:"
+msgstr "Αναζήτηση για:"
+
+msgid "See all FAQs"
+msgstr "Όλες οι συχνές ερωτήσεις"
+
+#. translators: 1: suburb 2: council
+msgid "See all suburbs we cover there"
+msgstr "Δείτε όλα τα προάστια που εξυπηρετούμε εκεί"
+
+msgid "See all your trips in My Account"
+msgstr "Δείτε όλες τις διαδρομές σας στον Λογαριασμό μου"
+
+msgid ""
+"See exactly how our drivers load, secure and unload a wheelchair — so you "
+"know what to expect before your first trip."
+msgstr ""
+"Δείτε ακριβώς πώς οι οδηγοί μας φορτώνουν, ασφαλίζουν και αποβιβάζουν ένα "
+"αναπηρικό αμαξίδιο — για να ξέρετε τι να περιμένετε πριν από την πρώτη σας "
+"διαδρομή."
+
+msgid "See our fleet"
+msgstr "Δείτε τον στόλο μας"
+
+msgid "See upcoming events"
+msgstr "Δείτε τις επερχόμενες εκδηλώσεις"
+
+msgid "Seeing, correcting or deleting your information"
+msgstr "Πρόσβαση, διόρθωση ή διαγραφή των πληροφοριών σας"
+
+msgid ""
+"Send me occasional news and offers by email and SMS. You can unsubscribe at "
+"any time."
+msgstr ""
+"Στείλτε μου περιστασιακά νέα και προσφορές με email και SMS. Μπορείτε να "
+"διαγραφείτε οποιαδήποτε στιγμή."
+
+msgid "Send your request"
+msgstr "Αποστολή αιτήματος"
+
+msgid "Service"
+msgstr "Υπηρεσία"
+
+msgid "Service providers who help us run the business:"
+msgstr "Πάροχοι υπηρεσιών που μας βοηθούν στη λειτουργία της επιχείρησης:"
+
+#. translators: %s: menu item
+msgid "Show more: %s"
+msgstr "Περισσότερα: %s"
+
+msgid "Show my booking"
+msgstr "Εμφάνιση της κράτησής μου"
+
+msgid "Sidebar"
+msgstr "Πλαϊνή στήλη"
+
+msgid "Sign up"
+msgstr "Εγγραφή"
+
+msgid ""
+"Some of our service providers store or process information outside "
+"Australia:"
+msgstr ""
+"Ορισμένοι από τους παρόχους υπηρεσιών μας αποθηκεύουν ή επεξεργάζονται "
+"πληροφορίες εκτός Αυστραλίας:"
+
+msgid "Something else"
+msgstr "Κάτι άλλο"
+
+msgid "Something went wrong — please contact me about this trip"
+msgstr ""
+"Κάτι πήγε στραβά — παρακαλώ επικοινωνήστε μαζί μου για αυτή τη διαδρομή"
+
+msgid "Sorry, that did not work on this device. We will still text you."
+msgstr ""
+"Λυπούμαστε, αυτό δεν λειτούργησε σε αυτή τη συσκευή. Θα σας στέλνουμε όμως "
+"μηνύματα SMS."
+
+msgid "Start a booking"
+msgstr "Ξεκινήστε μια κράτηση"
+
+msgid ""
+"Straight to Departures, and waiting at Arrivals when you land — with room "
+"for luggage and mobility equipment."
+msgstr ""
+"Απευθείας στις Αναχωρήσεις και αναμονή στις Αφίξεις όταν προσγειωθείτε — με "
+"χώρο για αποσκευές και βοηθήματα κινητικότητας."
+
+msgid "Street address, suburb"
+msgstr "Οδός και αριθμός, προάστιο"
+
+msgid "Suburb"
+msgstr "Προάστιο"
+
+msgid "Suburbs in this article"
+msgstr "Προάστια σε αυτό το άρθρο"
+
+msgid "Takes about two minutes."
+msgstr "Διαρκεί περίπου δύο λεπτά."
+
+msgid ""
+"Tap the button once you have been discharged or your appointment is "
+"finished. We will send the driver straight away."
+msgstr ""
+"Πατήστε το κουμπί μόλις πάρετε εξιτήριο ή τελειώσει το ραντεβού σας. Θα "
+"στείλουμε αμέσως τον οδηγό."
+
+msgid ""
+"Tell us about your chair when you book and we will send the right vehicle."
+msgstr ""
+"Πείτε μας για το αμαξίδιό σας όταν κάνετε την κράτηση και θα στείλουμε το "
+"κατάλληλο όχημα."
+
+msgid "Tell us where and when — the next step takes about a minute."
+msgstr "Πείτε μας πού και πότε — το επόμενο βήμα διαρκεί περίπου ένα λεπτό."
+
+msgid ""
+"Tell us where, when and about your wheelchair. It takes about two minutes."
+msgstr ""
+"Πείτε μας πού, πότε και για το αμαξίδιό σας. Διαρκεί περίπου δύο λεπτά."
+
+msgid ""
+"Thanks — we have let the office and your driver know you are ready. We will "
+"text you when the driver is on the way."
+msgstr ""
+"Ευχαριστούμε — ενημερώσαμε το γραφείο και τον οδηγό σας ότι είστε έτοιμοι. "
+"Θα σας στείλουμε SMS όταν ο οδηγός είναι καθ’ οδόν."
+
+msgid "Thanks — we have received your request."
+msgstr "Ευχαριστούμε — λάβαμε το αίτημά σας."
+
+msgid "Thanks — your booking request is in!"
+msgstr "Ευχαριστούμε — το αίτημα κράτησής σας στάλθηκε!"
+
+msgid ""
+"That page has moved or no longer exists. You can still book, check a booking"
+" or call us — we are happy to help."
+msgstr ""
+"Η σελίδα αυτή έχει μετακινηθεί ή δεν υπάρχει πια. Μπορείτε ακόμη να κάνετε "
+"κράτηση, να ελέγξετε μια κράτηση ή να μας καλέσετε — με χαρά θα σας "
+"βοηθήσουμε."
+
+msgid ""
+"The driver doing your trip sees your name, phone number, addresses and the "
+"needs you have told us about. Drivers only see their own trips."
+msgstr ""
+"Ο οδηγός της διαδρομής σας βλέπει το όνομά σας, τον αριθμό τηλεφώνου σας, "
+"τις διευθύνσεις και τις ανάγκες που μας έχετε πει. Οι οδηγοί βλέπουν μόνο "
+"τις δικές τους διαδρομές."
+
+msgid ""
+"The payment was not completed. You can try again below or pay the driver."
+msgstr ""
+"Η πληρωμή δεν ολοκληρώθηκε. Μπορείτε να δοκιμάσετε ξανά παρακάτω ή να "
+"πληρώσετε τον οδηγό."
+
+#. translators: %s: phone number
+msgid "The return pick-up needs to be after the first pick-up time."
+msgstr ""
+"Η παραλαβή της επιστροφής πρέπει να είναι μετά την ώρα της πρώτης παραλαβής."
+
+msgid "This booking has been cancelled."
+msgstr "Αυτή η κράτηση έχει ακυρωθεί."
+
+msgid "This event has finished."
+msgstr "Αυτή η εκδήλωση έχει ολοκληρωθεί."
+
+msgid "This is a regular trip (e.g. dialysis, therapy, day program)"
+msgstr ""
+"Πρόκειται για τακτική διαδρομή (π.χ. αιμοκάθαρση, θεραπεία, ημερήσιο "
+"πρόγραμμα)"
+
+#. translators: %d: number of trips
+msgid "This is part of a repeat booking (%d trips)"
+msgstr "Αποτελεί μέρος επαναλαμβανόμενης κράτησης (%d διαδρομές)"
+
+msgid "This link has expired. Please call us."
+msgstr "Αυτός ο σύνδεσμος έχει λήξει. Παρακαλούμε καλέστε μας."
+
+msgid "Time to be arranged"
+msgstr "Η ώρα θα καθοριστεί"
+
+#. translators: %s: place
+msgid "Tips from our drivers for %s"
+msgstr "Συμβουλές από τους οδηγούς μας για %s"
+
+msgid "To arrange, run and change your trips, and send the right vehicle."
+msgstr ""
+"Για να οργανώνουμε, να εκτελούμε και να αλλάζουμε τις διαδρομές σας και να "
+"στέλνουμε το κατάλληλο όχημα."
+
+msgid ""
+"To meet our legal obligations, including commercial passenger vehicle and "
+"tax laws."
+msgstr ""
+"Για να τηρούμε τις νομικές μας υποχρεώσεις, συμπεριλαμβανομένης της "
+"νομοθεσίας για τα εμπορικά επιβατικά οχήματα και της φορολογικής νομοθεσίας."
+
+msgid ""
+"To send booking confirmations and updates by SMS and email, such as when "
+"your driver is on the way."
+msgstr ""
+"Για να στέλνουμε επιβεβαιώσεις και ενημερώσεις κράτησης με SMS και email, "
+"για παράδειγμα όταν ο οδηγός σας είναι καθ’ οδόν."
+
+msgid ""
+"To take payment, issue receipts and invoices, and process MPTP and NDIS "
+"claims."
+msgstr ""
+"Για να εισπράττουμε πληρωμές, να εκδίδουμε αποδείξεις και τιμολόγια και να "
+"επεξεργαζόμαστε αιτήματα MPTP και NDIS."
+
+msgid "Trained, accredited drivers"
+msgstr "Εκπαιδευμένοι, πιστοποιημένοι οδηγοί"
+
+msgid "Trained, patient and local — the people who will help you aboard."
+msgstr ""
+"Εκπαιδευμένοι, υπομονετικοί και ντόπιοι — οι άνθρωποι που θα σας βοηθήσουν "
+"να επιβιβαστείτε."
+
+msgid "Travelling"
+msgstr "Μετακίνηση"
+
+#. translators: %s: phone link
+msgid "Travelling in the next hour? Call %s"
+msgstr "Ταξιδεύετε μέσα στην επόμενη ώρα; Καλέστε στο %s"
+
+msgid "Travelling in this area?"
+msgstr "Ταξιδεύετε σε αυτή την περιοχή;"
+
+msgid ""
+"Trip details: pick-up and drop-off addresses, dates and times, number of "
+"passengers, and the vehicle you need."
+msgstr ""
+"Στοιχεία διαδρομής: διευθύνσεις παραλαβής και αποβίβασης, ημερομηνίες και "
+"ώρες, αριθμός επιβατών και το όχημα που χρειάζεστε."
+
+msgid ""
+"Trips: we keep trip records while we need them to run the business, and "
+"remove details when you ask."
+msgstr ""
+"Διαδρομές: κρατάμε τα αρχεία διαδρομών όσο τα χρειαζόμαστε για τη λειτουργία"
+" της επιχείρησης και διαγράφουμε στοιχεία όταν μας το ζητήσετε."
+
+msgid "United Kingdom and other countries"
+msgstr "Ηνωμένο Βασίλειο και άλλες χώρες"
+
+msgid "United States and other countries"
+msgstr "Ηνωμένες Πολιτείες και άλλες χώρες"
+
+msgid "Until"
+msgstr "Έως"
+
+msgid "Updates every 20 seconds. Map © OpenStreetMap contributors."
+msgstr ""
+"Ενημερώνεται κάθε 20 δευτερόλεπτα. Χάρτης © συντελεστές του OpenStreetMap."
+
+#. translators: %s: phone
+msgid "Urgent — medication, keys, a mobility aid? Call %s."
+msgstr "Επείγον — φάρμακα, κλειδιά, βοήθημα κινητικότητας; Καλέστε στο %s."
+
+msgid "Vehicles built for wheelchairs"
+msgstr "Οχήματα κατασκευασμένα για αναπηρικά αμαξίδια"
+
+#. translators: %s: item type
+msgid "View %s"
+msgstr "Προβολή: %s"
+
+msgid "View booking"
+msgstr "Προβολή κράτησης"
+
+msgid "View on Google"
+msgstr "Προβολή στο Google"
+
+#. translators: %s: place
+msgid "Visiting hours, maps and contacts for %s (official website)"
+msgstr ""
+"Ώρες επισκεπτηρίου, χάρτες και στοιχεία επικοινωνίας για %s (επίσημος "
+"ιστότοπος)"
+
+msgid "Want to drive with us? Apply here."
+msgstr "Θέλετε να οδηγείτε μαζί μας; Κάντε αίτηση εδώ."
+
+msgid "Ways to pay your invoice"
+msgstr "Τρόποι πληρωμής του τιμολογίου σας"
+
+msgid ""
+"We choose providers with strong security and privacy commitments, and only "
+"share what they need to do their job."
+msgstr ""
+"Επιλέγουμε παρόχους με ισχυρές δεσμεύσεις για την ασφάλεια και το απόρρητο "
+"και τους δίνουμε μόνο ό,τι χρειάζονται για να κάνουν τη δουλειά τους."
+
+msgid "We confirm"
+msgstr "Επιβεβαιώνουμε"
+
+msgid ""
+"We confirm by SMS or email, then text you your driver’s name and vehicle."
+msgstr ""
+"Επιβεβαιώνουμε με SMS ή email και μετά σας στέλνουμε SMS με το όνομα του "
+"οδηγού και το όχημα."
+
+msgid "We confirm your booking"
+msgstr "Επιβεβαιώνουμε την κράτησή σας"
+
+#. translators: %s: list of suburbs
+msgid "We cover %s and more — type the full street address."
+msgstr ""
+"Εξυπηρετούμε %s και άλλες περιοχές — πληκτρολογήστε την πλήρη διεύθυνση."
+
+msgid ""
+"We do not sell your information, and we do not send marketing messages "
+"without your permission."
+msgstr ""
+"Δεν πουλάμε τις πληροφορίες σας και δεν στέλνουμε διαφημιστικά μηνύματα "
+"χωρίς την άδειά σας."
+
+msgid "We keep a log of who changes each booking and when."
+msgstr "Καταγράφουμε ποιος αλλάζει κάθε κράτηση και πότε."
+
+#. translators: 1: council 2: suburbs
+msgid "We pick up from every address in %1$s, including %2$s."
+msgstr ""
+"Παραλαμβάνουμε από κάθε διεύθυνση στην περιοχή %1$s, συμπεριλαμβανομένων των"
+" %2$s."
+
+#. translators: %s: suburb
+msgid ""
+"We pick up from homes, hospitals, aged-care residences and day programs in "
+"%s and take you anywhere across Melbourne and the Mornington Peninsula — "
+"including Melbourne and Avalon airports."
+msgstr ""
+"Παραλαμβάνουμε από σπίτια, νοσοκομεία, οίκους φροντίδας ηλικιωμένων και "
+"ημερήσια προγράμματα στο %s και σας πηγαίνουμε οπουδήποτε στη Μελβούρνη και "
+"τη χερσόνησο Mornington — συμπεριλαμβανομένων των αεροδρομίων της Μελβούρνης"
+" και του Avalon."
+
+msgid ""
+"We saved your booking but could not open the online payment page. You can "
+"pay the driver instead, or try again from your booking page."
+msgstr ""
+"Αποθηκεύσαμε την κράτησή σας, αλλά δεν μπορέσαμε να ανοίξουμε τη σελίδα "
+"online πληρωμής. Μπορείτε να πληρώσετε τον οδηγό ή να δοκιμάσετε ξανά από τη"
+" σελίδα της κράτησής σας."
+
+msgid "We text you their first name and the vehicle."
+msgstr "Σας στέλνουμε SMS με το μικρό του όνομα και το όχημα."
+
+msgid ""
+"We text you when they are on the way, then help you aboard and secure your "
+"chair."
+msgstr ""
+"Σας στέλνουμε SMS όταν είναι καθ’ οδόν, μετά σας βοηθάμε να επιβιβαστείτε "
+"και ασφαλίζουμε το αμαξίδιό σας."
+
+msgid "We text you when your driver is on the way"
+msgstr "Σας στέλνουμε SMS όταν ο οδηγός σας είναι καθ’ οδόν"
+
+#. translators: %d: year
+msgid ""
+"We travel anywhere across Melbourne and the Mornington Peninsula, including "
+"hospitals, day programs and Melbourne and Avalon airports, and carers travel"
+" with you."
+msgstr ""
+"Ταξιδεύουμε οπουδήποτε στη Μελβούρνη και τη χερσόνησο Mornington, μεταξύ "
+"άλλων σε νοσοκομεία, ημερήσια προγράμματα και στα αεροδρόμια της Μελβούρνης "
+"και του Avalon, και οι συνοδοί ταξιδεύουν μαζί σας."
+
+msgid ""
+"Website information: your IP address (to stop spam and misuse) and, only if "
+"you accept analytics cookies, how you use the website."
+msgstr ""
+"Πληροφορίες ιστότοπου: η διεύθυνση IP σας (για την αποτροπή spam και "
+"κατάχρησης) και, μόνο αν αποδεχτείτε τα cookies στατιστικών, ο τρόπος που "
+"χρησιμοποιείτε τον ιστότοπο."
+
+msgid "Wedding"
+msgstr "Γάμος"
+
+msgid "Western Port"
+msgstr "Western Port"
+
+msgid "What did you lose?"
+msgstr "Τι χάσατε;"
+
+msgid "What else do people ask?"
+msgstr "Τι άλλο ρωτούν συχνά;"
+
+msgid "What happens next"
+msgstr "Τι γίνεται στη συνέχεια"
+
+msgid "What happens when I book?"
+msgstr "Τι γίνεται όταν κάνω κράτηση;"
+
+#. translators: %s: term
+msgid "What is %s?"
+msgstr "Τι είναι το %s;"
+
+msgid "What is it about?"
+msgstr "Σχετικά με τι είναι;"
+
+msgid "What is it for?"
+msgstr "Για ποιο σκοπό είναι;"
+
+msgid "What passengers say"
+msgstr "Τι λένε οι επιβάτες"
+
+#. translators: %s: place
+msgid "What passengers say about trips from %s"
+msgstr "Τι λένε οι επιβάτες για διαδρομές από %s"
+
+#. translators: %s: suburb
+msgid "What should I know about getting around %s?"
+msgstr "Τι πρέπει να γνωρίζω για τις μετακινήσεις στο %s;"
+
+#. translators: %s: suburb
+msgid "What trips can I book from %s?"
+msgstr "Τι διαδρομές μπορώ να κλείσω από %s;"
+
+#. translators: %s: council
+msgid "What trips can I book in %s?"
+msgstr "Τι διαδρομές μπορώ να κλείσω στην περιοχή %s;"
+
+msgid "What we collect"
+msgstr "Τι συλλέγουμε"
+
+msgid "What would you like to do?"
+msgstr "Τι θα θέλατε να κάνετε;"
+
+msgid "WhatsApp us"
+msgstr "Στείλτε μας μήνυμα στο WhatsApp"
+
+msgid "Wheelchair Accessible Taxis"
+msgstr "Ταξί προσβάσιμα σε αναπηρικό αμαξίδιο"
+
+#. translators: 1: place 2: phone
+msgid ""
+"Wheelchair accessible taxi pick-ups from %1$s: where to wait, step-free "
+"access and how to book. Ramp and hoist vans. Call %2$s."
+msgstr ""
+"Παραλαβή με ταξί προσβάσιμο σε αναπηρικό αμαξίδιο από %1$s: πού να "
+"περιμένετε, πρόσβαση χωρίς σκαλοπάτια και πώς να κάνετε κράτηση. Βαν με "
+"ράμπα ή ανυψωτικό. Καλέστε στο %2$s."
+
+msgid "Wheelchair accessible taxi services"
+msgstr "Υπηρεσίες ταξί προσβάσιμων σε αναπηρικό αμαξίδιο"
+
+#. translators: 1: place 2: phone
+msgid ""
+"Wheelchair accessible taxi to %1$s: the accessible entrance, where we drop "
+"you off, parking and how to book. Ramp and hoist vans. Call %2$s."
+msgstr ""
+"Ταξί προσβάσιμο σε αναπηρικό αμαξίδιο προς %1$s: η προσβάσιμη είσοδος, πού "
+"σας αφήνουμε, στάθμευση και πώς να κάνετε κράτηση. Βαν με ράμπα ή ανυψωτικό."
+" Καλέστε στο %2$s."
+
+#. translators: 1: council 2: suburbs 3: phone
+msgid ""
+"Wheelchair accessible taxis across %1$s: %2$s. Ramp and hoist vans, trained "
+"drivers. Book online or call %3$s."
+msgstr ""
+"Ταξί προσβάσιμα σε αναπηρικό αμαξίδιο σε όλη την περιοχή %1$s: %2$s. Βαν με "
+"ράμπα ή ανυψωτικό, εκπαιδευμένοι οδηγοί. Κλείστε online ή καλέστε στο %3$s."
+
+msgid ""
+"Wheelchair accessible taxis in every council area we cover across Melbourne "
+"and the Mornington Peninsula."
+msgstr ""
+"Ταξί προσβάσιμα σε αναπηρικό αμαξίδιο σε κάθε δήμο που εξυπηρετούμε στη "
+"Μελβούρνη και τη χερσόνησο Mornington."
+
+msgid "Wheelchair accessible taxis in every suburb of these council areas."
+msgstr ""
+"Ταξί προσβάσιμα σε αναπηρικό αμαξίδιο σε κάθε προάστιο αυτών των δήμων."
+
+msgid "Wheelchair taxi booking"
+msgstr "Κράτηση ταξί για αναπηρικό αμαξίδιο"
+
+#. translators: %s: place
+#. translators: %s: partner name
+msgid "Wheelchair taxi from %s"
+msgstr "Ταξί για αναπηρικό αμαξίδιο από %s"
+
+#. translators: %s: council name
+msgid "Wheelchair taxi in %s"
+msgstr "Ταξί για αναπηρικό αμαξίδιο στην περιοχή %s"
+
+#. translators: %s: place
+msgid "Wheelchair taxi to %s"
+msgstr "Ταξί για αναπηρικό αμαξίδιο προς %s"
+
+msgid "Wheelchair taxi to the event"
+msgstr "Ταξί για αναπηρικό αμαξίδιο προς την εκδήλωση"
+
+msgid "Wheelchair taxis to events"
+msgstr "Ταξί για αναπηρικό αμαξίδιο προς εκδηλώσεις"
+
+msgid "Wheelchair?"
+msgstr "Αναπηρικό αμαξίδιο;"
+
+#. translators: %s: place
+msgid "Where do I wait for my taxi at %s?"
+msgstr "Πού περιμένω το ταξί μου στο %s;"
+
+#. translators: %s: suburb
+msgid "Where do people often travel to from %s?"
+msgstr "Πού ταξιδεύουν συχνά οι επιβάτες από %s;"
+
+#. translators: %s: place
+msgid "Where do we drop you off at %s?"
+msgstr "Πού σας αφήνουμε στο %s;"
+
+#. translators: %s: place
+msgid "Where do we pick you up at %s?"
+msgstr "Πού σας παραλαμβάνουμε στο %s;"
+
+msgid "Where is my driver?"
+msgstr "Πού είναι ο οδηγός μου;"
+
+msgid "Where to?"
+msgstr "Πού πηγαίνετε;"
+
+msgid "Where we pick you up"
+msgstr "Πού σας παραλαμβάνουμε"
+
+#. translators: %s: place
+msgid "Where will you drop me off at %s?"
+msgstr "Πού θα με αφήσετε στο %s;"
+
+#. translators: 1: council 2: suburbs
+msgid "Which parts of %s do you cover?"
+msgstr "Ποια μέρη της περιοχής %s εξυπηρετείτε;"
+
+#. translators: %s: council
+msgid "Which suburbs in %s do you cover?"
+msgstr "Ποια προάστια της περιοχής %s εξυπηρετείτε;"
+
+msgid "Who we share it with"
+msgstr "Με ποιους τα μοιραζόμαστε"
+
+msgid "Why book with us"
+msgstr "Γιατί να κλείσετε μαζί μας"
+
+msgid "Why we use it"
+msgstr "Γιατί τα χρησιμοποιούμε"
+
+msgid "Written by"
+msgstr "Συντάκτης"
+
+#. translators: %s: place
+msgid ""
+"Yes. Book a return trip with an approximate time, then call or text us when "
+"you are ready. Appointments often run late, so we keep return pick-ups "
+"flexible."
+msgstr ""
+"Ναι. Κλείστε διαδρομή επιστροφής με κατά προσέγγιση ώρα και μετά καλέστε μας"
+" ή στείλτε μας SMS όταν είστε έτοιμοι. Τα ραντεβού συχνά καθυστερούν, γι’ "
+"αυτό κρατάμε τις παραλαβές επιστροφής ευέλικτες."
+
+#. translators: %s: place
+msgid ""
+"Yes. Book a time, or call us when you are ready. If your train is running "
+"late, just let us know and we will adjust the pick-up."
+msgstr ""
+"Ναι. Κλείστε μια ώρα ή καλέστε μας όταν είστε έτοιμοι. Αν το τρένο σας "
+"καθυστερεί, απλώς ενημερώστε μας και θα προσαρμόσουμε την ώρα παραλαβής."
+
+msgid ""
+"Yes. Carers, family and assistance animals are welcome. Include everyone in "
+"the passenger count so we send a vehicle with enough seats."
+msgstr ""
+"Ναι. Οι συνοδοί, η οικογένεια και τα σκυλιά βοηθείας είναι ευπρόσδεκτοι. "
+"Συμπεριλάβετε όλους στον αριθμό επιβατών, ώστε να στείλουμε όχημα με αρκετές"
+" θέσεις."
+
+#. translators: %s: council
+msgid ""
+"Yes. Coordinators, case managers and aged-care staff can open a coordinator "
+"account to book for several clients, see every trip and download monthly "
+"trip logs and invoices."
+msgstr ""
+"Ναι. Συντονιστές, υπεύθυνοι περιπτώσεων και προσωπικό φροντίδας ηλικιωμένων "
+"μπορούν να ανοίξουν λογαριασμό συντονιστή για να κάνουν κρατήσεις για "
+"πολλούς πελάτες, να βλέπουν όλες τις διαδρομές και να κατεβάζουν μηνιαία "
+"αρχεία διαδρομών και τιμολόγια."
+
+msgid ""
+"Yes. Most manual and power wheelchairs fit, and you stay seated in your "
+"chair. Tell us the make, width and weight when you book so we send the right"
+" vehicle. Mobility scooters can travel when they can be safely restrained — "
+"please check with us first."
+msgstr ""
+"Ναι. Τα περισσότερα χειροκίνητα και ηλεκτρικά αναπηρικά αμαξίδια χωρούν και "
+"μένετε καθισμένοι στο αμαξίδιό σας. Πείτε μας τη μάρκα, το πλάτος και το "
+"βάρος όταν κάνετε την κράτηση, ώστε να στείλουμε το κατάλληλο όχημα. Τα "
+"σκούτερ κινητικότητας μπορούν να μεταφερθούν όταν μπορούν να ασφαλιστούν με "
+"ασφάλεια — παρακαλούμε ρωτήστε μας πρώτα."
+
+msgid ""
+"You can ask about our services without giving your name. To book a trip we "
+"need enough detail to collect you and contact you."
+msgstr ""
+"Μπορείτε να ρωτήσετε για τις υπηρεσίες μας χωρίς να δώσετε το όνομά σας. Για"
+" να κλείσουμε μια διαδρομή χρειαζόμαστε αρκετά στοιχεία για να σας "
+"παραλάβουμε και να επικοινωνήσουμε μαζί σας."
+
+msgid ""
+"You can ask for a copy of the information we hold about you, ask us to "
+"correct it, or ask us to delete it. It is free. If you have an account, you "
+"can update your details, download your data and delete your account yourself"
+" in My Account. Otherwise use the form below or contact us. We will check it"
+" is really you and reply within 30 days. If we cannot do what you ask — for "
+"example because the law requires us to keep invoices — we will tell you why."
+msgstr ""
+"Μπορείτε να ζητήσετε αντίγραφο των πληροφοριών που έχουμε για εσάς, να μας "
+"ζητήσετε να τις διορθώσουμε ή να τις διαγράψουμε. Είναι δωρεάν. Αν έχετε "
+"λογαριασμό, μπορείτε να ενημερώσετε τα στοιχεία σας, να κατεβάσετε τα "
+"δεδομένα σας και να διαγράψετε τον λογαριασμό σας μόνοι σας στον Λογαριασμό "
+"μου. Διαφορετικά, χρησιμοποιήστε την παρακάτω φόρμα ή επικοινωνήστε μαζί "
+"μας. Θα επιβεβαιώσουμε ότι πρόκειται πράγματι για εσάς και θα απαντήσουμε "
+"μέσα σε 30 ημέρες. Αν δεν μπορούμε να κάνουμε αυτό που ζητάτε — για "
+"παράδειγμα επειδή ο νόμος μάς υποχρεώνει να κρατάμε τα τιμολόγια — θα σας "
+"εξηγήσουμε τον λόγο."
+
+msgid "You get a text when your driver is on the way and when they arrive."
+msgstr "Λαμβάνετε SMS όταν ο οδηγός σας είναι καθ’ οδόν και όταν φτάσει."
+
+msgid ""
+"You will see your driver here once they are on the way and sharing their "
+"location."
+msgstr ""
+"Θα βλέπετε εδώ τον οδηγό σας μόλις είναι καθ’ οδόν και μοιράζεται την "
+"τοποθεσία του."
+
+#. translators: %s: request type
+msgid "Your %s is with our team. We will contact you shortly."
+msgstr ""
+"Το αίτημά σας για %s βρίσκεται στην ομάδα μας. Θα επικοινωνήσουμε μαζί σας "
+"σύντομα."
+
+msgid "Your details"
+msgstr "Τα στοιχεία σας"
+
+msgid "Your driver arrives"
+msgstr "Ο οδηγός σας φτάνει"
+
+msgid "Your driver has arrived."
+msgstr "Ο οδηγός σας έφτασε."
+
+msgid "Your driver helps you in and out."
+msgstr "Ο οδηγός σας βοηθά στην επιβίβαση και την αποβίβαση."
+
+#. translators: %d: minutes
+msgid "Your driver is about %d minute away."
+msgid_plural "Your driver is about %d minutes away."
+msgstr[0] "Ο οδηγός σας απέχει περίπου %d λεπτό."
+msgstr[1] "Ο οδηγός σας απέχει περίπου %d λεπτά."
+
+msgid "Your driver is assigned"
+msgstr "Ορίστηκε ο οδηγός σας"
+
+msgid "Your driver is on the way."
+msgstr "Ο οδηγός σας είναι καθ’ οδόν."
+
+msgid ""
+"Your driver lowers the ramp, helps you aboard and secures your chair with "
+"four-point restraints."
+msgstr ""
+"Ο οδηγός σας κατεβάζει τη ράμπα, σας βοηθά να επιβιβαστείτε και ασφαλίζει το"
+" αμαξίδιό σας με σύστημα συγκράτησης τεσσάρων σημείων."
+
+msgid "Your notes"
+msgstr "Οι σημειώσεις σας"
+
+msgid "Your reference"
+msgstr "Ο κωδικός σας"
+
+msgid "Your trip"
+msgstr "Η διαδρομή σας"
+
+msgid "Your trip so far"
+msgstr "Η διαδρομή σας μέχρι τώρα"
+
+#. translators: %s: place
+msgid "a trip to %s"
+msgstr "μια διαδρομή προς %s"
+
+#. translators: %d: minutes
+msgid "about %d min"
+msgstr "περίπου %d λεπτά"
+
+msgid "e.g. Dialysis"
+msgstr "π.χ. Αιμοκάθαρση"
+
+msgid "e.g. Frankston Hospital to Mornington"
+msgstr "π.χ. Νοσοκομείο Frankston προς Mornington"
+
+msgid "e.g. Frankston Hospital, Melbourne Airport"
+msgstr "π.χ. Νοσοκομείο Frankston, Αεροδρόμιο της Μελβούρνης"
+
+msgid "e.g. Please change the pick-up to 10:15am"
+msgstr "π.χ. Παρακαλώ αλλάξτε την παραλαβή στις 10:15 π.μ."
+
+msgid "e.g. QF432"
+msgstr "π.χ. QF432"
+
+msgid "e.g. black handbag, hearing aid, phone"
+msgstr "π.χ. μαύρη τσάντα, ακουστικό βαρηκοΐας, τηλέφωνο"
+
+msgid ""
+"e.g. waiting time, stops on the way, wedding schedule, wheelchair size."
+msgstr ""
+"π.χ. χρόνος αναμονής, στάσεις στη διαδρομή, πρόγραμμα γάμου, μέγεθος "
+"αναπηρικού αμαξιδίου."
+
+msgid ""
+"e.g. wheelchair dimensions, carer travelling, assistance to the door, flight"
+" number"
+msgstr ""
+"π.χ. διαστάσεις αναπηρικού αμαξιδίου, συνοδός που ταξιδεύει, βοήθεια μέχρι "
+"την πόρτα, αριθμός πτήσης"
+
+msgid "estimate only"
+msgstr "μόνο εκτίμηση"
+
+msgid "on your invoice"
+msgstr "στο τιμολόγιό σας"
+
+#. translators: %s: time
+msgid "return %s"
+msgstr "επιστροφή %s"
+
+msgid "sending booking text messages"
+msgstr "αποστολή μηνυμάτων SMS για τις κρατήσεις"
+
+#. translators: %d: year
+msgid "since %d"
+msgstr "από το %d"
+
+msgid "taking card payments — we never see or store your card number"
+msgstr ""
+"πληρωμές με κάρτα — δεν βλέπουμε ούτε αποθηκεύουμε ποτέ τον αριθμό της "
+"κάρτας σας"
+
+msgid "terms and cancellation policy"
+msgstr "όροι και πολιτική ακυρώσεων"
+
+msgid ""
+"the map showing where your driver is on your booking page (your browser "
+"loads the map pictures from OpenStreetMap). The driver’s location is only "
+"shared while they are on the way to you and is deleted when the trip ends"
+msgstr ""
+"ο χάρτης που δείχνει πού βρίσκεται ο οδηγός σας στη σελίδα της κράτησής σας "
+"(το πρόγραμμα περιήγησής σας φορτώνει τις εικόνες του χάρτη από το "
+"OpenStreetMap). Η τοποθεσία του οδηγού κοινοποιείται μόνο όσο είναι καθ’ "
+"οδόν προς εσάς και διαγράφεται όταν τελειώσει η διαδρομή"
+
+#. translators: %s: place
+msgid "to travelling to %s"
+msgstr "για τη μετάβαση στο %s"
+
+msgid "we will call you when the office opens."
+msgstr "θα σας καλέσουμε όταν ανοίξει το γραφείο."
+
+msgid "wheelchair accessible taxis"
+msgstr "ταξί προσβάσιμα σε αναπηρικό αμαξίδιο"
+
+msgid "your invoice will show your own reference number."
+msgstr "το τιμολόγιό σας θα αναγράφει τον δικό σας αριθμό αναφοράς."
+
+msgid ""
+"your mobility aid, chair size and weight, and any needs you tell us about so"
+" the driver can help you safely. This is \"sensitive information\" under the"
+" APPs. We only collect it with your consent, and only what we need for your "
+"trip."
+msgstr ""
+"το βοήθημα κινητικότητάς σας, το μέγεθος και το βάρος του αμαξιδίου σας και "
+"τυχόν ανάγκες που μας αναφέρετε, ώστε ο οδηγός να σας βοηθήσει με ασφάλεια. "
+"Πρόκειται για «ευαίσθητες πληροφορίες» σύμφωνα με τις APPs. Τις συλλέγουμε "
+"μόνο με τη συγκατάθεσή σας και μόνο όσες χρειαζόμαστε για τη διαδρομή σας."
+
+msgctxt "Font family name"
+msgid "Atkinson Hyperlegible"
+msgstr "Atkinson Hyperlegible"
+
+msgctxt "Font size name"
+msgid "Large"
+msgstr "Μεγάλο"
+
+msgctxt "Pattern description"
+msgid ""
+"A clear complaints process with steps, response times ([CONFIRM]) and how to"
+" escalate to regulators."
+msgstr ""
+"Σαφής διαδικασία παραπόνων με βήματα, χρόνους απάντησης ([CONFIRM]) και "
+"τρόπο κλιμάκωσης στις ρυθμιστικές αρχές."
+
+msgctxt "Pattern description"
+msgid ""
+"A maxi taxi pulls up, lowers its ramp and a passenger rolls aboard. Follows "
+"your colours, and visitors can pause it."
+msgstr ""
+"Ένα maxi ταξί σταματά, κατεβάζει τη ράμπα και ένας επιβάτης ανεβαίνει. "
+"Ακολουθεί τα χρώματά σας και οι επισκέπτες μπορούν να το σταματήσουν."
+
+msgctxt "Pattern description"
+msgid ""
+"A narrow road with a maxi taxi and taxis driving past. Follows your colours,"
+" and visitors can pause it."
+msgstr ""
+"Ένας στενός δρόμος όπου περνούν ένα maxi ταξί και άλλα ταξί. Ακολουθεί τα "
+"χρώματά σας και οι επισκέπτες μπορούν να το σταματήσουν."
+
+msgctxt "Pattern description"
+msgid ""
+"Accessibility statement draft covering your commitment, features, known "
+"limitations and how to give feedback."
+msgstr ""
+"Προσχέδιο δήλωσης προσβασιμότητας που καλύπτει τη δέσμευσή σας, τις "
+"λειτουργίες, τους γνωστούς περιορισμούς και τον τρόπο υποβολής σχολίων."
+
+msgctxt "Pattern description"
+msgid "Bright band with phone and booking buttons."
+msgstr "Φωτεινή ζώνη με κουμπιά τηλεφώνου και κράτησης."
+
+msgctxt "Pattern description"
+msgid "Buttons that send each kind of enquiry to the right place."
+msgstr "Κουμπιά που στέλνουν κάθε είδος ερωτήματος στο σωστό σημείο."
+
+msgctxt "Pattern description"
+msgid ""
+"Captioned video with transcript — set it up in Customize → Taxi Peninsula → "
+"Wheelchair safety video."
+msgstr ""
+"Βίντεο με υπότιτλους και απομαγνητοφωνημένο κείμενο — ρυθμίστε το στο "
+"Customize → Taxi Peninsula → Wheelchair safety video."
+
+msgctxt "Pattern description"
+msgid "Cards for every published Service (updates automatically)."
+msgstr "Κάρτες για κάθε δημοσιευμένη Υπηρεσία (ενημερώνονται αυτόματα)."
+
+msgctxt "Pattern description"
+msgid ""
+"Drop-off at Departures, pickup at Arrivals, and a plane taking off. Follows "
+"your colours, and visitors can pause it."
+msgstr ""
+"Αποβίβαση στις Αναχωρήσεις, παραλαβή στις Αφίξεις και ένα αεροπλάνο που "
+"απογειώνεται. Ακολουθεί τα χρώματά σας και οι επισκέπτες μπορούν να το "
+"σταματήσουν."
+
+msgctxt "Pattern description"
+msgid "Four short value statements."
+msgstr "Τέσσερις σύντομες δηλώσεις αξιών."
+
+msgctxt "Pattern description"
+msgid "Frequently asked questions (edit them under FAQs)."
+msgstr "Συχνές ερωτήσεις (επεξεργαστείτε τις στην ενότητα FAQs)."
+
+msgctxt "Pattern description"
+msgid ""
+"Instant answer for visitors checking if you cover their suburb or postcode."
+msgstr ""
+"Άμεση απάντηση για επισκέπτες που ελέγχουν αν εξυπηρετείτε το προάστιο ή τον"
+" ταχυδρομικό τους κώδικα."
+
+msgctxt "Pattern description"
+msgid ""
+"Landing page for an event or season (footy finals, Christmas, spring "
+"racing). Schedule it with Publish → Schedule and set \"Unpublish "
+"automatically\"."
+msgstr ""
+"Σελίδα προορισμού για μια εκδήλωση ή περίοδο (τελικοί footy, Χριστούγεννα, "
+"ανοιξιάτικες ιπποδρομίες). Προγραμματίστε τη με Publish → Schedule και "
+"ορίστε «Unpublish automatically»."
+
+msgctxt "Pattern description"
+msgid ""
+"Large navy banner with headline, intro and booking buttons. Use at the top "
+"of a \"Blank canvas\" page."
+msgstr ""
+"Μεγάλο σκούρο μπλε banner με τίτλο, εισαγωγή και κουμπιά κράτησης. "
+"Χρησιμοποιήστε το στην κορυφή μιας σελίδας «Blank canvas»."
+
+msgctxt "Pattern description"
+msgid "Logos of partner organisations (only those with permission ticked)."
+msgstr "Λογότυπα συνεργαζόμενων οργανισμών (μόνο όσων έχει επιλεγεί η άδεια)."
+
+msgctxt "Pattern description"
+msgid ""
+"Most-booked destinations from real (anonymised) bookings, with Book buttons."
+msgstr ""
+"Οι πιο δημοφιλείς προορισμοί από πραγματικές (ανωνυμοποιημένες) κρατήσεις, "
+"με κουμπιά κράτησης."
+
+msgctxt "Pattern description"
+msgid "Numbered steps explaining how booking works."
+msgstr "Αριθμημένα βήματα που εξηγούν πώς λειτουργεί η κράτηση."
+
+msgctxt "Pattern description"
+msgid "Outline for posts like \"Wheelchair taxi to [hospital]: what to expect\"."
+msgstr ""
+"Διάγραμμα για άρθρα όπως «Ταξί για αναπηρικό αμαξίδιο προς [νοσοκομείο]: τι "
+"να περιμένετε»."
+
+msgctxt "Pattern description"
+msgid "Outline for step-by-step advice posts."
+msgstr "Διάγραμμα για άρθρα με συμβουλές βήμα προς βήμα."
+
+msgctxt "Pattern description"
+msgid "Phone, email, hours and a map side by side."
+msgstr "Τηλέφωνο, email, ώρες λειτουργίας και χάρτης δίπλα-δίπλα."
+
+msgctxt "Pattern description"
+msgid ""
+"Privacy policy that follows the Australian Privacy Principles and updates "
+"from your settings, with a request form."
+msgstr ""
+"Πολιτική απορρήτου που ακολουθεί τις Αυστραλιανές Αρχές Ιδιωτικότητας και "
+"ενημερώνεται από τις ρυθμίσεις σας, με φόρμα αιτήματος."
+
+msgctxt "Pattern description"
+msgid "Public driver profiles (only drivers who have opted in)."
+msgstr "Δημόσια προφίλ οδηγών (μόνο όσων οδηγών το έχουν επιλέξει)."
+
+msgctxt "Pattern description"
+msgid ""
+"Starter content for a driver recruitment page, with [CONFIRM] notes for pay "
+"and conditions."
+msgstr ""
+"Αρχικό περιεχόμενο για σελίδα πρόσληψης οδηγών, με σημειώσεις [CONFIRM] για "
+"αμοιβή και όρους εργασίας."
+
+msgctxt "Pattern description"
+msgid "Starter content for an About Us page."
+msgstr "Αρχικό περιεχόμενο για σελίδα «Σχετικά με εμάς»."
+
+msgctxt "Pattern description"
+msgid ""
+"Structured draft for your booking terms and cancellation policy, with "
+"[CONFIRM] notes where your real policy is needed."
+msgstr ""
+"Δομημένο προσχέδιο για τους όρους κράτησης και την πολιτική ακυρώσεων, με "
+"σημειώσεις [CONFIRM] όπου χρειάζεται η πραγματική σας πολιτική."
+
+msgctxt "Pattern description"
+msgid "The full online booking form."
+msgstr "Η πλήρης φόρμα online κράτησης."
+
+msgctxt "Pattern description"
+msgid "Three highlight cards — edit the headings and text."
+msgstr ""
+"Τρεις κάρτες επισήμανσης — επεξεργαστείτε τους τίτλους και το κείμενο."
+
+msgctxt "Pattern description"
+msgid ""
+"Trips completed, suburbs served and years in business — updates itself from "
+"your bookings."
+msgstr ""
+"Ολοκληρωμένες διαδρομές, προάστια που εξυπηρετούνται και χρόνια λειτουργίας "
+"— ενημερώνεται αυτόματα από τις κρατήσεις σας."
+
+msgctxt "Pattern description"
+msgid "Your published testimonials and Google rating."
+msgstr "Οι δημοσιευμένες μαρτυρίες σας και η βαθμολογία σας στο Google."
+
+msgctxt "Pattern title"
+msgid "About Us page"
+msgstr "Σελίδα «Σχετικά με εμάς»"
+
+msgctxt "Pattern title"
+msgid "Accessibility statement page"
+msgstr "Σελίδα δήλωσης προσβασιμότητας"
+
+msgctxt "Pattern title"
+msgid "Animated scene: airport drop-off and pickup"
+msgstr "Κινούμενη σκηνή: αποβίβαση και παραλαβή στο αεροδρόμιο"
+
+msgctxt "Pattern title"
+msgid "Animated scene: door-to-door wheelchair pickup"
+msgstr "Κινούμενη σκηνή: παραλαβή αναπηρικού αμαξιδίου από πόρτα σε πόρτα"
+
+msgctxt "Pattern title"
+msgid "Animated strip: taxis driving by"
+msgstr "Κινούμενη λωρίδα: ταξί που περνούν"
+
+msgctxt "Pattern title"
+msgid "Best way to reach us (contact chooser)"
+msgstr "Ο καλύτερος τρόπος επικοινωνίας (επιλογή επικοινωνίας)"
+
+msgctxt "Pattern title"
+msgid "Blog: local destination guide"
+msgstr "Ιστολόγιο: οδηγός τοπικού προορισμού"
+
+msgctxt "Pattern title"
+msgid "Blog: travel tips list"
+msgstr "Ιστολόγιο: λίστα συμβουλών μετακίνησης"
+
+msgctxt "Pattern title"
+msgid "Call to action (yellow band)"
+msgstr "Πρόσκληση για δράση (κίτρινη ζώνη)"
+
+msgctxt "Pattern title"
+msgid "Complaints & feedback page"
+msgstr "Σελίδα παραπόνων και σχολίων"
+
+msgctxt "Pattern title"
+msgid "Contact details + map"
+msgstr "Στοιχεία επικοινωνίας + χάρτης"
+
+msgctxt "Pattern title"
+msgid "Do you cover my suburb? checker"
+msgstr "Έλεγχος «Εξυπηρετείτε το προάστιό μου;»"
+
+msgctxt "Pattern title"
+msgid "Drive with us page"
+msgstr "Σελίδα «Οδηγήστε μαζί μας»"
+
+msgctxt "Pattern title"
+msgid "FAQ accordion"
+msgstr "Συχνές ερωτήσεις (accordion)"
+
+msgctxt "Pattern title"
+msgid "Feature cards (3 columns)"
+msgstr "Κάρτες χαρακτηριστικών (3 στήλες)"
+
+msgctxt "Pattern title"
+msgid "Hero banner"
+msgstr "Κεντρικό banner"
+
+msgctxt "Pattern title"
+msgid "How it works (steps)"
+msgstr "Πώς λειτουργεί (βήματα)"
+
+msgctxt "Pattern title"
+msgid "Live trust numbers"
+msgstr "Αριθμοί εμπιστοσύνης σε πραγματικό χρόνο"
+
+msgctxt "Pattern title"
+msgid "Meet the drivers"
+msgstr "Γνωρίστε τους οδηγούς"
+
+msgctxt "Pattern title"
+msgid "Our values (4 columns)"
+msgstr "Οι αξίες μας (4 στήλες)"
+
+msgctxt "Pattern title"
+msgid "Partner logos"
+msgstr "Λογότυπα συνεργατών"
+
+msgctxt "Pattern title"
+msgid "Popular destinations"
+msgstr "Δημοφιλείς προορισμοί"
+
+msgctxt "Pattern title"
+msgid "Privacy policy page"
+msgstr "Σελίδα πολιτικής απορρήτου"
+
+msgctxt "Pattern title"
+msgid "Seasonal / event landing page"
+msgstr "Σελίδα για εποχή / εκδήλωση"
+
+msgctxt "Pattern title"
+msgid "Services grid"
+msgstr "Πλέγμα υπηρεσιών"
+
+msgctxt "Pattern title"
+msgid "Terms & cancellation policy page"
+msgstr "Σελίδα όρων και πολιτικής ακυρώσεων"
+
+msgctxt "Pattern title"
+msgid "Testimonials"
+msgstr "Μαρτυρίες"
+
+msgctxt "Pattern title"
+msgid "Wheelchair safety video"
+msgstr "Βίντεο ασφάλειας αναπηρικού αμαξιδίου"
