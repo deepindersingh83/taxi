@@ -15,9 +15,9 @@
 	<?php endif; ?>
 	<div class="container site-footer__grid<?php echo 'auto' !== $tp_cols ? ' site-footer__grid--' . esc_attr( $tp_cols ) : ''; ?>">
 		<div class="site-footer__brand">
-			<?php $tp_flogo = (int) tp_design( 'logo_footer' ); ?>
-			<?php if ( $tp_flogo && wp_attachment_is_image( $tp_flogo ) ) : ?>
-				<p class="site-footer__logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_get_attachment_image( $tp_flogo, 'full', false, array( 'alt' => get_bloginfo( 'name' ), 'loading' => 'lazy' ) ); ?></a></p>
+			<?php list( $tp_flogo, $tp_fpanel ) = tp_footer_logo(); ?>
+			<?php if ( $tp_flogo ) : ?>
+				<p class="site-footer__logo<?php echo $tp_fpanel ? ' site-footer__logo--panel' : ''; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_get_attachment_image( $tp_flogo, 'full', false, array( 'alt' => get_bloginfo( 'name' ), 'loading' => 'lazy' ) ); ?></a></p>
 			<?php else : ?>
 				<p class="site-footer__name"><?php tp_the_icon( 'wheelchair' ); ?> <?php bloginfo( 'name' ); ?></p>
 			<?php endif; ?>

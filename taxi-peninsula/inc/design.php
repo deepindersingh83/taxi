@@ -23,6 +23,7 @@ function tp_design_defaults() {
 		'logo_dark'        => 0,
 		'logo_contrast'    => 0,
 		'logo_footer'      => 0,
+		'footer_logo_mode' => 'auto',
 		// Colours.
 		'color_scheme'     => 'navy',
 		'color_primary'    => '',
@@ -435,6 +436,24 @@ add_filter( 'wp_theme_json_data_theme', static function ( $theme_json ) {
 /**
  * The logo / site name block for the header.
  */
+/**
+ * The footer logo: [attachment ID, on a white panel?], or [0, false] for the business name.
+ */
+function tp_footer_logo() {
+	$mode   = tp_design( 'footer_logo_mode' );
+	$own    = (int) tp_design( 'logo_footer' );
+	$own    = $own && wp_attachment_is_image( $own ) ? $own : 0;
+	$header = (int) get_theme_mod( 'custom_logo' );
+	$header = $header && wp_attachment_is_image( $header ) ? $header : 0;
+	if ( 'text' === $mode ) {
+		return array( 0, false );
+	}
+	if ( 'custom' === $mode || ( 'auto' === $mode && $own ) ) {
+		return $own ? array( $own, false ) : ( $header ? array( $header, true ) : array( 0, false ) );
+	}
+	return $header ? array( $header, true ) : array( 0, false );
+}
+
 function tp_the_brand() {
 	$logo    = (int) get_theme_mod( 'custom_logo' );
 	$logo    = $logo && wp_attachment_is_image( $logo ) ? $logo : 0;
@@ -676,7 +695,14 @@ function tp_design_customize_register( WP_Customize_Manager $wp_customize ) {
 	$add( 'brand_tagline', 'title_tagline', __( 'Header tagline (under the name)', 'taxi-peninsula' ), 'text', array( 'priority' => 9, 'description' => __( 'Leave empty to hide it.', 'taxi-peninsula' ) ) );
 	$add( 'logo_dark', 'title_tagline', __( 'Logo for dark mode (optional)', 'taxi-peninsula' ), 'image', array( 'sanitize' => 'absint', 'priority' => 9, 'description' => __( 'Usually a light or white version. Shown when a visitor uses dark mode.', 'taxi-peninsula' ), 'active_callback' => $has_logo ) );
 	$add( 'logo_contrast', 'title_tagline', __( 'Logo for high contrast mode (optional)', 'taxi-peninsula' ), 'image', array( 'sanitize' => 'absint', 'priority' => 9, 'description' => __( 'A plain black version works best.', 'taxi-peninsula' ), 'active_callback' => $has_logo ) );
-	$add( 'logo_footer', 'title_tagline', __( 'Footer logo (optional)', 'taxi-peninsula' ), 'image', array( 'sanitize' => 'absint', 'priority' => 9, 'description' => __( 'The footer has a dark background, so a white version usually looks best.', 'taxi-peninsula' ) ) );
+	$footer_choices = array(
+		'auto'   => __( 'Same as the header logo, unless I upload a footer logo below', 'taxi-peninsula' ),
+		'header' => __( 'Always the header logo', 'taxi-peninsula' ),
+		'custom' => __( 'A different logo (upload it below)', 'taxi-peninsula' ),
+		'text'   => __( 'No logo — show the business name', 'taxi-peninsula' ),
+	);
+	$add( 'footer_logo_mode', 'title_tagline', __( 'Logo in the footer', 'taxi-peninsula' ), 'radio', array( 'sanitize' => $choice( $footer_choices ), 'choices' => $footer_choices, 'priority' => 9, 'description' => __( 'The header logo is shown on a white panel in the footer so it stays readable on the dark background.', 'taxi-peninsula' ) ) );
+	$add( 'logo_footer', 'title_tagline', __( 'Footer logo (optional)', 'taxi-peninsula' ), 'image', array( 'sanitize' => 'absint', 'priority' => 9, 'description' => __( 'A different logo for the footer. The footer has a dark background, so a white version usually looks best.', 'taxi-peninsula' ) ) );
 
 	// ---- Colours.
 	$schemes = array();

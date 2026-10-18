@@ -8,6 +8,14 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### v2.7.5 — footer logo follows the header logo
+- New **"Logo in the footer"** choice in Appearance → Customize → Site Identity:
+  - **Same as the header logo, unless I upload a footer logo** (default): changing the logo now changes the footer too.
+  - **Always the header logo.**
+  - **A different logo:** use the "Footer logo" image, e.g. a white version for the dark footer.
+  - **No logo:** shows the business name.
+- The header logo is shown on a small white panel in the footer so it stays readable on the dark background.
+
 ### v2.7.4 — Email check reads WP Mail SMTP
 - Shows the WP Mail SMTP mailer, server and login it uses.
 - Warns when its Mailer is still "Default (none)", which means it isn't really using SMTP.
