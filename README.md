@@ -8,6 +8,19 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### v2.8.1 — Search performance without the Google setup
+Reports → Search performance now offers three ways to get your Google Search Console data, simplest first:
+1. **Upload the export:**
+   - In Search Console, go to Performance → Export → Download CSV and upload the zip (or the CSV files inside it).
+   - No Google Cloud setup is needed. Repeat it whenever you want fresh numbers.
+   - You get totals, top searches, top pages and the "almost on page 1" list.
+2. **Paste a service-account key** for automatic weekly updates:
+   - Create a key once in Google Cloud.
+   - Add its email as a Restricted user in Search Console.
+   - Upload the JSON file.
+   - No OAuth client or consent screen is needed.
+3. **Sign in with Google**, as before. This is only useful if you already set up Google profile posts.
+
 ### New in v2.8
 **For customers**
 - **"Pick up when ready" (hospital discharge):** tick "I don't know the time yet — I'll call or tap when ready" on the booking form.

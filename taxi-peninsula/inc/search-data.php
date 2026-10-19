@@ -30,7 +30,15 @@ add_filter(
  * ====================================================================== */
 
 function tp_gsc_state() {
-	return wp_parse_args( (array) get_option( 'tp_gsc', array() ), array( 'refresh' => '', 'access' => '', 'expires' => 0, 'site' => '' ) );
+	return wp_parse_args( (array) get_option( 'tp_gsc', array() ), array( 'refresh' => '', 'sa' => array(), 'access' => '', 'expires' => 0, 'site' => '' ) );
+}
+
+/**
+ * Connected to the Search Console API (Google sign-in or a service-account key)?
+ */
+function tp_gsc_connected() {
+	$s = tp_gsc_state();
+	return $s['refresh'] || ! empty( $s['sa']['client_email'] );
 }
 
 function tp_gsc_redirect_uri() {
@@ -39,13 +47,21 @@ function tp_gsc_redirect_uri() {
 
 function tp_gsc_token() {
 	$s = tp_gsc_state();
-	if ( ! $s['refresh'] ) {
+	if ( ! tp_gsc_connected() ) {
 		return new WP_Error( 'tp_gsc_off', __( 'Search Console is not connected.', 'taxi-peninsula' ) );
 	}
 	if ( $s['access'] && $s['expires'] > time() + 60 ) {
 		return $s['access'];
 	}
-	$r    = wp_remote_post( 'https://oauth2.googleapis.com/token', array( 'timeout' => 15, 'body' => array( 'client_id' => tp_setting( 'gbp_client_id' ), 'client_secret' => tp_setting( 'gbp_client_secret' ), 'refresh_token' => $s['refresh'], 'grant_type' => 'refresh_token' ) ) );
+	if ( ! empty( $s['sa']['client_email'] ) ) {
+		$jwt = tp_gsc_service_jwt( $s['sa'] );
+		if ( is_wp_error( $jwt ) ) {
+			return $jwt;
+		}
+		$r = wp_remote_post( 'https://oauth2.googleapis.com/token', array( 'timeout' => 15, 'body' => array( 'grant_type' => 'urn:ietf:params:oauth:grant-type:jwt-bearer', 'assertion' => $jwt ) ) );
+	} else {
+		$r = wp_remote_post( 'https://oauth2.googleapis.com/token', array( 'timeout' => 15, 'body' => array( 'client_id' => tp_setting( 'gbp_client_id' ), 'client_secret' => tp_setting( 'gbp_client_secret' ), 'refresh_token' => $s['refresh'], 'grant_type' => 'refresh_token' ) ) );
+	}
 	$body = is_wp_error( $r ) ? array() : json_decode( wp_remote_retrieve_body( $r ), true );
 	if ( empty( $body['access_token'] ) ) {
 		return new WP_Error( 'tp_gsc_token', __( 'Could not sign in to Google. Please connect again.', 'taxi-peninsula' ) );
@@ -54,6 +70,33 @@ function tp_gsc_token() {
 	$s['expires'] = time() + (int) ( $body['expires_in'] ?? 3000 );
 	update_option( 'tp_gsc', $s, false );
 	return $s['access'];
+}
+
+/**
+ * Signed sign-in request for a service-account key (no Google sign-in screen needed).
+ */
+function tp_gsc_service_jwt( array $sa ) {
+	if ( ! function_exists( 'openssl_sign' ) ) {
+		return new WP_Error( 'tp_gsc_openssl', __( 'Your hosting is missing the PHP OpenSSL extension, which the key needs. Use the upload option instead, or ask your host to enable OpenSSL.', 'taxi-peninsula' ) );
+	}
+	$b64   = static fn( $v ) => rtrim( strtr( base64_encode( $v ), '+/', '-_' ), '=' ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
+	$now   = time();
+	$input = $b64( wp_json_encode( array( 'alg' => 'RS256', 'typ' => 'JWT' ) ) ) . '.' . $b64(
+		wp_json_encode(
+			array(
+				'iss'   => $sa['client_email'],
+				'scope' => 'https://www.googleapis.com/auth/webmasters.readonly',
+				'aud'   => 'https://oauth2.googleapis.com/token',
+				'iat'   => $now,
+				'exp'   => $now + HOUR_IN_SECONDS,
+			)
+		)
+	);
+	$sig = '';
+	if ( ! openssl_sign( $input, $sig, $sa['private_key'], OPENSSL_ALGO_SHA256 ) ) {
+		return new WP_Error( 'tp_gsc_key', __( 'The key could not be read. Download a new JSON key and paste it again.', 'taxi-peninsula' ) );
+	}
+	return $input . '.' . $b64( $sig );
 }
 
 function tp_gsc_api( $method, $path, $body = null ) {
@@ -126,6 +169,161 @@ function tp_gsc_almost( array $data ) {
 	return array_slice( $out, 0, 25 );
 }
 
+/**
+ * Read a Search Console export (Performance → Export → Download CSV): the zip,
+ * or the CSV files inside it. Uses Queries.csv, Pages.csv and Chart.csv.
+ *
+ * @param array $files File name => contents.
+ * @return array|WP_Error Data in the same shape as tp_gsc_refresh().
+ */
+function tp_gsc_parse_export( array $files ) {
+	$num  = static fn( $v ) => (float) str_replace( array( ',', ' ', '%' ), '', (string) $v );
+	$data = array( 'source' => 'upload', 'fetched' => time(), 'start' => '', 'end' => '', 'queries' => array(), 'pairs' => array(), 'pages' => array(), 'totals' => array() );
+	$days = array();
+	foreach ( $files as $name => $csv ) {
+		$csv  = preg_replace( '/^\xEF\xBB\xBF/', '', (string) $csv );
+		$rows = array_map( static fn( $line ) => str_getcsv( $line, ',', '"', '\\' ), preg_split( '/\r\n|\n|\r/', trim( $csv ) ) );
+		if ( count( $rows ) < 2 || count( $rows[0] ) < 5 ) {
+			continue; // Not a table with clicks, impressions, CTR and position.
+		}
+		array_shift( $rows );
+		$first = (string) $rows[0][0];
+		$name  = strtolower( basename( $name ) );
+		if ( preg_match( '/^\d{4}-\d{2}-\d{2}$/', $first ) ) {
+			$kind = 'chart';
+		} elseif ( preg_match( '#^https?://#', $first ) ) {
+			$kind = 'pages';
+		} elseif ( false !== strpos( $name, 'quer' ) ) {
+			$kind = 'queries';
+		} else {
+			continue; // Countries, devices, search appearance…
+		}
+		foreach ( $rows as $r ) {
+			if ( count( $r ) < 5 || '' === trim( (string) $r[0] ) ) {
+				continue;
+			}
+			$row = array( 'keys' => array( (string) $r[0] ), 'clicks' => $num( $r[1] ), 'impressions' => $num( $r[2] ), 'ctr' => $num( $r[3] ) / 100, 'position' => $num( $r[4] ) );
+			if ( 'chart' === $kind ) {
+				$days[] = $row;
+			} else {
+				$data[ $kind ][] = $row;
+			}
+		}
+	}
+	if ( ! $data['queries'] && ! $data['pages'] ) {
+		return new WP_Error( 'tp_gsc_csv', __( 'No searches or pages found. In Search Console open Performance → Search results, click Export → Download CSV, and upload that zip file (or the Queries.csv and Pages.csv inside it).', 'taxi-peninsula' ) );
+	}
+	$by_clicks = static function ( $a, $b ) {
+		return $b['clicks'] <=> $a['clicks'] ?: $b['impressions'] <=> $a['impressions'];
+	};
+	usort( $data['queries'], $by_clicks );
+	usort( $data['pages'], $by_clicks );
+	// Totals: the daily chart has the true totals; without it, add up the searches.
+	$sum = $days ?: $data['queries'];
+	$c   = array_sum( array_column( $sum, 'clicks' ) );
+	$i   = array_sum( array_column( $sum, 'impressions' ) );
+	$w   = 0;
+	foreach ( $sum as $r ) {
+		$w += $r['position'] * $r['impressions'];
+	}
+	$data['totals'] = array( 'clicks' => $c, 'impressions' => $i, 'ctr' => $i ? $c / $i : 0, 'position' => $i ? $w / $i : 0 );
+	if ( $days ) {
+		$dates         = array_map( static fn( $r ) => $r['keys'][0], $days );
+		$data['start'] = min( $dates );
+		$data['end']   = max( $dates );
+	}
+	return $data;
+}
+
+add_action(
+	'admin_post_tp_gsc_upload',
+	static function () {
+		check_admin_referer( 'tp_gsc_upload' );
+		if ( ! current_user_can( 'tp_view_leads' ) ) {
+			wp_die( '', 403 );
+		}
+		$up    = $_FILES['gsc'] ?? array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- read as data, never stored as a file.
+		$files = array();
+		foreach ( (array) ( $up['tmp_name'] ?? array() ) as $n => $tmp ) {
+			if ( ! $tmp || ! is_uploaded_file( $tmp ) || filesize( $tmp ) > 20 * MB_IN_BYTES ) {
+				continue;
+			}
+			$name = sanitize_file_name( $up['name'][ $n ] ?? 'file.csv' );
+			if ( preg_match( '/\.zip$/i', $name ) ) {
+				if ( ! class_exists( 'ZipArchive' ) ) {
+					tp_gsc_back( __( 'Your hosting cannot open zip files. Unzip the export on your computer and upload Queries.csv and Pages.csv instead.', 'taxi-peninsula' ) );
+				}
+				$zip = new ZipArchive();
+				if ( true === $zip->open( $tmp ) ) {
+					for ( $k = 0; $k < min( $zip->numFiles, 20 ); $k++ ) {
+						$entry = $zip->getNameIndex( $k );
+						if ( preg_match( '/\.csv$/i', $entry ) ) {
+							$files[ $entry ] = (string) $zip->getFromIndex( $k );
+						}
+					}
+					$zip->close();
+				}
+			} elseif ( preg_match( '/\.csv$/i', $name ) ) {
+				$files[ $name ] = (string) file_get_contents( $tmp ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+			}
+		}
+		if ( ! $files ) {
+			tp_gsc_back( __( 'Please choose the zip file from Search Console (or its CSV files).', 'taxi-peninsula' ) );
+		}
+		$data = tp_gsc_parse_export( $files );
+		if ( is_wp_error( $data ) ) {
+			tp_gsc_back( $data->get_error_message() );
+		}
+		update_option( 'tp_gsc_data', $data, false );
+		/* translators: 1: number of searches 2: number of pages */
+		tp_gsc_back( sprintf( __( 'Loaded %1$d searches and %2$d pages from your export.', 'taxi-peninsula' ), count( $data['queries'] ), count( $data['pages'] ) ) );
+	}
+);
+
+add_action(
+	'admin_post_tp_gsc_key',
+	static function () {
+		check_admin_referer( 'tp_gsc_key' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( '', 403 );
+		}
+		$json = isset( $_POST['key'] ) ? trim( wp_unslash( $_POST['key'] ) ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- JSON key, validated below.
+		if ( '' === $json && ! empty( $_FILES['keyfile']['tmp_name'] ) && is_uploaded_file( $_FILES['keyfile']['tmp_name'] ) ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+			$json = (string) file_get_contents( $_FILES['keyfile']['tmp_name'], false, null, 0, 20000 ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents,WordPress.Security.ValidatedSanitizedInput
+		}
+		$k = json_decode( $json, true );
+		if ( ! is_array( $k ) || 'service_account' !== ( $k['type'] ?? '' ) || ! is_email( $k['client_email'] ?? '' ) || false === strpos( (string) ( $k['private_key'] ?? '' ), 'PRIVATE KEY' ) ) {
+			tp_gsc_back( __( 'That is not a service-account key. In Google Cloud open the service account → Keys → Add key → JSON, and paste the whole downloaded file.', 'taxi-peninsula' ) );
+		}
+		update_option( 'tp_gsc', array( 'refresh' => '', 'sa' => array( 'client_email' => $k['client_email'], 'private_key' => $k['private_key'] ), 'access' => '', 'expires' => 0, 'site' => '' ), false );
+		$token = tp_gsc_token();
+		if ( is_wp_error( $token ) ) {
+			delete_option( 'tp_gsc' );
+			tp_gsc_back( $token->get_error_message() );
+		}
+		tp_gsc_pick_site();
+		tp_gsc_back( tp_gsc_state()['site'] ? __( 'Key saved and data loaded. It will refresh every week.', 'taxi-peninsula' ) : __( 'Key saved. Now add the service-account email as a user in Search Console (see step 3), then reload this page.', 'taxi-peninsula' ) );
+	}
+);
+
+/**
+ * Pick the Search Console property that matches this site and load its data.
+ */
+function tp_gsc_pick_site() {
+	$sites = tp_gsc_api( 'GET', 'sites' );
+	$host  = preg_replace( '/^www\./', '', (string) wp_parse_url( home_url(), PHP_URL_HOST ) );
+	foreach ( is_wp_error( $sites ) ? array() : (array) ( $sites['siteEntry'] ?? array() ) as $e ) {
+		if ( 'sc-domain:' . $host === $e['siteUrl'] || false !== strpos( $e['siteUrl'], '//' . $host ) || false !== strpos( $e['siteUrl'], '//www.' . $host ) ) {
+			$st         = tp_gsc_state();
+			$st['site'] = $e['siteUrl'];
+			update_option( 'tp_gsc', $st, false );
+			tp_gsc_refresh();
+			return true;
+		}
+	}
+	return false;
+}
+
 add_action(
 	'admin_menu',
 	static function () {
@@ -147,24 +345,12 @@ function tp_render_search_page() {
 	?>
 	<div class="wrap tp-search">
 		<h1><?php esc_html_e( 'Search performance', 'taxi-peninsula' ); ?></h1>
-		<p><?php esc_html_e( 'What people type into Google when your site appears, how often they click, and where you rank — from Google Search Console, refreshed every week.', 'taxi-peninsula' ); ?></p>
+		<p><?php esc_html_e( 'What people type into Google when your site appears, how often they click, and where you rank — from Google Search Console.', 'taxi-peninsula' ); ?></p>
 		<?php if ( $msg ) : ?>
 			<div class="notice notice-info is-dismissible"><p><?php echo esc_html( $msg ); ?></p></div>
 		<?php endif; ?>
 
-		<?php if ( ! $s['refresh'] ) : ?>
-			<div class="card">
-				<h2><?php esc_html_e( 'Connect Google Search Console', 'taxi-peninsula' ); ?></h2>
-				<?php if ( ! tp_setting( 'gbp_client_id' ) || ! tp_setting( 'gbp_client_secret' ) ) : ?>
-					<p><?php esc_html_e( 'This uses the same Google OAuth client as Google profile posts. Create it first (Marketing → Google profile shows how), then come back.', 'taxi-peninsula' ); ?></p>
-				<?php else : ?>
-					<p><?php esc_html_e( 'In Google Cloud, enable the "Google Search Console API" for your project and add this authorised redirect URI to the OAuth client:', 'taxi-peninsula' ); ?> <code><?php echo esc_html( tp_gsc_redirect_uri() ); ?></code></p>
-					<?php if ( current_user_can( 'manage_options' ) ) : ?>
-						<p><a class="button button-primary" href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin-post.php?action=tp_gsc_connect' ), 'tp_gsc_connect' ) ); ?>"><?php esc_html_e( 'Connect Search Console', 'taxi-peninsula' ); ?></a></p>
-					<?php endif; ?>
-				<?php endif; ?>
-			</div>
-		<?php elseif ( ! $s['site'] ) : ?>
+		<?php if ( tp_gsc_connected() && ! $s['site'] ) : ?>
 			<?php $sites = tp_gsc_api( 'GET', 'sites' ); ?>
 			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 				<input type="hidden" name="action" value="tp_gsc_site"><?php wp_nonce_field( 'tp_gsc_site' ); ?>
@@ -178,8 +364,16 @@ function tp_render_search_page() {
 			</form>
 			<?php if ( is_wp_error( $sites ) ) : ?>
 				<p class="notice notice-error inline"><?php echo esc_html( $sites->get_error_message() ); ?></p>
+			<?php elseif ( empty( $sites['siteEntry'] ) && ! empty( $s['sa']['client_email'] ) ) : ?>
+				<p class="notice notice-warning inline">
+					<?php
+					/* translators: %s: service-account email */
+					echo esc_html( sprintf( __( 'No properties yet. In Search Console open Settings → Users and permissions → Add user, enter %s with "Restricted" permission, then reload this page.', 'taxi-peninsula' ), $s['sa']['client_email'] ) );
+					?>
+				</p>
 			<?php endif; ?>
 		<?php else : ?>
+			<?php if ( tp_gsc_connected() ) : ?>
 			<p>
 				<?php
 				/* translators: 1: property 2: from 3: to */
@@ -187,6 +381,19 @@ function tp_render_search_page() {
 				?>
 				<a class="button" href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin-post.php?action=tp_gsc_refresh' ), 'tp_gsc_refresh' ) ); ?>"><?php esc_html_e( 'Refresh now', 'taxi-peninsula' ); ?></a>
 			</p>
+			<?php elseif ( is_array( $data ) ) : ?>
+			<p>
+				<?php
+				echo esc_html(
+					$data['start']
+						/* translators: 1: from 2: to 3: upload date */
+						? sprintf( __( 'From your Search Console export: %1$s to %2$s (uploaded %3$s).', 'taxi-peninsula' ), wp_date( 'j M', strtotime( $data['start'] ) ), wp_date( 'j M Y', strtotime( $data['end'] ) ), wp_date( 'j M Y', $data['fetched'] ) )
+						/* translators: %s: upload date */
+						: sprintf( __( 'From your Search Console export (uploaded %s).', 'taxi-peninsula' ), wp_date( 'j M Y', $data['fetched'] ) )
+				);
+				?>
+			</p>
+			<?php endif; ?>
 			<?php if ( is_array( $data ) ) : ?>
 				<?php $tot = (array) $data['totals']; ?>
 				<ul class="tp-kpis">
@@ -200,11 +407,11 @@ function tp_render_search_page() {
 				<h2><?php esc_html_e( 'Almost on page 1 — worth improving', 'taxi-peninsula' ); ?></h2>
 				<p class="description"><?php esc_html_e( 'Searches where you rank 8–20. A little work moves them onto the first page: use the words in the page title and first paragraph, add a question and answer about it, and link to the page from related pages.', 'taxi-peninsula' ); ?></p>
 				<?php if ( $almost ) : ?>
-					<table class="widefat striped"><thead><tr><th><?php esc_html_e( 'Search', 'taxi-peninsula' ); ?></th><th class="num"><?php esc_html_e( 'Position', 'taxi-peninsula' ); ?></th><th class="num"><?php esc_html_e( 'Shown', 'taxi-peninsula' ); ?></th><th><?php esc_html_e( 'Page to improve', 'taxi-peninsula' ); ?></th></tr></thead><tbody>
+					<table class="widefat striped"><thead><tr><th><?php esc_html_e( 'Search', 'taxi-peninsula' ); ?></th><th class="num"><?php esc_html_e( 'Position', 'taxi-peninsula' ); ?></th><th class="num"><?php esc_html_e( 'Shown', 'taxi-peninsula' ); ?></th><?php if ( $data['pairs'] ) : ?><th><?php esc_html_e( 'Page to improve', 'taxi-peninsula' ); ?></th><?php endif; ?></tr></thead><tbody>
 						<?php foreach ( $almost as $r ) : ?>
 							<?php $pid = $r['page'] ? url_to_postid( $r['page'] ) : 0; ?>
 							<tr><td><?php echo esc_html( $r['keys'][0] ); ?></td><td class="num"><?php echo esc_html( $pos( $r['position'] ) ); ?></td><td class="num"><?php echo esc_html( number_format_i18n( $r['impressions'] ) ); ?></td>
-								<td><?php echo esc_html( $r['page'] ? $path( $r['page'] ) : '—' ); ?><?php if ( $pid && current_user_can( 'edit_post', $pid ) ) : ?> · <a href="<?php echo esc_url( get_edit_post_link( $pid ) ); ?>"><?php esc_html_e( 'Edit', 'taxi-peninsula' ); ?></a><?php endif; ?></td></tr>
+								<?php if ( $data['pairs'] ) : ?><td><?php echo esc_html( $r['page'] ? $path( $r['page'] ) : '—' ); ?><?php if ( $pid && current_user_can( 'edit_post', $pid ) ) : ?> · <a href="<?php echo esc_url( get_edit_post_link( $pid ) ); ?>"><?php esc_html_e( 'Edit', 'taxi-peninsula' ); ?></a><?php endif; ?></td><?php endif; ?></tr>
 						<?php endforeach; ?>
 					</tbody></table>
 				<?php else : ?>
@@ -216,7 +423,7 @@ function tp_render_search_page() {
 						<h2><?php esc_html_e( 'Top searches', 'taxi-peninsula' ); ?></h2>
 						<table class="widefat striped"><thead><tr><th><?php esc_html_e( 'Search', 'taxi-peninsula' ); ?></th><th class="num"><?php esc_html_e( 'Clicks', 'taxi-peninsula' ); ?></th><th class="num"><?php esc_html_e( 'Shown', 'taxi-peninsula' ); ?></th><th class="num"><?php esc_html_e( 'Position', 'taxi-peninsula' ); ?></th></tr></thead><tbody>
 							<?php foreach ( array_slice( (array) $data['queries'], 0, 25 ) as $r ) : ?>
-								<tr><td><?php echo esc_html( $r['keys'][0] ); ?></td><td class="num"><?php echo esc_html( $r['clicks'] ); ?></td><td class="num"><?php echo esc_html( $r['impressions'] ); ?></td><td class="num"><?php echo esc_html( $pos( $r['position'] ) ); ?></td></tr>
+								<tr><td><?php echo esc_html( $r['keys'][0] ); ?></td><td class="num"><?php echo esc_html( number_format_i18n( $r['clicks'] ) ); ?></td><td class="num"><?php echo esc_html( number_format_i18n( $r['impressions'] ) ); ?></td><td class="num"><?php echo esc_html( $pos( $r['position'] ) ); ?></td></tr>
 							<?php endforeach; ?>
 						</tbody></table>
 					</div>
@@ -224,19 +431,76 @@ function tp_render_search_page() {
 						<h2><?php esc_html_e( 'Top landing pages', 'taxi-peninsula' ); ?></h2>
 						<table class="widefat striped"><thead><tr><th><?php esc_html_e( 'Page', 'taxi-peninsula' ); ?></th><th class="num"><?php esc_html_e( 'Clicks', 'taxi-peninsula' ); ?></th><th class="num"><?php esc_html_e( 'Shown', 'taxi-peninsula' ); ?></th></tr></thead><tbody>
 							<?php foreach ( array_slice( (array) $data['pages'], 0, 25 ) as $r ) : ?>
-								<tr><td><?php echo esc_html( $path( $r['keys'][0] ) ); ?></td><td class="num"><?php echo esc_html( $r['clicks'] ); ?></td><td class="num"><?php echo esc_html( $r['impressions'] ); ?></td></tr>
+								<tr><td><?php echo esc_html( $path( $r['keys'][0] ) ); ?></td><td class="num"><?php echo esc_html( number_format_i18n( $r['clicks'] ) ); ?></td><td class="num"><?php echo esc_html( number_format_i18n( $r['impressions'] ) ); ?></td></tr>
 							<?php endforeach; ?>
 						</tbody></table>
 					</div>
 				</div>
-			<?php else : ?>
+			<?php elseif ( tp_gsc_connected() ) : ?>
 				<p><?php esc_html_e( 'No data yet — click "Refresh now". New sites can take a few days to show data in Search Console.', 'taxi-peninsula' ); ?></p>
 			<?php endif; ?>
-			<?php if ( current_user_can( 'manage_options' ) ) : ?>
-				<p><a class="button-link-delete" href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin-post.php?action=tp_gsc_disconnect' ), 'tp_gsc_disconnect' ) ); ?>"><?php esc_html_e( 'Disconnect Search Console', 'taxi-peninsula' ); ?></a></p>
+			<?php if ( ! tp_gsc_connected() ) : ?>
+				<?php tp_gsc_get_data_cards( is_array( $data ) ); ?>
+			<?php endif; ?>
+			<?php if ( current_user_can( 'manage_options' ) && ( tp_gsc_connected() || is_array( $data ) ) ) : ?>
+				<p><a class="button-link-delete" href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin-post.php?action=tp_gsc_disconnect' ), 'tp_gsc_disconnect' ) ); ?>"><?php echo esc_html( tp_gsc_connected() ? __( 'Disconnect Search Console', 'taxi-peninsula' ) : __( 'Clear the uploaded data', 'taxi-peninsula' ) ); ?></a></p>
 			<?php endif; ?>
 		<?php endif; ?>
 	</div>
+	<?php
+}
+
+/**
+ * Ways to get Search Console data in, simplest first.
+ *
+ * @param bool $has_data Data from an earlier upload is showing.
+ */
+function tp_gsc_get_data_cards( $has_data ) {
+	$admin = current_user_can( 'manage_options' );
+	?>
+	<div class="card tp-gsc-way">
+		<h2><?php echo esc_html( $has_data ? __( 'Upload a newer export', 'taxi-peninsula' ) : __( 'Easiest: upload your Search Console export', 'taxi-peninsula' ) ); ?></h2>
+		<p><?php esc_html_e( 'No Google setup needed. Takes about a minute — repeat it whenever you want fresh numbers (monthly is plenty).', 'taxi-peninsula' ); ?></p>
+		<ol>
+			<li><?php echo wp_kses( __( 'Open <a href="https://search.google.com/search-console/performance/search-analytics" target="_blank" rel="noopener">Search Console → Performance</a> and pick your site.', 'taxi-peninsula' ), array( 'a' => array( 'href' => true, 'target' => true, 'rel' => true ) ) ); ?></li>
+			<li><?php esc_html_e( 'Set the date to "Last 3 months" (or 28 days).', 'taxi-peninsula' ); ?></li>
+			<li><?php esc_html_e( 'Click Export (top right) → Download CSV. You get a zip file.', 'taxi-peninsula' ); ?></li>
+			<li><?php esc_html_e( 'Choose that zip file below and click Upload. (No need to unzip it.)', 'taxi-peninsula' ); ?></li>
+		</ol>
+		<form method="post" enctype="multipart/form-data" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+			<input type="hidden" name="action" value="tp_gsc_upload"><?php wp_nonce_field( 'tp_gsc_upload' ); ?>
+			<label class="screen-reader-text" for="tp-gsc-file"><?php esc_html_e( 'Search Console export', 'taxi-peninsula' ); ?></label>
+			<input id="tp-gsc-file" type="file" name="gsc[]" accept=".zip,.csv" multiple required>
+			<?php submit_button( __( 'Upload', 'taxi-peninsula' ), 'primary', '', false ); ?>
+		</form>
+	</div>
+	<?php if ( $admin ) : ?>
+		<details class="card tp-gsc-way">
+			<summary><strong><?php esc_html_e( 'Automatic weekly updates: paste a service-account key', 'taxi-peninsula' ); ?></strong> — <?php esc_html_e( 'about 10 minutes, once', 'taxi-peninsula' ); ?></summary>
+			<ol>
+				<li><?php echo wp_kses( __( 'In <a href="https://console.cloud.google.com/apis/library/searchconsole.googleapis.com" target="_blank" rel="noopener">Google Cloud</a>, create a project (any name) and click Enable on the "Google Search Console API".', 'taxi-peninsula' ), array( 'a' => array( 'href' => true, 'target' => true, 'rel' => true ) ) ); ?></li>
+				<li><?php echo wp_kses( __( 'Go to <a href="https://console.cloud.google.com/iam-admin/serviceaccounts" target="_blank" rel="noopener">IAM → Service accounts</a> → Create service account (no roles needed). Open it → Keys → Add key → JSON. A file downloads.', 'taxi-peninsula' ), array( 'a' => array( 'href' => true, 'target' => true, 'rel' => true ) ) ); ?></li>
+				<li><?php esc_html_e( 'In Search Console → Settings → Users and permissions → Add user: paste the service account’s email (it ends in .iam.gserviceaccount.com) with "Restricted" permission.', 'taxi-peninsula' ); ?></li>
+				<li><?php esc_html_e( 'Choose the downloaded JSON file below (or paste its contents) and click Save.', 'taxi-peninsula' ); ?></li>
+			</ol>
+			<form method="post" enctype="multipart/form-data" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
+				<input type="hidden" name="action" value="tp_gsc_key"><?php wp_nonce_field( 'tp_gsc_key' ); ?>
+				<p><label for="tp-gsc-keyfile"><?php esc_html_e( 'Key file (.json)', 'taxi-peninsula' ); ?></label><br><input id="tp-gsc-keyfile" type="file" name="keyfile" accept=".json,application/json"></p>
+				<p><label for="tp-gsc-key"><?php esc_html_e( 'Or paste the key', 'taxi-peninsula' ); ?></label><br><textarea id="tp-gsc-key" name="key" rows="4" class="large-text code" autocomplete="off" spellcheck="false" placeholder='{"type": "service_account", ...}'></textarea></p>
+				<?php submit_button( __( 'Save key', 'taxi-peninsula' ), 'secondary', '', false ); ?>
+				<p class="description"><?php esc_html_e( 'The key only allows reading Search Console data. It is stored in your WordPress database and never shown again.', 'taxi-peninsula' ); ?></p>
+			</form>
+		</details>
+		<details class="card tp-gsc-way">
+			<summary><strong><?php esc_html_e( 'Or sign in with Google', 'taxi-peninsula' ); ?></strong> — <?php esc_html_e( 'if you already set up Google profile posts', 'taxi-peninsula' ); ?></summary>
+			<?php if ( ! tp_setting( 'gbp_client_id' ) || ! tp_setting( 'gbp_client_secret' ) ) : ?>
+				<p><?php esc_html_e( 'This uses the same Google OAuth client as Google profile posts. Create it first (Marketing → Google profile shows how), then come back.', 'taxi-peninsula' ); ?></p>
+			<?php else : ?>
+				<p><?php esc_html_e( 'In Google Cloud, enable the "Google Search Console API" for your project and add this authorised redirect URI to the OAuth client:', 'taxi-peninsula' ); ?> <code><?php echo esc_html( tp_gsc_redirect_uri() ); ?></code></p>
+				<p><a class="button" href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin-post.php?action=tp_gsc_connect' ), 'tp_gsc_connect' ) ); ?>"><?php esc_html_e( 'Connect Search Console', 'taxi-peninsula' ); ?></a></p>
+			<?php endif; ?>
+		</details>
+	<?php endif; ?>
 	<?php
 }
 
@@ -280,19 +544,8 @@ add_action(
 		if ( empty( $body['refresh_token'] ) ) {
 			tp_gsc_back( __( 'Google did not give access. Check the redirect URI and that the Search Console API is enabled.', 'taxi-peninsula' ) );
 		}
-		update_option( 'tp_gsc', array( 'refresh' => $body['refresh_token'], 'access' => $body['access_token'] ?? '', 'expires' => time() + (int) ( $body['expires_in'] ?? 3000 ), 'site' => '' ), false );
-		// Pick the property that matches this site, if there is one.
-		$sites = tp_gsc_api( 'GET', 'sites' );
-		$host  = preg_replace( '/^www\./', '', (string) wp_parse_url( home_url(), PHP_URL_HOST ) );
-		foreach ( is_wp_error( $sites ) ? array() : (array) ( $sites['siteEntry'] ?? array() ) as $e ) {
-			if ( 'sc-domain:' . $host === $e['siteUrl'] || false !== strpos( $e['siteUrl'], '//' . $host ) || false !== strpos( $e['siteUrl'], '//www.' . $host ) ) {
-				$st         = tp_gsc_state();
-				$st['site'] = $e['siteUrl'];
-				update_option( 'tp_gsc', $st, false );
-				tp_gsc_refresh();
-				break;
-			}
-		}
+		update_option( 'tp_gsc', array( 'refresh' => $body['refresh_token'], 'sa' => array(), 'access' => $body['access_token'] ?? '', 'expires' => time() + (int) ( $body['expires_in'] ?? 3000 ), 'site' => '' ), false );
+		tp_gsc_pick_site();
 		tp_gsc_back( __( 'Search Console connected.', 'taxi-peninsula' ) );
 	}
 );
@@ -781,7 +1034,7 @@ add_action(
 					<?php foreach ( array( 'queries' => __( 'Search', 'taxi-peninsula' ), 'pages' => __( 'Page', 'taxi-peninsula' ) ) as $k => $label ) : ?>
 						<div><table class="widefat striped"><thead><tr><th><?php echo esc_html( $label ); ?></th><th class="num"><?php esc_html_e( 'Clicks', 'taxi-peninsula' ); ?></th><th class="num"><?php esc_html_e( 'Shown', 'taxi-peninsula' ); ?></th></tr></thead><tbody>
 							<?php foreach ( array_slice( (array) ( $bing[ $k ] ?? array() ), 0, 20, true ) as $q => $r ) : ?>
-								<tr><td><?php echo esc_html( 'pages' === $k ? ( (string) wp_parse_url( $q, PHP_URL_PATH ) ?: '/' ) : $q ); ?></td><td class="num"><?php echo esc_html( $r['clicks'] ); ?></td><td class="num"><?php echo esc_html( $r['impressions'] ); ?></td></tr>
+								<tr><td><?php echo esc_html( 'pages' === $k ? ( (string) wp_parse_url( $q, PHP_URL_PATH ) ?: '/' ) : $q ); ?></td><td class="num"><?php echo esc_html( number_format_i18n( $r['clicks'] ) ); ?></td><td class="num"><?php echo esc_html( number_format_i18n( $r['impressions'] ) ); ?></td></tr>
 							<?php endforeach; ?>
 						</tbody></table></div>
 					<?php endforeach; ?>

@@ -282,6 +282,10 @@
 .tp-ai__check td a { margin-right: 6px; }
 .tp-ai__history { margin-top: 12px; max-width: 60rem; }
 .tp-search .tp-owner__grid > div { min-width: 0; }
+.tp-gsc-way { max-width: 52rem; }
+.tp-gsc-way summary { cursor: pointer; padding: .2rem 0; }
+.tp-gsc-way ol { margin-left: 1.4em; }
+.tp-gsc-way li { margin-bottom: .35em; }
 
 /* v2.7 */
 .tp-pill { display: inline-block; padding: 2px 8px; border-radius: 999px; background: #f0f0f1; font-size: 12px; font-weight: 600; }
