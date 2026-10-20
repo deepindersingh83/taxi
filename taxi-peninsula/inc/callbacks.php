@@ -204,8 +204,15 @@ function tp_handle_callback() {
 	if ( '' === $d['name'] ) {
 		$errors['name'] = __( 'Please enter your name.', 'taxi-peninsula' );
 	}
-	if ( strlen( preg_replace( '/\D/', '', $d['phone'] ) ) < 8 ) {
+	if ( '' === $d['phone'] ) {
 		$errors['phone'] = __( 'Please enter a phone number so we can call you.', 'taxi-peninsula' );
+	} else {
+		$checked = tp_check_phone( $d['phone'] );
+		if ( is_wp_error( $checked ) ) {
+			$errors['phone'] = $checked->get_error_message();
+		} else {
+			$d['phone'] = $checked;
+		}
 	}
 	if ( $errors ) {
 		$errors['form'] = __( 'Please check the highlighted fields.', 'taxi-peninsula' );

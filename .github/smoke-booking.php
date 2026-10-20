@@ -25,3 +25,24 @@ if ( ! in_array( $id, (array) tp_trips_ids( array( 'from' => $d, 'status' => 'co
 	WP_CLI::error( 'Trip index did not pick up the booking.' );
 }
 WP_CLI::success( "Booking $ref saved, completed and indexed." );
+
+// Australian phone numbers: tidied when valid, refused when not.
+$phones = array(
+	'0412345678'      => '0412 345 678',
+	'+61 412 345 678' => '0412 345 678',
+	'9781 1234'       => '(03) 9781 1234',
+	'1300 123 456'    => '1300 123 456',
+	'12345'           => null,
+	'0512 345 678'    => null,
+);
+foreach ( $phones as $in => $want ) {
+	$got = tp_au_phone( $in );
+	if ( ( $got['display'] ?? null ) !== $want ) {
+		WP_CLI::error( "Phone check: $in gave " . wp_json_encode( $got ) );
+	}
+}
+$secret = tp_encrypt( 'top secret' );
+if ( 0 !== strpos( $secret, 'tpenc:1:' ) || 'top secret' !== tp_decrypt( $secret ) ) {
+	WP_CLI::error( 'Secret encryption round trip failed.' );
+}
+WP_CLI::success( 'Phone checks and secret encryption OK.' );

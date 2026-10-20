@@ -316,7 +316,7 @@ $today       = wp_date( 'Y-m-d' );
 
 		<div class="field">
 			<label for="bf-phone"><?php esc_html_e( 'Mobile', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label>
-			<input id="bf-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" value="<?php echo esc_attr( $val( 'phone' ) ); ?>" placeholder="04xx xxx xxx"<?php $invalid( 'phone' ); ?>>
+			<input id="bf-phone" name="phone" type="tel" data-sms-hint required autocomplete="tel" inputmode="tel" value="<?php echo esc_attr( $val( 'phone' ) ); ?>" placeholder="04xx xxx xxx"<?php $invalid( 'phone' ); ?>>
 			<?php $err( 'phone' ); ?>
 		</div>
 

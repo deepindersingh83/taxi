@@ -49,7 +49,7 @@ function tp_statement_groups( $month ) {
 	$groups = array();
 	foreach ( $ids as $id ) {
 		$email = strtolower( trim( (string) get_post_meta( $id, '_tp_invoice_email', true ) ) );
-		if ( ! is_email( $email ) ) {
+		if ( ! is_email( $email ) || ! apply_filters( 'tp_statement_include_trip', true, (int) $id ) ) {
 			continue;
 		}
 		if ( ! isset( $groups[ $email ] ) ) {

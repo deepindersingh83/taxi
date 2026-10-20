@@ -969,8 +969,11 @@ function tp_handle_account_register() {
 	} elseif ( email_exists( $old['email'] ) ) {
 		$errors[] = __( 'There is already an account with that email. Please sign in, or use “Forgotten your password?”.', 'taxi-peninsula' );
 	}
-	if ( ! preg_match( '/^[0-9 +()\-]{8,20}$/', $old['phone'] ) ) {
-		$errors[] = __( 'Please enter a valid mobile number.', 'taxi-peninsula' );
+	$phone = tp_check_phone( $old['phone'] );
+	if ( is_wp_error( $phone ) ) {
+		$errors[] = $phone->get_error_message();
+	} else {
+		$old['phone'] = $phone;
 	}
 	if ( strlen( $password ) < 10 ) {
 		$errors[] = __( 'Please choose a password of at least 10 characters.', 'taxi-peninsula' );
@@ -1101,7 +1104,14 @@ function tp_handle_account_details() {
 			'display_name' => trim( $first . ' ' . $last ) ?: wp_get_current_user()->display_name,
 		)
 	);
-	update_user_meta( $user_id, 'tp_mobile', isset( $_POST['phone'] ) ? sanitize_text_field( wp_unslash( $_POST['phone'] ) ) : '' );
+	$phone = isset( $_POST['phone'] ) ? sanitize_text_field( wp_unslash( $_POST['phone'] ) ) : '';
+	if ( '' !== $phone ) {
+		$phone = tp_check_phone( $phone );
+		if ( is_wp_error( $phone ) ) {
+			tp_account_back( array( 'tab' => 'details' ), array( $phone->get_error_message() ), array( 'phone' => sanitize_text_field( wp_unslash( $_POST['phone'] ) ) ) );
+		}
+	}
+	update_user_meta( $user_id, 'tp_mobile', $phone );
 	if ( tp_is_coordinator() ) {
 		update_user_meta( $user_id, 'tp_org', isset( $_POST['org'] ) ? sanitize_text_field( wp_unslash( $_POST['org'] ) ) : '' );
 		update_user_meta( $user_id, 'tp_invoice_name', isset( $_POST['invoice_name'] ) ? sanitize_text_field( wp_unslash( $_POST['invoice_name'] ) ) : '' );

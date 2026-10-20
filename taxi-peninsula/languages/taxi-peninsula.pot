@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.7.6\n"
+"Project-Id-Version: Taxi Peninsula 2.8.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/taxi-peninsula\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-18T18:26:27+00:00\n"
+"POT-Creation-Date: 2026-10-20T12:44:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: taxi-peninsula\n"
@@ -66,7 +66,7 @@ msgid "FAQ"
 msgstr ""
 
 #: 404.php:16
-#: inc/accounts.php:1513
+#: inc/accounts.php:1523
 #: patterns/page-terms.php:112
 msgid "Contact us"
 msgstr ""
@@ -182,7 +182,7 @@ msgstr ""
 #. translators: %s: council
 #. translators: %s: suburb
 #: council.php:48
-#: inc/setup.php:123
+#: inc/setup.php:198
 #: local-service.php:32
 #: single-tp_area.php:151
 #, php-format
@@ -275,7 +275,7 @@ msgid "WhatsApp"
 msgstr ""
 
 #: footer.php:96
-#: inc/accounts.php:1518
+#: inc/accounts.php:1528
 msgid "Text us"
 msgstr ""
 
@@ -356,7 +356,7 @@ msgstr ""
 
 #: inc/accounts.php:100
 #: inc/bookings-cpt.php:189
-#: inc/bookings-cpt.php:649
+#: inc/bookings-cpt.php:654
 #: template-parts/booking-form.php:213
 msgid "Mobility aid"
 msgstr ""
@@ -374,9 +374,9 @@ msgid "Chair + passenger weight (kg)"
 msgstr ""
 
 #: inc/accounts.php:104
-#: inc/accounts.php:1380
+#: inc/accounts.php:1390
 #: inc/bookings-cpt.php:196
-#: inc/bookings-cpt.php:656
+#: inc/bookings-cpt.php:661
 msgid "NDIS number / reference"
 msgstr ""
 
@@ -469,7 +469,7 @@ msgid "Go to my jobs"
 msgstr ""
 
 #: inc/accounts.php:386
-#: inc/accounts.php:1481
+#: inc/accounts.php:1491
 #: inc/brand.php:348
 #: inc/brand.php:531
 msgid "My trips"
@@ -481,8 +481,9 @@ msgstr ""
 
 #: inc/accounts.php:387
 #: inc/bookings-cpt.php:186
-#: inc/bookings-cpt.php:647
+#: inc/bookings-cpt.php:652
 #: inc/home.php:112
+#: inc/partner-leaderboard.php:148
 #: template-parts/booking-form.php:223
 #: template-parts/booking-status.php:91
 msgid "Passengers"
@@ -510,19 +511,19 @@ msgstr ""
 #: inc/accounts.php:414
 #: inc/accounts.php:617
 #: inc/callbacks.php:32
-#: inc/contact.php:295
+#: inc/contact.php:306
 #: inc/home.php:112
 msgid "Book a trip"
 msgstr ""
 
 #: inc/accounts.php:415
-#: inc/accounts.php:1510
-#: inc/drivers.php:172
+#: inc/accounts.php:1520
+#: inc/drivers.php:174
 msgid "Sign out"
 msgstr ""
 
 #: inc/accounts.php:418
-#: inc/accounts.php:1471
+#: inc/accounts.php:1481
 msgid "My account"
 msgstr ""
 
@@ -562,7 +563,7 @@ msgid "Welcome! Your account is ready. Your next booking will appear here automa
 msgstr ""
 
 #: inc/accounts.php:489
-#: inc/accounts.php:1475
+#: inc/accounts.php:1485
 msgid "Sign in"
 msgstr ""
 
@@ -575,7 +576,7 @@ msgid "Forgotten your password?"
 msgstr ""
 
 #: inc/accounts.php:494
-#: inc/accounts.php:1477
+#: inc/accounts.php:1487
 msgid "Create an account"
 msgstr ""
 
@@ -626,7 +627,7 @@ msgstr ""
 #. translators: %s: email
 #: inc/accounts.php:526
 #: inc/bookings-cpt.php:180
-#: inc/bookings-cpt.php:642
+#: inc/bookings-cpt.php:647
 #: inc/careers.php:61
 #: inc/contact.php:86
 #: inc/content-types.php:466
@@ -634,9 +635,10 @@ msgstr ""
 #: inc/health.php:120
 #: inc/health.php:121
 #: inc/marketing.php:252
-#: inc/marketing.php:646
-#: inc/marketing.php:683
-#: inc/marketing.php:799
+#: inc/marketing.php:653
+#: inc/marketing.php:690
+#: inc/marketing.php:806
+#: inc/ndis-invoices.php:155
 #: inc/privacy.php:925
 #: inc/quotes.php:159
 #: inc/quotes.php:289
@@ -650,8 +652,8 @@ msgstr ""
 #: inc/accounts.php:866
 #: inc/careers.php:60
 #: inc/lost-property.php:131
-#: inc/marketing.php:683
-#: inc/marketing.php:799
+#: inc/marketing.php:690
+#: inc/marketing.php:806
 #: inc/privacy.php:282
 #: template-parts/booking-form.php:318
 msgid "Mobile"
@@ -700,9 +702,10 @@ msgstr ""
 #: inc/admin-tools.php:229
 #: inc/admin-tools.php:488
 #: inc/destinations.php:211
-#: inc/drivers.php:198
+#: inc/drivers.php:200
 #: inc/ndis-log.php:151
-#: inc/ndis-log.php:221
+#: inc/ndis-log.php:223
+#: inc/partner-leaderboard.php:137
 #: inc/partner-portal.php:205
 #: inc/statements.php:376
 msgid "Show"
@@ -816,7 +819,7 @@ msgstr ""
 #: inc/bookings-admin.php:438
 #: inc/bookings-cpt.php:93
 #: inc/dispatch.php:395
-#: inc/drivers.php:191
+#: inc/drivers.php:193
 #: inc/incidents.php:170
 #: inc/privacy.php:107
 msgid "Driver"
@@ -866,7 +869,7 @@ msgstr ""
 
 #: inc/accounts.php:765
 #: inc/languages.php:539
-#: inc/search-data.php:207
+#: inc/search-data.php:430
 msgid "Edit"
 msgstr ""
 
@@ -913,12 +916,12 @@ msgid "Add an address"
 msgstr ""
 
 #: inc/accounts.php:838
-#: inc/bookings-cpt.php:640
-#: inc/callbacks.php:322
+#: inc/bookings-cpt.php:645
+#: inc/callbacks.php:329
 #: inc/content-types.php:465
 #: inc/home.php:370
-#: inc/marketing.php:683
-#: inc/marketing.php:799
+#: inc/marketing.php:690
+#: inc/marketing.php:806
 #: inc/privacy.php:348
 #: inc/privacy.php:924
 #: inc/quotes.php:287
@@ -1020,67 +1023,63 @@ msgstr ""
 msgid "There is already an account with that email. Please sign in, or use “Forgotten your password?”."
 msgstr ""
 
-#: inc/accounts.php:973
-msgid "Please enter a valid mobile number."
-msgstr ""
-
-#: inc/accounts.php:976
-#: inc/accounts.php:1123
+#: inc/accounts.php:979
+#: inc/accounts.php:1133
 msgid "Please choose a password of at least 10 characters."
 msgstr ""
 
-#: inc/accounts.php:979
+#: inc/accounts.php:982
 msgid "Please enter your organisation’s name."
 msgstr ""
 
 #. translators: %s: organisation
-#: inc/accounts.php:1017
+#: inc/accounts.php:1020
 #, php-format
 msgid "New coordinator account: %s"
 msgstr ""
 
-#: inc/accounts.php:1058
+#: inc/accounts.php:1061
 msgid "Please enter a name."
 msgstr ""
 
-#: inc/accounts.php:1062
+#: inc/accounts.php:1065
 msgid "You have reached the limit of saved people. Please remove some first."
 msgstr ""
 
-#: inc/accounts.php:1084
+#: inc/accounts.php:1087
 msgid "Please enter an address."
 msgstr ""
 
-#: inc/accounts.php:1120
+#: inc/accounts.php:1130
 msgid "Your current password was not right."
 msgstr ""
 
-#: inc/accounts.php:1135
+#: inc/accounts.php:1145
 msgid "Too many attempts. Please wait a few minutes."
 msgstr ""
 
-#: inc/accounts.php:1144
+#: inc/accounts.php:1154
 msgid "We could not find a booking with that reference and phone number."
 msgstr ""
 
 #. translators: %d: stars
-#: inc/accounts.php:1171
+#: inc/accounts.php:1181
 #, php-format
 msgid "You rated this trip %d star. Thank you!"
 msgid_plural "You rated this trip %d stars. Thank you!"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/accounts.php:1178
+#: inc/accounts.php:1188
 msgid "Rate this trip"
 msgstr ""
 
-#: inc/accounts.php:1186
+#: inc/accounts.php:1196
 msgid "How was your trip?"
 msgstr ""
 
 #. translators: %d: stars
-#: inc/accounts.php:1189
+#: inc/accounts.php:1199
 #: inc/review-replies.php:157
 #, php-format
 msgid "%d star"
@@ -1088,53 +1087,56 @@ msgid_plural "%d stars"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/accounts.php:1193
+#: inc/accounts.php:1203
 msgid "Anything you would like to tell us? (optional)"
 msgstr ""
 
-#: inc/accounts.php:1197
+#: inc/accounts.php:1207
 msgid "Send rating"
 msgstr ""
 
 #. translators: 1: stars, 2: comment
-#: inc/accounts.php:1221
+#: inc/accounts.php:1231
 #, php-format
 msgid "Customer rating: %1$d★ %2$s"
 msgstr ""
 
 #. translators: 1: stars, 2: reference
-#: inc/accounts.php:1238
+#: inc/accounts.php:1248
 #, php-format
 msgid "Low rating (%1$d★) for %2$s"
 msgstr ""
 
-#: inc/accounts.php:1268
+#: inc/accounts.php:1278
+#: inc/ndis-invoices.php:438
 msgid "Tax invoice"
 msgstr ""
 
-#: inc/accounts.php:1270
+#: inc/accounts.php:1280
 msgid "Receipt"
 msgstr ""
 
-#: inc/accounts.php:1270
+#: inc/accounts.php:1280
 msgid "Trip summary"
 msgstr ""
 
-#: inc/accounts.php:1289
+#: inc/accounts.php:1299
 msgid "This receipt link is not valid."
 msgstr ""
 
-#: inc/accounts.php:1356
+#: inc/accounts.php:1366
 #: inc/statements.php:199
 msgid "Number"
 msgstr ""
 
-#: inc/accounts.php:1357
+#: inc/accounts.php:1367
 #: inc/admin-tools.php:219
 #: inc/dispatch.php:551
-#: inc/drivers.php:481
+#: inc/drivers.php:483
 #: inc/lost-property.php:470
-#: inc/ndis-log.php:411
+#: inc/ndis-invoices.php:178
+#: inc/ndis-invoices.php:457
+#: inc/ndis-log.php:413
 #: inc/partner-portal.php:224
 #: inc/quotes.php:147
 #: inc/quotes.php:283
@@ -1145,19 +1147,19 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: inc/accounts.php:1373
+#: inc/accounts.php:1383
 msgid "Bill to"
 msgstr ""
 
-#: inc/accounts.php:1373
-#: inc/accounts.php:1378
+#: inc/accounts.php:1383
+#: inc/accounts.php:1388
 #: inc/admin-tools.php:248
 #: inc/partner-portal.php:226
 #: inc/statements.php:219
 msgid "Passenger"
 msgstr ""
 
-#: inc/accounts.php:1388
+#: inc/accounts.php:1398
 #: inc/finance.php:184
 #: inc/incidents.php:248
 #: inc/lost-property.php:635
@@ -1167,17 +1169,20 @@ msgstr ""
 msgid "Trip"
 msgstr ""
 
-#: inc/accounts.php:1398
+#: inc/accounts.php:1408
 #: inc/lost-property.php:322
+#: inc/ndis-invoices.php:179
+#: inc/ndis-invoices.php:457
 msgid "Description"
 msgstr ""
 
-#: inc/accounts.php:1398
+#: inc/accounts.php:1408
 msgid "Amount (incl. GST)"
 msgstr ""
 
-#: inc/accounts.php:1402
+#: inc/accounts.php:1412
 #: inc/councils.php:219
+#: inc/ndis-invoices.php:96
 #: inc/places.php:464
 #: inc/search.php:216
 #: inc/seo.php:189
@@ -1185,81 +1190,86 @@ msgid "Wheelchair accessible taxi"
 msgstr ""
 
 #. translators: %s: promo code
-#: inc/accounts.php:1413
+#: inc/accounts.php:1423
 #, php-format
 msgid "Promo code %s"
 msgstr ""
 
-#: inc/accounts.php:1422
+#: inc/accounts.php:1432
 msgid "GST included"
 msgstr ""
 
-#: inc/accounts.php:1424
+#: inc/accounts.php:1434
 msgid "Paid online (deposit)"
 msgstr ""
 
-#: inc/accounts.php:1427
+#: inc/accounts.php:1437
+#: inc/ndis-invoices.php:215
+#: inc/ndis-invoices.php:293
+#: inc/ndis-invoices.php:467
 msgid "Amount due"
 msgstr ""
 
-#: inc/accounts.php:1427
+#: inc/accounts.php:1437
 msgid "Total paid"
 msgstr ""
 
-#: inc/accounts.php:1437
+#: inc/accounts.php:1447
 #: inc/finance.php:16
+#: inc/ndis-invoices.php:213
+#: inc/ndis-invoices.php:466
 #: inc/statements.php:215
 #: inc/statements.php:230
 msgid "Paid"
 msgstr ""
 
-#: inc/accounts.php:1440
+#: inc/accounts.php:1450
 msgid "The fare has not been entered yet. If you need a tax invoice for this trip, please contact us and quote the number above."
 msgstr ""
 
-#: inc/accounts.php:1442
+#: inc/accounts.php:1452
 msgid "This is a receipt, not a tax invoice."
 msgstr ""
 
-#: inc/accounts.php:1445
+#: inc/accounts.php:1455
 msgid "Multi Purpose Taxi Program (MPTP) member."
 msgstr ""
 
-#: inc/accounts.php:1452
-#: inc/ndis-log.php:382
+#: inc/accounts.php:1462
+#: inc/ndis-log.php:384
 #: inc/statements.php:245
 msgid "Print or save as PDF"
 msgstr ""
 
-#: inc/accounts.php:1453
+#: inc/accounts.php:1463
 msgid "Back to booking"
 msgstr ""
 
-#: inc/accounts.php:1481
+#: inc/accounts.php:1491
 msgid "My clients’ trips"
 msgstr ""
 
 #. translators: %s: name
-#: inc/accounts.php:1484
-#: inc/drivers.php:563
+#: inc/accounts.php:1494
+#: inc/drivers.php:565
 msgid "My jobs"
 msgstr ""
 
-#: inc/accounts.php:1487
+#: inc/accounts.php:1497
 #: inc/dispatch.php:16
 #: inc/dispatch.php:147
 msgid "Dispatch board"
 msgstr ""
 
-#: inc/accounts.php:1489
+#: inc/accounts.php:1499
 msgid "Dashboard"
 msgstr ""
 
-#: inc/accounts.php:1493
+#: inc/accounts.php:1503
 msgid "Manage a booking"
 msgstr ""
 
-#: inc/accounts.php:1503
+#: inc/accounts.php:1513
 msgid "Passengers, coordinators and drivers all sign in here."
 msgstr ""
 
@@ -1334,7 +1344,7 @@ msgid "Fare"
 msgstr ""
 
 #: inc/activity.php:213
-#: inc/bookings-cpt.php:663
+#: inc/bookings-cpt.php:668
 #: inc/finance.php:176
 #: inc/finance.php:187
 #: inc/privacy.php:94
@@ -1354,7 +1364,7 @@ msgstr ""
 #: inc/bookings-admin.php:78
 #: inc/bookings-admin.php:447
 #: inc/bookings-cpt.php:188
-#: inc/bookings-cpt.php:646
+#: inc/bookings-cpt.php:651
 #: inc/content-types.php:43
 #: inc/dispatch.php:402
 #: inc/incidents.php:171
@@ -1372,15 +1382,15 @@ msgstr ""
 
 #: inc/activity.php:304
 #: inc/alerts.php:230
-#: inc/bookings-cpt.php:666
+#: inc/bookings-cpt.php:671
 #: inc/quotes.php:284
-#: inc/setup.php:152
+#: inc/setup.php:227
 msgid "Yes"
 msgstr ""
 
 #: inc/activity.php:304
-#: inc/bookings-cpt.php:650
-#: inc/bookings-cpt.php:666
+#: inc/bookings-cpt.php:655
+#: inc/bookings-cpt.php:671
 #: inc/quotes.php:284
 msgid "No"
 msgstr ""
@@ -1465,10 +1475,10 @@ msgstr ""
 
 #: inc/activity.php:553
 #: inc/finance.php:167
-#: inc/marketing.php:679
-#: inc/search-data.php:203
-#: inc/search-data.php:217
-#: inc/search-data.php:781
+#: inc/marketing.php:686
+#: inc/search-data.php:426
+#: inc/search-data.php:440
+#: inc/search-data.php:1050
 #: searchform.php:13
 #: sidebar.php:20
 msgid "Search"
@@ -1496,7 +1506,7 @@ msgid "Anyone"
 msgstr ""
 
 #: inc/activity.php:569
-#: inc/bookings-cpt.php:644
+#: inc/bookings-cpt.php:649
 #: inc/content-types.php:417
 #: inc/finance.php:149
 #: inc/home.php:294
@@ -1508,7 +1518,7 @@ msgid "From"
 msgstr ""
 
 #: inc/activity.php:570
-#: inc/bookings-cpt.php:645
+#: inc/bookings-cpt.php:650
 #: inc/finance.php:150
 #: inc/mail-check.php:421
 #: inc/quotes.php:146
@@ -1555,7 +1565,7 @@ msgstr ""
 #: inc/activity.php:593
 #: inc/bookings-admin.php:74
 #: inc/bookings-cpt.php:23
-#: inc/drivers.php:482
+#: inc/drivers.php:484
 #: inc/starter-content.php:144
 #: inc/starter-content.php:145
 #: inc/starter-content.php:146
@@ -1588,10 +1598,10 @@ msgstr ""
 #: inc/admin-menus.php:53
 #: inc/marketing.php:70
 #: inc/marketing.php:233
-#: inc/marketing.php:438
-#: inc/marketing.php:461
-#: inc/marketing.php:612
-#: inc/marketing.php:804
+#: inc/marketing.php:445
+#: inc/marketing.php:468
+#: inc/marketing.php:619
+#: inc/marketing.php:811
 msgid "News & offers"
 msgstr ""
 
@@ -1681,7 +1691,8 @@ msgstr ""
 #: inc/admin-tools.php:133
 #: inc/dashboard.php:268
 #: inc/dashboard.php:269
-#: inc/ndis-log.php:437
+#: inc/ndis-invoices.php:292
+#: inc/ndis-log.php:439
 #, php-format
 msgid "%d trip"
 msgid_plural "%d trips"
@@ -1702,7 +1713,7 @@ msgstr ""
 
 #: inc/admin-tools.php:223
 #: inc/bookings-admin.php:184
-#: inc/drivers.php:193
+#: inc/drivers.php:195
 msgid "All drivers"
 msgstr ""
 
@@ -1711,6 +1722,7 @@ msgid "Include cancelled"
 msgstr ""
 
 #: inc/admin-tools.php:230
+#: inc/ndis-invoices.php:476
 #: inc/venues.php:436
 #: template-parts/booking-success.php:68
 msgid "Print"
@@ -1729,7 +1741,7 @@ msgid "No jobs for this day."
 msgstr ""
 
 #: inc/admin-tools.php:247
-#: inc/ndis-log.php:412
+#: inc/ndis-log.php:414
 msgid "Time"
 msgstr ""
 
@@ -1748,7 +1760,7 @@ msgstr ""
 
 #: inc/admin-tools.php:252
 #: inc/bookings-cpt.php:193
-#: inc/bookings-cpt.php:651
+#: inc/bookings-cpt.php:656
 #: inc/finance.php:151
 #: inc/finance.php:186
 #: template-parts/booking-form.php:66
@@ -1758,9 +1770,9 @@ msgid "Payment"
 msgstr ""
 
 #: inc/admin-tools.php:253
-#: inc/bookings-cpt.php:675
-#: inc/callbacks.php:278
-#: inc/search-data.php:846
+#: inc/bookings-cpt.php:680
+#: inc/callbacks.php:285
+#: inc/search-data.php:1115
 msgid "Notes"
 msgstr ""
 
@@ -1778,7 +1790,7 @@ msgstr ""
 
 #: inc/admin-tools.php:272
 #: inc/bookings-admin.php:92
-#: inc/drivers.php:325
+#: inc/drivers.php:327
 msgid "TBA"
 msgstr ""
 
@@ -1824,6 +1836,7 @@ msgid "Last 12 months"
 msgstr ""
 
 #: inc/admin-tools.php:476
+#: inc/ndis-invoices.php:149
 #: inc/statements.php:200
 msgid "Period"
 msgstr ""
@@ -1901,8 +1914,9 @@ msgstr ""
 #: inc/admin-tools.php:520
 #: inc/dispatch.php:178
 #: inc/finance.php:173
-#: inc/ndis-log.php:162
-#: inc/ndis-log.php:228
+#: inc/ndis-log.php:163
+#: inc/ndis-log.php:230
+#: inc/partner-leaderboard.php:146
 #: inc/partner-portal.php:261
 #: inc/statements.php:213
 #: inc/statements.php:382
@@ -2442,31 +2456,31 @@ msgstr ""
 msgid "Pause animations"
 msgstr ""
 
-#: inc/animations.php:296
+#: inc/animations.php:301
 msgid "Animations"
 msgstr ""
 
-#: inc/animations.php:298
+#: inc/animations.php:303
 msgid "Moving taxis and the pickup/airport scenes. Visitors can pause them, and they stay still for anyone whose device asks for reduced motion. The scenes are also on the home page (Home page layout → “How a trip works”), on service pages, and anywhere you add the shortcode [tp_scene name=\"pickup\"], [tp_scene name=\"airport\"] or [tp_scene name=\"road\"]."
 msgstr ""
 
-#: inc/animations.php:302
+#: inc/animations.php:307
 msgid "Turn animations on"
 msgstr ""
 
-#: inc/animations.php:302
+#: inc/animations.php:307
 msgid "When off, the scenes show as still pictures and the moving road is hidden."
 msgstr ""
 
-#: inc/animations.php:303
+#: inc/animations.php:308
 msgid "Taxis driving along the bottom of the home page hero"
 msgstr ""
 
-#: inc/animations.php:304
+#: inc/animations.php:309
 msgid "Taxis driving under page title banners"
 msgstr ""
 
-#: inc/animations.php:305
+#: inc/animations.php:310
 msgid "Taxis driving along the top of the footer"
 msgstr ""
 
@@ -2543,7 +2557,7 @@ msgid "Pick-up time"
 msgstr ""
 
 #: inc/bookings-admin.php:76
-#: inc/drivers.php:483
+#: inc/drivers.php:485
 #: inc/lost-property.php:211
 #: inc/lost-property.php:323
 msgid "Route"
@@ -2552,18 +2566,18 @@ msgstr ""
 #: inc/bookings-admin.php:80
 #: inc/bookings-admin.php:326
 #: inc/bookings-admin.php:398
-#: inc/bookings-cpt.php:639
-#: inc/callbacks.php:280
-#: inc/callbacks.php:326
+#: inc/bookings-cpt.php:644
+#: inc/callbacks.php:287
+#: inc/callbacks.php:333
 #: inc/content-plan.php:176
 #: inc/incidents.php:164
 #: inc/incidents.php:251
 #: inc/incidents.php:300
 #: inc/lost-property.php:311
 #: inc/lost-property.php:473
-#: inc/marketing.php:683
-#: inc/marketing.php:799
-#: inc/ndis-log.php:416
+#: inc/marketing.php:690
+#: inc/marketing.php:806
+#: inc/ndis-log.php:418
 #: inc/partner-portal.php:228
 #: inc/privacy.php:82
 #: inc/quotes.php:332
@@ -2590,7 +2604,7 @@ msgstr ""
 
 #. translators: 1: passengers, 2: wheelchairs
 #: inc/bookings-admin.php:112
-#: inc/drivers.php:320
+#: inc/drivers.php:322
 #, php-format
 msgid "%1$d pax · %2$d wheelchair(s)"
 msgstr ""
@@ -2601,7 +2615,7 @@ msgid "Customer request"
 msgstr ""
 
 #: inc/bookings-admin.php:130
-#: inc/payment-info.php:99
+#: inc/payment-info.php:100
 msgid "Account"
 msgstr ""
 
@@ -2619,7 +2633,7 @@ msgstr ""
 
 #: inc/bookings-admin.php:172
 #: inc/dispatch.php:168
-#: inc/drivers.php:273
+#: inc/drivers.php:275
 msgid "Today"
 msgstr ""
 
@@ -2897,7 +2911,7 @@ msgid "Pick up when ready (e.g. hospital discharge — the time is the earliest 
 msgstr ""
 
 #: inc/bookings-cpt.php:187
-#: inc/bookings-cpt.php:648
+#: inc/bookings-cpt.php:653
 #: inc/quotes.php:150
 #: inc/quotes.php:286
 #: template-parts/booking-form.php:228
@@ -2905,7 +2919,7 @@ msgid "Wheelchairs"
 msgstr ""
 
 #: inc/bookings-cpt.php:190
-#: inc/bookings-cpt.php:650
+#: inc/bookings-cpt.php:655
 #: inc/quotes.php:284
 #: template-parts/booking-status.php:88
 msgid "Return trip"
@@ -2916,7 +2930,7 @@ msgid "Return pick-up time"
 msgstr ""
 
 #: inc/bookings-cpt.php:192
-#: inc/bookings-cpt.php:666
+#: inc/bookings-cpt.php:671
 msgid "MPTP member"
 msgstr ""
 
@@ -2933,7 +2947,7 @@ msgid "Flight number"
 msgstr ""
 
 #: inc/bookings-cpt.php:199
-#: inc/bookings-cpt.php:672
+#: inc/bookings-cpt.php:677
 #: inc/promos.php:24
 msgid "Promo code"
 msgstr ""
@@ -2956,51 +2970,47 @@ msgstr ""
 msgid "This field is required."
 msgstr ""
 
-#: inc/bookings-cpt.php:331
-msgid "Please enter a valid phone number."
-msgstr ""
-
-#: inc/bookings-cpt.php:348
+#: inc/bookings-cpt.php:353
 msgid "Tell us who to invoice."
 msgstr ""
 
-#: inc/bookings-cpt.php:351
+#: inc/bookings-cpt.php:356
 msgid "Please enter the email address for invoices."
 msgstr ""
 
-#: inc/bookings-cpt.php:362
+#: inc/bookings-cpt.php:367
 msgid "Please choose a valid date."
 msgstr ""
 
-#: inc/bookings-cpt.php:365
-#: inc/bookings-cpt.php:385
+#: inc/bookings-cpt.php:370
+#: inc/bookings-cpt.php:390
 msgid "Please choose a valid time."
 msgstr ""
 
 #. translators: %s: phone number
-#: inc/bookings-cpt.php:377
+#: inc/bookings-cpt.php:382
 #, php-format
 msgid "Online bookings need a little notice. For an urgent pick-up please call %s."
 msgstr ""
 
-#: inc/bookings-cpt.php:396
+#: inc/bookings-cpt.php:401
 msgid "Please check the flight number, e.g. QF432 or VA 1234."
 msgstr ""
 
 #. translators: 1: months, 2: phone number
-#: inc/bookings-cpt.php:409
+#: inc/bookings-cpt.php:414
 #, php-format
 msgid "Online bookings can be made up to %1$d months ahead. For a later date please call %2$s."
 msgstr ""
 
 #. translators: %s: phone number
-#: inc/bookings-cpt.php:415
+#: inc/bookings-cpt.php:420
 #: template-parts/booking-form.php:37
 msgid "The return pick-up needs to be after the first pick-up time."
 msgstr ""
 
 #. translators: %d: wheelchairs
-#: inc/bookings-cpt.php:422
+#: inc/bookings-cpt.php:427
 #, php-format
 msgid "This vehicle takes %d wheelchair. Choose \"Maxi WAT\" for two wheelchairs."
 msgid_plural "This vehicle takes %d wheelchairs. Choose \"Maxi WAT\" for two wheelchairs."
@@ -3008,61 +3018,61 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: phone number
-#: inc/bookings-cpt.php:424
+#: inc/bookings-cpt.php:429
 #: template-parts/booking-form.php:37
 #, php-format
 msgid "For more than two wheelchairs we send more than one vehicle — please call %s."
 msgstr ""
 
 #. translators: 1: number of people, 2: phone number
-#: inc/bookings-cpt.php:429
+#: inc/bookings-cpt.php:434
 #, php-format
 msgid "This vehicle seats up to %1$d people including wheelchair users. Choose \"Maxi WAT\" or call %2$s for a larger group."
 msgstr ""
 
-#: inc/bookings-cpt.php:457
+#: inc/bookings-cpt.php:462
 msgid "Choose which days the trip repeats."
 msgstr ""
 
-#: inc/bookings-cpt.php:464
+#: inc/bookings-cpt.php:469
 msgid "Choose an end date after the first trip."
 msgstr ""
 
 #. translators: %d: number of weeks
-#: inc/bookings-cpt.php:471
+#: inc/bookings-cpt.php:476
 #, php-format
 msgid "Repeat bookings can run for up to %d weeks. Call us to arrange a longer schedule."
 msgstr ""
 
 #. translators: %s: driver name
-#: inc/bookings-cpt.php:585
+#: inc/bookings-cpt.php:590
 #, php-format
 msgid "Driver assigned: %s"
 msgstr ""
 
-#: inc/bookings-cpt.php:595
+#: inc/bookings-cpt.php:600
 msgid "Driver unassigned"
 msgstr ""
 
 #. translators: %s: date and earliest time
-#: inc/bookings-cpt.php:613
+#: inc/bookings-cpt.php:618
 #, php-format
 msgid "%s or later — when ready"
 msgstr ""
 
-#: inc/bookings-cpt.php:638
+#: inc/bookings-cpt.php:643
 #: inc/lost-property.php:211
 #: inc/mail-check.php:359
-#: inc/ndis-log.php:413
+#: inc/ndis-log.php:415
 #: inc/partner-portal.php:225
 #: inc/privacy.php:81
 #: inc/quotes.php:279
 msgid "Reference"
 msgstr ""
 
-#: inc/bookings-cpt.php:641
-#: inc/callbacks.php:275
-#: inc/callbacks.php:323
+#: inc/bookings-cpt.php:646
+#: inc/callbacks.php:282
+#: inc/callbacks.php:330
 #: inc/content-types.php:468
 #: inc/privacy.php:349
 #: inc/quotes.php:160
@@ -3070,49 +3080,49 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
-#: inc/bookings-cpt.php:643
-#: inc/setup.php:150
+#: inc/bookings-cpt.php:648
+#: inc/setup.php:225
 #: template-parts/trip-summary.php:19
 msgid "Pick-up"
 msgstr ""
 
-#: inc/bookings-cpt.php:650
+#: inc/bookings-cpt.php:655
 msgid "Yes – time to be arranged"
 msgstr ""
 
-#: inc/bookings-cpt.php:654
+#: inc/bookings-cpt.php:659
 #: inc/statements.php:382
 #: template-parts/booking-form.php:267
 msgid "Invoice to"
 msgstr ""
 
-#: inc/bookings-cpt.php:660
+#: inc/bookings-cpt.php:665
 #: inc/maps.php:387
 #: template-parts/booking-status.php:120
 msgid "Estimated fare"
 msgstr ""
 
-#: inc/bookings-cpt.php:660
+#: inc/bookings-cpt.php:665
 msgid "(estimate only)"
 msgstr ""
 
-#: inc/bookings-cpt.php:669
+#: inc/bookings-cpt.php:674
 msgid "Flight"
 msgstr ""
 
-#: inc/bookings-cpt.php:723
+#: inc/bookings-cpt.php:728
 #: template-parts/booking-status.php:16
 msgid "Pay the driver"
 msgstr ""
 
-#: inc/bookings-cpt.php:724
+#: inc/bookings-cpt.php:729
 #: inc/settings-tabs.php:134
 #: inc/settings-tabs.php:135
 #: template-parts/booking-status.php:16
 msgid "Account / invoice"
 msgstr ""
 
-#: inc/bookings-cpt.php:725
+#: inc/bookings-cpt.php:730
 msgid "Online deposit (Stripe)"
 msgstr ""
 
@@ -3173,11 +3183,12 @@ msgstr ""
 #. translators: %s: first name
 #: inc/bookings-form.php:299
 #: inc/bookings-form.php:357
-#: inc/contact.php:258
-#: inc/drivers.php:563
+#: inc/contact.php:269
+#: inc/drivers.php:565
 #: inc/lost-property.php:433
 #: inc/marketing.php:192
-#: inc/marketing.php:536
+#: inc/marketing.php:543
+#: inc/partner-leaderboard.php:211
 #: inc/quotes.php:268
 #: inc/quotes.php:376
 #: inc/review-invite.php:118
@@ -3295,7 +3306,7 @@ msgid "Book"
 msgstr ""
 
 #: inc/brand.php:533
-#: inc/callbacks.php:275
+#: inc/callbacks.php:282
 msgid "Call"
 msgstr ""
 
@@ -3398,7 +3409,7 @@ msgid "We have your request and will ring you at the time you chose. The call ma
 msgstr ""
 
 #: inc/callbacks.php:144
-#: inc/callbacks.php:211
+#: inc/callbacks.php:218
 #: inc/careers.php:52
 #: inc/contact.php:73
 #: inc/lost-property.php:105
@@ -3452,73 +3463,73 @@ msgid "Please enter a phone number so we can call you."
 msgstr ""
 
 #. translators: %s: phone
-#: inc/callbacks.php:218
+#: inc/callbacks.php:225
 #: inc/quotes.php:234
 #, php-format
 msgid "Sorry, we could not save your request. Please call %s."
 msgstr ""
 
 #. translators: %s: name
-#: inc/callbacks.php:230
+#: inc/callbacks.php:237
 #, php-format
 msgid "Call-back requested by %s"
 msgstr ""
 
 #. translators: 1: name, 2: phone
-#: inc/callbacks.php:239
+#: inc/callbacks.php:246
 #, php-format
 msgid "Call-back request: %1$s, %2$s"
 msgstr ""
 
-#: inc/callbacks.php:240
-#: inc/callbacks.php:276
-#: inc/callbacks.php:324
+#: inc/callbacks.php:247
+#: inc/callbacks.php:283
+#: inc/callbacks.php:331
 msgid "Best time"
 msgstr ""
 
-#: inc/callbacks.php:240
-#: inc/callbacks.php:277
-#: inc/callbacks.php:325
+#: inc/callbacks.php:247
+#: inc/callbacks.php:284
+#: inc/callbacks.php:332
 msgid "About"
 msgstr ""
 
-#: inc/callbacks.php:240
+#: inc/callbacks.php:247
 msgid "Open call-backs"
 msgstr ""
 
 #. translators: 1: name, 2: phone, 3: time
-#: inc/callbacks.php:246
+#: inc/callbacks.php:253
 #, php-format
 msgid "Call-back: %1$s %2$s (%3$s)"
 msgstr ""
 
 #. translators: 1: site name, 2: time
-#: inc/callbacks.php:253
+#: inc/callbacks.php:260
 #, php-format
 msgid "%1$s: thanks, we will call you back (%2$s). Need a taxi now? Call %3$s"
 msgstr ""
 
-#: inc/callbacks.php:266
+#: inc/callbacks.php:273
 msgid "Call-back details"
 msgstr ""
 
-#: inc/callbacks.php:279
+#: inc/callbacks.php:286
 msgid "Booking made (reference)"
 msgstr ""
 
 #. translators: 1: number, 2: date
-#: inc/callbacks.php:282
+#: inc/callbacks.php:289
 #, php-format
 msgid "Call attempts: %1$d · last %2$s"
 msgstr ""
 
 #. translators: 1: name, 2: status
-#: inc/callbacks.php:311
+#: inc/callbacks.php:318
 #, php-format
 msgid "Call-back for %1$s: %2$s"
 msgstr ""
 
-#: inc/callbacks.php:327
+#: inc/callbacks.php:334
 msgid "Requested"
 msgstr ""
 
@@ -3637,52 +3648,52 @@ msgstr ""
 msgid "Too many applications from your connection. Please try again later."
 msgstr ""
 
-#: inc/careers.php:145
+#: inc/careers.php:153
 msgid "Please fill in your name, mobile, a valid email and tick the consent box."
 msgstr ""
 
-#: inc/careers.php:150
+#: inc/careers.php:158
 msgid "Holds accreditation"
 msgstr ""
 
-#: inc/careers.php:151
+#: inc/careers.php:159
 msgid "Applying for accreditation"
 msgstr ""
 
-#: inc/careers.php:152
+#: inc/careers.php:160
 msgid "No accreditation yet"
 msgstr ""
 
-#: inc/careers.php:153
+#: inc/careers.php:161
 msgid "No WAT experience"
 msgstr ""
 
-#: inc/careers.php:154
+#: inc/careers.php:162
 msgid "Some WAT experience"
 msgstr ""
 
-#: inc/careers.php:155
+#: inc/careers.php:163
 msgid "Experienced WAT driver"
 msgstr ""
 
-#: inc/careers.php:160
+#: inc/careers.php:168
 msgid "Suburb:"
 msgstr ""
 
-#: inc/careers.php:161
+#: inc/careers.php:169
 msgid "Accreditation:"
 msgstr ""
 
-#: inc/careers.php:162
+#: inc/careers.php:170
 msgid "Experience:"
 msgstr ""
 
-#: inc/careers.php:163
+#: inc/careers.php:171
 msgid "Available:"
 msgstr ""
 
 #. translators: %s: name
-#: inc/careers.php:190
+#: inc/careers.php:198
 #, php-format
 msgid "Driver application: %s"
 msgstr ""
@@ -3806,7 +3817,7 @@ msgid "Check"
 msgstr ""
 
 #: inc/contact.php:13
-#: inc/contact.php:296
+#: inc/contact.php:307
 msgid "General question"
 msgstr ""
 
@@ -3815,7 +3826,7 @@ msgid "Quote for a trip"
 msgstr ""
 
 #: inc/contact.php:15
-#: inc/contact.php:297
+#: inc/contact.php:308
 msgid "NDIS / aged-care account"
 msgstr ""
 
@@ -3824,15 +3835,15 @@ msgid "Feedback"
 msgstr ""
 
 #: inc/contact.php:17
-#: inc/contact.php:265
-#: inc/contact.php:298
+#: inc/contact.php:276
+#: inc/contact.php:309
 #: inc/incidents.php:28
 #: inc/incidents.php:116
 msgid "Complaint"
 msgstr ""
 
 #: inc/contact.php:18
-#: inc/contact.php:299
+#: inc/contact.php:310
 #: inc/lost-property.php:33
 #: inc/lost-property.php:37
 #: patterns/page-terms.php:88
@@ -3901,91 +3912,91 @@ msgstr ""
 msgid "Too many messages from your connection. Please call %s."
 msgstr ""
 
-#: inc/contact.php:179
+#: inc/contact.php:188
 msgid "Please fill in your name, a valid email and your message."
 msgstr ""
 
 #. translators: 1: topic, 2: name
-#: inc/contact.php:204
+#: inc/contact.php:215
 #, php-format
 msgid "Website enquiry: %1$s — %2$s"
 msgstr ""
 
-#: inc/contact.php:259
+#: inc/contact.php:270
 msgid "Thanks for getting in touch — we have received your message."
 msgstr ""
 
 #. translators: %s: response time, e.g. "within one business day"
-#: inc/contact.php:262
+#: inc/contact.php:273
 #, php-format
 msgid "We aim to reply %s."
 msgstr ""
 
-#: inc/contact.php:267
+#: inc/contact.php:278
 msgid "We take every complaint seriously and will keep you updated until it is resolved."
 msgstr ""
 
-#: inc/contact.php:269
+#: inc/contact.php:280
 msgid "How we handle complaints:"
 msgstr ""
 
 #. translators: %s: phone
-#: inc/contact.php:274
+#: inc/contact.php:285
 #, php-format
 msgid "If it is urgent, please call %s."
 msgstr ""
 
-#: inc/contact.php:275
+#: inc/contact.php:286
 msgid "Your message:"
 msgstr ""
 
 #. translators: %s: site name
-#: inc/contact.php:279
+#: inc/contact.php:290
 #, php-format
 msgid "We received your message — %s"
 msgstr ""
 
-#: inc/contact.php:295
+#: inc/contact.php:306
 msgid "Online in two minutes, or call us."
 msgstr ""
 
-#: inc/contact.php:296
+#: inc/contact.php:307
 msgid "Change or cancel a booking"
 msgstr ""
 
-#: inc/contact.php:296
+#: inc/contact.php:307
 msgid "Use your reference and mobile number."
 msgstr ""
 
-#: inc/contact.php:297
+#: inc/contact.php:308
 msgid "NDIS or aged-care account"
 msgstr ""
 
-#: inc/contact.php:297
+#: inc/contact.php:308
 msgid "Regular trips and invoicing."
 msgstr ""
 
-#: inc/contact.php:298
+#: inc/contact.php:309
 msgid "Feedback or a complaint"
 msgstr ""
 
-#: inc/contact.php:298
+#: inc/contact.php:309
 msgid "Tell us what went well — or what did not."
 msgstr ""
 
-#: inc/contact.php:299
+#: inc/contact.php:310
 msgid "Left something in a taxi? Tell us your trip details."
 msgstr ""
 
-#: inc/contact.php:303
+#: inc/contact.php:314
 msgid "Drive with us"
 msgstr ""
 
-#: inc/contact.php:303
+#: inc/contact.php:314
 msgid "Jobs for patient, reliable drivers."
 msgstr ""
 
-#: inc/contact.php:309
+#: inc/contact.php:320
 msgid "What can we help with?"
 msgstr ""
 
@@ -4475,7 +4486,7 @@ msgstr ""
 #: inc/local-seo.php:31
 #: inc/local-seo.php:54
 #: inc/photos.php:92
-#: inc/setup.php:192
+#: inc/setup.php:270
 #: inc/starter-content.php:443
 msgid "Services"
 msgstr ""
@@ -4486,7 +4497,7 @@ msgid "Service"
 msgstr ""
 
 #: inc/content-types.php:72
-#: inc/setup.php:193
+#: inc/setup.php:271
 msgid "Areas"
 msgstr ""
 
@@ -5035,7 +5046,7 @@ msgstr ""
 
 #. translators: %d: count
 #: inc/dashboard.php:269
-#: inc/drivers.php:469
+#: inc/drivers.php:471
 msgid "No-shows"
 msgstr ""
 
@@ -5963,8 +5974,8 @@ msgid "Vehicle seats %1$d; trip has %2$d passengers"
 msgstr ""
 
 #: inc/dispatch.php:164
-#: inc/drivers.php:224
-#: inc/drivers.php:272
+#: inc/drivers.php:226
+#: inc/drivers.php:274
 msgid "Previous day"
 msgstr ""
 
@@ -5973,8 +5984,8 @@ msgid "Day"
 msgstr ""
 
 #: inc/dispatch.php:167
-#: inc/drivers.php:226
-#: inc/drivers.php:274
+#: inc/drivers.php:228
+#: inc/drivers.php:276
 msgid "Next day"
 msgstr ""
 
@@ -6201,244 +6212,244 @@ msgstr ""
 msgid "Used on the dispatch board when you assign this driver without choosing a vehicle."
 msgstr ""
 
-#: inc/drivers.php:120
+#: inc/drivers.php:122
 msgid "Driver sign in"
 msgstr ""
 
-#: inc/drivers.php:128
+#: inc/drivers.php:130
 msgid "This page is for drivers only."
 msgstr ""
 
-#: inc/drivers.php:139
+#: inc/drivers.php:141
 msgid "Jobs by day"
 msgstr ""
 
-#: inc/drivers.php:140
+#: inc/drivers.php:142
 msgid "My week"
 msgstr ""
 
-#: inc/drivers.php:142
+#: inc/drivers.php:144
 msgid "Driver views"
 msgstr ""
 
 #. translators: %s: new status
-#: inc/drivers.php:234
+#: inc/drivers.php:236
 #, php-format
 msgid "Trip updated: %s."
 msgstr ""
 
-#: inc/drivers.php:236
+#: inc/drivers.php:238
 msgid "Trip declined. The office has been told so they can reassign it."
 msgstr ""
 
-#: inc/drivers.php:238
+#: inc/drivers.php:240
 msgid "That trip had already changed, so nothing was updated. Here is its latest status."
 msgstr ""
 
-#: inc/drivers.php:261
+#: inc/drivers.php:263
 msgid "No jobs for this day"
 msgstr ""
 
-#: inc/drivers.php:261
+#: inc/drivers.php:263
 msgid "Swipe or use the arrows to check other days. New jobs are texted to you."
 msgstr ""
 
-#: inc/drivers.php:271
+#: inc/drivers.php:273
 msgid "Change day"
 msgstr ""
 
-#: inc/drivers.php:299
+#: inc/drivers.php:301
 msgid "Next job"
 msgstr ""
 
-#: inc/drivers.php:312
+#: inc/drivers.php:314
 msgid "Pick up"
 msgstr ""
 
-#: inc/drivers.php:313
+#: inc/drivers.php:315
 msgid "Drop off"
 msgstr ""
 
-#: inc/drivers.php:325
+#: inc/drivers.php:327
 msgid "Return trip:"
 msgstr ""
 
-#: inc/drivers.php:331
+#: inc/drivers.php:333
 msgid "Account — do not charge passenger"
 msgstr ""
 
 #. translators: %s: amount
-#: inc/drivers.php:336
+#: inc/drivers.php:338
 #, php-format
 msgid "Deposit paid: %s"
 msgstr ""
 
-#: inc/drivers.php:359
+#: inc/drivers.php:361
 msgid "Call passenger"
 msgstr ""
 
-#: inc/drivers.php:360
+#: inc/drivers.php:362
 msgid "Navigate to drop-off"
 msgstr ""
 
-#: inc/drivers.php:360
+#: inc/drivers.php:362
 msgid "Navigate to pick-up"
 msgstr ""
 
-#: inc/drivers.php:360
+#: inc/drivers.php:362
 msgid "(opens Google Maps)"
 msgstr ""
 
-#: inc/drivers.php:364
+#: inc/drivers.php:366
 msgid "Can’t do this trip?"
 msgstr ""
 
-#: inc/drivers.php:368
+#: inc/drivers.php:370
 msgid "Reason"
 msgstr ""
 
-#: inc/drivers.php:374
+#: inc/drivers.php:376
 msgid "Note for the office (optional)"
 msgstr ""
 
-#: inc/drivers.php:377
+#: inc/drivers.php:379
 msgid "Decline trip"
 msgstr ""
 
-#: inc/drivers.php:394
+#: inc/drivers.php:396
 msgid "Choose a driver to see their week."
 msgstr ""
 
-#: inc/drivers.php:420
+#: inc/drivers.php:422
 msgid "Coming up (next 7 days)"
 msgstr ""
 
-#: inc/drivers.php:422
+#: inc/drivers.php:424
 msgid "No upcoming trips this week"
 msgstr ""
 
-#: inc/drivers.php:456
+#: inc/drivers.php:458
 msgid "Previous week"
 msgstr ""
 
 #. translators: 1: start date, 2: end date
-#: inc/drivers.php:460
+#: inc/drivers.php:462
 #, php-format
 msgid "Timesheet %1$s – %2$s"
 msgstr ""
 
-#: inc/drivers.php:463
+#: inc/drivers.php:465
 msgid "Next week"
 msgstr ""
 
-#: inc/drivers.php:466
+#: inc/drivers.php:468
 msgid "Trips completed"
 msgstr ""
 
-#: inc/drivers.php:467
+#: inc/drivers.php:469
 msgid "Hours with passengers"
 msgstr ""
 
-#: inc/drivers.php:468
+#: inc/drivers.php:470
 msgid "Trip km (estimated)"
 msgstr ""
 
 #. translators: %d: number of ratings
-#: inc/drivers.php:471
+#: inc/drivers.php:473
 #, php-format
 msgid "Rating (%d review)"
 msgid_plural "Rating (%d reviews)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/drivers.php:475
+#: inc/drivers.php:477
 msgid "No finished trips this week yet."
 msgstr ""
 
-#: inc/drivers.php:477
+#: inc/drivers.php:479
 msgid "Timesheet"
 msgstr ""
 
-#: inc/drivers.php:484
+#: inc/drivers.php:486
 #: inc/trips.php:20
 msgid "On my way"
 msgstr ""
 
-#: inc/drivers.php:485
+#: inc/drivers.php:487
 msgid "On board"
 msgstr ""
 
-#: inc/drivers.php:486
-#: inc/marketing.php:667
+#: inc/drivers.php:488
+#: inc/marketing.php:674
 msgid "Finished"
 msgstr ""
 
-#: inc/drivers.php:487
+#: inc/drivers.php:489
 msgid "Minutes"
 msgstr ""
 
-#: inc/drivers.php:494
+#: inc/drivers.php:496
 msgid "no-show"
 msgstr ""
 
-#: inc/drivers.php:505
+#: inc/drivers.php:507
 msgid "Print timesheet"
 msgstr ""
 
-#: inc/drivers.php:545
+#: inc/drivers.php:547
 msgid "You cannot change this user."
 msgstr ""
 
-#: inc/drivers.php:549
+#: inc/drivers.php:551
 msgid "Staff and coordinator accounts are not changed here. Use the Role setting on their profile."
 msgstr ""
 
 #. translators: %s: name
-#: inc/drivers.php:554
+#: inc/drivers.php:556
 #, php-format
 msgid "%s is now a driver"
 msgstr ""
 
 #. translators: %s: name
-#: inc/drivers.php:554
+#: inc/drivers.php:556
 #, php-format
 msgid "%s is now a customer (driver access removed)"
 msgstr ""
 
 #. translators: %s: site
-#: inc/drivers.php:561
+#: inc/drivers.php:563
 #, php-format
 msgid "You now have driver access — %s"
 msgstr ""
 
 #. translators: %s: name
-#: inc/drivers.php:563
+#: inc/drivers.php:565
 msgid "Your account can now see the jobs assigned to you. Sign in with your usual email and password."
 msgstr ""
 
-#: inc/drivers.php:582
-#: inc/drivers.php:604
+#: inc/drivers.php:584
+#: inc/drivers.php:606
 msgid "Make customer"
 msgstr ""
 
-#: inc/drivers.php:582
-#: inc/drivers.php:603
+#: inc/drivers.php:584
+#: inc/drivers.php:605
 msgid "Make driver"
 msgstr ""
 
-#: inc/drivers.php:637
+#: inc/drivers.php:639
 msgid "Driver access given. They have been emailed and can now see their jobs after signing in."
 msgstr ""
 
-#: inc/drivers.php:639
+#: inc/drivers.php:641
 msgid "Driver access removed. The account is a customer account again."
 msgstr ""
 
-#: inc/drivers.php:641
+#: inc/drivers.php:643
 msgid "That account could not be changed. Staff and coordinator accounts are changed with the Role setting on their profile."
 msgstr ""
 
-#: inc/drivers.php:643
+#: inc/drivers.php:645
 msgid "Drivers cannot sign up themselves. Ask the driver to create a normal account on the website, then click \"Make driver\" under their name here."
 msgstr ""
 
@@ -6542,7 +6553,7 @@ msgid "Live now"
 msgstr ""
 
 #: inc/dynamic.php:184
-#: inc/setup.php:154
+#: inc/setup.php:229
 msgid "Now"
 msgstr ""
 
@@ -7000,7 +7011,7 @@ msgid "No trips match these filters."
 msgstr ""
 
 #: inc/finance.php:217
-#: inc/ndis-log.php:417
+#: inc/ndis-log.php:419
 msgid "Fare incl. GST"
 msgstr ""
 
@@ -7186,7 +7197,7 @@ msgid "Google profile is not connected."
 msgstr ""
 
 #: inc/gbp.php:81
-#: inc/search-data.php:51
+#: inc/search-data.php:79
 msgid "Could not sign in to Google. Please connect again."
 msgstr ""
 
@@ -7276,6 +7287,7 @@ msgstr ""
 #: inc/gbp.php:199
 #: inc/lost-property.php:114
 #: inc/lost-property.php:467
+#: inc/ndis-invoices.php:180
 msgid "Item"
 msgstr ""
 
@@ -7308,7 +7320,7 @@ msgid "Location saved."
 msgstr ""
 
 #: inc/gbp.php:361
-#: inc/search-data.php:336
+#: inc/search-data.php:605
 msgid "Disconnected."
 msgstr ""
 
@@ -7734,7 +7746,7 @@ msgstr ""
 #: inc/health.php:100
 #: inc/health.php:102
 #: inc/health.php:104
-#: inc/marketing.php:702
+#: inc/marketing.php:709
 msgid "SMS \"STOP\" replies"
 msgstr ""
 
@@ -8019,6 +8031,16 @@ msgstr ""
 #: inc/statements.php:225
 #: inc/trips.php:24
 msgid "No-show"
+msgstr ""
+
+#: inc/helpers.php:421
+#: inc/setup.php:232
+msgid "Please enter an Australian phone number, e.g. 0412 345 678 or (03) 9123 4567."
+msgstr ""
+
+#: inc/helpers.php:424
+#: inc/setup.php:233
+msgid "Please enter a mobile number starting with 04, so we can send texts."
 msgstr ""
 
 #: inc/home.php:18
@@ -8389,10 +8411,10 @@ msgid "Photo"
 msgstr ""
 
 #: inc/home.php:371
-#: inc/search-data.php:203
-#: inc/search-data.php:217
-#: inc/search-data.php:225
-#: inc/search-data.php:782
+#: inc/search-data.php:426
+#: inc/search-data.php:440
+#: inc/search-data.php:448
+#: inc/search-data.php:1051
 msgid "Shown"
 msgstr ""
 
@@ -8418,41 +8440,41 @@ msgstr ""
 
 #. translators: %s: closing time
 #: inc/hours.php:84
-#: inc/setup.php:135
+#: inc/setup.php:210
 #, php-format
 msgid "Open now · phones answered until %s"
 msgstr ""
 
 #. translators: %s: time
 #: inc/hours.php:95
-#: inc/setup.php:140
+#: inc/setup.php:215
 #, php-format
 msgid "we open at %s"
 msgstr ""
 
 #. translators: %s: time
 #: inc/hours.php:98
-#: inc/setup.php:142
+#: inc/setup.php:217
 #, php-format
 msgid "we open tomorrow at %s"
 msgstr ""
 
 #. translators: 1: weekday, 2: time
 #: inc/hours.php:101
-#: inc/setup.php:144
+#: inc/setup.php:219
 #, php-format
 msgid "we open %1$s at %2$s"
 msgstr ""
 
 #. translators: %s: when we open
 #: inc/hours.php:104
-#: inc/setup.php:138
+#: inc/setup.php:213
 #, php-format
 msgid "Closed now · %s"
 msgstr ""
 
 #: inc/hours.php:106
-#: inc/setup.php:136
+#: inc/setup.php:211
 msgid "Closed now"
 msgstr ""
 
@@ -8560,7 +8582,7 @@ msgstr ""
 #: inc/places.php:295
 #: inc/quotes.php:280
 #: inc/quotes.php:406
-#: inc/search-data.php:762
+#: inc/search-data.php:1031
 #: inc/venues.php:239
 #: inc/venues.php:354
 msgid "Type"
@@ -9019,7 +9041,7 @@ msgstr ""
 
 #: inc/languages.php:900
 #: inc/local-seo.php:24
-#: inc/setup.php:186
+#: inc/setup.php:264
 #: inc/starter-content.php:265
 msgid "Home"
 msgstr ""
@@ -9028,7 +9050,7 @@ msgstr ""
 #: inc/languages.php:901
 #: inc/local-seo.php:28
 #: inc/local-seo.php:52
-#: inc/setup.php:190
+#: inc/setup.php:268
 #: inc/starter-content.php:266
 #: inc/starter-content.php:450
 msgid "Blog"
@@ -9868,7 +9890,7 @@ msgid "None yet. Every email the site sends from now on is listed here for 30 da
 msgstr ""
 
 #: inc/mail-check.php:421
-#: inc/marketing.php:667
+#: inc/marketing.php:674
 msgid "Subject"
 msgstr ""
 
@@ -10004,7 +10026,7 @@ msgstr ""
 #. translators: %s: name
 #. translators: 1: participant 2: month 3: trips 4: total
 #: inc/marketing.php:192
-#: inc/ndis-log.php:298
+#: inc/ndis-log.php:300
 msgid "Hello,"
 msgstr ""
 
@@ -10052,262 +10074,262 @@ msgstr ""
 msgid "Please tick the box to agree to receive news and offers."
 msgstr ""
 
-#: inc/marketing.php:301
+#: inc/marketing.php:308
 msgid "Please enter a valid email address or mobile number."
 msgstr ""
 
 #. translators: %s: booking reference
-#: inc/marketing.php:335
+#: inc/marketing.php:342
 #, php-format
 msgid "Booking form (%s)"
 msgstr ""
 
 #. translators: 1: channel 2: how
-#: inc/marketing.php:377
+#: inc/marketing.php:384
 #, php-format
 msgid "Unsubscribed from news & offers (%1$s) %2$s"
 msgstr ""
 
-#: inc/marketing.php:394
+#: inc/marketing.php:401
 msgid "This link is not valid any more."
 msgstr ""
 
-#: inc/marketing.php:400
+#: inc/marketing.php:407
 msgid "Thanks — you are signed up. You can unsubscribe at any time from the link in each message."
 msgstr ""
 
-#: inc/marketing.php:408
+#: inc/marketing.php:415
 msgid "You have been unsubscribed. We will not send you any more news or offers."
 msgstr ""
 
-#: inc/marketing.php:410
+#: inc/marketing.php:417
 msgid "You will no longer get offers by email."
 msgstr ""
 
-#: inc/marketing.php:410
+#: inc/marketing.php:417
 msgid "You will no longer get offers by SMS."
 msgstr ""
 
-#: inc/marketing.php:446
-#: inc/marketing.php:516
+#: inc/marketing.php:453
+#: inc/marketing.php:523
 msgid "Unsubscribe"
 msgstr ""
 
-#: inc/marketing.php:447
+#: inc/marketing.php:454
 msgid "Stop receiving news and offers from us? Your bookings, confirmations and trip messages are not affected."
 msgstr ""
 
-#: inc/marketing.php:450
+#: inc/marketing.php:457
 msgid "Unsubscribe me"
 msgstr ""
 
-#: inc/marketing.php:453
+#: inc/marketing.php:460
 msgid "Or only stop one kind:"
 msgstr ""
 
-#: inc/marketing.php:454
+#: inc/marketing.php:461
 msgid "Stop SMS only"
 msgstr ""
 
-#: inc/marketing.php:455
+#: inc/marketing.php:462
 msgid "Stop emails only"
 msgstr ""
 
-#: inc/marketing.php:463
+#: inc/marketing.php:470
 msgid "Back to the home page"
 msgstr ""
 
 #. translators: 1: business 2: address
-#: inc/marketing.php:513
+#: inc/marketing.php:520
 #, php-format
 msgid "You are receiving this because you signed up for news and offers from %1$s, %2$s."
 msgstr ""
 
 #. translators: 1: business 2: link
-#: inc/marketing.php:522
+#: inc/marketing.php:529
 #, php-format
 msgid "- %1$s. Reply STOP to opt out or %2$s"
 msgstr ""
 
 #. translators: 1: subject 2: count
-#: inc/marketing.php:573
+#: inc/marketing.php:580
 #, php-format
 msgid "Offer \"%1$s\" sent (%2$d messages)"
 msgstr ""
 
 #. translators: %s: link
-#: inc/marketing.php:614
+#: inc/marketing.php:621
 #, php-format
 msgid "Sign-up is switched off. Turn it on in %s."
 msgstr ""
 
 #. translators: %s: link
-#: inc/marketing.php:614
+#: inc/marketing.php:621
 msgid "Bookings → Settings → News & offers"
 msgstr ""
 
-#: inc/marketing.php:617
+#: inc/marketing.php:624
 msgid "Your message is being sent in small batches over the next few minutes."
 msgstr ""
 
-#: inc/marketing.php:619
+#: inc/marketing.php:626
 msgid "Test sent to you."
 msgstr ""
 
-#: inc/marketing.php:621
+#: inc/marketing.php:628
 msgid "Subscriber deleted."
 msgstr ""
 
-#: inc/marketing.php:625
+#: inc/marketing.php:632
 msgid "Email subscribers"
 msgstr ""
 
-#: inc/marketing.php:626
+#: inc/marketing.php:633
 msgid "SMS subscribers"
 msgstr ""
 
-#: inc/marketing.php:627
+#: inc/marketing.php:634
 msgid "Waiting to confirm"
 msgstr ""
 
-#: inc/marketing.php:628
+#: inc/marketing.php:635
 msgid "Unsubscribed"
 msgstr ""
 
-#: inc/marketing.php:631
+#: inc/marketing.php:638
 msgid "Send a message"
 msgstr ""
 
 #. translators: 1: subject 2: count
-#: inc/marketing.php:636
+#: inc/marketing.php:643
 #, php-format
 msgid "Sending \"%1$s\" — %2$d sent so far."
 msgstr ""
 
-#: inc/marketing.php:644
+#: inc/marketing.php:651
 msgid "Send by"
 msgstr ""
 
-#: inc/marketing.php:648
+#: inc/marketing.php:655
 #: inc/settings-tabs.php:18
 msgid "SMS"
 msgstr ""
 
-#: inc/marketing.php:649
+#: inc/marketing.php:656
 msgid "Email and SMS"
 msgstr ""
 
-#: inc/marketing.php:652
+#: inc/marketing.php:659
 msgid "Email subject"
 msgstr ""
 
-#: inc/marketing.php:653
+#: inc/marketing.php:660
 msgid "Email message"
 msgstr ""
 
-#: inc/marketing.php:654
+#: inc/marketing.php:661
 msgid "Plain text. A line like \"Book now: https://…\" becomes a button. Your business name, address and an unsubscribe link are added at the end automatically."
 msgstr ""
 
-#: inc/marketing.php:655
+#: inc/marketing.php:662
 msgid "SMS text"
 msgstr ""
 
-#: inc/marketing.php:656
+#: inc/marketing.php:663
 msgid "Keep it short. Your business name and \"Reply STOP to opt out\" plus an opt-out link are added automatically."
 msgstr ""
 
-#: inc/marketing.php:659
+#: inc/marketing.php:666
 msgid "Send a test to me"
 msgstr ""
 
-#: inc/marketing.php:660
+#: inc/marketing.php:667
 msgid "Send this to all subscribers now?"
 msgstr ""
 
-#: inc/marketing.php:660
+#: inc/marketing.php:667
 msgid "Send to subscribers"
 msgstr ""
 
-#: inc/marketing.php:666
+#: inc/marketing.php:673
 #: inc/privacy.php:347
 msgid "Sent"
 msgstr ""
 
-#: inc/marketing.php:667
-#: inc/search-data.php:846
+#: inc/marketing.php:674
+#: inc/search-data.php:1115
 msgid "By"
 msgstr ""
 
-#: inc/marketing.php:667
+#: inc/marketing.php:674
 msgid "Messages"
 msgstr ""
 
-#: inc/marketing.php:674
+#: inc/marketing.php:681
 msgid "Subscribers"
 msgstr ""
 
-#: inc/marketing.php:677
+#: inc/marketing.php:684
 msgid "Search subscribers"
 msgstr ""
 
-#: inc/marketing.php:678
+#: inc/marketing.php:685
 msgid "Email, mobile or name"
 msgstr ""
 
-#: inc/marketing.php:680
+#: inc/marketing.php:687
 msgid "Download CSV (with consent records)"
 msgstr ""
 
-#: inc/marketing.php:683
-#: inc/marketing.php:799
+#: inc/marketing.php:690
+#: inc/marketing.php:806
 msgid "Signed up"
 msgstr ""
 
-#: inc/marketing.php:683
+#: inc/marketing.php:690
 msgid "Consent"
 msgstr ""
 
-#: inc/marketing.php:686
+#: inc/marketing.php:693
 msgid "No subscribers yet."
 msgstr ""
 
-#: inc/marketing.php:692
-#: inc/marketing.php:693
+#: inc/marketing.php:699
+#: inc/marketing.php:700
 msgid "off"
 msgstr ""
 
-#: inc/marketing.php:696
+#: inc/marketing.php:703
 msgid "Delete this subscriber and their consent record?"
 msgstr ""
 
-#: inc/marketing.php:696
+#: inc/marketing.php:703
 #: inc/saved-trips.php:194
 msgid "Delete"
 msgstr ""
 
-#: inc/marketing.php:704
+#: inc/marketing.php:711
 msgid "In ClickSend (Messaging → Inbound rules → URL) or Twilio (your number → Messaging → A message comes in → Webhook), forward inbound SMS to:"
 msgstr ""
 
-#: inc/marketing.php:707
+#: inc/marketing.php:714
 msgid "Set a secret under Bookings → Settings → News & offers to get the address for STOP replies. Until then, people can opt out with the link in each SMS."
 msgstr ""
 
-#: inc/marketing.php:732
+#: inc/marketing.php:739
 msgid "Please fill in the subject and message for each way you are sending."
 msgstr ""
 
-#: inc/marketing.php:794
-#: inc/marketing.php:817
+#: inc/marketing.php:801
+#: inc/marketing.php:824
 msgid "News & offers sign-up"
 msgstr ""
 
-#: inc/marketing.php:799
+#: inc/marketing.php:806
 msgid "Consent wording"
 msgstr ""
 
-#: inc/marketing.php:799
+#: inc/marketing.php:806
 msgid "IP address"
 msgstr ""
 
@@ -10320,6 +10342,283 @@ msgstr ""
 
 #: inc/menu.php:99
 msgid "Booking takes about two minutes. We confirm by SMS or email."
+msgstr ""
+
+#: inc/ndis-invoices.php:23
+msgid "Bill NDIS trips on NDIS invoices to plan managers"
+msgstr ""
+
+#: inc/ndis-invoices.php:23
+msgid "One tax invoice per participant per month, emailed to the plan manager with a PDF and a bulk-claim file. These trips then come off the monthly statement, so nothing is billed twice. Set the support item number below."
+msgstr ""
+
+#: inc/ndis-invoices.php:24
+msgid "GST on NDIS invoices"
+msgstr ""
+
+#: inc/ndis-invoices.php:24
+msgid "NDIS supports are usually GST-free. Check with your accountant."
+msgstr ""
+
+#: inc/ndis-invoices.php:24
+msgid "GST-free (NDIS supports)"
+msgstr ""
+
+#: inc/ndis-invoices.php:24
+msgid "Fares include GST"
+msgstr ""
+
+#: inc/ndis-invoices.php:25
+msgid "NDIS invoices due after (days)"
+msgstr ""
+
+#: inc/ndis-invoices.php:26
+msgid "Email last month’s NDIS invoices automatically on the 1st"
+msgstr ""
+
+#: inc/ndis-invoices.php:96
+msgid "Short-notice cancellation / no-show"
+msgstr ""
+
+#: inc/ndis-invoices.php:134
+msgid "TAX INVOICE"
+msgstr ""
+
+#: inc/ndis-invoices.php:135
+#: inc/ndis-invoices.php:439
+msgid "NDIS supports"
+msgstr ""
+
+#: inc/ndis-invoices.php:137
+#: inc/ndis-invoices.php:444
+#: inc/ndis-log.php:398
+#: inc/venues.php:24
+msgid "NDIS provider"
+msgstr ""
+
+#: inc/ndis-invoices.php:146
+#: inc/ndis-invoices.php:285
+#: inc/ndis-invoices.php:449
+msgid "Invoice number"
+msgstr ""
+
+#: inc/ndis-invoices.php:147
+#: inc/ndis-invoices.php:451
+msgid "Invoice date"
+msgstr ""
+
+#: inc/ndis-invoices.php:148
+#: inc/ndis-invoices.php:294
+#: inc/ndis-invoices.php:453
+msgid "Due date"
+msgstr ""
+
+#: inc/ndis-invoices.php:152
+#: inc/ndis-invoices.php:286
+#: inc/ndis-invoices.php:450
+#: inc/ndis-log.php:160
+#: inc/ndis-log.php:404
+msgid "Participant"
+msgstr ""
+
+#: inc/ndis-invoices.php:153
+#: inc/ndis-invoices.php:287
+#: inc/ndis-invoices.php:452
+#: inc/ndis-log.php:161
+#: inc/ndis-log.php:230
+#: inc/ndis-log.php:405
+msgid "NDIS number"
+msgstr ""
+
+#: inc/ndis-invoices.php:154
+#: inc/ndis-invoices.php:454
+msgid "Plan manager"
+msgstr ""
+
+#: inc/ndis-invoices.php:170
+#: inc/ndis-invoices.php:289
+#: inc/ndis-invoices.php:457
+#: inc/ndis-log.php:408
+msgid "Support item"
+msgstr ""
+
+#: inc/ndis-invoices.php:181
+#: inc/ndis-invoices.php:457
+msgid "Qty"
+msgstr ""
+
+#: inc/ndis-invoices.php:182
+#: inc/quotes.php:408
+msgid "Price"
+msgstr ""
+
+#: inc/ndis-invoices.php:183
+#: inc/ndis-invoices.php:457
+#: inc/promos.php:217
+#: inc/statements.php:219
+msgid "Amount"
+msgstr ""
+
+#: inc/ndis-invoices.php:183
+msgid "Amount incl. GST"
+msgstr ""
+
+#: inc/ndis-invoices.php:210
+#: inc/ndis-invoices.php:464
+#: inc/ndis-log.php:164
+#: inc/ndis-log.php:230
+#: inc/ndis-log.php:443
+#: inc/statements.php:234
+#: inc/statements.php:382
+msgid "Total"
+msgstr ""
+
+#: inc/ndis-invoices.php:211
+#: inc/ndis-invoices.php:465
+msgid "GST (GST-free supports)"
+msgstr ""
+
+#: inc/ndis-invoices.php:211
+#: inc/ndis-invoices.php:465
+msgid "Includes GST of"
+msgstr ""
+
+#. translators: %s: invoice number
+#: inc/ndis-invoices.php:239
+#, php-format
+msgid "Please quote %s with your payment. Thank you."
+msgstr ""
+
+#. translators: %s: plan manager
+#: inc/ndis-invoices.php:282
+#, php-format
+msgid "Hello %s,"
+msgstr ""
+
+#. translators: %s: plan manager
+#. translators: %s: name
+#: inc/ndis-invoices.php:282
+#: inc/review-invite.php:119
+#: inc/statements.php:265
+msgid "there"
+msgstr ""
+
+#. translators: 1: participant 2: month
+#: inc/ndis-invoices.php:284
+#, php-format
+msgid "Please find attached our NDIS invoice for %1$s for %2$s."
+msgstr ""
+
+#: inc/ndis-invoices.php:293
+msgid "GST-free"
+msgstr ""
+
+#: inc/ndis-invoices.php:295
+msgid "Attached: the invoice (PDF) and a bulk-claim file (CSV)."
+msgstr ""
+
+#: inc/ndis-invoices.php:296
+msgid "View it online"
+msgstr ""
+
+#. translators: %s: phone
+#: inc/ndis-invoices.php:301
+#: inc/quotes.php:389
+#: inc/statements.php:276
+#, php-format
+msgid "Questions? Reply to this email or call %s."
+msgstr ""
+
+#. translators: 1: number 2: participant 3: month 4: site
+#: inc/ndis-invoices.php:305
+#, php-format
+msgid "NDIS invoice %1$s — %2$s — %3$s — %4$s"
+msgstr ""
+
+#. translators: 1: invoice 2: email
+#: inc/ndis-invoices.php:323
+#, php-format
+msgid "On NDIS invoice %1$s, emailed to %2$s."
+msgstr ""
+
+#: inc/ndis-invoices.php:381
+msgid "This invoice link is not valid. Please contact us for a copy."
+msgstr ""
+
+#: inc/ndis-invoices.php:385
+msgid "This invoice is no longer available. Please contact us for a copy."
+msgstr ""
+
+#: inc/ndis-invoices.php:471
+#: inc/payment-info.php:154
+#: inc/payment-info.php:211
+#: inc/payment-info.php:249
+#: inc/statements.php:237
+msgid "How to pay"
+msgstr ""
+
+#: inc/ndis-invoices.php:476
+msgid "Download PDF"
+msgstr ""
+
+#: inc/ndis-invoices.php:494
+msgid "Want to send each plan manager a proper NDIS tax invoice (PDF plus bulk-claim file) instead of listing these trips on the monthly statement?"
+msgstr ""
+
+#: inc/ndis-invoices.php:494
+msgid "Turn on NDIS invoices in Settings → Payments & invoices"
+msgstr ""
+
+#. translators: 1: invoices 2: not sent yet
+#: inc/ndis-invoices.php:502
+#, php-format
+msgid "NDIS invoices for this month: %1$d (%2$d not emailed yet)."
+msgstr ""
+
+#: inc/ndis-invoices.php:504
+msgid "Email every NDIS invoice not sent yet to its plan manager?"
+msgstr ""
+
+#: inc/ndis-invoices.php:504
+msgid "Email all unsent NDIS invoices"
+msgstr ""
+
+#: inc/ndis-invoices.php:507
+msgid "Bulk-claim CSV (all participants)"
+msgstr ""
+
+#: inc/ndis-invoices.php:511
+msgid "Add the NDIS support item number (e.g. 04_590_0125_6_1) in Settings → Payments & invoices. Plan managers need it on every line."
+msgstr ""
+
+#: inc/ndis-invoices.php:523
+msgid "NDIS invoice"
+msgstr ""
+
+#: inc/ndis-invoices.php:524
+#: inc/ndis-log.php:239
+msgid "PDF"
+msgstr ""
+
+#. translators: 1: number 2: date
+#: inc/ndis-invoices.php:527
+#, php-format
+msgid "%1$s sent %2$s"
+msgstr ""
+
+#. translators: 1: number 2: date
+#: inc/ndis-invoices.php:527
+msgid "Resend"
+msgstr ""
+
+#: inc/ndis-invoices.php:529
+msgid "Email to plan manager"
+msgstr ""
+
+#. translators: 1: sent 2: failed
+#: inc/ndis-invoices.php:573
+#, php-format
+msgid "NDIS invoices emailed: %1$d. Failed: %2$d."
 msgstr ""
 
 #: inc/ndis-log.php:21
@@ -10340,10 +10639,10 @@ msgstr ""
 
 #: inc/ndis-log.php:118
 #: inc/ndis-log.php:135
-#: inc/ndis-log.php:198
-#: inc/ndis-log.php:213
-#: inc/ndis-log.php:360
-#: inc/ndis-log.php:387
+#: inc/ndis-log.php:200
+#: inc/ndis-log.php:215
+#: inc/ndis-log.php:362
+#: inc/ndis-log.php:389
 msgid "NDIS trip log"
 msgstr ""
 
@@ -10358,10 +10657,10 @@ msgid "Trip log emailed to %s."
 msgstr ""
 
 #: inc/ndis-log.php:148
-#: inc/ndis-log.php:218
+#: inc/ndis-log.php:220
 #: inc/partner-portal.php:202
 #: inc/partner-portal.php:261
-#: inc/search-data.php:846
+#: inc/search-data.php:1115
 #: inc/statements.php:374
 msgid "Month"
 msgstr ""
@@ -10374,128 +10673,293 @@ msgstr ""
 msgid "CSV for everyone"
 msgstr ""
 
-#: inc/ndis-log.php:155
+#: inc/ndis-log.php:156
 msgid "No NDIS or account trips in this month."
 msgstr ""
 
-#: inc/ndis-log.php:159
-#: inc/ndis-log.php:402
-msgid "Participant"
-msgstr ""
-
-#: inc/ndis-log.php:160
-#: inc/ndis-log.php:228
-#: inc/ndis-log.php:403
-msgid "NDIS number"
-msgstr ""
-
-#: inc/ndis-log.php:161
-#: inc/ndis-log.php:404
+#: inc/ndis-log.php:162
+#: inc/ndis-log.php:406
 msgid "Plan manager / invoice to"
 msgstr ""
 
-#: inc/ndis-log.php:163
-#: inc/ndis-log.php:228
-#: inc/ndis-log.php:441
-#: inc/statements.php:234
-#: inc/statements.php:382
-msgid "Total"
-msgstr ""
-
-#: inc/ndis-log.php:164
+#: inc/ndis-log.php:165
 msgid "Log"
 msgstr ""
 
-#: inc/ndis-log.php:175
+#: inc/ndis-log.php:176
 msgid "Print / PDF"
 msgstr ""
 
-#: inc/ndis-log.php:176
-#: inc/ndis-log.php:238
+#: inc/ndis-log.php:177
+#: inc/ndis-log.php:240
 msgid "CSV"
 msgstr ""
 
-#: inc/ndis-log.php:178
-msgid "Email to plan manager"
+#: inc/ndis-log.php:179
+msgid "Email trip log"
 msgstr ""
 
-#: inc/ndis-log.php:214
+#: inc/ndis-log.php:216
 msgid "Monthly trip lists for your clients, ready to send to plan managers."
 msgstr ""
 
-#: inc/ndis-log.php:224
+#: inc/ndis-log.php:226
 msgid "No completed trips for your clients in this month."
 msgstr ""
 
-#: inc/ndis-log.php:228
+#: inc/ndis-log.php:230
 msgid "Client"
 msgstr ""
 
-#: inc/ndis-log.php:228
+#: inc/ndis-log.php:230
 msgid "Download"
 msgstr ""
 
-#: inc/ndis-log.php:237
-msgid "PDF"
-msgstr ""
-
-#: inc/ndis-log.php:260
+#: inc/ndis-log.php:262
 msgid "You cannot view this trip log."
 msgstr ""
 
-#: inc/ndis-log.php:271
+#: inc/ndis-log.php:273
 msgid "No trips found for this participant and month."
 msgstr ""
 
 #. translators: 1: month 2: format
-#: inc/ndis-log.php:275
+#: inc/ndis-log.php:277
 #, php-format
 msgid "NDIS trip log %1$s downloaded (%2$s)"
 msgstr ""
 
 #. translators: 1: participant 2: month 3: site
-#: inc/ndis-log.php:296
+#: inc/ndis-log.php:298
 #, php-format
 msgid "Trip log for %1$s — %2$s — %3$s"
 msgstr ""
 
 #. translators: 1: participant 2: month 3: trips 4: total
-#: inc/ndis-log.php:298
+#: inc/ndis-log.php:300
 #, php-format
 msgid "Attached is the trip log for %1$s for %2$s: %3$d trips, %4$s in total."
 msgstr ""
 
 #. translators: 1: participant 2: month 3: trips 4: total
-#: inc/ndis-log.php:298
+#: inc/ndis-log.php:300
 msgid "Please contact us if you have any questions."
 msgstr ""
 
-#: inc/ndis-log.php:393
+#: inc/ndis-log.php:395
 #: inc/settings.php:44
 msgid "ABN"
 msgstr ""
 
-#: inc/ndis-log.php:396
-#: inc/venues.php:24
-msgid "NDIS provider"
-msgstr ""
-
-#: inc/ndis-log.php:406
-msgid "Support item"
-msgstr ""
-
-#: inc/ndis-log.php:414
+#: inc/ndis-log.php:416
 msgid "From → To"
 msgstr ""
 
-#: inc/ndis-log.php:415
+#: inc/ndis-log.php:417
 msgid "Km"
 msgstr ""
 
 #. translators: %s: GST
-#: inc/ndis-log.php:449
+#: inc/ndis-log.php:451
 #, php-format
 msgid "GST included: %s. Tax invoices for each trip are available from the receipt links in our emails, or on request."
+msgstr ""
+
+#. translators: 1: first month 2: last month 3: year, e.g. Jul–Sep 2026
+#: inc/partner-leaderboard.php:38
+#, php-format
+msgid "%1$s–%2$s %3$s"
+msgstr ""
+
+#: inc/partner-leaderboard.php:109
+#: inc/partner-leaderboard.php:131
+msgid "Partner leaderboard"
+msgstr ""
+
+#: inc/partner-leaderboard.php:132
+msgid "Hospitals, aged-care homes and providers ranked by completed trips booked through their partner page, QR poster or partner portal. Say thank you each quarter: a short email and a printed certificate for the reception desk go a long way."
+msgstr ""
+
+#: inc/partner-leaderboard.php:135
+msgid "Quarter"
+msgstr ""
+
+#: inc/partner-leaderboard.php:140
+msgid "No completed partner trips in this quarter yet. Partner trips are counted when people book from a partner page, its QR poster or the partner portal (Bookings → Partner pages)."
+msgstr ""
+
+#: inc/partner-leaderboard.php:144
+msgid "Rank"
+msgstr ""
+
+#: inc/partner-leaderboard.php:145
+#: inc/people.php:253
+#: inc/venues.php:353
+#: inc/venues.php:385
+msgid "Partner"
+msgstr ""
+
+#: inc/partner-leaderboard.php:147
+#: inc/saved-trips.php:119
+msgid "Change"
+msgstr ""
+
+#: inc/partner-leaderboard.php:149
+msgid "Say thank you"
+msgstr ""
+
+#: inc/partner-leaderboard.php:165
+msgid "new"
+msgstr ""
+
+#: inc/partner-leaderboard.php:168
+msgid "Certificate"
+msgstr ""
+
+#: inc/partner-leaderboard.php:170
+#: inc/statements.php:400
+msgid "Email again"
+msgstr ""
+
+#: inc/partner-leaderboard.php:170
+msgid "Email thank-you"
+msgstr ""
+
+#. translators: %s: date
+#: inc/partner-leaderboard.php:175
+#, php-format
+msgid "Thanked %s"
+msgstr ""
+
+#: inc/partner-leaderboard.php:180
+msgid "Add a contact email on the partner page to email them."
+msgstr ""
+
+#: inc/partner-leaderboard.php:187
+msgid "Tip: print the certificates for your top partners and drop them in with a box of chocolates. Ask if you can put up a fresh QR poster while you are there."
+msgstr ""
+
+#. translators: 1: partner 2: trips 3: quarter
+#: inc/partner-leaderboard.php:213
+#, php-format
+msgid "A quick thank you from all of us: in %3$s, %1$s booked %2$d trip with us."
+msgid_plural "A quick thank you from all of us: in %3$s, %1$s booked %2$d trips with us."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: 1st, 2nd or 3rd
+#: inc/partner-leaderboard.php:216
+#, php-format
+msgid "That makes you our %s busiest partner this quarter."
+msgstr ""
+
+#: inc/partner-leaderboard.php:218
+msgid "Every one of those is someone who got to an appointment, a visit or home safely, and we are grateful you trust us with them."
+msgstr ""
+
+#: inc/partner-leaderboard.php:219
+msgid "Your certificate of appreciation (print it for your reception or staff room):"
+msgstr ""
+
+#: inc/partner-leaderboard.php:222
+msgid "Your booking page and QR poster, for anyone new on the team:"
+msgstr ""
+
+#. translators: %s: phone
+#: inc/partner-leaderboard.php:225
+#, php-format
+msgid "If there is anything we can do better, just reply or call %s."
+msgstr ""
+
+#. translators: %s: phone
+#: inc/partner-leaderboard.php:225
+msgid "Thank you,"
+msgstr ""
+
+#. translators: 1: site 2: quarter
+#: inc/partner-leaderboard.php:229
+#, php-format
+msgid "Thank you from %1$s — %2$s"
+msgstr ""
+
+#. translators: %s: partner
+#: inc/partner-leaderboard.php:254
+#, php-format
+msgid "Thank-you emailed to %s."
+msgstr ""
+
+#. translators: %s: partner
+#: inc/partner-leaderboard.php:254
+msgid "The email could not be sent. Check the partner’s contact email and Taxi settings → Email check."
+msgstr ""
+
+#. translators: 1: rank 2: partner 3: trips
+#: inc/partner-leaderboard.php:287
+#, php-format
+msgid "%1$d. %2$s — %3$d trips"
+msgstr ""
+
+#. translators: %s: quarter
+#: inc/partner-leaderboard.php:292
+#, php-format
+msgid "Your top partners for %s — time to say thank you"
+msgstr ""
+
+#. translators: %s: quarter
+#: inc/partner-leaderboard.php:294
+#, php-format
+msgid "Your busiest partners for %s:"
+msgstr ""
+
+#. translators: %s: quarter
+#: inc/partner-leaderboard.php:294
+msgid "Send each a thank-you email and print their certificates here:"
+msgstr ""
+
+#: inc/partner-leaderboard.php:318
+msgid "This certificate link is not valid."
+msgstr ""
+
+#: inc/partner-leaderboard.php:340
+msgid "Certificate of appreciation"
+msgstr ""
+
+#: inc/partner-leaderboard.php:367
+msgid "Certificate of Appreciation"
+msgstr ""
+
+#: inc/partner-leaderboard.php:368
+msgid "presented to"
+msgstr ""
+
+#. translators: 1: site 2: trips 3: quarter
+#: inc/partner-leaderboard.php:375
+#, php-format
+msgid "With thanks for trusting %1$s with %2$d trip during %3$s, and for helping the people in your care travel safely and on time."
+msgid_plural "With thanks for trusting %1$s with %2$d trips during %3$s, and for helping the people in your care travel safely and on time."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: site 2: quarter
+#: inc/partner-leaderboard.php:377
+#, php-format
+msgid "With thanks for your partnership with %1$s during %2$s, and for helping the people in your care travel safely and on time."
+msgstr ""
+
+#. translators: 1: 1st/2nd/3rd 2: quarter
+#: inc/partner-leaderboard.php:385
+#, php-format
+msgid "Our top partner for %s"
+msgstr ""
+
+#. translators: 1: 1st/2nd/3rd 2: quarter
+#: inc/partner-leaderboard.php:385
+#, php-format
+msgid "Our %1$s busiest partner for %2$s"
+msgstr ""
+
+#: inc/partner-leaderboard.php:395
+msgid "Print certificate"
 msgstr ""
 
 #: inc/partner-portal.php:51
@@ -10674,105 +11138,98 @@ msgstr ""
 msgid "e.g. \"Hospital discharge delays are never charged.\""
 msgstr ""
 
-#: inc/payment-info.php:124
-#: inc/payment-info.php:155
+#: inc/payment-info.php:125
+#: inc/payment-info.php:156
 msgid "Biller Code"
 msgstr ""
 
-#: inc/payment-info.php:125
-#: inc/payment-info.php:155
+#: inc/payment-info.php:126
+#: inc/payment-info.php:156
 msgid "Ref"
 msgstr ""
 
-#: inc/payment-info.php:125
-#: inc/payment-info.php:155
+#: inc/payment-info.php:126
+#: inc/payment-info.php:156
 msgid "on your invoice"
 msgstr ""
 
-#: inc/payment-info.php:126
+#: inc/payment-info.php:127
 msgid "Contact your bank or financial institution to make this payment from your cheque, savings, debit or transaction account. More info: www.bpay.com.au"
 msgstr ""
 
-#: inc/payment-info.php:134
-#: inc/payment-info.php:161
+#: inc/payment-info.php:135
+#: inc/payment-info.php:162
 #: inc/settings-tabs.php:142
 msgid "Bank transfer"
 msgstr ""
 
 #. translators: %s: reference
-#: inc/payment-info.php:140
-#: inc/payment-info.php:165
+#: inc/payment-info.php:141
+#: inc/payment-info.php:166
 #, php-format
 msgid "Please use %s as the payment description."
 msgstr ""
 
-#: inc/payment-info.php:153
-#: inc/payment-info.php:210
-#: inc/payment-info.php:248
-#: inc/statements.php:237
-msgid "How to pay"
-msgstr ""
-
-#: inc/payment-info.php:190
+#: inc/payment-info.php:191
 msgid "How to Pay"
 msgstr ""
 
-#: inc/payment-info.php:191
+#: inc/payment-info.php:192
 msgid "Pay the driver by card or cash at the end of the trip, use your MPTP card, or — for account customers — pay your invoice using the details below. Please use the reference on your invoice so we can match your payment."
 msgstr ""
 
-#: inc/payment-info.php:222
+#: inc/payment-info.php:223
 msgid "Ways to pay your invoice"
 msgstr ""
 
-#: inc/payment-info.php:222
+#: inc/payment-info.php:223
 msgid "your invoice will show your own reference number."
 msgstr ""
 
-#: inc/payment-info.php:236
+#: inc/payment-info.php:237
 msgid "How to pay your invoice"
 msgstr ""
 
 #. translators: %d: hours
-#: inc/payment-info.php:273
+#: inc/payment-info.php:274
 #, php-format
 msgid "Free cancellation up to %d hour before pick-up."
 msgid_plural "Free cancellation up to %d hours before pick-up."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/payment-info.php:275
+#: inc/payment-info.php:276
 msgid "Free cancellation any time before the driver leaves to collect you."
 msgstr ""
 
 #. translators: 1: fee 2: hours
-#: inc/payment-info.php:279
+#: inc/payment-info.php:280
 #, php-format
 msgid "Cancelling later than that: %1$s fee."
 msgstr ""
 
 #. translators: 1: fee 2: hours
-#: inc/payment-info.php:279
+#: inc/payment-info.php:280
 #, php-format
 msgid "Cancelling after the driver has left: %1$s fee."
 msgstr ""
 
 #. translators: %s: fee
-#: inc/payment-info.php:283
+#: inc/payment-info.php:284
 #, php-format
 msgid "No-show (the driver arrives and the passenger is not there and cannot be contacted): %s fee."
 msgstr ""
 
 #. translators: %d: minutes
-#: inc/payment-info.php:287
+#: inc/payment-info.php:288
 #, php-format
 msgid "The driver waits %d minute free of charge; after that, waiting time is charged at the normal rate."
 msgid_plural "The driver waits %d minutes free of charge; after that, waiting time is charged at the normal rate."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/payment-info.php:298
-#: inc/payment-info.php:308
+#: inc/payment-info.php:299
+#: inc/payment-info.php:309
 msgid "Cancellations and fees"
 msgstr ""
 
@@ -10875,12 +11332,6 @@ msgstr ""
 
 #: inc/people.php:252
 msgid "Partners"
-msgstr ""
-
-#: inc/people.php:253
-#: inc/venues.php:353
-#: inc/venues.php:385
-msgid "Partner"
 msgstr ""
 
 #: inc/people.php:254
@@ -12156,11 +12607,6 @@ msgstr ""
 msgid "Discount"
 msgstr ""
 
-#: inc/promos.php:217
-#: inc/statements.php:219
-msgid "Amount"
-msgstr ""
-
 #: inc/promos.php:219
 msgid "% off the fare"
 msgstr ""
@@ -12331,7 +12777,7 @@ msgid "Booked"
 msgstr ""
 
 #: inc/quotes.php:32
-#: inc/search-data.php:504
+#: inc/search-data.php:773
 msgid "Declined"
 msgstr ""
 
@@ -12512,21 +12958,10 @@ msgstr ""
 msgid "Book this trip"
 msgstr ""
 
-#. translators: %s: phone
-#: inc/quotes.php:389
-#: inc/statements.php:276
-#, php-format
-msgid "Questions? Reply to this email or call %s."
-msgstr ""
-
 #. translators: 1: reference 2: site
 #: inc/quotes.php:393
 #, php-format
 msgid "Your quote %1$s — %2$s"
-msgstr ""
-
-#: inc/quotes.php:408
-msgid "Price"
 msgstr ""
 
 #. translators: 1: quote reference 2: price
@@ -12564,12 +12999,6 @@ msgstr ""
 
 #: inc/review-invite.php:92
 msgid "Customer opened the Google review link"
-msgstr ""
-
-#. translators: %s: name
-#: inc/review-invite.php:119
-#: inc/statements.php:265
-msgid "there"
 msgstr ""
 
 #: inc/review-invite.php:121
@@ -12740,10 +13169,6 @@ msgstr ""
 msgid "Book %s"
 msgstr ""
 
-#: inc/saved-trips.php:119
-msgid "Change"
-msgstr ""
-
 #: inc/saved-trips.php:128
 msgid "Save a regular trip"
 msgstr ""
@@ -12814,372 +13239,516 @@ msgstr ""
 msgid "Bing Webmaster Tools → Settings (cog) → API access → API key. Lets the site show your Bing searches and clicks."
 msgstr ""
 
-#: inc/search-data.php:43
+#: inc/search-data.php:63
 msgid "Search Console is not connected."
 msgstr ""
 
+#: inc/search-data.php:92
+msgid "Your hosting is missing the PHP OpenSSL extension, which the key needs. Use the upload option instead, or ask your host to enable OpenSSL."
+msgstr ""
+
+#: inc/search-data.php:110
+msgid "The saved key can no longer be read (the site’s security keys changed). Please upload the JSON key again."
+msgstr ""
+
+#: inc/search-data.php:113
+msgid "The key could not be read. Download a new JSON key and paste it again."
+msgstr ""
+
 #. translators: %s: message
-#: inc/search-data.php:75
+#: inc/search-data.php:134
 #, php-format
 msgid "Search Console said: %s"
 msgstr ""
 
-#: inc/search-data.php:86
+#: inc/search-data.php:145
 msgid "Choose your Search Console property first."
 msgstr ""
 
-#: inc/search-data.php:132
-#: inc/search-data.php:149
+#: inc/search-data.php:230
+msgid "No searches or pages found. In Search Console open Performance → Search results, click Export → Download CSV, and upload that zip file (or the Queries.csv and Pages.csv inside it)."
+msgstr ""
+
+#: inc/search-data.php:270
+msgid "Your hosting cannot open zip files. Unzip the export on your computer and upload Queries.csv and Pages.csv instead."
+msgstr ""
+
+#: inc/search-data.php:287
+msgid "Please choose the zip file from Search Console (or its CSV files)."
+msgstr ""
+
+#. translators: 1: number of searches 2: number of pages
+#: inc/search-data.php:295
+#, php-format
+msgid "Loaded %1$d searches and %2$d pages from your export."
+msgstr ""
+
+#: inc/search-data.php:312
+msgid "That is not a service-account key. In Google Cloud open the service account → Keys → Add key → JSON, and paste the whole downloaded file."
+msgstr ""
+
+#: inc/search-data.php:321
+msgid "Key saved and data loaded. It will refresh every week."
+msgstr ""
+
+#: inc/search-data.php:321
+msgid "Key saved. Now add the service-account email as a user in Search Console (see step 3), then reload this page."
+msgstr ""
+
+#: inc/search-data.php:346
+#: inc/search-data.php:363
 msgid "Search performance"
 msgstr ""
 
-#: inc/search-data.php:150
-msgid "What people type into Google when your site appears, how often they click, and where you rank — from Google Search Console, refreshed every week."
+#: inc/search-data.php:364
+msgid "What people type into Google when your site appears, how often they click, and where you rank — from Google Search Console."
 msgstr ""
 
-#: inc/search-data.php:157
-msgid "Connect Google Search Console"
-msgstr ""
-
-#: inc/search-data.php:159
-msgid "This uses the same Google OAuth client as Google profile posts. Create it first (Marketing → Google profile shows how), then come back."
-msgstr ""
-
-#: inc/search-data.php:161
-msgid "In Google Cloud, enable the \"Google Search Console API\" for your project and add this authorised redirect URI to the OAuth client:"
-msgstr ""
-
-#: inc/search-data.php:163
-msgid "Connect Search Console"
-msgstr ""
-
-#: inc/search-data.php:171
+#: inc/search-data.php:373
 msgid "Choose your property"
 msgstr ""
 
-#: inc/search-data.php:177
+#: inc/search-data.php:379
 msgid "Use this property"
 msgstr ""
 
+#. translators: %s: service-account email
+#: inc/search-data.php:387
+#, php-format
+msgid "No properties yet. In Search Console open Settings → Users and permissions → Add user, enter %s with \"Restricted\" permission, then reload this page."
+msgstr ""
+
 #. translators: 1: property 2: from 3: to
-#: inc/search-data.php:186
+#: inc/search-data.php:396
 #, php-format
 msgid "Property: %1$s · %2$s to %3$s"
 msgstr ""
 
-#: inc/search-data.php:188
+#: inc/search-data.php:398
 msgid "Refresh now"
 msgstr ""
 
-#: inc/search-data.php:193
+#. translators: 1: from 2: to 3: upload date
+#: inc/search-data.php:406
+#, php-format
+msgid "From your Search Console export: %1$s to %2$s (uploaded %3$s)."
+msgstr ""
+
+#. translators: %s: upload date
+#: inc/search-data.php:408
+#, php-format
+msgid "From your Search Console export (uploaded %s)."
+msgstr ""
+
+#: inc/search-data.php:416
 msgid "Clicks from Google"
 msgstr ""
 
-#: inc/search-data.php:194
+#: inc/search-data.php:417
 msgid "Times shown"
 msgstr ""
 
-#: inc/search-data.php:195
+#: inc/search-data.php:418
 msgid "Click rate"
 msgstr ""
 
-#: inc/search-data.php:196
+#: inc/search-data.php:419
 msgid "Average position"
 msgstr ""
 
-#: inc/search-data.php:200
+#: inc/search-data.php:423
 msgid "Almost on page 1 — worth improving"
 msgstr ""
 
-#: inc/search-data.php:201
+#: inc/search-data.php:424
 msgid "Searches where you rank 8–20. A little work moves them onto the first page: use the words in the page title and first paragraph, add a question and answer about it, and link to the page from related pages."
 msgstr ""
 
-#: inc/search-data.php:203
-#: inc/search-data.php:217
+#: inc/search-data.php:426
+#: inc/search-data.php:440
 msgid "Position"
 msgstr ""
 
-#: inc/search-data.php:203
+#: inc/search-data.php:426
 msgid "Page to improve"
 msgstr ""
 
-#: inc/search-data.php:211
+#: inc/search-data.php:434
 msgid "None right now."
 msgstr ""
 
-#: inc/search-data.php:216
+#: inc/search-data.php:439
 msgid "Top searches"
 msgstr ""
 
-#: inc/search-data.php:217
-#: inc/search-data.php:225
-#: inc/search-data.php:782
+#: inc/search-data.php:440
+#: inc/search-data.php:448
+#: inc/search-data.php:1051
 msgid "Clicks"
 msgstr ""
 
-#: inc/search-data.php:224
+#: inc/search-data.php:447
 msgid "Top landing pages"
 msgstr ""
 
-#: inc/search-data.php:225
-#: inc/search-data.php:781
+#: inc/search-data.php:448
+#: inc/search-data.php:1050
 #: inc/tracking.php:367
 msgid "Page"
 msgstr ""
 
-#: inc/search-data.php:233
+#: inc/search-data.php:456
 msgid "No data yet — click \"Refresh now\". New sites can take a few days to show data in Search Console."
 msgstr ""
 
-#: inc/search-data.php:236
+#: inc/search-data.php:462
 msgid "Disconnect Search Console"
 msgstr ""
 
-#: inc/search-data.php:274
+#: inc/search-data.php:462
+msgid "Clear the uploaded data"
+msgstr ""
+
+#: inc/search-data.php:478
+msgid "Upload a newer export"
+msgstr ""
+
+#: inc/search-data.php:478
+msgid "Easiest: upload your Search Console export"
+msgstr ""
+
+#: inc/search-data.php:479
+msgid "No Google setup needed. Takes about a minute — repeat it whenever you want fresh numbers (monthly is plenty)."
+msgstr ""
+
+#: inc/search-data.php:481
+msgid "Open <a href=\"https://search.google.com/search-console/performance/search-analytics\" target=\"_blank\" rel=\"noopener\">Search Console → Performance</a> and pick your site."
+msgstr ""
+
+#: inc/search-data.php:482
+msgid "Set the date to \"Last 3 months\" (or 28 days)."
+msgstr ""
+
+#: inc/search-data.php:483
+msgid "Click Export (top right) → Download CSV. You get a zip file."
+msgstr ""
+
+#: inc/search-data.php:484
+msgid "Choose that zip file below and click Upload. (No need to unzip it.)"
+msgstr ""
+
+#: inc/search-data.php:488
+msgid "Search Console export"
+msgstr ""
+
+#: inc/search-data.php:490
+msgid "Upload"
+msgstr ""
+
+#: inc/search-data.php:495
+msgid "Automatic weekly updates: paste a service-account key"
+msgstr ""
+
+#: inc/search-data.php:495
+msgid "about 10 minutes, once"
+msgstr ""
+
+#: inc/search-data.php:497
+msgid "In <a href=\"https://console.cloud.google.com/apis/library/searchconsole.googleapis.com\" target=\"_blank\" rel=\"noopener\">Google Cloud</a>, create a project (any name) and click Enable on the \"Google Search Console API\"."
+msgstr ""
+
+#: inc/search-data.php:498
+msgid "Go to <a href=\"https://console.cloud.google.com/iam-admin/serviceaccounts\" target=\"_blank\" rel=\"noopener\">IAM → Service accounts</a> → Create service account (no roles needed). Open it → Keys → Add key → JSON. A file downloads."
+msgstr ""
+
+#: inc/search-data.php:499
+msgid "In Search Console → Settings → Users and permissions → Add user: paste the service account’s email (it ends in .iam.gserviceaccount.com) with \"Restricted\" permission."
+msgstr ""
+
+#: inc/search-data.php:500
+msgid "Choose the downloaded JSON file below (or paste its contents) and click Save."
+msgstr ""
+
+#: inc/search-data.php:504
+msgid "Key file (.json)"
+msgstr ""
+
+#: inc/search-data.php:505
+msgid "Or paste the key"
+msgstr ""
+
+#: inc/search-data.php:506
+msgid "Save key"
+msgstr ""
+
+#: inc/search-data.php:507
+msgid "The key only allows reading Search Console data. It is stored in your WordPress database and never shown again."
+msgstr ""
+
+#: inc/search-data.php:511
+msgid "Or sign in with Google"
+msgstr ""
+
+#: inc/search-data.php:511
+msgid "if you already set up Google profile posts"
+msgstr ""
+
+#: inc/search-data.php:513
+msgid "This uses the same Google OAuth client as Google profile posts. Create it first (Marketing → Google profile shows how), then come back."
+msgstr ""
+
+#: inc/search-data.php:515
+msgid "In Google Cloud, enable the \"Google Search Console API\" for your project and add this authorised redirect URI to the OAuth client:"
+msgstr ""
+
+#: inc/search-data.php:516
+msgid "Connect Search Console"
+msgstr ""
+
+#: inc/search-data.php:554
 msgid "Google sign-in was cancelled or expired. Please try again."
 msgstr ""
 
-#: inc/search-data.php:281
+#: inc/search-data.php:561
 msgid "Google did not give access. Check the redirect URI and that the Search Console API is enabled."
 msgstr ""
 
-#: inc/search-data.php:296
+#: inc/search-data.php:565
 msgid "Search Console connected."
 msgstr ""
 
-#: inc/search-data.php:311
+#: inc/search-data.php:580
 msgid "Property saved and data loaded."
 msgstr ""
 
-#: inc/search-data.php:323
+#: inc/search-data.php:592
 msgid "Updated."
 msgstr ""
 
-#: inc/search-data.php:347
+#: inc/search-data.php:616
 msgid "Add your Bing Webmaster API key first."
 msgstr ""
 
 #. translators: %s: code
-#: inc/search-data.php:354
+#: inc/search-data.php:623
 #, php-format
 msgid "Bing did not return data (%s). Check the API key and that the site is verified in Bing Webmaster Tools."
 msgstr ""
 
-#: inc/search-data.php:382
+#: inc/search-data.php:651
 msgid "Bing data updated."
 msgstr ""
 
-#: inc/search-data.php:501
+#: inc/search-data.php:770
 msgid "Not asked yet"
 msgstr ""
 
-#: inc/search-data.php:502
+#: inc/search-data.php:771
 msgid "Asked"
 msgstr ""
 
-#: inc/search-data.php:503
+#: inc/search-data.php:772
 msgid "Linked"
 msgstr ""
 
-#: inc/search-data.php:540
+#: inc/search-data.php:809
 msgid "Link to us"
 msgstr ""
 
-#: inc/search-data.php:546
+#: inc/search-data.php:815
 msgid "Their page that links to you"
 msgstr ""
 
 #. translators: %s: date
-#: inc/search-data.php:552
+#: inc/search-data.php:821
 #, php-format
 msgid "Could not open the page on %s."
 msgstr ""
 
 #. translators: %s: date
-#: inc/search-data.php:552
+#: inc/search-data.php:821
 #, php-format
 msgid "Link found on %s."
 msgstr ""
 
 #. translators: %s: date
-#: inc/search-data.php:552
+#: inc/search-data.php:821
 #, php-format
 msgid "No link to your site found on %s."
 msgstr ""
 
-#: inc/search-data.php:554
+#: inc/search-data.php:823
 msgid "When saved, the page is checked for a link to your site — and re-checked every week."
 msgstr ""
 
-#: inc/search-data.php:587
+#: inc/search-data.php:856
 msgid "Links to you"
 msgstr ""
 
 #. translators: %s: suburb
-#: inc/search-data.php:635
+#: inc/search-data.php:904
 #, php-format
 msgid "best wheelchair taxi in %s"
 msgstr ""
 
-#: inc/search-data.php:636
+#: inc/search-data.php:905
 msgid "wheelchair accessible taxi Mornington Peninsula"
 msgstr ""
 
 #. translators: %s: suburb
-#: inc/search-data.php:638
+#: inc/search-data.php:907
 #, php-format
 msgid "NDIS wheelchair taxi near %s"
 msgstr ""
 
 #. translators: %s: suburb
-#: inc/search-data.php:640
+#: inc/search-data.php:909
 #, php-format
 msgid "wheelchair taxi from %s to Melbourne Airport"
 msgstr ""
 
-#: inc/search-data.php:713
+#: inc/search-data.php:982
 msgid "Time for your monthly AI check"
 msgstr ""
 
-#: inc/search-data.php:714
+#: inc/search-data.php:983
 msgid "Once a month, ask ChatGPT, Copilot, Perplexity and Google a few questions your customers ask, and note whether your business is named. It takes about 10 minutes and shows whether the AI and Bing work is paying off."
 msgstr ""
 
-#: inc/search-data.php:714
+#: inc/search-data.php:983
 msgid "Start the check"
 msgstr ""
 
-#: inc/search-data.php:742
+#: inc/search-data.php:1011
 msgid "This month’s AI check has not been done yet."
 msgstr ""
 
-#: inc/search-data.php:742
+#: inc/search-data.php:1011
 msgid "Do it now (about 10 minutes)"
 msgstr ""
 
-#: inc/search-data.php:754
+#: inc/search-data.php:1023
 msgid "AI search"
 msgstr ""
 
-#: inc/search-data.php:754
+#: inc/search-data.php:1023
 msgid "AI training"
 msgstr ""
 
-#: inc/search-data.php:754
+#: inc/search-data.php:1023
 msgid "Search engine"
 msgstr ""
 
-#: inc/search-data.php:759
+#: inc/search-data.php:1028
 msgid "Which AI and search bots read your site (last 30 days)"
 msgstr ""
 
-#: inc/search-data.php:760
+#: inc/search-data.php:1029
 msgid "The first sign that AI assistants know about you. Bots identify themselves, so these numbers are a guide."
 msgstr ""
 
-#: inc/search-data.php:762
+#: inc/search-data.php:1031
 msgid "Bot"
 msgstr ""
 
-#: inc/search-data.php:762
+#: inc/search-data.php:1031
 msgid "Pages read"
 msgstr ""
 
-#: inc/search-data.php:762
+#: inc/search-data.php:1031
 msgid "Last visit"
 msgstr ""
 
-#: inc/search-data.php:762
+#: inc/search-data.php:1031
 msgid "Most-read pages"
 msgstr ""
 
-#: inc/search-data.php:768
+#: inc/search-data.php:1037
 msgid "No bot visits recorded yet."
 msgstr ""
 
-#: inc/search-data.php:771
+#: inc/search-data.php:1040
 msgid "Bing searches that show your site"
 msgstr ""
 
-#: inc/search-data.php:776
+#: inc/search-data.php:1045
 msgid "Add your Bing Webmaster API key (Taxi settings → Settings → Search engines & AI) to see your Bing searches and clicks here. Bing results also power Copilot and much of ChatGPT search."
 msgstr ""
 
-#: inc/search-data.php:778
+#: inc/search-data.php:1047
 msgid "Refresh Bing data"
 msgstr ""
 
 #. translators: %s: date
-#: inc/search-data.php:778
+#: inc/search-data.php:1047
 #, php-format
 msgid "Updated %s"
 msgstr ""
 
-#: inc/search-data.php:792
+#: inc/search-data.php:1061
 msgid "Partner links"
 msgstr ""
 
 #. translators: 1: linked 2: partners
-#: inc/search-data.php:796
+#: inc/search-data.php:1065
 #, php-format
 msgid "%1$d of %2$d partners link to your website."
 msgstr ""
 
-#: inc/search-data.php:798
+#: inc/search-data.php:1067
 msgid "Open partner pages"
 msgstr ""
 
-#: inc/search-data.php:799
+#: inc/search-data.php:1068
 msgid "each one has a \"link to us\" snippet to send and a place to record their link (checked weekly)."
 msgstr ""
 
-#: inc/search-data.php:809
+#: inc/search-data.php:1078
 msgid "Monthly AI check"
 msgstr ""
 
-#: inc/search-data.php:810
+#: inc/search-data.php:1079
 msgid "Once a month: click each \"Ask\" link, read the answer, and mark whether your business is named. A reminder is emailed on the 1st of each month."
 msgstr ""
 
-#: inc/search-data.php:825
+#: inc/search-data.php:1094
 msgid "Ask"
 msgstr ""
 
-#: inc/search-data.php:829
+#: inc/search-data.php:1098
 msgid "Named us"
 msgstr ""
 
-#: inc/search-data.php:830
+#: inc/search-data.php:1099
 msgid "Not named"
 msgstr ""
 
-#: inc/search-data.php:838
+#: inc/search-data.php:1107
 msgid "Notes (who was named instead, what the answer said)"
 msgstr ""
 
-#: inc/search-data.php:839
+#: inc/search-data.php:1108
 msgid "Change the questions"
 msgstr ""
 
-#: inc/search-data.php:840
+#: inc/search-data.php:1109
 msgid "Questions"
 msgstr ""
 
-#: inc/search-data.php:841
+#: inc/search-data.php:1110
 msgid "One per line — the way customers would ask. Changing questions starts fresh comparisons."
 msgstr ""
 
-#: inc/search-data.php:843
+#: inc/search-data.php:1112
 msgid "Save this month’s check"
 msgstr ""
 
-#: inc/search-data.php:846
+#: inc/search-data.php:1115
 msgid "Named in"
 msgstr ""
 
 #. translators: 1: yes 2: checked
-#: inc/search-data.php:852
+#: inc/search-data.php:1121
 #, php-format
 msgid "%1$d of %2$d answers"
 msgstr ""
@@ -14570,89 +15139,93 @@ msgid "Blog sidebar"
 msgstr ""
 
 #. translators: %s: suburb
-#: inc/setup.php:121
+#: inc/setup.php:196
 #, php-format
 msgid "Yes — we cover %s."
 msgstr ""
 
 #. translators: %s: suburb
-#: inc/setup.php:125
+#: inc/setup.php:200
 #, php-format
 msgid "Wheelchair taxis in %s"
 msgstr ""
 
 #. translators: %s: what the visitor typed
-#: inc/setup.php:127
+#: inc/setup.php:202
 #, php-format
 msgid "\"%s\" is not on our regular list, but we often travel further on request."
 msgstr ""
 
 #. translators: %s: phone number
-#: inc/setup.php:129
+#: inc/setup.php:204
 #, php-format
 msgid "Call %s to check"
 msgstr ""
 
 #. translators: %d: number of questions
-#: inc/setup.php:131
+#: inc/setup.php:206
 #, php-format
 msgid "%d matching questions"
 msgstr ""
 
-#: inc/setup.php:132
+#: inc/setup.php:207
 msgid "Close"
 msgstr ""
 
-#: inc/setup.php:133
+#: inc/setup.php:208
 #: template-parts/content-card.php:28
 msgid "Read more"
 msgstr ""
 
-#: inc/setup.php:145
+#: inc/setup.php:220
 msgid "Show less"
 msgstr ""
 
-#: inc/setup.php:146
+#: inc/setup.php:221
 msgid "passenger"
 msgstr ""
 
-#: inc/setup.php:147
+#: inc/setup.php:222
 msgid "passengers"
 msgstr ""
 
-#: inc/setup.php:148
+#: inc/setup.php:223
 msgid "wheelchair"
 msgstr ""
 
-#: inc/setup.php:149
+#: inc/setup.php:224
 msgid "wheelchairs"
 msgstr ""
 
-#: inc/setup.php:151
+#: inc/setup.php:226
 #: template-parts/trip-summary.php:21
 msgid "Drop-off"
 msgstr ""
 
-#: inc/setup.php:153
+#: inc/setup.php:228
 msgid "Sending…"
 msgstr ""
 
 #. translators: %s: menu item
-#: inc/setup.php:156
+#: inc/setup.php:231
 #, php-format
 msgid "Show more: %s"
 msgstr ""
 
-#: inc/setup.php:157
+#: inc/setup.php:234
+msgid "That looks like a landline — we will call you instead of sending texts."
+msgstr ""
+
+#: inc/setup.php:235
 msgid "Previous photo"
 msgstr ""
 
-#: inc/setup.php:158
+#: inc/setup.php:236
 msgid "Next photo"
 msgstr ""
 
 #. translators: 1: photo number, 2: total
-#: inc/setup.php:160
+#: inc/setup.php:238
 #, php-format
 msgid "Photo %1$d of %2$d"
 msgstr ""
@@ -15147,10 +15720,6 @@ msgstr ""
 
 #: inc/statements.php:382
 msgid "Emailed"
-msgstr ""
-
-#: inc/statements.php:400
-msgid "Email again"
 msgstr ""
 
 #: inc/statements.php:410

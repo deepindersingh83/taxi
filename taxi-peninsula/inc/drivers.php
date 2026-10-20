@@ -66,7 +66,9 @@ function tp_save_user_mobile( $user_id ) {
 	if ( ! current_user_can( 'edit_user', $user_id ) || ! isset( $_POST['tp_mobile'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing -- core verifies the profile nonce.
 		return;
 	}
-	update_user_meta( $user_id, 'tp_mobile', sanitize_text_field( wp_unslash( $_POST['tp_mobile'] ) ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+	$mobile = sanitize_text_field( wp_unslash( $_POST['tp_mobile'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+	$p      = '' === $mobile ? null : tp_au_phone( $mobile );
+	update_user_meta( $user_id, 'tp_mobile', $p ? $p['display'] : $mobile ); // Unusual numbers are kept as typed.
 	if ( isset( $_POST['tp_default_fleet'] ) && current_user_can( 'edit_tp_bookings' ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
 		$fleet = absint( $_POST['tp_default_fleet'] ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 		update_user_meta( $user_id, 'tp_default_fleet', 'tp_fleet' === get_post_type( $fleet ) ? $fleet : 0 );

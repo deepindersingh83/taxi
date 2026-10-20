@@ -8,6 +8,40 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### New in v2.9
+- **NDIS invoices to plan managers.** Turn on in Settings → Payments & invoices ("Bill NDIS trips on NDIS invoices"), and add your support item number (e.g. `04_590_0125_6_1`) and NDIS registration number.
+  - One tax invoice per participant per month (N-00001…) with what plan managers check:
+    - provider name, ABN and NDIS registration number
+    - invoice and due dates
+    - participant name and NDIS number
+    - one line per trip: date of support, support item, quantity, price and amount
+    - GST-free or GST-inclusive (your choice)
+    - BPAY, PayID and bank details
+  - Emailed to the plan manager with a **PDF** and a **bulk-claim CSV** in the NDIA bulk payment layout, plus an online copy.
+  - Send them from Invoices → NDIS trip log: one at a time, "Email all unsent", or automatically on the 1st.
+  - NDIS trips then come off the monthly statement, so nothing is billed twice. No-shows appear as cancellation lines (CANC / NSDO).
+- **Partner leaderboard (Reports → Partner leaderboard).** Hospitals, aged-care homes and providers are ranked each quarter by completed trips from their partner page, QR poster or portal, with the change on last quarter.
+  - One click emails a thank-you to the partner contact.
+  - Each partner has a printable A4 **certificate of appreciation**, with "Our top partner" for the top three.
+  - At the start of each quarter, the office is emailed the top five.
+- **Australian phone numbers are checked and tidied** on every form (booking, sign-up, account details, contact, call-back, careers, SMS sign-up).
+  - **Accepted:** mobiles (0412 345 678), landlines with an area code ((03) 9123 4567), 13 / 1300 / 1800 numbers, and +61 numbers.
+  - **Melbourne numbers without an area code:** 03 is added.
+  - **Overseas numbers:** accepted when they start with +.
+  - **Refused:** anything else, with a clear message as soon as the customer leaves the field. The server checks again.
+  - **Landlines on the booking form:** customers see "we will call you instead of texting".
+  - **Driver and careers mobiles** must start with 04.
+- **Faster pages:**
+  - The CSS needed for the top of each page is now inline, and the full stylesheet loads without holding up the page.
+  - The patterns and animations stylesheets are merged into the main one, so there's one stylesheet request instead of three.
+  - In a throttled phone test, pages showed in about 0.8 s instead of 1.9–2.4 s, with no layout shift.
+  - The critical CSS was checked page by page: each page renders identically with only the critical CSS.
+- **The Search Console key is stored encrypted.** The encryption key comes from your wp-config.php security keys. Keys saved earlier are converted automatically.
+
+**For developers**
+- After changing CSS, run `node tools/build.js`, then `NODE_PATH_PW=$(npm root -g)/playwright node tools/critical.js http://your-test-site`. This visits every page type from the sitemap, on phone and desktop.
+- The theme only uses a critical file made from the current stylesheet, so a forgotten step costs speed, never looks.
+
 ### v2.8.1 — Search performance without the Google setup
 Reports → Search performance now offers three ways to get your Google Search Console data, simplest first:
 1. **Upload the export:**

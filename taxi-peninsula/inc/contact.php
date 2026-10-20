@@ -175,8 +175,19 @@ function tp_handle_contact() {
 	if ( '' === trim( $message ) ) {
 		$errors['message'] = 1;
 	}
-	if ( $errors ) {
+	if ( '' !== $phone ) {
+		$checked = tp_check_phone( $phone );
+		if ( is_wp_error( $checked ) ) {
+			$errors['phone'] = 1;
+			$errors['form']  = $checked->get_error_message();
+		} else {
+			$phone = $checked;
+		}
+	}
+	if ( $errors && empty( $errors['form'] ) ) {
 		$errors['form'] = __( 'Please fill in your name, a valid email and your message.', 'taxi-peninsula' );
+	}
+	if ( $errors ) {
 		tp_booking_fail( $return, $errors, $raw, '#contact' );
 	}
 

@@ -72,7 +72,8 @@ function tp_luhn_digit( $digits ) {
  * @param int    $id   Booking or quote ID.
  */
 function tp_bpay_crn( $kind, $id ) {
-	$base = ( 'quote' === $kind ? '2' : ( 'statement' === $kind ? '3' : '1' ) ) . str_pad( (string) absint( $id ), 7, '0', STR_PAD_LEFT );
+	$prefix = array( 'quote' => '2', 'statement' => '3', 'ndis' => '4' );
+	$base   = ( $prefix[ $kind ] ?? '1' ) . str_pad( (string) absint( $id ), 7, '0', STR_PAD_LEFT );
 	return 'none' === tp_setting( 'bpay_check' ) ? $base : $base . tp_luhn_digit( $base );
 }
 

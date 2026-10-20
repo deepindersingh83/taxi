@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.8.0\n"
+"Project-Id-Version: Taxi Peninsula 2.9.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -5080,3 +5080,15 @@ msgstr "Atkinson Hyperlegible"
 msgctxt "Font size name"
 msgid "Large"
 msgstr "大"
+
+msgid ""
+"Please enter an Australian phone number, e.g. 0412 345 678 or (03) 9123 "
+"4567."
+msgstr "请输入澳大利亚电话号码，例如 0412 345 678 或 (03) 9123 4567。"
+
+msgid "Please enter a mobile number starting with 04, so we can send texts."
+msgstr "请输入以 04 开头的手机号码，以便我们发送短信。"
+
+msgid ""
+"That looks like a landline — we will call you instead of sending texts."
+msgstr "这看起来是固定电话——我们会给您打电话，而不是发送短信。"

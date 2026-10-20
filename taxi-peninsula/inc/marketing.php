@@ -255,7 +255,7 @@ function tp_newsletter_form( $context = 'page' ) {
 				<?php if ( $sms ) : ?>
 					<div class="field">
 						<label for="<?php echo esc_attr( $uid ); ?>-phone"><?php esc_html_e( 'Mobile (for SMS offers, optional)', 'taxi-peninsula' ); ?></label>
-						<input id="<?php echo esc_attr( $uid ); ?>-phone" name="phone" type="tel" autocomplete="tel" value="">
+						<input id="<?php echo esc_attr( $uid ); ?>-phone" name="phone" type="tel" data-mobile-only autocomplete="tel" value="">
 					</div>
 				<?php endif; ?>
 				<label class="field--check newsletter__consent"><input type="checkbox" name="consent" value="1" required> <span><?php echo esc_html( tp_marketing_consent_text() ); ?></span></label>
@@ -296,6 +296,13 @@ function tp_handle_signup() {
 	$phone = sanitize_text_field( $raw['phone'] ?? '' );
 	if ( empty( $raw['consent'] ) ) {
 		tp_booking_fail( $return, array( 'form' => __( 'Please tick the box to agree to receive news and offers.', 'taxi-peninsula' ) ), $raw, $anchor );
+	}
+	if ( '' !== $phone ) {
+		$checked = tp_check_phone( $phone, true );
+		if ( is_wp_error( $checked ) ) {
+			tp_booking_fail( $return, array( 'form' => $checked->get_error_message() ), $raw, $anchor );
+		}
+		$phone = $checked;
 	}
 	if ( ! is_email( $email ) && ! ( $phone && function_exists( 'tp_e164' ) && tp_e164( $phone ) ) ) {
 		tp_booking_fail( $return, array( 'form' => __( 'Please enter a valid email address or mobile number.', 'taxi-peninsula' ) ), $raw, $anchor );

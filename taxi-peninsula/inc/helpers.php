@@ -366,3 +366,96 @@ function tp_terms_url() {
 	}
 	return ( $id && 'publish' === get_post_status( $id ) ) ? get_permalink( $id ) : '';
 }
+
+/**
+ * Check and tidy an Australian phone number.
+ *
+ * Accepts mobiles (04xx xxx xxx), landlines with area code (02/03/07/08),
+ * 13 / 1300 / 1800 numbers, +61 / 61 forms, and Melbourne local numbers
+ * typed without the area code (03 is added). Numbers starting with another
+ * country code (+44 …) are accepted as international.
+ *
+ * @param string $raw What was typed.
+ * @return array|null [ 'type' => mobile|landline|business|intl, 'display' => '0412 345 678', 'e164' => '+61412345678' ], or null when it is not a valid number.
+ */
+function tp_au_phone( $raw ) {
+	$raw = trim( (string) $raw );
+	if ( ! preg_match( '/^[\d\s+()\-.]{6,24}$/', $raw ) ) {
+		return null;
+	}
+	$d = preg_replace( '/\D+/', '', $raw );
+	if ( '+' === $raw[0] && 0 !== strpos( $d, '61' ) ) {
+		return strlen( $d ) >= 8 && strlen( $d ) <= 15 ? array( 'type' => 'intl', 'display' => '+' . $d, 'e164' => '+' . $d ) : null;
+	}
+	if ( 0 === strpos( $d, '61' ) && strlen( $d ) >= 11 ) {
+		$d = '0' . ltrim( substr( $d, 2 ), '0' ); // +61 (0)4… → 04…
+	}
+	if ( 8 === strlen( $d ) && preg_match( '/^[2-9]/', $d ) ) {
+		$d = '03' . $d; // Local Melbourne number without the area code.
+	}
+	if ( preg_match( '/^04\d{8}$/', $d ) ) {
+		return array( 'type' => 'mobile', 'display' => substr( $d, 0, 4 ) . ' ' . substr( $d, 4, 3 ) . ' ' . substr( $d, 7 ), 'e164' => '+61' . substr( $d, 1 ) );
+	}
+	if ( preg_match( '/^0[2378][2-9]\d{7}$/', $d ) ) {
+		return array( 'type' => 'landline', 'display' => '(' . substr( $d, 0, 2 ) . ') ' . substr( $d, 2, 4 ) . ' ' . substr( $d, 6 ), 'e164' => '+61' . substr( $d, 1 ) );
+	}
+	if ( preg_match( '/^1[38]00\d{6}$/', $d ) ) {
+		return array( 'type' => 'business', 'display' => substr( $d, 0, 4 ) . ' ' . substr( $d, 4, 3 ) . ' ' . substr( $d, 7 ), 'e164' => '' );
+	}
+	if ( preg_match( '/^13\d{4}$/', $d ) ) {
+		return array( 'type' => 'business', 'display' => '13 ' . substr( $d, 2, 2 ) . ' ' . substr( $d, 4 ), 'e164' => '' );
+	}
+	return null;
+}
+
+/**
+ * Validate a phone field. Returns the tidied number, or a WP_Error with a
+ * message the customer can act on.
+ *
+ * @param string $raw         What was typed.
+ * @param bool   $mobile_only Only accept mobiles (e.g. for drivers, who get texts).
+ */
+function tp_check_phone( $raw, $mobile_only = false ) {
+	$p = tp_au_phone( $raw );
+	if ( ! $p ) {
+		return new WP_Error( 'tp_phone', __( 'Please enter an Australian phone number, e.g. 0412 345 678 or (03) 9123 4567.', 'taxi-peninsula' ) );
+	}
+	if ( $mobile_only && 'mobile' !== $p['type'] ) {
+		return new WP_Error( 'tp_phone', __( 'Please enter a mobile number starting with 04, so we can send texts.', 'taxi-peninsula' ) );
+	}
+	return $p['display'];
+}
+
+/* -------------------------------------------------------------------------
+ * Secrets stored encrypted (keys, tokens).
+ * ---------------------------------------------------------------------- */
+
+function tp_secret_key() {
+	return sodium_crypto_generichash( wp_salt( 'auth' ) . '|tp-secrets', '', SODIUM_CRYPTO_SECRETBOX_KEYBYTES );
+}
+
+/**
+ * Encrypt a secret for the database. The key comes from the site's
+ * wp-config.php salts, so a copy of the database alone cannot read it.
+ */
+function tp_encrypt( $plain ) {
+	$nonce = random_bytes( SODIUM_CRYPTO_SECRETBOX_NONCEBYTES );
+	return 'tpenc:1:' . base64_encode( $nonce . sodium_crypto_secretbox( (string) $plain, $nonce, tp_secret_key() ) ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
+}
+
+/**
+ * Decrypt a value from tp_encrypt(). Plain (older) values are returned as
+ * they are; a value that can no longer be read (salts changed) returns ''.
+ */
+function tp_decrypt( $stored ) {
+	$stored = (string) $stored;
+	if ( 0 !== strpos( $stored, 'tpenc:1:' ) ) {
+		return $stored;
+	}
+	$raw = base64_decode( substr( $stored, 8 ), true ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_decode
+	if ( false === $raw || strlen( $raw ) <= SODIUM_CRYPTO_SECRETBOX_NONCEBYTES ) {
+		return '';
+	}
+	$plain = sodium_crypto_secretbox_open( substr( $raw, SODIUM_CRYPTO_SECRETBOX_NONCEBYTES ), substr( $raw, 0, SODIUM_CRYPTO_SECRETBOX_NONCEBYTES ), tp_secret_key() );
+	return false === $plain ? '' : $plain;
+}

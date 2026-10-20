@@ -327,8 +327,13 @@ function tp_sanitize_booking( array $raw, $strict = true ) {
 		$errors['email'] = __( 'Please enter a valid email address.', 'taxi-peninsula' );
 	}
 
-	if ( '' !== $d['phone'] && ! preg_match( '/^[0-9 +()\-]{8,20}$/', $d['phone'] ) ) {
-		$errors['phone'] = __( 'Please enter a valid phone number.', 'taxi-peninsula' );
+	if ( '' !== $d['phone'] ) {
+		$phone = tp_check_phone( $d['phone'] );
+		if ( ! is_wp_error( $phone ) ) {
+			$d['phone'] = $phone; // Tidy format, e.g. 0412 345 678.
+		} elseif ( $strict ) {
+			$errors['phone'] = $phone->get_error_message();
+		}
 	}
 
 	if ( ! isset( tp_vehicle_types()[ $d['vehicle'] ] ) ) {

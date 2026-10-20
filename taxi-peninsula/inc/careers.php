@@ -57,7 +57,7 @@ add_shortcode( 'tp_driver_apply', static function () {
 				<?php wp_nonce_field( 'tp_driver_apply', '_tp_nonce', false ); ?>
 				<div class="booking-form__group">
 					<div class="field"><label for="ap-name"><?php esc_html_e( 'Full name', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label><input id="ap-name" name="name" type="text" required autocomplete="name" value="<?php echo esc_attr( $val( 'name' ) ); ?>"<?php echo $bad( 'name' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>></div>
-					<div class="field"><label for="ap-phone"><?php esc_html_e( 'Mobile', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label><input id="ap-phone" name="phone" type="tel" required autocomplete="tel" value="<?php echo esc_attr( $val( 'phone' ) ); ?>"<?php echo $bad( 'phone' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>></div>
+					<div class="field"><label for="ap-phone"><?php esc_html_e( 'Mobile', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label><input id="ap-phone" name="phone" type="tel" data-mobile-only required autocomplete="tel" value="<?php echo esc_attr( $val( 'phone' ) ); ?>"<?php echo $bad( 'phone' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>></div>
 					<div class="field"><label for="ap-email"><?php esc_html_e( 'Email', 'taxi-peninsula' ); ?> <span class="req" aria-hidden="true">*</span></label><input id="ap-email" name="email" type="email" required autocomplete="email" value="<?php echo esc_attr( $val( 'email' ) ); ?>"<?php echo $bad( 'email' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>></div>
 					<div class="field"><label for="ap-suburb"><?php esc_html_e( 'Suburb you live in', 'taxi-peninsula' ); ?></label><input id="ap-suburb" name="suburb" type="text" autocomplete="address-level2" value="<?php echo esc_attr( $val( 'suburb' ) ); ?>"></div>
 					<div class="field field--wide">
@@ -141,8 +141,16 @@ function tp_handle_driver_apply() {
 	if ( empty( $raw['consent'] ) ) {
 		$errors['consent'] = 1;
 	}
+	if ( '' !== $d['phone'] ) {
+		$checked = tp_check_phone( $d['phone'], true );
+		if ( is_wp_error( $checked ) ) {
+			$errors['phone'] = 1;
+		} else {
+			$d['phone'] = $checked;
+		}
+	}
 	if ( $errors ) {
-		$errors['form'] = __( 'Please fill in your name, mobile, a valid email and tick the consent box.', 'taxi-peninsula' );
+		$errors['form'] = isset( $errors['phone'] ) && 1 === count( $errors ) ? tp_check_phone( $d['phone'], true )->get_error_message() : __( 'Please fill in your name, mobile, a valid email and tick the consent box.', 'taxi-peninsula' );
 		tp_booking_fail( $return, $errors, $raw, '#apply' );
 	}
 

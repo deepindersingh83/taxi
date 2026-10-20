@@ -100,6 +100,75 @@ function tp_enqueue_style( $handle, $path, $deps = array() ) {
 	}
 }
 
+/**
+ * The front-end stylesheet is the single minified bundle (main + patterns + animations).
+ */
+function tp_css_bundled() {
+	return tp_asset_min( 'assets/css/main.css' );
+}
+
+/**
+ * Critical CSS: the rules needed for the top of each page, printed inline so
+ * the page shows straight away while the full stylesheet loads without
+ * blocking. Made by tools/critical.js; skipped automatically when it was
+ * made for an older stylesheet (it then can't match the page).
+ */
+function tp_critical_css() {
+	static $css = null;
+	if ( null !== $css ) {
+		return $css;
+	}
+	$css = '';
+	if ( is_admin() || is_customize_preview() || ! tp_css_bundled() || ! apply_filters( 'tp_critical_css_enabled', true ) ) {
+		return $css;
+	}
+	$rtl    = is_rtl();
+	$crit   = TP_DIR . '/assets/css/' . ( $rtl ? 'critical-rtl.min.css' : 'critical.min.css' );
+	$bundle = TP_DIR . '/assets/css/' . ( $rtl ? 'main-rtl.min.css' : 'main.min.css' );
+	if ( ! is_readable( $crit ) || ! is_readable( $bundle ) ) {
+		return $css;
+	}
+	// Check the critical file was made from this exact stylesheet (cached until either file changes).
+	$stamp = filemtime( $crit ) . '|' . filemtime( $bundle ) . '|' . filesize( $bundle );
+	$seen  = (array) get_option( 'tp_critical_ok', array() );
+	$key   = $rtl ? 'rtl' : 'ltr';
+	if ( ( $seen[ $key ]['stamp'] ?? '' ) !== $stamp ) {
+		$head          = (string) file_get_contents( $crit, false, null, 0, 40 ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+		$ok            = preg_match( '#^/\*bundle:([0-9a-f]{12})\*/#', $head, $m ) && substr( sha1_file( $bundle ), 0, 12 ) === $m[1];
+		$seen[ $key ]  = array( 'stamp' => $stamp, 'ok' => $ok );
+		update_option( 'tp_critical_ok', $seen, true );
+	}
+	if ( ! empty( $seen[ $key ]['ok'] ) ) {
+		$css = (string) file_get_contents( $crit ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+	}
+	return $css;
+}
+
+add_action(
+	'wp_head',
+	static function () {
+		$css = tp_critical_css();
+		if ( '' !== $css ) {
+			echo '<style id="tp-critical">' . $css . '</style>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- the theme's own built CSS file.
+		}
+	},
+	1
+);
+
+// With critical CSS inline, the full stylesheet loads early but without holding up the page.
+add_filter(
+	'style_loader_tag',
+	static function ( $tag, $handle, $href ) {
+		if ( 'tp-main' !== $handle || '' === tp_critical_css() ) {
+			return $tag;
+		}
+		$async = preg_replace( "/media=(['\"])all\\1/", 'media="print" onload="this.media=\'all\'"', $tag, 1 );
+		return '<link rel="preload" as="style" href="' . esc_url( $href ) . '">' . "\n" . $async . '<noscript>' . $tag . '</noscript>' . "\n";
+	},
+	10,
+	3
+);
+
 // No emoji script: the theme uses its own icons and every browser draws emoji.
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
@@ -111,7 +180,13 @@ add_action( 'wp_enqueue_scripts', 'tp_enqueue' );
 function tp_enqueue() {
 	// Fonts are self-hosted; the chosen one is inlined in inc/design.php.
 	tp_enqueue_style( 'tp-main', 'assets/css/main.css' );
-	tp_enqueue_style( 'tp-patterns', 'assets/css/patterns.css', array( 'tp-main' ) );
+	if ( tp_css_bundled() ) {
+		// main.min.css already holds the patterns and animations (tools/build.js); keep the handle for anything that depends on it.
+		wp_register_style( 'tp-patterns', false, array( 'tp-main' ), TP_VERSION );
+		wp_enqueue_style( 'tp-patterns' );
+	} else {
+		tp_enqueue_style( 'tp-patterns', 'assets/css/patterns.css', array( 'tp-main' ) );
+	}
 	wp_enqueue_script( 'tp-main', tp_asset( 'assets/js/main.js' ), array(), TP_VERSION, array( 'in_footer' => true, 'strategy' => 'defer' ) );
 	wp_add_inline_script(
 		'tp-main',
@@ -154,6 +229,9 @@ function tp_enqueue() {
 				'now'         => __( 'Now', 'taxi-peninsula' ),
 					/* translators: %s: menu item */
 					'showSubmenu' => __( 'Show more: %s', 'taxi-peninsula' ),
+				'phoneBad'      => __( 'Please enter an Australian phone number, e.g. 0412 345 678 or (03) 9123 4567.', 'taxi-peninsula' ),
+				'phoneMobile'   => __( 'Please enter a mobile number starting with 04, so we can send texts.', 'taxi-peninsula' ),
+				'phoneLandline' => __( 'That looks like a landline — we will call you instead of sending texts.', 'taxi-peninsula' ),
 				'prev'     => __( 'Previous photo', 'taxi-peninsula' ),
 				'next'     => __( 'Next photo', 'taxi-peninsula' ),
 				/* translators: 1: photo number, 2: total */

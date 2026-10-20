@@ -151,6 +151,7 @@ function tp_render_ndis_log_page() {
 			<?php submit_button( __( 'Show', 'taxi-peninsula' ), 'secondary', '', false ); ?>
 			<a class="button" href="<?php echo esc_url( tp_ndis_log_url( $month, 'all', 'csv', $cancelled ) ); ?>"><?php esc_html_e( 'CSV for everyone', 'taxi-peninsula' ); ?></a>
 		</form>
+		<?php do_action( 'tp_ndis_log_top', $month, $rows ); ?>
 		<?php if ( ! $rows ) : ?>
 			<p><?php esc_html_e( 'No NDIS or account trips in this month.', 'taxi-peninsula' ); ?></p>
 		<?php else : ?>
@@ -175,8 +176,9 @@ function tp_render_ndis_log_page() {
 								<a href="<?php echo esc_url( tp_ndis_log_url( $month, $key, 'print', $cancelled ) ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Print / PDF', 'taxi-peninsula' ); ?></a> ·
 								<a href="<?php echo esc_url( tp_ndis_log_url( $month, $key, 'csv', $cancelled ) ); ?>"><?php esc_html_e( 'CSV', 'taxi-peninsula' ); ?></a>
 								<?php if ( is_email( $p['invoice_email'] ) ) : ?>
-									· <a href="<?php echo esc_url( tp_ndis_log_url( $month, $key, 'email', $cancelled ) ); ?>"><?php esc_html_e( 'Email to plan manager', 'taxi-peninsula' ); ?></a>
+									· <a href="<?php echo esc_url( tp_ndis_log_url( $month, $key, 'email', $cancelled ) ); ?>"><?php esc_html_e( 'Email trip log', 'taxi-peninsula' ); ?></a>
 								<?php endif; ?>
+								<?php do_action( 'tp_ndis_log_row_actions', $month, $key, $p ); ?>
 							</td>
 						</tr>
 					<?php endforeach; ?>

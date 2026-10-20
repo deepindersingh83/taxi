@@ -1268,6 +1268,55 @@
 		wrap.addEventListener('focusout', function (e) { if (e.relatedTarget && !wrap.contains(e.relatedTarget)) { set(false); } });
 	})();
 
+	/* ------------------------------------------------------------------
+	 * Australian phone numbers: checked and tidied when the field is left
+	 * (0412 345 678, (03) 9123 4567, 1300 123 456). The server checks again.
+	 * Same rules as tp_au_phone() in inc/helpers.php.
+	 * ------------------------------------------------------------------ */
+	var auPhone = function (raw) {
+		raw = (raw || '').trim();
+		if (!/^[\d\s+()\-.]{6,24}$/.test(raw)) { return null; }
+		var d = raw.replace(/\D+/g, '');
+		if (raw.charAt(0) === '+' && d.indexOf('61') !== 0) { return d.length >= 8 && d.length <= 15 ? { type: 'intl', display: '+' + d } : null; }
+		if (d.indexOf('61') === 0 && d.length >= 11) { d = '0' + d.slice(2).replace(/^0+/, ''); }
+		if (d.length === 8 && /^[2-9]/.test(d)) { d = '03' + d; }
+		if (/^04\d{8}$/.test(d)) { return { type: 'mobile', display: d.slice(0, 4) + ' ' + d.slice(4, 7) + ' ' + d.slice(7) }; }
+		if (/^0[2378][2-9]\d{7}$/.test(d)) { return { type: 'landline', display: '(' + d.slice(0, 2) + ') ' + d.slice(2, 6) + ' ' + d.slice(6) }; }
+		if (/^1[38]00\d{6}$/.test(d)) { return { type: 'business', display: d.slice(0, 4) + ' ' + d.slice(4, 7) + ' ' + d.slice(7) }; }
+		if (/^13\d{4}$/.test(d)) { return { type: 'business', display: '13 ' + d.slice(2, 4) + ' ' + d.slice(4) }; }
+		return null;
+	};
+	document.querySelectorAll('form input[type="tel"]:not([data-phone-any])').forEach(function (input) {
+		var id = (input.id || ('tel-' + Math.random().toString(36).slice(2))) + '-phone';
+		var note = document.createElement('p');
+		note.id = id;
+		note.className = 'field__hint field__hint--phone';
+		note.setAttribute('aria-live', 'polite');
+		note.hidden = true;
+		input.insertAdjacentElement('afterend', note);
+		input.setAttribute('aria-describedby', ((input.getAttribute('aria-describedby') || '') + ' ' + id).trim());
+		var show = function (text, bad) {
+			note.textContent = text || '';
+			note.hidden = !text;
+			note.classList.toggle('field__error', !!bad);
+			input.setCustomValidity(bad ? text : '');
+			input.setAttribute('aria-invalid', bad ? 'true' : 'false');
+		};
+		var check = function (tidy) {
+			var v = input.value.trim();
+			if (!v) { show('', false); return; }
+			var p = auPhone(v);
+			if (!p) { show(tpI18n.phoneBad || 'Please enter an Australian phone number, e.g. 0412 345 678 or (03) 9123 4567.', true); return; }
+			if (input.hasAttribute('data-mobile-only') && p.type !== 'mobile') { show(tpI18n.phoneMobile || 'Please enter a mobile number starting with 04, so we can send texts.', true); return; }
+			if (tidy && input.value !== p.display) { input.value = p.display; }
+			show(p.type === 'landline' && input.hasAttribute('data-sms-hint') ? (tpI18n.phoneLandline || 'That looks like a landline — we will call you instead of sending texts.') : '', false);
+		};
+		input.addEventListener('blur', function () { check(true); });
+		// While typing, only clear an earlier error (never nag mid-number).
+		input.addEventListener('input', function () { if (input.getAttribute('aria-invalid') === 'true' && auPhone(input.value)) { check(false); } });
+		if (input.value) { check(false); }
+	});
+
 	/* Move focus to server-rendered errors / success so screen readers announce them. */
 	var focusTarget = document.querySelector('[data-focus]');
 	if (focusTarget) {

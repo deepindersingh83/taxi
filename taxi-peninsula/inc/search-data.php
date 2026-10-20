@@ -33,6 +33,18 @@ function tp_gsc_state() {
 	return wp_parse_args( (array) get_option( 'tp_gsc', array() ), array( 'refresh' => '', 'sa' => array(), 'access' => '', 'expires' => 0, 'site' => '' ) );
 }
 
+// Keys saved before v2.9 were stored as plain text: encrypt them.
+add_action(
+	'admin_init',
+	static function () {
+		$s = tp_gsc_state();
+		if ( ! empty( $s['sa']['private_key'] ) && 0 !== strpos( $s['sa']['private_key'], 'tpenc:' ) ) {
+			$s['sa']['private_key'] = tp_encrypt( $s['sa']['private_key'] );
+			update_option( 'tp_gsc', $s, false );
+		}
+	}
+);
+
 /**
  * Connected to the Search Console API (Google sign-in or a service-account key)?
  */
@@ -93,7 +105,11 @@ function tp_gsc_service_jwt( array $sa ) {
 		)
 	);
 	$sig = '';
-	if ( ! openssl_sign( $input, $sig, $sa['private_key'], OPENSSL_ALGO_SHA256 ) ) {
+	$pem = tp_decrypt( $sa['private_key'] );
+	if ( '' === $pem ) {
+		return new WP_Error( 'tp_gsc_key', __( 'The saved key can no longer be read (the site’s security keys changed). Please upload the JSON key again.', 'taxi-peninsula' ) );
+	}
+	if ( ! openssl_sign( $input, $sig, $pem, OPENSSL_ALGO_SHA256 ) ) {
 		return new WP_Error( 'tp_gsc_key', __( 'The key could not be read. Download a new JSON key and paste it again.', 'taxi-peninsula' ) );
 	}
 	return $input . '.' . $b64( $sig );
@@ -295,7 +311,7 @@ add_action(
 		if ( ! is_array( $k ) || 'service_account' !== ( $k['type'] ?? '' ) || ! is_email( $k['client_email'] ?? '' ) || false === strpos( (string) ( $k['private_key'] ?? '' ), 'PRIVATE KEY' ) ) {
 			tp_gsc_back( __( 'That is not a service-account key. In Google Cloud open the service account → Keys → Add key → JSON, and paste the whole downloaded file.', 'taxi-peninsula' ) );
 		}
-		update_option( 'tp_gsc', array( 'refresh' => '', 'sa' => array( 'client_email' => $k['client_email'], 'private_key' => $k['private_key'] ), 'access' => '', 'expires' => 0, 'site' => '' ), false );
+		update_option( 'tp_gsc', array( 'refresh' => '', 'sa' => array( 'client_email' => $k['client_email'], 'private_key' => tp_encrypt( $k['private_key'] ) ), 'access' => '', 'expires' => 0, 'site' => '' ), false );
 		$token = tp_gsc_token();
 		if ( is_wp_error( $token ) ) {
 			delete_option( 'tp_gsc' );
