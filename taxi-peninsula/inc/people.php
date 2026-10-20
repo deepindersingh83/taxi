@@ -275,6 +275,7 @@ add_action( 'add_meta_boxes_tp_partner', static function () {
 			<input type="url" id="tp_partner_url" name="tp_partner_url" class="widefat" value="<?php echo esc_attr( get_post_meta( $post->ID, '_tp_url', true ) ); ?>"></p>
 		<p><label><input type="checkbox" name="tp_partner_ok" value="1" <?php checked( get_post_meta( $post->ID, '_tp_permission', true ), '1' ); ?>> <strong><?php esc_html_e( 'We have written permission to show this logo', 'taxi-peninsula' ); ?></strong></label><br>
 			<span class="description"><?php esc_html_e( 'The logo stays hidden until this is ticked.', 'taxi-peninsula' ); ?></span></p>
+		<?php do_action( 'tp_partner_box_fields', $post ); ?>
 		<?php
 	}, 'tp_partner', 'normal', 'high' );
 } );
@@ -309,11 +310,7 @@ function tp_partners() {
 	);
 }
 
-add_shortcode( 'tp_partners', static function () {
-	ob_start();
-	get_template_part( 'template-parts/partners' );
-	return ob_get_clean();
-} );
+add_shortcode( 'tp_partners', static fn() => function_exists( 'tp_partner_section_html' ) ? tp_partner_section_html( 'travel', true ) : '' );
 
 /**
  * Years driving and languages, as small chips.

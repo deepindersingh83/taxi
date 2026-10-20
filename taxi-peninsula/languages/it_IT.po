@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.9.0\n"
+"Project-Id-Version: Taxi Peninsula 2.10.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
@@ -5624,3 +5624,91 @@ msgstr ""
 msgid ""
 "That looks like a landline — we will call you instead of sending texts."
 msgstr "Sembra un numero fisso: la chiameremo invece di inviarle messaggi."
+
+msgid "Become a partner"
+msgstr "Diventa partner"
+
+msgid "Trusted by [local hospitals], care homes and businesses"
+msgstr "Scelti da [ospedali locali], case di riposo e aziende"
+
+msgid ""
+"Organisations across the Peninsula book their residents, patients and staff "
+"with us every week."
+msgstr ""
+"Ogni settimana, organizzazioni di tutta la penisola prenotano con noi i "
+"viaggi per i loro ospiti, pazienti e personale."
+
+msgid "Use your [NDIS plan] or funding — we handle the paperwork"
+msgstr ""
+"Usa il tuo [piano NDIS] o il tuo finanziamento: alle pratiche pensiamo noi"
+
+msgid ""
+"We work with the schemes, plan managers and support coordinators below."
+msgstr ""
+"Collaboriamo con i programmi, i gestori di piani e i coordinatori di "
+"supporto elencati qui sotto."
+
+msgid "Other"
+msgstr "Altro"
+
+msgid "NDIS provider"
+msgstr "Fornitore NDIS"
+
+msgid "Plan manager"
+msgstr "Gestore del piano"
+
+msgid "Funding scheme"
+msgstr "Programma di finanziamento"
+
+msgid "Support coordinator"
+msgstr "Coordinatore di supporto"
+
+msgid "Accreditation"
+msgstr "Accreditamento"
+
+msgid "Aged care"
+msgstr "Assistenza agli anziani"
+
+msgid "Business or club"
+msgstr "Azienda o club"
+
+msgid "partner organisation"
+msgid_plural "partner organisations"
+msgstr[0] "organizzazione partner"
+msgstr[1] "organizzazioni partner"
+
+msgid "partner trip this year"
+msgid_plural "partner trips this year"
+msgstr[0] "viaggio dei partner quest'anno"
+msgstr[1] "viaggi dei partner quest'anno"
+
+msgid "funding scheme accepted"
+msgid_plural "funding schemes accepted"
+msgstr[0] "programma di finanziamento accettato"
+msgstr[1] "programmi di finanziamento accettati"
+
+msgid "plan manager & coordinator"
+msgid_plural "plan managers & coordinators"
+msgstr[0] "gestore del piano e coordinatore"
+msgstr[1] "gestori dei piani e coordinatori"
+
+msgid "Travel partners"
+msgstr "Partner di viaggio"
+
+msgid "How partnering works"
+msgstr "Come funziona la collaborazione"
+
+msgid "NDIS & funding partners"
+msgstr "Partner NDIS e di finanziamento"
+
+msgid "Check your funding"
+msgstr "Verifica il tuo finanziamento"
+
+msgid "NDIS transport guide"
+msgstr "Guida ai trasporti NDIS"
+
+msgid "Play logos"
+msgstr "Avvia loghi"
+
+msgid "Pause logos"
+msgstr "Metti in pausa i loghi"

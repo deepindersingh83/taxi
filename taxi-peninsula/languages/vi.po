@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.9.0\n"
+"Project-Id-Version: Taxi Peninsula 2.10.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
@@ -5589,3 +5589,87 @@ msgid ""
 msgstr ""
 "Số này có vẻ là điện thoại bàn — chúng tôi sẽ gọi cho bạn thay vì gửi tin "
 "nhắn."
+
+msgid "Become a partner"
+msgstr "Trở thành đối tác"
+
+msgid "Trusted by [local hospitals], care homes and businesses"
+msgstr ""
+"Được [các bệnh viện địa phương], viện dưỡng lão và doanh nghiệp tin tưởng"
+
+msgid ""
+"Organisations across the Peninsula book their residents, patients and staff "
+"with us every week."
+msgstr ""
+"Các tổ chức trên khắp bán đảo đặt xe cho cư dân, bệnh nhân và nhân viên của "
+"họ với chúng tôi mỗi tuần."
+
+msgid "Use your [NDIS plan] or funding — we handle the paperwork"
+msgstr "Dùng [gói NDIS] hoặc nguồn tài trợ của bạn — chúng tôi lo giấy tờ"
+
+msgid ""
+"We work with the schemes, plan managers and support coordinators below."
+msgstr ""
+"Chúng tôi hợp tác với các chương trình, người quản lý gói và điều phối viên "
+"hỗ trợ dưới đây."
+
+msgid "Other"
+msgstr "Khác"
+
+msgid "NDIS provider"
+msgstr "Nhà cung cấp NDIS"
+
+msgid "Plan manager"
+msgstr "Người quản lý gói"
+
+msgid "Funding scheme"
+msgstr "Chương trình tài trợ"
+
+msgid "Support coordinator"
+msgstr "Điều phối viên hỗ trợ"
+
+msgid "Accreditation"
+msgstr "Chứng nhận"
+
+msgid "Aged care"
+msgstr "Chăm sóc người cao tuổi"
+
+msgid "Business or club"
+msgstr "Doanh nghiệp hoặc câu lạc bộ"
+
+msgid "partner organisation"
+msgid_plural "partner organisations"
+msgstr[0] "tổ chức đối tác"
+
+msgid "partner trip this year"
+msgid_plural "partner trips this year"
+msgstr[0] "chuyến đi của đối tác trong năm nay"
+
+msgid "funding scheme accepted"
+msgid_plural "funding schemes accepted"
+msgstr[0] "chương trình tài trợ được chấp nhận"
+
+msgid "plan manager & coordinator"
+msgid_plural "plan managers & coordinators"
+msgstr[0] "người quản lý gói và điều phối viên"
+
+msgid "Travel partners"
+msgstr "Đối tác vận chuyển"
+
+msgid "How partnering works"
+msgstr "Cách thức hợp tác"
+
+msgid "NDIS & funding partners"
+msgstr "Đối tác NDIS và tài trợ"
+
+msgid "Check your funding"
+msgstr "Kiểm tra nguồn tài trợ của bạn"
+
+msgid "NDIS transport guide"
+msgstr "Hướng dẫn đi lại với NDIS"
+
+msgid "Play logos"
+msgstr "Chạy logo"
+
+msgid "Pause logos"
+msgstr "Dừng logo"

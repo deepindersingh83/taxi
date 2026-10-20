@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.9.0\n"
+"Project-Id-Version: Taxi Peninsula 2.10.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -5092,3 +5092,82 @@ msgstr "请输入以 04 开头的手机号码，以便我们发送短信。"
 msgid ""
 "That looks like a landline — we will call you instead of sending texts."
 msgstr "这看起来是固定电话——我们会给您打电话，而不是发送短信。"
+
+msgid "Become a partner"
+msgstr "成为合作伙伴"
+
+msgid "Trusted by [local hospitals], care homes and businesses"
+msgstr "深受[本地医院]、护理院和企业的信赖"
+
+msgid ""
+"Organisations across the Peninsula book their residents, patients and staff "
+"with us every week."
+msgstr "半岛各地的机构每周都通过我们为住户、病人和员工预订出行。"
+
+msgid "Use your [NDIS plan] or funding — we handle the paperwork"
+msgstr "使用您的[NDIS 计划]或资助 — 文书工作由我们处理"
+
+msgid ""
+"We work with the schemes, plan managers and support coordinators below."
+msgstr "我们与以下资助计划、计划管理人和支持协调员合作。"
+
+msgid "Other"
+msgstr "其他"
+
+msgid "NDIS provider"
+msgstr "NDIS 服务提供者"
+
+msgid "Plan manager"
+msgstr "计划管理人"
+
+msgid "Funding scheme"
+msgstr "资助计划"
+
+msgid "Support coordinator"
+msgstr "支持协调员"
+
+msgid "Accreditation"
+msgstr "资质认证"
+
+msgid "Aged care"
+msgstr "老年护理"
+
+msgid "Business or club"
+msgstr "企业或俱乐部"
+
+msgid "partner organisation"
+msgid_plural "partner organisations"
+msgstr[0] "家合作机构"
+
+msgid "partner trip this year"
+msgid_plural "partner trips this year"
+msgstr[0] "次合作伙伴行程（今年）"
+
+msgid "funding scheme accepted"
+msgid_plural "funding schemes accepted"
+msgstr[0] "项可用资助计划"
+
+msgid "plan manager & coordinator"
+msgid_plural "plan managers & coordinators"
+msgstr[0] "位计划管理人和协调员"
+
+msgid "Travel partners"
+msgstr "出行合作伙伴"
+
+msgid "How partnering works"
+msgstr "合作方式"
+
+msgid "NDIS & funding partners"
+msgstr "NDIS 与资助合作伙伴"
+
+msgid "Check your funding"
+msgstr "查看您的资助"
+
+msgid "NDIS transport guide"
+msgstr "NDIS 出行指南"
+
+msgid "Play logos"
+msgstr "播放标志"
+
+msgid "Pause logos"
+msgstr "暂停标志"

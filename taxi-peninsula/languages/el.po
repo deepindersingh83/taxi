@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.9.0\n"
+"Project-Id-Version: Taxi Peninsula 2.10.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -5666,3 +5666,93 @@ msgid ""
 msgstr ""
 "Αυτός φαίνεται να είναι σταθερός αριθμός — θα σας τηλεφωνήσουμε αντί να σας "
 "στείλουμε μηνύματα."
+
+msgid "Become a partner"
+msgstr "Γίνετε συνεργάτης"
+
+msgid "Trusted by [local hospitals], care homes and businesses"
+msgstr ""
+"Μας εμπιστεύονται [τοπικά νοσοκομεία], οίκοι φροντίδας και επιχειρήσεις"
+
+msgid ""
+"Organisations across the Peninsula book their residents, patients and staff "
+"with us every week."
+msgstr ""
+"Οργανισμοί σε όλη τη χερσόνησο κλείνουν κάθε εβδομάδα διαδρομές μαζί μας για"
+" τους διαμένοντες, τους ασθενείς και το προσωπικό τους."
+
+msgid "Use your [NDIS plan] or funding — we handle the paperwork"
+msgstr ""
+"Χρησιμοποιήστε το [πρόγραμμα NDIS] ή τη χρηματοδότησή σας — εμείς "
+"αναλαμβάνουμε τα χαρτιά"
+
+msgid ""
+"We work with the schemes, plan managers and support coordinators below."
+msgstr ""
+"Συνεργαζόμαστε με τα προγράμματα, τους διαχειριστές προγραμμάτων και τους "
+"συντονιστές υποστήριξης παρακάτω."
+
+msgid "Other"
+msgstr "Άλλο"
+
+msgid "NDIS provider"
+msgstr "Πάροχος NDIS"
+
+msgid "Plan manager"
+msgstr "Διαχειριστής προγράμματος"
+
+msgid "Funding scheme"
+msgstr "Πρόγραμμα χρηματοδότησης"
+
+msgid "Support coordinator"
+msgstr "Συντονιστής υποστήριξης"
+
+msgid "Accreditation"
+msgstr "Πιστοποίηση"
+
+msgid "Aged care"
+msgstr "Φροντίδα ηλικιωμένων"
+
+msgid "Business or club"
+msgstr "Επιχείρηση ή σύλλογος"
+
+msgid "partner organisation"
+msgid_plural "partner organisations"
+msgstr[0] "συνεργαζόμενος οργανισμός"
+msgstr[1] "συνεργαζόμενοι οργανισμοί"
+
+msgid "partner trip this year"
+msgid_plural "partner trips this year"
+msgstr[0] "διαδρομή συνεργατών φέτος"
+msgstr[1] "διαδρομές συνεργατών φέτος"
+
+msgid "funding scheme accepted"
+msgid_plural "funding schemes accepted"
+msgstr[0] "αποδεκτό πρόγραμμα χρηματοδότησης"
+msgstr[1] "αποδεκτά προγράμματα χρηματοδότησης"
+
+msgid "plan manager & coordinator"
+msgid_plural "plan managers & coordinators"
+msgstr[0] "διαχειριστής προγράμματος & συντονιστής"
+msgstr[1] "διαχειριστές προγραμμάτων & συντονιστές"
+
+msgid "Travel partners"
+msgstr "Συνεργάτες μετακινήσεων"
+
+msgid "How partnering works"
+msgstr "Πώς λειτουργεί η συνεργασία"
+
+msgid "NDIS & funding partners"
+msgstr "Συνεργάτες NDIS & χρηματοδότησης"
+
+msgid "Check your funding"
+msgstr "Ελέγξτε τη χρηματοδότησή σας"
+
+msgid "NDIS transport guide"
+msgstr "Οδηγός μετακινήσεων NDIS"
+
+msgid "Play logos"
+msgstr "Αναπαραγωγή λογοτύπων"
+
+msgid "Pause logos"
+msgstr "Παύση λογοτύπων"

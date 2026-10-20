@@ -166,7 +166,7 @@ function tp_callback_shortcode() {
 					<label for="cb-reason"><?php esc_html_e( 'What is it about?', 'taxi-peninsula' ); ?></label>
 					<select id="cb-reason" name="reason">
 						<?php foreach ( tp_callback_reasons() as $r ) : ?>
-							<option <?php selected( $old['reason'] ?? '', $r ); ?>><?php echo esc_html( $r ); ?></option>
+							<option <?php selected( $old['reason'] ?? ( 'funding' === ( $_GET['reason'] ?? '' ) ? tp_callback_reasons()[3] : '' ), $r ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended,WordPress.Security.ValidatedSanitizedInput -- compared to a fixed value. ?>><?php echo esc_html( $r ); ?></option>
 						<?php endforeach; ?>
 					</select>
 				</div>

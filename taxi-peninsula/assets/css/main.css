@@ -2174,3 +2174,90 @@ html[data-contrast="high"] .tp-alerts-box--front { background: #fff; color: #000
 .driver-live__note { margin: var(--space-xs) 0 0; font-size: var(--step--1); color: var(--c-muted); }
 .job__share { margin-top: var(--space-s); padding: var(--space-s); border-radius: var(--radius); background: var(--c-bg-alt); }
 .job__share-status { margin: 0 0 var(--space-xs); font-size: var(--step--1); }
+
+/* ---------------------------------------------------------------------------
+ * Partner sections (travel partners, NDIS & funding partners).
+ * ------------------------------------------------------------------------ */
+.pp { position: relative; overflow: hidden; padding-block: clamp(2.75rem, 2rem + 3vw, 4.5rem); }
+.pp--travel { background: radial-gradient(1200px 400px at 85% -10%, var(--c-accent-glow), transparent 60%), var(--c-bg-alt); }
+.pp--funding { background: radial-gradient(900px 420px at 10% 120%, var(--c-accent-glow), transparent 60%), linear-gradient(135deg, var(--c-primary), var(--c-footer)); color: #fff; }
+.pp--inset { border-radius: 1.5rem; margin-block: var(--space-l); padding-inline: 0; }
+.pp__in { max-width: var(--container, 72rem); margin-inline: auto; padding-inline: var(--space-m, 1rem); display: grid; grid-template-columns: minmax(18rem, 26rem) minmax(0, 1fr); gap: clamp(1.75rem, 1rem + 3vw, 3rem); align-items: center; }
+.pp--inset .pp__in { grid-template-columns: 1fr; padding-inline: clamp(1rem, .5rem + 2vw, 2rem); }
+.pp__chip { display: inline-flex; align-items: center; gap: .5rem; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .35rem .8rem; border-radius: 999px; background: color-mix(in srgb, var(--c-primary) 8%, transparent); color: var(--c-heading); }
+.pp__chip::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: var(--c-accent); box-shadow: 0 0 0 3px var(--c-accent-glow); }
+.pp--funding .pp__chip { background: rgb(255 255 255 / .1); color: #fff; }
+.pp__title { margin: .85rem 0 .6rem; font-size: clamp(1.55rem, 1.15rem + 1.1vw, 2rem); line-height: 1.18; text-wrap: balance; color: var(--c-heading); }
+.pp__title mark { background: linear-gradient(transparent 64%, color-mix(in srgb, var(--c-accent) 55%, transparent) 64%); color: inherit; padding: 0 .08em; }
+.pp--funding .pp__title { color: #fff; }
+.pp--funding .pp__title mark { background: none; color: var(--c-accent); }
+.pp__lead { margin: 0; color: var(--c-muted); font-size: 1.05rem; }
+.pp--funding .pp__lead { color: #c9d5ec; }
+.pp__stats { list-style: none; padding: 0; margin: 1.5rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.pp__stat { display: grid; grid-template-columns: 2.25rem 1fr; gap: .1rem .75rem; align-items: center; padding: .85rem 1rem; border-radius: 1rem; background: var(--c-surface); border: 1px solid var(--c-border); box-shadow: 0 1px 2px rgb(11 42 91 / .06), 0 6px 18px rgb(11 42 91 / .07); }
+.pp__stat svg { grid-row: span 2; width: 2.25rem; height: 2.25rem; padding: .5rem; border-radius: .6rem; background: color-mix(in srgb, var(--c-accent) 22%, transparent); color: var(--c-heading); }
+.pp__stat strong { font-size: 1.7rem; line-height: 1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; color: var(--c-heading); }
+.pp__stat span { font-size: .82rem; line-height: 1.25; color: var(--c-muted); }
+.pp--funding .pp__stat { background: rgb(255 255 255 / .07); border-color: rgb(255 255 255 / .15); box-shadow: none; }
+.pp--funding .pp__stat strong { color: #fff; }
+.pp--funding .pp__stat svg { color: var(--c-accent); background: rgb(255 199 44 / .16); }
+.pp--funding .pp__stat span { color: #c9d5ec; }
+.pp__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.25rem; }
+.pp__btn { box-shadow: 0 6px 18px var(--c-accent-glow); }
+.pp__btn svg { width: 1.1rem; height: 1.1rem; transition: transform .2s; }
+.pp__btn:hover svg { transform: translateX(3px); }
+.pp__more { font-weight: 700; color: var(--c-link); text-decoration: none; border-bottom: 2px solid currentColor; padding-bottom: 1px; }
+.pp--funding .pp__more { color: #fff; }
+.pp--funding a:focus-visible, .pp--funding button:focus-visible { outline-color: var(--c-accent); }
+
+.pp__rows { position: relative; min-width: 0; display: grid; gap: .75rem; padding-bottom: 2.75rem; }
+.pp__rows--still { padding-bottom: 0; }
+/*rtl:begin:ignore*/
+.pp__marquee { direction: ltr; } /* The logo rows move the same way in every language. */
+@keyframes pp-slide { to { transform: translateX(-50%); } }
+/*rtl:end:ignore*/
+.pp__marquee { overflow: hidden; padding-block: .6rem; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+.pp__rows--still .pp__marquee { -webkit-mask-image: none; mask-image: none; }
+.pp__track { display: flex; width: max-content; animation: pp-slide var(--pp-speed, 50s) linear infinite; }
+.pp__track--rev { animation-direction: reverse; }
+.pp__rows--still .pp__track { animation: none; width: auto; }
+.pp__list { display: flex; gap: .9rem; list-style: none; margin: 0; padding: 0 .45rem; }
+.pp__rows--still .pp__list { flex-wrap: wrap; }
+.pp__rows:hover .pp__track, .pp__rows:focus-within .pp__track, .pp.is-paused .pp__track { animation-play-state: paused; }
+/* Logos are made for white backgrounds, so tiles stay white in dark mode too. */
+.pp-tile { display: grid; place-items: center; width: 13rem; height: 6rem; padding: .65rem 1rem; border-radius: 1.1rem; background: #fff; color: #16213a; border: 1px solid var(--c-border); box-shadow: 0 1px 2px rgb(11 42 91 / .06), 0 6px 18px rgb(11 42 91 / .07); text-decoration: none; transition: transform .25s, box-shadow .25s, border-color .25s; }
+.pp--funding .pp-tile { border-color: transparent; }
+a.pp-tile:hover, a.pp-tile:focus-visible { transform: translateY(-4px); border-color: var(--c-accent); box-shadow: 0 2px 4px rgb(11 42 91 / .08), 0 14px 30px rgb(11 42 91 / .18); }
+.pp-tile__img { max-width: 100%; max-height: 3.5rem; width: auto; height: auto; object-fit: contain; }
+.pp--travel .pp-tile__img { filter: grayscale(.85); opacity: .88; transition: filter .25s, opacity .25s; }
+.pp--travel .pp-tile:hover .pp-tile__img, .pp--travel .pp-tile:focus-visible .pp-tile__img { filter: none; opacity: 1; }
+.pp-tile--text { text-align: center; gap: .3rem; align-content: center; }
+.pp-tile--text b { font-size: 1.35rem; line-height: 1.1; letter-spacing: .01em; color: #0b2a5b; }
+.pp-tile--text small { font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #5c6884; }
+.pp__pause { position: absolute; inset-inline-end: .25rem; bottom: 0; display: inline-flex; align-items: center; gap: .4rem; font: inherit; font-size: .8rem; font-weight: 700; min-height: 2.25rem; padding: .3rem .8rem; border-radius: 999px; border: 1px solid var(--c-border); background: var(--c-surface); color: var(--c-text); cursor: pointer; }
+.pp__pause svg { width: .75rem; height: .75rem; fill: currentColor; }
+.pp__pause .pp__ico-play, .pp.is-paused .pp__pause .pp__ico-pause { display: none; }
+.pp.is-paused .pp__pause .pp__ico-play { display: inline; }
+.pp--funding .pp__pause { background: rgb(255 255 255 / .08); color: #fff; border-color: rgb(255 255 255 / .28); }
+html[data-contrast="high"] .pp--funding { background: #000; }
+html[data-contrast="high"] .pp-tile { border: 2px solid #000; }
+@media (max-width: 56em) {
+	.pp__in { grid-template-columns: 1fr; }
+	.pp-tile { width: 10rem; height: 5rem; border-radius: .9rem; }
+	.pp-tile__img { max-height: 2.75rem; }
+	.pp-tile--text b { font-size: 1.15rem; }
+	.pp__rows { gap: .25rem; }
+	.pp__marquee { padding-block: .4rem; }
+	.pp__rows { padding-bottom: 0; }
+	.pp__pause { position: static; justify-self: center; margin-top: .5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+	.pp__track { animation: none; width: auto; }
+	.pp__list { flex-wrap: wrap; justify-content: center; }
+	.pp__list[aria-hidden="true"], .pp__list li:has([aria-hidden="true"]) { display: none; }
+	.pp__marquee { -webkit-mask-image: none; mask-image: none; }
+	.pp__pause { display: none; }
+	.pp__rows { padding-bottom: 0; }
+	.pp-tile, .pp__btn svg { transition: none; }
+}
+@media print { .pp__track { animation: none; } .pp__pause { display: none; } }

@@ -235,6 +235,7 @@ function tp_render_venue_box( $post ) {
 	};
 	?>
 	<p class="description"><?php esc_html_e( 'The title is the partner’s name. Use the main editor for a short welcome, the featured image for their logo, and the excerpt for one line under the name.', 'taxi-peninsula' ); ?></p>
+	<?php do_action( 'tp_venue_box_fields', $post ); ?>
 	<table class="form-table" role="presentation">
 		<tr><th><label for="tp_v_type"><?php esc_html_e( 'Type', 'taxi-peninsula' ); ?></label></th><td>
 			<select id="tp_v_type" name="tp_v[type]">

@@ -1,9 +1,8 @@
 <?php
 /**
- * Home section: partner logos.
+ * Home section: travel partners (moving logos, numbers, "Become a partner").
  *
  * @package TaxiPeninsula
  */
 
-?>
-<?php get_template_part( 'template-parts/partners', null, array( 'title' => tp_home_text( 'partners' ), 'slim' => true ) ); ?>
+tp_partner_section( 'travel' );

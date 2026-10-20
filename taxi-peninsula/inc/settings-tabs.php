@@ -25,6 +25,7 @@ function tp_settings_tabs() {
 		'privacy'   => array( __( 'Privacy', 'taxi-peninsula' ), array( 'privacy' ) ),
 		'marketing' => array( __( 'Marketing & SEO', 'taxi-peninsula' ), array( 'analytics', 'tracking', 'marketing', 'local', 'search' ) ),
 	);
+	$tabs = apply_filters( 'tp_settings_tabs', $tabs );
 	// Sections added later by other modules go in "More".
 	$used  = array_merge( ...array_values( wp_list_pluck( $tabs, 1 ) ) );
 	$extra = array_diff( array_keys( tp_settings_sections() ), $used );

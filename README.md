@@ -8,6 +8,25 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### New in v2.10 — partner sections
+Two matching sections, each with a heading, two numbers, one button and two rows of logos gliding in opposite directions. The logos pause when someone hovers over them or tabs into them, there's a "Pause logos" button, and they stay still for visitors who turn off motion. They work on phones, in dark mode and in Arabic.
+- **Travel partners** (light): "Trusted by local hospitals, care homes and businesses".
+  - Numbers: partner organisations, and partner trips this year (counted from completed trips booked through partner pages).
+  - The **Become a partner** button opens the contact form with "Become a partner" selected.
+- **NDIS & funding partners** (navy): "Use your NDIS plan or funding — we handle the paperwork".
+  - Numbers: funding schemes accepted, and plan managers & coordinators.
+  - The **Check your funding** button opens the call-back form with "NDIS, aged care or business account" selected. There's also an "NDIS transport guide" link.
+  - It also shows at the top of your NDIS & aged-care page. Use `[tp_funding_partners]` to place it anywhere else.
+- **Adding logos:** Website content → Partners.
+  - For each partner, choose **Show in** (Travel partners, or NDIS & funding partners) and a **Type**: Funding scheme, Plan manager, Support coordinator, Accreditation, Hospital, Aged care, and so on.
+  - Nothing shows until "We have written permission to show this logo" is ticked.
+  - An NDIS & funding partner without a logo shows as a neat text tile (e.g. "NDIS · Funding scheme"). That suits schemes whose official logos you aren't licensed to use.
+  - Partner pages (Bookings → Partner pages) have a "Show their logo in the Travel partners section" tick. That uses their featured image and links to their booking page.
+- **Wording:** edit the headings and intros in Customizer → Home page. Put square brackets around words to highlight them, e.g. `Trusted by [local hospitals]…`.
+- **Numbers and links:** in Settings → Marketing & SEO → Partner sections, type in your own numbers or leave them empty to count automatically, and set the "How partnering works" and "NDIS transport guide" links.
+- **Your existing partner logos** move into the Travel partners section automatically. The old slim logo strip is replaced.
+- Text is translated into Vietnamese, Chinese, Greek, Italian and Arabic.
+
 ### New in v2.9
 - **NDIS invoices to plan managers.** Turn on in Settings → Payments & invoices ("Bill NDIS trips on NDIS invoices"), and add your support item number (e.g. `04_590_0125_6_1`) and NDIS registration number.
   - One tax invoice per participant per month (N-00001…) with what plan managers check:

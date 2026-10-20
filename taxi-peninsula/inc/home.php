@@ -27,7 +27,8 @@ function tp_home_sections() {
 		'areas'        => array( __( 'Areas we cover + map + suburb checker', 'taxi-peninsula' ), __( 'Areas we cover', 'taxi-peninsula' ), __( 'Based on the Mornington Peninsula and servicing greater Melbourne. Not listed? Call us — we travel further on request.', 'taxi-peninsula' ), true ),
 		'faq'          => array( __( 'Top questions (FAQ strip)', 'taxi-peninsula' ), __( 'Questions we are often asked', 'taxi-peninsula' ), '', true ),
 		'content'      => array( __( 'Home page content (from the editor)', 'taxi-peninsula' ), '', '', true ),
-		'partners'     => array( __( 'Partner logos (slim strip)', 'taxi-peninsula' ), __( 'Trusted by local organisations', 'taxi-peninsula' ), '', true ),
+		'partners'     => array( __( 'Travel partners (moving logos, numbers, “Become a partner”)', 'taxi-peninsula' ), __( 'Trusted by [local hospitals], care homes and businesses', 'taxi-peninsula' ), __( 'Organisations across the Peninsula book their residents, patients and staff with us every week.', 'taxi-peninsula' ), true ),
+		'funding'      => array( __( 'NDIS & funding partners (moving logos, numbers, “Check your funding”)', 'taxi-peninsula' ), __( 'Use your [NDIS plan] or funding — we handle the paperwork', 'taxi-peninsula' ), __( 'We work with the schemes, plan managers and support coordinators below.', 'taxi-peninsula' ), true ),
 		'cta'          => array( __( 'Call-to-action band', 'taxi-peninsula' ), __( 'Need a wheelchair taxi today?', 'taxi-peninsula' ), __( 'Call our friendly team and we will get you moving.', 'taxi-peninsula' ), true ),
 		// Optional extras, hidden by default.
 		'book'         => array( __( 'Quick booking card', 'taxi-peninsula' ), __( 'Book your accessible taxi', 'taxi-peninsula' ), __( 'Tell us where you are going and what you need. We will confirm your booking and let you know when your driver is on the way.', 'taxi-peninsula' ), false ),

@@ -16,6 +16,7 @@ function tp_contact_topics() {
 		__( 'Feedback', 'taxi-peninsula' ),
 		__( 'Complaint', 'taxi-peninsula' ),
 		__( 'Lost property', 'taxi-peninsula' ),
+		__( 'Become a partner', 'taxi-peninsula' ),
 	);
 }
 

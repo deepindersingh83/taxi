@@ -1317,6 +1317,43 @@
 		if (input.value) { check(false); }
 	});
 
+	/* ------------------------------------------------------------------
+	 * Partner sections: pause button for the moving logos, and numbers
+	 * that count up once when they come into view.
+	 * ------------------------------------------------------------------ */
+	document.querySelectorAll('[data-pp]').forEach(function (box) {
+		var btn = box.querySelector('[data-pp-pause]');
+		if (btn) {
+			var label = btn.querySelector('.pp__pause-label');
+			btn.addEventListener('click', function () {
+				var on = btn.getAttribute('aria-pressed') !== 'true';
+				btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+				box.classList.toggle('is-paused', on);
+				label.textContent = label.getAttribute(on ? 'data-play' : 'data-pause');
+			});
+		}
+	});
+	var counters = document.querySelectorAll('.pp [data-count]');
+	if (counters.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		var fmt = function (n) { try { return n.toLocaleString(document.documentElement.lang || undefined); } catch (e) { return String(n); } };
+		var seen = new IntersectionObserver(function (entries) {
+			entries.forEach(function (entry) {
+				if (!entry.isIntersecting) { return; }
+				seen.unobserve(entry.target);
+				var el = entry.target, end = +el.getAttribute('data-count'), start = performance.now();
+				(function step(now) {
+					var k = Math.min(1, (now - start) / 1200);
+					el.textContent = fmt(Math.round(end * (1 - Math.pow(1 - k, 3))));
+					if (k < 1) { requestAnimationFrame(step); }
+				})(start);
+			});
+		}, { threshold: 0.6 });
+		counters.forEach(function (el) {
+			// Only animate numbers still below the fold, so nothing visible jumps.
+			if (el.getBoundingClientRect().top > window.innerHeight) { el.textContent = '0'; seen.observe(el); }
+		});
+	}
+
 	/* Move focus to server-rendered errors / success so screen readers announce them. */
 	var focusTarget = document.querySelector('[data-focus]');
 	if (focusTarget) {

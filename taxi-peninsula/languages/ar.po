@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.9.0\n"
+"Project-Id-Version: Taxi Peninsula 2.10.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -5480,3 +5480,104 @@ msgstr "يرجى إدخال رقم جوال يبدأ بـ 04 حتى نتمكن �
 msgid ""
 "That looks like a landline — we will call you instead of sending texts."
 msgstr "يبدو أن هذا رقم هاتف أرضي — سنتصل بك بدلاً من إرسال رسائل نصية."
+
+msgid "Become a partner"
+msgstr "كن شريكًا لنا"
+
+msgid "Trusted by [local hospitals], care homes and businesses"
+msgstr "تثق بنا [المستشفيات المحلية] ودور الرعاية والشركات"
+
+msgid ""
+"Organisations across the Peninsula book their residents, patients and staff "
+"with us every week."
+msgstr ""
+"تحجز المؤسسات في جميع أنحاء شبه الجزيرة رحلات المقيمين والمرضى والموظفين "
+"لديها معنا كل أسبوع."
+
+msgid "Use your [NDIS plan] or funding — we handle the paperwork"
+msgstr "استخدم [خطة NDIS] أو التمويل الخاص بك — ونحن نتولى الأوراق"
+
+msgid ""
+"We work with the schemes, plan managers and support coordinators below."
+msgstr "نتعاون مع البرامج ومديري الخطط ومنسقي الدعم المذكورين أدناه."
+
+msgid "Other"
+msgstr "أخرى"
+
+msgid "NDIS provider"
+msgstr "مقدّم خدمات NDIS"
+
+msgid "Plan manager"
+msgstr "مدير الخطة"
+
+msgid "Funding scheme"
+msgstr "برنامج تمويل"
+
+msgid "Support coordinator"
+msgstr "منسق الدعم"
+
+msgid "Accreditation"
+msgstr "الاعتماد"
+
+msgid "Aged care"
+msgstr "رعاية المسنين"
+
+msgid "Business or club"
+msgstr "شركة أو نادٍ"
+
+msgid "partner organisation"
+msgid_plural "partner organisations"
+msgstr[0] "منظمة شريكة"
+msgstr[1] "منظمة شريكة"
+msgstr[2] "منظمتان شريكتان"
+msgstr[3] "منظمات شريكة"
+msgstr[4] "منظمة شريكة"
+msgstr[5] "منظمة شريكة"
+
+msgid "partner trip this year"
+msgid_plural "partner trips this year"
+msgstr[0] "رحلة عبر الشركاء هذا العام"
+msgstr[1] "رحلة عبر الشركاء هذا العام"
+msgstr[2] "رحلتان عبر الشركاء هذا العام"
+msgstr[3] "رحلات عبر الشركاء هذا العام"
+msgstr[4] "رحلة عبر الشركاء هذا العام"
+msgstr[5] "رحلة عبر الشركاء هذا العام"
+
+msgid "funding scheme accepted"
+msgid_plural "funding schemes accepted"
+msgstr[0] "برنامج تمويل مقبول"
+msgstr[1] "برنامج تمويل مقبول"
+msgstr[2] "برنامجا تمويل مقبولان"
+msgstr[3] "برامج تمويل مقبولة"
+msgstr[4] "برنامج تمويل مقبولًا"
+msgstr[5] "برنامج تمويل مقبول"
+
+msgid "plan manager & coordinator"
+msgid_plural "plan managers & coordinators"
+msgstr[0] "مدير خطط ومنسق"
+msgstr[1] "مدير خطط ومنسق"
+msgstr[2] "مديرا خطط ومنسقان"
+msgstr[3] "مديري خطط ومنسقين"
+msgstr[4] "مدير خطط ومنسقًا"
+msgstr[5] "مدير خطط ومنسق"
+
+msgid "Travel partners"
+msgstr "شركاء التنقل"
+
+msgid "How partnering works"
+msgstr "كيف تعمل الشراكة"
+
+msgid "NDIS & funding partners"
+msgstr "شركاء NDIS والتمويل"
+
+msgid "Check your funding"
+msgstr "تحقق من تمويلك"
+
+msgid "NDIS transport guide"
+msgstr "دليل التنقل مع NDIS"
+
+msgid "Play logos"
+msgstr "تشغيل الشعارات"
+
+msgid "Pause logos"
+msgstr "إيقاف الشعارات مؤقتًا"
