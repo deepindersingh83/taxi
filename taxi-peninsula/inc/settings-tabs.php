@@ -242,6 +242,21 @@ function tp_settings_checks( $tab ) {
 				: ( tp_setting( 'ga4_id' )
 					? array( 'fail', 'Google Analytics', __( 'The measurement ID is not in the G-XXXXXXX format, so analytics is not loaded.', 'taxi-peninsula' ) )
 					: array( 'off', 'Google Analytics', __( 'Off.', 'taxi-peninsula' ) ) );
+			$wa_digits = preg_replace( '/\D/', '', (string) tp_opt( 'whatsapp_number' ) );
+			$wa_where  = __( 'Appearance → Customize → Taxi Peninsula → Contact details', 'taxi-peninsula' );
+			if ( '' === $wa_digits ) {
+				/* translators: %s: where to set it */
+				$c[] = array( 'fail', __( 'WhatsApp button', 'taxi-peninsula' ), sprintf( __( 'Not shown: no WhatsApp number is set. Add it (e.g. +61 412 345 678) in %s.', 'taxi-peninsula' ), $wa_where ) );
+			} elseif ( strlen( $wa_digits ) < 9 ) {
+				/* translators: %s: where to set it */
+				$c[] = array( 'fail', __( 'WhatsApp button', 'taxi-peninsula' ), sprintf( __( 'The WhatsApp number looks too short. Check it in %s.', 'taxi-peninsula' ), $wa_where ) );
+			} elseif ( ! get_theme_mod( 'tp_whatsapp_chat', true ) ) {
+				/* translators: %s: where to set it */
+				$c[] = array( 'off', __( 'WhatsApp button', 'taxi-peninsula' ), sprintf( __( 'Switched off. Tick “Show the WhatsApp us button on every page” in %s.', 'taxi-peninsula' ), $wa_where ) );
+			} else {
+				/* translators: %s: link */
+				$c[] = array( 'ok', __( 'WhatsApp button', 'taxi-peninsula' ), sprintf( __( 'Shown at the bottom right of every page (an icon on phones), opening %s. If you can’t see it, clear your caching plugin’s cache.', 'taxi-peninsula' ), tp_whatsapp_link() ) );
+			}
 			$c[] = array( 'ok', __( 'Search engines', 'taxi-peninsula' ), __( 'See Marketing → AI & Bing search and Reports → Search performance for checks and results.', 'taxi-peninsula' ) );
 			break;
 	}

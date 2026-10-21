@@ -1919,18 +1919,18 @@ html[data-contrast="high"] .hero__book { border: 2px solid #000; }
 
 /* WhatsApp button */
 .whatsapp-button {
-	position: fixed; z-index: 70; right: var(--space-m); bottom: var(--space-m);
+	position: fixed; z-index: 70; right: var(--space-m); bottom: calc(var(--space-m) + var(--tp-consent-h, 0px));
 	display: inline-flex; align-items: center; gap: .5rem; min-height: 3.25rem; padding: 0 1.1rem 0 .9rem; border-radius: 999px;
 	background: #1f8f4e; color: #fff; font-weight: 800; text-decoration: none; box-shadow: 0 10px 25px rgb(0 0 0 / .25);
 }
 .whatsapp-button:hover { background: #17753f; color: #fff; }
 .whatsapp-button .icon { width: 1.6rem; height: 1.6rem; }
-.tp-has-wa .back-to-top { bottom: calc(var(--space-m) + 4rem); }
+.tp-has-wa .back-to-top { bottom: calc(var(--space-m) + 4rem + var(--tp-consent-h, 0px)); }
 @media (max-width: 48em) {
 	.whatsapp-button__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 	.whatsapp-button { width: 3.4rem; height: 3.4rem; padding: 0; justify-content: center; }
-	.tp-has-bottom-nav .whatsapp-button { bottom: calc(4.6rem + env(safe-area-inset-bottom) + .6rem); }
-	.tp-has-wa .back-to-top { bottom: calc(4.6rem + env(safe-area-inset-bottom)); }
+	.tp-has-bottom-nav .whatsapp-button { bottom: calc(4.6rem + env(safe-area-inset-bottom) + .6rem + var(--tp-consent-h, 0px)); }
+	.tp-has-wa .back-to-top { bottom: calc(4.6rem + env(safe-area-inset-bottom) + var(--tp-consent-h, 0px)); }
 }
 html[data-contrast="high"] .whatsapp-button { background: #000; outline: 2px solid #fff; }
 body:has(.driver-dock) .whatsapp-button { display: none; }

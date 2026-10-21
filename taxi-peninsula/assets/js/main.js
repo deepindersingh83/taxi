@@ -810,6 +810,11 @@
 			loadGa();
 		} else if (!choice && banner) {
 			banner.hidden = false;
+			// Lift the WhatsApp and back-to-top buttons above the banner while it is open.
+			var lift = function () { document.documentElement.style.setProperty('--tp-consent-h', banner.hidden ? '0px' : (banner.offsetHeight + 12) + 'px'); };
+			lift();
+			window.addEventListener('resize', lift);
+			banner.addEventListener('click', function () { setTimeout(lift, 0); });
 		}
 		if (banner) {
 			banner.querySelectorAll('[data-consent]').forEach(function (btn) {

@@ -8,6 +8,13 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### v2.10.1 — WhatsApp button always visible
+- **Cookie banner:** while it's open, it no longer covers the WhatsApp button (or the back-to-top button). They move up above the banner and drop back once the visitor chooses.
+- **Settings check:** Settings → Marketing & SEO → Test & troubleshoot now shows whether the WhatsApp button is showing. If it isn't, it says why:
+  - no number set
+  - the number is too short
+  - the button is switched off in Appearance → Customize → Taxi Peninsula → Contact details
+
 ### New in v2.10 — partner sections
 Two matching sections, each with a heading, two numbers, one button and two rows of logos gliding in opposite directions. The logos pause when someone hovers over them or tabs into them, there's a "Pause logos" button, and they stay still for visitors who turn off motion. They work on phones, in dark mode and in Arabic.
 - **Travel partners** (light): "Trusted by local hospitals, care homes and businesses".
