@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.10.0\n"
+"Project-Id-Version: Taxi Peninsula 2.11.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -5756,3 +5756,123 @@ msgstr "Αναπαραγωγή λογοτύπων"
 
 msgid "Pause logos"
 msgstr "Παύση λογοτύπων"
+
+#. translators: %s: phone
+msgid ""
+"Sorry, we can’t take this booking online. Please call us on %s and we’ll "
+"help."
+msgstr ""
+"Λυπούμαστε, δεν μπορούμε να δεχτούμε αυτή την κράτηση ηλεκτρονικά. "
+"Παρακαλούμε καλέστε μας στο %s και θα σας βοηθήσουμε."
+
+msgid ""
+"Thanks — your details are updated and we’ve sent your confirmation again."
+msgstr ""
+"Ευχαριστούμε — τα στοιχεία σας ενημερώθηκαν και σας στείλαμε ξανά την "
+"επιβεβαίωση."
+
+msgid "Wrong phone number or email? Fix it now"
+msgstr "Λάθος τηλέφωνο ή email; Διορθώστε το τώρα"
+
+#. translators: 1: phone 2: email
+msgid "We’ll contact you on %1$s and %2$s."
+msgstr "Θα επικοινωνήσουμε μαζί σας στο %1$s και στο %2$s."
+
+#. translators: %d: minutes
+msgid "You can correct them here for the next %d minute."
+msgid_plural "You can correct them here for the next %d minutes."
+msgstr[0] "Μπορείτε να τα διορθώσετε εδώ για το επόμενο %d λεπτό."
+msgstr[1] "Μπορείτε να τα διορθώσετε εδώ για τα επόμενα %d λεπτά."
+
+msgid "Save and send my confirmation again"
+msgstr "Αποθήκευση και νέα αποστολή της επιβεβαίωσης"
+
+#. translators: %s: phone
+msgid "Too many changes. Please call us on %s."
+msgstr "Πάρα πολλές αλλαγές. Παρακαλούμε καλέστε μας στο %s."
+
+msgid "We couldn’t find that booking. Please call us."
+msgstr "Δεν βρήκαμε αυτή την κράτηση. Παρακαλούμε καλέστε μας."
+
+#. translators: %s: phone
+msgid "The time to change these online has passed. Please call us on %s."
+msgstr ""
+"Ο χρόνος για αλλαγές μέσω διαδικτύου έχει λήξει. Παρακαλούμε καλέστε μας στο"
+" %s."
+
+#. translators: 1: site 2: code
+msgid "%1$s: your booking code is %2$s. It expires in 15 minutes."
+msgstr "%1$s: ο κωδικός κράτησής σας είναι %2$s. Λήγει σε 15 λεπτά."
+
+#. translators: %s: phone
+msgid "Too many codes sent. Please call us on %s to book."
+msgstr ""
+"Στάλθηκαν πάρα πολλοί κωδικοί. Παρακαλούμε καλέστε μας στο %s για κράτηση."
+
+msgid "This code has expired"
+msgstr "Αυτός ο κωδικός έχει λήξει"
+
+msgid ""
+"Codes last 15 minutes. Please fill in the booking form again — it only takes"
+" a minute."
+msgstr ""
+"Οι κωδικοί ισχύουν για 15 λεπτά. Παρακαλούμε συμπληρώστε ξανά τη φόρμα "
+"κράτησης — θα σας πάρει μόνο ένα λεπτό."
+
+msgid "Start again"
+msgstr "Ξεκινήστε ξανά"
+
+msgid "Check your phone"
+msgstr "Ελέγξτε το τηλέφωνό σας"
+
+#. translators: %s: mobile number
+msgid "We’ve texted a 4-digit code to %s. Type it in to send your booking."
+msgstr ""
+"Στείλαμε έναν 4ψήφιο κωδικό με SMS στο %s. Πληκτρολογήστε τον για να "
+"στείλετε την κράτησή σας."
+
+msgid "That code isn’t right. Please check the text and try again."
+msgstr ""
+"Ο κωδικός δεν είναι σωστός. Παρακαλούμε ελέγξτε το μήνυμα και δοκιμάστε "
+"ξανά."
+
+msgid "We’ve sent a new code."
+msgstr "Σας στείλαμε νέο κωδικό."
+
+msgid "Code from the text message"
+msgstr "Κωδικός από το γραπτό μήνυμα"
+
+msgid "Confirm and send my booking"
+msgstr "Επιβεβαίωση και αποστολή της κράτησης"
+
+msgid "Text me a new code"
+msgstr "Στείλτε μου νέο κωδικό"
+
+msgid "Wrong number? Change it"
+msgstr "Λάθος αριθμός; Αλλάξτε τον"
+
+#. translators: %s: phone
+msgid ""
+"The text can take a minute to arrive. No luck? Call us on %s and we’ll book "
+"it for you."
+msgstr ""
+"Το μήνυμα μπορεί να αργήσει ένα λεπτό. Δεν το λάβατε; Καλέστε μας στο %s και"
+" θα κάνουμε εμείς την κράτηση για εσάς."
+
+#. translators: %s: phone
+msgid ""
+"Too many wrong codes. Please check your mobile number and try again, or call"
+" us on %s."
+msgstr ""
+"Πάρα πολλοί λάθος κωδικοί. Παρακαλούμε ελέγξτε τον αριθμό του κινητού σας "
+"και δοκιμάστε ξανά ή καλέστε μας στο %s."
+
+msgid "Please check your mobile number."
+msgstr "Παρακαλούμε ελέγξτε τον αριθμό του κινητού σας."
+
+#. translators: %s: suggested email address
+msgid "Did you mean %s?"
+msgstr "Μήπως εννοείτε %s;"
+
+msgid "Yes, use this"
+msgstr "Ναι, χρήση αυτού"

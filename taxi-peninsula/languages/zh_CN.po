@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.10.0\n"
+"Project-Id-Version: Taxi Peninsula 2.11.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -5171,3 +5171,105 @@ msgstr "播放标志"
 
 msgid "Pause logos"
 msgstr "暂停标志"
+
+#. translators: %s: phone
+msgid ""
+"Sorry, we can’t take this booking online. Please call us on %s and we’ll "
+"help."
+msgstr "抱歉，此预订无法在线办理。请致电 %s，我们会为您提供帮助。"
+
+msgid ""
+"Thanks — your details are updated and we’ve sent your confirmation again."
+msgstr "谢谢！您的信息已更新，我们已重新发送确认信息。"
+
+msgid "Wrong phone number or email? Fix it now"
+msgstr "电话号码或电子邮箱有误？立即更正"
+
+#. translators: 1: phone 2: email
+msgid "We’ll contact you on %1$s and %2$s."
+msgstr "我们将通过 %1$s 和 %2$s 与您联系。"
+
+#. translators: %d: minutes
+msgid "You can correct them here for the next %d minute."
+msgid_plural "You can correct them here for the next %d minutes."
+msgstr[0] "您可在接下来的 %d 分钟内在此处更正。"
+
+msgid "Save and send my confirmation again"
+msgstr "保存并重新发送确认信息"
+
+#. translators: %s: phone
+msgid "Too many changes. Please call us on %s."
+msgstr "更改次数过多。请致电 %s。"
+
+msgid "We couldn’t find that booking. Please call us."
+msgstr "未找到该预订。请致电我们。"
+
+#. translators: %s: phone
+msgid "The time to change these online has passed. Please call us on %s."
+msgstr "在线更改的时间已过。请致电 %s。"
+
+#. translators: 1: site 2: code
+msgid "%1$s: your booking code is %2$s. It expires in 15 minutes."
+msgstr "%1$s：您的预订验证码是 %2$s，15分钟内有效。"
+
+#. translators: %s: phone
+msgid "Too many codes sent. Please call us on %s to book."
+msgstr "验证码发送次数过多。请致电 %s 预订。"
+
+msgid "This code has expired"
+msgstr "验证码已过期"
+
+msgid ""
+"Codes last 15 minutes. Please fill in the booking form again — it only takes"
+" a minute."
+msgstr "验证码有效期为 15 分钟。请重新填写预订表格，只需约一分钟。"
+
+msgid "Start again"
+msgstr "重新开始"
+
+msgid "Check your phone"
+msgstr "请查看您的手机"
+
+#. translators: %s: mobile number
+msgid "We’ve texted a 4-digit code to %s. Type it in to send your booking."
+msgstr "我们已向 %s 发送了 4 位数验证码。请输入验证码以提交预订。"
+
+msgid "That code isn’t right. Please check the text and try again."
+msgstr "验证码不正确。请核对短信后重试。"
+
+msgid "We’ve sent a new code."
+msgstr "我们已发送新的验证码。"
+
+msgid "Code from the text message"
+msgstr "短信中的验证码"
+
+msgid "Confirm and send my booking"
+msgstr "确认并提交预订"
+
+msgid "Text me a new code"
+msgstr "给我发送新的验证码"
+
+msgid "Wrong number? Change it"
+msgstr "号码有误？请更改"
+
+#. translators: %s: phone
+msgid ""
+"The text can take a minute to arrive. No luck? Call us on %s and we’ll book "
+"it for you."
+msgstr "短信可能需要约一分钟才能送达。仍未收到？请致电 %s，我们会为您预订。"
+
+#. translators: %s: phone
+msgid ""
+"Too many wrong codes. Please check your mobile number and try again, or call"
+" us on %s."
+msgstr "错误验证码输入次数过多。请核对您的手机号码后重试，或致电 %s。"
+
+msgid "Please check your mobile number."
+msgstr "请核对您的手机号码。"
+
+#. translators: %s: suggested email address
+msgid "Did you mean %s?"
+msgstr "您是指 %s 吗？"
+
+msgid "Yes, use this"
+msgstr "是，使用此地址"

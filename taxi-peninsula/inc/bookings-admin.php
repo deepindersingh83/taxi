@@ -122,7 +122,7 @@ function tp_booking_column_content( $col, $post_id ) {
 			}
 			break;
 		case 'tp_status':
-			echo tp_status_badge( $b['status'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper.
+			echo tp_status_badge( $b['status'], $b['id'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper.
 			if ( ! empty( $b['request'] ) ) {
 				echo '<br><span class="tp-badge tp-badge--request">' . esc_html__( 'Customer request', 'taxi-peninsula' ) . '</span>';
 			}
@@ -401,6 +401,7 @@ function tp_render_status_box( WP_Post $post ) {
 	}
 	echo '</select></p>';
 	echo '<p><label><input type="checkbox" name="tp_notify" value="1"' . checked( (bool) tp_opt( 'customer_emails' ) || tp_sms_enabled(), true, false ) . '> ' . esc_html__( 'Notify the customer (email / SMS) if the status or driver changes', 'taxi-peninsula' ) . '</label></p>';
+	do_action( 'tp_status_box_fields', $post, $b );
 
 	if ( $b['series'] ) {
 		$count = count( tp_series_ids( $b['series'] ) );
@@ -727,7 +728,7 @@ function tp_dashboard_widget() {
 				esc_url( get_edit_post_link( $p->ID ) ),
 				esc_html( tp_format_pickup( $b ) ),
 				esc_html( $b['name'] ),
-				tp_status_badge( $b['status'] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				tp_status_badge( $b['status'], $b['id'] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				esc_html( $b['pickup'] ),
 				esc_html( $b['dropoff'] )
 			);

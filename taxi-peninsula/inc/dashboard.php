@@ -24,6 +24,15 @@ add_action(
  * { id, date, time, status, fare, venue, source }.
  */
 function tp_owner_rows( $from, $to ) {
+	/**
+	 * Filters the owner dashboard rows (fake bookings are taken out here).
+	 *
+	 * @param object[] $rows Rows with id, date, time, status, fare, venue, source.
+	 */
+	return apply_filters( 'tp_owner_rows', tp_owner_rows_raw( $from, $to ) );
+}
+
+function tp_owner_rows_raw( $from, $to ) {
 	$fast = function_exists( 'tp_trips_owner_rows' ) ? tp_trips_owner_rows( $from, $to ) : null;
 	if ( null !== $fast ) {
 		return $fast;

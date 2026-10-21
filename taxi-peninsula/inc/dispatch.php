@@ -357,7 +357,7 @@ function tp_dispatch_card( array $b, array $drivers, array $driver_trips, $day )
 	<article class="tp-dcard tp-dcard--<?php echo esc_attr( $b['status'] ); ?><?php echo $warnings ? ' has-warning' : ''; ?>" id="<?php echo esc_attr( $id ); ?>">
 		<header class="tp-dcard__head">
 			<strong class="tp-dcard__time"><?php echo esc_html( tp_format_pickup( $b, 'g:i a' ) ); ?></strong>
-			<?php echo tp_status_badge( $b['status'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<?php echo tp_status_badge( $b['status'], $b['id'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		</header>
 		<p class="tp-dcard__who"><a href="<?php echo esc_url( get_edit_post_link( $b['id'] ) ); ?>"><?php echo esc_html( $b['reference'] ); ?></a> · <?php echo esc_html( $b['name'] ); ?></p>
 		<p class="tp-dcard__route"><?php echo esc_html( tp_short_place( $b['pickup'] ) ?: $b['pickup'] ); ?> → <?php echo esc_html( tp_short_place( $b['dropoff'] ) ?: $b['dropoff'] ); ?></p>
@@ -411,6 +411,7 @@ function tp_dispatch_card( array $b, array $drivers, array $driver_trips, $day )
 		<?php elseif ( $locked ) : ?>
 			<p class="description"><?php esc_html_e( 'Trip in progress.', 'taxi-peninsula' ); ?></p>
 		<?php endif; ?>
+		<?php do_action( 'tp_dispatch_card_after', $b, $day ); ?>
 	</article>
 	<?php
 }
@@ -527,7 +528,7 @@ function tp_render_requests_page() {
 			<article class="tp-req card" id="<?php echo esc_attr( $pre ); ?>">
 				<header class="tp-req__head">
 					<h2><?php echo esc_html( $types[ $req['type'] ] ?? __( 'Request', 'taxi-peninsula' ) ); ?> — <a href="<?php echo esc_url( get_edit_post_link( $id ) ); ?>"><?php echo esc_html( $b['reference'] ); ?></a></h2>
-					<?php echo tp_status_badge( $b['status'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<?php echo tp_status_badge( $b['status'], $b['id'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</header>
 				<p class="tp-req__meta">
 					<?php

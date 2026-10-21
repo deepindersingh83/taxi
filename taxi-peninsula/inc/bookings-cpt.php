@@ -623,12 +623,21 @@ function tp_format_pickup( array $b, $format = 'D j M Y, g:i a' ) {
 /**
  * Status badge markup (admin + booking lookup).
  */
-function tp_status_badge( $status ) {
+function tp_status_badge( $status, $post_id = 0 ) {
 	$labels = tp_statuses();
+	$label  = $labels[ $status ] ?? $status;
+	/**
+	 * Filters the badge text, e.g. "Cancelled · Wrong details".
+	 *
+	 * @param string $label   Status label.
+	 * @param string $status  Status key.
+	 * @param int    $post_id Booking ID (0 when unknown).
+	 */
+	$label = apply_filters( 'tp_status_badge_label', $label, $status, (int) $post_id );
 	return sprintf(
 		'<span class="tp-badge tp-badge--%1$s">%2$s</span>',
 		esc_attr( $status ),
-		esc_html( $labels[ $status ] ?? $status )
+		esc_html( $label )
 	);
 }
 

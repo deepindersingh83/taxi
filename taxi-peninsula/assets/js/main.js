@@ -1359,6 +1359,58 @@
 		});
 	}
 
+	/* ------------------------------------------------------------------
+	 * Email typo catcher: "Did you mean jo@gmail.com?" for common slips
+	 * (gmial.com, bigpond.con, hotmail.co). One tap fixes it; never blocks.
+	 * ------------------------------------------------------------------ */
+	var emailDomains = ['gmail.com', 'yahoo.com', 'yahoo.com.au', 'hotmail.com', 'hotmail.com.au', 'outlook.com', 'outlook.com.au', 'live.com', 'live.com.au', 'icloud.com', 'me.com', 'bigpond.com', 'bigpond.net.au', 'optusnet.com.au', 'tpg.com.au', 'iinet.net.au', 'internode.on.net', 'ozemail.com.au', 'westnet.com.au', 'dodo.com.au', 'aapt.net.au', 'msn.com', 'aol.com', 'protonmail.com', 'proton.me'];
+	var editDistance = function (a, b) {
+		var d = [], i, j;
+		for (i = 0; i <= a.length; i++) { d[i] = [i]; }
+		for (j = 0; j <= b.length; j++) { d[0][j] = j; }
+		for (i = 1; i <= a.length; i++) {
+			for (j = 1; j <= b.length; j++) {
+				d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+				if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) { d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1); }
+			}
+		}
+		return d[a.length][b.length];
+	};
+	var suggestEmail = function (value) {
+		var at = value.lastIndexOf('@');
+		if (at < 1) { return ''; }
+		var user = value.slice(0, at), domain = value.slice(at + 1).toLowerCase().trim();
+		if (!domain || emailDomains.indexOf(domain) > -1) { return ''; }
+		var fixed = domain.replace(/\.(con|cmo|ocm|vom|xom|comm|om|co)$/, '.com').replace(/\.com\.?au$/, '.com.au').replace(/\.com\.(ua|aus|ay)$/, '.com.au').replace(/\.net\.?au$/, '.net.au');
+		var best = '', bestScore = 3;
+		emailDomains.forEach(function (d) { var s = editDistance(fixed, d); if (s < bestScore) { bestScore = s; best = d; } });
+		if (!best && fixed !== domain && /\.[a-z]{2,}$/.test(fixed)) { best = fixed; }
+		return best && best !== domain ? user + '@' + best : '';
+	};
+	document.querySelectorAll('form input[type="email"]').forEach(function (input) {
+		var hint = document.createElement('p');
+		hint.className = 'email-hint';
+		hint.hidden = true;
+		hint.setAttribute('aria-live', 'polite');
+		hint.id = (input.id || 'email') + '-hint';
+		input.insertAdjacentElement('afterend', hint);
+		input.setAttribute('aria-describedby', ((input.getAttribute('aria-describedby') || '') + ' ' + hint.id).trim());
+		var check = function () {
+			var s = suggestEmail(input.value.trim());
+			hint.hidden = !s;
+			hint.textContent = '';
+			if (!s) { return; }
+			hint.appendChild(document.createTextNode((tpI18n.emailDidYouMean || 'Did you mean %s?').replace('%s', s) + ' '));
+			var yes = document.createElement('button');
+			yes.type = 'button';
+			yes.textContent = tpI18n.emailUseIt || 'Yes, use this';
+			yes.addEventListener('click', function () { input.value = s; hint.hidden = true; input.dispatchEvent(new Event('input', { bubbles: true })); input.focus(); });
+			hint.appendChild(yes);
+		};
+		input.addEventListener('blur', check);
+		input.addEventListener('input', function () { if (!hint.hidden) { check(); } });
+	});
+
 	/* Move focus to server-rendered errors / success so screen readers announce them. */
 	var focusTarget = document.querySelector('[data-focus]');
 	if (focusTarget) {

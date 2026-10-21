@@ -182,6 +182,14 @@ function tp_sms_on_created( $post_id, $all_ids ) {
 		);
 	}
 
+	tp_sms_booking_received_customer( $post_id );
+}
+
+/**
+ * The "we received your booking" text to the customer (also resent when they correct their number).
+ */
+function tp_sms_booking_received_customer( $post_id ) {
+	$b = tp_get_booking( $post_id );
 	if ( tp_setting( 'sms_customer_received' ) ) {
 		$msg = sprintf(
 			/* translators: 1: site, 2: reference, 3: pick-up time, 4: link */

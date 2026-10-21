@@ -2261,3 +2261,22 @@ html[data-contrast="high"] .pp-tile { border: 2px solid #000; }
 	.pp-tile, .pp__btn svg { transition: none; }
 }
 @media print { .pp__track { animation: none; } .pp__pause { display: none; } }
+
+/* ---------------------------------------------------------------------------
+ * Contact details: email typo hint, fix-it box, text code screen.
+ * ------------------------------------------------------------------------ */
+.email-hint { margin: .35rem 0 0; font-size: var(--step--1); color: var(--c-text); background: var(--c-warm-bg); border-radius: var(--radius); padding: .4rem .7rem; display: flex; flex-wrap: wrap; align-items: center; gap: .25rem .6rem; }
+.email-hint button { font: inherit; font-weight: 700; color: var(--c-link); background: none; border: 0; padding: .2rem 0; min-height: 2.25rem; text-decoration: underline; cursor: pointer; }
+.fix-contact { margin: var(--space-m) 0; border: 1px solid var(--c-border); border-radius: var(--radius-lg); background: var(--c-surface); padding: var(--space-s) var(--space-m); text-align: start; }
+.fix-contact summary { cursor: pointer; font-weight: 700; color: var(--c-link); min-height: 2.75rem; display: flex; align-items: center; }
+.fix-contact__form { display: grid; gap: var(--space-s); margin-top: var(--space-s); }
+.fix-contact__form .btn { justify-self: start; }
+.booking-code { max-width: 34rem; margin-inline: auto; padding: var(--space-l); background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius-lg); box-shadow: var(--shadow); text-align: center; }
+.booking-code h2 { margin-top: 0; }
+.booking-code__form { display: grid; gap: var(--space-s); justify-items: center; margin-top: var(--space-m); }
+.booking-code__form .field { width: 100%; max-width: 16rem; }
+.booking-code__input { font-size: 2rem !important; letter-spacing: .5em; text-align: center; font-variant-numeric: tabular-nums; padding-inline: .6em .1em !important; }
+.booking-code__more { display: flex; flex-wrap: wrap; justify-content: center; gap: .25rem 1.5rem; margin-top: var(--space-m); }
+.booking-code__more form { margin: 0; }
+.booking-code__help { color: var(--c-muted); font-size: var(--step--1); margin-bottom: 0; }
+.btn-link { font: inherit; font-weight: 700; color: var(--c-link); background: none; border: 0; padding: .4rem .2rem; min-height: 2.75rem; text-decoration: underline; cursor: pointer; }

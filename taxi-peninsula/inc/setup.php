@@ -229,6 +229,9 @@ function tp_enqueue() {
 				'now'         => __( 'Now', 'taxi-peninsula' ),
 					/* translators: %s: menu item */
 					'showSubmenu' => __( 'Show more: %s', 'taxi-peninsula' ),
+				/* translators: %s: suggested email address */
+				'emailDidYouMean' => __( 'Did you mean %s?', 'taxi-peninsula' ),
+				'emailUseIt'      => __( 'Yes, use this', 'taxi-peninsula' ),
 				'phoneBad'      => __( 'Please enter an Australian phone number, e.g. 0412 345 678 or (03) 9123 4567.', 'taxi-peninsula' ),
 				'phoneMobile'   => __( 'Please enter a mobile number starting with 04, so we can send texts.', 'taxi-peninsula' ),
 				'phoneLandline' => __( 'That looks like a landline — we will call you instead of sending texts.', 'taxi-peninsula' ),

@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TP_VERSION', '2.10.1' );
+define( 'TP_VERSION', '2.11.0' );
 define( 'TP_DIR', get_template_directory() );
 define( 'TP_URI', get_template_directory_uri() );
 
@@ -87,6 +87,8 @@ require TP_DIR . '/inc/pdf.php';
 require TP_DIR . '/inc/ndis-invoices.php';
 require TP_DIR . '/inc/partner-leaderboard.php';
 require TP_DIR . '/inc/partner-sections.php';
+require TP_DIR . '/inc/booking-cancel.php';
+require TP_DIR . '/inc/booking-verify.php';
 require TP_DIR . '/inc/booking-index.php';
 require TP_DIR . '/inc/review-replies.php';
 require TP_DIR . '/inc/hours.php';

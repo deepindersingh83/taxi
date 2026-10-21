@@ -196,7 +196,7 @@ function tp_render_finance_page() {
 				<?php foreach ( $rows as $b ) : ?>
 					<tr>
 						<td>
-							<strong><?php echo esc_html( $b['reference'] ); ?></strong> <?php echo tp_status_badge( $b['status'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><br>
+							<strong><?php echo esc_html( $b['reference'] ); ?></strong> <?php echo tp_status_badge( $b['status'], $b['id'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><br>
 							<?php echo esc_html( tp_format_pickup( $b ) ); ?><br>
 							<small><?php echo esc_html( tp_short_place( $b['pickup'] ) . ' → ' . tp_short_place( $b['dropoff'] ) ); ?></small>
 						</td>

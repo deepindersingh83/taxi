@@ -8,6 +8,46 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### New in v2.11 — wrong or fake contact details
+**Catching mistakes while booking**
+- **Email typo catcher:** on every form, `gmial.com`, `bigpond.con`, `outlok.com` and similar show "Did you mean jo@gmail.com?", and one tap fixes it. It never blocks the form.
+- **Fix-it link:** for 30 minutes after booking, the confirmation screen has "Wrong phone number or email? Fix it now".
+  - The customer corrects the details themselves, and the confirmation email or text is sent again to the corrected details.
+  - The office gets a short "Contact details corrected" email, and the change is written to the booking's history.
+- **Text code for first-time customers** (optional): Settings → SMS → "Confirm first-time customers' mobile numbers with a text code".
+  - It only works when SMS is set up.
+  - Before a first booking is sent, the customer types in a 4-digit code that was texted to them. They can ask for a new code or change the number.
+  - Returning customers aren't asked again. Each code costs one text message.
+  - If texts aren't going out, the booking is taken anyway rather than turning the customer away.
+
+**Cancelling with a reason** (booking screen and a new "Cancel…" option on each dispatch card)
+- The reasons are:
+  - Customer asked
+  - Wrong contact details (couldn't reach the customer)
+  - Fake or spam booking
+  - Duplicate booking
+  - No vehicle available
+  - Other (a note is needed)
+- The badge then reads, for example, "Cancelled · Wrong details".
+- Bookings the customer cancels themselves are recorded as "Customer asked".
+- **Fake or spam:**
+  - the customer isn't messaged
+  - the trip is left out of the owner dashboard and partner numbers
+  - ticking **Block** adds the phone number, email and device to **Bookings → Blocked contacts**
+- **How blocking works:**
+  - A blocked phone or email can't book online. They see a polite "please call us" message.
+  - A blocked device only marks bookings as suspicious, because several people can share one internet connection. Device blocks end after 30 days.
+  - You can remove entries, or add a phone number or email by hand.
+
+**"Looks suspicious"**: an orange flag on the dispatch card, the booking list and the booking screen, plus a warning at the top of the office's new-booking email. It appears for:
+- a throwaway email address
+- a made-up looking number (0400 000 000, 0412 345 678, or the numbers set aside for TV and films)
+- a name like "test" or "asdf"
+- several bookings from the same device within 10 minutes (signed-in coordinators are ignored)
+- a match with the blocked list
+
+Staff decide what to do. Tick "Checked — it's genuine" to remove the flag.
+
 ### v2.10.1 — WhatsApp button always visible
 - **Cookie banner:** while it's open, it no longer covers the WhatsApp button (or the back-to-top button). They move up above the banner and drop back once the visitor chooses.
 - **Settings check:** Settings → Marketing & SEO → Test & troubleshoot now shows whether the WhatsApp button is showing. If it isn't, it says why:

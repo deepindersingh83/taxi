@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.10.0\n"
+"Project-Id-Version: Taxi Peninsula 2.11.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
@@ -5673,3 +5673,122 @@ msgstr "Chạy logo"
 
 msgid "Pause logos"
 msgstr "Dừng logo"
+
+#. translators: %s: phone
+msgid ""
+"Sorry, we can’t take this booking online. Please call us on %s and we’ll "
+"help."
+msgstr ""
+"Rất tiếc, chúng tôi không thể nhận đặt xe này qua mạng. Quý khách vui lòng "
+"gọi cho chúng tôi theo số %s để được hỗ trợ."
+
+msgid ""
+"Thanks — your details are updated and we’ve sent your confirmation again."
+msgstr ""
+"Cảm ơn Quý khách — thông tin đã được cập nhật và chúng tôi đã gửi lại xác "
+"nhận."
+
+msgid "Wrong phone number or email? Fix it now"
+msgstr "Sai số điện thoại hoặc email? Sửa ngay"
+
+#. translators: 1: phone 2: email
+msgid "We’ll contact you on %1$s and %2$s."
+msgstr "Chúng tôi sẽ liên lạc với Quý khách qua %1$s và %2$s."
+
+#. translators: %d: minutes
+msgid "You can correct them here for the next %d minute."
+msgid_plural "You can correct them here for the next %d minutes."
+msgstr[0] "Quý khách có thể sửa thông tin tại đây trong %d phút tới."
+
+msgid "Save and send my confirmation again"
+msgstr "Lưu và gửi lại xác nhận cho tôi"
+
+#. translators: %s: phone
+msgid "Too many changes. Please call us on %s."
+msgstr ""
+"Quý khách đã thay đổi quá nhiều lần. Vui lòng gọi cho chúng tôi theo số %s."
+
+msgid "We couldn’t find that booking. Please call us."
+msgstr ""
+"Chúng tôi không tìm thấy lượt đặt xe đó. Quý khách vui lòng gọi cho chúng "
+"tôi."
+
+#. translators: %s: phone
+msgid "The time to change these online has passed. Please call us on %s."
+msgstr ""
+"Đã hết thời gian thay đổi trực tuyến. Quý khách vui lòng gọi cho chúng tôi "
+"theo số %s."
+
+#. translators: 1: site 2: code
+msgid "%1$s: your booking code is %2$s. It expires in 15 minutes."
+msgstr "%1$s: mã đặt xe của Quý khách là %2$s. Mã hết hạn sau 15 phút."
+
+#. translators: %s: phone
+msgid "Too many codes sent. Please call us on %s to book."
+msgstr "Đã gửi quá nhiều mã. Quý khách vui lòng gọi số %s để đặt xe."
+
+msgid "This code has expired"
+msgstr "Mã này đã hết hạn"
+
+msgid ""
+"Codes last 15 minutes. Please fill in the booking form again — it only takes"
+" a minute."
+msgstr ""
+"Mã chỉ có hiệu lực trong 15 phút. Quý khách vui lòng điền lại mẫu đặt xe — "
+"chỉ mất khoảng một phút."
+
+msgid "Start again"
+msgstr "Bắt đầu lại"
+
+msgid "Check your phone"
+msgstr "Vui lòng kiểm tra điện thoại"
+
+#. translators: %s: mobile number
+msgid "We’ve texted a 4-digit code to %s. Type it in to send your booking."
+msgstr ""
+"Chúng tôi đã nhắn mã gồm 4 chữ số đến %s. Quý khách vui lòng nhập mã để gửi "
+"yêu cầu đặt xe."
+
+msgid "That code isn’t right. Please check the text and try again."
+msgstr "Mã không đúng. Quý khách vui lòng kiểm tra tin nhắn và thử lại."
+
+msgid "We’ve sent a new code."
+msgstr "Chúng tôi đã gửi mã mới."
+
+msgid "Code from the text message"
+msgstr "Mã trong tin nhắn"
+
+msgid "Confirm and send my booking"
+msgstr "Xác nhận và gửi yêu cầu đặt xe"
+
+msgid "Text me a new code"
+msgstr "Nhắn cho tôi mã mới"
+
+msgid "Wrong number? Change it"
+msgstr "Sai số? Thay đổi số"
+
+#. translators: %s: phone
+msgid ""
+"The text can take a minute to arrive. No luck? Call us on %s and we’ll book "
+"it for you."
+msgstr ""
+"Tin nhắn có thể mất khoảng một phút mới đến. Vẫn chưa nhận được? Quý khách "
+"hãy gọi cho chúng tôi theo số %s, chúng tôi sẽ đặt xe giúp."
+
+#. translators: %s: phone
+msgid ""
+"Too many wrong codes. Please check your mobile number and try again, or call"
+" us on %s."
+msgstr ""
+"Nhập sai mã quá nhiều lần. Quý khách vui lòng kiểm tra số điện thoại di động"
+" và thử lại, hoặc gọi cho chúng tôi theo số %s."
+
+msgid "Please check your mobile number."
+msgstr "Quý khách vui lòng kiểm tra số điện thoại di động."
+
+#. translators: %s: suggested email address
+msgid "Did you mean %s?"
+msgstr "Có phải ý Quý khách là %s?"
+
+msgid "Yes, use this"
+msgstr "Đúng, dùng địa chỉ này"

@@ -61,6 +61,7 @@ $account   = tp_page_url_by_template( 'account' );
 	</ol>
 
 	<?php if ( $b ) : ?>
+		<?php do_action( 'tp_booking_success_contact', (int) $post_id, $args['token'] ); ?>
 		<?php do_action( 'tp_booking_status_after', (int) $post_id ); ?>
 	<?php endif; ?>
 	<p class="print-only print-brand"><?php echo esc_html( get_bloginfo( 'name' ) . ' · ' . tp_opt( 'phone_display' ) ); ?></p>

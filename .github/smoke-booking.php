@@ -46,3 +46,17 @@ if ( 0 !== strpos( $secret, 'tpenc:1:' ) || 'top secret' !== tp_decrypt( $secret
 	WP_CLI::error( 'Secret encryption round trip failed.' );
 }
 WP_CLI::success( 'Phone checks and secret encryption OK.' );
+
+// Fake-looking bookings are flagged; cancelling as fake records the reason and blocks on request.
+$why = tp_suspect_reasons( array( 'name' => 'Test Test', 'phone' => '0400 000 000', 'email' => 'x@mailinator.com' ), '' );
+if ( count( $why ) < 3 ) {
+	WP_CLI::error( 'Suspicious checks missed: ' . wp_json_encode( $why ) );
+}
+if ( tp_suspect_reasons( array( 'name' => 'Margaret Wilson', 'phone' => '0433 221 100', 'email' => 'margaret@bigpond.com' ), '' ) ) {
+	WP_CLI::error( 'A normal booking was flagged as suspicious.' );
+}
+tp_cancel_booking( $id, 'fake', '', true, true );
+if ( 'cancelled' !== get_post_meta( $id, '_tp_status', true ) || 'fake' !== tp_cancel_reason( $id ) || ! tp_blocked_matches( '0400000000', 'ci@example.com' ) ) {
+	WP_CLI::error( 'Cancel as fake + block did not work.' );
+}
+WP_CLI::success( 'Suspicious checks, cancel reasons and the blocked list OK.' );

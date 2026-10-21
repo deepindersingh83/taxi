@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.10.0\n"
+"Project-Id-Version: Taxi Peninsula 2.11.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -5581,3 +5581,119 @@ msgstr "تشغيل الشعارات"
 
 msgid "Pause logos"
 msgstr "إيقاف الشعارات مؤقتًا"
+
+#. translators: %s: phone
+msgid ""
+"Sorry, we can’t take this booking online. Please call us on %s and we’ll "
+"help."
+msgstr ""
+"عذرًا، لا يمكننا قبول هذا الحجز عبر الإنترنت. يُرجى الاتصال بنا على الرقم %s"
+" وسنساعدك."
+
+msgid ""
+"Thanks — your details are updated and we’ve sent your confirmation again."
+msgstr "شكرًا لك — تم تحديث بياناتك وأعدنا إرسال تأكيد الحجز إليك."
+
+msgid "Wrong phone number or email? Fix it now"
+msgstr "رقم الهاتف أو البريد الإلكتروني غير صحيح؟ صحّحه الآن"
+
+#. translators: 1: phone 2: email
+msgid "We’ll contact you on %1$s and %2$s."
+msgstr "سنتواصل معك على %1$s و%2$s."
+
+#. translators: %d: minutes
+msgid "You can correct them here for the next %d minute."
+msgid_plural "You can correct them here for the next %d minutes."
+msgstr[0] "يمكنك تصحيحها هنا خلال %d دقيقة."
+msgstr[1] "يمكنك تصحيحها هنا خلال الدقيقة القادمة."
+msgstr[2] "يمكنك تصحيحها هنا خلال الدقيقتين القادمتين."
+msgstr[3] "يمكنك تصحيحها هنا خلال الـ %d دقائق القادمة."
+msgstr[4] "يمكنك تصحيحها هنا خلال الـ %d دقيقة القادمة."
+msgstr[5] "يمكنك تصحيحها هنا خلال الـ %d دقيقة القادمة."
+
+msgid "Save and send my confirmation again"
+msgstr "حفظ وإعادة إرسال التأكيد إليّ"
+
+#. translators: %s: phone
+msgid "Too many changes. Please call us on %s."
+msgstr "عدد كبير جدًا من التغييرات. يُرجى الاتصال بنا على الرقم %s."
+
+msgid "We couldn’t find that booking. Please call us."
+msgstr "لم نتمكن من العثور على هذا الحجز. يُرجى الاتصال بنا."
+
+#. translators: %s: phone
+msgid "The time to change these online has passed. Please call us on %s."
+msgstr ""
+"انتهت مدة إجراء هذه التغييرات عبر الإنترنت. يُرجى الاتصال بنا على الرقم %s."
+
+#. translators: 1: site 2: code
+msgid "%1$s: your booking code is %2$s. It expires in 15 minutes."
+msgstr "%1$s: رمز حجزك هو %2$s. ينتهي خلال 15 دقيقة."
+
+#. translators: %s: phone
+msgid "Too many codes sent. Please call us on %s to book."
+msgstr ""
+"تم إرسال عدد كبير جدًا من الرموز. يُرجى الاتصال بنا على الرقم %s للحجز."
+
+msgid "This code has expired"
+msgstr "انتهت صلاحية هذا الرمز"
+
+msgid ""
+"Codes last 15 minutes. Please fill in the booking form again — it only takes"
+" a minute."
+msgstr ""
+"الرموز صالحة لمدة 15 دقيقة. يُرجى تعبئة نموذج الحجز مرة أخرى — لن يستغرق ذلك"
+" سوى دقيقة."
+
+msgid "Start again"
+msgstr "البدء من جديد"
+
+msgid "Check your phone"
+msgstr "تحقّق من هاتفك"
+
+#. translators: %s: mobile number
+msgid "We’ve texted a 4-digit code to %s. Type it in to send your booking."
+msgstr "أرسلنا رمزًا من 4 أرقام برسالة SMS إلى %s. يُرجى إدخاله لإرسال حجزك."
+
+msgid "That code isn’t right. Please check the text and try again."
+msgstr "الرمز غير صحيح. يُرجى التحقق من الرسالة والمحاولة مرة أخرى."
+
+msgid "We’ve sent a new code."
+msgstr "أرسلنا رمزًا جديدًا."
+
+msgid "Code from the text message"
+msgstr "الرمز الوارد في الرسالة النصية"
+
+msgid "Confirm and send my booking"
+msgstr "تأكيد حجزي وإرساله"
+
+msgid "Text me a new code"
+msgstr "أرسلوا لي رمزًا جديدًا"
+
+msgid "Wrong number? Change it"
+msgstr "الرقم غير صحيح؟ غيّره"
+
+#. translators: %s: phone
+msgid ""
+"The text can take a minute to arrive. No luck? Call us on %s and we’ll book "
+"it for you."
+msgstr ""
+"قد يستغرق وصول الرسالة دقيقة. لم تصلك؟ اتصل بنا على الرقم %s وسنحجز لك."
+
+#. translators: %s: phone
+msgid ""
+"Too many wrong codes. Please check your mobile number and try again, or call"
+" us on %s."
+msgstr ""
+"عدد كبير جدًا من الرموز الخاطئة. يُرجى التحقق من رقم هاتفك المحمول والمحاولة"
+" مرة أخرى، أو الاتصال بنا على الرقم %s."
+
+msgid "Please check your mobile number."
+msgstr "يُرجى التحقق من رقم هاتفك المحمول."
+
+#. translators: %s: suggested email address
+msgid "Did you mean %s?"
+msgstr "هل تقصد %s؟"
+
+msgid "Yes, use this"
+msgstr "نعم، استخدم هذا"

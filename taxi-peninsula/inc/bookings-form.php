@@ -22,6 +22,12 @@ function tp_booking_form_shortcode() {
  * Render the form, a success panel, or the form with validation errors.
  */
 function tp_render_booking_form() {
+	/**
+	 * Lets another screen take the place of the form (the SMS code step). Return true when it printed one.
+	 */
+	if ( apply_filters( 'tp_booking_form_screen', false ) ) {
+		return;
+	}
 	$state = array(
 		'errors' => array(),
 		'old'    => array(),
@@ -97,7 +103,7 @@ add_action( 'admin_post_tp_booking', 'tp_handle_booking' );
 function tp_handle_booking() {
 	$return = isset( $_POST['_tp_return'] ) ? esc_url_raw( wp_unslash( $_POST['_tp_return'] ) ) : '';
 	$return = wp_validate_redirect( $return, home_url( '/' ) );
-	$return = remove_query_arg( array( 'tp_form', 'booking', 'ref', 't', 'trips', 'pay_error', 'pickup', 'dropoff', 'payment', 'rebook', 'swap' ), $return );
+	$return = remove_query_arg( array( 'tp_form', 'booking', 'ref', 't', 'trips', 'pay_error', 'pickup', 'dropoff', 'payment', 'rebook', 'swap', 'bcode', 'bcode_err', 'resent', 'fixed', 'fix_error' ), $return );
 
 	if ( ! isset( $_POST['_tp_nonce'] ) || ! wp_verify_nonce( sanitize_key( wp_unslash( $_POST['_tp_nonce'] ) ), 'tp_booking' ) ) {
 		tp_booking_fail( $return, array( 'form' => __( 'Your session expired. Please check your details and submit again.', 'taxi-peninsula' ) ), $_POST );
@@ -115,7 +121,8 @@ function tp_handle_booking() {
 		tp_booking_fail( $return, array( 'form' => sprintf( __( 'Too many bookings from your connection. Please call us on %s.', 'taxi-peninsula' ), tp_opt( 'phone_display' ) ) ), $raw );
 	}
 
-	if ( ! tp_verify_captcha() ) {
+	// A booking coming back from the SMS code step was checked for spam on its first pass.
+	if ( empty( $GLOBALS['tp_booking_code_ok'] ) && ! tp_verify_captcha() ) {
 		tp_booking_fail( $return, array( 'form' => tp_captcha_error_message() ), $raw );
 	}
 
@@ -136,6 +143,16 @@ function tp_handle_booking() {
 	if ( $errors ) {
 		tp_booking_fail( $return, $errors, $raw );
 	}
+
+	/**
+	 * Fires once the booking has passed every check, before it is saved.
+	 * Used for the blocked list and the SMS code step (they may redirect and exit).
+	 *
+	 * @param array  $raw    Submitted fields.
+	 * @param array  $data   Clean booking data.
+	 * @param string $return Page to send the visitor back to.
+	 */
+	do_action( 'tp_booking_checks_passed', $raw, $data, $return );
 
 	$series = count( $dates ) > 1 ? tp_new_reference() : '';
 	$ids    = array();
@@ -264,13 +281,7 @@ add_action( 'tp_booking_created', 'tp_send_new_booking_emails', 10, 2 );
 function tp_send_new_booking_emails( $post_id, $ids = array() ) {
 	$ids      = $ids ?: array( $post_id );
 	$b        = tp_get_booking( $post_id );
-	$site     = wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );
-	$summary  = tp_booking_summary( $b );
 	$admin_to = tp_opt( 'notify_email' ) ?: get_option( 'admin_email' );
-	$series   = count( $ids ) > 1
-		/* translators: %d: number of trips */
-		? "\n" . sprintf( __( 'Repeat booking — %d trips:', 'taxi-peninsula' ), count( $ids ) ) . "\n" . tp_series_dates_text( $ids )
-		: '';
 
 	// The office alert is always in the site language.
 	tp_in_site_lang(
@@ -284,6 +295,7 @@ function tp_send_new_booking_emails( $post_id, $ids = array() ) {
 				/* translators: %s: language name */
 				? sprintf( __( 'Booked in %s — emails and texts to the customer are sent in this language.', 'taxi-peninsula' ), tp_languages()[ $note ][2] ) . "\n\n"
 				: '';
+			$note = apply_filters( 'tp_new_booking_office_note', $note, $post_id );
 			wp_mail(
 				$admin_to,
 				/* translators: 1: reference, 2: pick-up time */
@@ -294,6 +306,21 @@ function tp_send_new_booking_emails( $post_id, $ids = array() ) {
 		}
 	);
 
+	tp_send_booking_received_customer( $post_id, $ids );
+}
+
+/**
+ * The "booking received" email to the customer (also resent when they correct their details).
+ */
+function tp_send_booking_received_customer( $post_id, $ids = array() ) {
+	$ids     = $ids ?: array( $post_id );
+	$b       = tp_get_booking( $post_id );
+	$site    = wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES );
+	$summary = tp_booking_summary( $b );
+	$series  = count( $ids ) > 1
+		/* translators: %d: number of trips */
+		? "\n" . sprintf( __( 'Repeat booking — %d trips:', 'taxi-peninsula' ), count( $ids ) ) . "\n" . tp_series_dates_text( $ids )
+		: '';
 	if ( tp_opt( 'customer_emails' ) && is_email( $b['email'] ) ) {
 		/* translators: %s: passenger name */
 		$body  = sprintf( __( 'Hi %s,', 'taxi-peninsula' ), $b['name'] ) . "\n\n";
