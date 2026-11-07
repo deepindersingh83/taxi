@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.11.0\n"
+"Project-Id-Version: Taxi Peninsula 2.12.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
@@ -5832,3 +5832,341 @@ msgstr "Intendeva %s?"
 
 msgid "Yes, use this"
 msgstr "Sì, usa questo"
+
+msgid "Confirm new accounts"
+msgstr "Conferma dei nuovi account"
+
+msgid ""
+"New accounts get a code by text (when SMS is set up) and a confirm link by "
+"email; either one confirms the account. Customers can still book before "
+"confirming, and those bookings are marked “Unverified customer” or “Phone not"
+" confirmed” on the dispatch board."
+msgstr ""
+"I nuovi account ricevono un codice via SMS (quando gli SMS sono configurati) "
+"e un link di conferma via email; basta uno dei due per confermare l’account. "
+"I clienti possono prenotare anche prima della conferma, e quelle prenotazioni"
+" vengono contrassegnate come «Cliente non verificato» o «Telefono non "
+"confermato» sul pannello di smistamento."
+
+#. translators: 1: site 2: code
+msgid ""
+"%1$s: your code to confirm your account is %2$s. It expires in 30 minutes."
+msgstr ""
+"%1$s: il Suo codice per confermare l’account è %2$s. Scade tra 30 minuti."
+
+msgid "Please confirm your account by opening this link:"
+msgstr "La preghiamo di confermare il Suo account aprendo questo link:"
+
+#. translators: %d: days
+msgid "The link works for %d days. You can book in the meantime."
+msgstr "Il link è valido per %d giorni. Nel frattempo può già prenotare."
+
+msgid "Didn’t make an account with us? You can ignore this email."
+msgstr "Non ha creato un account con noi? Può ignorare questa email."
+
+#. translators: %s: site name
+msgid "Confirm your %s account"
+msgstr "Confermi il Suo account %s"
+
+msgid "Unverified customer"
+msgstr "Cliente non verificato"
+
+msgid "Phone not confirmed"
+msgstr "Telefono non confermato"
+
+msgid ""
+"New account that has not confirmed its email or mobile yet. Call to check "
+"before sending a car."
+msgstr ""
+"Nuovo account che non ha ancora confermato email o cellulare. Telefonare per "
+"verificare prima di inviare un’auto."
+
+msgid "The account confirmed its email, but not this mobile number."
+msgstr "L’account ha confermato l’email, ma non questo numero di cellulare."
+
+msgid "Phone confirmed"
+msgstr "Telefono confermato"
+
+msgid "Thank you — your account is confirmed."
+msgstr "Grazie — il Suo account è confermato."
+
+msgid "Thank you — your mobile number is confirmed."
+msgstr "Grazie — il Suo numero di cellulare è confermato."
+
+msgid "We’ve emailed you a new link."
+msgstr "Le abbiamo inviato un nuovo link via email."
+
+msgid ""
+"That link has expired or was already used. Sign in to send yourself a new "
+"one."
+msgstr ""
+"Il link è scaduto o è già stato usato. Acceda per inviarsene uno nuovo."
+
+msgid "Confirm your mobile number"
+msgstr "Confermi il Suo numero di cellulare"
+
+msgid "Please confirm your account"
+msgstr "La preghiamo di confermare il Suo account"
+
+msgid ""
+"Your email is confirmed. Confirming your mobile too means drivers can reach "
+"you and your bookings go through without a check call."
+msgstr ""
+"La Sua email è confermata. Se conferma anche il cellulare, gli autisti "
+"potranno contattarLa e le Sue prenotazioni verranno accettate senza una "
+"telefonata di verifica."
+
+#. translators: %s: mobile number
+msgid ""
+"We’ve texted a 6-digit code to %s and emailed you a link. Use either one. You"
+" can book in the meantime — we may call to check your first trip."
+msgstr ""
+"Abbiamo inviato un codice di 6 cifre via SMS al numero %s e Le abbiamo "
+"mandato un link via email. Può usare l’uno o l’altro. Nel frattempo può già "
+"prenotare — potremmo chiamarLa per verificare la Sua prima corsa."
+
+#. translators: %s: email
+msgid ""
+"We’ve emailed a confirm link to %s. You can book in the meantime — we may "
+"call to check your first trip."
+msgstr ""
+"Abbiamo inviato un link di conferma a %s. Nel frattempo può già prenotare — "
+"potremmo chiamarLa per verificare la Sua prima corsa."
+
+msgid ""
+"That code isn’t right, or it has expired. Please check the text or send a new"
+" code."
+msgstr ""
+"Il codice non è corretto o è scaduto. Controlli l’SMS o richieda un nuovo "
+"codice."
+
+msgid "Confirm"
+msgstr "Conferma"
+
+msgid "Text me a code"
+msgstr "Inviami un codice via SMS"
+
+msgid "Email me a new link"
+msgstr "Inviami un nuovo link via email"
+
+msgid "Please sign in."
+msgstr "Per favore, acceda."
+
+msgid "Accessibility"
+msgstr "Accessibilità"
+
+msgid ""
+"e.g. \"Wheelchairs to borrow at reception, accessible toilets near the "
+"entrance, lifts to all floors, hearing loop at the front desk.\""
+msgstr ""
+"ad es. «Sedie a rotelle in prestito alla reception, bagni accessibili vicino "
+"all’ingresso, ascensori per tutti i piani, sistema a induzione magnetica per "
+"l’udito al banco accoglienza.»"
+
+msgid "Going home (hospitals, clinics and care)"
+msgstr "Ritorno a casa (ospedali, cliniche e strutture di assistenza)"
+
+msgid "Pick-up point for the trip home"
+msgstr "Punto di ritiro per il ritorno a casa"
+
+msgid ""
+"Where patients wait to be picked up, if different from the drop-off, e.g. "
+"\"Discharge lounge, ground floor — drivers come inside to meet you.\""
+msgstr ""
+"Dove i pazienti aspettano di essere ripresi, se diverso dal punto di arrivo, "
+"ad es. «Sala dimissioni, piano terra — gli autisti entrano a cercarLa.»"
+
+msgid "Discharge tips"
+msgstr "Consigli per la dimissione"
+
+msgid ""
+"One per line, e.g. \"The discharge lounge is open 8am–6pm weekdays.\" Leave "
+"empty to show our general tips."
+msgstr ""
+"Uno per riga, ad es. «La sala dimissioni è aperta dalle 8 alle 18 nei giorni "
+"feriali.» Lasci vuoto per mostrare i nostri consigli generali."
+
+msgid ""
+"Book a “pick up when ready” trip ahead: choose the day, then tap “I’m ready” "
+"on your booking page (or call us) when the ward lets you go."
+msgstr ""
+"Prenoti in anticipo una corsa «ritiro quando pronto»: scelga il giorno, poi "
+"tocchi «Sono pronto» nella pagina della Sua prenotazione (o ci chiami) quando"
+" il reparto La dimette."
+
+msgid ""
+"Discharge often takes longer than planned — waiting for medicines, a doctor’s"
+" sign-off or transport letters is normal. We only send the car when you are "
+"ready."
+msgstr ""
+"Spesso la dimissione richiede più tempo del previsto — è normale attendere i "
+"farmaci, la firma del medico o i documenti per il trasporto. Mandiamo l’auto "
+"solo quando ci avvisa che può uscire."
+
+msgid ""
+"Have your discharge letter, medicines and any walking aids with you, and tell"
+" us if you need help from the ward to the car."
+msgstr ""
+"Tenga con sé la lettera di dimissione, i farmaci ed eventuali ausili per "
+"camminare, e ci dica se ha bisogno di aiuto dal reparto all’auto."
+
+msgid ""
+"Travelling with a wheelchair or a carer? Say so when you book so we send the "
+"right vehicle."
+msgstr ""
+"Viaggia con una sedia a rotelle o con un accompagnatore? Ce lo dica al "
+"momento della prenotazione, così mandiamo il veicolo adatto."
+
+msgid "Refer a friend"
+msgstr "Invita un amico"
+
+msgid "Referral codes are not available at the moment."
+msgstr "I codici invito non sono disponibili al momento."
+
+msgid ""
+"That’s your own referral code — share it with friends instead. Thank you!"
+msgstr "Questo è il Suo codice invito — lo condivida con i Suoi amici. Grazie!"
+
+msgid ""
+"That thank-you code belongs to another account. Please sign in to use it."
+msgstr ""
+"Questo codice di ringraziamento appartiene a un altro account. Acceda per "
+"usarlo."
+
+msgid ""
+"Referral: thank-you code sent to the customer who referred this passenger."
+msgstr ""
+"Invito: codice di ringraziamento inviato al cliente che ha invitato questo "
+"passeggero."
+
+#. translators: 1: amount 2: code
+msgid ""
+"A friend you referred has just taken their first trip with us. Thank you! "
+"Here is %1$s off your next trip: %2$s"
+msgstr ""
+"Un amico che ha invitato ha appena fatto la sua prima corsa con noi. Grazie! "
+"Ecco %1$s di sconto sulla Sua prossima corsa: %2$s"
+
+#. translators: %s: date
+msgid ""
+"Type the code in the “Promo code” box when you book. It can be used once, "
+"until %s."
+msgstr ""
+"Inserisca il codice nella casella «Codice promozionale» quando prenota. Si "
+"può usare una sola volta, entro il %s."
+
+#. translators: 1: amount 2: site
+msgid "%1$s off your next trip with %2$s"
+msgstr "%1$s di sconto sulla prossima corsa con %2$s"
+
+#. translators: 1: site 2: amount 3: code
+msgid ""
+"%1$s: thanks for referring a friend! Here is %2$s off your next trip: %3$s"
+msgstr ""
+"%1$s: grazie per aver invitato un amico! Ecco %2$s di sconto sulla Sua "
+"prossima corsa: %3$s"
+
+#. translators: 1: amount 2: site 3: code 4: link
+msgid ""
+"I use %2$s for my trips. Get %1$s off your first one with my code %3$s: %4$s"
+msgstr ""
+"Uso %2$s per i miei spostamenti. Hai %1$s di sconto sulla prima corsa con il "
+"mio codice %3$s: %4$s"
+
+#. translators: 1: friend's amount 2: your amount
+msgid "Give %1$s, get %2$s"
+msgstr "Regala %1$s, ricevi %2$s"
+
+#. translators: 1: friend's amount 2: your amount
+msgid ""
+"Friends get %1$s off their first trip with your code. When they’ve travelled,"
+" we send you a %2$s thank-you code for your next trip."
+msgstr ""
+"I Suoi amici hanno %1$s di sconto sulla prima corsa con il Suo codice. Dopo "
+"che avranno viaggiato, Le invieremo un codice di ringraziamento da %2$s per "
+"la Sua prossima corsa."
+
+msgid "Your code"
+msgstr "Il Suo codice"
+
+msgid "Copied"
+msgstr "Copiato"
+
+msgid "Copy code"
+msgstr "Copia codice"
+
+msgid "Share on WhatsApp"
+msgstr "Condividi su WhatsApp"
+
+msgid "Text a friend"
+msgstr "Invia un SMS a un amico"
+
+#. translators: %s: amount
+msgid "%s off your first taxi trip"
+msgstr "%s di sconto sulla prima corsa in taxi"
+
+#. translators: %s: amount
+msgid "Link copied"
+msgstr "Link copiato"
+
+#. translators: %s: amount
+msgid "Copy link"
+msgstr "Copia link"
+
+msgid "Your thank-you codes"
+msgstr "I Suoi codici di ringraziamento"
+
+#. translators: %d: number of friends
+msgid "%d friend has travelled with your code."
+msgid_plural "%d friends have travelled with your code."
+msgstr[0] "%d amico ha viaggiato con il Suo codice."
+msgstr[1] "%d amici hanno viaggiato con il Suo codice."
+
+msgid "Used"
+msgstr "Usato"
+
+#. translators: %s: date
+msgid "Use by %s"
+msgstr "Da usare entro il %s"
+
+msgid "Your thank-you codes will appear here."
+msgstr "I Suoi codici di ringraziamento appariranno qui."
+
+msgid ""
+"Friends must be new customers. One thank-you code per friend, sent after "
+"their first trip is completed. Codes can’t be swapped for cash."
+msgstr ""
+"Gli amici devono essere nuovi clienti. Un codice di ringraziamento per ogni "
+"amico, inviato dopo che ha completato la prima corsa. I codici non sono "
+"convertibili in denaro."
+
+msgid "Referrals"
+msgstr "Inviti"
+
+#. translators: %s: place
+msgid "Going home from %s"
+msgstr "Ritorno a casa da %s"
+
+msgid ""
+"At the main entrance. Tell us your ward or clinic and the driver will meet "
+"you there if you need help."
+msgstr ""
+"All’ingresso principale. Ci indichi il Suo reparto o ambulatorio e, se ha "
+"bisogno di aiuto, l’autista La raggiungerà lì."
+
+msgid "Book the trip home — pick up when ready"
+msgstr "Prenoti il ritorno a casa — ritiro quando è pronto"
+
+#. translators: %s: phone
+msgid "Ready now? Call %s"
+msgstr "È pronto ora? Chiami il %s"
+
+msgid ""
+"measuring which of our ads lead to completed trips. If you came from an ad, "
+"the ad click number is sent; for some trips your email and phone number are "
+"sent only in scrambled (hashed) form that cannot be read back"
+msgstr ""
+"misurare quali dei nostri annunci portano a corse completate. Se è arrivato "
+"da un annuncio, viene inviato il numero del clic sull’annuncio; per alcune "
+"corse, la Sua email e il Suo numero di telefono vengono inviati solo in forma"
+" cifrata (hash) che non può essere riconvertita"

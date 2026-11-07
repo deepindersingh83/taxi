@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.11.0\n"
+"Project-Id-Version: Taxi Peninsula 2.12.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -5697,3 +5697,331 @@ msgstr "هل تقصد %s؟"
 
 msgid "Yes, use this"
 msgstr "نعم، استخدم هذا"
+
+msgid "Confirm new accounts"
+msgstr "تأكيد الحسابات الجديدة"
+
+msgid ""
+"New accounts get a code by text (when SMS is set up) and a confirm link by "
+"email; either one confirms the account. Customers can still book before "
+"confirming, and those bookings are marked “Unverified customer” or “Phone not"
+" confirmed” on the dispatch board."
+msgstr ""
+"تتلقى الحسابات الجديدة رمزًا عبر رسالة نصية (عند إعداد خدمة SMS) ورابط تأكيد "
+"عبر البريد الإلكتروني؛ ويكفي أيٌّ منهما لتأكيد الحساب. ويمكن للعملاء الحجز "
+"قبل التأكيد، وتُعلَّم هذه الحجوزات بعبارة «عميل غير موثَّق» أو «الهاتف غير "
+"مؤكد» على لوحة التوزيع."
+
+#. translators: 1: site 2: code
+msgid ""
+"%1$s: your code to confirm your account is %2$s. It expires in 30 minutes."
+msgstr "%1$s: رمز تأكيد حسابك هو %2$s. تنتهي صلاحيته خلال 30 دقيقة."
+
+msgid "Please confirm your account by opening this link:"
+msgstr "يُرجى تأكيد حسابك بفتح هذا الرابط:"
+
+#. translators: %d: days
+msgid "The link works for %d days. You can book in the meantime."
+msgstr "يظل الرابط صالحًا لعدد %d من الأيام. ويمكنك الحجز في هذه الأثناء."
+
+msgid "Didn’t make an account with us? You can ignore this email."
+msgstr "لم تُنشئ حسابًا لدينا؟ يمكنك تجاهل هذه الرسالة."
+
+#. translators: %s: site name
+msgid "Confirm your %s account"
+msgstr "أكِّد حسابك في %s"
+
+msgid "Unverified customer"
+msgstr "عميل غير موثَّق"
+
+msgid "Phone not confirmed"
+msgstr "الهاتف غير مؤكد"
+
+msgid ""
+"New account that has not confirmed its email or mobile yet. Call to check "
+"before sending a car."
+msgstr ""
+"حساب جديد لم يؤكد بريده الإلكتروني أو رقم جواله بعد. اتصل للتحقق قبل إرسال "
+"سيارة."
+
+msgid "The account confirmed its email, but not this mobile number."
+msgstr "أكّد الحساب بريده الإلكتروني، لكنه لم يؤكد رقم الجوال هذا."
+
+msgid "Phone confirmed"
+msgstr "الهاتف مؤكد"
+
+msgid "Thank you — your account is confirmed."
+msgstr "شكرًا لك — تم تأكيد حسابك."
+
+msgid "Thank you — your mobile number is confirmed."
+msgstr "شكرًا لك — تم تأكيد رقم جوالك."
+
+msgid "We’ve emailed you a new link."
+msgstr "أرسلنا إليك رابطًا جديدًا عبر البريد الإلكتروني."
+
+msgid ""
+"That link has expired or was already used. Sign in to send yourself a new "
+"one."
+msgstr ""
+"انتهت صلاحية هذا الرابط أو سبق استخدامه. سجّل الدخول لإرسال رابط جديد إلى "
+"نفسك."
+
+msgid "Confirm your mobile number"
+msgstr "أكِّد رقم جوالك"
+
+msgid "Please confirm your account"
+msgstr "يُرجى تأكيد حسابك"
+
+msgid ""
+"Your email is confirmed. Confirming your mobile too means drivers can reach "
+"you and your bookings go through without a check call."
+msgstr ""
+"تم تأكيد بريدك الإلكتروني. وتأكيد رقم جوالك أيضًا يتيح للسائقين التواصل معك، "
+"ويجعل حجوزاتك تتم دون الحاجة إلى مكالمة للتحقق."
+
+#. translators: %s: mobile number
+msgid ""
+"We’ve texted a 6-digit code to %s and emailed you a link. Use either one. You"
+" can book in the meantime — we may call to check your first trip."
+msgstr ""
+"أرسلنا رمزًا من 6 أرقام في رسالة نصية إلى %s، ورابطًا إلى بريدك الإلكتروني. "
+"استخدم أيًّا منهما. ويمكنك الحجز في هذه الأثناء — وقد نتصل بك للتحقق من رحلتك"
+" الأولى."
+
+#. translators: %s: email
+msgid ""
+"We’ve emailed a confirm link to %s. You can book in the meantime — we may "
+"call to check your first trip."
+msgstr ""
+"أرسلنا رابط تأكيد إلى %s. ويمكنك الحجز في هذه الأثناء — وقد نتصل بك للتحقق من"
+" رحلتك الأولى."
+
+msgid ""
+"That code isn’t right, or it has expired. Please check the text or send a new"
+" code."
+msgstr ""
+"هذا الرمز غير صحيح، أو انتهت صلاحيته. يُرجى التحقق من الرسالة النصية أو طلب "
+"رمز جديد."
+
+msgid "Confirm"
+msgstr "تأكيد"
+
+msgid "Text me a code"
+msgstr "أرسل لي رمزًا في رسالة نصية"
+
+msgid "Email me a new link"
+msgstr "أرسل لي رابطًا جديدًا بالبريد الإلكتروني"
+
+msgid "Please sign in."
+msgstr "يُرجى تسجيل الدخول."
+
+msgid "Accessibility"
+msgstr "إمكانية الوصول"
+
+msgid ""
+"e.g. \"Wheelchairs to borrow at reception, accessible toilets near the "
+"entrance, lifts to all floors, hearing loop at the front desk.\""
+msgstr ""
+"مثال: «كراسٍ متحركة للاستعارة في مكتب الاستقبال، ودورات مياه مهيأة لذوي "
+"الإعاقة قرب المدخل، ومصاعد إلى جميع الطوابق، وحلقة سمعية عند مكتب الاستقبال.»"
+
+msgid "Going home (hospitals, clinics and care)"
+msgstr "العودة إلى المنزل (المستشفيات والعيادات ودور الرعاية)"
+
+msgid "Pick-up point for the trip home"
+msgstr "نقطة الاستلام لرحلة العودة إلى المنزل"
+
+msgid ""
+"Where patients wait to be picked up, if different from the drop-off, e.g. "
+"\"Discharge lounge, ground floor — drivers come inside to meet you.\""
+msgstr ""
+"المكان الذي ينتظر فيه المرضى ليتم اصطحابهم، إذا كان مختلفًا عن نقطة الإنزال، "
+"مثال: «صالة الخروج، الطابق الأرضي — يدخل السائقون لمقابلتك.»"
+
+msgid "Discharge tips"
+msgstr "نصائح عند الخروج من المستشفى"
+
+msgid ""
+"One per line, e.g. \"The discharge lounge is open 8am–6pm weekdays.\" Leave "
+"empty to show our general tips."
+msgstr ""
+"نصيحة واحدة في كل سطر، مثال: «صالة الخروج مفتوحة من 8 صباحًا حتى 6 مساءً أيام"
+" الأسبوع.» اتركه فارغًا لعرض نصائحنا العامة."
+
+msgid ""
+"Book a “pick up when ready” trip ahead: choose the day, then tap “I’m ready” "
+"on your booking page (or call us) when the ward lets you go."
+msgstr ""
+"احجز مسبقًا رحلة «الاستلام عند الجاهزية»: اختر اليوم، ثم اضغط «أنا جاهز» في "
+"صفحة حجزك (أو اتصل بنا) عندما يسمح لك القسم بالمغادرة."
+
+msgid ""
+"Discharge often takes longer than planned — waiting for medicines, a doctor’s"
+" sign-off or transport letters is normal. We only send the car when you are "
+"ready."
+msgstr ""
+"غالبًا ما يستغرق الخروج من المستشفى وقتًا أطول من المخطط له — فانتظار الأدوية"
+" أو توقيع الطبيب أو رسائل النقل أمر طبيعي. لا نرسل السيارة إلا عندما تكون "
+"جاهزًا."
+
+msgid ""
+"Have your discharge letter, medicines and any walking aids with you, and tell"
+" us if you need help from the ward to the car."
+msgstr ""
+"احتفظ معك برسالة الخروج والأدوية وأي أدوات مساعدة على المشي، وأخبرنا إذا كنت "
+"بحاجة إلى مساعدة من القسم إلى السيارة."
+
+msgid ""
+"Travelling with a wheelchair or a carer? Say so when you book so we send the "
+"right vehicle."
+msgstr ""
+"هل تسافر بكرسي متحرك أو مع مرافق؟ أخبرنا بذلك عند الحجز لنرسل لك المركبة "
+"المناسبة."
+
+msgid "Refer a friend"
+msgstr "ادعُ صديقًا"
+
+msgid "Referral codes are not available at the moment."
+msgstr "رموز الإحالة غير متاحة حاليًا."
+
+msgid ""
+"That’s your own referral code — share it with friends instead. Thank you!"
+msgstr "هذا رمز الإحالة الخاص بك — شاركه مع أصدقائك بدلًا من ذلك. شكرًا لك!"
+
+msgid ""
+"That thank-you code belongs to another account. Please sign in to use it."
+msgstr "رمز الشكر هذا يخص حسابًا آخر. يُرجى تسجيل الدخول لاستخدامه."
+
+msgid ""
+"Referral: thank-you code sent to the customer who referred this passenger."
+msgstr "إحالة: أُرسل رمز شكر إلى العميل الذي أحال هذا الراكب."
+
+#. translators: 1: amount 2: code
+msgid ""
+"A friend you referred has just taken their first trip with us. Thank you! "
+"Here is %1$s off your next trip: %2$s"
+msgstr ""
+"قام صديق أحلته إلينا للتو برحلته الأولى معنا. شكرًا لك! إليك خصم %1$s على "
+"رحلتك القادمة: %2$s"
+
+#. translators: %s: date
+msgid ""
+"Type the code in the “Promo code” box when you book. It can be used once, "
+"until %s."
+msgstr ""
+"اكتب الرمز في خانة «رمز الخصم» عند الحجز. يمكن استخدامه مرة واحدة، حتى %s."
+
+#. translators: 1: amount 2: site
+msgid "%1$s off your next trip with %2$s"
+msgstr "خصم %1$s على رحلتك القادمة مع %2$s"
+
+#. translators: 1: site 2: amount 3: code
+msgid ""
+"%1$s: thanks for referring a friend! Here is %2$s off your next trip: %3$s"
+msgstr "%1$s: شكرًا لإحالتك صديقًا! إليك خصم %2$s على رحلتك القادمة: %3$s"
+
+#. translators: 1: amount 2: site 3: code 4: link
+msgid ""
+"I use %2$s for my trips. Get %1$s off your first one with my code %3$s: %4$s"
+msgstr ""
+"أستخدم %2$s في رحلاتي. احصل على خصم %1$s على رحلتك الأولى باستخدام رمزي %3$s:"
+" %4$s"
+
+#. translators: 1: friend's amount 2: your amount
+msgid "Give %1$s, get %2$s"
+msgstr "امنح %1$s، واحصل على %2$s"
+
+#. translators: 1: friend's amount 2: your amount
+msgid ""
+"Friends get %1$s off their first trip with your code. When they’ve travelled,"
+" we send you a %2$s thank-you code for your next trip."
+msgstr ""
+"يحصل أصدقاؤك على خصم %1$s على رحلتهم الأولى باستخدام رمزك. وبعد أن يسافروا، "
+"نرسل إليك رمز شكر بقيمة %2$s لرحلتك القادمة."
+
+msgid "Your code"
+msgstr "رمزك"
+
+msgid "Copied"
+msgstr "تم النسخ"
+
+msgid "Copy code"
+msgstr "نسخ الرمز"
+
+msgid "Share on WhatsApp"
+msgstr "المشاركة عبر WhatsApp"
+
+msgid "Text a friend"
+msgstr "أرسل رسالة نصية إلى صديق"
+
+#. translators: %s: amount
+msgid "%s off your first taxi trip"
+msgstr "خصم %s على أول رحلة تاكسي لك"
+
+#. translators: %s: amount
+msgid "Link copied"
+msgstr "تم نسخ الرابط"
+
+#. translators: %s: amount
+msgid "Copy link"
+msgstr "نسخ الرابط"
+
+msgid "Your thank-you codes"
+msgstr "رموز الشكر الخاصة بك"
+
+#. translators: %d: number of friends
+msgid "%d friend has travelled with your code."
+msgid_plural "%d friends have travelled with your code."
+msgstr[0] "سافر %d من الأصدقاء باستخدام رمزك."
+msgstr[1] "سافر %d صديق باستخدام رمزك."
+msgstr[2] "سافر %d صديقان باستخدام رمزك."
+msgstr[3] "سافر %d أصدقاء باستخدام رمزك."
+msgstr[4] "سافر %d صديقًا باستخدام رمزك."
+msgstr[5] "سافر %d صديق باستخدام رمزك."
+
+msgid "Used"
+msgstr "مُستخدَم"
+
+#. translators: %s: date
+msgid "Use by %s"
+msgstr "صالح حتى %s"
+
+msgid "Your thank-you codes will appear here."
+msgstr "ستظهر رموز الشكر الخاصة بك هنا."
+
+msgid ""
+"Friends must be new customers. One thank-you code per friend, sent after "
+"their first trip is completed. Codes can’t be swapped for cash."
+msgstr ""
+"يجب أن يكون الأصدقاء عملاء جددًا. رمز شكر واحد لكل صديق، يُرسل بعد إتمام "
+"رحلته الأولى. لا يمكن استبدال الرموز بمبالغ نقدية."
+
+msgid "Referrals"
+msgstr "الإحالات"
+
+#. translators: %s: place
+msgid "Going home from %s"
+msgstr "العودة إلى المنزل من %s"
+
+msgid ""
+"At the main entrance. Tell us your ward or clinic and the driver will meet "
+"you there if you need help."
+msgstr ""
+"عند المدخل الرئيسي. أخبرنا باسم القسم أو العيادة، وسيقابلك السائق هناك إذا "
+"كنت بحاجة إلى مساعدة."
+
+msgid "Book the trip home — pick up when ready"
+msgstr "احجز رحلة العودة إلى المنزل — الاستلام عند الجاهزية"
+
+#. translators: %s: phone
+msgid "Ready now? Call %s"
+msgstr "جاهز الآن؟ اتصل على %s"
+
+msgid ""
+"measuring which of our ads lead to completed trips. If you came from an ad, "
+"the ad click number is sent; for some trips your email and phone number are "
+"sent only in scrambled (hashed) form that cannot be read back"
+msgstr ""
+"قياس أيٍّ من إعلاناتنا يؤدي إلى رحلات مكتملة. إذا وصلت إلينا عبر إعلان، يُرسل"
+" رقم النقرة على الإعلان؛ وفي بعض الرحلات، لا يُرسل بريدك الإلكتروني ورقم "
+"هاتفك إلا بصيغة مشفّرة (مُجزّأة) لا يمكن استرجاعها"

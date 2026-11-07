@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.11.0\n"
+"Project-Id-Version: Taxi Peninsula 2.12.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -5876,3 +5876,354 @@ msgstr "Μήπως εννοείτε %s;"
 
 msgid "Yes, use this"
 msgstr "Ναι, χρήση αυτού"
+
+msgid "Confirm new accounts"
+msgstr "Επιβεβαίωση νέων λογαριασμών"
+
+msgid ""
+"New accounts get a code by text (when SMS is set up) and a confirm link by "
+"email; either one confirms the account. Customers can still book before "
+"confirming, and those bookings are marked “Unverified customer” or “Phone not"
+" confirmed” on the dispatch board."
+msgstr ""
+"Οι νέοι λογαριασμοί λαμβάνουν έναν κωδικό με μήνυμα (όταν έχει ρυθμιστεί το "
+"SMS) και έναν σύνδεσμο επιβεβαίωσης με email· οποιοδήποτε από τα δύο "
+"επιβεβαιώνει τον λογαριασμό. Οι πελάτες μπορούν να κάνουν κράτηση και πριν "
+"από την επιβεβαίωση, και αυτές οι κρατήσεις επισημαίνονται ως «Μη "
+"επαληθευμένος πελάτης» ή «Το τηλέφωνο δεν έχει επιβεβαιωθεί» στον πίνακα "
+"αποστολής."
+
+#. translators: 1: site 2: code
+msgid ""
+"%1$s: your code to confirm your account is %2$s. It expires in 30 minutes."
+msgstr ""
+"%1$s: ο κωδικός επιβεβαίωσης του λογαριασμού σας είναι %2$s. Λήγει σε 30 "
+"λεπτά."
+
+msgid "Please confirm your account by opening this link:"
+msgstr ""
+"Παρακαλούμε επιβεβαιώστε τον λογαριασμό σας ανοίγοντας αυτόν τον σύνδεσμο:"
+
+#. translators: %d: days
+msgid "The link works for %d days. You can book in the meantime."
+msgstr ""
+"Ο σύνδεσμος ισχύει για %d ημέρες. Στο μεταξύ μπορείτε να κάνετε κράτηση."
+
+msgid "Didn’t make an account with us? You can ignore this email."
+msgstr ""
+"Δεν δημιουργήσατε λογαριασμό σε εμάς; Μπορείτε να αγνοήσετε αυτό το email."
+
+#. translators: %s: site name
+msgid "Confirm your %s account"
+msgstr "Επιβεβαιώστε τον λογαριασμό σας στο %s"
+
+msgid "Unverified customer"
+msgstr "Μη επαληθευμένος πελάτης"
+
+msgid "Phone not confirmed"
+msgstr "Το τηλέφωνο δεν έχει επιβεβαιωθεί"
+
+msgid ""
+"New account that has not confirmed its email or mobile yet. Call to check "
+"before sending a car."
+msgstr ""
+"Νέος λογαριασμός που δεν έχει επιβεβαιώσει ακόμη το email ή το κινητό του. "
+"Τηλεφωνήστε για έλεγχο πριν στείλετε αυτοκίνητο."
+
+msgid "The account confirmed its email, but not this mobile number."
+msgstr ""
+"Ο λογαριασμός έχει επιβεβαιώσει το email του, αλλά όχι αυτόν τον αριθμό "
+"κινητού."
+
+msgid "Phone confirmed"
+msgstr "Το τηλέφωνο επιβεβαιώθηκε"
+
+msgid "Thank you — your account is confirmed."
+msgstr "Σας ευχαριστούμε — ο λογαριασμός σας επιβεβαιώθηκε."
+
+msgid "Thank you — your mobile number is confirmed."
+msgstr "Σας ευχαριστούμε — ο αριθμός κινητού σας επιβεβαιώθηκε."
+
+msgid "We’ve emailed you a new link."
+msgstr "Σας στείλαμε νέο σύνδεσμο με email."
+
+msgid ""
+"That link has expired or was already used. Sign in to send yourself a new "
+"one."
+msgstr ""
+"Ο σύνδεσμος έχει λήξει ή έχει ήδη χρησιμοποιηθεί. Συνδεθείτε για να στείλετε "
+"στον εαυτό σας έναν νέο."
+
+msgid "Confirm your mobile number"
+msgstr "Επιβεβαιώστε τον αριθμό κινητού σας"
+
+msgid "Please confirm your account"
+msgstr "Παρακαλούμε επιβεβαιώστε τον λογαριασμό σας"
+
+msgid ""
+"Your email is confirmed. Confirming your mobile too means drivers can reach "
+"you and your bookings go through without a check call."
+msgstr ""
+"Το email σας επιβεβαιώθηκε. Αν επιβεβαιώσετε και το κινητό σας, οι οδηγοί θα "
+"μπορούν να επικοινωνούν μαζί σας και οι κρατήσεις σας θα προχωρούν χωρίς "
+"τηλεφώνημα ελέγχου."
+
+#. translators: %s: mobile number
+msgid ""
+"We’ve texted a 6-digit code to %s and emailed you a link. Use either one. You"
+" can book in the meantime — we may call to check your first trip."
+msgstr ""
+"Στείλαμε με μήνυμα έναν 6ψήφιο κωδικό στο %s και σας στείλαμε έναν σύνδεσμο "
+"με email. Χρησιμοποιήστε όποιο από τα δύο θέλετε. Στο μεταξύ μπορείτε να "
+"κάνετε κράτηση — μπορεί να σας τηλεφωνήσουμε για να επιβεβαιώσουμε την πρώτη "
+"σας διαδρομή."
+
+#. translators: %s: email
+msgid ""
+"We’ve emailed a confirm link to %s. You can book in the meantime — we may "
+"call to check your first trip."
+msgstr ""
+"Στείλαμε έναν σύνδεσμο επιβεβαίωσης στο %s. Στο μεταξύ μπορείτε να κάνετε "
+"κράτηση — μπορεί να σας τηλεφωνήσουμε για να επιβεβαιώσουμε την πρώτη σας "
+"διαδρομή."
+
+msgid ""
+"That code isn’t right, or it has expired. Please check the text or send a new"
+" code."
+msgstr ""
+"Ο κωδικός δεν είναι σωστός ή έχει λήξει. Ελέγξτε το μήνυμα ή ζητήστε νέο "
+"κωδικό."
+
+msgid "Confirm"
+msgstr "Επιβεβαίωση"
+
+msgid "Text me a code"
+msgstr "Στείλτε μου κωδικό με μήνυμα"
+
+msgid "Email me a new link"
+msgstr "Στείλτε μου νέο σύνδεσμο με email"
+
+msgid "Please sign in."
+msgstr "Παρακαλούμε συνδεθείτε."
+
+msgid "Accessibility"
+msgstr "Προσβασιμότητα"
+
+msgid ""
+"e.g. \"Wheelchairs to borrow at reception, accessible toilets near the "
+"entrance, lifts to all floors, hearing loop at the front desk.\""
+msgstr ""
+"π.χ. «Αναπηρικά αμαξίδια προς δανεισμό στην υποδοχή, προσβάσιμες τουαλέτες "
+"κοντά στην είσοδο, ανελκυστήρες σε όλους τους ορόφους, επαγωγικός βρόχος "
+"ακοής στη ρεσεψιόν.»"
+
+msgid "Going home (hospitals, clinics and care)"
+msgstr "Επιστροφή στο σπίτι (νοσοκομεία, κλινικές και φροντίδα)"
+
+msgid "Pick-up point for the trip home"
+msgstr "Σημείο παραλαβής για την επιστροφή στο σπίτι"
+
+msgid ""
+"Where patients wait to be picked up, if different from the drop-off, e.g. "
+"\"Discharge lounge, ground floor — drivers come inside to meet you.\""
+msgstr ""
+"Πού περιμένουν οι ασθενείς να τους παραλάβουν, αν διαφέρει από το σημείο "
+"αποβίβασης, π.χ. «Αίθουσα εξιτηρίων, ισόγειο — οι οδηγοί μπαίνουν μέσα για να"
+" σας συναντήσουν.»"
+
+msgid "Discharge tips"
+msgstr "Συμβουλές για το εξιτήριο"
+
+msgid ""
+"One per line, e.g. \"The discharge lounge is open 8am–6pm weekdays.\" Leave "
+"empty to show our general tips."
+msgstr ""
+"Μία ανά γραμμή, π.χ. «Η αίθουσα εξιτηρίων λειτουργεί 8 π.μ.–6 μ.μ. τις "
+"καθημερινές.» Αφήστε το κενό για να εμφανίζονται οι γενικές μας συμβουλές."
+
+msgid ""
+"Book a “pick up when ready” trip ahead: choose the day, then tap “I’m ready” "
+"on your booking page (or call us) when the ward lets you go."
+msgstr ""
+"Κλείστε από πριν μια διαδρομή «παραλαβή όταν είστε έτοιμοι»: επιλέξτε την "
+"ημέρα και, όταν σας δώσουν εξιτήριο από την πτέρυγα, πατήστε «Είμαι "
+"έτοιμος/η» στη σελίδα της κράτησής σας (ή τηλεφωνήστε μας)."
+
+msgid ""
+"Discharge often takes longer than planned — waiting for medicines, a doctor’s"
+" sign-off or transport letters is normal. We only send the car when you are "
+"ready."
+msgstr ""
+"Το εξιτήριο συχνά αργεί περισσότερο από το αναμενόμενο — είναι φυσιολογικό να"
+" περιμένετε φάρμακα, την υπογραφή γιατρού ή έγγραφα μεταφοράς. Στέλνουμε το "
+"αυτοκίνητο μόνο όταν είστε έτοιμοι."
+
+msgid ""
+"Have your discharge letter, medicines and any walking aids with you, and tell"
+" us if you need help from the ward to the car."
+msgstr ""
+"Έχετε μαζί σας το εξιτήριο, τα φάρμακα και τυχόν βοηθήματα βάδισης, και πείτε"
+" μας αν χρειάζεστε βοήθεια από την πτέρυγα μέχρι το αυτοκίνητο."
+
+msgid ""
+"Travelling with a wheelchair or a carer? Say so when you book so we send the "
+"right vehicle."
+msgstr ""
+"Ταξιδεύετε με αναπηρικό αμαξίδιο ή με συνοδό; Πείτε μας το όταν κάνετε "
+"κράτηση, ώστε να στείλουμε το κατάλληλο όχημα."
+
+msgid "Refer a friend"
+msgstr "Συστήστε έναν φίλο"
+
+msgid "Referral codes are not available at the moment."
+msgstr "Οι κωδικοί σύστασης δεν είναι διαθέσιμοι αυτή τη στιγμή."
+
+msgid ""
+"That’s your own referral code — share it with friends instead. Thank you!"
+msgstr ""
+"Αυτός είναι ο δικός σας κωδικός σύστασης — μοιραστείτε τον με τους φίλους "
+"σας. Σας ευχαριστούμε!"
+
+msgid ""
+"That thank-you code belongs to another account. Please sign in to use it."
+msgstr ""
+"Αυτός ο ευχαριστήριος κωδικός ανήκει σε άλλο λογαριασμό. Παρακαλούμε "
+"συνδεθείτε για να τον χρησιμοποιήσετε."
+
+msgid ""
+"Referral: thank-you code sent to the customer who referred this passenger."
+msgstr ""
+"Σύσταση: στάλθηκε ευχαριστήριος κωδικός στον πελάτη που σύστησε αυτόν τον "
+"επιβάτη."
+
+#. translators: 1: amount 2: code
+msgid ""
+"A friend you referred has just taken their first trip with us. Thank you! "
+"Here is %1$s off your next trip: %2$s"
+msgstr ""
+"Ένας φίλος που μας συστήσατε μόλις έκανε την πρώτη του διαδρομή μαζί μας. Σας"
+" ευχαριστούμε! Ορίστε έκπτωση %1$s για την επόμενη διαδρομή σας: %2$s"
+
+#. translators: %s: date
+msgid ""
+"Type the code in the “Promo code” box when you book. It can be used once, "
+"until %s."
+msgstr ""
+"Πληκτρολογήστε τον κωδικό στο πεδίο «Κωδικός προσφοράς» όταν κάνετε κράτηση. "
+"Μπορεί να χρησιμοποιηθεί μία φορά, έως τις %s."
+
+#. translators: 1: amount 2: site
+msgid "%1$s off your next trip with %2$s"
+msgstr "Έκπτωση %1$s στην επόμενη διαδρομή σας με %2$s"
+
+#. translators: 1: site 2: amount 3: code
+msgid ""
+"%1$s: thanks for referring a friend! Here is %2$s off your next trip: %3$s"
+msgstr ""
+"%1$s: ευχαριστούμε που συστήσατε έναν φίλο! Ορίστε έκπτωση %2$s για την "
+"επόμενη διαδρομή σας: %3$s"
+
+#. translators: 1: amount 2: site 3: code 4: link
+msgid ""
+"I use %2$s for my trips. Get %1$s off your first one with my code %3$s: %4$s"
+msgstr ""
+"Χρησιμοποιώ το %2$s για τις μετακινήσεις μου. Πάρε έκπτωση %1$s στην πρώτη "
+"σου διαδρομή με τον κωδικό μου %3$s: %4$s"
+
+#. translators: 1: friend's amount 2: your amount
+msgid "Give %1$s, get %2$s"
+msgstr "Δώστε %1$s, κερδίστε %2$s"
+
+#. translators: 1: friend's amount 2: your amount
+msgid ""
+"Friends get %1$s off their first trip with your code. When they’ve travelled,"
+" we send you a %2$s thank-you code for your next trip."
+msgstr ""
+"Οι φίλοι σας παίρνουν έκπτωση %1$s στην πρώτη τους διαδρομή με τον κωδικό "
+"σας. Όταν ταξιδέψουν, σας στέλνουμε έναν ευχαριστήριο κωδικό %2$s για την "
+"επόμενη διαδρομή σας."
+
+msgid "Your code"
+msgstr "Ο κωδικός σας"
+
+msgid "Copied"
+msgstr "Αντιγράφηκε"
+
+msgid "Copy code"
+msgstr "Αντιγραφή κωδικού"
+
+msgid "Share on WhatsApp"
+msgstr "Κοινοποίηση στο WhatsApp"
+
+msgid "Text a friend"
+msgstr "Στείλτε μήνυμα σε έναν φίλο"
+
+#. translators: %s: amount
+msgid "%s off your first taxi trip"
+msgstr "Έκπτωση %s στην πρώτη σας διαδρομή με ταξί"
+
+#. translators: %s: amount
+msgid "Link copied"
+msgstr "Ο σύνδεσμος αντιγράφηκε"
+
+#. translators: %s: amount
+msgid "Copy link"
+msgstr "Αντιγραφή συνδέσμου"
+
+msgid "Your thank-you codes"
+msgstr "Οι ευχαριστήριοι κωδικοί σας"
+
+#. translators: %d: number of friends
+msgid "%d friend has travelled with your code."
+msgid_plural "%d friends have travelled with your code."
+msgstr[0] "%d φίλος έχει ταξιδέψει με τον κωδικό σας."
+msgstr[1] "%d φίλοι έχουν ταξιδέψει με τον κωδικό σας."
+
+msgid "Used"
+msgstr "Χρησιμοποιήθηκε"
+
+#. translators: %s: date
+msgid "Use by %s"
+msgstr "Ισχύει έως %s"
+
+msgid "Your thank-you codes will appear here."
+msgstr "Οι ευχαριστήριοι κωδικοί σας θα εμφανίζονται εδώ."
+
+msgid ""
+"Friends must be new customers. One thank-you code per friend, sent after "
+"their first trip is completed. Codes can’t be swapped for cash."
+msgstr ""
+"Οι φίλοι πρέπει να είναι νέοι πελάτες. Ένας ευχαριστήριος κωδικός ανά φίλο, "
+"που αποστέλλεται αφού ολοκληρωθεί η πρώτη του διαδρομή. Οι κωδικοί δεν "
+"ανταλλάσσονται με μετρητά."
+
+msgid "Referrals"
+msgstr "Συστάσεις"
+
+#. translators: %s: place
+msgid "Going home from %s"
+msgstr "Επιστροφή στο σπίτι από %s"
+
+msgid ""
+"At the main entrance. Tell us your ward or clinic and the driver will meet "
+"you there if you need help."
+msgstr ""
+"Στην κεντρική είσοδο. Πείτε μας την πτέρυγα ή την κλινική σας και ο οδηγός θα"
+" σας συναντήσει εκεί αν χρειάζεστε βοήθεια."
+
+msgid "Book the trip home — pick up when ready"
+msgstr "Κλείστε την επιστροφή στο σπίτι — παραλαβή όταν είστε έτοιμοι"
+
+#. translators: %s: phone
+msgid "Ready now? Call %s"
+msgstr "Έτοιμοι τώρα; Καλέστε στο %s"
+
+msgid ""
+"measuring which of our ads lead to completed trips. If you came from an ad, "
+"the ad click number is sent; for some trips your email and phone number are "
+"sent only in scrambled (hashed) form that cannot be read back"
+msgstr ""
+"μέτρηση του ποιες από τις διαφημίσεις μας οδηγούν σε ολοκληρωμένες διαδρομές."
+" Αν ήρθατε από διαφήμιση, αποστέλλεται ο αριθμός του κλικ στη διαφήμιση· για "
+"ορισμένες διαδρομές, το email και ο αριθμός τηλεφώνου σας αποστέλλονται μόνο "
+"σε κρυπτογραφημένη (κατακερματισμένη) μορφή που δεν μπορεί να αναγνωστεί"

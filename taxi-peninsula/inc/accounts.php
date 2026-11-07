@@ -365,6 +365,11 @@ function tp_account_shortcode() {
 		if ( ! empty( $_GET['bye'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			echo '<p class="notice notice--success" role="status" tabindex="-1" data-focus>' . esc_html__( 'Your account has been deleted. Thank you for travelling with us.', 'taxi-peninsula' ) . '</p>';
 		}
+		/** This filter is documented below. */
+		$out_messages = apply_filters( 'tp_account_messages', array() );
+		if ( in_array( $flash, array( 'confirmed', 'link_old' ), true ) && isset( $out_messages[ $flash ] ) ) {
+			echo '<p class="notice notice--' . ( 'confirmed' === $flash ? 'success' : 'error' ) . '" role="status" tabindex="-1" data-focus>' . esc_html( $out_messages[ $flash ] . ( 'confirmed' === $flash ? ' ' . __( 'Please sign in.', 'taxi-peninsula' ) : '' ) ) . '</p>';
+		}
 		tp_account_signin( $state );
 		echo '</div>';
 		return ob_get_clean();
@@ -431,6 +436,12 @@ function tp_account_shortcode() {
 		'rated'     => __( 'Thank you for rating your trip!', 'taxi-peninsula' ),
 		'welcome'   => __( 'Welcome! Your account is ready. Your next booking will appear here automatically.', 'taxi-peninsula' ),
 	);
+	/**
+	 * Filters the one-off messages shown after an action (?saved=key).
+	 *
+	 * @param array $messages key => text.
+	 */
+	$messages = apply_filters( 'tp_account_messages', $messages );
 	if ( isset( $messages[ $flash ] ) ) {
 		echo '<p class="notice notice--success" role="status" tabindex="-1" data-focus>' . esc_html( $messages[ $flash ] ) . '</p>';
 	}
@@ -441,6 +452,13 @@ function tp_account_shortcode() {
 		}
 		echo '</div>';
 	}
+	/**
+	 * Notices above the tab content (e.g. "Please confirm your account").
+	 *
+	 * @param WP_User $user  Signed-in customer.
+	 * @param string  $tab   Current tab.
+	 */
+	do_action( 'tp_account_notices', $user, $tab );
 
 	switch ( $tab ) {
 		case 'passengers':
@@ -1026,6 +1044,13 @@ function tp_handle_account_register() {
 	}
 	wp_set_current_user( $user_id );
 	wp_set_auth_cookie( $user_id );
+	/**
+	 * A customer or coordinator account was created from the sign-up form.
+	 *
+	 * @param int   $user_id New user.
+	 * @param array $old     Sanitized form values (name, email, phone, type, org).
+	 */
+	do_action( 'tp_account_registered', $user_id, $old );
 	tp_account_back( array( 'saved' => 'welcome' ) );
 }
 
@@ -1111,7 +1136,18 @@ function tp_handle_account_details() {
 			tp_account_back( array( 'tab' => 'details' ), array( $phone->get_error_message() ), array( 'phone' => sanitize_text_field( wp_unslash( $_POST['phone'] ) ) ) );
 		}
 	}
+	$was = (string) get_user_meta( $user_id, 'tp_mobile', true );
 	update_user_meta( $user_id, 'tp_mobile', $phone );
+	if ( tp_phone_digits( $was ) !== tp_phone_digits( $phone ) ) {
+		/**
+		 * The customer changed their mobile number in My details.
+		 *
+		 * @param int    $user_id User.
+		 * @param string $was     Old number.
+		 * @param string $phone   New number ('' when removed).
+		 */
+		do_action( 'tp_account_phone_changed', $user_id, $was, $phone );
+	}
 	if ( tp_is_coordinator() ) {
 		update_user_meta( $user_id, 'tp_org', isset( $_POST['org'] ) ? sanitize_text_field( wp_unslash( $_POST['org'] ) ) : '' );
 		update_user_meta( $user_id, 'tp_invoice_name', isset( $_POST['invoice_name'] ) ? sanitize_text_field( wp_unslash( $_POST['invoice_name'] ) ) : '' );

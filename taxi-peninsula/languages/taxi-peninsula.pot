@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.10.1\n"
+"Project-Id-Version: Taxi Peninsula 2.12.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/taxi-peninsula\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-21T15:06:45+00:00\n"
+"POT-Creation-Date: 2026-11-07T01:51:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: taxi-peninsula\n"
@@ -66,7 +66,7 @@ msgid "FAQ"
 msgstr ""
 
 #: 404.php:16
-#: inc/accounts.php:1523
+#: inc/accounts.php:1559
 #: patterns/page-terms.php:112
 msgid "Contact us"
 msgstr ""
@@ -106,7 +106,7 @@ msgstr ""
 #: inc/seo.php:232
 #: local-service.php:121
 #: single-tp_area.php:18
-#: single-tp_place.php:145
+#: single-tp_place.php:167
 #: template-parts/related-posts.php:16
 #, php-format
 msgid "Wheelchair taxi %s"
@@ -207,7 +207,7 @@ msgstr ""
 #: council.php:83
 #: local-service.php:77
 #: single-tp_area.php:64
-#: single-tp_place.php:111
+#: single-tp_place.php:133
 #, php-format
 msgid "about %d min"
 msgstr ""
@@ -215,7 +215,7 @@ msgstr ""
 #: council.php:86
 #: local-service.php:80
 #: single-tp_area.php:67
-#: single-tp_place.php:114
+#: single-tp_place.php:136
 msgid "A rough guide without traffic. We allow extra time for loading your wheelchair."
 msgstr ""
 
@@ -239,7 +239,7 @@ msgstr ""
 #: patterns/cta.php:25
 #: patterns/hero.php:25
 #: sidebar.php:13
-#: single-tp_place.php:134
+#: single-tp_place.php:156
 #: template-parts/cta.php:17
 msgid "Book online"
 msgstr ""
@@ -275,7 +275,7 @@ msgid "WhatsApp"
 msgstr ""
 
 #: footer.php:96
-#: inc/accounts.php:1528
+#: inc/accounts.php:1564
 msgid "Text us"
 msgstr ""
 
@@ -344,6 +344,158 @@ msgstr ""
 msgid "Book now"
 msgstr ""
 
+#: inc/account-confirm.php:27
+msgid "Confirm new accounts"
+msgstr ""
+
+#: inc/account-confirm.php:27
+msgid "New accounts get a code by text (when SMS is set up) and a confirm link by email; either one confirms the account. Customers can still book before confirming, and those bookings are marked “Unverified customer” or “Phone not confirmed” on the dispatch board."
+msgstr ""
+
+#. translators: 1: site 2: code
+#: inc/account-confirm.php:71
+#, php-format
+msgid "%1$s: your code to confirm your account is %2$s. It expires in 30 minutes."
+msgstr ""
+
+#. translators: %s: first name
+#. translators: %s: passenger name
+#. translators: %s: name
+#: inc/account-confirm.php:85
+#: inc/bookings-form.php:326
+#: inc/bookings-form.php:384
+#: inc/contact.php:270
+#: inc/drivers.php:565
+#: inc/lost-property.php:433
+#: inc/marketing.php:192
+#: inc/marketing.php:543
+#: inc/partner-leaderboard.php:211
+#: inc/quotes.php:268
+#: inc/quotes.php:376
+#: inc/referrals.php:267
+#: inc/review-invite.php:118
+#: inc/statements.php:265
+#: inc/trips.php:266
+#, php-format
+msgid "Hi %s,"
+msgstr ""
+
+#: inc/account-confirm.php:86
+msgid "Please confirm your account by opening this link:"
+msgstr ""
+
+#. translators: %d: days
+#: inc/account-confirm.php:88
+#, php-format
+msgid "The link works for %d days. You can book in the meantime."
+msgstr ""
+
+#: inc/account-confirm.php:89
+msgid "Didn’t make an account with us? You can ignore this email."
+msgstr ""
+
+#. translators: %s: site name
+#: inc/account-confirm.php:91
+#, php-format
+msgid "Confirm your %s account"
+msgstr ""
+
+#: inc/account-confirm.php:197
+msgid "Unverified customer"
+msgstr ""
+
+#: inc/account-confirm.php:199
+msgid "Phone not confirmed"
+msgstr ""
+
+#: inc/account-confirm.php:204
+msgid "New account that has not confirmed its email or mobile yet. Call to check before sending a car."
+msgstr ""
+
+#: inc/account-confirm.php:205
+msgid "The account confirmed its email, but not this mobile number."
+msgstr ""
+
+#: inc/account-confirm.php:218
+msgid "Phone confirmed"
+msgstr ""
+
+#: inc/account-confirm.php:257
+msgid "Thank you — your account is confirmed."
+msgstr ""
+
+#: inc/account-confirm.php:258
+msgid "Thank you — your mobile number is confirmed."
+msgstr ""
+
+#: inc/account-confirm.php:259
+#: inc/booking-verify.php:308
+msgid "We’ve sent a new code."
+msgstr ""
+
+#: inc/account-confirm.php:260
+msgid "We’ve emailed you a new link."
+msgstr ""
+
+#: inc/account-confirm.php:261
+msgid "That link has expired or was already used. Sign in to send yourself a new one."
+msgstr ""
+
+#: inc/account-confirm.php:285
+msgid "Confirm your mobile number"
+msgstr ""
+
+#: inc/account-confirm.php:285
+msgid "Please confirm your account"
+msgstr ""
+
+#: inc/account-confirm.php:289
+msgid "Your email is confirmed. Confirming your mobile too means drivers can reach you and your bookings go through without a check call."
+msgstr ""
+
+#. translators: %s: mobile number
+#: inc/account-confirm.php:292
+#, php-format
+msgid "We’ve texted a 6-digit code to %s and emailed you a link. Use either one. You can book in the meantime — we may call to check your first trip."
+msgstr ""
+
+#. translators: %s: email
+#: inc/account-confirm.php:295
+#, php-format
+msgid "We’ve emailed a confirm link to %s. You can book in the meantime — we may call to check your first trip."
+msgstr ""
+
+#: inc/account-confirm.php:300
+msgid "That code isn’t right, or it has expired. Please check the text or send a new code."
+msgstr ""
+
+#: inc/account-confirm.php:306
+#: inc/booking-verify.php:313
+msgid "Code from the text message"
+msgstr ""
+
+#: inc/account-confirm.php:306
+msgid "Confirm"
+msgstr ""
+
+#: inc/account-confirm.php:313
+#: inc/booking-verify.php:321
+msgid "Text me a new code"
+msgstr ""
+
+#: inc/account-confirm.php:313
+msgid "Text me a code"
+msgstr ""
+
+#: inc/account-confirm.php:316
+msgid "Email me a new link"
+msgstr ""
+
+#: inc/account-confirm.php:319
+#: inc/booking-verify.php:325
+msgid "Wrong number? Change it"
+msgstr ""
+
 #: inc/accounts.php:98
 #: inc/careers.php:59
 #: template-parts/booking-form.php:312
@@ -374,7 +526,7 @@ msgid "Chair + passenger weight (kg)"
 msgstr ""
 
 #: inc/accounts.php:104
-#: inc/accounts.php:1390
+#: inc/accounts.php:1426
 #: inc/bookings-cpt.php:196
 #: inc/bookings-cpt.php:670
 msgid "NDIS number / reference"
@@ -456,30 +608,34 @@ msgstr ""
 msgid "Your account has been deleted. Thank you for travelling with us."
 msgstr ""
 
-#: inc/accounts.php:373
+#: inc/accounts.php:371
+msgid "Please sign in."
+msgstr ""
+
+#: inc/accounts.php:378
 msgid "You are signed in as staff. Customer accounts are for passengers and coordinators."
 msgstr ""
 
-#: inc/accounts.php:375
+#: inc/accounts.php:380
 msgid "Open the dispatch board"
 msgstr ""
 
-#: inc/accounts.php:377
+#: inc/accounts.php:382
 msgid "Go to my jobs"
 msgstr ""
 
-#: inc/accounts.php:386
-#: inc/accounts.php:1491
+#: inc/accounts.php:391
+#: inc/accounts.php:1527
 #: inc/brand.php:348
 #: inc/brand.php:531
 msgid "My trips"
 msgstr ""
 
-#: inc/accounts.php:387
+#: inc/accounts.php:392
 msgid "Clients"
 msgstr ""
 
-#: inc/accounts.php:387
+#: inc/accounts.php:392
 #: inc/bookings-cpt.php:186
 #: inc/bookings-cpt.php:661
 #: inc/home.php:113
@@ -489,143 +645,144 @@ msgstr ""
 msgid "Passengers"
 msgstr ""
 
-#: inc/accounts.php:388
+#: inc/accounts.php:393
 #: inc/privacy.php:314
 msgid "Saved addresses"
 msgstr ""
 
-#: inc/accounts.php:389
+#: inc/accounts.php:394
 msgid "My details"
 msgstr ""
 
 #. translators: %s: first name
-#: inc/accounts.php:406
+#: inc/accounts.php:411
 #, php-format
 msgid "Hello, %s"
 msgstr ""
 
-#: inc/accounts.php:410
+#: inc/accounts.php:415
 msgid "Coordinator account"
 msgstr ""
 
-#: inc/accounts.php:414
-#: inc/accounts.php:617
+#: inc/accounts.php:419
+#: inc/accounts.php:635
 #: inc/callbacks.php:32
 #: inc/contact.php:307
 #: inc/home.php:113
 msgid "Book a trip"
 msgstr ""
 
-#: inc/accounts.php:415
-#: inc/accounts.php:1520
+#: inc/accounts.php:420
+#: inc/accounts.php:1556
 #: inc/drivers.php:174
 msgid "Sign out"
 msgstr ""
 
-#: inc/accounts.php:418
-#: inc/accounts.php:1481
+#: inc/accounts.php:423
+#: inc/accounts.php:1517
 msgid "My account"
 msgstr ""
 
-#: inc/accounts.php:425
+#: inc/accounts.php:430
 #: inc/ai-search.php:103
 #: inc/finance.php:141
 msgid "Saved."
 msgstr ""
 
-#: inc/accounts.php:426
+#: inc/accounts.php:431
 msgid "Removed."
 msgstr ""
 
-#: inc/accounts.php:427
+#: inc/accounts.php:432
 msgid "Address saved."
 msgstr ""
 
-#: inc/accounts.php:428
+#: inc/accounts.php:433
 msgid "Your details are updated."
 msgstr ""
 
-#: inc/accounts.php:429
+#: inc/accounts.php:434
 msgid "Your password has been changed."
 msgstr ""
 
-#: inc/accounts.php:430
+#: inc/accounts.php:435
 msgid "Booking added to your account."
 msgstr ""
 
-#: inc/accounts.php:431
+#: inc/accounts.php:436
 #: template-parts/booking-status.php:144
 msgid "Thank you for rating your trip!"
 msgstr ""
 
-#: inc/accounts.php:432
+#: inc/accounts.php:437
 msgid "Welcome! Your account is ready. Your next booking will appear here automatically."
 msgstr ""
 
-#: inc/accounts.php:489
-#: inc/accounts.php:1485
+#: inc/accounts.php:507
+#: inc/accounts.php:1521
 msgid "Sign in"
 msgstr ""
 
-#: inc/accounts.php:490
+#: inc/accounts.php:508
 msgid "Email address"
 msgstr ""
 
-#: inc/accounts.php:491
+#: inc/accounts.php:509
 msgid "Forgotten your password?"
 msgstr ""
 
-#: inc/accounts.php:494
-#: inc/accounts.php:1487
+#: inc/accounts.php:512
+#: inc/accounts.php:1523
 msgid "Create an account"
 msgstr ""
 
-#: inc/accounts.php:496
+#: inc/accounts.php:514
 msgid "See all your trips and their status in one place"
 msgstr ""
 
-#: inc/accounts.php:497
+#: inc/accounts.php:515
 msgid "Rebook a regular trip in one tap"
 msgstr ""
 
-#: inc/accounts.php:498
+#: inc/accounts.php:516
 msgid "Save passengers, wheelchair details and addresses"
 msgstr ""
 
-#: inc/accounts.php:499
+#: inc/accounts.php:517
 msgid "Download receipts and invoices"
 msgstr ""
 
-#: inc/accounts.php:504
+#: inc/accounts.php:522
 msgid "Drivers: create a normal account, then the office gives it driver access."
 msgstr ""
 
-#: inc/accounts.php:506
+#: inc/accounts.php:524
 msgid "Want to drive with us? Apply here."
 msgstr ""
 
-#: inc/accounts.php:513
+#: inc/accounts.php:531
 msgid "I am booking for"
 msgstr ""
 
-#: inc/accounts.php:514
+#: inc/accounts.php:532
 msgid "Myself or a family member"
 msgstr ""
 
-#: inc/accounts.php:515
+#: inc/accounts.php:533
 msgid "Clients or residents (NDIS coordinator, aged care, hospital)"
 msgstr ""
 
-#: inc/accounts.php:518
+#: inc/accounts.php:536
 msgid "Organisation name"
 msgstr ""
 
-#: inc/accounts.php:522
+#: inc/accounts.php:540
 msgid "Your full name"
 msgstr ""
 
 #. translators: %s: email
-#: inc/accounts.php:526
+#. translators: %s: amount
+#: inc/accounts.php:544
 #: inc/booking-cancel.php:351
 #: inc/booking-verify.php:93
 #: inc/bookings-cpt.php:180
@@ -644,14 +801,15 @@ msgstr ""
 #: inc/privacy.php:925
 #: inc/quotes.php:159
 #: inc/quotes.php:289
+#: inc/referrals.php:349
 #: inc/settings-tabs.php:19
 #: inc/statements.php:400
 #: template-parts/booking-form.php:324
 msgid "Email"
 msgstr ""
 
-#: inc/accounts.php:530
-#: inc/accounts.php:866
+#: inc/accounts.php:548
+#: inc/accounts.php:884
 #: inc/careers.php:60
 #: inc/lost-property.php:131
 #: inc/marketing.php:690
@@ -661,46 +819,46 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: inc/accounts.php:534
+#: inc/accounts.php:552
 msgid "Choose a password"
 msgstr ""
 
-#: inc/accounts.php:536
+#: inc/accounts.php:554
 msgid "At least 10 characters."
 msgstr ""
 
-#: inc/accounts.php:539
+#: inc/accounts.php:557
 msgid "Create account"
 msgstr ""
 
-#: inc/accounts.php:590
-#: inc/accounts.php:613
+#: inc/accounts.php:608
+#: inc/accounts.php:631
 msgid "Upcoming trips"
 msgstr ""
 
 #. translators: %s: year
-#: inc/accounts.php:594
+#: inc/accounts.php:612
 #, php-format
 msgid "Trips in %s"
 msgstr ""
 
-#: inc/accounts.php:597
+#: inc/accounts.php:615
 msgid "Saved clients"
 msgstr ""
 
-#: inc/accounts.php:597
+#: inc/accounts.php:615
 msgid "Saved passengers"
 msgstr ""
 
-#: inc/accounts.php:601
+#: inc/accounts.php:619
 msgid "Show trips for"
 msgstr ""
 
-#: inc/accounts.php:603
+#: inc/accounts.php:621
 msgid "All clients"
 msgstr ""
 
-#: inc/accounts.php:608
+#: inc/accounts.php:626
 #: inc/admin-tools.php:229
 #: inc/admin-tools.php:488
 #: inc/destinations.php:211
@@ -713,108 +871,108 @@ msgstr ""
 msgid "Show"
 msgstr ""
 
-#: inc/accounts.php:613
+#: inc/accounts.php:631
 msgid "Later trips"
 msgstr ""
 
-#: inc/accounts.php:615
+#: inc/accounts.php:633
 msgid "Nothing else booked yet."
 msgstr ""
 
-#: inc/accounts.php:617
+#: inc/accounts.php:635
 msgid "No upcoming trips"
 msgstr ""
 
-#: inc/accounts.php:617
+#: inc/accounts.php:635
 msgid "Where to next? Book online in about two minutes."
 msgstr ""
 
-#: inc/accounts.php:625
+#: inc/accounts.php:643
 msgid "Past trips"
 msgstr ""
 
-#: inc/accounts.php:627
+#: inc/accounts.php:645
 msgid "Your finished trips will appear here, with receipts."
 msgstr ""
 
-#: inc/accounts.php:635
+#: inc/accounts.php:653
 msgid "Add a booking you made before you had an account"
 msgstr ""
 
-#: inc/accounts.php:639
+#: inc/accounts.php:657
 #: inc/incidents.php:166
 #: inc/lost-property.php:320
 #: template-parts/booking-lookup-form.php:28
 msgid "Booking reference"
 msgstr ""
 
-#: inc/accounts.php:643
+#: inc/accounts.php:661
 msgid "Phone number on the booking"
 msgstr ""
 
-#: inc/accounts.php:646
+#: inc/accounts.php:664
 #: inc/admin-tools.php:92
 #: inc/bookings-cpt.php:25
 #: inc/bookings-cpt.php:26
 msgid "Add booking"
 msgstr ""
 
-#: inc/accounts.php:667
+#: inc/accounts.php:685
 #: inc/helpers.php:147
 #: template-parts/booking-status.php:24
 msgid "Confirmed"
 msgstr ""
 
-#: inc/accounts.php:668
+#: inc/accounts.php:686
 #: inc/helpers.php:148
 #: template-parts/booking-status.php:25
 msgid "Driver assigned"
 msgstr ""
 
-#: inc/accounts.php:669
+#: inc/accounts.php:687
 #: template-parts/booking-status.php:26
 msgid "On the way"
 msgstr ""
 
-#: inc/accounts.php:670
+#: inc/accounts.php:688
 #: inc/trips.php:21
 #: template-parts/booking-status.php:27
 msgid "Arrived"
 msgstr ""
 
-#: inc/accounts.php:675
+#: inc/accounts.php:693
 msgid "Your next trip"
 msgstr ""
 
-#: inc/accounts.php:681
-#: inc/accounts.php:721
+#: inc/accounts.php:699
+#: inc/accounts.php:739
 #: template-parts/booking-success.php:30
 #: template-parts/trip-summary.php:20
 msgid "to"
 msgstr ""
 
-#: inc/accounts.php:682
+#: inc/accounts.php:700
 msgid "Trip progress"
 msgstr ""
 
-#: inc/accounts.php:688
-#: inc/accounts.php:729
+#: inc/accounts.php:706
+#: inc/accounts.php:747
 msgid "View or change"
 msgstr ""
 
-#: inc/accounts.php:689
+#: inc/accounts.php:707
 #: template-parts/booking-success.php:71
 msgid "Add to calendar"
 msgstr ""
 
-#: inc/accounts.php:695
-#: inc/accounts.php:698
+#: inc/accounts.php:713
+#: inc/accounts.php:716
 #: inc/trips.php:182
 #: template-parts/booking-status.php:99
 msgid "Your driver"
 msgstr ""
 
-#: inc/accounts.php:701
+#: inc/accounts.php:719
 #: inc/admin-tools.php:221
 #: inc/admin-tools.php:520
 #: inc/bookings-admin.php:79
@@ -827,11 +985,11 @@ msgstr ""
 msgid "Driver"
 msgstr ""
 
-#: inc/accounts.php:701
+#: inc/accounts.php:719
 msgid "To be assigned"
 msgstr ""
 
-#: inc/accounts.php:729
+#: inc/accounts.php:747
 #: inc/content-types.php:205
 #: inc/health.php:199
 #: inc/incidents.php:132
@@ -842,15 +1000,15 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: inc/accounts.php:730
+#: inc/accounts.php:748
 msgid "Book again"
 msgstr ""
 
-#: inc/accounts.php:731
+#: inc/accounts.php:749
 msgid "Book the return"
 msgstr ""
 
-#: inc/accounts.php:733
+#: inc/accounts.php:751
 #: inc/flights.php:307
 #: inc/review-invite.php:60
 #: inc/search.php:302
@@ -861,64 +1019,64 @@ msgstr ""
 msgid "(opens in a new tab)"
 msgstr ""
 
-#: inc/accounts.php:751
+#: inc/accounts.php:769
 msgid "Save each client once — their details and wheelchair notes fill in automatically when you book for them."
 msgstr ""
 
-#: inc/accounts.php:751
+#: inc/accounts.php:769
 msgid "Save the people you book for, with their wheelchair details, so booking takes seconds."
 msgstr ""
 
-#: inc/accounts.php:765
+#: inc/accounts.php:783
 #: inc/languages.php:539
 #: inc/search-data.php:430
 msgid "Edit"
 msgstr ""
 
-#: inc/accounts.php:770
-#: inc/accounts.php:827
+#: inc/accounts.php:788
+#: inc/accounts.php:845
 #: inc/alerts.php:231
 #: inc/booking-cancel.php:366
 #: inc/people.php:74
 msgid "Remove"
 msgstr ""
 
-#: inc/accounts.php:778
+#: inc/accounts.php:796
 msgid "Edit details"
 msgstr ""
 
-#: inc/accounts.php:778
+#: inc/accounts.php:796
 msgid "Add a client"
 msgstr ""
 
-#: inc/accounts.php:778
+#: inc/accounts.php:796
 msgid "Add a passenger"
 msgstr ""
 
-#: inc/accounts.php:799
+#: inc/accounts.php:817
 msgid "e.g. needs help with the front door, carer travels on Tuesdays, hearing impaired — please text"
 msgstr ""
 
-#: inc/accounts.php:806
+#: inc/accounts.php:824
 #: inc/ai-search.php:186
 #: inc/dispatch.php:409
 #: inc/finance.php:227
 msgid "Save"
 msgstr ""
 
-#: inc/accounts.php:808
+#: inc/accounts.php:826
 msgid "Cancel"
 msgstr ""
 
-#: inc/accounts.php:817
+#: inc/accounts.php:835
 msgid "Addresses you use often — home, the hospital, a day program. Pick them from a list when you book."
 msgstr ""
 
-#: inc/accounts.php:834
+#: inc/accounts.php:852
 msgid "Add an address"
 msgstr ""
 
-#: inc/accounts.php:838
+#: inc/accounts.php:856
 #: inc/bookings-cpt.php:654
 #: inc/callbacks.php:329
 #: inc/content-types.php:465
@@ -932,55 +1090,55 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: inc/accounts.php:839
+#: inc/accounts.php:857
 msgid "e.g. Home, Dialysis"
 msgstr ""
 
-#: inc/accounts.php:842
+#: inc/accounts.php:860
 #: inc/privacy.php:318
-#: single-tp_place.php:80
+#: single-tp_place.php:83
 msgid "Address"
 msgstr ""
 
-#: inc/accounts.php:846
+#: inc/accounts.php:864
 msgid "Save address"
 msgstr ""
 
-#: inc/accounts.php:854
+#: inc/accounts.php:872
 #: inc/customizer.php:23
 msgid "Contact details"
 msgstr ""
 
-#: inc/accounts.php:858
+#: inc/accounts.php:876
 msgid "First name"
 msgstr ""
 
-#: inc/accounts.php:862
+#: inc/accounts.php:880
 msgid "Last name"
 msgstr ""
 
-#: inc/accounts.php:870
+#: inc/accounts.php:888
 msgid "Email (sign-in)"
 msgstr ""
 
 #. translators: %s: phone
-#: inc/accounts.php:875
+#: inc/accounts.php:893
 #, php-format
 msgid "To change your email, call us on %s."
 msgstr ""
 
-#: inc/accounts.php:881
+#: inc/accounts.php:899
 #: inc/partner-portal.php:191
 #: inc/privacy.php:282
 #: inc/quotes.php:292
 msgid "Organisation"
 msgstr ""
 
-#: inc/accounts.php:885
+#: inc/accounts.php:903
 msgid "Send invoices to (name)"
 msgstr ""
 
-#: inc/accounts.php:889
+#: inc/accounts.php:907
 #: inc/bookings-cpt.php:195
 #: inc/privacy.php:282
 #: inc/venues.php:254
@@ -988,102 +1146,102 @@ msgstr ""
 msgid "Invoice email"
 msgstr ""
 
-#: inc/accounts.php:894
+#: inc/accounts.php:912
 msgid "Save details"
 msgstr ""
 
-#: inc/accounts.php:898
-#: inc/accounts.php:910
+#: inc/accounts.php:916
+#: inc/accounts.php:928
 msgid "Change password"
 msgstr ""
 
-#: inc/accounts.php:902
+#: inc/accounts.php:920
 msgid "Current password"
 msgstr ""
 
-#: inc/accounts.php:906
+#: inc/accounts.php:924
 msgid "New password (10+ characters)"
 msgstr ""
 
-#: inc/accounts.php:957
+#: inc/accounts.php:975
 msgid "Too many sign-ups from your connection. Please try again later or call us."
 msgstr ""
 
-#: inc/accounts.php:965
+#: inc/accounts.php:983
 #: inc/callbacks.php:205
 #: inc/lost-property.php:171
 #: inc/quotes.php:203
 msgid "Please enter your name."
 msgstr ""
 
-#: inc/accounts.php:968
+#: inc/accounts.php:986
 #: inc/booking-verify.php:136
 #: inc/bookings-cpt.php:327
 #: inc/mail-check.php:351
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: inc/accounts.php:970
+#: inc/accounts.php:988
 msgid "There is already an account with that email. Please sign in, or use “Forgotten your password?”."
 msgstr ""
 
-#: inc/accounts.php:979
-#: inc/accounts.php:1133
+#: inc/accounts.php:997
+#: inc/accounts.php:1169
 msgid "Please choose a password of at least 10 characters."
 msgstr ""
 
-#: inc/accounts.php:982
+#: inc/accounts.php:1000
 msgid "Please enter your organisation’s name."
 msgstr ""
 
 #. translators: %s: organisation
-#: inc/accounts.php:1020
+#: inc/accounts.php:1038
 #, php-format
 msgid "New coordinator account: %s"
 msgstr ""
 
-#: inc/accounts.php:1061
+#: inc/accounts.php:1086
 msgid "Please enter a name."
 msgstr ""
 
-#: inc/accounts.php:1065
+#: inc/accounts.php:1090
 msgid "You have reached the limit of saved people. Please remove some first."
 msgstr ""
 
-#: inc/accounts.php:1087
+#: inc/accounts.php:1112
 msgid "Please enter an address."
 msgstr ""
 
-#: inc/accounts.php:1130
+#: inc/accounts.php:1166
 msgid "Your current password was not right."
 msgstr ""
 
-#: inc/accounts.php:1145
+#: inc/accounts.php:1181
 msgid "Too many attempts. Please wait a few minutes."
 msgstr ""
 
-#: inc/accounts.php:1154
+#: inc/accounts.php:1190
 msgid "We could not find a booking with that reference and phone number."
 msgstr ""
 
 #. translators: %d: stars
-#: inc/accounts.php:1181
+#: inc/accounts.php:1217
 #, php-format
 msgid "You rated this trip %d star. Thank you!"
 msgid_plural "You rated this trip %d stars. Thank you!"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/accounts.php:1188
+#: inc/accounts.php:1224
 msgid "Rate this trip"
 msgstr ""
 
-#: inc/accounts.php:1196
+#: inc/accounts.php:1232
 msgid "How was your trip?"
 msgstr ""
 
 #. translators: %d: stars
-#: inc/accounts.php:1199
+#: inc/accounts.php:1235
 #: inc/review-replies.php:157
 #, php-format
 msgid "%d star"
@@ -1091,49 +1249,49 @@ msgid_plural "%d stars"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/accounts.php:1203
+#: inc/accounts.php:1239
 msgid "Anything you would like to tell us? (optional)"
 msgstr ""
 
-#: inc/accounts.php:1207
+#: inc/accounts.php:1243
 msgid "Send rating"
 msgstr ""
 
 #. translators: 1: stars, 2: comment
-#: inc/accounts.php:1231
+#: inc/accounts.php:1267
 #, php-format
 msgid "Customer rating: %1$d★ %2$s"
 msgstr ""
 
 #. translators: 1: stars, 2: reference
-#: inc/accounts.php:1248
+#: inc/accounts.php:1284
 #, php-format
 msgid "Low rating (%1$d★) for %2$s"
 msgstr ""
 
-#: inc/accounts.php:1278
+#: inc/accounts.php:1314
 #: inc/ndis-invoices.php:438
 msgid "Tax invoice"
 msgstr ""
 
-#: inc/accounts.php:1280
+#: inc/accounts.php:1316
 msgid "Receipt"
 msgstr ""
 
-#: inc/accounts.php:1280
+#: inc/accounts.php:1316
 msgid "Trip summary"
 msgstr ""
 
-#: inc/accounts.php:1299
+#: inc/accounts.php:1335
 msgid "This receipt link is not valid."
 msgstr ""
 
-#: inc/accounts.php:1366
+#: inc/accounts.php:1402
 #: inc/statements.php:199
 msgid "Number"
 msgstr ""
 
-#: inc/accounts.php:1367
+#: inc/accounts.php:1403
 #: inc/admin-tools.php:219
 #: inc/dispatch.php:552
 #: inc/drivers.php:483
@@ -1151,19 +1309,19 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: inc/accounts.php:1383
+#: inc/accounts.php:1419
 msgid "Bill to"
 msgstr ""
 
-#: inc/accounts.php:1383
-#: inc/accounts.php:1388
+#: inc/accounts.php:1419
+#: inc/accounts.php:1424
 #: inc/admin-tools.php:248
 #: inc/partner-portal.php:226
 #: inc/statements.php:219
 msgid "Passenger"
 msgstr ""
 
-#: inc/accounts.php:1398
+#: inc/accounts.php:1434
 #: inc/finance.php:184
 #: inc/incidents.php:248
 #: inc/lost-property.php:635
@@ -1173,52 +1331,52 @@ msgstr ""
 msgid "Trip"
 msgstr ""
 
-#: inc/accounts.php:1408
+#: inc/accounts.php:1444
 #: inc/lost-property.php:322
 #: inc/ndis-invoices.php:179
 #: inc/ndis-invoices.php:457
 msgid "Description"
 msgstr ""
 
-#: inc/accounts.php:1408
+#: inc/accounts.php:1444
 msgid "Amount (incl. GST)"
 msgstr ""
 
-#: inc/accounts.php:1412
+#: inc/accounts.php:1448
 #: inc/councils.php:219
 #: inc/ndis-invoices.php:96
-#: inc/places.php:464
+#: inc/places.php:475
 #: inc/search.php:216
 #: inc/seo.php:189
 msgid "Wheelchair accessible taxi"
 msgstr ""
 
 #. translators: %s: promo code
-#: inc/accounts.php:1423
+#: inc/accounts.php:1459
 #, php-format
 msgid "Promo code %s"
 msgstr ""
 
-#: inc/accounts.php:1432
+#: inc/accounts.php:1468
 msgid "GST included"
 msgstr ""
 
-#: inc/accounts.php:1434
+#: inc/accounts.php:1470
 msgid "Paid online (deposit)"
 msgstr ""
 
-#: inc/accounts.php:1437
+#: inc/accounts.php:1473
 #: inc/ndis-invoices.php:215
 #: inc/ndis-invoices.php:293
 #: inc/ndis-invoices.php:467
 msgid "Amount due"
 msgstr ""
 
-#: inc/accounts.php:1437
+#: inc/accounts.php:1473
 msgid "Total paid"
 msgstr ""
 
-#: inc/accounts.php:1447
+#: inc/accounts.php:1483
 #: inc/finance.php:16
 #: inc/ndis-invoices.php:213
 #: inc/ndis-invoices.php:466
@@ -1227,53 +1385,53 @@ msgstr ""
 msgid "Paid"
 msgstr ""
 
-#: inc/accounts.php:1450
+#: inc/accounts.php:1486
 msgid "The fare has not been entered yet. If you need a tax invoice for this trip, please contact us and quote the number above."
 msgstr ""
 
-#: inc/accounts.php:1452
+#: inc/accounts.php:1488
 msgid "This is a receipt, not a tax invoice."
 msgstr ""
 
-#: inc/accounts.php:1455
+#: inc/accounts.php:1491
 msgid "Multi Purpose Taxi Program (MPTP) member."
 msgstr ""
 
-#: inc/accounts.php:1462
+#: inc/accounts.php:1498
 #: inc/ndis-log.php:384
 #: inc/statements.php:245
 msgid "Print or save as PDF"
 msgstr ""
 
-#: inc/accounts.php:1463
+#: inc/accounts.php:1499
 msgid "Back to booking"
 msgstr ""
 
-#: inc/accounts.php:1491
+#: inc/accounts.php:1527
 msgid "My clients’ trips"
 msgstr ""
 
 #. translators: %s: name
-#: inc/accounts.php:1494
+#: inc/accounts.php:1530
 #: inc/drivers.php:565
 msgid "My jobs"
 msgstr ""
 
-#: inc/accounts.php:1497
+#: inc/accounts.php:1533
 #: inc/dispatch.php:16
 #: inc/dispatch.php:147
 msgid "Dispatch board"
 msgstr ""
 
-#: inc/accounts.php:1499
+#: inc/accounts.php:1535
 msgid "Dashboard"
 msgstr ""
 
-#: inc/accounts.php:1503
+#: inc/accounts.php:1539
 msgid "Manage a booking"
 msgstr ""
 
-#: inc/accounts.php:1513
+#: inc/accounts.php:1549
 msgid "Passengers, coordinators and drivers all sign in here."
 msgstr ""
 
@@ -1568,6 +1726,7 @@ msgstr ""
 
 #. translators: %s: phone
 #: inc/activity.php:593
+#: inc/ads-conversions.php:379
 #: inc/bookings-admin.php:74
 #: inc/bookings-cpt.php:23
 #: inc/drivers.php:484
@@ -1926,6 +2085,175 @@ msgstr ""
 #: inc/statements.php:213
 #: inc/statements.php:382
 msgid "Trips"
+msgstr ""
+
+#: inc/ads-conversions.php:28
+#: inc/ads-conversions.php:301
+#: inc/ads-conversions.php:337
+msgid "Google Ads conversions"
+msgstr ""
+
+#: inc/ads-conversions.php:28
+msgid "Sends completed trips (online and phone bookings) back to Google Ads. Setup steps are under Reports → Google Ads conversions."
+msgstr ""
+
+#: inc/ads-conversions.php:36
+msgid "Make the conversions file"
+msgstr ""
+
+#: inc/ads-conversions.php:37
+msgid "Conversion action name in Google Ads"
+msgstr ""
+
+#: inc/ads-conversions.php:37
+msgid "Must match the name of an “Import → Manual import using API or uploads” conversion action, letter for letter."
+msgstr ""
+
+#: inc/ads-conversions.php:38
+msgid "Include hashed email and phone"
+msgstr ""
+
+#: inc/ads-conversions.php:38
+msgid "Needed for phone bookings, which have no click ID. Only SHA-256 hashes are sent. Turn on “Enhanced conversions for leads” in Google Ads and mention it in your privacy policy."
+msgstr ""
+
+#: inc/ads-conversions.php:112
+msgid "— Not asked —"
+msgstr ""
+
+#: inc/ads-conversions.php:113
+msgid "Google Ads (saw an ad)"
+msgstr ""
+
+#: inc/ads-conversions.php:114
+msgid "Google search or Maps"
+msgstr ""
+
+#: inc/ads-conversions.php:115
+msgid "Travelled with us before"
+msgstr ""
+
+#: inc/ads-conversions.php:116
+msgid "Friend or family"
+msgstr ""
+
+#: inc/ads-conversions.php:117
+msgid "Hospital, clinic or care provider"
+msgstr ""
+
+#: inc/ads-conversions.php:118
+#: inc/booking-cancel.php:30
+#: inc/incidents.php:31
+#: inc/partner-sections.php:31
+#: inc/venues.php:26
+msgid "Other"
+msgstr ""
+
+#: inc/ads-conversions.php:127
+msgid "How did they find us?"
+msgstr ""
+
+#: inc/ads-conversions.php:133
+msgid "Booked online after a Google ad click."
+msgstr ""
+
+#: inc/ads-conversions.php:311
+msgid "Sorry, you are not allowed to do that."
+msgstr ""
+
+#: inc/ads-conversions.php:321
+msgid "New link made. Update the schedule in Google Ads — the old link no longer works."
+msgstr ""
+
+#: inc/ads-conversions.php:338
+msgid "Google Ads learns which searches bring real customers when it is told about completed trips — including people who saw an ad and then phoned. This page makes a file Google Ads fetches by itself every day."
+msgstr ""
+
+#: inc/ads-conversions.php:341
+msgid "Turn on “Make the conversions file” in Settings → Marketing & SEO → Google Ads conversions first."
+msgstr ""
+
+#: inc/ads-conversions.php:342
+msgid "Open settings"
+msgstr ""
+
+#: inc/ads-conversions.php:345
+msgid "Set it up once in Google Ads"
+msgstr ""
+
+#. translators: %s: conversion name
+#: inc/ads-conversions.php:347
+#, php-format
+msgid "Goals → Conversions → New conversion action → Import → “Manual import using API or uploads” → “Track conversions from clicks”. Name it exactly “%s”, category “Purchase”, value “Use different values for each conversion”."
+msgstr ""
+
+#. translators: %s: conversion name
+#: inc/ads-conversions.php:348
+msgid "In the conversion action’s settings, turn on “Enhanced conversions for leads” (for phone bookings, which have no click ID)."
+msgstr ""
+
+#: inc/ads-conversions.php:349
+msgid "Goals → Uploads → Schedules → New schedule → Source “HTTPS”, paste the link below, and choose Daily."
+msgstr ""
+
+#: inc/ads-conversions.php:350
+msgid "Ask staff to choose “How did they find us?” on phone bookings — “Google Ads (saw an ad)” is what counts."
+msgstr ""
+
+#: inc/ads-conversions.php:352
+msgid "Private link (keep it secret)"
+msgstr ""
+
+#. translators: %s: time ago
+#: inc/ads-conversions.php:359
+#, php-format
+msgid "Last fetched %s ago."
+msgstr ""
+
+#: inc/ads-conversions.php:360
+msgid "Not fetched yet."
+msgstr ""
+
+#: inc/ads-conversions.php:367
+msgid "Download the file now"
+msgstr ""
+
+#: inc/ads-conversions.php:368
+msgid "Make a new link? The old one stops working, so the schedule in Google Ads must be updated."
+msgstr ""
+
+#: inc/ads-conversions.php:368
+msgid "Make a new link"
+msgstr ""
+
+#: inc/ads-conversions.php:370
+msgid "In the file now"
+msgstr ""
+
+#. translators: 1: trips 2: with click ID 3: matched by email/phone
+#: inc/ads-conversions.php:374
+#, php-format
+msgid "%1$d completed trips from the last 90 days: %2$d with a Google click ID, %3$d matched by hashed email or phone."
+msgstr ""
+
+#: inc/ads-conversions.php:379
+msgid "Trip time"
+msgstr ""
+
+#: inc/ads-conversions.php:379
+msgid "Value"
+msgstr ""
+
+#: inc/ads-conversions.php:379
+msgid "Matched by"
+msgstr ""
+
+#: inc/ads-conversions.php:386
+msgid "Click ID (online booking)"
+msgstr ""
+
+#: inc/ads-conversions.php:386
+msgid "Hashed email / phone (phone booking)"
 msgstr ""
 
 #: inc/ai-search.php:19
@@ -2588,13 +2916,6 @@ msgstr ""
 msgid "No vehicle"
 msgstr ""
 
-#: inc/booking-cancel.php:30
-#: inc/incidents.php:31
-#: inc/partner-sections.php:31
-#: inc/venues.php:26
-msgid "Other"
-msgstr ""
-
 #. translators: 1: reason 2: note
 #: inc/booking-cancel.php:73
 #: inc/booking-cancel.php:172
@@ -2713,8 +3034,8 @@ msgstr ""
 #: inc/incidents.php:296
 #: inc/lost-property.php:469
 #: inc/partner-sections.php:237
-#: inc/places.php:220
-#: inc/places.php:295
+#: inc/places.php:225
+#: inc/places.php:306
 #: inc/quotes.php:280
 #: inc/quotes.php:406
 #: inc/search-data.php:1031
@@ -2921,24 +3242,8 @@ msgstr ""
 msgid "That code isn’t right. Please check the text and try again."
 msgstr ""
 
-#: inc/booking-verify.php:308
-msgid "We’ve sent a new code."
-msgstr ""
-
-#: inc/booking-verify.php:313
-msgid "Code from the text message"
-msgstr ""
-
 #: inc/booking-verify.php:316
 msgid "Confirm and send my booking"
-msgstr ""
-
-#: inc/booking-verify.php:321
-msgid "Text me a new code"
-msgstr ""
-
-#: inc/booking-verify.php:325
-msgid "Wrong number? Change it"
 msgstr ""
 
 #. translators: %s: phone
@@ -3286,6 +3591,7 @@ msgid "Booking Manager"
 msgstr ""
 
 #: inc/bookings-cpt.php:102
+#: inc/referrals.php:441
 msgid "Customer"
 msgstr ""
 
@@ -3580,26 +3886,6 @@ msgstr ""
 
 #: inc/bookings-form.php:303
 msgid "Manage this booking:"
-msgstr ""
-
-#. translators: %s: passenger name
-#. translators: %s: name
-#. translators: %s: first name
-#: inc/bookings-form.php:326
-#: inc/bookings-form.php:384
-#: inc/contact.php:270
-#: inc/drivers.php:565
-#: inc/lost-property.php:433
-#: inc/marketing.php:192
-#: inc/marketing.php:543
-#: inc/partner-leaderboard.php:211
-#: inc/quotes.php:268
-#: inc/quotes.php:376
-#: inc/review-invite.php:118
-#: inc/statements.php:265
-#: inc/trips.php:266
-#, php-format
-msgid "Hi %s,"
 msgstr ""
 
 #: inc/bookings-form.php:327
@@ -7052,7 +7338,7 @@ msgid "In short"
 msgstr ""
 
 #: inc/eeat.php:99
-#: inc/places.php:176
+#: inc/places.php:181
 msgid "Quick answer (for Google and AI assistants)"
 msgstr ""
 
@@ -10848,7 +11134,7 @@ msgstr ""
 
 #: inc/ndis-invoices.php:183
 #: inc/ndis-invoices.php:457
-#: inc/promos.php:217
+#: inc/promos.php:229
 #: inc/statements.php:219
 msgid "Amount"
 msgstr ""
@@ -12132,361 +12418,407 @@ msgstr ""
 
 #. translators: %s: place
 #. translators: %s: partner name
-#: inc/places.php:55
+#: inc/places.php:60
 #: single-tp_venue.php:26
 #, php-format
 msgid "Wheelchair taxi from %s"
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:57
+#: inc/places.php:62
 #, php-format
 msgid "Wheelchair taxi to %s"
 msgstr ""
 
-#: inc/places.php:67
+#: inc/places.php:72
 msgid "Place pages"
 msgstr ""
 
-#: inc/places.php:68
+#: inc/places.php:73
 msgid "Place page"
 msgstr ""
 
-#: inc/places.php:69
+#: inc/places.php:74
 msgid "Add place"
 msgstr ""
 
-#: inc/places.php:70
+#: inc/places.php:75
 msgid "Add a hospital, station or other place"
 msgstr ""
 
-#: inc/places.php:71
+#: inc/places.php:76
 msgid "Edit place page"
 msgstr ""
 
-#: inc/places.php:72
+#: inc/places.php:77
 msgid "View place page"
 msgstr ""
 
 #. translators: 1: place 2: phone
-#: inc/places.php:151
+#: inc/places.php:156
 #, php-format
 msgid "Wheelchair accessible taxi pick-ups from %1$s: where to wait, step-free access and how to book. Ramp and hoist vans. Call %2$s."
 msgstr ""
 
 #. translators: 1: place 2: phone
-#: inc/places.php:153
+#: inc/places.php:158
 #, php-format
 msgid "Wheelchair accessible taxi to %1$s: the accessible entrance, where we drop you off, parking and how to book. Ramp and hoist vans. Call %2$s."
 msgstr ""
 
-#: inc/places.php:163
+#: inc/places.php:168
 msgid "Places we go"
 msgstr ""
 
-#: inc/places.php:175
+#: inc/places.php:180
 msgid "Place details"
 msgstr ""
 
 #. translators: 1: business 2: place
-#: inc/places.php:190
+#: inc/places.php:195
 #, php-format
 msgid "%1$s picks up wheelchair users from %2$s in ramp and hoist vans, with the driver meeting you at the pick-up point and helping you on board."
 msgstr ""
 
 #. translators: 1: business 2: place
-#: inc/places.php:192
+#: inc/places.php:197
 #, php-format
 msgid "%1$s takes wheelchair users to %2$s in ramp and hoist vans and drops you at the accessible entrance, with help from the driver."
 msgstr ""
 
-#: inc/places.php:193
+#: inc/places.php:198
 msgid "Pick-up point:"
 msgstr ""
 
-#: inc/places.php:193
+#: inc/places.php:198
 msgid "Drop-off point:"
 msgstr ""
 
 #. translators: %s: phone
-#: inc/places.php:195
+#: inc/places.php:200
 #, php-format
 msgid "Book online in about two minutes or call %s; carers travel with you and MPTP, NDIS and aged-care accounts are accepted."
 msgstr ""
 
-#: inc/places.php:215
+#: inc/places.php:220
 msgid "The title is the place name, e.g. \"Frankston Hospital\". The page heading becomes \"Wheelchair taxi to Frankston Hospital\" (or \"from\" for stations and shopping centres). Use the editor for anything else worth knowing, and the featured image for a real photo of the entrance."
 msgstr ""
 
-#: inc/places.php:217
+#: inc/places.php:222
 msgid "This suggestion includes [CONFIRM] notes. Check each detail on site (or with the venue) and remove the notes before publishing."
 msgstr ""
 
-#: inc/places.php:223
+#: inc/places.php:228
 msgid "pick-ups from"
 msgstr ""
 
-#: inc/places.php:223
+#: inc/places.php:228
 msgid "trips to"
 msgstr ""
 
-#: inc/places.php:227
+#: inc/places.php:232
 #: inc/search.php:44
 msgid "Street address"
 msgstr ""
 
-#: inc/places.php:227
+#: inc/places.php:232
 msgid "Filled in on the booking form."
 msgstr ""
 
-#: inc/places.php:228
+#: inc/places.php:233
 #: inc/search.php:45
-#: single-tp_place.php:144
+#: single-tp_place.php:166
 msgid "Suburb"
 msgstr ""
 
-#: inc/places.php:228
+#: inc/places.php:233
 msgid "Links the page to that suburb’s page."
 msgstr ""
 
-#: inc/places.php:229
+#: inc/places.php:234
 #: inc/search.php:47
 msgid "Latitude"
 msgstr ""
 
-#: inc/places.php:229
+#: inc/places.php:234
 msgid "Optional, e.g. -38.151. Used for travel times from nearby suburbs."
 msgstr ""
 
-#: inc/places.php:230
+#: inc/places.php:235
 #: inc/search.php:48
 msgid "Longitude"
 msgstr ""
 
-#: inc/places.php:231
+#: inc/places.php:236
 #: single-tp_place.php:74
 msgid "Accessible entrance"
 msgstr ""
 
-#: inc/places.php:231
+#: inc/places.php:236
 msgid "e.g. \"Main entrance on Hastings Rd — level access, automatic doors, wheelchairs to borrow at reception.\""
 msgstr ""
 
-#: inc/places.php:232
+#: inc/places.php:237
 msgid "Where we drop off / pick up"
 msgstr ""
 
-#: inc/places.php:232
+#: inc/places.php:237
 msgid "The exact spot drivers use, e.g. \"Set-down bay outside the main entrance (2 minutes)\"."
 msgstr ""
 
-#: inc/places.php:233
+#: inc/places.php:238
 #: single-tp_place.php:77
 msgid "Parking & waiting"
 msgstr ""
 
-#: inc/places.php:234
+#: inc/places.php:239
 msgid "Tips for passengers"
 msgstr ""
 
-#: inc/places.php:234
+#: inc/places.php:239
 msgid "One per line."
 msgstr ""
 
-#: inc/places.php:235
+#: inc/places.php:240
+#: single-tp_place.php:80
+msgid "Accessibility"
+msgstr ""
+
+#: inc/places.php:240
+msgid "e.g. \"Wheelchairs to borrow at reception, accessible toilets near the entrance, lifts to all floors, hearing loop at the front desk.\""
+msgstr ""
+
+#: inc/places.php:242
+msgid "Going home (hospitals, clinics and care)"
+msgstr ""
+
+#: inc/places.php:244
+msgid "Pick-up point for the trip home"
+msgstr ""
+
+#: inc/places.php:244
+msgid "Where patients wait to be picked up, if different from the drop-off, e.g. \"Discharge lounge, ground floor — drivers come inside to meet you.\""
+msgstr ""
+
+#: inc/places.php:245
+#: single-tp_place.php:102
+msgid "Discharge tips"
+msgstr ""
+
+#: inc/places.php:245
+msgid "One per line, e.g. \"The discharge lounge is open 8am–6pm weekdays.\" Leave empty to show our general tips."
+msgstr ""
+
+#: inc/places.php:246
 msgid "Official website"
 msgstr ""
 
-#: inc/places.php:235
+#: inc/places.php:246
 msgid "For visiting hours and maps."
 msgstr ""
 
-#: inc/places.php:283
+#: inc/places.php:294
 msgid "Saved as a draft: remove every [CONFIRM] note once you have checked the details, then publish."
 msgstr ""
 
-#: inc/places.php:295
+#: inc/places.php:306
 msgid "Page address"
 msgstr ""
 
-#: inc/places.php:315
+#: inc/places.php:326
 msgid "[CONFIRM on site]"
 msgstr ""
 
-#: inc/places.php:317
+#: inc/places.php:328
 msgid "Main entrance on Hastings Road, with level access and automatic doors."
 msgstr ""
 
-#: inc/places.php:317
+#: inc/places.php:328
 msgid "Set-down bay in front of the main entrance."
 msgstr ""
 
-#: inc/places.php:318
+#: inc/places.php:329
 msgid "Main entrance off Point Nepean Road."
 msgstr ""
 
-#: inc/places.php:318
+#: inc/places.php:329
 msgid "Drop-off zone at the main entrance."
 msgstr ""
 
-#: inc/places.php:319
+#: inc/places.php:330
 msgid "Main entrance on Clayton Road."
 msgstr ""
 
-#: inc/places.php:319
+#: inc/places.php:330
 msgid "Taxi set-down at the main entrance."
 msgstr ""
 
-#: inc/places.php:320
+#: inc/places.php:331
 msgid "Main entrance on Commercial Road."
 msgstr ""
 
-#: inc/places.php:320
+#: inc/places.php:331
 msgid "Set-down area outside the main entrance."
 msgstr ""
 
-#: inc/places.php:321
+#: inc/places.php:332
 msgid "Every terminal has level access from the forecourt."
 msgstr ""
 
-#: inc/places.php:321
+#: inc/places.php:332
 msgid "Departures: the kerb outside your airline. Arrivals: we meet you at the arrivals hall and walk you to the van."
 msgstr ""
 
-#: inc/places.php:322
+#: inc/places.php:333
 msgid "Step-free access from the platforms to Young Street."
 msgstr ""
 
-#: inc/places.php:322
+#: inc/places.php:333
 msgid "The taxi rank and pick-up zone on Young Street, outside the station entrance."
 msgstr ""
 
-#: inc/places.php:323
+#: inc/places.php:334
 msgid "Ground-floor entrances with automatic doors."
 msgstr ""
 
-#: inc/places.php:323
+#: inc/places.php:334
 msgid "The taxi rank closest to the main entrance — tell us which entrance when you book."
 msgstr ""
 
-#: inc/places.php:324
+#: inc/places.php:335
 msgid "Level entrances from the car park."
 msgstr ""
 
-#: inc/places.php:324
+#: inc/places.php:335
 msgid "The taxi rank near the main entrance."
 msgstr ""
 
-#: inc/places.php:325
+#: inc/places.php:336
 msgid "Accessible entrances on every level from the car park."
 msgstr ""
 
-#: inc/places.php:325
+#: inc/places.php:336
 msgid "The taxi rank on the ground floor."
 msgstr ""
 
-#: inc/places.php:356
+#: inc/places.php:367
 msgid "[CONFIRM] Where exactly do drivers drop off?"
 msgstr ""
 
-#: inc/places.php:360
+#: inc/places.php:371
 msgid "[CONFIRM] Add one or two tips from your drivers."
 msgstr ""
 
 #. translators: %d: number
-#: inc/places.php:364
+#: inc/places.php:375
 #, php-format
 msgid "%d draft place page added."
 msgid_plural "%d draft place pages added."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/places.php:379
+#: inc/places.php:390
 msgid "Place pages answer searches such as \"wheelchair taxi to Frankston Hospital\" or \"accessible taxi from Frankston Station\". Add the places your passengers go most — a real photo of the entrance and the exact drop-off spot make them far more useful than a generic page."
 msgstr ""
 
-#: inc/places.php:383
+#: inc/places.php:394
 msgid "Add suggested hospitals, stations and shopping centres (drafts)"
 msgstr ""
 
-#: inc/places.php:384
+#: inc/places.php:395
 msgid "Add drafts from Popular destinations"
-msgstr ""
-
-#. translators: %s: place
-#: inc/places.php:426
-#, php-format
-msgid "Where do I wait for my taxi at %s?"
-msgstr ""
-
-#. translators: %s: place
-#: inc/places.php:426
-msgid "Tell us where you will be when you book and the driver will meet you there. We text you when the driver is on the way and when they arrive."
-msgstr ""
-
-#. translators: %s: place
-#: inc/places.php:428
-#, php-format
-msgid "Can you pick me up from %s straight after my train or shopping?"
-msgstr ""
-
-#. translators: %s: place
-#: inc/places.php:428
-msgid "Yes. Book a time, or call us when you are ready. If your train is running late, just let us know and we will adjust the pick-up."
-msgstr ""
-
-#. translators: %s: place
-#: inc/places.php:431
-#, php-format
-msgid "Where will you drop me off at %s?"
-msgstr ""
-
-#. translators: %s: place
-#: inc/places.php:431
-msgid "At the most accessible entrance, as close to the door as the driver can safely stop. Tell us your department or appointment location when you book."
-msgstr ""
-
-#. translators: %s: place
-#: inc/places.php:433
-#, php-format
-msgid "Can you wait or pick me up after my appointment at %s?"
-msgstr ""
-
-#. translators: %s: place
-#: inc/places.php:433
-msgid "Yes. Book a return trip with an approximate time, then call or text us when you are ready. Appointments often run late, so we keep return pick-ups flexible."
 msgstr ""
 
 #. translators: %s: place
 #: inc/places.php:437
 #, php-format
+msgid "Where do I wait for my taxi at %s?"
+msgstr ""
+
+#. translators: %s: place
+#: inc/places.php:437
+msgid "Tell us where you will be when you book and the driver will meet you there. We text you when the driver is on the way and when they arrive."
+msgstr ""
+
+#. translators: %s: place
+#: inc/places.php:439
+#, php-format
+msgid "Can you pick me up from %s straight after my train or shopping?"
+msgstr ""
+
+#. translators: %s: place
+#: inc/places.php:439
+msgid "Yes. Book a time, or call us when you are ready. If your train is running late, just let us know and we will adjust the pick-up."
+msgstr ""
+
+#. translators: %s: place
+#: inc/places.php:442
+#, php-format
+msgid "Where will you drop me off at %s?"
+msgstr ""
+
+#. translators: %s: place
+#: inc/places.php:442
+msgid "At the most accessible entrance, as close to the door as the driver can safely stop. Tell us your department or appointment location when you book."
+msgstr ""
+
+#. translators: %s: place
+#: inc/places.php:444
+#, php-format
+msgid "Can you wait or pick me up after my appointment at %s?"
+msgstr ""
+
+#. translators: %s: place
+#: inc/places.php:444
+msgid "Yes. Book a return trip with an approximate time, then call or text us when you are ready. Appointments often run late, so we keep return pick-ups flexible."
+msgstr ""
+
+#. translators: %s: place
+#: inc/places.php:448
+#, php-format
 msgid "Is there step-free access at %s?"
 msgstr ""
 
 #. translators: %s: suburb
-#: inc/places.php:481
+#: inc/places.php:492
 #, php-format
 msgid "Hospitals, stations and places in %s"
 msgstr ""
 
-#: inc/places.php:499
+#: inc/places.php:510
 msgid "Hospitals, clinics, airports and venues"
 msgstr ""
 
-#: inc/places.php:500
+#: inc/places.php:511
 msgid "Railway stations and shopping centres"
 msgstr ""
 
-#: inc/places.php:543
+#: inc/places.php:554
 msgid "Places We Go"
 msgstr ""
 
-#: inc/places.php:544
+#: inc/places.php:555
 msgid "Accessible entrances, drop-off points and tips for the hospitals, stations and shopping centres our passengers travel to most."
 msgstr ""
 
-#: inc/places.php:555
+#: inc/places.php:566
 msgid "Hospitals & stations"
+msgstr ""
+
+#: inc/places.php:578
+msgid "Book a “pick up when ready” trip ahead: choose the day, then tap “I’m ready” on your booking page (or call us) when the ward lets you go."
+msgstr ""
+
+#: inc/places.php:579
+msgid "Discharge often takes longer than planned — waiting for medicines, a doctor’s sign-off or transport letters is normal. We only send the car when you are ready."
+msgstr ""
+
+#: inc/places.php:580
+msgid "Have your discharge letter, medicines and any walking aids with you, and tell us if you need help from the ward to the car."
+msgstr ""
+
+#: inc/places.php:581
+msgid "Travelling with a wheelchair or a carer? Say so when you book so we send the right vehicle."
 msgstr ""
 
 #: inc/privacy.php:97
@@ -12675,7 +13007,7 @@ msgstr ""
 
 #. translators: %d: months
 #: inc/privacy.php:697
-#: inc/privacy.php:1075
+#: inc/privacy.php:1078
 #, php-format
 msgid "%d month"
 msgid_plural "%d months"
@@ -12848,8 +13180,9 @@ msgstr ""
 #: inc/privacy.php:1026
 #: inc/privacy.php:1029
 #: inc/privacy.php:1038
-#: inc/privacy.php:1042
-#: inc/privacy.php:1044
+#: inc/privacy.php:1041
+#: inc/privacy.php:1045
+#: inc/privacy.php:1047
 msgid "United States and other countries"
 msgstr ""
 
@@ -12877,246 +13210,250 @@ msgstr ""
 msgid "counting website visits, only if you accept analytics cookies"
 msgstr ""
 
-#: inc/privacy.php:1042
-#: inc/privacy.php:1044
+#: inc/privacy.php:1041
+msgid "measuring which of our ads lead to completed trips. If you came from an ad, the ad click number is sent; for some trips your email and phone number are sent only in scrambled (hashed) form that cannot be read back"
+msgstr ""
+
+#: inc/privacy.php:1045
+#: inc/privacy.php:1047
 msgid "stopping spam on our forms"
 msgstr ""
 
 #. translators: %s: date
-#: inc/privacy.php:1083
+#: inc/privacy.php:1086
 #, php-format
 msgid "Last updated: %s"
 msgstr ""
 
-#: inc/privacy.php:1087
+#: inc/privacy.php:1090
 msgid "About this policy"
 msgstr ""
 
 #. translators: %s: business name
-#: inc/privacy.php:1091
+#: inc/privacy.php:1094
 #, php-format
 msgid "%s (\"we\", \"us\") provides wheelchair accessible taxi transport. This policy explains what personal information we collect, why, who we share it with and how you can see, correct or delete it. We follow the Privacy Act 1988 (Cth) and the Australian Privacy Principles (APPs)."
 msgstr ""
 
-#: inc/privacy.php:1095
+#: inc/privacy.php:1098
 msgid "What we collect"
 msgstr ""
 
-#: inc/privacy.php:1097
+#: inc/privacy.php:1100
 msgid "Contact details: name, mobile number and email address."
 msgstr ""
 
-#: inc/privacy.php:1098
+#: inc/privacy.php:1101
 msgid "Trip details: pick-up and drop-off addresses, dates and times, number of passengers, and the vehicle you need."
 msgstr ""
 
-#: inc/privacy.php:1099
+#: inc/privacy.php:1102
 msgid "Health and mobility information"
 msgstr ""
 
-#: inc/privacy.php:1099
+#: inc/privacy.php:1102
 msgid "your mobility aid, chair size and weight, and any needs you tell us about so the driver can help you safely. This is \"sensitive information\" under the APPs. We only collect it with your consent, and only what we need for your trip."
 msgstr ""
 
-#: inc/privacy.php:1100
+#: inc/privacy.php:1103
 msgid "Payment and funding details: how you pay, Multi Purpose Taxi Program membership, and for account trips the organisation or plan manager we invoice and an NDIS number or purchase order."
 msgstr ""
 
-#: inc/privacy.php:1101
+#: inc/privacy.php:1104
 msgid "If you open an account: your saved passengers or clients and saved addresses."
 msgstr ""
 
-#: inc/privacy.php:1102
+#: inc/privacy.php:1105
 msgid "Ratings and comments you give about a trip, and messages you send us."
 msgstr ""
 
-#: inc/privacy.php:1103
+#: inc/privacy.php:1106
 msgid "If you apply to drive with us: the details in your application, including your accreditation."
 msgstr ""
 
-#: inc/privacy.php:1104
+#: inc/privacy.php:1107
 msgid "Website information: your IP address (to stop spam and misuse) and, only if you accept analytics cookies, how you use the website."
 msgstr ""
 
-#: inc/privacy.php:1106
+#: inc/privacy.php:1109
 msgid "You can ask about our services without giving your name. To book a trip we need enough detail to collect you and contact you."
 msgstr ""
 
-#: inc/privacy.php:1108
+#: inc/privacy.php:1111
 msgid "How we collect it"
 msgstr ""
 
-#: inc/privacy.php:1109
+#: inc/privacy.php:1112
 msgid "Directly from you when you book, call, text or email us, or from someone booking for you — a family member, carer, support coordinator, plan manager, aged-care home or hospital. If you book for someone else, please make sure they are happy for you to give us their details."
 msgstr ""
 
-#: inc/privacy.php:1111
+#: inc/privacy.php:1114
 msgid "Why we use it"
 msgstr ""
 
-#: inc/privacy.php:1113
+#: inc/privacy.php:1116
 msgid "To arrange, run and change your trips, and send the right vehicle."
 msgstr ""
 
-#: inc/privacy.php:1114
+#: inc/privacy.php:1117
 msgid "To send booking confirmations and updates by SMS and email, such as when your driver is on the way."
 msgstr ""
 
-#: inc/privacy.php:1115
+#: inc/privacy.php:1118
 msgid "To take payment, issue receipts and invoices, and process MPTP and NDIS claims."
 msgstr ""
 
-#: inc/privacy.php:1116
+#: inc/privacy.php:1119
 msgid "For safety, to handle complaints and incidents, and to improve our service using your ratings."
 msgstr ""
 
-#: inc/privacy.php:1117
+#: inc/privacy.php:1120
 msgid "To meet our legal obligations, including commercial passenger vehicle and tax laws."
 msgstr ""
 
-#: inc/privacy.php:1119
+#: inc/privacy.php:1122
 msgid "We do not sell your information, and we do not send marketing messages without your permission."
 msgstr ""
 
-#: inc/privacy.php:1121
+#: inc/privacy.php:1124
 msgid "Who we share it with"
 msgstr ""
 
-#: inc/privacy.php:1123
+#: inc/privacy.php:1126
 msgid "The driver doing your trip sees your name, phone number, addresses and the needs you have told us about. Drivers only see their own trips."
 msgstr ""
 
-#: inc/privacy.php:1124
+#: inc/privacy.php:1127
 msgid "People you ask us to deal with, such as the coordinator, plan manager or facility that booked or pays for your trip."
 msgstr ""
 
-#: inc/privacy.php:1125
+#: inc/privacy.php:1128
 msgid "Government bodies and police when the law requires it, for example the regulator or police after an incident."
 msgstr ""
 
-#: inc/privacy.php:1126
+#: inc/privacy.php:1129
 msgid "Service providers who help us run the business:"
 msgstr ""
 
 #. translators: %s: hosting provider and location
-#: inc/privacy.php:1130
+#: inc/privacy.php:1133
 #, php-format
 msgid "Website and email hosting: %s"
 msgstr ""
 
-#: inc/privacy.php:1139
+#: inc/privacy.php:1142
 msgid "[CONFIRM: add where your website and email are hosted under Bookings → Settings → Privacy. Only staff see this note.]"
 msgstr ""
 
-#: inc/privacy.php:1142
+#: inc/privacy.php:1145
 msgid "Information sent overseas"
 msgstr ""
 
-#: inc/privacy.php:1152
+#: inc/privacy.php:1155
 msgid "Some of our service providers store or process information outside Australia:"
 msgstr ""
 
-#: inc/privacy.php:1158
+#: inc/privacy.php:1161
 msgid "We choose providers with strong security and privacy commitments, and only share what they need to do their job."
 msgstr ""
 
-#: inc/privacy.php:1160
+#: inc/privacy.php:1163
 msgid "We do not knowingly send your information overseas. If that changes we will update this policy."
 msgstr ""
 
-#: inc/privacy.php:1163
+#: inc/privacy.php:1166
 msgid "How we keep it safe"
 msgstr ""
 
-#: inc/privacy.php:1165
+#: inc/privacy.php:1168
 msgid "Our website uses an encrypted (HTTPS) connection, and links to your booking are protected with a secret code."
 msgstr ""
 
-#: inc/privacy.php:1166
+#: inc/privacy.php:1169
 msgid "Every staff member and driver has their own login, and each person can only see what their job needs."
 msgstr ""
 
-#: inc/privacy.php:1167
+#: inc/privacy.php:1170
 msgid "We keep a log of who changes each booking and when."
 msgstr ""
 
-#: inc/privacy.php:1168
+#: inc/privacy.php:1171
 msgid "If a data breach is likely to cause you serious harm, we will tell you and the Office of the Australian Information Commissioner."
 msgstr ""
 
-#: inc/privacy.php:1171
+#: inc/privacy.php:1174
 msgid "How long we keep it"
 msgstr ""
 
 #. translators: %s: period
-#: inc/privacy.php:1177
+#: inc/privacy.php:1180
 #, php-format
 msgid "Trips: names, contact details, street addresses, notes and comments are removed %s after the trip. We keep the reference, date, suburbs and fare for our records."
 msgstr ""
 
-#: inc/privacy.php:1181
+#: inc/privacy.php:1184
 msgid "Trips: we keep trip records while we need them to run the business, and remove details when you ask."
 msgstr ""
 
-#: inc/privacy.php:1183
+#: inc/privacy.php:1186
 msgid "Invoices and payment records: 5 years, as tax law requires."
 msgstr ""
 
 #. translators: %s: period
-#: inc/privacy.php:1186
+#: inc/privacy.php:1189
 #, php-format
 msgid "Messages and driver applications: %s."
 msgstr ""
 
 #. translators: %s: period
-#: inc/privacy.php:1190
+#: inc/privacy.php:1193
 #, php-format
 msgid "Our activity log of changes to bookings: %s."
 msgstr ""
 
-#: inc/privacy.php:1192
+#: inc/privacy.php:1195
 msgid "Accounts: until you delete your account."
 msgstr ""
 
-#: inc/privacy.php:1195
+#: inc/privacy.php:1198
 msgid "Seeing, correcting or deleting your information"
 msgstr ""
 
-#: inc/privacy.php:1196
+#: inc/privacy.php:1199
 msgid "You can ask for a copy of the information we hold about you, ask us to correct it, or ask us to delete it. It is free. If you have an account, you can update your details, download your data and delete your account yourself in My Account. Otherwise use the form below or contact us. We will check it is really you and reply within 30 days. If we cannot do what you ask — for example because the law requires us to keep invoices — we will tell you why."
 msgstr ""
 
-#: inc/privacy.php:1198
+#: inc/privacy.php:1201
 msgid "Questions and complaints"
 msgstr ""
 
 #. translators: %s: privacy contact
-#: inc/privacy.php:1202
+#: inc/privacy.php:1205
 #, php-format
 msgid "Please contact %s first. We will look into your concern and reply within 30 days."
 msgstr ""
 
-#: inc/privacy.php:1207
+#: inc/privacy.php:1210
 #: patterns/page-complaints.php:36
 #: patterns/page-terms.php:116
 msgid "Email:"
 msgstr ""
 
-#: inc/privacy.php:1210
+#: inc/privacy.php:1213
 #: patterns/page-complaints.php:33
 #: patterns/page-terms.php:116
 msgid "Phone:"
 msgstr ""
 
-#: inc/privacy.php:1213
+#: inc/privacy.php:1216
 msgid "Post:"
 msgstr ""
 
-#: inc/privacy.php:1215
+#: inc/privacy.php:1218
 msgid "Deaf, hard of hearing or speech impaired? Contact us through the National Relay Service: nrschat.nrscall.gov.au or call 133 677 and ask for our number."
 msgstr ""
 
-#: inc/privacy.php:1217
+#: inc/privacy.php:1220
 msgid "If you are not happy with our answer, you can complain to the Office of the Australian Information Commissioner (OAIC): www.oaic.gov.au or 1300 363 992."
 msgstr ""
 
@@ -13132,111 +13469,112 @@ msgstr ""
 msgid "Edit promo code"
 msgstr ""
 
-#: inc/promos.php:96
+#: inc/promos.php:101
 msgid "That promo code was not found. Check the spelling or leave it empty."
 msgstr ""
 
-#: inc/promos.php:102
+#: inc/promos.php:107
 msgid "That promo code is not valid for this date."
 msgstr ""
 
-#: inc/promos.php:105
+#: inc/promos.php:110
 msgid "That promo code has been fully used."
 msgstr ""
 
-#: inc/promos.php:108
+#: inc/promos.php:113
 msgid "That promo code is for your first trip with us only."
 msgstr ""
 
 #. translators: %s: discount
-#: inc/promos.php:143
+#: inc/promos.php:155
 #, php-format
 msgid "%s off"
 msgstr ""
 
-#: inc/promos.php:205
-#: inc/promos.php:280
+#: inc/promos.php:217
+#: inc/promos.php:292
 msgid "Offer"
 msgstr ""
 
-#: inc/promos.php:213
+#: inc/promos.php:225
 msgid "The title above is the code customers type, e.g. FIRSTRIDE or WINTER10. Letters and numbers only."
 msgstr ""
 
-#: inc/promos.php:215
+#: inc/promos.php:227
 msgid "Discount"
 msgstr ""
 
-#: inc/promos.php:219
+#: inc/promos.php:231
 msgid "% off the fare"
 msgstr ""
 
-#: inc/promos.php:220
+#: inc/promos.php:232
 msgid "$ off the fare"
 msgstr ""
 
-#: inc/promos.php:223
+#: inc/promos.php:235
 msgid "Valid for trips from"
 msgstr ""
 
-#: inc/promos.php:224
+#: inc/promos.php:236
 msgid "Can be used until"
 msgstr ""
 
-#: inc/promos.php:225
+#: inc/promos.php:237
 msgid "Leave empty for no limit."
 msgstr ""
 
-#: inc/promos.php:226
+#: inc/promos.php:238
 msgid "Maximum uses"
 msgstr ""
 
-#: inc/promos.php:227
+#: inc/promos.php:239
 msgid "Across all customers. Empty = unlimited."
 msgstr ""
 
-#: inc/promos.php:228
+#: inc/promos.php:240
 msgid "First trip only"
 msgstr ""
 
-#: inc/promos.php:229
+#: inc/promos.php:241
 msgid "Only for customers who have not booked before (matched by phone, email or account)"
 msgstr ""
 
-#: inc/promos.php:230
+#: inc/promos.php:242
 msgid "Short description"
 msgstr ""
 
-#: inc/promos.php:231
+#: inc/promos.php:243
 msgid "e.g. Winter offer"
 msgstr ""
 
 #. translators: %d: number of bookings
-#: inc/promos.php:236
+#: inc/promos.php:248
 #, php-format
 msgid "Used on %d booking so far."
 msgid_plural "Used on %d bookings so far."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/promos.php:279
+#: inc/promos.php:291
+#: inc/referrals.php:441
 msgid "Code"
 msgstr ""
 
-#: inc/promos.php:281
+#: inc/promos.php:293
 msgid "Dates"
 msgstr ""
 
-#: inc/promos.php:282
+#: inc/promos.php:294
 msgid "Uses"
 msgstr ""
 
-#: inc/promos.php:292
+#: inc/promos.php:304
 msgid "first trip only"
 msgstr ""
 
 #. translators: 1: code 2: offer
-#: inc/promos.php:311
+#: inc/promos.php:323
 #, php-format
 msgid "Promo code %1$s (%2$s)"
 msgstr ""
@@ -13342,6 +13680,7 @@ msgid "Declined"
 msgstr ""
 
 #: inc/quotes.php:33
+#: inc/referrals.php:372
 msgid "Expired"
 msgstr ""
 
@@ -13538,6 +13877,188 @@ msgstr ""
 #: inc/quotes.php:499
 #, php-format
 msgid "Booked from quote %s"
+msgstr ""
+
+#: inc/referrals.php:22
+#: inc/referrals.php:303
+msgid "Refer a friend"
+msgstr ""
+
+#: inc/referrals.php:22
+msgid "Customers share their own code from My Account. Friends save on their first trip; the customer gets a thank-you code once that trip is completed."
+msgstr ""
+
+#: inc/referrals.php:30
+msgid "Turn on Refer a friend"
+msgstr ""
+
+#: inc/referrals.php:31
+msgid "Friend’s discount on their first trip (AUD)"
+msgstr ""
+
+#: inc/referrals.php:32
+msgid "Thank-you code for the customer who referred them (AUD)"
+msgstr ""
+
+#: inc/referrals.php:33
+msgid "Thank-you codes can be used for (months)"
+msgstr ""
+
+#: inc/referrals.php:139
+msgid "Referral codes are not available at the moment."
+msgstr ""
+
+#: inc/referrals.php:142
+msgid "That’s your own referral code — share it with friends instead. Thank you!"
+msgstr ""
+
+#: inc/referrals.php:147
+msgid "That thank-you code belongs to another account. Please sign in to use it."
+msgstr ""
+
+#: inc/referrals.php:262
+msgid "Referral: thank-you code sent to the customer who referred this passenger."
+msgstr ""
+
+#. translators: 1: amount 2: code
+#: inc/referrals.php:269
+#, php-format
+msgid "A friend you referred has just taken their first trip with us. Thank you! Here is %1$s off your next trip: %2$s"
+msgstr ""
+
+#. translators: %s: date
+#: inc/referrals.php:271
+#, php-format
+msgid "Type the code in the “Promo code” box when you book. It can be used once, until %s."
+msgstr ""
+
+#. translators: 1: amount 2: site
+#: inc/referrals.php:274
+#, php-format
+msgid "%1$s off your next trip with %2$s"
+msgstr ""
+
+#. translators: 1: site 2: amount 3: code
+#: inc/referrals.php:278
+#, php-format
+msgid "%1$s: thanks for referring a friend! Here is %2$s off your next trip: %3$s"
+msgstr ""
+
+#. translators: 1: amount 2: site 3: code 4: link
+#: inc/referrals.php:324
+#, php-format
+msgid "I use %2$s for my trips. Get %1$s off your first one with my code %3$s: %4$s"
+msgstr ""
+
+#. translators: 1: friend's amount 2: your amount
+#: inc/referrals.php:332
+#, php-format
+msgid "Give %1$s, get %2$s"
+msgstr ""
+
+#. translators: 1: friend's amount 2: your amount
+#: inc/referrals.php:338
+#, php-format
+msgid "Friends get %1$s off their first trip with your code. When they’ve travelled, we send you a %2$s thank-you code for your next trip."
+msgstr ""
+
+#: inc/referrals.php:342
+msgid "Your code"
+msgstr ""
+
+#: inc/referrals.php:344
+msgid "Copied"
+msgstr ""
+
+#: inc/referrals.php:344
+msgid "Copy code"
+msgstr ""
+
+#: inc/referrals.php:347
+msgid "Share on WhatsApp"
+msgstr ""
+
+#: inc/referrals.php:348
+msgid "Text a friend"
+msgstr ""
+
+#. translators: %s: amount
+#: inc/referrals.php:349
+#, php-format
+msgid "%s off your first taxi trip"
+msgstr ""
+
+#. translators: %s: amount
+#: inc/referrals.php:350
+msgid "Link copied"
+msgstr ""
+
+#. translators: %s: amount
+#: inc/referrals.php:350
+msgid "Copy link"
+msgstr ""
+
+#: inc/referrals.php:354
+msgid "Your thank-you codes"
+msgstr ""
+
+#. translators: %d: number of friends
+#: inc/referrals.php:358
+#, php-format
+msgid "%d friend has travelled with your code."
+msgid_plural "%d friends have travelled with your code."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/referrals.php:370
+msgid "Used"
+msgstr ""
+
+#. translators: %s: date
+#: inc/referrals.php:375
+#, php-format
+msgid "Use by %s"
+msgstr ""
+
+#: inc/referrals.php:383
+msgid "Your thank-you codes will appear here."
+msgstr ""
+
+#: inc/referrals.php:385
+msgid "Friends must be new customers. One thank-you code per friend, sent after their first trip is completed. Codes can’t be swapped for cash."
+msgstr ""
+
+#: inc/referrals.php:399
+#: inc/referrals.php:427
+msgid "Referrals"
+msgstr ""
+
+#. translators: 1: friend's amount 2: thank-you amount
+#: inc/referrals.php:431
+#, php-format
+msgid "Friends get %1$s off their first trip; the customer who referred them gets a %2$s thank-you code when that trip is completed. Change the amounts in Settings → Marketing & SEO."
+msgstr ""
+
+#. translators: 1: bookings 2: friends 3: codes sent 4: codes used
+#: inc/referrals.php:437
+#, php-format
+msgid "Bookings with a referral code: %1$d · Friends who travelled: %2$d · Thank-you codes sent: %3$d · used: %4$d"
+msgstr ""
+
+#: inc/referrals.php:441
+msgid "Bookings with the code"
+msgstr ""
+
+#: inc/referrals.php:441
+msgid "Friends who travelled"
+msgstr ""
+
+#: inc/referrals.php:441
+msgid "Thank-you codes (used)"
+msgstr ""
+
+#: inc/referrals.php:444
+msgid "No referral codes yet. Customers get theirs when they open “Refer a friend” in My Account."
 msgstr ""
 
 #: inc/review-invite.php:56
@@ -17868,6 +18389,7 @@ msgid "Where do we drop you off at %s?"
 msgstr ""
 
 #: single-tp_place.php:71
+#: single-tp_place.php:100
 msgid "Pick-up point"
 msgstr ""
 
@@ -17876,40 +18398,60 @@ msgid "Drop-off point"
 msgstr ""
 
 #. translators: %s: place
-#: single-tp_place.php:85
+#: single-tp_place.php:88
 #, php-format
 msgid "Tips from our drivers for %s"
 msgstr ""
 
 #. translators: %s: place
-#: single-tp_place.php:102
+#: single-tp_place.php:98
+#, php-format
+msgid "Going home from %s"
+msgstr ""
+
+#: single-tp_place.php:100
+msgid "At the main entrance. Tell us your ward or clinic and the driver will meet you there if you need help."
+msgstr ""
+
+#: single-tp_place.php:109
+msgid "Book the trip home — pick up when ready"
+msgstr ""
+
+#. translators: %s: phone
+#: single-tp_place.php:110
+#, php-format
+msgid "Ready now? Call %s"
+msgstr ""
+
+#. translators: %s: place
+#: single-tp_place.php:124
 #, php-format
 msgid "How long is the trip home from %s?"
 msgstr ""
 
 #. translators: %s: place
-#: single-tp_place.php:104
+#: single-tp_place.php:126
 #, php-format
 msgid "How long does it take to get to %s?"
 msgstr ""
 
 #. translators: %s: place
-#: single-tp_place.php:120
+#: single-tp_place.php:142
 #, php-format
 msgid "Questions about wheelchair taxis and %s"
 msgstr ""
 
 #. translators: %s: place
-#: single-tp_place.php:129
+#: single-tp_place.php:151
 #, php-format
 msgid "Visiting hours, maps and contacts for %s (official website)"
 msgstr ""
 
-#: single-tp_place.php:141
+#: single-tp_place.php:163
 msgid "Other places"
 msgstr ""
 
-#: single-tp_place.php:150
+#: single-tp_place.php:172
 msgid "Other places we go"
 msgstr ""
 

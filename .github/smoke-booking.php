@@ -60,3 +60,61 @@ if ( 'cancelled' !== get_post_meta( $id, '_tp_status', true ) || 'fake' !== tp_c
 	WP_CLI::error( 'Cancel as fake + block did not work.' );
 }
 WP_CLI::success( 'Suspicious checks, cancel reasons and the blocked list OK.' );
+
+// New accounts: unconfirmed bookings are marked; confirming by text clears the mark.
+$s = (array) get_option( 'tp_settings', array() );
+update_option( 'tp_settings', array_merge( $s, array( 'signup_confirm' => 1, 'referral_on' => 1, 'ads_conversions' => 1 ) ) );
+$tp_new_booking = static function ( array $extra, array $meta = array() ) {
+	$data = array_merge( array( 'pickup' => '2 Bay St, Frankston', 'dropoff' => 'Rosebud Hospital', 'date' => wp_date( 'Y-m-d', time() - DAY_IN_SECONDS ), 'time' => '09:00', 'name' => 'Ann Smith', 'phone' => '0433 221 100', 'email' => 'ann@bigpond.com', 'passengers' => 1, 'wheelchairs' => 0 ), $extra );
+	$ref  = tp_new_reference();
+	$bid  = wp_insert_post( array_merge( array( 'post_type' => 'tp_booking', 'post_status' => 'publish' ), tp_booking_post_fields( $ref, $data ) ) );
+	update_post_meta( $bid, '_tp_reference', $ref );
+	tp_save_booking_meta( $bid, $data );
+	foreach ( $meta as $k => $v ) {
+		update_post_meta( $bid, $k, $v );
+	}
+	do_action( 'tp_booking_created', $bid, array( $bid ) );
+	return $bid;
+};
+$uid = wp_insert_user( array( 'user_login' => 'ci-new', 'user_email' => 'ann@bigpond.com', 'user_pass' => wp_generate_password(), 'role' => 'tp_customer', 'first_name' => 'Ann' ) );
+update_user_meta( $uid, 'tp_mobile', '0433 221 100' );
+update_user_meta( $uid, 'tp_confirm_pending', time() );
+$bid = $tp_new_booking( array(), array( '_tp_customer_id' => $uid ) );
+if ( 'account' !== get_post_meta( $bid, '_tp_unverified', true ) ) {
+	WP_CLI::error( 'Booking from an unconfirmed account was not marked.' );
+}
+tp_account_confirmed( $uid, 'email' );
+if ( 'phone' !== get_post_meta( $bid, '_tp_unverified', true ) ) {
+	WP_CLI::error( 'Email confirmation did not change the mark to "Phone not confirmed".' );
+}
+tp_account_confirmed( $uid, 'phone' );
+if ( get_post_meta( $bid, '_tp_unverified', true ) || ! get_post_meta( $bid, '_tp_phone_verified', true ) ) {
+	WP_CLI::error( 'Phone confirmation did not clear the mark.' );
+}
+WP_CLI::success( 'Account confirmation marks OK.' );
+
+// Refer a friend: own code refused, friend's first trip earns a single-use thank-you code.
+$code = tp_referral_code( $uid );
+if ( '' === tp_promo_check( $code, array( 'email' => 'ann@bigpond.com', 'phone' => '' ) ) ) {
+	WP_CLI::error( 'Customer could use their own referral code.' );
+}
+$friend = array( 'name' => 'Bob Jones', 'phone' => '0422 111 222', 'email' => 'bob@optusnet.com.au' );
+if ( '' !== tp_promo_check( $code, $friend ) || 10.0 !== tp_promo_discount( $code, 50 ) ) {
+	WP_CLI::error( 'Friend could not use the referral code: ' . tp_promo_check( $code, $friend ) );
+}
+$fid = $tp_new_booking( $friend, array( '_tp_promo' => $code, '_tp_fare' => 45, '_tp_gclid' => 'gclid|CI-CLICK-1|' . ( time() - 2 * DAY_IN_SECONDS ) ) );
+tp_set_status( $fid, 'completed', false );
+$rewards = tp_referral_rewards( $uid );
+if ( 1 !== count( $rewards ) || '' === tp_promo_check( $rewards[0][0], $friend ) || '' !== tp_promo_check( $rewards[0][0], array( 'email' => 'ann@bigpond.com' ) ) ) {
+	WP_CLI::error( 'Thank-you code was not made, or not limited to its owner: ' . wp_json_encode( $rewards ) );
+}
+WP_CLI::success( 'Referral codes OK.' );
+
+// Google Ads file: completed ad trips only, with click ID or hashed contacts.
+$pid = $tp_new_booking( array( 'name' => 'Cath Lee', 'phone' => '0455 666 777', 'email' => 'Cath.Lee@gmail.com' ), array( '_tp_heard' => 'google_ad' ) );
+tp_set_status( $pid, 'completed', false );
+$csv = tp_ads_csv( tp_ads_rows() );
+if ( false === strpos( $csv, 'CI-CLICK-1' ) || false === strpos( $csv, hash( 'sha256', 'cathlee@gmail.com' ) ) || false === strpos( $csv, hash( 'sha256', '+61455666777' ) ) || false !== strpos( $csv, 'bob@' ) || 0 !== strpos( $csv, 'Parameters:TimeZone=' ) ) {
+	WP_CLI::error( "Google Ads file is wrong:\n" . $csv );
+}
+WP_CLI::success( 'Google Ads conversions file OK.' );

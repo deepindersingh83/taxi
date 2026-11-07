@@ -1037,6 +1037,9 @@ function tp_privacy_providers() {
 	if ( function_exists( 'tp_ga4_id' ) && tp_ga4_id() ) {
 		$list[] = array( 'Google Analytics', __( 'counting website visits, only if you accept analytics cookies', 'taxi-peninsula' ), __( 'United States and other countries', 'taxi-peninsula' ) );
 	}
+	if ( tp_setting( 'ads_conversions' ) ) {
+		$list[] = array( 'Google Ads', __( 'measuring which of our ads lead to completed trips. If you came from an ad, the ad click number is sent; for some trips your email and phone number are sent only in scrambled (hashed) form that cannot be read back', 'taxi-peninsula' ), __( 'United States and other countries', 'taxi-peninsula' ) );
+	}
 	$captcha = tp_setting( 'captcha_provider' );
 	if ( 'turnstile' === $captcha ) {
 		$list[] = array( 'Cloudflare Turnstile', __( 'stopping spam on our forms', 'taxi-peninsula' ), __( 'United States and other countries', 'taxi-peninsula' ) );

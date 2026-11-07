@@ -8,6 +8,42 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### New in v2.12 — confirmed accounts, hospital pages, Google Ads conversions, refer a friend
+**Confirm new accounts** (Settings → Spam & security → "Confirm new accounts")
+- When someone makes an account:
+  - a 6-digit code is texted to them, if SMS is set up and the number is a mobile
+  - a confirm link is always emailed to them
+  - either one confirms the account
+- Customers can book straight away. Until they confirm, My Account shows a "Please confirm your account" box, where they can type the code, get a new code or link, or fix their number.
+- Their bookings carry a mark on the dispatch card, the booking list and the booking screen:
+  - **Unverified customer**: they haven't confirmed yet
+  - **Phone not confirmed**: they confirmed by email only
+  - **✓ Phone confirmed**: they confirmed their mobile by text
+- Confirming updates the marks on trips that haven't happened yet. A number confirmed by text isn't asked for the booking code again.
+- Changing the mobile in My details asks for the new number to be confirmed.
+- Accounts made before you turn this on count as confirmed.
+
+**Hospital and clinic pages** (Website content → Place pages)
+- New fields: **Accessibility**, **Pick-up point for the trip home** and **Discharge tips** (one per line).
+- Hospital, clinic and aged-care pages get a "Going home from …" section with:
+  - the pick-up point
+  - discharge tips (general ones are shown until you add your own)
+  - **Book the trip home — pick up when ready**, which opens the booking form with the hospital as the pick-up and "I don't know the exact time yet" ticked
+  - **Ready now? Call us**
+
+**Google Ads conversions** (Settings → Marketing & SEO → Google Ads conversions, then Reports → Google Ads conversions)
+- Google Ads is told which ad clicks turned into **completed** trips, with the fare as the value, so it learns from real bookings.
+- Online bookings keep the Google click ID for 90 days.
+- For phone bookings, staff choose **"How did they find us?"** on the booking screen. Trips marked "Google Ads (saw an ad)" are matched by the customer's email and phone, sent only as SHA-256 hashes.
+- The report page gives a private link to a file in Google Ads' import format, plus steps to make Google Ads fetch it daily (Goals → Uploads → Schedules → HTTPS). Cancelled and fake trips are never included.
+
+**Refer a friend: "Give $10, get $10"** (Settings → Marketing & SEO → Refer a friend)
+- Each customer gets their own code in **My Account → Refer a friend**, with buttons to share it by WhatsApp, text or email, and to copy the code or link.
+- A friend gets $10 off their first trip (new customers only). The link `/?ref=CODE` fills the code in for them.
+- When the friend's first trip is completed, the customer is emailed (and texted) a single-use $10 thank-you code. It works only on their own account and lasts 12 months.
+- One thank-you per friend. Customers can't use their own code. All amounts can be changed.
+- Referral codes stay out of the Promo codes list; see **Reports → Referrals**.
+
 ### New in v2.11 — wrong or fake contact details
 **Catching mistakes while booking**
 - **Email typo catcher:** on every form, `gmial.com`, `bigpond.con`, `outlok.com` and similar show "Did you mean jo@gmail.com?", and one tap fixes it. It never blocks the form.

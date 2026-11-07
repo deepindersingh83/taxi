@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.11.0\n"
+"Project-Id-Version: Taxi Peninsula 2.12.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -5273,3 +5273,283 @@ msgstr "您是指 %s 吗？"
 
 msgid "Yes, use this"
 msgstr "是，使用此地址"
+
+msgid "Confirm new accounts"
+msgstr "确认新账户"
+
+msgid ""
+"New accounts get a code by text (when SMS is set up) and a confirm link by "
+"email; either one confirms the account. Customers can still book before "
+"confirming, and those bookings are marked “Unverified customer” or “Phone not"
+" confirmed” on the dispatch board."
+msgstr ""
+"新账户会通过短信收到验证码（如已设置 "
+"SMS），并通过电子邮件收到确认链接；使用其中任何一个即可确认账户。客户在确认前仍可预约，这些预约会在调度面板上标记为“未验证客户”或“电话未确认”。"
+
+#. translators: 1: site 2: code
+msgid ""
+"%1$s: your code to confirm your account is %2$s. It expires in 30 minutes."
+msgstr "%1$s：您的账户确认码是 %2$s，30 分钟内有效。"
+
+msgid "Please confirm your account by opening this link:"
+msgstr "请打开此链接确认您的账户："
+
+#. translators: %d: days
+msgid "The link works for %d days. You can book in the meantime."
+msgstr "此链接 %d 天内有效。在此期间您仍可预约。"
+
+msgid "Didn’t make an account with us? You can ignore this email."
+msgstr "没有在我们这里注册账户？请忽略此邮件。"
+
+#. translators: %s: site name
+msgid "Confirm your %s account"
+msgstr "确认您的 %s 账户"
+
+msgid "Unverified customer"
+msgstr "未验证客户"
+
+msgid "Phone not confirmed"
+msgstr "电话未确认"
+
+msgid ""
+"New account that has not confirmed its email or mobile yet. Call to check "
+"before sending a car."
+msgstr "新账户尚未确认电子邮件或手机号码。派车前请先致电核实。"
+
+msgid "The account confirmed its email, but not this mobile number."
+msgstr "该账户已确认电子邮件，但尚未确认此手机号码。"
+
+msgid "Phone confirmed"
+msgstr "电话已确认"
+
+msgid "Thank you — your account is confirmed."
+msgstr "谢谢——您的账户已确认。"
+
+msgid "Thank you — your mobile number is confirmed."
+msgstr "谢谢——您的手机号码已确认。"
+
+msgid "We’ve emailed you a new link."
+msgstr "我们已通过电子邮件向您发送了新链接。"
+
+msgid ""
+"That link has expired or was already used. Sign in to send yourself a new "
+"one."
+msgstr "该链接已过期或已被使用。请登录后给自己发送新链接。"
+
+msgid "Confirm your mobile number"
+msgstr "确认您的手机号码"
+
+msgid "Please confirm your account"
+msgstr "请确认您的账户"
+
+msgid ""
+"Your email is confirmed. Confirming your mobile too means drivers can reach "
+"you and your bookings go through without a check call."
+msgstr "您的电子邮件已确认。再确认手机号码后，司机就能联系到您，您的预约也无需电话核实即可处理。"
+
+#. translators: %s: mobile number
+msgid ""
+"We’ve texted a 6-digit code to %s and emailed you a link. Use either one. You"
+" can book in the meantime — we may call to check your first trip."
+msgstr "我们已向 %s 发送 6 位验证码短信，并通过电子邮件向您发送了链接。任选其一即可。在此期间您仍可预约——我们可能会致电核实您的第一次行程。"
+
+#. translators: %s: email
+msgid ""
+"We’ve emailed a confirm link to %s. You can book in the meantime — we may "
+"call to check your first trip."
+msgstr "我们已向 %s 发送确认链接。在此期间您仍可预约——我们可能会致电核实您的第一次行程。"
+
+msgid ""
+"That code isn’t right, or it has expired. Please check the text or send a new"
+" code."
+msgstr "验证码不正确或已过期。请查看短信或发送新的验证码。"
+
+msgid "Confirm"
+msgstr "确认"
+
+msgid "Text me a code"
+msgstr "短信发送验证码给我"
+
+msgid "Email me a new link"
+msgstr "通过电子邮件发送新链接给我"
+
+msgid "Please sign in."
+msgstr "请登录。"
+
+msgid "Accessibility"
+msgstr "无障碍设施"
+
+msgid ""
+"e.g. \"Wheelchairs to borrow at reception, accessible toilets near the "
+"entrance, lifts to all floors, hearing loop at the front desk.\""
+msgstr "例如：“前台可借用轮椅，入口附近有无障碍卫生间，电梯通往所有楼层，前台设有助听环路。”"
+
+msgid "Going home (hospitals, clinics and care)"
+msgstr "回家（医院、诊所和护理机构）"
+
+msgid "Pick-up point for the trip home"
+msgstr "回家行程的上车地点"
+
+msgid ""
+"Where patients wait to be picked up, if different from the drop-off, e.g. "
+"\"Discharge lounge, ground floor — drivers come inside to meet you.\""
+msgstr "患者等候接载的地点（如与下车地点不同），例如：“出院休息室，一楼——司机会进来接您。”"
+
+msgid "Discharge tips"
+msgstr "出院提示"
+
+msgid ""
+"One per line, e.g. \"The discharge lounge is open 8am–6pm weekdays.\" Leave "
+"empty to show our general tips."
+msgstr "每行一条，例如：“出院休息室工作日上午 8 点至下午 6 点开放。”留空则显示我们的通用提示。"
+
+msgid ""
+"Book a “pick up when ready” trip ahead: choose the day, then tap “I’m ready” "
+"on your booking page (or call us) when the ward lets you go."
+msgstr "提前预约“准备好再接”行程：选择日期，当病房允许您离开时，在您的预约页面点击“我准备好了”（或致电我们）。"
+
+msgid ""
+"Discharge often takes longer than planned — waiting for medicines, a doctor’s"
+" sign-off or transport letters is normal. We only send the car when you are "
+"ready."
+msgstr "出院往往比计划的时间长——等待取药、医生签字或交通证明都很正常。我们只会在您准备好时派车。"
+
+msgid ""
+"Have your discharge letter, medicines and any walking aids with you, and tell"
+" us if you need help from the ward to the car."
+msgstr "请随身携带出院小结、药物和助行器具；如需有人协助您从病房到车上，请告诉我们。"
+
+msgid ""
+"Travelling with a wheelchair or a carer? Say so when you book so we send the "
+"right vehicle."
+msgstr "携带轮椅或有护理人员同行？请在预约时告知我们，以便我们派出合适的车辆。"
+
+msgid "Refer a friend"
+msgstr "推荐好友"
+
+msgid "Referral codes are not available at the moment."
+msgstr "推荐码目前暂不可用。"
+
+msgid ""
+"That’s your own referral code — share it with friends instead. Thank you!"
+msgstr "这是您自己的推荐码——请分享给朋友使用。谢谢！"
+
+msgid ""
+"That thank-you code belongs to another account. Please sign in to use it."
+msgstr "该感谢码属于另一个账户。请登录后使用。"
+
+msgid ""
+"Referral: thank-you code sent to the customer who referred this passenger."
+msgstr "推荐：已向推荐此乘客的客户发送感谢码。"
+
+#. translators: 1: amount 2: code
+msgid ""
+"A friend you referred has just taken their first trip with us. Thank you! "
+"Here is %1$s off your next trip: %2$s"
+msgstr "您推荐的一位朋友刚刚完成了与我们的首次行程。谢谢您！这是您下次行程可减免 %1$s 的优惠码：%2$s"
+
+#. translators: %s: date
+msgid ""
+"Type the code in the “Promo code” box when you book. It can be used once, "
+"until %s."
+msgstr "预约时请在“优惠码”框中输入此代码。仅可使用一次，有效期至 %s。"
+
+#. translators: 1: amount 2: site
+msgid "%1$s off your next trip with %2$s"
+msgstr "%2$s 下次行程立减 %1$s"
+
+#. translators: 1: site 2: amount 3: code
+msgid ""
+"%1$s: thanks for referring a friend! Here is %2$s off your next trip: %3$s"
+msgstr "%1$s：感谢您推荐朋友！这是您下次行程可减免 %2$s 的优惠码：%3$s"
+
+#. translators: 1: amount 2: site 3: code 4: link
+msgid ""
+"I use %2$s for my trips. Get %1$s off your first one with my code %3$s: %4$s"
+msgstr "我出行都用 %2$s。使用我的优惠码 %3$s，首次行程立减 %1$s：%4$s"
+
+#. translators: 1: friend's amount 2: your amount
+msgid "Give %1$s, get %2$s"
+msgstr "送 %1$s，得 %2$s"
+
+#. translators: 1: friend's amount 2: your amount
+msgid ""
+"Friends get %1$s off their first trip with your code. When they’ve travelled,"
+" we send you a %2$s thank-you code for your next trip."
+msgstr "朋友使用您的优惠码，首次行程可减免 %1$s。他们完成行程后，我们会给您发送一张 %2$s 的感谢码，可用于您的下次行程。"
+
+msgid "Your code"
+msgstr "您的优惠码"
+
+msgid "Copied"
+msgstr "已复制"
+
+msgid "Copy code"
+msgstr "复制优惠码"
+
+msgid "Share on WhatsApp"
+msgstr "通过 WhatsApp 分享"
+
+msgid "Text a friend"
+msgstr "发短信给朋友"
+
+#. translators: %s: amount
+msgid "%s off your first taxi trip"
+msgstr "首次出租车行程立减 %s"
+
+#. translators: %s: amount
+msgid "Link copied"
+msgstr "链接已复制"
+
+#. translators: %s: amount
+msgid "Copy link"
+msgstr "复制链接"
+
+msgid "Your thank-you codes"
+msgstr "您的感谢码"
+
+#. translators: %d: number of friends
+msgid "%d friend has travelled with your code."
+msgid_plural "%d friends have travelled with your code."
+msgstr[0] "已有 %d 位朋友使用您的优惠码出行。"
+
+msgid "Used"
+msgstr "已使用"
+
+#. translators: %s: date
+msgid "Use by %s"
+msgstr "有效期至 %s"
+
+msgid "Your thank-you codes will appear here."
+msgstr "您的感谢码将显示在这里。"
+
+msgid ""
+"Friends must be new customers. One thank-you code per friend, sent after "
+"their first trip is completed. Codes can’t be swapped for cash."
+msgstr "朋友必须是新客户。每位朋友对应一张感谢码，在其完成首次行程后发送。优惠码不可兑换现金。"
+
+msgid "Referrals"
+msgstr "推荐"
+
+#. translators: %s: place
+msgid "Going home from %s"
+msgstr "从 %s 回家"
+
+msgid ""
+"At the main entrance. Tell us your ward or clinic and the driver will meet "
+"you there if you need help."
+msgstr "在正门。请告诉我们您所在的病房或诊所，如您需要帮助，司机会到那里接您。"
+
+msgid "Book the trip home — pick up when ready"
+msgstr "预约回家行程——准备好再接"
+
+#. translators: %s: phone
+msgid "Ready now? Call %s"
+msgstr "已准备好？请致电 %s"
+
+msgid ""
+"measuring which of our ads lead to completed trips. If you came from an ad, "
+"the ad click number is sent; for some trips your email and phone number are "
+"sent only in scrambled (hashed) form that cannot be read back"
+msgstr ""
+"衡量我们的哪些广告带来了已完成的行程。如果您是通过广告访问本网站，系统会发送广告点击编号；对于部分行程，您的电子邮件和电话号码仅以无法还原的加密（哈希）形式发送"

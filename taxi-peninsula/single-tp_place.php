@@ -76,6 +76,9 @@ while ( have_posts() ) :
 					<?php if ( $tp_m['parking'] ) : ?>
 						<div><dt><?php tp_the_icon( 'clock' ); ?> <?php esc_html_e( 'Parking & waiting', 'taxi-peninsula' ); ?></dt><dd><?php echo esc_html( $tp_m['parking'] ); ?></dd></div>
 					<?php endif; ?>
+					<?php if ( $tp_m['access'] ) : ?>
+						<div><dt><?php tp_the_icon( 'wheelchair' ); ?> <?php esc_html_e( 'Accessibility', 'taxi-peninsula' ); ?></dt><dd><?php echo esc_html( $tp_m['access'] ); ?></dd></div>
+					<?php endif; ?>
 					<?php if ( $tp_m['address'] ) : ?>
 						<div><dt><?php tp_the_icon( 'book' ); ?> <?php esc_html_e( 'Address', 'taxi-peninsula' ); ?></dt><dd><?php echo esc_html( $tp_m['address'] ); ?></dd></div>
 					<?php endif; ?>
@@ -88,6 +91,25 @@ while ( have_posts() ) :
 							<li><?php echo esc_html( $tp_tip ); ?></li>
 						<?php endforeach; ?>
 					</ul>
+				<?php endif; ?>
+
+				<?php if ( ! $tp_from && tp_place_is_medical( $tp_m ) ) : ?>
+					<section class="place-home" aria-labelledby="place-home-title">
+						<h2 id="place-home-title"><?php /* translators: %s: place */ echo esc_html( sprintf( __( 'Going home from %s', 'taxi-peninsula' ), $tp_name ) ); ?></h2>
+						<dl class="place-facts">
+							<div><dt><?php tp_the_icon( 'pin' ); ?> <?php esc_html_e( 'Pick-up point', 'taxi-peninsula' ); ?></dt><dd><?php echo esc_html( $tp_m['pickup'] ?: ( $tp_m['spot'] ?: __( 'At the main entrance. Tell us your ward or clinic and the driver will meet you there if you need help.', 'taxi-peninsula' ) ) ); ?></dd></div>
+						</dl>
+						<h3><?php esc_html_e( 'Discharge tips', 'taxi-peninsula' ); ?></h3>
+						<ul>
+							<?php foreach ( tp_place_discharge_tips( $tp_m ) as $tp_tip ) : ?>
+								<li><?php echo esc_html( $tp_tip ); ?></li>
+							<?php endforeach; ?>
+						</ul>
+						<p class="place-home__actions">
+							<a class="btn btn--accent" href="<?php echo esc_url( add_query_arg( array( 'pickup' => rawurlencode( $tp_addr ), 'when_ready' => 1 ), tp_booking_page_url() ) . '#book' ); ?>"><?php esc_html_e( 'Book the trip home — pick up when ready', 'taxi-peninsula' ); ?></a>
+							<a class="btn btn--ghost" href="<?php echo esc_url( tp_phone_href() ); ?>"><?php tp_the_icon( 'phone' ); ?> <?php /* translators: %s: phone */ echo esc_html( sprintf( __( 'Ready now? Call %s', 'taxi-peninsula' ), tp_opt( 'phone_display' ) ) ); ?></a>
+						</p>
+					</section>
 				<?php endif; ?>
 
 				<?php the_content(); ?>

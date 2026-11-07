@@ -34,12 +34,17 @@ function tp_place_types() {
 
 function tp_place_meta( $id ) {
 	$m = array();
-	foreach ( array( 'type', 'address', 'lat', 'lng', 'area', 'entrance', 'spot', 'parking', 'tips', 'official' ) as $k ) {
+	foreach ( array( 'type', 'address', 'lat', 'lng', 'area', 'entrance', 'spot', 'parking', 'tips', 'official', 'pickup', 'discharge', 'access' ) as $k ) {
 		$m[ $k ] = (string) get_post_meta( $id, '_tp_p_' . $k, true );
 	}
 	$m['type'] = isset( tp_place_types()[ $m['type'] ] ) ? $m['type'] : 'hospital';
 	$m['kind'] = tp_place_types()[ $m['type'] ][1];
 	return $m;
+}
+
+/** Hospitals, clinics and care: pages also cover the trip home. */
+function tp_place_is_medical( array $m ) {
+	return in_array( $m['type'], array( 'hospital', 'clinic', 'care' ), true );
 }
 
 function tp_place_kind( $id ) {
@@ -213,7 +218,7 @@ function tp_render_place_box( $post ) {
 	};
 	?>
 	<p class="description"><?php esc_html_e( 'The title is the place name, e.g. "Frankston Hospital". The page heading becomes "Wheelchair taxi to Frankston Hospital" (or "from" for stations and shopping centres). Use the editor for anything else worth knowing, and the featured image for a real photo of the entrance.', 'taxi-peninsula' ); ?></p>
-	<?php if ( false !== strpos( $m['tips'] . $m['spot'] . $m['entrance'] . $m['address'], '[CONFIRM' ) ) : ?>
+	<?php if ( false !== strpos( $m['tips'] . $m['spot'] . $m['entrance'] . $m['address'] . $m['pickup'] . $m['discharge'] . $m['access'], '[CONFIRM' ) ) : ?>
 		<div class="notice notice-warning inline"><p><?php esc_html_e( 'This suggestion includes [CONFIRM] notes. Check each detail on site (or with the venue) and remove the notes before publishing.', 'taxi-peninsula' ); ?></p></div>
 	<?php endif; ?>
 	<table class="form-table" role="presentation">
@@ -232,6 +237,12 @@ function tp_render_place_box( $post ) {
 		$row( 'spot', __( 'Where we drop off / pick up', 'taxi-peninsula' ), 'textarea', __( 'The exact spot drivers use, e.g. "Set-down bay outside the main entrance (2 minutes)".', 'taxi-peninsula' ) );
 		$row( 'parking', __( 'Parking & waiting', 'taxi-peninsula' ), 'textarea' );
 		$row( 'tips', __( 'Tips for passengers', 'taxi-peninsula' ), 'textarea', __( 'One per line.', 'taxi-peninsula' ) );
+		$row( 'access', __( 'Accessibility', 'taxi-peninsula' ), 'textarea', __( 'e.g. "Wheelchairs to borrow at reception, accessible toilets near the entrance, lifts to all floors, hearing loop at the front desk."', 'taxi-peninsula' ) );
+		?>
+		<tr><th colspan="2"><h3 style="margin:0"><?php esc_html_e( 'Going home (hospitals, clinics and care)', 'taxi-peninsula' ); ?></h3></th></tr>
+		<?php
+		$row( 'pickup', __( 'Pick-up point for the trip home', 'taxi-peninsula' ), 'textarea', __( 'Where patients wait to be picked up, if different from the drop-off, e.g. "Discharge lounge, ground floor — drivers come inside to meet you."', 'taxi-peninsula' ) );
+		$row( 'discharge', __( 'Discharge tips', 'taxi-peninsula' ), 'textarea', __( 'One per line, e.g. "The discharge lounge is open 8am–6pm weekdays." Leave empty to show our general tips.', 'taxi-peninsula' ) );
 		$row( 'official', __( 'Official website', 'taxi-peninsula' ), 'url', __( 'For visiting hours and maps.', 'taxi-peninsula' ) );
 		?>
 	</table>
@@ -253,7 +264,7 @@ add_action(
 			$v = trim( (string) ( $in[ $k ] ?? '' ) );
 			update_post_meta( $post_id, '_tp_p_' . $k, is_numeric( $v ) ? (string) round( (float) $v, 6 ) : '' );
 		}
-		foreach ( array( 'entrance', 'spot', 'parking', 'tips' ) as $k ) {
+		foreach ( array( 'entrance', 'spot', 'parking', 'tips', 'pickup', 'discharge', 'access' ) as $k ) {
 			update_post_meta( $post_id, '_tp_p_' . $k, sanitize_textarea_field( $in[ $k ] ?? '' ) );
 		}
 		update_post_meta( $post_id, '_tp_p_official', esc_url_raw( $in['official'] ?? '' ) );
@@ -554,5 +565,30 @@ add_action(
 		if ( $url ) {
 			printf( '<li><a href="%1$s">%2$s</a></li>', esc_url( $url ), esc_html__( 'Hospitals & stations', 'taxi-peninsula' ) );
 		}
+	}
+);
+
+/** Tips for the trip home: the page's own, or general ones. */
+function tp_place_discharge_tips( array $m ) {
+	$own = array_filter( array_map( 'trim', preg_split( '/\r\n|\r|\n/', $m['discharge'] ) ) );
+	if ( $own ) {
+		return $own;
+	}
+	return array(
+		__( 'Book a “pick up when ready” trip ahead: choose the day, then tap “I’m ready” on your booking page (or call us) when the ward lets you go.', 'taxi-peninsula' ),
+		__( 'Discharge often takes longer than planned — waiting for medicines, a doctor’s sign-off or transport letters is normal. We only send the car when you are ready.', 'taxi-peninsula' ),
+		__( 'Have your discharge letter, medicines and any walking aids with you, and tell us if you need help from the ward to the car.', 'taxi-peninsula' ),
+		__( 'Travelling with a wheelchair or a carer? Say so when you book so we send the right vehicle.', 'taxi-peninsula' ),
+	);
+}
+
+// "Pick up when ready" links from place pages tick the box on the booking form.
+add_filter(
+	'tp_booking_form_link_prefill',
+	static function ( $old ) {
+		if ( ! empty( $_GET['when_ready'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- prefill only.
+			$old['when_ready'] = 1;
+		}
+		return $old;
 	}
 );

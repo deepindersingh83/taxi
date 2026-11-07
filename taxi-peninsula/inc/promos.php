@@ -41,7 +41,7 @@ add_action(
  * Promo settings for a code post.
  */
 function tp_promo_meta( $id ) {
-	return array(
+	$m = array(
 		'kind'   => get_post_meta( $id, '_tp_promo_kind', true ) ?: 'percent',
 		'amount' => (float) get_post_meta( $id, '_tp_promo_amount', true ),
 		'start'  => (string) get_post_meta( $id, '_tp_promo_start', true ),
@@ -50,6 +50,13 @@ function tp_promo_meta( $id ) {
 		'first'  => (bool) get_post_meta( $id, '_tp_promo_first', true ),
 		'text'   => (string) get_post_meta( $id, '_tp_promo_text', true ),
 	);
+	/**
+	 * Filters a promo's settings (referral codes take their amount from Settings).
+	 *
+	 * @param array $m  kind, amount, start, end, max, first, text.
+	 * @param int   $id Promo post.
+	 */
+	return apply_filters( 'tp_promo_meta', $m, (int) $id );
 }
 
 /**
@@ -60,12 +67,10 @@ function tp_promo_find( $code ) {
 	if ( '' === $code ) {
 		return 0;
 	}
-	foreach ( get_posts( array( 'post_type' => 'tp_promo', 'post_status' => 'publish', 'numberposts' => -1, 'fields' => 'ids' ) ) as $id ) {
-		if ( strtoupper( get_the_title( $id ) ) === $code ) {
-			return (int) $id;
-		}
-	}
-	return 0;
+	global $wpdb;
+	// One query, so it stays quick with many referral codes.
+	// phpcs:ignore WordPress.DB.DirectDatabaseQuery
+	return (int) $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM {$wpdb->posts} WHERE post_type = 'tp_promo' AND post_status = 'publish' AND UPPER(post_title) = %s ORDER BY ID LIMIT 1", $code ) );
 }
 
 function tp_promos_active() {
@@ -107,7 +112,14 @@ function tp_promo_check( $code, array $d ) {
 	if ( $m['first'] && tp_promo_customer_has_trips( $d ) ) {
 		return __( 'That promo code is for your first trip with us only.', 'taxi-peninsula' );
 	}
-	return '';
+	/**
+	 * Filters the result of a promo check: '' when fine, or an error message.
+	 *
+	 * @param string $error '' so far.
+	 * @param int    $id    Promo post.
+	 * @param array  $d     Sanitized booking data.
+	 */
+	return (string) apply_filters( 'tp_promo_check', '', $id, $d );
 }
 
 /**

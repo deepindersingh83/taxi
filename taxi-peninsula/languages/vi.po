@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.11.0\n"
+"Project-Id-Version: Taxi Peninsula 2.12.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
@@ -5792,3 +5792,348 @@ msgstr "Có phải ý Quý khách là %s?"
 
 msgid "Yes, use this"
 msgstr "Đúng, dùng địa chỉ này"
+
+msgid "Confirm new accounts"
+msgstr "Xác nhận tài khoản mới"
+
+msgid ""
+"New accounts get a code by text (when SMS is set up) and a confirm link by "
+"email; either one confirms the account. Customers can still book before "
+"confirming, and those bookings are marked “Unverified customer” or “Phone not"
+" confirmed” on the dispatch board."
+msgstr ""
+"Tài khoản mới sẽ nhận mã qua tin nhắn (khi đã thiết lập SMS) và đường dẫn xác"
+" nhận qua email; dùng một trong hai là xác nhận được tài khoản. Khách hàng "
+"vẫn có thể đặt xe trước khi xác nhận, và các chuyến đặt đó sẽ được đánh dấu "
+"“Khách hàng chưa xác minh” hoặc “Chưa xác nhận số điện thoại” trên bảng điều "
+"phối."
+
+#. translators: 1: site 2: code
+msgid ""
+"%1$s: your code to confirm your account is %2$s. It expires in 30 minutes."
+msgstr ""
+"%1$s: mã xác nhận tài khoản của quý khách là %2$s. Mã có hiệu lực trong 30 "
+"phút."
+
+msgid "Please confirm your account by opening this link:"
+msgstr "Vui lòng xác nhận tài khoản của quý khách bằng cách mở đường dẫn này:"
+
+#. translators: %d: days
+msgid "The link works for %d days. You can book in the meantime."
+msgstr ""
+"Đường dẫn có hiệu lực trong %d ngày. Trong thời gian này, quý khách vẫn có "
+"thể đặt xe."
+
+msgid "Didn’t make an account with us? You can ignore this email."
+msgstr ""
+"Quý khách không tạo tài khoản với chúng tôi? Quý khách có thể bỏ qua email "
+"này."
+
+#. translators: %s: site name
+msgid "Confirm your %s account"
+msgstr "Xác nhận tài khoản %s của quý khách"
+
+msgid "Unverified customer"
+msgstr "Khách hàng chưa xác minh"
+
+msgid "Phone not confirmed"
+msgstr "Chưa xác nhận số điện thoại"
+
+msgid ""
+"New account that has not confirmed its email or mobile yet. Call to check "
+"before sending a car."
+msgstr ""
+"Tài khoản mới chưa xác nhận email hoặc số di động. Hãy gọi để kiểm tra trước "
+"khi điều xe."
+
+msgid "The account confirmed its email, but not this mobile number."
+msgstr "Tài khoản đã xác nhận email nhưng chưa xác nhận số di động này."
+
+msgid "Phone confirmed"
+msgstr "Đã xác nhận số điện thoại"
+
+msgid "Thank you — your account is confirmed."
+msgstr "Cảm ơn quý khách — tài khoản của quý khách đã được xác nhận."
+
+msgid "Thank you — your mobile number is confirmed."
+msgstr "Cảm ơn quý khách — số di động của quý khách đã được xác nhận."
+
+msgid "We’ve emailed you a new link."
+msgstr "Chúng tôi đã gửi email cho quý khách một đường dẫn mới."
+
+msgid ""
+"That link has expired or was already used. Sign in to send yourself a new "
+"one."
+msgstr ""
+"Đường dẫn này đã hết hạn hoặc đã được sử dụng. Vui lòng đăng nhập để gửi cho "
+"mình một đường dẫn mới."
+
+msgid "Confirm your mobile number"
+msgstr "Xác nhận số di động của quý khách"
+
+msgid "Please confirm your account"
+msgstr "Vui lòng xác nhận tài khoản của quý khách"
+
+msgid ""
+"Your email is confirmed. Confirming your mobile too means drivers can reach "
+"you and your bookings go through without a check call."
+msgstr ""
+"Email của quý khách đã được xác nhận. Xác nhận thêm số di động giúp tài xế "
+"liên lạc được với quý khách và các chuyến đặt xe được xử lý mà không cần gọi "
+"kiểm tra."
+
+#. translators: %s: mobile number
+msgid ""
+"We’ve texted a 6-digit code to %s and emailed you a link. Use either one. You"
+" can book in the meantime — we may call to check your first trip."
+msgstr ""
+"Chúng tôi đã nhắn mã gồm 6 chữ số đến %s và gửi email cho quý khách một đường"
+" dẫn. Quý khách dùng cách nào cũng được. Trong thời gian này, quý khách vẫn "
+"có thể đặt xe — chúng tôi có thể gọi để kiểm tra chuyến đi đầu tiên của quý "
+"khách."
+
+#. translators: %s: email
+msgid ""
+"We’ve emailed a confirm link to %s. You can book in the meantime — we may "
+"call to check your first trip."
+msgstr ""
+"Chúng tôi đã gửi đường dẫn xác nhận đến %s. Trong thời gian này, quý khách "
+"vẫn có thể đặt xe — chúng tôi có thể gọi để kiểm tra chuyến đi đầu tiên của "
+"quý khách."
+
+msgid ""
+"That code isn’t right, or it has expired. Please check the text or send a new"
+" code."
+msgstr ""
+"Mã này không đúng hoặc đã hết hạn. Vui lòng kiểm tra lại tin nhắn hoặc gửi mã"
+" mới."
+
+msgid "Confirm"
+msgstr "Xác nhận"
+
+msgid "Text me a code"
+msgstr "Nhắn mã cho tôi"
+
+msgid "Email me a new link"
+msgstr "Gửi email đường dẫn mới cho tôi"
+
+msgid "Please sign in."
+msgstr "Vui lòng đăng nhập."
+
+msgid "Accessibility"
+msgstr "Hỗ trợ tiếp cận"
+
+msgid ""
+"e.g. \"Wheelchairs to borrow at reception, accessible toilets near the "
+"entrance, lifts to all floors, hearing loop at the front desk.\""
+msgstr ""
+"Ví dụ: “Có xe lăn cho mượn tại quầy lễ tân, nhà vệ sinh cho người khuyết tật "
+"gần lối vào, thang máy lên tất cả các tầng, vòng hỗ trợ nghe tại quầy tiếp "
+"đón.”"
+
+msgid "Going home (hospitals, clinics and care)"
+msgstr "Về nhà (bệnh viện, phòng khám và cơ sở chăm sóc)"
+
+msgid "Pick-up point for the trip home"
+msgstr "Điểm đón cho chuyến về nhà"
+
+msgid ""
+"Where patients wait to be picked up, if different from the drop-off, e.g. "
+"\"Discharge lounge, ground floor — drivers come inside to meet you.\""
+msgstr ""
+"Nơi bệnh nhân chờ được đón, nếu khác với điểm trả khách, ví dụ: “Phòng chờ "
+"xuất viện, tầng trệt — tài xế sẽ vào trong để gặp quý khách.”"
+
+msgid "Discharge tips"
+msgstr "Lời khuyên khi xuất viện"
+
+msgid ""
+"One per line, e.g. \"The discharge lounge is open 8am–6pm weekdays.\" Leave "
+"empty to show our general tips."
+msgstr ""
+"Mỗi dòng một lời khuyên, ví dụ: “Phòng chờ xuất viện mở cửa từ 8 giờ sáng đến"
+" 6 giờ chiều các ngày trong tuần.” Để trống để hiển thị các lời khuyên chung "
+"của chúng tôi."
+
+msgid ""
+"Book a “pick up when ready” trip ahead: choose the day, then tap “I’m ready” "
+"on your booking page (or call us) when the ward lets you go."
+msgstr ""
+"Đặt trước chuyến “đón khi sẵn sàng”: chọn ngày, rồi bấm “Tôi đã sẵn sàng” "
+"trên trang đặt xe của quý khách (hoặc gọi cho chúng tôi) khi khoa cho quý "
+"khách ra về."
+
+msgid ""
+"Discharge often takes longer than planned — waiting for medicines, a doctor’s"
+" sign-off or transport letters is normal. We only send the car when you are "
+"ready."
+msgstr ""
+"Việc xuất viện thường lâu hơn dự kiến — chờ thuốc, chờ bác sĩ ký duyệt hoặc "
+"chờ giấy tờ đi lại là chuyện bình thường. Chúng tôi chỉ điều xe khi quý khách"
+" đã sẵn sàng."
+
+msgid ""
+"Have your discharge letter, medicines and any walking aids with you, and tell"
+" us if you need help from the ward to the car."
+msgstr ""
+"Hãy mang theo giấy xuất viện, thuốc và các dụng cụ hỗ trợ đi lại, và cho "
+"chúng tôi biết nếu quý khách cần giúp đỡ từ khoa ra xe."
+
+msgid ""
+"Travelling with a wheelchair or a carer? Say so when you book so we send the "
+"right vehicle."
+msgstr ""
+"Quý khách đi cùng xe lăn hoặc người chăm sóc? Hãy cho chúng tôi biết khi đặt "
+"xe để chúng tôi gửi đúng loại xe."
+
+msgid "Refer a friend"
+msgstr "Giới thiệu bạn bè"
+
+msgid "Referral codes are not available at the moment."
+msgstr "Mã giới thiệu hiện không khả dụng."
+
+msgid ""
+"That’s your own referral code — share it with friends instead. Thank you!"
+msgstr ""
+"Đây là mã giới thiệu của chính quý khách — hãy chia sẻ mã này với bạn bè nhé."
+" Xin cảm ơn!"
+
+msgid ""
+"That thank-you code belongs to another account. Please sign in to use it."
+msgstr ""
+"Mã cảm ơn này thuộc về một tài khoản khác. Vui lòng đăng nhập để sử dụng."
+
+msgid ""
+"Referral: thank-you code sent to the customer who referred this passenger."
+msgstr ""
+"Giới thiệu: đã gửi mã cảm ơn cho khách hàng đã giới thiệu hành khách này."
+
+#. translators: 1: amount 2: code
+msgid ""
+"A friend you referred has just taken their first trip with us. Thank you! "
+"Here is %1$s off your next trip: %2$s"
+msgstr ""
+"Một người bạn do quý khách giới thiệu vừa đi chuyến đầu tiên với chúng tôi. "
+"Xin cảm ơn! Quý khách được giảm %1$s cho chuyến đi tiếp theo: %2$s"
+
+#. translators: %s: date
+msgid ""
+"Type the code in the “Promo code” box when you book. It can be used once, "
+"until %s."
+msgstr ""
+"Nhập mã vào ô “Mã khuyến mãi” khi đặt xe. Mã chỉ dùng được một lần, đến hết "
+"ngày %s."
+
+#. translators: 1: amount 2: site
+msgid "%1$s off your next trip with %2$s"
+msgstr "Giảm %1$s cho chuyến đi tiếp theo với %2$s"
+
+#. translators: 1: site 2: amount 3: code
+msgid ""
+"%1$s: thanks for referring a friend! Here is %2$s off your next trip: %3$s"
+msgstr ""
+"%1$s: cảm ơn quý khách đã giới thiệu bạn bè! Quý khách được giảm %2$s cho "
+"chuyến đi tiếp theo: %3$s"
+
+#. translators: 1: amount 2: site 3: code 4: link
+msgid ""
+"I use %2$s for my trips. Get %1$s off your first one with my code %3$s: %4$s"
+msgstr ""
+"Tôi đi xe với %2$s. Bạn được giảm %1$s cho chuyến đầu tiên với mã của tôi "
+"%3$s: %4$s"
+
+#. translators: 1: friend's amount 2: your amount
+msgid "Give %1$s, get %2$s"
+msgstr "Tặng %1$s, nhận %2$s"
+
+#. translators: 1: friend's amount 2: your amount
+msgid ""
+"Friends get %1$s off their first trip with your code. When they’ve travelled,"
+" we send you a %2$s thank-you code for your next trip."
+msgstr ""
+"Bạn bè được giảm %1$s cho chuyến đầu tiên với mã của quý khách. Sau khi họ đi"
+" xe, chúng tôi sẽ gửi quý khách mã cảm ơn trị giá %2$s cho chuyến đi tiếp "
+"theo."
+
+msgid "Your code"
+msgstr "Mã của quý khách"
+
+msgid "Copied"
+msgstr "Đã sao chép"
+
+msgid "Copy code"
+msgstr "Sao chép mã"
+
+msgid "Share on WhatsApp"
+msgstr "Chia sẻ qua WhatsApp"
+
+msgid "Text a friend"
+msgstr "Nhắn tin cho bạn bè"
+
+#. translators: %s: amount
+msgid "%s off your first taxi trip"
+msgstr "Giảm %s cho chuyến taxi đầu tiên của bạn"
+
+#. translators: %s: amount
+msgid "Link copied"
+msgstr "Đã sao chép đường dẫn"
+
+#. translators: %s: amount
+msgid "Copy link"
+msgstr "Sao chép đường dẫn"
+
+msgid "Your thank-you codes"
+msgstr "Mã cảm ơn của quý khách"
+
+#. translators: %d: number of friends
+msgid "%d friend has travelled with your code."
+msgid_plural "%d friends have travelled with your code."
+msgstr[0] "%d người bạn đã đi xe với mã của quý khách."
+
+msgid "Used"
+msgstr "Đã dùng"
+
+#. translators: %s: date
+msgid "Use by %s"
+msgstr "Hạn dùng: %s"
+
+msgid "Your thank-you codes will appear here."
+msgstr "Mã cảm ơn của quý khách sẽ hiển thị tại đây."
+
+msgid ""
+"Friends must be new customers. One thank-you code per friend, sent after "
+"their first trip is completed. Codes can’t be swapped for cash."
+msgstr ""
+"Bạn bè phải là khách hàng mới. Mỗi người bạn được một mã cảm ơn, gửi sau khi "
+"họ hoàn thành chuyến đi đầu tiên. Mã không quy đổi thành tiền mặt."
+
+msgid "Referrals"
+msgstr "Giới thiệu"
+
+#. translators: %s: place
+msgid "Going home from %s"
+msgstr "Về nhà từ %s"
+
+msgid ""
+"At the main entrance. Tell us your ward or clinic and the driver will meet "
+"you there if you need help."
+msgstr ""
+"Tại lối vào chính. Hãy cho chúng tôi biết khoa hoặc phòng khám của quý khách,"
+" tài xế sẽ gặp quý khách tại đó nếu quý khách cần giúp đỡ."
+
+msgid "Book the trip home — pick up when ready"
+msgstr "Đặt chuyến về nhà — đón khi sẵn sàng"
+
+#. translators: %s: phone
+msgid "Ready now? Call %s"
+msgstr "Đã sẵn sàng? Gọi %s"
+
+msgid ""
+"measuring which of our ads lead to completed trips. If you came from an ad, "
+"the ad click number is sent; for some trips your email and phone number are "
+"sent only in scrambled (hashed) form that cannot be read back"
+msgstr ""
+"đo lường quảng cáo nào của chúng tôi dẫn đến các chuyến đi đã hoàn thành. Nếu"
+" quý khách đến từ một quảng cáo, mã số lượt nhấp quảng cáo sẽ được gửi đi; "
+"với một số chuyến đi, email và số điện thoại của quý khách chỉ được gửi dưới "
+"dạng đã mã hóa (băm) và không thể đọc ngược lại"

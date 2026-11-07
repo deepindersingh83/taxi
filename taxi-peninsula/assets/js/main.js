@@ -1411,6 +1411,35 @@
 		input.addEventListener('input', function () { if (!hint.hidden) { check(); } });
 	});
 
+	/* Copy buttons: data-copy="text", data-copied="Copied". The nearest [role=status] announces it. */
+	document.querySelectorAll('[data-copy]').forEach(function (btn) {
+		btn.addEventListener('click', function () {
+			var text = btn.getAttribute('data-copy');
+			var done = function () {
+				var scope = btn.closest('section, .card') || document;
+				var status = scope.querySelector('[role="status"]');
+				if (status) { status.textContent = btn.getAttribute('data-copied') || ''; }
+			};
+			var fallback = function () {
+				var t = document.createElement('textarea');
+				t.value = text;
+				t.setAttribute('readonly', '');
+				t.style.position = 'fixed';
+				t.style.opacity = '0';
+				document.body.appendChild(t);
+				t.select();
+				try { if (document.execCommand('copy')) { done(); } } catch (e) {}
+				t.remove();
+				btn.focus();
+			};
+			if (navigator.clipboard && window.isSecureContext) {
+				navigator.clipboard.writeText(text).then(done, fallback);
+			} else {
+				fallback();
+			}
+		});
+	});
+
 	/* Move focus to server-rendered errors / success so screen readers announce them. */
 	var focusTarget = document.querySelector('[data-focus]');
 	if (focusTarget) {
