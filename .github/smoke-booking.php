@@ -140,3 +140,9 @@ if ( ! $routes || false === strpos( tp_route_url( $pid, $routes[0][0] ), '/wheel
 }
 tp_calls_to_follow(); // The follow-up query runs on this database.
 WP_CLI::success( 'Short booking form, route pages and call follow-up OK.' );
+
+// SEO plugins: the generated pages have their own sitemap for Rank Math / Yoast to list.
+if ( count( tp_generated_urls() ) < 1 || 0 !== strpos( tp_generated_sitemap_url(), home_url() ) ) {
+	WP_CLI::error( 'The sitemap of generated pages is empty.' );
+}
+WP_CLI::success( 'Generated pages sitemap OK (' . count( tp_generated_urls() ) . ' pages).' );

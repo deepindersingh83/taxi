@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.13.0\n"
+"Project-Id-Version: Taxi Peninsula 2.13.1\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -6311,3 +6311,9 @@ msgstr "تم الإرسال! تحقق من رسائلك — تحتوي الرس�
 
 msgid "Questions"
 msgstr "أسئلة"
+
+msgid "Taxi & Wheelchair Accessible Taxi — Mornington Peninsula & Melbourne"
+msgstr "تاكسي وتاكسي للكراسي المتحركة — شبه جزيرة مورنينغتون وملبورن"
+
+msgid "%s Taxi & Wheelchair Accessible Taxi"
+msgstr "تاكسي %s وتاكسي للكراسي المتحركة"

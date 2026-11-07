@@ -89,7 +89,7 @@ add_action(
 		);
 		add_rewrite_rule( '^wheelchair-taxi-(to|from)/([^/]+)/?$', 'index.php?tp_place=$matches[2]&tp_place_kind=$matches[1]', 'top' );
 		if ( (int) get_option( 'tp_places_rw' ) !== TP_PLACES_RW ) {
-			flush_rewrite_rules( false );
+			tp_flush_rewrites_soon(); // After every plugin has added its rules (see inc/seo-plugins.php).
 			update_option( 'tp_places_rw', TP_PLACES_RW, false );
 		}
 	},

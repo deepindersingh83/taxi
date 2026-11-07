@@ -8,6 +8,23 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### v2.13.1 — working properly with Rank Math and Yoast SEO
+When an SEO plugin such as Rank Math is active, it writes the titles, descriptions, canonical links and the sitemap, and WordPress's own sitemap is switched off. It didn't know the pages this theme builds itself. On a site running Rank Math:
+- **Suburb + service pages** (e.g. /wheelchair-taxi/frankston/airport-transfers/) were titled "Blog" and told Google they were a copy of /blog/.
+- **Route pages** pointed to their place page.
+- **None of these pages were in the sitemap.**
+- The home page was titled "Home" and suburb pages just "Frankston".
+
+Now:
+- **The theme gives the SEO plugin the right details:** each generated page gets its own canonical link, title and description.
+  - The home page, suburbs, places and services use the theme's keyword titles and descriptions, unless you wrote your own in the plugin.
+- **Sitemap of generated pages:** `/tp-sitemap.xml` is added to the plugin's sitemap index (Rank Math and Yoast).
+- **Address rules** are rebuilt only after every plugin has added its own. If the plugin's sitemap address goes missing ("Page not found" at /sitemap_index.xml), it is repaired automatically.
+- **New title settings** (Settings → Marketing & SEO → Search engines & AI):
+  - **Home page title:** default "Taxi & Wheelchair Accessible Taxi — Mornington Peninsula & Melbourne".
+  - **Suburb page title:** default "%s Taxi & Wheelchair Accessible Taxi", e.g. "Frankston Taxi & Wheelchair Accessible Taxi". Many more people search "Frankston taxi" than "wheelchair taxi Frankston".
+- **Test & troubleshoot** (Marketing & SEO) now shows which SEO plugin is active and whether the sitemap works, with how to fix it.
+
 ### New in v2.13 — shorter booking form, more leads, route pages
 **Booking form: 2 short steps instead of one long page**
 - **Step 1, your trip:** pick-up, drop-off, date, time, and "Is anyone travelling in a wheelchair or scooter? Yes / No". Then **Next**.

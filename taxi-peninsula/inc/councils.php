@@ -92,7 +92,7 @@ add_action(
 		add_rewrite_rule( '^council/([^/]+)/?$', 'index.php?tp_council=$matches[1]', 'top' );
 		add_rewrite_rule( '^council/?$', 'index.php?tp_council=_all', 'top' );
 		if ( (int) get_option( 'tp_council_rw' ) !== TP_COUNCIL_RW ) {
-			flush_rewrite_rules( false );
+			tp_flush_rewrites_soon(); // After every plugin has added its rules (see inc/seo-plugins.php).
 			update_option( 'tp_council_rw', TP_COUNCIL_RW, false );
 		}
 	},

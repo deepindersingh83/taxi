@@ -145,7 +145,7 @@ function tp_register_content_types() {
 		add_action(
 			'wp_loaded',
 			static function () {
-				flush_rewrite_rules( false );
+				tp_flush_rewrites_soon(); // After every plugin has added its rules (see inc/seo-plugins.php).
 				update_option( 'tp_rewrite_version', TP_REWRITE_VERSION );
 			}
 		);

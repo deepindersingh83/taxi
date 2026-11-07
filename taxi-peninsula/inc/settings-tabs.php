@@ -260,7 +260,13 @@ function tp_settings_checks( $tab ) {
 			$c[] = array( 'ok', __( 'Search engines', 'taxi-peninsula' ), __( 'See Marketing → AI & Bing search and Reports → Search performance for checks and results.', 'taxi-peninsula' ) );
 			break;
 	}
-	return $c;
+	/**
+	 * Filters the checks shown on a settings tab: [ status, label, message ] each.
+	 *
+	 * @param array  $c   Checks.
+	 * @param string $tab Tab key.
+	 */
+	return apply_filters( 'tp_settings_checks', $c, $tab );
 }
 
 /**

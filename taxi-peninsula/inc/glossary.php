@@ -35,7 +35,7 @@ add_action(
 			)
 		);
 		if ( (int) get_option( 'tp_glossary_rw' ) !== 1 ) {
-			flush_rewrite_rules( false );
+			tp_flush_rewrites_soon(); // After every plugin has added its rules (see inc/seo-plugins.php).
 			update_option( 'tp_glossary_rw', 1, false );
 		}
 	},

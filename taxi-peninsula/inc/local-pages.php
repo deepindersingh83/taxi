@@ -47,7 +47,7 @@ add_action(
 	static function () {
 		add_rewrite_rule( '^wheelchair-taxi/([^/]+)/([^/]+)/?$', 'index.php?tp_local_area=$matches[1]&tp_local_service=$matches[2]', 'top' );
 		if ( (int) get_option( 'tp_local_rw' ) !== TP_LOCAL_RW ) {
-			flush_rewrite_rules( false );
+			tp_flush_rewrites_soon(); // After every plugin has added its rules (see inc/seo-plugins.php).
 			update_option( 'tp_local_rw', TP_LOCAL_RW, false );
 		}
 	},
