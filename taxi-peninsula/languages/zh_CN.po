@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.12.0\n"
+"Project-Id-Version: Taxi Peninsula 2.13.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -5553,3 +5553,261 @@ msgid ""
 "sent only in scrambled (hashed) form that cannot be read back"
 msgstr ""
 "衡量我们的哪些广告带来了已完成的行程。如果您是通过广告访问本网站，系统会发送广告点击编号；对于部分行程，您的电子邮件和电话号码仅以无法还原的加密（哈希）形式发送"
+
+msgid "Please enter a valid email address, or leave it empty."
+msgstr "请输入有效的电子邮箱地址，或留空。"
+
+msgid "What will my trip cost?"
+msgstr "我的行程要多少钱？"
+
+msgid ""
+"Type two addresses for a price straight away. We can text it to you, with a "
+"link to book."
+msgstr "输入两个地址，马上就能看到价格。我们可以用短信把价格发给您，并附上预约链接。"
+
+msgid "Hi, I’d like to book a taxi."
+msgstr "您好，我想预约出租车。"
+
+msgid "Date and time:"
+msgstr "日期和时间："
+
+msgid "Wheelchair (yes/no):"
+msgstr "轮椅（是/否）："
+
+msgid "Name:"
+msgstr "姓名："
+
+msgid "Text us your booking"
+msgstr "发短信预约"
+
+msgid "Prefer to text? Text us your booking"
+msgstr "更喜欢发短信？发短信预约"
+
+msgid "Your messages app opens with a short template to fill in."
+msgstr "您的短信应用会打开，并附有一个简短的模板供您填写。"
+
+msgid "Quotes by text are not available at the moment. Please call us."
+msgstr "目前无法通过短信发送报价。请致电我们。"
+
+msgid "Please enter an Australian mobile number, e.g. 0412 345 678."
+msgstr "请输入澳大利亚手机号码，例如 0412 345 678。"
+
+#. translators: %s: phone
+msgid "Too many quotes sent. Please call us on %s."
+msgstr "发送的报价过多。请致电 %s 联系我们。"
+
+msgid ""
+"We couldn’t work out that trip. Please check both addresses, or call us for a"
+" price."
+msgstr "我们无法计算这段行程。请检查两个地址，或致电我们询价。"
+
+#. translators: 1: site 2: from 3: to 4: price 5: booking link 6: phone
+msgid ""
+"%1$s: wheelchair taxi from %2$s to %3$s is about %4$s. Book online: %5$s or "
+"call %6$s."
+msgstr "%1$s：%2$s 到 %3$s 的轮椅出租车约 %4$s。在线预约：%5$s 或致电 %6$s。"
+
+msgid "The text could not be sent just now. Please call us."
+msgstr "短信暂时无法发送。请致电我们。"
+
+#. translators: 1: place, e.g. Frankston Station 2: suburb
+#. translators: 1: suburb 2: place, e.g. Frankston Hospital
+msgid "Wheelchair taxi from %1$s to %2$s"
+msgstr "从 %1$s 到 %2$s 的轮椅出租车"
+
+#. translators: 1: route title 2: minutes 3: km
+msgid "%1$s: about %2$d minutes and %3$s km."
+msgstr "%1$s：约 %2$d 分钟，%3$s km。"
+
+#. translators: %s: fare range
+msgid "Fare about %s."
+msgstr "车费约 %s。"
+
+#. translators: %s: phone
+msgid "Ramp and hoist vans, door to door. Book online or call %s."
+msgstr "配备坡道和升降机的车辆，门到门服务。在线预约或致电 %s。"
+
+#. translators: 1: from 2: to
+msgid "How much is a wheelchair taxi from %1$s to %2$s?"
+msgstr "从 %1$s 到 %2$s 的轮椅出租车要多少钱？"
+
+#. translators: 1: fare range 2: phone
+msgid ""
+"Usually about %1$s for a wheelchair accessible taxi, depending on the exact "
+"address, traffic and time of day. MPTP members pay half (up to the subsidy "
+"limit), and NDIS and aged-care accounts can be invoiced. Call %2$s for a firm"
+" price."
+msgstr ""
+"无障碍轮椅出租车通常约 %1$s，具体取决于确切地址、交通状况和时段。MPTP 会员只需支付一半（不超过补贴上限），NDIS "
+"和养老服务账户可开具发票。如需确切价格，请致电 %2$s。"
+
+#. translators: %s: phone
+msgid ""
+"It depends on the exact address and time of day — call %s for a price. MPTP "
+"members pay half (up to the subsidy limit), and NDIS and aged-care accounts "
+"can be invoiced."
+msgstr "价格取决于确切地址和时段——请致电 %s 询价。MPTP 会员只需支付一半（不超过补贴上限），NDIS 和养老服务账户可开具发票。"
+
+#. translators: 1: from 2: to
+msgid "How long does the trip from %1$s to %2$s take?"
+msgstr "从 %1$s 到 %2$s 需要多长时间？"
+
+#. translators: 1: minutes 2: km
+msgid ""
+"About %1$d minutes for the %2$s km without traffic. We allow a few extra "
+"minutes to load and secure your wheelchair."
+msgstr "%2$s km 在不堵车时约需 %1$d 分钟。我们会多预留几分钟，用于让您的轮椅上车并固定好。"
+
+#. translators: %s: place
+msgid "Where do you pick up at %s?"
+msgstr "你们在 %s 的哪里接载？"
+
+#. translators: %s: place
+msgid "Where do you drop off at %s?"
+msgstr "你们在 %s 的哪里下车？"
+
+#. translators: %s: area
+msgid "Can you take me home to %s when I’m discharged?"
+msgstr "我出院时，你们可以送我回 %s 的家吗？"
+
+msgid ""
+"Yes. Book a “pick up when ready” trip: choose the day, then tap “I’m ready” "
+"on your booking page or call us when the ward lets you go, and we send the "
+"driver."
+msgstr "可以。请预约“准备好后接载”行程：选择日期，等病房让您离开时，在预约页面上点击“我准备好了”或致电我们，我们就会派司机过来。"
+
+msgid ""
+"Yes. Tell us how many people are travelling when you book; carers travel at "
+"no extra charge."
+msgstr "可以。预约时请告诉我们有几位乘客；护理人员同行不额外收费。"
+
+#. translators: 1: minutes 2: km
+msgid ""
+"About %1$d minutes, %2$s km. Ramp and hoist vans with trained drivers, door "
+"to door."
+msgstr "约 %1$d 分钟，%2$s km。配备坡道和升降机的车辆，司机均经过培训，门到门服务。"
+
+msgid "Trip at a glance"
+msgstr "行程一览"
+
+msgid "Travel time"
+msgstr "行程时间"
+
+#. translators: %d: minutes
+msgid "Distance"
+msgstr "距离"
+
+msgid "Usual fare"
+msgstr "一般车费"
+
+msgid ""
+"A guide based on the usual driving route without traffic. The fare depends on"
+" the exact address, time and waiting; MPTP members pay half up to the subsidy"
+" limit."
+msgstr "以上为参考信息，按不堵车时的常用路线计算。车费取决于确切地址、时间和等候时间；MPTP 会员只需支付一半，不超过补贴上限。"
+
+#. translators: 1: place 2: suburb
+msgid "Book a pick-up from %1$s to %2$s"
+msgstr "预约从 %1$s 到 %2$s 的接载"
+
+#. translators: 1: suburb 2: place
+msgid "Book your trip from %1$s to %2$s"
+msgstr "预约从 %1$s 到 %2$s 的行程"
+
+#. translators: %s: place
+msgid "Where we pick you up at %s"
+msgstr "我们在 %s 的接载地点"
+
+#. translators: %s: place
+msgid "Arriving at %s"
+msgstr "抵达 %s"
+
+#. translators: %s: place
+msgid "Everything about getting to %s by wheelchair taxi"
+msgstr "乘轮椅出租车前往 %s 的所有须知"
+
+#. translators: 1: place 2: suburb
+msgid "Going home from %1$s to %2$s"
+msgstr "从 %1$s 回到 %2$s 的家"
+
+#. translators: 1: place 2: suburb
+msgid ""
+"Not sure when you will be discharged? Book a “pick up when ready” trip and "
+"tell us when the ward lets you go."
+msgstr "不确定什么时候出院？请预约“准备好后接载”行程，等病房让您离开时告诉我们即可。"
+
+#. translators: %s: suburb
+msgid "Other trips from %s"
+msgstr "从 %s 出发的其他行程"
+
+#. translators: %s: place
+msgid "From %s to…"
+msgstr "从 %s 到…"
+
+#. translators: %s: place
+msgid "To %s from…"
+msgstr "从…到 %s"
+
+msgid "We kept what you typed last time."
+msgstr "我们保留了您上次填写的内容。"
+
+msgid "Is anyone travelling in a wheelchair or scooter?"
+msgstr "有人坐轮椅或电动代步车出行吗？"
+
+msgid "Next: your details"
+msgstr "下一步：您的信息"
+
+msgid "‹ Change the trip"
+msgstr "‹ 修改行程"
+
+msgid "For your confirmation and receipt. We text your mobile either way."
+msgstr "用于发送确认和收据。无论如何，我们都会给您的手机发短信。"
+
+msgid "More options"
+msgstr "更多选项"
+
+msgid "return trip, regular trips, flight, vehicle, notes, payment, promo code"
+msgstr "回程、定期行程、航班、车辆、备注、付款、优惠码"
+
+msgid "return trip, regular trips, flight, vehicle, notes, promo code"
+msgstr "回程、定期行程、航班、车辆、备注、优惠码"
+
+msgid "e.g. Frankston Hospital"
+msgstr "例如：Frankston 医院"
+
+msgid "Get a price"
+msgstr "获取价格"
+
+msgid ""
+"An estimate for a wheelchair accessible taxi on the usual route. Traffic and "
+"waiting can change the final fare."
+msgstr "这是无障碍轮椅出租车按常用路线计算的预估价格。交通状况和等候时间可能会影响最终车费。"
+
+msgid "Not ready to book? Text me this quote"
+msgstr "还不想预约？把这个报价用短信发给我"
+
+msgid "Text me"
+msgstr "发短信给我"
+
+msgid "Leave empty"
+msgstr "请留空"
+
+msgid ""
+"One text with the price and a booking link. We may call once to help you "
+"book."
+msgstr "一条包含价格和预约链接的短信。我们可能会打一次电话，帮助您预约。"
+
+msgid "From:"
+msgstr "从："
+
+msgid "To:"
+msgstr "到："
+
+msgid "Sent! Check your messages."
+msgstr "已发送！请查看您的短信。"
+
+msgid "Sent! Check your messages — the text has a link to book."
+msgstr "已发送！请查看您的短信——短信里有预约链接。"
+
+msgid "Questions"
+msgstr "常见问题"

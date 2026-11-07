@@ -81,7 +81,12 @@ function tp_output_meta_tags() {
 	$desc  = tp_meta_description();
 	$title = wp_get_document_title();
 	$path  = isset( $GLOBALS['wp']->request ) ? (string) $GLOBALS['wp']->request : '';
-	$url   = is_singular() ? get_permalink() : home_url( $path ? '/' . $path . '/' : '/' );
+	/**
+	 * Filters this page's own address (canonical and og:url), e.g. for generated route pages.
+	 *
+	 * @param string $url Permalink or request path.
+	 */
+	$url   = (string) apply_filters( 'tp_canonical_url', is_singular() ? get_permalink() : home_url( $path ? '/' . $path . '/' : '/' ) );
 
 	$tags = array(
 		'og:site_name' => get_bloginfo( 'name' ),
@@ -101,7 +106,8 @@ function tp_output_meta_tags() {
 	echo "<meta name=\"twitter:card\" content=\"summary_large_image\">\n";
 
 	if ( is_singular() ) {
-		$canonical = get_permalink();
+		/** This filter is documented above. */
+		$canonical = (string) apply_filters( 'tp_canonical_url', get_permalink() );
 		// Theme-translated pages (e.g. the booking form) are their own page in each language.
 		if ( function_exists( 'tp_lang' ) && 'en' !== tp_lang() && 'en' === tp_post_lang( get_queried_object_id() ) && count( tp_translations( get_queried_object_id() ) ) < 2 && isset( $_GET['lang'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			$canonical = add_query_arg( 'lang', tp_lang(), $canonical );

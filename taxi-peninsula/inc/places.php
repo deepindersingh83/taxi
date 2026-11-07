@@ -324,6 +324,9 @@ add_action(
  */
 function tp_place_suggestions() {
 	$c = ' ' . __( '[CONFIRM on site]', 'taxi-peninsula' );
+	$e = __( '[CONFIRM] Which entrance has level access, and where are wheelchairs to borrow?', 'taxi-peninsula' );
+	$d = __( '[CONFIRM] Where exactly do drivers drop off and pick up?', 'taxi-peninsula' );
+	$p = __( '[CONFIRM] Where exactly do passengers wait for the taxi?', 'taxi-peninsula' );
 	return array(
 		array( 'Frankston Hospital', 'hospital', '2 Hastings Road, Frankston VIC 3199', 'Frankston', -38.151, 145.131, __( 'Main entrance on Hastings Road, with level access and automatic doors.', 'taxi-peninsula' ) . $c, __( 'Set-down bay in front of the main entrance.', 'taxi-peninsula' ) . $c, 'https://www.peninsulahealth.org.au/' ),
 		array( 'Rosebud Hospital', 'hospital', '1527 Point Nepean Road, Rosebud VIC 3939', 'Rosebud', -38.360, 144.905, __( 'Main entrance off Point Nepean Road.', 'taxi-peninsula' ) . $c, __( 'Drop-off zone at the main entrance.', 'taxi-peninsula' ) . $c, 'https://www.peninsulahealth.org.au/' ),
@@ -334,6 +337,26 @@ function tp_place_suggestions() {
 		array( 'Bayside Shopping Centre', 'shopping', '28 Beach Street, Frankston VIC 3199', 'Frankston', -38.143, 145.124, __( 'Ground-floor entrances with automatic doors.', 'taxi-peninsula' ) . $c, __( 'The taxi rank closest to the main entrance — tell us which entrance when you book.', 'taxi-peninsula' ) . $c, '' ),
 		array( 'Karingal Hub', 'shopping', '330 Cranbourne Road, Frankston VIC 3199', 'Frankston', -38.150, 145.160, __( 'Level entrances from the car park.', 'taxi-peninsula' ) . $c, __( 'The taxi rank near the main entrance.', 'taxi-peninsula' ) . $c, '' ),
 		array( 'Westfield Southland', 'shopping', '1239 Nepean Highway, Cheltenham VIC 3192', 'Cheltenham', -37.958, 145.054, __( 'Accessible entrances on every level from the car park.', 'taxi-peninsula' ) . $c, __( 'The taxi rank on the ground floor.', 'taxi-peninsula' ) . $c, '' ),
+		// More hospitals, rehab centres and transport hubs (v2.13). Details to check on site before publishing.
+		array( 'Peninsula Private Hospital', 'hospital', '525 McClelland Drive, Langwarrin VIC 3910', 'Langwarrin', -38.150, 145.170, $e, $d, '' ),
+		array( 'The Bays Hospital', 'hospital', 'Vale Street, Mornington VIC 3931', 'Mornington', -38.222, 145.040, $e, $d, 'https://www.thebays.com.au/' ),
+		array( 'Golf Links Road Rehabilitation Centre', 'hospital', '125 Golf Links Road, Frankston VIC 3199', 'Frankston', -38.163, 145.133, $e, $d, 'https://www.peninsulahealth.org.au/' ),
+		array( 'Casey Hospital', 'hospital', '62-70 Kangan Drive, Berwick VIC 3806', 'Berwick', -38.050, 145.355, $e, $d, 'https://monashhealth.org/' ),
+		array( 'Dandenong Hospital', 'hospital', '135 David Street, Dandenong VIC 3175', 'Dandenong', -37.976, 145.218, $e, $d, 'https://monashhealth.org/' ),
+		array( 'Kingston Centre', 'hospital', '400 Warrigal Road, Heatherton VIC 3202', 'Heatherton', -37.957, 145.083, $e, $d, 'https://monashhealth.org/' ),
+		array( 'Caulfield Hospital', 'hospital', '260 Kooyong Road, Caulfield VIC 3162', 'Caulfield', -37.881, 145.016, $e, $d, 'https://www.alfredhealth.org.au/' ),
+		array( 'Cabrini Malvern', 'hospital', '181-183 Wattletree Road, Malvern VIC 3144', 'Malvern', -37.862, 145.031, $e, $d, 'https://www.cabrini.com.au/' ),
+		array( 'Epworth Richmond', 'hospital', '89 Bridge Road, Richmond VIC 3121', 'Richmond', -37.818, 144.991, $e, $d, 'https://www.epworth.org.au/' ),
+		array( 'Peter MacCallum Cancer Centre', 'hospital', '305 Grattan Street, Melbourne VIC 3000', 'Melbourne', -37.799, 144.957, $e, $d, 'https://www.petermac.org/' ),
+		array( 'The Royal Melbourne Hospital', 'hospital', '300 Grattan Street, Parkville VIC 3050', 'Parkville', -37.799, 144.956, $e, $d, 'https://www.thermh.org.au/' ),
+		array( 'The Royal Children’s Hospital', 'hospital', '50 Flemington Road, Parkville VIC 3052', 'Parkville', -37.794, 144.950, $e, $d, 'https://www.rch.org.au/' ),
+		array( 'Royal Victorian Eye and Ear Hospital', 'hospital', '32 Gisborne Street, East Melbourne VIC 3002', 'East Melbourne', -37.809, 144.976, $e, $d, 'https://eyeandear.org.au/' ),
+		array( 'St Vincent’s Hospital Melbourne', 'hospital', '41 Victoria Parade, Fitzroy VIC 3065', 'Fitzroy', -37.807, 144.975, $e, $d, 'https://www.svhm.org.au/' ),
+		array( 'Austin Hospital', 'hospital', '145 Studley Road, Heidelberg VIC 3084', 'Heidelberg', -37.756, 145.059, $e, $d, 'https://www.austin.org.au/' ),
+		array( 'Box Hill Hospital', 'hospital', '8 Arnold Street, Box Hill VIC 3128', 'Box Hill', -37.814, 145.118, $e, $d, 'https://www.easternhealth.org.au/' ),
+		array( 'Avalon Airport', 'airport', '80 Beach Road, Lara VIC 3212', 'Lara', -38.039, 144.469, $e, $d, 'https://www.avalonairport.com.au/' ),
+		array( 'Southern Cross Station', 'station', 'Spencer Street, Melbourne VIC 3008', 'Melbourne', -37.818, 144.952, $e, $p, '' ),
+		array( 'Flinders Street Station', 'station', 'Flinders Street, Melbourne VIC 3000', 'Melbourne', -37.818, 144.967, $e, $p, '' ),
 	);
 }
 

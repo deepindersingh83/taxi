@@ -71,49 +71,185 @@
 	syncSticky();
 	window.addEventListener('resize', syncSticky);
 
-	/* Booking form: step progress and a live trip summary. */
+	/* Booking form: two steps (trip, then details), a saved draft and a live trip summary. */
 	var bookForm = document.querySelector('[data-form-steps]') ? document.querySelector('[data-form-steps]').closest('form') : null;
 	if (bookForm) {
 		var stepsNav = bookForm.querySelector('[data-form-steps]');
 		var stepItems = Array.prototype.slice.call(stepsNav.querySelectorAll('li[data-step]'));
 		var panels = stepItems.map(function (li) { return bookForm.querySelector('[data-step-panel="' + li.getAttribute('data-step') + '"]'); });
 		var bar = stepsNav.querySelector('.form-steps__bar span');
-		var panelDone = function (panel) {
-			if (!panel) { return false; }
-			var req = panel.querySelectorAll('[required]');
-			for (var i = 0; i < req.length; i++) {
-				var el = req[i];
-				if (el.closest('[hidden]')) { continue; }
-				if (el.type === 'checkbox' ? !el.checked : (el.value.trim() === '' || !el.checkValidity())) { return false; }
-			}
-			return true;
-		};
+		var nextWrap = bookForm.querySelector('[data-step-next-wrap]');
+		var backWrap = bookForm.querySelector('[data-step-back-wrap]');
+		var submitWrap = bookForm.querySelector('[data-step-submit]');
+		var stepped = panels.length === 2 && panels[0] && panels[1] && nextWrap;
 		var current = 0;
+		// Required fields of a step that are empty or wrong (marked for screen readers too).
+		var invalidIn = function (panel) {
+			var first = null;
+			panel.querySelectorAll('[required]').forEach(function (el) {
+				if (el.closest('[hidden]')) { return; }
+				var ok = el.type === 'checkbox' ? el.checked : el.value.trim() !== '' && el.checkValidity();
+				el.setAttribute('aria-invalid', ok ? 'false' : 'true');
+				if (!ok && !first) { first = el; }
+			});
+			return first;
+		};
 		var syncSteps = function () {
 			stepItems.forEach(function (li, i) {
-				li.classList.toggle('is-done', i < current && panelDone(panels[i]));
+				li.classList.toggle('is-done', i < current);
 				li.classList.toggle('is-current', i === current);
 				var link = li.querySelector('a');
 				if (i === current) { link.setAttribute('aria-current', 'step'); } else { link.removeAttribute('aria-current'); }
 			});
 			if (bar) { bar.style.width = ((current + 1) / stepItems.length * 100) + '%'; }
 		};
-		bookForm.addEventListener('focusin', function (e) {
-			var idx = panels.indexOf(e.target.closest('[data-step-panel]'));
-			if (idx > -1 && idx !== current) { current = idx; syncSteps(); }
-		});
-		if ('IntersectionObserver' in window) {
-			var stepIo = new IntersectionObserver(function (entries) {
-				entries.forEach(function (en) {
-					if (en.isIntersecting && !bookForm.contains(document.activeElement)) {
-						current = panels.indexOf(en.target); syncSteps();
-					}
+		var showStep = function (i, focus) {
+			current = i;
+			if (stepped) {
+				panels[0].hidden = i !== 0;
+				panels[1].hidden = i !== 1;
+				nextWrap.hidden = i !== 0;
+				if (backWrap) { backWrap.hidden = i !== 1; }
+				// Step 1 keeps the "call us", "call me back" and "text us" links; only the Book button waits for step 2.
+				if (submitWrap) { submitWrap.classList.toggle('is-waiting', i !== 1); }
+				bookForm.classList.toggle('is-step-2', i === 1);
+			}
+			syncSteps();
+			if (focus) {
+				var target = i === 1 ? panels[1].querySelector('input:not([type=hidden]):not([type=checkbox])') : panels[0].querySelector('input');
+				var top = stepsNav.getBoundingClientRect().top + window.pageYOffset - (parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 80);
+				window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+				if (target) { target.focus({ preventScroll: true }); }
+			}
+		};
+		var goNext = function () {
+			var bad = invalidIn(panels[0]);
+			if (bad) { bad.focus(); return false; }
+			if (current === 0) { once('form_step'); }
+			showStep(1, true);
+			saveDraft();
+			return true;
+		};
+		if (stepped) {
+			bookForm.classList.add('is-stepped');
+			var startAt = 0;
+			// Back from the server with errors: open the step that has the first one.
+			var flaggedField = bookForm.querySelector('[aria-invalid="true"]');
+			if (flaggedField && panels[1].contains(flaggedField)) { startAt = 1; }
+			showStep(startAt, false);
+			bookForm.querySelector('[data-step-next]').addEventListener('click', goNext);
+			var back = bookForm.querySelector('[data-step-back]');
+			if (back) { back.addEventListener('click', function () { showStep(0, true); }); }
+			stepItems.forEach(function (li, i) {
+				li.querySelector('a').addEventListener('click', function (e) {
+					e.preventDefault();
+					if (i === 1) { goNext(); } else { showStep(0, true); }
 				});
-			}, { rootMargin: '-35% 0px -55% 0px' });
-			panels.forEach(function (p) { if (p) { stepIo.observe(p); } });
+			});
+			// Enter on step 1 moves on instead of sending a half-filled form.
+			bookForm.addEventListener('submit', function (e) {
+				if (current === 0) { e.preventDefault(); e.stopImmediatePropagation(); goNext(); }
+			});
+		} else {
+			syncSteps();
 		}
-		bookForm.addEventListener('change', syncSteps);
-		syncSteps();
+
+		/* Lead funnel: started, finished step 1, sent (Bookings → Leads & calls). */
+		var started = false;
+		var once = function (type) {
+			try { if (sessionStorage.getItem('tpF_' + type)) { return; } sessionStorage.setItem('tpF_' + type, '1'); } catch (err) {}
+			tpTrackEvent(type);
+		};
+		var markStart = function () { if (!started) { started = true; once('form_start'); } };
+		bookForm.addEventListener('input', markStart);
+		bookForm.addEventListener('change', markStart);
+
+		/* Saved draft: what was typed comes back if the visitor leaves and returns (this browser only, 1 day). */
+		var DRAFT = 'tpBookDraft';
+		var draftKeys = ['pickup', 'dropoff', 'date', 'time', 'when_ready', 'chair', 'name', 'phone', 'email', 'return_trip', 'return_time', 'flight', 'notes', 'passengers', 'wheelchairs', 'vehicle', 'mobility_aid', 'promo'];
+		var store = function () { try { return window.localStorage; } catch (err) { return null; } };
+		function saveDraft() {
+			var ls = store();
+			if (!ls) { return; }
+			var d = { at: Date.now(), step: current, v: {} };
+			draftKeys.forEach(function (k) {
+				var els = bookForm.querySelectorAll('[name="' + k + '"]');
+				if (!els.length) { return; }
+				var el = els[0];
+				if (el.type === 'radio') { var c = bookForm.querySelector('[name="' + k + '"]:checked'); d.v[k] = c ? c.value : ''; } else if (el.type === 'checkbox') { d.v[k] = el.checked ? '1' : ''; } else { d.v[k] = el.value; }
+			});
+			try { ls.setItem(DRAFT, JSON.stringify(d)); } catch (err) {}
+		}
+		var draftTimer;
+		bookForm.addEventListener('input', function () { clearTimeout(draftTimer); draftTimer = setTimeout(saveDraft, 400); });
+		bookForm.addEventListener('change', saveDraft);
+		(function restoreDraft() {
+			var ls = store();
+			if (!ls || bookForm.querySelector('.notice--error') || bookForm.hasAttribute('data-from-quickbook')) { return; }
+			var d = null;
+			try { d = JSON.parse(ls.getItem(DRAFT) || 'null'); } catch (err) {}
+			if (!d || !d.v || Date.now() - d.at > 864e5) { return; }
+			var p = bookForm.querySelector('[name="pickup"]'), n = bookForm.querySelector('[name="name"]');
+			if ((p && p.value) || (n && n.value) || !(d.v.pickup || d.v.dropoff || d.v.name)) { return; }
+			var today = new Date().toISOString().slice(0, 10);
+			Object.keys(d.v).forEach(function (k) {
+				if (k === 'date' && d.v[k] < today) { return; }
+				bookForm.querySelectorAll('[name="' + k + '"]').forEach(function (el) {
+					if (el.type === 'radio') { el.checked = el.value === d.v[k]; } else if (el.type === 'checkbox') { el.checked = d.v[k] === '1'; } else { el.value = d.v[k]; }
+				});
+			});
+			bookForm.querySelectorAll('[data-toggle-target]').forEach(function (t) { t.dispatchEvent(new Event('change', { bubbles: true })); });
+			var note = bookForm.querySelector('[data-draft-note]');
+			if (note) {
+				note.hidden = false;
+				note.querySelector('[data-draft-clear]').addEventListener('click', function () {
+					try { ls.removeItem(DRAFT); } catch (err) {}
+					window.location.reload();
+				});
+			}
+			if (stepped && d.step === 1 && !invalidIn(panels[0])) { showStep(1, false); }
+		})();
+		// Sent: forget the draft (an error page brings the values back from the server anyway).
+		document.addEventListener('submit', function (e) {
+			if (e.target !== bookForm || e.defaultPrevented) { return; }
+			tpTrackEvent('form_submit');
+			try { var ls = store(); if (ls) { ls.removeItem(DRAFT); } } catch (err) {}
+		});
+
+		/* Short-form question "Is anyone travelling in a wheelchair?" keeps More options in step. */
+		var chairWheel = bookForm.querySelector('[name="wheelchairs"]');
+		bookForm.querySelectorAll('[data-chair]').forEach(function (r) {
+			r.addEventListener('change', function () {
+				if (!r.checked) { return; }
+				var yes = r.value === 'yes';
+				var veh = bookForm.querySelector('[name="vehicle"]:checked');
+				var pick = function (v) { var el = bookForm.querySelector('[name="vehicle"][value="' + v + '"]'); if (el) { el.checked = true; el.dispatchEvent(new Event('change', { bubbles: true })); } };
+				if (yes && veh && veh.value === 'sedan') { pick('wat'); }
+				if (!yes && veh && veh.value === 'wat') { pick('sedan'); }
+				if (chairWheel) { chairWheel.value = yes ? Math.max(1, +chairWheel.value || 0) : 0; chairWheel.dispatchEvent(new Event('input', { bubbles: true })); }
+				var aid = bookForm.querySelector('[name="mobility_aid"]');
+				if (aid) {
+					if (!yes && ['manual', 'power', 'scooter'].indexOf(aid.value) > -1) { aid.value = 'none'; }
+					if (yes && ['walker', 'none'].indexOf(aid.value) > -1) { aid.value = 'manual'; }
+				}
+			});
+		});
+		if (chairWheel) {
+			chairWheel.addEventListener('change', function () {
+				var r = bookForm.querySelector('[data-chair][value="' + (+chairWheel.value > 0 ? 'yes' : 'no') + '"]');
+				if (r) { r.checked = true; }
+			});
+		}
+
+		/* "Ask us to call you back" carries the name and mobile over (kept in this tab only, never in the link). */
+		bookForm.querySelectorAll('[data-callback-link]').forEach(function (a) {
+			a.addEventListener('click', function () {
+				try {
+					var nm = bookForm.querySelector('[name="name"]'), ph = bookForm.querySelector('[name="phone"]');
+					sessionStorage.setItem('tpCallback', JSON.stringify({ name: nm ? nm.value : '', phone: ph ? ph.value : '' }));
+				} catch (err) {}
+			});
+		});
 
 		var summaries = document.querySelectorAll('[data-trip-summary]');
 		var field = function (name) { return bookForm.querySelector('[name="' + name + '"]'); };
@@ -788,6 +924,73 @@
 		update();
 	}
 
+	/* Quick price from two addresses, and "Text me this quote" (inc/lead-tools.php). */
+	document.querySelectorAll('[data-text-quote]').forEach(function (box) {
+		var bcfg = window.tpBooking || {};
+		var ask = box.querySelector('[data-tq-ask]'), send = box.querySelector('[data-tq-send]');
+		var result = box.querySelector('[data-tq-result]'), priceEl = box.querySelector('[data-tq-price]');
+		var status = box.querySelector('[data-tq-status]'), error = box.querySelector('[data-tq-error]');
+		var bookLink = box.querySelector('[data-tq-book]');
+		var showError = function (msg) { error.textContent = msg || ''; error.hidden = !msg; };
+		var last = null;
+		ask.addEventListener('submit', function (e) {
+			e.preventDefault();
+			showError('');
+			var from = ask.elements.from.value.trim(), to = ask.elements.to.value.trim();
+			var bad = !from ? ask.elements.from : (!to ? ask.elements.to : null);
+			[ask.elements.from, ask.elements.to].forEach(function (el) { el.setAttribute('aria-invalid', el === bad ? 'true' : 'false'); });
+			if (bad) { bad.focus(); return; }
+			var btn = ask.querySelector('[type=submit]');
+			btn.classList.add('is-loading'); btn.setAttribute('aria-busy', 'true');
+			fetch(bcfg.estimateUrl + (bcfg.estimateUrl.indexOf('?') > -1 ? '&' : '?') + 'from=' + encodeURIComponent(from) + '&to=' + encodeURIComponent(to))
+				.then(function (r) { return r.json(); })
+				.then(function (d) {
+					btn.classList.remove('is-loading'); btn.removeAttribute('aria-busy');
+					if (!d || !d.ok) { result.hidden = true; showError((bcfg.i18n && bcfg.i18n.noEstimate) || ''); return; }
+					last = { from: from, to: to };
+					priceEl.textContent = ((bcfg.i18n && bcfg.i18n.estimate) || 'Estimated fare') + ': ' + d.text;
+					bookLink.href = box.getAttribute('data-book') + (box.getAttribute('data-book').indexOf('?') > -1 ? '&' : '?') + 'pickup=' + encodeURIComponent(from) + '&dropoff=' + encodeURIComponent(to);
+					result.hidden = false;
+					if (status) { status.textContent = ''; }
+					result.focus({ preventScroll: false });
+					tpTrackEvent('quote_view');
+				})
+				.catch(function () { btn.classList.remove('is-loading'); btn.removeAttribute('aria-busy'); showError((bcfg.i18n && bcfg.i18n.noEstimate) || ''); });
+		});
+		if (send) {
+			send.addEventListener('submit', function (e) {
+				e.preventDefault();
+				if (!last) { return; }
+				var phone = send.elements.phone;
+				if (!phone.value.trim() || (typeof auPhone === 'function' && !auPhone(phone.value))) { phone.setAttribute('aria-invalid', 'true'); phone.focus(); return; }
+				phone.setAttribute('aria-invalid', 'false');
+				var btn = send.querySelector('[type=submit]');
+				btn.disabled = true;
+				var data = new FormData();
+				data.append('from', last.from); data.append('to', last.to); data.append('phone', phone.value); data.append('hp', send.elements.hp ? send.elements.hp.value : '');
+				fetch(box.getAttribute('data-url'), { method: 'POST', body: data })
+					.then(function (r) { return r.json(); })
+					.then(function (d) { btn.disabled = false; status.textContent = (d && d.message) || ''; status.classList.toggle('is-error', !(d && d.ok)); if (d && d.ok) { send.hidden = true; } })
+					.catch(function () { btn.disabled = false; });
+			});
+		}
+	});
+
+	/* "Text us your booking": the message includes what was typed in the booking form. */
+	document.querySelectorAll('[data-text-us]').forEach(function (a) {
+		a.addEventListener('click', function () {
+			var form = a.closest('form') || document.querySelector('form.booking-form');
+			if (!form) { return; }
+			var l = {};
+			try { l = JSON.parse(a.getAttribute('data-text-us')); } catch (err) { return; }
+			var v = function (n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; };
+			var chair = form.querySelector('[name="chair"]:checked');
+			var when = [v('date'), v('time')].filter(Boolean).join(' ');
+			var body = [l.hi, l.from + ' ' + v('pickup'), l.to + ' ' + v('dropoff'), l.when + ' ' + when, l.wc + ' ' + (chair ? (chair.value === 'yes' ? l.yes : l.no) : ''), l.name + ' ' + v('name')].join('\n');
+			a.href = a.href.split('?')[0] + '?&body=' + encodeURIComponent(body);
+		});
+	});
+
 	/* Cookie consent + Google Analytics (loaded only after "Accept"). */
 	var consentCfg = window.tpConsent;
 	if (consentCfg && consentCfg.ga) {
@@ -1144,6 +1347,33 @@
 			suggest.hidden = false;
 		}
 	}
+
+	/* Count a lead event (booking form funnel, quotes): Bookings → Leads & calls, and Google Analytics when it is on. */
+	function tpTrackEvent(type) {
+		var cfg = window.tpTrack;
+		if (window.gtag) { try { window.gtag('event', 'booking_' + type); } catch (err) {} }
+		if (!cfg || !cfg.url) { return; }
+		var data = new FormData();
+		data.append('type', type);
+		data.append('page', location.pathname);
+		if (navigator.sendBeacon) {
+			navigator.sendBeacon(cfg.url, data);
+		} else {
+			try { fetch(cfg.url, { method: 'POST', body: data, keepalive: true }); } catch (err) {}
+		}
+	}
+
+	/* The call-back form picks up the name and mobile typed into the booking form. */
+	(function () {
+		var saved = null;
+		try { saved = JSON.parse(sessionStorage.getItem('tpCallback') || 'null'); } catch (err) {}
+		if (!saved) { return; }
+		['name', 'phone'].forEach(function (k) {
+			var el = document.getElementById('cb-' + k);
+			if (el && !el.value && saved[k]) { el.value = saved[k]; }
+		});
+		if (document.getElementById('cb-phone')) { try { sessionStorage.removeItem('tpCallback'); } catch (err) {} }
+	})();
 
 	/* Lead tracking: count taps on phone / WhatsApp / SMS / email links, and
 	   show a tracking number to visitors from a matching source. */

@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TP_VERSION', '2.12.0' );
+define( 'TP_VERSION', '2.13.0' );
 define( 'TP_DIR', get_template_directory() );
 define( 'TP_URI', get_template_directory_uri() );
 
@@ -92,6 +92,9 @@ require TP_DIR . '/inc/booking-verify.php';
 require TP_DIR . '/inc/account-confirm.php';
 require TP_DIR . '/inc/referrals.php';
 require TP_DIR . '/inc/ads-conversions.php';
+require TP_DIR . '/inc/lead-tools.php';
+require TP_DIR . '/inc/place-routes.php';
+require TP_DIR . '/inc/speed-report.php';
 require TP_DIR . '/inc/booking-index.php';
 require TP_DIR . '/inc/review-replies.php';
 require TP_DIR . '/inc/hours.php';

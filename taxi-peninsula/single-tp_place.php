@@ -34,7 +34,7 @@ while ( have_posts() ) :
 			<?php endif; ?>
 
 			<?php if ( tp_show_featured_image() ) : ?>
-				<figure class="place-page__photo"><?php the_post_thumbnail( 'large', array( 'loading' => 'eager' ) ); ?>
+				<figure class="place-page__photo"><?php the_post_thumbnail( 'large', array( 'loading' => 'eager', 'fetchpriority' => 'high' ) ); ?>
 					<?php if ( get_the_post_thumbnail_caption() ) : ?><figcaption><?php the_post_thumbnail_caption(); ?></figcaption><?php endif; ?>
 				</figure>
 			<?php endif; ?>
@@ -130,7 +130,7 @@ while ( have_posts() ) :
 						<ul class="area-times__list">
 							<?php foreach ( $tp_times as $t ) : ?>
 								<?php /* translators: %d: minutes */ ?>
-								<li><span><?php echo esc_html( $t[0] ); ?></span><strong><?php echo esc_html( sprintf( __( 'about %d min', 'taxi-peninsula' ), $t[1] ) ); ?></strong></li>
+								<li><span><?php if ( function_exists( 'tp_route_url' ) && tp_setting( 'route_pages' ) ) : ?><a href="<?php echo esc_url( tp_route_url( $tp_id, $t[0] ) ); ?>"><?php echo esc_html( $t[0] ); ?></a><?php else : ?><?php echo esc_html( $t[0] ); ?><?php endif; ?></span><strong><?php echo esc_html( sprintf( __( 'about %d min', 'taxi-peninsula' ), $t[1] ) ); ?></strong></li>
 							<?php endforeach; ?>
 						</ul>
 						<p class="area-times__note"><?php esc_html_e( 'A rough guide without traffic. We allow extra time for loading your wheelchair.', 'taxi-peninsula' ); ?></p>

@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.12.0\n"
+"Project-Id-Version: Taxi Peninsula 2.13.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
@@ -6137,3 +6137,296 @@ msgstr ""
 " quý khách đến từ một quảng cáo, mã số lượt nhấp quảng cáo sẽ được gửi đi; "
 "với một số chuyến đi, email và số điện thoại của quý khách chỉ được gửi dưới "
 "dạng đã mã hóa (băm) và không thể đọc ngược lại"
+
+msgid "Please enter a valid email address, or leave it empty."
+msgstr "Xin nhập địa chỉ email hợp lệ, hoặc để trống."
+
+msgid "What will my trip cost?"
+msgstr "Chuyến đi của tôi tốn bao nhiêu?"
+
+msgid ""
+"Type two addresses for a price straight away. We can text it to you, with a "
+"link to book."
+msgstr ""
+"Nhập hai địa chỉ để biết giá ngay. Chúng tôi có thể nhắn giá cho bạn, kèm "
+"đường link để đặt xe."
+
+msgid "Hi, I’d like to book a taxi."
+msgstr "Xin chào, tôi muốn đặt taxi."
+
+msgid "Date and time:"
+msgstr "Ngày và giờ:"
+
+msgid "Wheelchair (yes/no):"
+msgstr "Xe lăn (có/không):"
+
+msgid "Name:"
+msgstr "Tên:"
+
+msgid "Text us your booking"
+msgstr "Nhắn tin để đặt xe"
+
+msgid "Prefer to text? Text us your booking"
+msgstr "Bạn thích nhắn tin hơn? Nhắn tin để đặt xe"
+
+msgid "Your messages app opens with a short template to fill in."
+msgstr "Ứng dụng tin nhắn sẽ mở ra với một mẫu ngắn để bạn điền vào."
+
+msgid "Quotes by text are not available at the moment. Please call us."
+msgstr "Hiện chưa thể gửi báo giá qua tin nhắn. Xin gọi cho chúng tôi."
+
+msgid "Please enter an Australian mobile number, e.g. 0412 345 678."
+msgstr "Xin nhập số di động ở Úc, ví dụ: 0412 345 678."
+
+#. translators: %s: phone
+msgid "Too many quotes sent. Please call us on %s."
+msgstr "Đã gửi quá nhiều báo giá. Xin gọi cho chúng tôi theo số %s."
+
+msgid ""
+"We couldn’t work out that trip. Please check both addresses, or call us for a"
+" price."
+msgstr ""
+"Chúng tôi không tính được chuyến đi đó. Xin kiểm tra lại cả hai địa chỉ, hoặc"
+" gọi cho chúng tôi để biết giá."
+
+#. translators: 1: site 2: from 3: to 4: price 5: booking link 6: phone
+msgid ""
+"%1$s: wheelchair taxi from %2$s to %3$s is about %4$s. Book online: %5$s or "
+"call %6$s."
+msgstr ""
+"%1$s: taxi xe lăn từ %2$s đến %3$s khoảng %4$s. Đặt trực tuyến: %5$s hoặc gọi"
+" %6$s."
+
+msgid "The text could not be sent just now. Please call us."
+msgstr "Hiện chưa gửi được tin nhắn. Xin gọi cho chúng tôi."
+
+#. translators: 1: place, e.g. Frankston Station 2: suburb
+#. translators: 1: suburb 2: place, e.g. Frankston Hospital
+msgid "Wheelchair taxi from %1$s to %2$s"
+msgstr "Taxi xe lăn từ %1$s đến %2$s"
+
+#. translators: 1: route title 2: minutes 3: km
+msgid "%1$s: about %2$d minutes and %3$s km."
+msgstr "%1$s: khoảng %2$d phút và %3$s km."
+
+#. translators: %s: fare range
+msgid "Fare about %s."
+msgstr "Giá cước khoảng %s."
+
+#. translators: %s: phone
+msgid "Ramp and hoist vans, door to door. Book online or call %s."
+msgstr ""
+"Xe có dốc lên xuống và thang nâng, đón tận nơi, đưa tận cửa. Đặt xe trực "
+"tuyến hoặc gọi %s."
+
+#. translators: 1: from 2: to
+msgid "How much is a wheelchair taxi from %1$s to %2$s?"
+msgstr "Taxi xe lăn từ %1$s đến %2$s giá bao nhiêu?"
+
+#. translators: 1: fare range 2: phone
+msgid ""
+"Usually about %1$s for a wheelchair accessible taxi, depending on the exact "
+"address, traffic and time of day. MPTP members pay half (up to the subsidy "
+"limit), and NDIS and aged-care accounts can be invoiced. Call %2$s for a firm"
+" price."
+msgstr ""
+"Thường khoảng %1$s cho một chiếc taxi cho xe lăn, tùy theo địa chỉ cụ thể, "
+"tình hình giao thông và thời điểm trong ngày. Thành viên MPTP trả một nửa "
+"(trong giới hạn trợ cấp), và tài khoản NDIS và chăm sóc người cao tuổi có thể"
+" được lập hóa đơn. Xin gọi %2$s để biết giá chính xác."
+
+#. translators: %s: phone
+msgid ""
+"It depends on the exact address and time of day — call %s for a price. MPTP "
+"members pay half (up to the subsidy limit), and NDIS and aged-care accounts "
+"can be invoiced."
+msgstr ""
+"Giá tùy theo địa chỉ cụ thể và thời điểm trong ngày — xin gọi %s để biết giá."
+" Thành viên MPTP trả một nửa (trong giới hạn trợ cấp), và tài khoản NDIS và "
+"chăm sóc người cao tuổi có thể được lập hóa đơn."
+
+#. translators: 1: from 2: to
+msgid "How long does the trip from %1$s to %2$s take?"
+msgstr "Chuyến đi từ %1$s đến %2$s mất bao lâu?"
+
+#. translators: 1: minutes 2: km
+msgid ""
+"About %1$d minutes for the %2$s km without traffic. We allow a few extra "
+"minutes to load and secure your wheelchair."
+msgstr ""
+"Khoảng %1$d phút cho %2$s km khi đường vắng. Chúng tôi dành thêm vài phút để "
+"đưa xe lăn của bạn lên xe và cố định an toàn."
+
+#. translators: %s: place
+msgid "Where do you pick up at %s?"
+msgstr "Quý vị đón khách ở đâu tại %s?"
+
+#. translators: %s: place
+msgid "Where do you drop off at %s?"
+msgstr "Quý vị trả khách ở đâu tại %s?"
+
+#. translators: %s: area
+msgid "Can you take me home to %s when I’m discharged?"
+msgstr "Quý vị có thể đưa tôi về nhà ở %s khi tôi xuất viện không?"
+
+msgid ""
+"Yes. Book a “pick up when ready” trip: choose the day, then tap “I’m ready” "
+"on your booking page or call us when the ward lets you go, and we send the "
+"driver."
+msgstr ""
+"Có. Hãy đặt chuyến “đón khi sẵn sàng”: chọn ngày, rồi bấm “Tôi đã sẵn sàng” "
+"trên trang đặt xe của bạn hoặc gọi cho chúng tôi khi khoa cho bạn về, và "
+"chúng tôi sẽ cử tài xế đến."
+
+msgid ""
+"Yes. Tell us how many people are travelling when you book; carers travel at "
+"no extra charge."
+msgstr ""
+"Có. Khi đặt xe, xin cho chúng tôi biết có bao nhiêu người đi cùng; người chăm"
+" sóc đi cùng không phải trả thêm phí."
+
+#. translators: 1: minutes 2: km
+msgid ""
+"About %1$d minutes, %2$s km. Ramp and hoist vans with trained drivers, door "
+"to door."
+msgstr ""
+"Khoảng %1$d phút, %2$s km. Xe có dốc lên xuống và thang nâng, tài xế được đào"
+" tạo, đón tận nơi, đưa tận cửa."
+
+msgid "Trip at a glance"
+msgstr "Tóm tắt chuyến đi"
+
+msgid "Travel time"
+msgstr "Thời gian đi"
+
+#. translators: %d: minutes
+msgid "Distance"
+msgstr "Quãng đường"
+
+msgid "Usual fare"
+msgstr "Giá cước thông thường"
+
+msgid ""
+"A guide based on the usual driving route without traffic. The fare depends on"
+" the exact address, time and waiting; MPTP members pay half up to the subsidy"
+" limit."
+msgstr ""
+"Thông tin tham khảo dựa trên tuyến đường thường đi khi đường vắng. Giá cước "
+"tùy theo địa chỉ cụ thể, thời gian và thời gian chờ; thành viên MPTP trả một "
+"nửa trong giới hạn trợ cấp."
+
+#. translators: 1: place 2: suburb
+msgid "Book a pick-up from %1$s to %2$s"
+msgstr "Đặt xe đón từ %1$s đến %2$s"
+
+#. translators: 1: suburb 2: place
+msgid "Book your trip from %1$s to %2$s"
+msgstr "Đặt chuyến đi từ %1$s đến %2$s"
+
+#. translators: %s: place
+msgid "Where we pick you up at %s"
+msgstr "Nơi chúng tôi đón bạn tại %s"
+
+#. translators: %s: place
+msgid "Arriving at %s"
+msgstr "Đến %s"
+
+#. translators: %s: place
+msgid "Everything about getting to %s by wheelchair taxi"
+msgstr "Mọi điều cần biết về việc đi đến %s bằng taxi xe lăn"
+
+#. translators: 1: place 2: suburb
+msgid "Going home from %1$s to %2$s"
+msgstr "Về nhà từ %1$s đến %2$s"
+
+#. translators: 1: place 2: suburb
+msgid ""
+"Not sure when you will be discharged? Book a “pick up when ready” trip and "
+"tell us when the ward lets you go."
+msgstr ""
+"Chưa biết khi nào được xuất viện? Hãy đặt chuyến “đón khi sẵn sàng” và báo "
+"cho chúng tôi khi khoa cho bạn về."
+
+#. translators: %s: suburb
+msgid "Other trips from %s"
+msgstr "Các chuyến đi khác từ %s"
+
+#. translators: %s: place
+msgid "From %s to…"
+msgstr "Từ %s đến…"
+
+#. translators: %s: place
+msgid "To %s from…"
+msgstr "Đến %s từ…"
+
+msgid "We kept what you typed last time."
+msgstr "Chúng tôi đã giữ lại những gì bạn nhập lần trước."
+
+msgid "Is anyone travelling in a wheelchair or scooter?"
+msgstr "Có ai đi bằng xe lăn hoặc xe điện (scooter) không?"
+
+msgid "Next: your details"
+msgstr "Tiếp theo: thông tin của bạn"
+
+msgid "‹ Change the trip"
+msgstr "‹ Thay đổi chuyến đi"
+
+msgid "For your confirmation and receipt. We text your mobile either way."
+msgstr ""
+"Để gửi xác nhận và biên nhận cho bạn. Dù sao chúng tôi cũng sẽ nhắn tin vào "
+"số di động của bạn."
+
+msgid "More options"
+msgstr "Thêm tùy chọn"
+
+msgid "return trip, regular trips, flight, vehicle, notes, payment, promo code"
+msgstr ""
+"chuyến về, chuyến đi định kỳ, chuyến bay, xe, ghi chú, thanh toán, mã khuyến "
+"mãi"
+
+msgid "return trip, regular trips, flight, vehicle, notes, promo code"
+msgstr "chuyến về, chuyến đi định kỳ, chuyến bay, xe, ghi chú, mã khuyến mãi"
+
+msgid "e.g. Frankston Hospital"
+msgstr "ví dụ: Frankston Hospital"
+
+msgid "Get a price"
+msgstr "Xem giá"
+
+msgid ""
+"An estimate for a wheelchair accessible taxi on the usual route. Traffic and "
+"waiting can change the final fare."
+msgstr ""
+"Giá ước tính cho taxi cho xe lăn theo tuyến đường thường đi. Giao thông và "
+"thời gian chờ có thể làm thay đổi giá cước cuối cùng."
+
+msgid "Not ready to book? Text me this quote"
+msgstr "Chưa sẵn sàng đặt xe? Nhắn báo giá này cho tôi"
+
+msgid "Text me"
+msgstr "Nhắn cho tôi"
+
+msgid "Leave empty"
+msgstr "Để trống"
+
+msgid ""
+"One text with the price and a booking link. We may call once to help you "
+"book."
+msgstr ""
+"Một tin nhắn có giá và đường link đặt xe. Chúng tôi có thể gọi một lần để "
+"giúp bạn đặt xe."
+
+msgid "From:"
+msgstr "Từ:"
+
+msgid "To:"
+msgstr "Đến:"
+
+msgid "Sent! Check your messages."
+msgstr "Đã gửi! Xin xem tin nhắn của bạn."
+
+msgid "Sent! Check your messages — the text has a link to book."
+msgstr "Đã gửi! Xin xem tin nhắn của bạn — tin nhắn có đường link để đặt xe."
+
+msgid "Questions"
+msgstr "Câu hỏi"

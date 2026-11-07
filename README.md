@@ -8,6 +8,43 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### New in v2.13 — shorter booking form, more leads, route pages
+**Booking form: 2 short steps instead of one long page**
+- **Step 1, your trip:** pick-up, drop-off, date, time, and "Is anyone travelling in a wheelchair or scooter? Yes / No". Then **Next**.
+- **Step 2, your details:** name, mobile and email. **Email is now optional**: the mobile gets the confirmation, and an email that is typed is still checked.
+- Everything else is folded into **More options**: return trip, regular trips, flight, vehicle, passengers, notes, payment and promo code. It opens by itself when something in it is filled in or needs fixing.
+- On a phone, step 1 shows 7 fields instead of 24.
+- **Saved draft:** if a visitor leaves halfway, what they typed is back when they return (same browser, for one day), with a "Start again" button. It is cleared once the booking is sent.
+- "Ask us to call you back" carries over the name and mobile already typed.
+- **In the first screen on phones:**
+  - Booking page: the form comes before the "how it works" steps.
+  - Home page: the quick-book card sits straight under the heading.
+
+**Where people stop** (Reports → Leads & calls)
+- A funnel shows how many visitors started the form, finished step 1, sent it, and how many bookings were saved.
+- Each step is also sent to Google Analytics, when it is on, as `booking_form_start`, `booking_form_step` and `booking_form_submit`.
+
+**More leads**
+- **Text us your booking:** a button under the booking form, on the booking page and on the contact page. It opens the visitor's messages app with a short template, already filled in with what they typed. It uses your main number when that is a mobile (Settings → Marketing & SEO → Leads & follow-up).
+- **Quick price + "Text me this quote":**
+  - Visitors type two addresses and see a price straight away, with "Book this trip".
+  - "Text me" sends the price and a booking link to their mobile.
+  - The number appears in Leads & calls, marked if that mobile has not booked yet, so it is worth a call.
+  - It's a home page section, and the `[tp_text_quote]` shortcode. Limits: 3 texts per number per day, and 4 per connection per hour.
+- **Phone taps to follow up:** when someone taps your number but no booking comes from the same browser within 30 minutes, the tap is listed with its time, page and source, and the menu shows a count. Match it with missed calls on the phone and call back.
+
+**SEO**
+- **Route pages**, such as `/wheelchair-taxi-to/frankston-hospital/from-mornington/` ("Wheelchair taxi from Mornington to Frankston Hospital"):
+  - Every place page that has a map position gets one for each of its 8 nearest suburbs.
+  - Each has its own travel time, distance and usual fare from your rates, the drop-off details, a booking card, questions (with FAQ data for Google), a "going home" section for hospitals, and links to other routes.
+  - They are in the XML sitemap and linked from the place page's travel times and from each suburb page ("Popular trips from …").
+  - They can be switched off in Settings → Local pages.
+- **More place suggestions:** 19 more hospitals, rehab centres, stations and Avalon Airport, added as drafts with [CONFIRM] notes. Check each one on site before publishing.
+- **Faster images:**
+  - New uploads are saved as AVIF when the server supports it (about a quarter smaller than WebP), otherwise WebP.
+  - The photo on a place page is fetched first.
+- **Reports → Site speed:** Google's real-visitor Core Web Vitals (LCP, INP, CLS) on phones for the home and booking pages, with the lab score and what to do about anything not "Good". It uses the free PageSpeed Insights API; a key is optional.
+
 ### New in v2.12 — confirmed accounts, hospital pages, Google Ads conversions, refer a friend
 **Confirm new accounts** (Settings → Spam & security → "Confirm new accounts")
 - When someone makes an account:

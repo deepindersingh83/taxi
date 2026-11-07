@@ -323,8 +323,29 @@ function tp_sanitize_booking( array $raw, $strict = true ) {
 		}
 	}
 
-	if ( $strict && '' === $d['email'] ) {
-		$errors['email'] = __( 'Please enter a valid email address.', 'taxi-peninsula' );
+	// Email is optional (the mobile gets the confirmation), but must be right when given.
+	if ( $strict && '' !== trim( (string) ( $raw['email'] ?? '' ) ) && ! is_email( $d['email'] ) ) {
+		$errors['email'] = __( 'Please enter a valid email address, or leave it empty.', 'taxi-peninsula' );
+	}
+
+	// "Is anyone travelling in a wheelchair?" on the short form sets the vehicle unless More options says otherwise.
+	$chair = sanitize_key( $raw['chair'] ?? '' );
+	if ( 'no' === $chair ) {
+		$d['wheelchairs'] = 0;
+		if ( 'wat' === $d['vehicle'] ) {
+			$d['vehicle'] = 'sedan';
+		}
+		if ( in_array( $d['mobility_aid'], array( 'manual', 'power', 'scooter' ), true ) ) {
+			$d['mobility_aid'] = 'none';
+		}
+	} elseif ( 'yes' === $chair ) {
+		$d['wheelchairs'] = max( 1, $d['wheelchairs'] );
+		if ( 'sedan' === $d['vehicle'] ) {
+			$d['vehicle'] = 'wat';
+		}
+		if ( in_array( $d['mobility_aid'], array( 'walker', 'none' ), true ) ) {
+			$d['mobility_aid'] = 'manual';
+		}
 	}
 
 	if ( '' !== $d['phone'] ) {

@@ -16,7 +16,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const TP_TRACK_DB = 1;
+const TP_TRACK_DB = 2;
 
 function tp_track_table() {
 	global $wpdb;
@@ -43,10 +43,12 @@ add_action(
 				medium varchar(60) NOT NULL DEFAULT '',
 				campaign varchar(100) NOT NULL DEFAULT '',
 				device varchar(10) NOT NULL DEFAULT '',
+				visitor varchar(16) NOT NULL DEFAULT '',
 				PRIMARY KEY  (id),
 				KEY created (created),
 				KEY type (type),
-				KEY ref_id (ref_id)
+				KEY ref_id (ref_id),
+				KEY visitor (visitor)
 			) {$wpdb->get_charset_collate()};"
 		);
 		update_option( 'tp_track_db', TP_TRACK_DB, false );
@@ -68,6 +70,12 @@ function tp_track_types() {
 		'signup'   => __( 'Newsletter sign-ups', 'taxi-peninsula' ),
 		'view'     => __( 'Partner page views', 'taxi-peninsula' ),
 		'qr'       => __( 'QR code scans', 'taxi-peninsula' ),
+		// Booking form funnel (shown as steps on the report, not as totals).
+		'form_start'  => __( 'Started the booking form', 'taxi-peninsula' ),
+		'form_step'   => __( 'Finished step 1 (trip)', 'taxi-peninsula' ),
+		'form_submit' => __( 'Sent the booking form', 'taxi-peninsula' ),
+		'quote_view'  => __( 'Prices checked (quick price)', 'taxi-peninsula' ),
+		'quote_text'  => __( 'Quotes sent by text', 'taxi-peninsula' ),
 	);
 }
 
@@ -211,8 +219,10 @@ function tp_track( $type, $ref_id = 0, $page = '' ) {
 			'medium'   => $medium,
 			'campaign' => $campaign,
 			'device'   => preg_match( '/Mobi|Android|iPhone/i', $ua ) ? 'mobile' : 'desktop',
+			// Same browser and connection, so a phone tap can be matched with a booking that followed (no cookie).
+			'visitor'  => function_exists( 'tp_device_hash' ) ? substr( tp_device_hash(), 0, 16 ) : '',
 		),
-		array( '%s', '%s', '%d', '%s', '%s', '%s', '%s', '%s' )
+		array( '%s', '%s', '%d', '%s', '%s', '%s', '%s', '%s', '%s' )
 	);
 }
 
@@ -243,7 +253,7 @@ add_action(
 				'permission_callback' => '__return_true',
 				'callback'            => static function ( WP_REST_Request $req ) {
 					$type = sanitize_key( (string) $req->get_param( 'type' ) );
-					if ( ! in_array( $type, array( 'call', 'whatsapp', 'sms', 'email' ), true ) || ! tp_rate_limit( 'track', 60, 10 * MINUTE_IN_SECONDS ) ) {
+					if ( ! in_array( $type, array( 'call', 'whatsapp', 'sms', 'email', 'form_start', 'form_step', 'form_submit', 'quote_view' ), true ) || ! tp_rate_limit( 'track', 60, 10 * MINUTE_IN_SECONDS ) ) {
 						return new WP_REST_Response( null, 204 );
 					}
 					$page = (string) wp_parse_url( esc_url_raw( (string) $req->get_param( 'page' ) ), PHP_URL_PATH );
@@ -355,8 +365,31 @@ function tp_render_leads_page() {
 				</a>
 			<?php endforeach; ?>
 		</p>
+		<?php
+		/** Extra blocks at the top of the report (phone taps to follow up, quotes by text). */
+		do_action( 'tp_leads_page_top' );
+		$funnel = array( 'form_start', 'form_step', 'form_submit', 'booking' );
+		$count  = static fn( $k ) => isset( $totals[ $k ] ) ? (int) $totals[ $k ]->n : 0;
+		?>
+		<h2><?php esc_html_e( 'Booking form: where people stop', 'taxi-peninsula' ); ?></h2>
+		<?php if ( ! $count( 'form_start' ) ) : ?>
+			<p><?php esc_html_e( 'Nothing recorded in this period yet. Each visitor who starts typing in the booking form is counted once per visit.', 'taxi-peninsula' ); ?></p>
+		<?php else : ?>
+			<ol class="tp-funnel">
+				<?php foreach ( $funnel as $i => $k ) : ?>
+					<?php $pct = (int) round( 100 * $count( $k ) / max( 1, $count( 'form_start' ) ) ); ?>
+					<li>
+						<span class="tp-funnel__label"><?php echo esc_html( 'booking' === $k ? __( 'Booking saved', 'taxi-peninsula' ) : $types[ $k ] ); ?></span>
+						<span class="tp-funnel__bar"><span style="width: <?php echo esc_attr( min( 100, $pct ) ); ?>%"></span></span>
+						<span class="tp-funnel__n"><?php echo esc_html( number_format_i18n( $count( $k ) ) . ' (' . min( 100, $pct ) . '%)' ); ?></span>
+					</li>
+				<?php endforeach; ?>
+			</ol>
+			<p class="description"><?php esc_html_e( '“Sent” can be higher than “Booking saved” when the form came back with a mistake to fix, or a text code was not entered. Bookings also count those made from other forms (quotes, partner pages).', 'taxi-peninsula' ); ?></p>
+		<?php endif; ?>
+
 		<ul class="tp-leads__totals">
-			<?php foreach ( $types as $k => $label ) : ?>
+			<?php foreach ( array_diff_key( $types, array_flip( array( 'form_start', 'form_step', 'form_submit' ) ) ) as $k => $label ) : ?>
 				<li><strong><?php echo esc_html( number_format_i18n( isset( $totals[ $k ] ) ? (int) $totals[ $k ]->n : 0 ) ); ?></strong><span><?php echo esc_html( $label ); ?></span></li>
 			<?php endforeach; ?>
 		</ul>

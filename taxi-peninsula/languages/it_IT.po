@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.12.0\n"
+"Project-Id-Version: Taxi Peninsula 2.13.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
@@ -6170,3 +6170,302 @@ msgstr ""
 "da un annuncio, viene inviato il numero del clic sull’annuncio; per alcune "
 "corse, la Sua email e il Suo numero di telefono vengono inviati solo in forma"
 " cifrata (hash) che non può essere riconvertita"
+
+msgid "Please enter a valid email address, or leave it empty."
+msgstr "Inserisca un indirizzo e-mail valido oppure lasci il campo vuoto."
+
+msgid "What will my trip cost?"
+msgstr "Quanto costerà il mio viaggio?"
+
+msgid ""
+"Type two addresses for a price straight away. We can text it to you, with a "
+"link to book."
+msgstr ""
+"Scriva due indirizzi e vedrà subito il prezzo. Possiamo inviarglielo via SMS,"
+" con un link per prenotare."
+
+msgid "Hi, I’d like to book a taxi."
+msgstr "Buongiorno, vorrei prenotare un taxi."
+
+msgid "Date and time:"
+msgstr "Data e ora:"
+
+msgid "Wheelchair (yes/no):"
+msgstr "Sedia a rotelle (sì/no):"
+
+msgid "Name:"
+msgstr "Nome:"
+
+msgid "Text us your booking"
+msgstr "Prenoti via SMS"
+
+msgid "Prefer to text? Text us your booking"
+msgstr "Preferisce scrivere? Prenoti via SMS"
+
+msgid "Your messages app opens with a short template to fill in."
+msgstr "Si aprirà l’app dei messaggi con un breve modello da compilare."
+
+msgid "Quotes by text are not available at the moment. Please call us."
+msgstr ""
+"Al momento non è possibile inviare preventivi via SMS. La preghiamo di "
+"chiamarci."
+
+msgid "Please enter an Australian mobile number, e.g. 0412 345 678."
+msgstr "Inserisca un numero di cellulare australiano, ad es. 0412 345 678."
+
+#. translators: %s: phone
+msgid "Too many quotes sent. Please call us on %s."
+msgstr "Sono stati inviati troppi preventivi. Ci chiami al numero %s."
+
+msgid ""
+"We couldn’t work out that trip. Please check both addresses, or call us for a"
+" price."
+msgstr ""
+"Non siamo riusciti a calcolare questo viaggio. Controlli entrambi gli "
+"indirizzi oppure ci chiami per un prezzo."
+
+#. translators: 1: site 2: from 3: to 4: price 5: booking link 6: phone
+msgid ""
+"%1$s: wheelchair taxi from %2$s to %3$s is about %4$s. Book online: %5$s or "
+"call %6$s."
+msgstr ""
+"%1$s: taxi per sedia a rotelle da %2$s a %3$s circa %4$s. Prenoti online: "
+"%5$s o chiami il %6$s."
+
+msgid "The text could not be sent just now. Please call us."
+msgstr ""
+"Al momento non è stato possibile inviare l’SMS. La preghiamo di chiamarci."
+
+#. translators: 1: place, e.g. Frankston Station 2: suburb
+#. translators: 1: suburb 2: place, e.g. Frankston Hospital
+msgid "Wheelchair taxi from %1$s to %2$s"
+msgstr "Taxi per sedia a rotelle da %1$s a %2$s"
+
+#. translators: 1: route title 2: minutes 3: km
+msgid "%1$s: about %2$d minutes and %3$s km."
+msgstr "%1$s: circa %2$d minuti e %3$s km."
+
+#. translators: %s: fare range
+msgid "Fare about %s."
+msgstr "Tariffa di circa %s."
+
+#. translators: %s: phone
+msgid "Ramp and hoist vans, door to door. Book online or call %s."
+msgstr ""
+"Veicoli con rampa e sollevatore, porta a porta. Prenoti online o chiami il "
+"numero %s."
+
+#. translators: 1: from 2: to
+msgid "How much is a wheelchair taxi from %1$s to %2$s?"
+msgstr "Quanto costa un taxi per sedia a rotelle da %1$s a %2$s?"
+
+#. translators: 1: fare range 2: phone
+msgid ""
+"Usually about %1$s for a wheelchair accessible taxi, depending on the exact "
+"address, traffic and time of day. MPTP members pay half (up to the subsidy "
+"limit), and NDIS and aged-care accounts can be invoiced. Call %2$s for a firm"
+" price."
+msgstr ""
+"Di solito circa %1$s per un taxi accessibile in sedia a rotelle, a seconda "
+"dell’indirizzo esatto, del traffico e dell’ora. Gli iscritti MPTP pagano la "
+"metà (fino al limite del contributo) e per i conti NDIS e di assistenza "
+"anziani possiamo emettere fattura. Chiami il numero %2$s per un prezzo "
+"sicuro."
+
+#. translators: %s: phone
+msgid ""
+"It depends on the exact address and time of day — call %s for a price. MPTP "
+"members pay half (up to the subsidy limit), and NDIS and aged-care accounts "
+"can be invoiced."
+msgstr ""
+"Dipende dall’indirizzo esatto e dall’ora: chiami il numero %s per un prezzo. "
+"Gli iscritti MPTP pagano la metà (fino al limite del contributo) e per i "
+"conti NDIS e di assistenza anziani possiamo emettere fattura."
+
+#. translators: 1: from 2: to
+msgid "How long does the trip from %1$s to %2$s take?"
+msgstr "Quanto dura il viaggio da %1$s a %2$s?"
+
+#. translators: 1: minutes 2: km
+msgid ""
+"About %1$d minutes for the %2$s km without traffic. We allow a few extra "
+"minutes to load and secure your wheelchair."
+msgstr ""
+"Circa %1$d minuti per i %2$s km senza traffico. Calcoliamo qualche minuto in "
+"più per caricare e fissare la Sua sedia a rotelle."
+
+#. translators: %s: place
+msgid "Where do you pick up at %s?"
+msgstr "Dove avviene il ritiro presso %s?"
+
+#. translators: %s: place
+msgid "Where do you drop off at %s?"
+msgstr "Dove avviene la discesa presso %s?"
+
+#. translators: %s: area
+msgid "Can you take me home to %s when I’m discharged?"
+msgstr "Potete riportarmi a casa a %s quando vengo dimesso?"
+
+msgid ""
+"Yes. Book a “pick up when ready” trip: choose the day, then tap “I’m ready” "
+"on your booking page or call us when the ward lets you go, and we send the "
+"driver."
+msgstr ""
+"Sì. Prenoti un viaggio “partenza quando è pronto”: scelga il giorno, poi "
+"quando il reparto La dimette tocchi “Sono pronto” nella pagina della "
+"prenotazione o ci chiami, e Le mandiamo l’autista."
+
+msgid ""
+"Yes. Tell us how many people are travelling when you book; carers travel at "
+"no extra charge."
+msgstr ""
+"Sì. Al momento della prenotazione ci dica quante persone viaggiano; gli "
+"assistenti viaggiano senza costi aggiuntivi."
+
+#. translators: 1: minutes 2: km
+msgid ""
+"About %1$d minutes, %2$s km. Ramp and hoist vans with trained drivers, door "
+"to door."
+msgstr ""
+"Circa %1$d minuti, %2$s km. Veicoli con rampa e sollevatore e autisti "
+"formati, porta a porta."
+
+msgid "Trip at a glance"
+msgstr "Il viaggio in breve"
+
+msgid "Travel time"
+msgstr "Durata del viaggio"
+
+#. translators: %d: minutes
+msgid "Distance"
+msgstr "Distanza"
+
+msgid "Usual fare"
+msgstr "Tariffa abituale"
+
+msgid ""
+"A guide based on the usual driving route without traffic. The fare depends on"
+" the exact address, time and waiting; MPTP members pay half up to the subsidy"
+" limit."
+msgstr ""
+"Un’indicazione basata sul percorso abituale senza traffico. La tariffa "
+"dipende dall’indirizzo esatto, dall’ora e dall’attesa; gli iscritti MPTP "
+"pagano la metà fino al limite del contributo."
+
+#. translators: 1: place 2: suburb
+msgid "Book a pick-up from %1$s to %2$s"
+msgstr "Prenoti un ritiro da %1$s a %2$s"
+
+#. translators: 1: suburb 2: place
+msgid "Book your trip from %1$s to %2$s"
+msgstr "Prenoti il viaggio da %1$s a %2$s"
+
+#. translators: %s: place
+msgid "Where we pick you up at %s"
+msgstr "Dove La veniamo a prendere presso %s"
+
+#. translators: %s: place
+msgid "Arriving at %s"
+msgstr "Arrivo presso %s"
+
+#. translators: %s: place
+msgid "Everything about getting to %s by wheelchair taxi"
+msgstr ""
+"Tutto quello che serve sapere per arrivare a %s in taxi per sedia a rotelle"
+
+#. translators: 1: place 2: suburb
+msgid "Going home from %1$s to %2$s"
+msgstr "Ritorno a casa da %1$s a %2$s"
+
+#. translators: 1: place 2: suburb
+msgid ""
+"Not sure when you will be discharged? Book a “pick up when ready” trip and "
+"tell us when the ward lets you go."
+msgstr ""
+"Non sa quando verrà dimesso? Prenoti un viaggio “partenza quando è pronto” e "
+"ci avvisi quando il reparto La lascia andare."
+
+#. translators: %s: suburb
+msgid "Other trips from %s"
+msgstr "Altri viaggi da %s"
+
+#. translators: %s: place
+msgid "From %s to…"
+msgstr "Da %s a…"
+
+#. translators: %s: place
+msgid "To %s from…"
+msgstr "A %s da…"
+
+msgid "We kept what you typed last time."
+msgstr "Abbiamo conservato quello che aveva scritto l’ultima volta."
+
+msgid "Is anyone travelling in a wheelchair or scooter?"
+msgstr "Qualcuno viaggia in sedia a rotelle o con uno scooter?"
+
+msgid "Next: your details"
+msgstr "Avanti: i Suoi dati"
+
+msgid "‹ Change the trip"
+msgstr "‹ Modifica il viaggio"
+
+msgid "For your confirmation and receipt. We text your mobile either way."
+msgstr ""
+"Per la conferma e la ricevuta. In ogni caso Le inviamo un SMS sul cellulare."
+
+msgid "More options"
+msgstr "Altre opzioni"
+
+msgid "return trip, regular trips, flight, vehicle, notes, payment, promo code"
+msgstr ""
+"viaggio di ritorno, viaggi regolari, volo, veicolo, note, pagamento, codice "
+"promozionale"
+
+msgid "return trip, regular trips, flight, vehicle, notes, promo code"
+msgstr ""
+"viaggio di ritorno, viaggi regolari, volo, veicolo, note, codice promozionale"
+
+msgid "e.g. Frankston Hospital"
+msgstr "es. Frankston Hospital"
+
+msgid "Get a price"
+msgstr "Scopri il prezzo"
+
+msgid ""
+"An estimate for a wheelchair accessible taxi on the usual route. Traffic and "
+"waiting can change the final fare."
+msgstr ""
+"Una stima per un taxi accessibile in sedia a rotelle sul percorso abituale. "
+"Il traffico e l’attesa possono cambiare la tariffa finale."
+
+msgid "Not ready to book? Text me this quote"
+msgstr "Non è pronto a prenotare? Inviatemi questo preventivo via SMS"
+
+msgid "Text me"
+msgstr "Inviatemi un SMS"
+
+msgid "Leave empty"
+msgstr "Lasci vuoto"
+
+msgid ""
+"One text with the price and a booking link. We may call once to help you "
+"book."
+msgstr ""
+"Un SMS con il prezzo e un link per prenotare. Potremmo chiamarLa una volta "
+"per aiutarLa a prenotare."
+
+msgid "From:"
+msgstr "Da:"
+
+msgid "To:"
+msgstr "A:"
+
+msgid "Sent! Check your messages."
+msgstr "Inviato! Controlli i Suoi messaggi."
+
+msgid "Sent! Check your messages — the text has a link to book."
+msgstr ""
+"Inviato! Controlli i Suoi messaggi: l’SMS contiene un link per prenotare."
+
+msgid "Questions"
+msgstr "Domande"

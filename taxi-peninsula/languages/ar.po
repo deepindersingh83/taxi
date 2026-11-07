@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.12.0\n"
+"Project-Id-Version: Taxi Peninsula 2.13.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -6025,3 +6025,289 @@ msgstr ""
 "قياس أيٍّ من إعلاناتنا يؤدي إلى رحلات مكتملة. إذا وصلت إلينا عبر إعلان، يُرسل"
 " رقم النقرة على الإعلان؛ وفي بعض الرحلات، لا يُرسل بريدك الإلكتروني ورقم "
 "هاتفك إلا بصيغة مشفّرة (مُجزّأة) لا يمكن استرجاعها"
+
+msgid "Please enter a valid email address, or leave it empty."
+msgstr "يرجى إدخال بريد إلكتروني صحيح، أو اتركه فارغًا."
+
+msgid "What will my trip cost?"
+msgstr "كم ستكلف رحلتي؟"
+
+msgid ""
+"Type two addresses for a price straight away. We can text it to you, with a "
+"link to book."
+msgstr ""
+"اكتب عنوانين لتحصل على السعر فورًا. يمكننا إرساله إليك برسالة نصية مع رابط "
+"للحجز."
+
+msgid "Hi, I’d like to book a taxi."
+msgstr "مرحبًا، أود حجز سيارة أجرة."
+
+msgid "Date and time:"
+msgstr "التاريخ والوقت:"
+
+msgid "Wheelchair (yes/no):"
+msgstr "كرسي متحرك (نعم/لا):"
+
+msgid "Name:"
+msgstr "الاسم:"
+
+msgid "Text us your booking"
+msgstr "احجز برسالة نصية"
+
+msgid "Prefer to text? Text us your booking"
+msgstr "تفضّل الرسائل النصية؟ احجز برسالة نصية"
+
+msgid "Your messages app opens with a short template to fill in."
+msgstr "سيُفتح تطبيق الرسائل لديك مع نموذج قصير لتملأه."
+
+msgid "Quotes by text are not available at the moment. Please call us."
+msgstr "إرسال عروض الأسعار برسالة نصية غير متاح حاليًا. يرجى الاتصال بنا."
+
+msgid "Please enter an Australian mobile number, e.g. 0412 345 678."
+msgstr "يرجى إدخال رقم جوال أسترالي، مثل 0412 345 678."
+
+#. translators: %s: phone
+msgid "Too many quotes sent. Please call us on %s."
+msgstr "تم إرسال عدد كبير جدًا من عروض الأسعار. يرجى الاتصال بنا على %s."
+
+msgid ""
+"We couldn’t work out that trip. Please check both addresses, or call us for a"
+" price."
+msgstr ""
+"لم نتمكن من حساب هذه الرحلة. يرجى التحقق من العنوانين، أو الاتصال بنا لمعرفة "
+"السعر."
+
+#. translators: 1: site 2: from 3: to 4: price 5: booking link 6: phone
+msgid ""
+"%1$s: wheelchair taxi from %2$s to %3$s is about %4$s. Book online: %5$s or "
+"call %6$s."
+msgstr ""
+"%1$s: سيارة أجرة للكراسي المتحركة من %2$s إلى %3$s بحوالي %4$s. احجز عبر "
+"الإنترنت: %5$s أو اتصل على %6$s."
+
+msgid "The text could not be sent just now. Please call us."
+msgstr "تعذّر إرسال الرسالة الآن. يرجى الاتصال بنا."
+
+#. translators: 1: place, e.g. Frankston Station 2: suburb
+#. translators: 1: suburb 2: place, e.g. Frankston Hospital
+msgid "Wheelchair taxi from %1$s to %2$s"
+msgstr "سيارة أجرة للكراسي المتحركة من %1$s إلى %2$s"
+
+#. translators: 1: route title 2: minutes 3: km
+msgid "%1$s: about %2$d minutes and %3$s km."
+msgstr "%1$s: حوالي %2$d دقيقة و%3$s km."
+
+#. translators: %s: fare range
+msgid "Fare about %s."
+msgstr "الأجرة حوالي %s."
+
+#. translators: %s: phone
+msgid "Ramp and hoist vans, door to door. Book online or call %s."
+msgstr ""
+"مركبات بمنحدر ورافعة، من الباب إلى الباب. احجز عبر الإنترنت أو اتصل على %s."
+
+#. translators: 1: from 2: to
+msgid "How much is a wheelchair taxi from %1$s to %2$s?"
+msgstr "كم تكلف سيارة الأجرة للكراسي المتحركة من %1$s إلى %2$s؟"
+
+#. translators: 1: fare range 2: phone
+msgid ""
+"Usually about %1$s for a wheelchair accessible taxi, depending on the exact "
+"address, traffic and time of day. MPTP members pay half (up to the subsidy "
+"limit), and NDIS and aged-care accounts can be invoiced. Call %2$s for a firm"
+" price."
+msgstr ""
+"عادةً حوالي %1$s لسيارة أجرة مجهزة للكراسي المتحركة، حسب العنوان بالضبط وحركة"
+" المرور ووقت اليوم. يدفع أعضاء MPTP النصف (حتى حد الدعم)، ويمكن إصدار فواتير "
+"لحسابات NDIS ورعاية المسنين. اتصل على %2$s لمعرفة السعر المؤكد."
+
+#. translators: %s: phone
+msgid ""
+"It depends on the exact address and time of day — call %s for a price. MPTP "
+"members pay half (up to the subsidy limit), and NDIS and aged-care accounts "
+"can be invoiced."
+msgstr ""
+"يعتمد ذلك على العنوان بالضبط ووقت اليوم — اتصل على %s لمعرفة السعر. يدفع "
+"أعضاء MPTP النصف (حتى حد الدعم)، ويمكن إصدار فواتير لحسابات NDIS ورعاية "
+"المسنين."
+
+#. translators: 1: from 2: to
+msgid "How long does the trip from %1$s to %2$s take?"
+msgstr "كم تستغرق الرحلة من %1$s إلى %2$s؟"
+
+#. translators: 1: minutes 2: km
+msgid ""
+"About %1$d minutes for the %2$s km without traffic. We allow a few extra "
+"minutes to load and secure your wheelchair."
+msgstr ""
+"حوالي %1$d دقيقة لمسافة %2$s km دون ازدحام. نخصص بضع دقائق إضافية لتحميل "
+"كرسيك المتحرك وتثبيته بأمان."
+
+#. translators: %s: place
+msgid "Where do you pick up at %s?"
+msgstr "أين يتم الاستلام في %s؟"
+
+#. translators: %s: place
+msgid "Where do you drop off at %s?"
+msgstr "أين يتم الإنزال في %s؟"
+
+#. translators: %s: area
+msgid "Can you take me home to %s when I’m discharged?"
+msgstr "هل يمكنكم إيصالي إلى منزلي في %s عند خروجي من المستشفى؟"
+
+msgid ""
+"Yes. Book a “pick up when ready” trip: choose the day, then tap “I’m ready” "
+"on your booking page or call us when the ward lets you go, and we send the "
+"driver."
+msgstr ""
+"نعم. احجز رحلة «الاصطحاب عند الجاهزية»: اختر اليوم، ثم اضغط «أنا جاهز» في "
+"صفحة حجزك أو اتصل بنا عندما يسمح لك القسم بالمغادرة، وسنرسل لك السائق."
+
+msgid ""
+"Yes. Tell us how many people are travelling when you book; carers travel at "
+"no extra charge."
+msgstr ""
+"نعم. أخبرنا بعدد المسافرين عند الحجز؛ يسافر مقدّمو الرعاية دون أي رسوم "
+"إضافية."
+
+#. translators: 1: minutes 2: km
+msgid ""
+"About %1$d minutes, %2$s km. Ramp and hoist vans with trained drivers, door "
+"to door."
+msgstr ""
+"حوالي %1$d دقيقة، %2$s km. مركبات بمنحدر ورافعة مع سائقين مدرَّبين، من الباب "
+"إلى الباب."
+
+msgid "Trip at a glance"
+msgstr "الرحلة باختصار"
+
+msgid "Travel time"
+msgstr "مدة الرحلة"
+
+#. translators: %d: minutes
+msgid "Distance"
+msgstr "المسافة"
+
+msgid "Usual fare"
+msgstr "الأجرة المعتادة"
+
+msgid ""
+"A guide based on the usual driving route without traffic. The fare depends on"
+" the exact address, time and waiting; MPTP members pay half up to the subsidy"
+" limit."
+msgstr ""
+"تقدير مبني على المسار المعتاد دون ازدحام. تعتمد الأجرة على العنوان بالضبط "
+"والوقت والانتظار؛ يدفع أعضاء MPTP النصف حتى حد الدعم."
+
+#. translators: 1: place 2: suburb
+msgid "Book a pick-up from %1$s to %2$s"
+msgstr "احجز الاصطحاب من %1$s إلى %2$s"
+
+#. translators: 1: suburb 2: place
+msgid "Book your trip from %1$s to %2$s"
+msgstr "احجز رحلتك من %1$s إلى %2$s"
+
+#. translators: %s: place
+msgid "Where we pick you up at %s"
+msgstr "مكان اصطحابك في %s"
+
+#. translators: %s: place
+msgid "Arriving at %s"
+msgstr "الوصول إلى %s"
+
+#. translators: %s: place
+msgid "Everything about getting to %s by wheelchair taxi"
+msgstr "كل ما تحتاج معرفته عن الوصول إلى %s بسيارة أجرة للكراسي المتحركة"
+
+#. translators: 1: place 2: suburb
+msgid "Going home from %1$s to %2$s"
+msgstr "العودة إلى المنزل من %1$s إلى %2$s"
+
+#. translators: 1: place 2: suburb
+msgid ""
+"Not sure when you will be discharged? Book a “pick up when ready” trip and "
+"tell us when the ward lets you go."
+msgstr ""
+"لست متأكدًا من موعد خروجك من المستشفى؟ احجز رحلة «الاصطحاب عند الجاهزية» "
+"وأخبرنا عندما يسمح لك القسم بالمغادرة."
+
+#. translators: %s: suburb
+msgid "Other trips from %s"
+msgstr "رحلات أخرى من %s"
+
+#. translators: %s: place
+msgid "From %s to…"
+msgstr "من %s إلى…"
+
+#. translators: %s: place
+msgid "To %s from…"
+msgstr "إلى %s من…"
+
+msgid "We kept what you typed last time."
+msgstr "احتفظنا بما كتبته في المرة السابقة."
+
+msgid "Is anyone travelling in a wheelchair or scooter?"
+msgstr "هل يسافر أحد على كرسي متحرك أو سكوتر؟"
+
+msgid "Next: your details"
+msgstr "التالي: بياناتك"
+
+msgid "‹ Change the trip"
+msgstr "› تغيير الرحلة"
+
+msgid "For your confirmation and receipt. We text your mobile either way."
+msgstr "لإرسال التأكيد والإيصال. سنرسل لك رسالة نصية على جوالك في كل الأحوال."
+
+msgid "More options"
+msgstr "مزيد من الخيارات"
+
+msgid "return trip, regular trips, flight, vehicle, notes, payment, promo code"
+msgstr ""
+"رحلة العودة، رحلات منتظمة، الرحلة الجوية، المركبة، ملاحظات، الدفع، رمز الخصم"
+
+msgid "return trip, regular trips, flight, vehicle, notes, promo code"
+msgstr "رحلة العودة، رحلات منتظمة، الرحلة الجوية، المركبة، ملاحظات، رمز الخصم"
+
+msgid "e.g. Frankston Hospital"
+msgstr "مثال: مستشفى فرانكستون"
+
+msgid "Get a price"
+msgstr "اعرف السعر"
+
+msgid ""
+"An estimate for a wheelchair accessible taxi on the usual route. Traffic and "
+"waiting can change the final fare."
+msgstr ""
+"تقدير لسيارة أجرة مجهزة للكراسي المتحركة على المسار المعتاد. قد تُغيّر حركة "
+"المرور والانتظار الأجرة النهائية."
+
+msgid "Not ready to book? Text me this quote"
+msgstr "لست مستعدًا للحجز؟ أرسلوا لي عرض السعر هذا برسالة نصية"
+
+msgid "Text me"
+msgstr "أرسلوا لي رسالة"
+
+msgid "Leave empty"
+msgstr "اتركه فارغًا"
+
+msgid ""
+"One text with the price and a booking link. We may call once to help you "
+"book."
+msgstr ""
+"رسالة نصية واحدة فيها السعر ورابط للحجز. قد نتصل بك مرة واحدة لمساعدتك في "
+"الحجز."
+
+msgid "From:"
+msgstr "من:"
+
+msgid "To:"
+msgstr "إلى:"
+
+msgid "Sent! Check your messages."
+msgstr "تم الإرسال! تحقق من رسائلك."
+
+msgid "Sent! Check your messages — the text has a link to book."
+msgstr "تم الإرسال! تحقق من رسائلك — تحتوي الرسالة على رابط للحجز."
+
+msgid "Questions"
+msgstr "أسئلة"

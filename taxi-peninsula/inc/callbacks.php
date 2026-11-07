@@ -107,7 +107,7 @@ add_action(
 	'tp_booking_form_after_submit',
 	static function () {
 		if ( tp_callback_url() ) {
-			printf( '<p class="booking-form__alt"><a href="%s">%s</a></p>', esc_url( tp_callback_url() ), esc_html__( 'Rather talk to someone? Ask us to call you back.', 'taxi-peninsula' ) );
+			printf( '<p class="booking-form__alt"><a href="%s" data-callback-link>%s</a></p>', esc_url( tp_callback_url() ), esc_html__( 'Rather talk to someone? Ask us to call you back.', 'taxi-peninsula' ) );
 		}
 	}
 );

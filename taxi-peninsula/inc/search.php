@@ -51,7 +51,7 @@ add_filter(
 		$s['footer_areas']             = array( 'search', __( 'Show "Suburbs we cover" in the footer', 'taxi-peninsula' ), 'checkbox', true, '' );
 		$s['official_links']           = array( 'search', __( 'Helpful official links on service pages', 'taxi-peninsula' ), 'textarea', "NDIS — National Disability Insurance Scheme | https://www.ndis.gov.au/\nCommercial Passenger Vehicles Victoria | https://cpv.vic.gov.au/", __( 'One per line: label | address. Linking to trusted official sources helps visitors and shows search engines your pages are reliable. Leave empty to hide.', 'taxi-peninsula' ) );
 		$s['noindex_thin']             = array( 'search', __( 'Keep thin pages out of search results', 'taxi-peninsula' ), 'checkbox', true, __( 'Search results, tag, date and author archives and attachment pages.', 'taxi-peninsula' ) );
-		$s['webp_uploads']             = array( 'search', __( 'Save new photo uploads as WebP (smaller, faster)', 'taxi-peninsula' ), 'checkbox', true, __( 'Only when your server supports it.', 'taxi-peninsula' ) );
+		$s['webp_uploads']             = array( 'search', __( 'Save new photo uploads as AVIF or WebP (smaller, faster)', 'taxi-peninsula' ), 'checkbox', true, __( 'AVIF when your server supports it, otherwise WebP. Photos uploaded before stay as they are; a free plugin such as “Regenerate Thumbnails” converts them.', 'taxi-peninsula' ) );
 		$s['indexnow']                 = array( 'search', __( 'Tell Bing about new and changed pages instantly (IndexNow)', 'taxi-peninsula' ), 'checkbox', true, '' );
 		$s['llms_txt']                 = array( 'search', __( 'Publish /llms.txt for AI assistants', 'taxi-peninsula' ), 'checkbox', true, '' );
 		$s['ai_crawlers']              = array( 'search', __( 'AI crawlers', 'taxi-peninsula' ), 'select', 'search', __( 'AI search bots (ChatGPT search, Perplexity, Copilot) are what recommend you to customers — keep them allowed.', 'taxi-peninsula' ), array( 'search' => __( 'Allow AI search, block AI training (recommended)', 'taxi-peninsula' ), 'all' => __( 'Allow all AI bots', 'taxi-peninsula' ), 'none' => __( 'Block all AI bots (not recommended — you will not be recommended by AI assistants)', 'taxi-peninsula' ) ) );
@@ -347,9 +347,16 @@ add_action(
 add_filter(
 	'image_editor_output_format',
 	static function ( $formats ) {
-		if ( tp_setting( 'webp_uploads' ) && wp_image_editor_supports( array( 'mime_type' => 'image/webp' ) ) ) {
-			$formats['image/jpeg'] = 'image/webp';
-			$formats['image/png']  = 'image/webp';
+		if ( ! tp_setting( 'webp_uploads' ) ) {
+			return $formats;
+		}
+		// AVIF is about a quarter smaller than WebP for photos; every current browser shows it.
+		foreach ( array( 'image/avif', 'image/webp' ) as $type ) {
+			if ( wp_image_editor_supports( array( 'mime_type' => $type ) ) ) {
+				$formats['image/jpeg'] = $type;
+				$formats['image/png']  = $type;
+				break;
+			}
 		}
 		return $formats;
 	}

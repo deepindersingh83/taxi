@@ -119,3 +119,24 @@ if ( false === strpos( $csv, 'CI-CLICK-1' ) || false === strpos( $csv, hash( 'sh
 	WP_CLI::error( "Google Ads file is wrong:\n" . $csv );
 }
 WP_CLI::success( 'Google Ads conversions file OK.' );
+
+// v2.13 short form: email optional (but checked when typed); "No wheelchair" picks a standard taxi.
+list( $d, $e ) = tp_sanitize_booking( array( 'name' => 'Ann Smith', 'phone' => '0433 221 100', 'pickup' => '2 Bay St, Frankston', 'dropoff' => 'Rosebud Hospital', 'date' => wp_date( 'Y-m-d', time() + DAY_IN_SECONDS ), 'time' => '10:00', 'chair' => 'no', 'vehicle' => 'wat', 'wheelchairs' => 1 ), true );
+if ( isset( $e['email'] ) || 'sedan' !== $d['vehicle'] || 0 !== $d['wheelchairs'] ) {
+	WP_CLI::error( 'Short form handling is wrong: ' . wp_json_encode( array( $d['vehicle'], $d['wheelchairs'], $e ) ) );
+}
+list( , $e ) = tp_sanitize_booking( array( 'name' => 'Ann Smith', 'phone' => '0433 221 100', 'pickup' => 'x', 'dropoff' => 'y', 'date' => '2030-01-01', 'time' => '10:00', 'email' => 'ann@' ), true );
+if ( ! isset( $e['email'] ) ) {
+	WP_CLI::error( 'A wrong email was accepted.' );
+}
+// Route pages: a place with a map position gets one per nearby suburb.
+$pid = wp_insert_post( array( 'post_type' => 'tp_place', 'post_status' => 'publish', 'post_title' => 'CI Hospital', 'post_name' => 'ci-hospital' ) );
+foreach ( array( 'type' => 'hospital', 'lat' => '-38.151', 'lng' => '145.131', 'address' => '2 Hastings Road, Frankston VIC 3199' ) as $k => $v ) {
+	update_post_meta( $pid, '_tp_p_' . $k, $v );
+}
+$routes = tp_place_routes( $pid );
+if ( ! $routes || false === strpos( tp_route_url( $pid, $routes[0][0] ), '/wheelchair-taxi-to/ci-hospital/from-' ) ) {
+	WP_CLI::error( 'Route pages were not made: ' . wp_json_encode( $routes ) );
+}
+tp_calls_to_follow(); // The follow-up query runs on this database.
+WP_CLI::success( 'Short booking form, route pages and call follow-up OK.' );

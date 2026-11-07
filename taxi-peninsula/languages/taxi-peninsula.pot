@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-07T01:51:52+00:00\n"
+"POT-Creation-Date: 2026-11-07T06:00:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: taxi-peninsula\n"
@@ -51,8 +51,8 @@ msgstr ""
 
 #: 404.php:14
 #: archive-tp_service.php:13
-#: inc/home.php:20
-#: inc/seo.php:236
+#: inc/home.php:21
+#: inc/seo.php:242
 #: page-templates/services.php:29
 #: patterns/services-grid.php:15
 msgid "Our services"
@@ -84,10 +84,10 @@ msgid "Popular pages"
 msgstr ""
 
 #: archive-tp_area.php:13
-#: inc/home.php:27
+#: inc/home.php:28
 #: inc/local-seo.php:34
 #: inc/local-seo.php:56
-#: inc/seo.php:234
+#: inc/seo.php:240
 #: inc/starter-content.php:463
 #: patterns/areas.php:15
 msgid "Areas we cover"
@@ -102,8 +102,8 @@ msgstr ""
 #: archive-tp_area.php:30
 #: inc/local-seo.php:36
 #: inc/search.php:243
-#: inc/seo.php:184
-#: inc/seo.php:232
+#: inc/seo.php:190
+#: inc/seo.php:238
 #: local-service.php:121
 #: single-tp_area.php:18
 #: single-tp_place.php:167
@@ -128,7 +128,7 @@ msgid "No events listed right now. Going somewhere special? Book online or call 
 msgstr ""
 
 #: archive-tp_service.php:14
-#: inc/home.php:20
+#: inc/home.php:21
 #: page-templates/services.php:20
 msgid "Reliable wheelchair accessible transport for everyday trips and important appointments."
 msgstr ""
@@ -205,7 +205,10 @@ msgstr ""
 
 #. translators: %d: minutes
 #: council.php:83
+#: inc/place-routes.php:313
 #: local-service.php:77
+#: place-route.php:36
+#: place-route.php:110
 #: single-tp_area.php:64
 #: single-tp_place.php:133
 #, php-format
@@ -238,6 +241,7 @@ msgstr ""
 #: page-templates/services.php:40
 #: patterns/cta.php:25
 #: patterns/hero.php:25
+#: place-route.php:120
 #: sidebar.php:13
 #: single-tp_place.php:156
 #: template-parts/cta.php:17
@@ -341,6 +345,7 @@ msgstr ""
 #: header.php:66
 #: inc/design.php:51
 #: inc/menu.php:100
+#: template-parts/booking-form.php:395
 msgid "Book now"
 msgstr ""
 
@@ -498,7 +503,7 @@ msgstr ""
 
 #: inc/accounts.php:98
 #: inc/careers.php:59
-#: template-parts/booking-form.php:312
+#: template-parts/booking-form.php:172
 msgid "Full name"
 msgstr ""
 
@@ -508,8 +513,8 @@ msgstr ""
 
 #: inc/accounts.php:100
 #: inc/bookings-cpt.php:189
-#: inc/bookings-cpt.php:663
-#: template-parts/booking-form.php:213
+#: inc/bookings-cpt.php:684
+#: template-parts/booking-form.php:269
 msgid "Mobility aid"
 msgstr ""
 
@@ -528,7 +533,7 @@ msgstr ""
 #: inc/accounts.php:104
 #: inc/accounts.php:1426
 #: inc/bookings-cpt.php:196
-#: inc/bookings-cpt.php:670
+#: inc/bookings-cpt.php:691
 msgid "NDIS number / reference"
 msgstr ""
 
@@ -637,10 +642,10 @@ msgstr ""
 
 #: inc/accounts.php:392
 #: inc/bookings-cpt.php:186
-#: inc/bookings-cpt.php:661
-#: inc/home.php:113
+#: inc/bookings-cpt.php:682
+#: inc/home.php:114
 #: inc/partner-leaderboard.php:148
-#: template-parts/booking-form.php:223
+#: template-parts/booking-form.php:279
 #: template-parts/booking-status.php:91
 msgid "Passengers"
 msgstr ""
@@ -668,7 +673,7 @@ msgstr ""
 #: inc/accounts.php:635
 #: inc/callbacks.php:32
 #: inc/contact.php:307
-#: inc/home.php:113
+#: inc/home.php:114
 msgid "Book a trip"
 msgstr ""
 
@@ -786,7 +791,7 @@ msgstr ""
 #: inc/booking-cancel.php:351
 #: inc/booking-verify.php:93
 #: inc/bookings-cpt.php:180
-#: inc/bookings-cpt.php:656
+#: inc/bookings-cpt.php:677
 #: inc/careers.php:61
 #: inc/contact.php:87
 #: inc/content-types.php:466
@@ -804,18 +809,18 @@ msgstr ""
 #: inc/referrals.php:349
 #: inc/settings-tabs.php:19
 #: inc/statements.php:400
-#: template-parts/booking-form.php:324
 msgid "Email"
 msgstr ""
 
 #: inc/accounts.php:548
 #: inc/accounts.php:884
 #: inc/careers.php:60
+#: inc/lead-tools.php:373
 #: inc/lost-property.php:131
 #: inc/marketing.php:690
 #: inc/marketing.php:806
 #: inc/privacy.php:282
-#: template-parts/booking-form.php:318
+#: template-parts/booking-form.php:178
 msgid "Mobile"
 msgstr ""
 
@@ -995,7 +1000,6 @@ msgstr ""
 #: inc/incidents.php:132
 #: inc/lost-property.php:290
 #: inc/quotes.php:295
-#: template-parts/booking-form.php:67
 #: template-parts/booking-status.php:206
 msgid "Details"
 msgstr ""
@@ -1012,8 +1016,8 @@ msgstr ""
 #: inc/flights.php:307
 #: inc/review-invite.php:60
 #: inc/search.php:302
-#: template-parts/booking-form.php:334
 #: template-parts/booking-form.php:365
+#: template-parts/booking-form.php:380
 #: template-parts/booking-status.php:147
 #: template-parts/testimonials.php:164
 msgid "(opens in a new tab)"
@@ -1077,10 +1081,10 @@ msgid "Add an address"
 msgstr ""
 
 #: inc/accounts.php:856
-#: inc/bookings-cpt.php:654
+#: inc/bookings-cpt.php:675
 #: inc/callbacks.php:329
 #: inc/content-types.php:465
-#: inc/home.php:371
+#: inc/home.php:372
 #: inc/marketing.php:690
 #: inc/marketing.php:806
 #: inc/privacy.php:348
@@ -1096,6 +1100,7 @@ msgstr ""
 
 #: inc/accounts.php:860
 #: inc/privacy.php:318
+#: place-route.php:79
 #: single-tp_place.php:83
 msgid "Address"
 msgstr ""
@@ -1142,7 +1147,7 @@ msgstr ""
 #: inc/bookings-cpt.php:195
 #: inc/privacy.php:282
 #: inc/venues.php:254
-#: template-parts/booking-form.php:272
+#: template-parts/booking-form.php:324
 msgid "Invoice email"
 msgstr ""
 
@@ -1176,7 +1181,6 @@ msgstr ""
 
 #: inc/accounts.php:986
 #: inc/booking-verify.php:136
-#: inc/bookings-cpt.php:327
 #: inc/mail-check.php:351
 msgid "Please enter a valid email address."
 msgstr ""
@@ -1304,7 +1308,7 @@ msgstr ""
 #: inc/quotes.php:283
 #: inc/statements.php:201
 #: inc/statements.php:219
-#: template-parts/booking-form.php:112
+#: template-parts/booking-form.php:118
 #: template-parts/quickbook.php:33
 msgid "Date"
 msgstr ""
@@ -1324,10 +1328,10 @@ msgstr ""
 #: inc/accounts.php:1434
 #: inc/finance.php:184
 #: inc/incidents.php:248
+#: inc/lead-tools.php:373
 #: inc/lost-property.php:635
 #: inc/partner-portal.php:227
 #: inc/statements.php:219
-#: template-parts/booking-form.php:64
 msgid "Trip"
 msgstr ""
 
@@ -1345,9 +1349,9 @@ msgstr ""
 #: inc/accounts.php:1448
 #: inc/councils.php:219
 #: inc/ndis-invoices.php:96
-#: inc/places.php:475
+#: inc/places.php:498
 #: inc/search.php:216
-#: inc/seo.php:189
+#: inc/seo.php:195
 msgid "Wheelchair accessible taxi"
 msgstr ""
 
@@ -1472,7 +1476,7 @@ msgstr ""
 #: inc/activity.php:69
 #: inc/ai-search.php:171
 #: inc/alerts.php:239
-#: inc/settings.php:161
+#: inc/settings.php:173
 msgid "Settings"
 msgstr ""
 
@@ -1506,7 +1510,7 @@ msgid "Fare"
 msgstr ""
 
 #: inc/activity.php:213
-#: inc/bookings-cpt.php:677
+#: inc/bookings-cpt.php:698
 #: inc/finance.php:176
 #: inc/finance.php:187
 #: inc/privacy.php:94
@@ -1526,11 +1530,11 @@ msgstr ""
 #: inc/bookings-admin.php:78
 #: inc/bookings-admin.php:448
 #: inc/bookings-cpt.php:188
-#: inc/bookings-cpt.php:660
+#: inc/bookings-cpt.php:681
 #: inc/content-types.php:43
 #: inc/dispatch.php:402
 #: inc/incidents.php:171
-#: template-parts/booking-form.php:191
+#: template-parts/booking-form.php:247
 #: template-parts/booking-status.php:90
 #: template-parts/trip-summary.php:25
 msgid "Vehicle"
@@ -1544,16 +1548,21 @@ msgstr ""
 
 #: inc/activity.php:304
 #: inc/alerts.php:230
-#: inc/bookings-cpt.php:680
+#: inc/bookings-cpt.php:701
+#: inc/lead-tools.php:105
+#: inc/lead-tools.php:381
 #: inc/quotes.php:284
 #: inc/setup.php:227
+#: template-parts/booking-form.php:138
 msgid "Yes"
 msgstr ""
 
 #: inc/activity.php:304
-#: inc/bookings-cpt.php:664
-#: inc/bookings-cpt.php:680
+#: inc/bookings-cpt.php:685
+#: inc/bookings-cpt.php:701
+#: inc/lead-tools.php:106
 #: inc/quotes.php:284
+#: template-parts/booking-form.php:139
 msgid "No"
 msgstr ""
 
@@ -1668,19 +1677,20 @@ msgid "Anyone"
 msgstr ""
 
 #: inc/activity.php:569
-#: inc/bookings-cpt.php:658
+#: inc/bookings-cpt.php:679
 #: inc/content-types.php:417
 #: inc/finance.php:149
-#: inc/home.php:295
+#: inc/home.php:296
 #: inc/quotes.php:145
 #: inc/quotes.php:281
 #: template-parts/booking-status.php:85
 #: template-parts/quickbook.php:25
+#: template-parts/text-quote.php:23
 msgid "From"
 msgstr ""
 
 #: inc/activity.php:570
-#: inc/bookings-cpt.php:659
+#: inc/bookings-cpt.php:680
 #: inc/finance.php:150
 #: inc/mail-check.php:421
 #: inc/quotes.php:146
@@ -1688,6 +1698,7 @@ msgstr ""
 #: inc/statements.php:202
 #: template-parts/booking-status.php:86
 #: template-parts/quickbook.php:29
+#: template-parts/text-quote.php:27
 msgid "To"
 msgstr ""
 
@@ -1787,7 +1798,7 @@ msgstr ""
 
 #: inc/admin-menus.php:56
 #: inc/settings-tabs.php:451
-#: inc/settings.php:160
+#: inc/settings.php:172
 msgid "Booking settings"
 msgstr ""
 
@@ -1914,7 +1925,6 @@ msgid "Pick up → Drop off"
 msgstr ""
 
 #: inc/admin-tools.php:250
-#: template-parts/booking-form.php:65
 msgid "Needs"
 msgstr ""
 
@@ -1924,17 +1934,15 @@ msgstr ""
 
 #: inc/admin-tools.php:252
 #: inc/bookings-cpt.php:193
-#: inc/bookings-cpt.php:665
+#: inc/bookings-cpt.php:686
 #: inc/finance.php:151
 #: inc/finance.php:186
-#: template-parts/booking-form.php:66
-#: template-parts/booking-form.php:249
 #: template-parts/booking-status.php:108
 msgid "Payment"
 msgstr ""
 
 #: inc/admin-tools.php:253
-#: inc/bookings-cpt.php:689
+#: inc/bookings-cpt.php:710
 #: inc/callbacks.php:285
 #: inc/search-data.php:1115
 msgid "Notes"
@@ -1943,6 +1951,7 @@ msgstr ""
 #: inc/admin-tools.php:254
 #: inc/ai-search.php:164
 #: inc/callbacks.php:17
+#: inc/lead-tools.php:353
 #: inc/photos.php:135
 msgid "Done"
 msgstr ""
@@ -2158,6 +2167,8 @@ msgid "Booked online after a Google ad click."
 msgstr ""
 
 #: inc/ads-conversions.php:311
+#: inc/lead-tools.php:289
+#: inc/speed-report.php:97
 msgid "Sorry, you are not allowed to do that."
 msgstr ""
 
@@ -2377,7 +2388,7 @@ msgstr ""
 
 #: inc/ai-search.php:96
 #: inc/ai-search.php:119
-#: inc/tracking.php:62
+#: inc/tracking.php:64
 msgid "Phone taps"
 msgstr ""
 
@@ -2387,7 +2398,7 @@ msgstr ""
 #: inc/bookings-cpt.php:24
 #: inc/customizer.php:25
 #: inc/events.php:238
-#: inc/tracking.php:66
+#: inc/tracking.php:68
 #: inc/venues.php:386
 msgid "Bookings"
 msgstr ""
@@ -2433,6 +2444,7 @@ msgid "Revenue (fares entered)"
 msgstr ""
 
 #: inc/ai-search.php:123
+#: inc/lead-tools.php:341
 msgid "Came from"
 msgstr ""
 
@@ -2662,7 +2674,7 @@ msgid "None."
 msgstr ""
 
 #: inc/alerts.php:225
-#: template-parts/booking-form.php:173
+#: template-parts/booking-form.php:226
 msgid "Until"
 msgstr ""
 
@@ -2697,6 +2709,7 @@ msgid "Last check failed: %s"
 msgstr ""
 
 #: inc/alerts.php:254
+#: inc/speed-report.php:135
 msgid "Check now"
 msgstr ""
 
@@ -2753,7 +2766,7 @@ msgstr ""
 #: inc/analytics.php:54
 #: inc/privacy.php:676
 #: inc/starter-content.php:471
-#: template-parts/booking-form.php:334
+#: template-parts/booking-form.php:365
 msgid "Privacy policy"
 msgstr ""
 
@@ -3010,10 +3023,11 @@ msgid "Blocked contacts"
 msgstr ""
 
 #: inc/booking-cancel.php:351
-#: inc/bookings-cpt.php:655
+#: inc/bookings-cpt.php:676
 #: inc/callbacks.php:282
 #: inc/callbacks.php:330
 #: inc/content-types.php:468
+#: inc/lead-tools.php:348
 #: inc/privacy.php:349
 #: inc/quotes.php:160
 #: inc/quotes.php:288
@@ -3021,6 +3035,7 @@ msgid "Phone"
 msgstr ""
 
 #: inc/booking-cancel.php:351
+#: inc/lead-tools.php:341
 msgid "Device"
 msgstr ""
 
@@ -3225,6 +3240,7 @@ msgid "Codes last 15 minutes. Please fill in the booking form again — it only 
 msgstr ""
 
 #: inc/booking-verify.php:296
+#: template-parts/booking-form.php:86
 msgid "Start again"
 msgstr ""
 
@@ -3274,7 +3290,7 @@ msgstr ""
 #: inc/bookings-cpt.php:184
 #: inc/dispatch.php:553
 #: inc/saved-trips.php:177
-#: template-parts/booking-form.php:118
+#: template-parts/booking-form.php:124
 #: template-parts/quickbook.php:37
 msgid "Pick-up time"
 msgstr ""
@@ -3289,7 +3305,7 @@ msgstr ""
 #: inc/bookings-admin.php:80
 #: inc/bookings-admin.php:326
 #: inc/bookings-admin.php:398
-#: inc/bookings-cpt.php:653
+#: inc/bookings-cpt.php:674
 #: inc/callbacks.php:287
 #: inc/callbacks.php:333
 #: inc/content-plan.php:176
@@ -3318,10 +3334,14 @@ msgid "Received"
 msgstr ""
 
 #: inc/bookings-admin.php:96
+#: inc/lead-tools.php:73
+#: inc/lead-tools.php:99
 msgid "From:"
 msgstr ""
 
 #: inc/bookings-admin.php:97
+#: inc/lead-tools.php:74
+#: inc/lead-tools.php:100
 msgid "To:"
 msgstr ""
 
@@ -3611,14 +3631,15 @@ msgstr ""
 #: inc/bookings-cpt.php:181
 #: inc/dispatch.php:554
 #: inc/venues.php:247
-#: template-parts/booking-form.php:89
+#: template-parts/booking-form.php:95
 #: template-parts/quickbook.php:26
+#: template-parts/text-quote.php:24
 msgid "Pick-up address"
 msgstr ""
 
 #: inc/bookings-cpt.php:182
 #: inc/dispatch.php:555
-#: template-parts/booking-form.php:96
+#: template-parts/booking-form.php:102
 msgid "Drop-off address"
 msgstr ""
 
@@ -3631,15 +3652,15 @@ msgid "Pick up when ready (e.g. hospital discharge — the time is the earliest 
 msgstr ""
 
 #: inc/bookings-cpt.php:187
-#: inc/bookings-cpt.php:662
+#: inc/bookings-cpt.php:683
 #: inc/quotes.php:150
 #: inc/quotes.php:286
-#: template-parts/booking-form.php:228
+#: template-parts/booking-form.php:284
 msgid "Wheelchairs"
 msgstr ""
 
 #: inc/bookings-cpt.php:190
-#: inc/bookings-cpt.php:664
+#: inc/bookings-cpt.php:685
 #: inc/quotes.php:284
 #: template-parts/booking-status.php:88
 msgid "Return trip"
@@ -3650,7 +3671,7 @@ msgid "Return pick-up time"
 msgstr ""
 
 #: inc/bookings-cpt.php:192
-#: inc/bookings-cpt.php:680
+#: inc/bookings-cpt.php:701
 msgid "MPTP member"
 msgstr ""
 
@@ -3667,7 +3688,7 @@ msgid "Flight number"
 msgstr ""
 
 #: inc/bookings-cpt.php:199
-#: inc/bookings-cpt.php:686
+#: inc/bookings-cpt.php:707
 #: inc/promos.php:24
 msgid "Promo code"
 msgstr ""
@@ -3690,47 +3711,51 @@ msgstr ""
 msgid "This field is required."
 msgstr ""
 
-#: inc/bookings-cpt.php:353
+#: inc/bookings-cpt.php:328
+msgid "Please enter a valid email address, or leave it empty."
+msgstr ""
+
+#: inc/bookings-cpt.php:374
 msgid "Tell us who to invoice."
 msgstr ""
 
-#: inc/bookings-cpt.php:356
+#: inc/bookings-cpt.php:377
 msgid "Please enter the email address for invoices."
 msgstr ""
 
-#: inc/bookings-cpt.php:367
+#: inc/bookings-cpt.php:388
 msgid "Please choose a valid date."
 msgstr ""
 
-#: inc/bookings-cpt.php:370
-#: inc/bookings-cpt.php:390
+#: inc/bookings-cpt.php:391
+#: inc/bookings-cpt.php:411
 msgid "Please choose a valid time."
 msgstr ""
 
 #. translators: %s: phone number
-#: inc/bookings-cpt.php:382
+#: inc/bookings-cpt.php:403
 #, php-format
 msgid "Online bookings need a little notice. For an urgent pick-up please call %s."
 msgstr ""
 
-#: inc/bookings-cpt.php:401
+#: inc/bookings-cpt.php:422
 msgid "Please check the flight number, e.g. QF432 or VA 1234."
 msgstr ""
 
 #. translators: 1: months, 2: phone number
-#: inc/bookings-cpt.php:414
+#: inc/bookings-cpt.php:435
 #, php-format
 msgid "Online bookings can be made up to %1$d months ahead. For a later date please call %2$s."
 msgstr ""
 
 #. translators: %s: phone number
-#: inc/bookings-cpt.php:420
+#: inc/bookings-cpt.php:441
 #: template-parts/booking-form.php:37
 msgid "The return pick-up needs to be after the first pick-up time."
 msgstr ""
 
 #. translators: %d: wheelchairs
-#: inc/bookings-cpt.php:427
+#: inc/bookings-cpt.php:448
 #, php-format
 msgid "This vehicle takes %d wheelchair. Choose \"Maxi WAT\" for two wheelchairs."
 msgid_plural "This vehicle takes %d wheelchairs. Choose \"Maxi WAT\" for two wheelchairs."
@@ -3738,49 +3763,49 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: phone number
-#: inc/bookings-cpt.php:429
+#: inc/bookings-cpt.php:450
 #: template-parts/booking-form.php:37
 #, php-format
 msgid "For more than two wheelchairs we send more than one vehicle — please call %s."
 msgstr ""
 
 #. translators: 1: number of people, 2: phone number
-#: inc/bookings-cpt.php:434
+#: inc/bookings-cpt.php:455
 #, php-format
 msgid "This vehicle seats up to %1$d people including wheelchair users. Choose \"Maxi WAT\" or call %2$s for a larger group."
 msgstr ""
 
-#: inc/bookings-cpt.php:462
+#: inc/bookings-cpt.php:483
 msgid "Choose which days the trip repeats."
 msgstr ""
 
-#: inc/bookings-cpt.php:469
+#: inc/bookings-cpt.php:490
 msgid "Choose an end date after the first trip."
 msgstr ""
 
 #. translators: %d: number of weeks
-#: inc/bookings-cpt.php:476
+#: inc/bookings-cpt.php:497
 #, php-format
 msgid "Repeat bookings can run for up to %d weeks. Call us to arrange a longer schedule."
 msgstr ""
 
 #. translators: %s: driver name
-#: inc/bookings-cpt.php:590
+#: inc/bookings-cpt.php:611
 #, php-format
 msgid "Driver assigned: %s"
 msgstr ""
 
-#: inc/bookings-cpt.php:600
+#: inc/bookings-cpt.php:621
 msgid "Driver unassigned"
 msgstr ""
 
 #. translators: %s: date and earliest time
-#: inc/bookings-cpt.php:618
+#: inc/bookings-cpt.php:639
 #, php-format
 msgid "%s or later — when ready"
 msgstr ""
 
-#: inc/bookings-cpt.php:652
+#: inc/bookings-cpt.php:673
 #: inc/lost-property.php:211
 #: inc/mail-check.php:359
 #: inc/ndis-log.php:415
@@ -3790,49 +3815,49 @@ msgstr ""
 msgid "Reference"
 msgstr ""
 
-#: inc/bookings-cpt.php:657
+#: inc/bookings-cpt.php:678
 #: inc/setup.php:225
 #: template-parts/trip-summary.php:19
 msgid "Pick-up"
 msgstr ""
 
-#: inc/bookings-cpt.php:664
+#: inc/bookings-cpt.php:685
 msgid "Yes – time to be arranged"
 msgstr ""
 
-#: inc/bookings-cpt.php:668
+#: inc/bookings-cpt.php:689
 #: inc/statements.php:382
-#: template-parts/booking-form.php:267
+#: template-parts/booking-form.php:319
 msgid "Invoice to"
 msgstr ""
 
-#: inc/bookings-cpt.php:674
+#: inc/bookings-cpt.php:695
 #: inc/maps.php:387
 #: template-parts/booking-status.php:120
 msgid "Estimated fare"
 msgstr ""
 
-#: inc/bookings-cpt.php:674
+#: inc/bookings-cpt.php:695
 msgid "(estimate only)"
 msgstr ""
 
-#: inc/bookings-cpt.php:683
+#: inc/bookings-cpt.php:704
 msgid "Flight"
 msgstr ""
 
-#: inc/bookings-cpt.php:737
+#: inc/bookings-cpt.php:758
 #: template-parts/booking-status.php:16
 msgid "Pay the driver"
 msgstr ""
 
-#: inc/bookings-cpt.php:738
+#: inc/bookings-cpt.php:759
 #: inc/settings-tabs.php:135
 #: inc/settings-tabs.php:136
 #: template-parts/booking-status.php:16
 msgid "Account / invoice"
 msgstr ""
 
-#: inc/bookings-cpt.php:739
+#: inc/bookings-cpt.php:760
 msgid "Online deposit (Stripe)"
 msgstr ""
 
@@ -5170,7 +5195,7 @@ msgstr ""
 
 #. Template Name of the theme
 #: inc/content-types.php:57
-#: inc/home.php:20
+#: inc/home.php:21
 #: inc/local-seo.php:31
 #: inc/local-seo.php:54
 #: inc/photos.php:92
@@ -5396,7 +5421,7 @@ msgid ""
 msgstr ""
 
 #: inc/content-types.php:373
-#: inc/home.php:115
+#: inc/home.php:116
 msgid "NDIS & aged care"
 msgstr ""
 
@@ -5569,7 +5594,7 @@ msgid "Live numbers & hero messages"
 msgstr ""
 
 #: inc/customizer.php:27
-#: inc/home.php:25
+#: inc/home.php:26
 msgid "Wheelchair safety video"
 msgstr ""
 
@@ -5705,7 +5730,7 @@ msgstr ""
 
 #. translators: %d: days
 #: inc/dashboard.php:260
-#: inc/tracking.php:353
+#: inc/tracking.php:363
 #, php-format
 msgid "Last %d day"
 msgid_plural "Last %d days"
@@ -6478,7 +6503,7 @@ msgstr ""
 
 #: inc/destinations.php:173
 #: inc/destinations.php:181
-#: inc/home.php:37
+#: inc/home.php:38
 msgid "Popular destinations"
 msgstr ""
 
@@ -7469,6 +7494,7 @@ msgid "Yes. Most manual and power wheelchairs fit, and you stay seated in your c
 msgstr ""
 
 #: inc/eeat.php:441
+#: inc/place-routes.php:239
 msgid "Can a carer or family member come too?"
 msgstr ""
 
@@ -7557,7 +7583,7 @@ msgid "Arrive this many minutes early"
 msgstr ""
 
 #: inc/events.php:208
-#: template-parts/booking-form.php:343
+#: template-parts/booking-form.php:346
 msgid "Promo code (optional)"
 msgstr ""
 
@@ -8733,373 +8759,386 @@ msgstr ""
 msgid "Live trust numbers"
 msgstr ""
 
-#: inc/home.php:21
-msgid "How it works (3 steps)"
+#: inc/home.php:20
+msgid "Quick price + “Text me this quote”"
 msgstr ""
 
-#: inc/home.php:21
-msgid "Booking takes about two minutes"
+#: inc/home.php:20
+#: template-parts/text-quote.php:19
+msgid "What will my trip cost?"
 msgstr ""
 
-#: inc/home.php:21
-msgid "Book online or by phone, we confirm, and your driver helps you from door to door."
+#: inc/home.php:20
+msgid "Type two addresses for a price straight away. We can text it to you, with a link to book."
 msgstr ""
 
 #: inc/home.php:22
+msgid "How it works (3 steps)"
+msgstr ""
+
+#: inc/home.php:22
+msgid "Booking takes about two minutes"
+msgstr ""
+
+#: inc/home.php:22
+msgid "Book online or by phone, we confirm, and your driver helps you from door to door."
+msgstr ""
+
+#: inc/home.php:23
 #: page-templates/about.php:56
 #: template-parts/home/fleet.php:26
 msgid "Our vehicles"
 msgstr ""
 
-#: inc/home.php:22
+#: inc/home.php:23
 msgid "Vehicles built for wheelchairs"
 msgstr ""
 
-#: inc/home.php:22
+#: inc/home.php:23
 msgid "Tell us about your chair when you book and we will send the right vehicle."
 msgstr ""
 
-#: inc/home.php:23
+#: inc/home.php:24
 #: page-templates/about.php:42
 msgid "Meet the drivers"
 msgstr ""
 
-#: inc/home.php:23
+#: inc/home.php:24
 msgid "Meet some of our drivers"
 msgstr ""
 
-#: inc/home.php:23
+#: inc/home.php:24
 msgid "Trained, patient and local — the people who will help you aboard."
 msgstr ""
 
-#: inc/home.php:24
+#: inc/home.php:25
 msgid "How a trip works (animated scenes)"
 msgstr ""
 
-#: inc/home.php:24
+#: inc/home.php:25
 msgid "From your door to the departure gate"
 msgstr ""
 
-#: inc/home.php:24
+#: inc/home.php:25
 msgid "We back right up to your door, lower the ramp and help you aboard — and we are waiting at Arrivals when you land."
 msgstr ""
 
-#: inc/home.php:26
+#: inc/home.php:27
 msgid "Reviews & testimonials"
 msgstr ""
 
-#: inc/home.php:26
+#: inc/home.php:27
 #: template-parts/testimonials.php:31
 msgid "What our passengers say"
 msgstr ""
 
-#: inc/home.php:27
+#: inc/home.php:28
 msgid "Areas we cover + map + suburb checker"
 msgstr ""
 
-#: inc/home.php:27
+#: inc/home.php:28
 msgid "Based on the Mornington Peninsula and servicing greater Melbourne. Not listed? Call us — we travel further on request."
 msgstr ""
 
-#: inc/home.php:28
+#: inc/home.php:29
 msgid "Top questions (FAQ strip)"
 msgstr ""
 
-#: inc/home.php:28
+#: inc/home.php:29
 msgid "Questions we are often asked"
 msgstr ""
 
-#: inc/home.php:29
+#: inc/home.php:30
 msgid "Home page content (from the editor)"
 msgstr ""
 
-#: inc/home.php:30
+#: inc/home.php:31
 msgid "Travel partners (moving logos, numbers, “Become a partner”)"
 msgstr ""
 
-#: inc/home.php:30
+#: inc/home.php:31
 msgid "Trusted by [local hospitals], care homes and businesses"
 msgstr ""
 
-#: inc/home.php:30
+#: inc/home.php:31
 msgid "Organisations across the Peninsula book their residents, patients and staff with us every week."
 msgstr ""
 
-#: inc/home.php:31
+#: inc/home.php:32
 msgid "NDIS & funding partners (moving logos, numbers, “Check your funding”)"
 msgstr ""
 
-#: inc/home.php:31
+#: inc/home.php:32
 msgid "Use your [NDIS plan] or funding — we handle the paperwork"
 msgstr ""
 
-#: inc/home.php:31
+#: inc/home.php:32
 msgid "We work with the schemes, plan managers and support coordinators below."
 msgstr ""
 
-#: inc/home.php:32
+#: inc/home.php:33
 msgid "Call-to-action band"
 msgstr ""
 
-#: inc/home.php:32
+#: inc/home.php:33
 #: patterns/cta.php:15
 #: template-parts/cta.php:12
 msgid "Need a wheelchair taxi today?"
 msgstr ""
 
-#: inc/home.php:32
+#: inc/home.php:33
 #: patterns/cta.php:18
 #: template-parts/cta.php:13
 msgid "Call our friendly team and we will get you moving."
 msgstr ""
 
-#: inc/home.php:34
+#: inc/home.php:35
 msgid "Quick booking card"
 msgstr ""
 
-#: inc/home.php:34
+#: inc/home.php:35
 #: patterns/booking-form.php:15
 msgid "Book your accessible taxi"
 msgstr ""
 
-#: inc/home.php:34
+#: inc/home.php:35
 msgid "Tell us where you are going and what you need. We will confirm your booking and let you know when your driver is on the way."
 msgstr ""
 
-#: inc/home.php:35
+#: inc/home.php:36
 msgid "Who we help (large panels)"
 msgstr ""
 
-#: inc/home.php:35
+#: inc/home.php:36
 msgid "Who we help"
 msgstr ""
 
-#: inc/home.php:35
+#: inc/home.php:36
 msgid "Whether you are travelling yourself or arranging transport for someone else, we make it simple."
 msgstr ""
 
-#: inc/home.php:36
+#: inc/home.php:37
 #: patterns/features.php:15
 #: template-parts/features.php:10
 msgid "Why passengers choose us"
 msgstr ""
 
-#: inc/home.php:37
+#: inc/home.php:38
 #: template-parts/destinations.php:15
 msgid "Where our passengers go"
 msgstr ""
 
-#: inc/home.php:37
+#: inc/home.php:38
 #: template-parts/destinations.php:16
 msgid "Our most-booked destinations this year. Tap one to book a trip there."
 msgstr ""
 
-#: inc/home.php:38
+#: inc/home.php:39
 msgid "Latest blog posts"
 msgstr ""
 
-#: inc/home.php:38
+#: inc/home.php:39
 #: index.php:18
 msgid "News & travel tips"
 msgstr ""
 
-#: inc/home.php:113
+#: inc/home.php:114
 msgid "Book your own trip online or by phone. We help you from your door to theirs."
 msgstr ""
 
-#: inc/home.php:113
+#: inc/home.php:114
 msgid "I’m a passenger"
 msgstr ""
 
-#: inc/home.php:114
+#: inc/home.php:115
 msgid "Family & carers"
 msgstr ""
 
-#: inc/home.php:114
+#: inc/home.php:115
 msgid "Booking for a parent, partner or client? Carers can travel too, and you can manage the booking online."
 msgstr ""
 
-#: inc/home.php:114
+#: inc/home.php:115
 msgid "Book for someone"
 msgstr ""
 
-#: inc/home.php:114
+#: inc/home.php:115
 msgid "I’m booking for someone"
 msgstr ""
 
-#: inc/home.php:115
+#: inc/home.php:116
 msgid "NDIS coordinators & plan managers"
 msgstr ""
 
-#: inc/home.php:115
+#: inc/home.php:116
 msgid "Set up regular trips for participants and have them invoiced to the right place."
 msgstr ""
 
-#: inc/home.php:115
+#: inc/home.php:116
 msgid "NDIS & accounts"
 msgstr ""
 
-#: inc/home.php:116
+#: inc/home.php:117
 msgid "Hospitals & aged care"
 msgstr ""
 
-#: inc/home.php:116
+#: inc/home.php:117
 msgid "Discharges, appointments and outings for your patients and residents. Ask us about an account."
 msgstr ""
 
-#: inc/home.php:116
+#: inc/home.php:117
 msgid "Book a discharge trip"
 msgstr ""
 
-#: inc/home.php:116
+#: inc/home.php:117
 msgid "Hospital discharge"
-msgstr ""
-
-#. translators: %s: section
-#: inc/home.php:175
-#, php-format
-msgid "Move %s up"
 msgstr ""
 
 #. translators: %s: section
 #: inc/home.php:176
 #, php-format
+msgid "Move %s up"
+msgstr ""
+
+#. translators: %s: section
+#: inc/home.php:177
+#, php-format
 msgid "Move %s down"
 msgstr ""
 
-#: inc/home.php:181
+#: inc/home.php:182
 msgid "Use the recommended layout"
 msgstr ""
 
-#: inc/home.php:190
+#: inc/home.php:191
 msgid "Home page layout"
 msgstr ""
 
-#: inc/home.php:193
+#: inc/home.php:194
 msgid "Tick to show a section, untick to hide it, and drag (or use ▲ ▼) to reorder. The hero banner always stays at the top."
 msgstr ""
 
-#: inc/home.php:197
+#: inc/home.php:198
 msgid "Sections"
 msgstr ""
 
-#: inc/home.php:200
+#: inc/home.php:201
 msgid "Show trust badges and the Google rating under the hero buttons"
 msgstr ""
 
-#: inc/home.php:202
+#: inc/home.php:203
 msgid "Booking section: show the full booking form instead of the quick card"
 msgstr ""
 
-#: inc/home.php:204
+#: inc/home.php:205
 msgid "Featured quote (reviews section)"
 msgstr ""
 
-#: inc/home.php:204
+#: inc/home.php:205
 msgid "A short, real quote from a passenger, carer or coordinator — with their permission. Leave empty to use your first testimonial."
 msgstr ""
 
-#: inc/home.php:206
+#: inc/home.php:207
 msgid "Featured quote — who said it"
 msgstr ""
 
-#: inc/home.php:206
+#: inc/home.php:207
 msgid "e.g. Sarah, NDIS support coordinator"
 msgstr ""
 
-#: inc/home.php:209
+#: inc/home.php:210
 msgid "Show the quick-book card in the hero (From, To, Date, Time, Wheelchair)"
 msgstr ""
 
-#: inc/home.php:214
+#: inc/home.php:215
 msgid "Home page headings & text"
 msgstr ""
 
-#: inc/home.php:217
+#: inc/home.php:218
 msgid "Leave a field empty to use the default wording."
 msgstr ""
 
 #. translators: %s: section
-#: inc/home.php:224
+#: inc/home.php:225
 #, php-format
 msgid "%s — heading"
 msgstr ""
 
 #. translators: %s: section
-#: inc/home.php:229
+#: inc/home.php:230
 #, php-format
 msgid "%s — intro"
 msgstr ""
 
-#: inc/home.php:236
+#: inc/home.php:237
 msgid "Who we help & shortcuts"
 msgstr ""
 
-#: inc/home.php:239
+#: inc/home.php:240
 msgid "Four short panels for different audiences. Clear a heading to hide that panel. Leave a link empty to use the matching page automatically."
 msgstr ""
 
-#: inc/home.php:244
+#: inc/home.php:245
 msgid "heading"
 msgstr ""
 
-#: inc/home.php:245
+#: inc/home.php:246
 msgid "text"
 msgstr ""
 
-#: inc/home.php:246
+#: inc/home.php:247
 msgid "link text"
 msgstr ""
 
-#: inc/home.php:247
+#: inc/home.php:248
 msgid "link (optional)"
 msgstr ""
 
 #. translators: 1: panel number, 2: field
-#: inc/home.php:251
+#: inc/home.php:252
 #, php-format
 msgid "Panel %1$d — %2$s"
 msgstr ""
 
-#: inc/home.php:270
+#: inc/home.php:271
 msgid "Hero photos"
 msgstr ""
 
-#: inc/home.php:271
-#: inc/home.php:274
+#: inc/home.php:272
+#: inc/home.php:275
 #: inc/photos.php:134
 msgid "Hero photo"
 msgstr ""
 
-#: inc/home.php:272
+#: inc/home.php:273
 msgid "Add seasonal hero photo"
 msgstr ""
 
-#: inc/home.php:273
+#: inc/home.php:274
 msgid "Edit hero photo"
 msgstr ""
 
-#: inc/home.php:275
+#: inc/home.php:276
 msgid "Set hero photo"
 msgstr ""
 
-#: inc/home.php:287
+#: inc/home.php:288
 msgid "When to show it"
 msgstr ""
 
-#: inc/home.php:293
+#: inc/home.php:294
 msgid "Set the photo with \"Hero photo\" on the right (give it alt text in the Media Library). It replaces the normal hero image between these dates."
 msgstr ""
 
-#: inc/home.php:296
+#: inc/home.php:297
 msgid "Until (inclusive)"
 msgstr ""
 
-#: inc/home.php:297
+#: inc/home.php:298
 msgid "Repeat every year (e.g. every December)"
 msgstr ""
 
-#: inc/home.php:370
+#: inc/home.php:371
 #: inc/lost-property.php:468
 #: inc/lost-property.php:543
 #: inc/lost-property.php:643
@@ -9107,7 +9146,7 @@ msgstr ""
 msgid "Photo"
 msgstr ""
 
-#: inc/home.php:372
+#: inc/home.php:373
 #: inc/search-data.php:426
 #: inc/search-data.php:440
 #: inc/search-data.php:448
@@ -9115,11 +9154,11 @@ msgstr ""
 msgid "Shown"
 msgstr ""
 
-#: inc/home.php:384
+#: inc/home.php:385
 msgid "(every year)"
 msgstr ""
 
-#: inc/home.php:386
+#: inc/home.php:387
 msgid "Showing now"
 msgstr ""
 
@@ -9734,6 +9773,177 @@ msgstr ""
 msgid "Blog"
 msgstr ""
 
+#: inc/lead-tools.php:26
+msgid "Leads & follow-up"
+msgstr ""
+
+#: inc/lead-tools.php:26
+msgid "See Reports → Leads & calls for quotes sent by text and phone taps to follow up."
+msgstr ""
+
+#: inc/lead-tools.php:34
+msgid "Show “Text us your booking” buttons"
+msgstr ""
+
+#: inc/lead-tools.php:34
+msgid "Opens the visitor’s messages app with a short booking template."
+msgstr ""
+
+#: inc/lead-tools.php:35
+msgid "Mobile number that receives the texts"
+msgstr ""
+
+#: inc/lead-tools.php:35
+msgid "Leave empty to use your main number when it is a mobile."
+msgstr ""
+
+#: inc/lead-tools.php:36
+msgid "Quote by text"
+msgstr ""
+
+#: inc/lead-tools.php:36
+msgid "Visitors type two addresses and see a price; “Text me this quote” sends it to their mobile (needs SMS and fare estimates set up)."
+msgstr ""
+
+#: inc/lead-tools.php:72
+#: inc/lead-tools.php:104
+msgid "Hi, I’d like to book a taxi."
+msgstr ""
+
+#: inc/lead-tools.php:75
+#: inc/lead-tools.php:101
+msgid "Date and time:"
+msgstr ""
+
+#: inc/lead-tools.php:76
+#: inc/lead-tools.php:102
+msgid "Wheelchair (yes/no):"
+msgstr ""
+
+#: inc/lead-tools.php:77
+#: inc/lead-tools.php:103
+msgid "Name:"
+msgstr ""
+
+#: inc/lead-tools.php:108
+#: inc/lead-tools.php:127
+msgid "Text us your booking"
+msgstr ""
+
+#: inc/lead-tools.php:114
+msgid "Prefer to text? Text us your booking"
+msgstr ""
+
+#: inc/lead-tools.php:127
+msgid "Your messages app opens with a short template to fill in."
+msgstr ""
+
+#: inc/lead-tools.php:184
+msgid "Quotes by text are not available at the moment. Please call us."
+msgstr ""
+
+#: inc/lead-tools.php:187
+msgid "Sent! Check your messages."
+msgstr ""
+
+#: inc/lead-tools.php:191
+msgid "Please enter an Australian mobile number, e.g. 0412 345 678."
+msgstr ""
+
+#. translators: %s: phone
+#: inc/lead-tools.php:196
+#, php-format
+msgid "Too many quotes sent. Please call us on %s."
+msgstr ""
+
+#: inc/lead-tools.php:203
+msgid "We couldn’t work out that trip. Please check both addresses, or call us for a price."
+msgstr ""
+
+#. translators: 1: site 2: from 3: to 4: price 5: booking link 6: phone
+#: inc/lead-tools.php:209
+#, php-format
+msgid "%1$s: wheelchair taxi from %2$s to %3$s is about %4$s. Book online: %5$s or call %6$s."
+msgstr ""
+
+#: inc/lead-tools.php:219
+msgid "The text could not be sent just now. Please call us."
+msgstr ""
+
+#: inc/lead-tools.php:233
+msgid "Sent! Check your messages — the text has a link to book."
+msgstr ""
+
+#. translators: %d: number of phone taps
+#: inc/lead-tools.php:315
+#, php-format
+msgid "%d phone tap to follow up"
+msgid_plural "%d phone taps to follow up"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/lead-tools.php:330
+msgid "Phone taps to follow up"
+msgstr ""
+
+#. translators: %d: minutes
+#: inc/lead-tools.php:334
+#, php-format
+msgid "Someone tapped your number on the website, but no booking came from the same browser within %d minutes. Match the time with missed or short calls on your phone and call them back."
+msgstr ""
+
+#: inc/lead-tools.php:338
+msgid "Nothing to follow up in the last 7 days."
+msgstr ""
+
+#: inc/lead-tools.php:341
+msgid "Tapped at"
+msgstr ""
+
+#: inc/lead-tools.php:341
+#: inc/search-data.php:448
+#: inc/search-data.php:1050
+#: inc/tracking.php:400
+msgid "Page"
+msgstr ""
+
+#: inc/lead-tools.php:348
+msgid "Computer"
+msgstr ""
+
+#: inc/lead-tools.php:363
+msgid "Mark all as done"
+msgstr ""
+
+#: inc/lead-tools.php:368
+#: inc/tracking.php:78
+msgid "Quotes sent by text"
+msgstr ""
+
+#: inc/lead-tools.php:370
+msgid "None in the last 30 days."
+msgstr ""
+
+#: inc/lead-tools.php:373
+#: inc/marketing.php:673
+#: inc/privacy.php:347
+msgid "Sent"
+msgstr ""
+
+#: inc/lead-tools.php:373
+#: inc/ndis-invoices.php:182
+#: inc/quotes.php:408
+msgid "Price"
+msgstr ""
+
+#: inc/lead-tools.php:373
+msgid "Booked with us?"
+msgstr ""
+
+#: inc/lead-tools.php:381
+msgid "Not yet — worth a call"
+msgstr ""
+
 #: inc/live-location.php:19
 msgid "Show customers where their driver is"
 msgstr ""
@@ -9998,7 +10208,8 @@ msgstr ""
 
 #: inc/lost-property.php:120
 #: inc/quotes.php:142
-#: template-parts/booking-form.php:86
+#: template-parts/booking-form.php:70
+#: template-parts/booking-form.php:92
 #: template-parts/trip-summary.php:17
 msgid "Your trip"
 msgstr ""
@@ -10024,6 +10235,7 @@ msgid "How can we reach you?"
 msgstr ""
 
 #: inc/lost-property.php:132
+#: template-parts/booking-form.php:184
 msgid "Email (optional)"
 msgstr ""
 
@@ -10929,11 +11141,6 @@ msgstr ""
 msgid "Send to subscribers"
 msgstr ""
 
-#: inc/marketing.php:673
-#: inc/privacy.php:347
-msgid "Sent"
-msgstr ""
-
 #: inc/marketing.php:674
 #: inc/search-data.php:1115
 msgid "By"
@@ -11125,11 +11332,6 @@ msgstr ""
 #: inc/ndis-invoices.php:181
 #: inc/ndis-invoices.php:457
 msgid "Qty"
-msgstr ""
-
-#: inc/ndis-invoices.php:182
-#: inc/quotes.php:408
-msgid "Price"
 msgstr ""
 
 #: inc/ndis-invoices.php:183
@@ -12287,6 +12489,7 @@ msgid "%1$d of %2$d photo spots filled."
 msgstr ""
 
 #: inc/photos.php:131
+#: inc/speed-report.php:27
 msgid "Home page"
 msgstr ""
 
@@ -12386,6 +12589,102 @@ msgstr ""
 
 #: inc/photos.php:197
 msgid "Avoid number plates of other cars and hospital signage that identifies a specific clinic a passenger attends."
+msgstr ""
+
+#: inc/place-routes.php:27
+msgid "Create route pages (suburb → hospital, station…)"
+msgstr ""
+
+#: inc/place-routes.php:27
+msgid "e.g. “Wheelchair taxi from Frankston to Monash Medical Centre”, for the 8 nearest suburbs of each place page that has a map position."
+msgstr ""
+
+#. translators: 1: place, e.g. Frankston Station 2: suburb
+#. translators: 1: suburb 2: place, e.g. Frankston Hospital
+#: inc/place-routes.php:100
+#: inc/place-routes.php:102
+#, php-format
+msgid "Wheelchair taxi from %1$s to %2$s"
+msgstr ""
+
+#. translators: 1: route title 2: minutes 3: km
+#: inc/place-routes.php:152
+#, php-format
+msgid "%1$s: about %2$d minutes and %3$s km."
+msgstr ""
+
+#. translators: %s: fare range
+#: inc/place-routes.php:155
+#, php-format
+msgid "Fare about %s."
+msgstr ""
+
+#. translators: %s: phone
+#: inc/place-routes.php:158
+#, php-format
+msgid "Ramp and hoist vans, door to door. Book online or call %s."
+msgstr ""
+
+#. translators: 1: from 2: to
+#: inc/place-routes.php:211
+#, php-format
+msgid "How much is a wheelchair taxi from %1$s to %2$s?"
+msgstr ""
+
+#. translators: 1: fare range 2: phone
+#: inc/place-routes.php:214
+#, php-format
+msgid "Usually about %1$s for a wheelchair accessible taxi, depending on the exact address, traffic and time of day. MPTP members pay half (up to the subsidy limit), and NDIS and aged-care accounts can be invoiced. Call %2$s for a firm price."
+msgstr ""
+
+#. translators: %s: phone
+#: inc/place-routes.php:216
+#, php-format
+msgid "It depends on the exact address and time of day — call %s for a price. MPTP members pay half (up to the subsidy limit), and NDIS and aged-care accounts can be invoiced."
+msgstr ""
+
+#. translators: 1: from 2: to
+#: inc/place-routes.php:220
+#, php-format
+msgid "How long does the trip from %1$s to %2$s take?"
+msgstr ""
+
+#. translators: 1: minutes 2: km
+#: inc/place-routes.php:222
+#, php-format
+msgid "About %1$d minutes for the %2$s km without traffic. We allow a few extra minutes to load and secure your wheelchair."
+msgstr ""
+
+#. translators: %s: place
+#: inc/place-routes.php:227
+#, php-format
+msgid "Where do you pick up at %s?"
+msgstr ""
+
+#. translators: %s: place
+#: inc/place-routes.php:227
+#, php-format
+msgid "Where do you drop off at %s?"
+msgstr ""
+
+#. translators: %s: area
+#: inc/place-routes.php:234
+#, php-format
+msgid "Can you take me home to %s when I’m discharged?"
+msgstr ""
+
+#: inc/place-routes.php:235
+msgid "Yes. Book a “pick up when ready” trip: choose the day, then tap “I’m ready” on your booking page or call us when the ward lets you go, and we send the driver."
+msgstr ""
+
+#: inc/place-routes.php:240
+msgid "Yes. Tell us how many people are travelling when you book; carers travel at no extra charge."
+msgstr ""
+
+#. translators: %s: suburb
+#: inc/place-routes.php:310
+#, php-format
+msgid "Popular trips from %s"
 msgstr ""
 
 #: inc/places.php:25
@@ -12550,6 +12849,7 @@ msgid "Longitude"
 msgstr ""
 
 #: inc/places.php:236
+#: place-route.php:76
 #: single-tp_place.php:74
 msgid "Accessible entrance"
 msgstr ""
@@ -12629,195 +12929,207 @@ msgstr ""
 msgid "[CONFIRM on site]"
 msgstr ""
 
+#: inc/places.php:327
+msgid "[CONFIRM] Which entrance has level access, and where are wheelchairs to borrow?"
+msgstr ""
+
 #: inc/places.php:328
+msgid "[CONFIRM] Where exactly do drivers drop off and pick up?"
+msgstr ""
+
+#: inc/places.php:329
+msgid "[CONFIRM] Where exactly do passengers wait for the taxi?"
+msgstr ""
+
+#: inc/places.php:331
 msgid "Main entrance on Hastings Road, with level access and automatic doors."
 msgstr ""
 
-#: inc/places.php:328
+#: inc/places.php:331
 msgid "Set-down bay in front of the main entrance."
 msgstr ""
 
-#: inc/places.php:329
+#: inc/places.php:332
 msgid "Main entrance off Point Nepean Road."
 msgstr ""
 
-#: inc/places.php:329
+#: inc/places.php:332
 msgid "Drop-off zone at the main entrance."
 msgstr ""
 
-#: inc/places.php:330
+#: inc/places.php:333
 msgid "Main entrance on Clayton Road."
 msgstr ""
 
-#: inc/places.php:330
+#: inc/places.php:333
 msgid "Taxi set-down at the main entrance."
 msgstr ""
 
-#: inc/places.php:331
+#: inc/places.php:334
 msgid "Main entrance on Commercial Road."
 msgstr ""
 
-#: inc/places.php:331
+#: inc/places.php:334
 msgid "Set-down area outside the main entrance."
 msgstr ""
 
-#: inc/places.php:332
+#: inc/places.php:335
 msgid "Every terminal has level access from the forecourt."
 msgstr ""
 
-#: inc/places.php:332
+#: inc/places.php:335
 msgid "Departures: the kerb outside your airline. Arrivals: we meet you at the arrivals hall and walk you to the van."
 msgstr ""
 
-#: inc/places.php:333
+#: inc/places.php:336
 msgid "Step-free access from the platforms to Young Street."
 msgstr ""
 
-#: inc/places.php:333
+#: inc/places.php:336
 msgid "The taxi rank and pick-up zone on Young Street, outside the station entrance."
 msgstr ""
 
-#: inc/places.php:334
+#: inc/places.php:337
 msgid "Ground-floor entrances with automatic doors."
 msgstr ""
 
-#: inc/places.php:334
+#: inc/places.php:337
 msgid "The taxi rank closest to the main entrance — tell us which entrance when you book."
 msgstr ""
 
-#: inc/places.php:335
+#: inc/places.php:338
 msgid "Level entrances from the car park."
 msgstr ""
 
-#: inc/places.php:335
+#: inc/places.php:338
 msgid "The taxi rank near the main entrance."
 msgstr ""
 
-#: inc/places.php:336
+#: inc/places.php:339
 msgid "Accessible entrances on every level from the car park."
 msgstr ""
 
-#: inc/places.php:336
+#: inc/places.php:339
 msgid "The taxi rank on the ground floor."
 msgstr ""
 
-#: inc/places.php:367
+#: inc/places.php:390
 msgid "[CONFIRM] Where exactly do drivers drop off?"
 msgstr ""
 
-#: inc/places.php:371
+#: inc/places.php:394
 msgid "[CONFIRM] Add one or two tips from your drivers."
 msgstr ""
 
 #. translators: %d: number
-#: inc/places.php:375
+#: inc/places.php:398
 #, php-format
 msgid "%d draft place page added."
 msgid_plural "%d draft place pages added."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/places.php:390
+#: inc/places.php:413
 msgid "Place pages answer searches such as \"wheelchair taxi to Frankston Hospital\" or \"accessible taxi from Frankston Station\". Add the places your passengers go most — a real photo of the entrance and the exact drop-off spot make them far more useful than a generic page."
 msgstr ""
 
-#: inc/places.php:394
+#: inc/places.php:417
 msgid "Add suggested hospitals, stations and shopping centres (drafts)"
 msgstr ""
 
-#: inc/places.php:395
+#: inc/places.php:418
 msgid "Add drafts from Popular destinations"
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:437
+#: inc/places.php:460
 #, php-format
 msgid "Where do I wait for my taxi at %s?"
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:437
+#: inc/places.php:460
 msgid "Tell us where you will be when you book and the driver will meet you there. We text you when the driver is on the way and when they arrive."
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:439
+#: inc/places.php:462
 #, php-format
 msgid "Can you pick me up from %s straight after my train or shopping?"
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:439
+#: inc/places.php:462
 msgid "Yes. Book a time, or call us when you are ready. If your train is running late, just let us know and we will adjust the pick-up."
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:442
+#: inc/places.php:465
 #, php-format
 msgid "Where will you drop me off at %s?"
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:442
+#: inc/places.php:465
 msgid "At the most accessible entrance, as close to the door as the driver can safely stop. Tell us your department or appointment location when you book."
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:444
+#: inc/places.php:467
 #, php-format
 msgid "Can you wait or pick me up after my appointment at %s?"
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:444
+#: inc/places.php:467
 msgid "Yes. Book a return trip with an approximate time, then call or text us when you are ready. Appointments often run late, so we keep return pick-ups flexible."
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:448
+#: inc/places.php:471
 #, php-format
 msgid "Is there step-free access at %s?"
 msgstr ""
 
 #. translators: %s: suburb
-#: inc/places.php:492
+#: inc/places.php:515
 #, php-format
 msgid "Hospitals, stations and places in %s"
 msgstr ""
 
-#: inc/places.php:510
+#: inc/places.php:533
 msgid "Hospitals, clinics, airports and venues"
 msgstr ""
 
-#: inc/places.php:511
+#: inc/places.php:534
 msgid "Railway stations and shopping centres"
 msgstr ""
 
-#: inc/places.php:554
+#: inc/places.php:577
 msgid "Places We Go"
 msgstr ""
 
-#: inc/places.php:555
+#: inc/places.php:578
 msgid "Accessible entrances, drop-off points and tips for the hospitals, stations and shopping centres our passengers travel to most."
 msgstr ""
 
-#: inc/places.php:566
+#: inc/places.php:589
 msgid "Hospitals & stations"
 msgstr ""
 
-#: inc/places.php:578
+#: inc/places.php:601
 msgid "Book a “pick up when ready” trip ahead: choose the day, then tap “I’m ready” on your booking page (or call us) when the ward lets you go."
 msgstr ""
 
-#: inc/places.php:579
+#: inc/places.php:602
 msgid "Discharge often takes longer than planned — waiting for medicines, a doctor’s sign-off or transport letters is normal. We only send the car when you are ready."
 msgstr ""
 
-#: inc/places.php:580
+#: inc/places.php:603
 msgid "Have your discharge letter, medicines and any walking aids with you, and tell us if you need help from the ward to the car."
 msgstr ""
 
-#: inc/places.php:581
+#: inc/places.php:604
 msgid "Travelling with a wheelchair or a carer? Say so when you book so we send the right vehicle."
 msgstr ""
 
@@ -13737,7 +14049,8 @@ msgid "e.g. waiting time, stops on the way, wedding schedule, wheelchair size."
 msgstr ""
 
 #: inc/quotes.php:156
-#: template-parts/booking-form.php:294
+#: template-parts/booking-form.php:71
+#: template-parts/booking-form.php:153
 msgid "Your details"
 msgstr ""
 
@@ -13854,6 +14167,7 @@ msgstr ""
 #: single-tp_service.php:37
 #: single-tp_service.php:43
 #: template-parts/service-card.php:36
+#: template-parts/text-quote.php:35
 msgid "Book this trip"
 msgstr ""
 
@@ -14472,12 +14786,6 @@ msgstr ""
 msgid "Top landing pages"
 msgstr ""
 
-#: inc/search-data.php:448
-#: inc/search-data.php:1050
-#: inc/tracking.php:367
-msgid "Page"
-msgstr ""
-
 #: inc/search-data.php:456
 msgid "No data yet — click \"Refresh now\". New sites can take a few days to show data in Search Console."
 msgstr ""
@@ -14813,6 +15121,7 @@ msgid "Change the questions"
 msgstr ""
 
 #: inc/search-data.php:1109
+#: place-route.php:95
 msgid "Questions"
 msgstr ""
 
@@ -14911,11 +15220,11 @@ msgid "Search results, tag, date and author archives and attachment pages."
 msgstr ""
 
 #: inc/search.php:54
-msgid "Save new photo uploads as WebP (smaller, faster)"
+msgid "Save new photo uploads as AVIF or WebP (smaller, faster)"
 msgstr ""
 
 #: inc/search.php:54
-msgid "Only when your server supports it."
+msgid "AVIF when your server supports it, otherwise WebP. Photos uploaded before stay as they are; a free plugin such as “Regenerate Thumbnails” converts them."
 msgstr ""
 
 #: inc/search.php:55
@@ -16224,19 +16533,19 @@ msgstr ""
 msgid "Recurring trips"
 msgstr ""
 
-#: inc/settings.php:218
+#: inc/settings.php:230
 msgid "Set in wp-config.php"
 msgstr ""
 
-#: inc/settings.php:224
+#: inc/settings.php:236
 msgid "Enabled"
 msgstr ""
 
-#: inc/settings.php:239
+#: inc/settings.php:251
 msgid "— Use the Setup page —"
 msgstr ""
 
-#: inc/settings.php:252
+#: inc/settings.php:264
 msgid "•••••••• saved — leave blank to keep"
 msgstr ""
 
@@ -16264,6 +16573,7 @@ msgstr ""
 
 #. translators: %s: suburb
 #: inc/setup.php:200
+#: place-route.php:116
 #, php-format
 msgid "Wheelchair taxis in %s"
 msgstr ""
@@ -16459,6 +16769,105 @@ msgstr ""
 
 #: inc/sms.php:287
 msgid "Test SMS sent."
+msgstr ""
+
+#: inc/speed-report.php:19
+msgid "PageSpeed Insights API key (optional)"
+msgstr ""
+
+#: inc/speed-report.php:19
+msgid "For Reports → Site speed. Works without a key, but Google may limit shared use. Create one free in Google Cloud → APIs → PageSpeed Insights API."
+msgstr ""
+
+#: inc/speed-report.php:28
+msgid "Booking page"
+msgstr ""
+
+#: inc/speed-report.php:37
+msgid "Largest content shows (LCP)"
+msgstr ""
+
+#: inc/speed-report.php:38
+msgid "Reacts to taps (INP)"
+msgstr ""
+
+#: inc/speed-report.php:39
+msgid "Page stays still (CLS)"
+msgstr ""
+
+#: inc/speed-report.php:64
+msgid "Google did not answer. Try again later, or add an API key."
+msgstr ""
+
+#: inc/speed-report.php:87
+#: inc/speed-report.php:130
+msgid "Site speed"
+msgstr ""
+
+#: inc/speed-report.php:124
+msgid "Good"
+msgstr ""
+
+#: inc/speed-report.php:125
+msgid "Needs work"
+msgstr ""
+
+#: inc/speed-report.php:126
+msgid "Poor"
+msgstr ""
+
+#: inc/speed-report.php:131
+msgid "How fast your pages are for real visitors on phones over the last 28 days, as Google measures them for search rankings (Core Web Vitals). All three should be “Good”."
+msgstr ""
+
+#: inc/speed-report.php:135
+msgid "Check again"
+msgstr ""
+
+#: inc/speed-report.php:136
+msgid "Takes up to a minute."
+msgstr ""
+
+#: inc/speed-report.php:146
+msgid "Google does not have enough visits yet to report real-visitor speed. The lab score below is a single test from Google’s servers."
+msgstr ""
+
+#: inc/speed-report.php:149
+msgid "Not enough visits to this page alone, so these are the figures for the whole site."
+msgstr ""
+
+#. translators: %d: score out of 100
+#: inc/speed-report.php:171
+#, php-format
+msgid "Lab score on a phone: %d / 100."
+msgstr ""
+
+#. translators: %s: element name
+#: inc/speed-report.php:174
+#, php-format
+msgid "Largest thing on the first screen: %s."
+msgstr ""
+
+#. translators: %s: time ago
+#: inc/speed-report.php:182
+#, php-format
+msgid "Checked %s ago."
+msgstr ""
+
+#: inc/speed-report.php:186
+msgid "If something is not “Good”"
+msgstr ""
+
+#: inc/speed-report.php:188
+msgid "Largest content: use a smaller home page photo (under 200 KB) — new uploads are saved as AVIF or WebP automatically."
+msgstr ""
+
+#: inc/speed-report.php:189
+msgid "Reacts to taps: switch off plugins that add chat widgets, sliders or trackers you no longer use."
+msgstr ""
+
+#: inc/speed-report.php:190
+msgid "Page stays still: give images in your page content a width and height, and avoid adverts or banners that load late."
 msgstr ""
 
 #: inc/starter-content.php:15
@@ -16858,80 +17267,112 @@ msgstr ""
 msgid "Email all statements for this month now?"
 msgstr ""
 
-#: inc/tracking.php:63
+#: inc/tracking.php:65
 msgid "WhatsApp taps"
 msgstr ""
 
-#: inc/tracking.php:64
+#: inc/tracking.php:66
 msgid "SMS taps"
 msgstr ""
 
-#: inc/tracking.php:65
+#: inc/tracking.php:67
 msgid "Email taps"
 msgstr ""
 
-#: inc/tracking.php:67
+#: inc/tracking.php:69
 msgid "Quote requests"
 msgstr ""
 
-#: inc/tracking.php:68
+#: inc/tracking.php:70
 msgid "Newsletter sign-ups"
 msgstr ""
 
-#: inc/tracking.php:69
+#: inc/tracking.php:71
 msgid "Partner page views"
 msgstr ""
 
-#: inc/tracking.php:70
+#: inc/tracking.php:72
 msgid "QR code scans"
 msgstr ""
 
-#: inc/tracking.php:261
+#: inc/tracking.php:74
+msgid "Started the booking form"
+msgstr ""
+
+#: inc/tracking.php:75
+msgid "Finished step 1 (trip)"
+msgstr ""
+
+#: inc/tracking.php:76
+msgid "Sent the booking form"
+msgstr ""
+
+#: inc/tracking.php:77
+msgid "Prices checked (quick price)"
+msgstr ""
+
+#: inc/tracking.php:271
 msgid "Call tracking"
 msgstr ""
 
-#: inc/tracking.php:261
+#: inc/tracking.php:271
 msgid "See Bookings → Leads & calls for the report."
 msgstr ""
 
-#: inc/tracking.php:269
+#: inc/tracking.php:279
 msgid "Tracking phone numbers"
 msgstr ""
 
-#: inc/tracking.php:269
+#: inc/tracking.php:279
 msgid "Optional. One per line: source | medium | number shown | number dialled. Visitors who arrived from that source see that number instead of your main number, so your call-tracking provider can count calls from it. Example: google | cpc | 03 5900 1111 | +61359001111 (leave medium empty to match any medium)."
 msgstr ""
 
-#: inc/tracking.php:313
-#: inc/tracking.php:346
+#: inc/tracking.php:323
+#: inc/tracking.php:356
 msgid "Leads & calls"
 msgstr ""
 
-#: inc/tracking.php:347
+#: inc/tracking.php:357
 msgid "Which campaigns, websites, partners and pages bring phone calls, messages and bookings. Phone taps are counted when someone taps your number on the website; calls dialled from memory or Google Maps are not seen here — use tracking numbers (Bookings → Settings → Call tracking) to measure those."
 msgstr ""
 
-#: inc/tracking.php:366
+#: inc/tracking.php:374
+msgid "Booking form: where people stop"
+msgstr ""
+
+#: inc/tracking.php:376
+msgid "Nothing recorded in this period yet. Each visitor who starts typing in the booking form is counted once per visit."
+msgstr ""
+
+#: inc/tracking.php:382
+msgid "Booking saved"
+msgstr ""
+
+#: inc/tracking.php:388
+msgid "“Sent” can be higher than “Booking saved” when the form came back with a mistake to fix, or a text code was not entered. Bookings also count those made from other forms (quotes, partner pages)."
+msgstr ""
+
+#: inc/tracking.php:399
 msgid "By source and campaign"
 msgstr ""
 
-#: inc/tracking.php:366
+#: inc/tracking.php:399
 msgid "Source / medium / campaign"
 msgstr ""
 
-#: inc/tracking.php:367
+#: inc/tracking.php:400
 msgid "By page"
 msgstr ""
 
-#: inc/tracking.php:372
+#: inc/tracking.php:405
 msgid "Nothing recorded in this period yet."
 msgstr ""
 
-#: inc/tracking.php:393
+#: inc/tracking.php:426
 msgid "Tracking links"
 msgstr ""
 
-#: inc/tracking.php:394
+#: inc/tracking.php:427
 msgid "Add these tags to links in ads, emails and social posts to see them above:"
 msgstr ""
 
@@ -18266,6 +18707,119 @@ msgctxt "Pattern description"
 msgid "Captioned video with transcript — set it up in Customize → Taxi Peninsula → Wheelchair safety video."
 msgstr ""
 
+#. translators: 1: minutes 2: km
+#: place-route.php:29
+#, php-format
+msgid "About %1$d minutes, %2$s km. Ramp and hoist vans with trained drivers, door to door."
+msgstr ""
+
+#: place-route.php:35
+msgid "Trip at a glance"
+msgstr ""
+
+#: place-route.php:36
+msgid "Travel time"
+msgstr ""
+
+#. translators: %d: minutes
+#: place-route.php:37
+msgid "Distance"
+msgstr ""
+
+#: place-route.php:39
+msgid "Usual fare"
+msgstr ""
+
+#: place-route.php:42
+msgid "A guide based on the usual driving route without traffic. The fare depends on the exact address, time and waiting; MPTP members pay half up to the subsidy limit."
+msgstr ""
+
+#. translators: 1: place 2: suburb
+#: place-route.php:50
+#, php-format
+msgid "Book a pick-up from %1$s to %2$s"
+msgstr ""
+
+#. translators: 1: suburb 2: place
+#: place-route.php:52
+#, php-format
+msgid "Book your trip from %1$s to %2$s"
+msgstr ""
+
+#. translators: %s: place
+#: place-route.php:65
+#, php-format
+msgid "Where we pick you up at %s"
+msgstr ""
+
+#. translators: %s: place
+#: place-route.php:67
+#, php-format
+msgid "Arriving at %s"
+msgstr ""
+
+#: place-route.php:73
+#: single-tp_place.php:71
+#: single-tp_place.php:100
+msgid "Pick-up point"
+msgstr ""
+
+#: place-route.php:73
+#: single-tp_place.php:71
+msgid "Drop-off point"
+msgstr ""
+
+#. translators: %s: place
+#: place-route.php:82
+#, php-format
+msgid "Everything about getting to %s by wheelchair taxi"
+msgstr ""
+
+#. translators: 1: place 2: suburb
+#: place-route.php:86
+#, php-format
+msgid "Going home from %1$s to %2$s"
+msgstr ""
+
+#. translators: 1: place 2: suburb
+#: place-route.php:87
+msgid "Not sure when you will be discharged? Book a “pick up when ready” trip and tell us when the ward lets you go."
+msgstr ""
+
+#: place-route.php:89
+#: single-tp_place.php:109
+msgid "Book the trip home — pick up when ready"
+msgstr ""
+
+#. translators: %s: phone
+#: place-route.php:90
+#: single-tp_place.php:110
+#, php-format
+msgid "Ready now? Call %s"
+msgstr ""
+
+#. translators: %s: suburb
+#: place-route.php:107
+#, php-format
+msgid "Other trips from %s"
+msgstr ""
+
+#: place-route.php:125
+msgid "Other routes"
+msgstr ""
+
+#. translators: %s: place
+#: place-route.php:127
+#, php-format
+msgid "From %s to…"
+msgstr ""
+
+#. translators: %s: place
+#: place-route.php:127
+#, php-format
+msgid "To %s from…"
+msgstr ""
+
 #: searchform.php:11
 msgid "Search for:"
 msgstr ""
@@ -18388,15 +18942,6 @@ msgstr ""
 msgid "Where do we drop you off at %s?"
 msgstr ""
 
-#: single-tp_place.php:71
-#: single-tp_place.php:100
-msgid "Pick-up point"
-msgstr ""
-
-#: single-tp_place.php:71
-msgid "Drop-off point"
-msgstr ""
-
 #. translators: %s: place
 #: single-tp_place.php:88
 #, php-format
@@ -18411,16 +18956,6 @@ msgstr ""
 
 #: single-tp_place.php:100
 msgid "At the main entrance. Tell us your ward or clinic and the driver will meet you there if you need help."
-msgstr ""
-
-#: single-tp_place.php:109
-msgid "Book the trip home — pick up when ready"
-msgstr ""
-
-#. translators: %s: phone
-#: single-tp_place.php:110
-#, php-format
-msgid "Ready now? Call %s"
 msgstr ""
 
 #. translators: %s: place
@@ -18524,134 +19059,158 @@ msgstr ""
 msgid "This vehicle seats up to %d people including wheelchair users. Choose \"Maxi WAT\" or call us for a larger group."
 msgstr ""
 
-#: template-parts/booking-form.php:73
+#: template-parts/booking-form.php:74
 msgid "Booking steps"
 msgstr ""
 
-#: template-parts/booking-form.php:90
+#: template-parts/booking-form.php:85
+msgid "We kept what you typed last time."
+msgstr ""
+
+#: template-parts/booking-form.php:96
 msgid "Street address, suburb"
 msgstr ""
 
-#: template-parts/booking-form.php:97
+#: template-parts/booking-form.php:103
 msgid "e.g. Frankston Hospital, Melbourne Airport"
 msgstr ""
 
 #. translators: %s: list of suburbs
-#: template-parts/booking-form.php:106
+#: template-parts/booking-form.php:112
 #, php-format
 msgid "We cover %s and more — type the full street address."
 msgstr ""
 
-#: template-parts/booking-form.php:124
+#: template-parts/booking-form.php:130
 msgid "I don’t know the exact time yet — e.g. waiting to be discharged from hospital"
 msgstr ""
 
-#: template-parts/booking-form.php:125
+#: template-parts/booking-form.php:131
 msgid "Earliest likely time (optional)"
 msgstr ""
 
-#: template-parts/booking-form.php:126
+#: template-parts/booking-form.php:132
 msgid "Put the earliest likely time above (or leave it empty). When you are ready, tap \"I’m ready\" on your booking page or call us, and we will send the driver."
 msgstr ""
 
-#: template-parts/booking-form.php:130
-msgid "Arriving by plane? Flight number (optional)"
+#: template-parts/booking-form.php:136
+msgid "Is anyone travelling in a wheelchair or scooter?"
 msgstr ""
 
-#: template-parts/booking-form.php:131
-msgid "e.g. QF432"
-msgstr ""
-
-#: template-parts/booking-form.php:132
-msgid "For airport pick-ups we watch your flight and move the pick-up if it lands early or late. Set the pick-up time to when you expect to be ready."
-msgstr ""
-
-#: template-parts/booking-form.php:137
+#: template-parts/booking-form.php:144
 msgid "Estimate only, based on the usual driving route. The final fare depends on traffic, waiting time and route, and any MPTP subsidy is applied by the driver."
 msgstr ""
 
-#: template-parts/booking-form.php:142
-msgid "I need a return trip"
-msgstr ""
-
-#: template-parts/booking-form.php:146
-msgid "Return pick-up time (if known)"
+#: template-parts/booking-form.php:148
+msgid "Next: your details"
 msgstr ""
 
 #: template-parts/booking-form.php:154
+msgid "‹ Change the trip"
+msgstr ""
+
+#: template-parts/booking-form.php:167
+msgid "I am the passenger — use my account details"
+msgstr ""
+
+#: template-parts/booking-form.php:186
+msgid "For your confirmation and receipt. We text your mobile either way."
+msgstr ""
+
+#: template-parts/booking-form.php:191
+msgid "More options"
+msgstr ""
+
+#: template-parts/booking-form.php:191
+msgid "return trip, regular trips, flight, vehicle, notes, payment, promo code"
+msgstr ""
+
+#: template-parts/booking-form.php:191
+msgid "return trip, regular trips, flight, vehicle, notes, promo code"
+msgstr ""
+
+#: template-parts/booking-form.php:195
+msgid "I need a return trip"
+msgstr ""
+
+#: template-parts/booking-form.php:199
+msgid "Return pick-up time (if known)"
+msgstr ""
+
+#: template-parts/booking-form.php:207
 msgid "This is a regular trip (e.g. dialysis, therapy, day program)"
 msgstr ""
 
-#: template-parts/booking-form.php:159
+#: template-parts/booking-form.php:212
 msgid "Repeat every"
 msgstr ""
 
 #. translators: %d: weeks
-#: template-parts/booking-form.php:179
+#: template-parts/booking-form.php:232
 #, php-format
 msgid "Same times each day, for up to %d weeks. Each trip gets its own reference so it can be changed separately."
 msgstr ""
 
-#: template-parts/booking-form.php:188
-msgid "Accessibility needs"
+#: template-parts/booking-form.php:240
+msgid "Arriving by plane? Flight number (optional)"
 msgstr ""
 
-#: template-parts/booking-form.php:193
-msgid "You said no wheelchair, so we have chosen a standard taxi. If anyone travels in a wheelchair or needs the ramp, choose a wheelchair accessible taxi below."
-msgstr ""
-
-#: template-parts/booking-form.php:237
-msgid "I am a Multi Purpose Taxi Program (MPTP) member"
+#: template-parts/booking-form.php:241
+msgid "e.g. QF432"
 msgstr ""
 
 #: template-parts/booking-form.php:242
+msgid "For airport pick-ups we watch your flight and move the pick-up if it lands early or late. Set the pick-up time to when you expect to be ready."
+msgstr ""
+
+#: template-parts/booking-form.php:249
+msgid "You said no wheelchair, so we have chosen a standard taxi. If anyone travels in a wheelchair or needs the ramp, choose a wheelchair accessible taxi below."
+msgstr ""
+
+#: template-parts/booking-form.php:293
+msgid "I am a Multi Purpose Taxi Program (MPTP) member"
+msgstr ""
+
+#: template-parts/booking-form.php:298
 msgid "Anything we should know?"
 msgstr ""
 
-#: template-parts/booking-form.php:243
+#: template-parts/booking-form.php:299
 msgid "e.g. wheelchair dimensions, carer travelling, assistance to the door, flight number"
 msgstr ""
 
-#: template-parts/booking-form.php:252
+#: template-parts/booking-form.php:304
 msgid "How will you pay?"
 msgstr ""
 
-#: template-parts/booking-form.php:268
+#: template-parts/booking-form.php:320
 msgid "Plan manager, provider or company"
 msgstr ""
 
-#: template-parts/booking-form.php:277
+#: template-parts/booking-form.php:329
 msgid "NDIS number or purchase order (optional)"
 msgstr ""
 
-#: template-parts/booking-form.php:287
+#: template-parts/booking-form.php:339
 msgid "After you submit, you will be taken to Stripe’s secure checkout to pay the deposit. The rest of the fare is paid at the end of the trip."
 msgstr ""
 
-#: template-parts/booking-form.php:307
-msgid "I am the passenger — use my account details"
-msgstr ""
-
-#: template-parts/booking-form.php:332
+#: template-parts/booking-form.php:363
 msgid "I agree to be contacted by phone, SMS or email about this booking, and for you to use the mobility and health details I give to arrange the trip."
 msgstr ""
 
 #. translators: %s: link to the terms page
-#: template-parts/booking-form.php:364
+#: template-parts/booking-form.php:379
 #, php-format
 msgid "I have read and accept the %s."
 msgstr ""
 
-#: template-parts/booking-form.php:365
+#: template-parts/booking-form.php:380
 msgid "terms and cancellation policy"
 msgstr ""
 
-#: template-parts/booking-form.php:380
-msgid "Request booking"
-msgstr ""
-
 #. translators: %s: phone link
-#: template-parts/booking-form.php:385
+#: template-parts/booking-form.php:400
 #, php-format
 msgid "Travelling in the next hour? Call %s"
 msgstr ""
@@ -19197,6 +19756,34 @@ msgstr ""
 
 #: template-parts/testimonials.php:166
 msgid "Read or leave a review on Google"
+msgstr ""
+
+#: template-parts/text-quote.php:28
+msgid "e.g. Frankston Hospital"
+msgstr ""
+
+#: template-parts/text-quote.php:30
+msgid "Get a price"
+msgstr ""
+
+#: template-parts/text-quote.php:34
+msgid "An estimate for a wheelchair accessible taxi on the usual route. Traffic and waiting can change the final fare."
+msgstr ""
+
+#: template-parts/text-quote.php:39
+msgid "Not ready to book? Text me this quote"
+msgstr ""
+
+#: template-parts/text-quote.php:42
+msgid "Text me"
+msgstr ""
+
+#: template-parts/text-quote.php:45
+msgid "Leave empty"
+msgstr ""
+
+#: template-parts/text-quote.php:46
+msgid "One text with the price and a booking link. We may call once to help you book."
 msgstr ""
 
 #: template-parts/trip-summary.php:13

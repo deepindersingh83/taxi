@@ -2,7 +2,7 @@
 # Review by a native speaker is recommended before going live.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.12.0\n"
+"Project-Id-Version: Taxi Peninsula 2.13.0\n"
 "PO-Revision-Date: 2026-10-15 00:11+0000\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
@@ -6227,3 +6227,308 @@ msgstr ""
 " Αν ήρθατε από διαφήμιση, αποστέλλεται ο αριθμός του κλικ στη διαφήμιση· για "
 "ορισμένες διαδρομές, το email και ο αριθμός τηλεφώνου σας αποστέλλονται μόνο "
 "σε κρυπτογραφημένη (κατακερματισμένη) μορφή που δεν μπορεί να αναγνωστεί"
+
+msgid "Please enter a valid email address, or leave it empty."
+msgstr "Παρακαλούμε γράψτε μια έγκυρη διεύθυνση email ή αφήστε το κενό."
+
+msgid "What will my trip cost?"
+msgstr "Πόσο θα κοστίσει η διαδρομή μου;"
+
+msgid ""
+"Type two addresses for a price straight away. We can text it to you, with a "
+"link to book."
+msgstr ""
+"Γράψτε δύο διευθύνσεις και δείτε αμέσως την τιμή. Μπορούμε να σας τη "
+"στείλουμε με SMS, μαζί με σύνδεσμο για κράτηση."
+
+msgid "Hi, I’d like to book a taxi."
+msgstr "Γεια σας, θα ήθελα να κλείσω ένα ταξί."
+
+msgid "Date and time:"
+msgstr "Ημερομηνία και ώρα:"
+
+msgid "Wheelchair (yes/no):"
+msgstr "Αναπηρικό αμαξίδιο (ναι/όχι):"
+
+msgid "Name:"
+msgstr "Όνομα:"
+
+msgid "Text us your booking"
+msgstr "Κλείστε με SMS"
+
+msgid "Prefer to text? Text us your booking"
+msgstr "Προτιμάτε SMS; Κλείστε με SMS"
+
+msgid "Your messages app opens with a short template to fill in."
+msgstr ""
+"Θα ανοίξει η εφαρμογή μηνυμάτων σας με ένα σύντομο πρότυπο για να το "
+"συμπληρώσετε."
+
+msgid "Quotes by text are not available at the moment. Please call us."
+msgstr ""
+"Η αποστολή τιμής με SMS δεν είναι διαθέσιμη αυτή τη στιγμή. Παρακαλούμε "
+"τηλεφωνήστε μας."
+
+msgid "Please enter an Australian mobile number, e.g. 0412 345 678."
+msgstr "Παρακαλούμε γράψτε έναν αυστραλιανό αριθμό κινητού, π.χ. 0412 345 678."
+
+#. translators: %s: phone
+msgid "Too many quotes sent. Please call us on %s."
+msgstr ""
+"Στάλθηκαν πάρα πολλές προσφορές τιμής. Παρακαλούμε τηλεφωνήστε μας στο %s."
+
+msgid ""
+"We couldn’t work out that trip. Please check both addresses, or call us for a"
+" price."
+msgstr ""
+"Δεν μπορέσαμε να υπολογίσουμε αυτή τη διαδρομή. Παρακαλούμε ελέγξτε και τις "
+"δύο διευθύνσεις ή τηλεφωνήστε μας για την τιμή."
+
+#. translators: 1: site 2: from 3: to 4: price 5: booking link 6: phone
+msgid ""
+"%1$s: wheelchair taxi from %2$s to %3$s is about %4$s. Book online: %5$s or "
+"call %6$s."
+msgstr ""
+"%1$s: ταξί για αμαξίδιο από %2$s προς %3$s περίπου %4$s. Κράτηση online: %5$s"
+" ή καλέστε %6$s."
+
+msgid "The text could not be sent just now. Please call us."
+msgstr ""
+"Το μήνυμα δεν μπόρεσε να σταλεί αυτή τη στιγμή. Παρακαλούμε τηλεφωνήστε μας."
+
+#. translators: 1: place, e.g. Frankston Station 2: suburb
+#. translators: 1: suburb 2: place, e.g. Frankston Hospital
+msgid "Wheelchair taxi from %1$s to %2$s"
+msgstr "Ταξί για αναπηρικό αμαξίδιο από %1$s προς %2$s"
+
+#. translators: 1: route title 2: minutes 3: km
+msgid "%1$s: about %2$d minutes and %3$s km."
+msgstr "%1$s: περίπου %2$d λεπτά και %3$s km."
+
+#. translators: %s: fare range
+msgid "Fare about %s."
+msgstr "Κόμιστρο περίπου %s."
+
+#. translators: %s: phone
+msgid "Ramp and hoist vans, door to door. Book online or call %s."
+msgstr ""
+"Οχήματα με ράμπα και ανυψωτικό, από πόρτα σε πόρτα. Κλείστε online ή "
+"τηλεφωνήστε στο %s."
+
+#. translators: 1: from 2: to
+msgid "How much is a wheelchair taxi from %1$s to %2$s?"
+msgstr "Πόσο κοστίζει ένα ταξί για αναπηρικό αμαξίδιο από %1$s προς %2$s;"
+
+#. translators: 1: fare range 2: phone
+msgid ""
+"Usually about %1$s for a wheelchair accessible taxi, depending on the exact "
+"address, traffic and time of day. MPTP members pay half (up to the subsidy "
+"limit), and NDIS and aged-care accounts can be invoiced. Call %2$s for a firm"
+" price."
+msgstr ""
+"Συνήθως περίπου %1$s για ταξί προσβάσιμο με αναπηρικό αμαξίδιο, ανάλογα με "
+"την ακριβή διεύθυνση, την κίνηση και την ώρα της ημέρας. Τα μέλη MPTP "
+"πληρώνουν τα μισά (έως το όριο της επιδότησης), ενώ για λογαριασμούς NDIS και"
+" φροντίδας ηλικιωμένων μπορεί να εκδοθεί τιμολόγιο. Τηλεφωνήστε στο %2$s για "
+"σταθερή τιμή."
+
+#. translators: %s: phone
+msgid ""
+"It depends on the exact address and time of day — call %s for a price. MPTP "
+"members pay half (up to the subsidy limit), and NDIS and aged-care accounts "
+"can be invoiced."
+msgstr ""
+"Εξαρτάται από την ακριβή διεύθυνση και την ώρα της ημέρας — τηλεφωνήστε στο "
+"%s για την τιμή. Τα μέλη MPTP πληρώνουν τα μισά (έως το όριο της επιδότησης),"
+" ενώ για λογαριασμούς NDIS και φροντίδας ηλικιωμένων μπορεί να εκδοθεί "
+"τιμολόγιο."
+
+#. translators: 1: from 2: to
+msgid "How long does the trip from %1$s to %2$s take?"
+msgstr "Πόση ώρα διαρκεί η διαδρομή από %1$s προς %2$s;"
+
+#. translators: 1: minutes 2: km
+msgid ""
+"About %1$d minutes for the %2$s km without traffic. We allow a few extra "
+"minutes to load and secure your wheelchair."
+msgstr ""
+"Περίπου %1$d λεπτά για τα %2$s km χωρίς κίνηση. Υπολογίζουμε λίγα λεπτά "
+"επιπλέον για να ανεβάσουμε και να στερεώσουμε με ασφάλεια το αμαξίδιό σας."
+
+#. translators: %s: place
+msgid "Where do you pick up at %s?"
+msgstr "Πού γίνεται η παραλαβή στο %s;"
+
+#. translators: %s: place
+msgid "Where do you drop off at %s?"
+msgstr "Πού γίνεται η αποβίβαση στο %s;"
+
+#. translators: %s: area
+msgid "Can you take me home to %s when I’m discharged?"
+msgstr "Μπορείτε να με πάτε σπίτι στο %s όταν πάρω εξιτήριο;"
+
+msgid ""
+"Yes. Book a “pick up when ready” trip: choose the day, then tap “I’m ready” "
+"on your booking page or call us when the ward lets you go, and we send the "
+"driver."
+msgstr ""
+"Ναι. Κλείστε μια διαδρομή «παραλαβή όταν είστε έτοιμοι»: επιλέξτε την ημέρα "
+"και, όταν σας αφήσει να φύγετε η κλινική, πατήστε «Είμαι έτοιμος/-η» στη "
+"σελίδα της κράτησής σας ή τηλεφωνήστε μας και θα στείλουμε τον οδηγό."
+
+msgid ""
+"Yes. Tell us how many people are travelling when you book; carers travel at "
+"no extra charge."
+msgstr ""
+"Ναι. Πείτε μας πόσα άτομα θα ταξιδέψουν όταν κάνετε την κράτηση· οι συνοδοί "
+"ταξιδεύουν χωρίς επιπλέον χρέωση."
+
+#. translators: 1: minutes 2: km
+msgid ""
+"About %1$d minutes, %2$s km. Ramp and hoist vans with trained drivers, door "
+"to door."
+msgstr ""
+"Περίπου %1$d λεπτά, %2$s km. Οχήματα με ράμπα και ανυψωτικό και "
+"εκπαιδευμένους οδηγούς, από πόρτα σε πόρτα."
+
+msgid "Trip at a glance"
+msgstr "Η διαδρομή με μια ματιά"
+
+msgid "Travel time"
+msgstr "Διάρκεια διαδρομής"
+
+#. translators: %d: minutes
+msgid "Distance"
+msgstr "Απόσταση"
+
+msgid "Usual fare"
+msgstr "Συνήθες κόμιστρο"
+
+msgid ""
+"A guide based on the usual driving route without traffic. The fare depends on"
+" the exact address, time and waiting; MPTP members pay half up to the subsidy"
+" limit."
+msgstr ""
+"Ενδεικτικά στοιχεία με βάση τη συνήθη διαδρομή χωρίς κίνηση. Το κόμιστρο "
+"εξαρτάται από την ακριβή διεύθυνση, την ώρα και την αναμονή· τα μέλη MPTP "
+"πληρώνουν τα μισά έως το όριο της επιδότησης."
+
+#. translators: 1: place 2: suburb
+msgid "Book a pick-up from %1$s to %2$s"
+msgstr "Κλείστε παραλαβή από %1$s προς %2$s"
+
+#. translators: 1: suburb 2: place
+msgid "Book your trip from %1$s to %2$s"
+msgstr "Κλείστε τη διαδρομή σας από %1$s προς %2$s"
+
+#. translators: %s: place
+msgid "Where we pick you up at %s"
+msgstr "Πού σας παραλαμβάνουμε στο %s"
+
+#. translators: %s: place
+msgid "Arriving at %s"
+msgstr "Άφιξη στο %s"
+
+#. translators: %s: place
+msgid "Everything about getting to %s by wheelchair taxi"
+msgstr ""
+"Όλα όσα χρειάζεται να ξέρετε για να πάτε στο %s με ταξί για αναπηρικό "
+"αμαξίδιο"
+
+#. translators: 1: place 2: suburb
+msgid "Going home from %1$s to %2$s"
+msgstr "Επιστροφή στο σπίτι από %1$s προς %2$s"
+
+#. translators: 1: place 2: suburb
+msgid ""
+"Not sure when you will be discharged? Book a “pick up when ready” trip and "
+"tell us when the ward lets you go."
+msgstr ""
+"Δεν ξέρετε πότε θα πάρετε εξιτήριο; Κλείστε μια διαδρομή «παραλαβή όταν είστε"
+" έτοιμοι» και ενημερώστε μας όταν σας αφήσει να φύγετε η κλινική."
+
+#. translators: %s: suburb
+msgid "Other trips from %s"
+msgstr "Άλλες διαδρομές από %s"
+
+#. translators: %s: place
+msgid "From %s to…"
+msgstr "Από %s προς…"
+
+#. translators: %s: place
+msgid "To %s from…"
+msgstr "Προς %s από…"
+
+msgid "We kept what you typed last time."
+msgstr "Κρατήσαμε ό,τι γράψατε την προηγούμενη φορά."
+
+msgid "Is anyone travelling in a wheelchair or scooter?"
+msgstr "Ταξιδεύει κάποιος με αναπηρικό αμαξίδιο ή σκούτερ;"
+
+msgid "Next: your details"
+msgstr "Επόμενο: τα στοιχεία σας"
+
+msgid "‹ Change the trip"
+msgstr "‹ Αλλαγή διαδρομής"
+
+msgid "For your confirmation and receipt. We text your mobile either way."
+msgstr ""
+"Για την επιβεβαίωση και την απόδειξή σας. Σε κάθε περίπτωση σας στέλνουμε SMS"
+" στο κινητό."
+
+msgid "More options"
+msgstr "Περισσότερες επιλογές"
+
+msgid "return trip, regular trips, flight, vehicle, notes, payment, promo code"
+msgstr ""
+"διαδρομή επιστροφής, τακτικές διαδρομές, πτήση, όχημα, σημειώσεις, πληρωμή, "
+"κωδικός προσφοράς"
+
+msgid "return trip, regular trips, flight, vehicle, notes, promo code"
+msgstr ""
+"διαδρομή επιστροφής, τακτικές διαδρομές, πτήση, όχημα, σημειώσεις, κωδικός "
+"προσφοράς"
+
+msgid "e.g. Frankston Hospital"
+msgstr "π.χ. Νοσοκομείο Frankston"
+
+msgid "Get a price"
+msgstr "Δείτε την τιμή"
+
+msgid ""
+"An estimate for a wheelchair accessible taxi on the usual route. Traffic and "
+"waiting can change the final fare."
+msgstr ""
+"Εκτίμηση για ταξί προσβάσιμο με αναπηρικό αμαξίδιο στη συνήθη διαδρομή. Η "
+"κίνηση και η αναμονή μπορεί να αλλάξουν το τελικό κόμιστρο."
+
+msgid "Not ready to book? Text me this quote"
+msgstr "Δεν είστε έτοιμοι να κλείσετε; Στείλτε μου αυτή την τιμή με SMS"
+
+msgid "Text me"
+msgstr "Στείλτε μου SMS"
+
+msgid "Leave empty"
+msgstr "Αφήστε το κενό"
+
+msgid ""
+"One text with the price and a booking link. We may call once to help you "
+"book."
+msgstr ""
+"Ένα SMS με την τιμή και έναν σύνδεσμο για κράτηση. Μπορεί να σας "
+"τηλεφωνήσουμε μία φορά για να σας βοηθήσουμε να κλείσετε."
+
+msgid "From:"
+msgstr "Από:"
+
+msgid "To:"
+msgstr "Προς:"
+
+msgid "Sent! Check your messages."
+msgstr "Στάλθηκε! Δείτε τα μηνύματά σας."
+
+msgid "Sent! Check your messages — the text has a link to book."
+msgstr "Στάλθηκε! Δείτε τα μηνύματά σας — το SMS έχει σύνδεσμο για κράτηση."
+
+msgid "Questions"
+msgstr "Ερωτήσεις"

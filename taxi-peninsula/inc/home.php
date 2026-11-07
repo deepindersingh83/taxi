@@ -17,6 +17,7 @@ function tp_home_sections() {
 	return array(
 		'shortcuts'    => array( __( 'Audience shortcuts (under the hero)', 'taxi-peninsula' ), '', '', true ),
 		'stats'        => array( __( 'Live trust numbers', 'taxi-peninsula' ), '', '', true ),
+		'textquote'    => array( __( 'Quick price + “Text me this quote”', 'taxi-peninsula' ), __( 'What will my trip cost?', 'taxi-peninsula' ), __( 'Type two addresses for a price straight away. We can text it to you, with a link to book.', 'taxi-peninsula' ), true ),
 		'services'     => array( __( 'Services', 'taxi-peninsula' ), __( 'Our services', 'taxi-peninsula' ), __( 'Reliable wheelchair accessible transport for everyday trips and important appointments.', 'taxi-peninsula' ), true ),
 		'steps'        => array( __( 'How it works (3 steps)', 'taxi-peninsula' ), __( 'Booking takes about two minutes', 'taxi-peninsula' ), __( 'Book online or by phone, we confirm, and your driver helps you from door to door.', 'taxi-peninsula' ), true ),
 		'fleet'        => array( __( 'Our vehicles', 'taxi-peninsula' ), __( 'Vehicles built for wheelchairs', 'taxi-peninsula' ), __( 'Tell us about your chair when you book and we will send the right vehicle.', 'taxi-peninsula' ), true ),

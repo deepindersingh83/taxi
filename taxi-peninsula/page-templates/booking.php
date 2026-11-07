@@ -32,6 +32,9 @@ while ( have_posts() ) :
 					<p><?php esc_html_e( 'Urgent or same-hour trip?', 'taxi-peninsula' ); ?></p>
 					<a class="contact-card__phone" href="<?php echo esc_url( tp_phone_href() ); ?>"><?php tp_the_icon( 'phone' ); ?><?php echo esc_html( tp_opt( 'phone_display' ) ); ?></a>
 					<a href="<?php echo esc_attr( tp_email_href() ); ?>"><?php echo esc_html( antispambot( tp_opt( 'email' ) ) ); ?></a>
+					<?php if ( function_exists( 'tp_text_us_button' ) ) : ?>
+						<?php echo tp_text_us_button( 'contact-card__text' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in the helper. ?>
+					<?php endif; ?>
 				</div>
 			</div>
 			<div class="book-layout__form card">

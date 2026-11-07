@@ -339,3 +339,18 @@
 .tp-dcard__flag--ok { background: #ecfdf3; color: #14532d; }
 .tp-unverified { padding: 6px 8px; background: #fef3c7; color: #78350f; border-radius: 4px; }
 .tp-unverified .description { color: #78350f; }
+.tp-funnel { list-style: none; margin: 0 0 8px; padding: 0; max-width: 760px; display: grid; gap: 6px; }
+.tp-funnel li { display: grid; grid-template-columns: minmax(150px, 220px) 1fr auto; gap: 10px; align-items: center; }
+.tp-funnel__bar { height: 14px; background: #f0f0f1; border-radius: 4px; overflow: hidden; }
+.tp-funnel__bar span { display: block; height: 100%; background: #2271b1; border-radius: 4px; }
+.tp-funnel__n { font-variant-numeric: tabular-nums; min-width: 90px; text-align: end; }
+.tp-speed__list { list-style: none; margin: 8px 0; padding: 0; display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); max-width: 820px; }
+.tp-speed__item { padding: 12px 14px; border: 1px solid #dcdcde; border-inline-start-width: 6px; border-radius: 4px; background: #fff; display: grid; gap: 2px; }
+.tp-speed__item strong { font-size: 20px; }
+.tp-speed__item--fast { border-inline-start-color: #0a7a35; }
+.tp-speed__item--average { border-inline-start-color: #b26200; }
+.tp-speed__item--slow { border-inline-start-color: #b32d2e; }
+.tp-speed__cat { font-weight: 600; }
+.tp-speed__item--fast .tp-speed__cat { color: #0a6b2f; }
+.tp-speed__item--average .tp-speed__cat { color: #8a4b00; }
+.tp-speed__item--slow .tp-speed__cat { color: #b32d2e; }
