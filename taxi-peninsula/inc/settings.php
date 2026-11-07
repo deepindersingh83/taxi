@@ -142,15 +142,27 @@ function tp_setting( $key ) {
 	if ( defined( $const ) ) {
 		return constant( $const );
 	}
-	static $saved = null;
-	if ( null === $saved ) {
+	static $saved = null, $seen = -1;
+	// Read again after the settings are saved in this same request.
+	$version = (int) ( $GLOBALS['tp_settings_version'] ?? 0 );
+	if ( null === $saved || $seen !== $version ) {
 		$saved = (array) get_option( 'tp_settings', array() );
+		$seen  = $version;
 	}
 	if ( array_key_exists( $key, $saved ) ) {
 		return $saved[ $key ];
 	}
 	$schema = tp_settings_schema();
 	return isset( $schema[ $key ] ) ? $schema[ $key ][3] : '';
+}
+
+foreach ( array( 'add_option_tp_settings', 'update_option_tp_settings', 'delete_option_tp_settings' ) as $tp_hook ) {
+	add_action(
+		$tp_hook,
+		static function () {
+			$GLOBALS['tp_settings_version'] = (int) ( $GLOBALS['tp_settings_version'] ?? 0 ) + 1;
+		}
+	);
 }
 
 add_action( 'admin_menu', 'tp_settings_menu', 20 );

@@ -98,7 +98,8 @@ $code = tp_referral_code( $uid );
 if ( '' === tp_promo_check( $code, array( 'email' => 'ann@bigpond.com', 'phone' => '' ) ) ) {
 	WP_CLI::error( 'Customer could use their own referral code.' );
 }
-$friend = array( 'name' => 'Bob Jones', 'phone' => '0422 111 222', 'email' => 'bob@optusnet.com.au' );
+$n      = wp_rand( 100000, 999999 );
+$friend = array( 'name' => 'Bob Jones', 'phone' => '0422 ' . substr( $n, 0, 3 ) . ' ' . substr( $n, 3 ), 'email' => "bob$n@optusnet.com.au" );
 if ( '' !== tp_promo_check( $code, $friend ) || 10.0 !== tp_promo_discount( $code, 50 ) ) {
 	WP_CLI::error( 'Friend could not use the referral code: ' . tp_promo_check( $code, $friend ) );
 }
@@ -114,7 +115,7 @@ WP_CLI::success( 'Referral codes OK.' );
 $pid = $tp_new_booking( array( 'name' => 'Cath Lee', 'phone' => '0455 666 777', 'email' => 'Cath.Lee@gmail.com' ), array( '_tp_heard' => 'google_ad' ) );
 tp_set_status( $pid, 'completed', false );
 $csv = tp_ads_csv( tp_ads_rows() );
-if ( false === strpos( $csv, 'CI-CLICK-1' ) || false === strpos( $csv, hash( 'sha256', 'cathlee@gmail.com' ) ) || false === strpos( $csv, hash( 'sha256', '+61455666777' ) ) || false !== strpos( $csv, 'bob@' ) || 0 !== strpos( $csv, 'Parameters:TimeZone=' ) ) {
+if ( false === strpos( $csv, 'CI-CLICK-1' ) || false === strpos( $csv, hash( 'sha256', 'cathlee@gmail.com' ) ) || false === strpos( $csv, hash( 'sha256', '+61455666777' ) ) || false !== strpos( $csv, $friend['email'] ) || 0 !== strpos( $csv, 'Parameters:TimeZone=' ) ) {
 	WP_CLI::error( "Google Ads file is wrong:\n" . $csv );
 }
 WP_CLI::success( 'Google Ads conversions file OK.' );
