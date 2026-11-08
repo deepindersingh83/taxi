@@ -97,6 +97,8 @@ require TP_DIR . '/inc/place-routes.php';
 require TP_DIR . '/inc/url-moves.php';
 require TP_DIR . '/inc/content-pack.php';
 require TP_DIR . '/inc/legal-pages.php';
+require TP_DIR . '/inc/route-guides.php';
+require TP_DIR . '/inc/partner-outreach.php';
 require TP_DIR . '/inc/speed-report.php';
 require TP_DIR . '/inc/seo-plugins.php';
 require TP_DIR . '/inc/booking-index.php';

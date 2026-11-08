@@ -2380,3 +2380,9 @@ html[data-contrast="high"] .pp-tile { border: 2px solid #000; }
 .place-home h2 { margin-top: 0; }
 .place-home__actions { display: flex; flex-wrap: wrap; gap: var(--space-s); margin-bottom: 0; }
 .btn-link { font: inherit; font-weight: 700; color: var(--c-link); background: none; border: 0; padding: .4rem .2rem; min-height: 2.75rem; text-decoration: underline; cursor: pointer; }
+
+/* Trip facts box in fare and route guides. */
+.trip-facts { margin: var(--space-l) 0; padding: var(--space-m) var(--space-l); }
+.trip-facts__title { margin: 0 0 var(--space-s); font-weight: 700; color: var(--c-heading); }
+.trip-facts .route-facts__note { margin-bottom: var(--space-s); }
+.trip-facts__actions { display: flex; flex-wrap: wrap; gap: var(--space-s); margin: 0; }

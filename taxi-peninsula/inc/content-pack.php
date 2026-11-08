@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const TP_PACK_VERSION = 2;
+const TP_PACK_VERSION = 3;
 
 /**
  * Pack items of one kind: suburbs, places or services.
@@ -140,7 +140,7 @@ function tp_pack_pending() {
 	if ( is_array( $n ) ) {
 		return $n;
 	}
-	$n = array( 0, 0, 0, tp_legal_pending() );
+	$n = array( 0, 0, 0, tp_legal_pending(), tp_guides_pending() );
 	foreach ( tp_pack_data( 'suburbs' ) as $s ) {
 		$n[0] += tp_pack_find( 'tp_area', $s['name'] ) ? 0 : 1;
 	}
@@ -310,6 +310,7 @@ function tp_pack_import() {
 	}
 
 	$added += tp_legal_import();
+	$added += tp_guides_import();
 
 	wp_defer_term_counting( false );
 	update_option( 'tp_pack_done', TP_PACK_VERSION, false );
@@ -352,7 +353,7 @@ add_action(
 			<p>
 				<?php
 				/* translators: 1: suburbs 2: places 3: services */
-				echo esc_html( sprintf( __( 'Written for your site: %1$d suburb and town pages, %2$d pages for hospitals, airports, ferries, stations, hotels, wineries and venues, %3$d service pages and %4$d legal pages (terms, privacy, cancellations, accessibility, complaints). Your own pages are never overwritten — existing ones only get the parts that are still empty.', 'taxi-peninsula' ), $n[0], $n[1], $n[2], $n[3] ?? 0 ) );
+				echo esc_html( sprintf( __( 'Written for your site: %1$d suburb and town pages, %2$d pages for hospitals, airports, ferries, stations, hotels, wineries and venues, %3$d service pages, %4$d legal pages (terms, privacy, cancellations, accessibility, complaints) and %5$d fare and route guides for the blog (four now, then one a week). Your own pages are never overwritten — existing ones only get the parts that are still empty.', 'taxi-peninsula' ), $n[0], $n[1], $n[2], $n[3] ?? 0, $n[4] ?? 0 ) );
 				?>
 			</p>
 			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" style="margin-bottom:8px">
