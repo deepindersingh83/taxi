@@ -6737,3 +6737,17 @@ msgstr "Καλέστε %s."
 #: single-tp_place.php:141
 msgid "Questions about taxis to %s"
 msgstr "Ερωτήσεις για ταξί προς %s"
+
+#. translators: %s: place
+#: single-tp_place.php:141
+msgid "Questions about taxis from %s"
+msgstr "Ερωτήσεις για ταξί από %s"
+
+#: inc/seo-plugins.php:136
+msgid ""
+"Taxi and wheelchair taxi to hospitals, airports, ferries, hotels, wineries "
+"and venues across the Mornington Peninsula and Melbourne."
+msgstr ""
+"Ταξί και ταξί για αμαξίδια προς νοσοκομεία, αεροδρόμια, πορθμεία, "
+"ξενοδοχεία, οινοποιεία και χώρους εκδηλώσεων σε όλη τη Mornington Peninsula "
+"και τη Melbourne."

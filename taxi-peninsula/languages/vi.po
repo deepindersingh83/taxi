@@ -6631,3 +6631,16 @@ msgstr "Gọi %s."
 #: single-tp_place.php:141
 msgid "Questions about taxis to %s"
 msgstr "Câu hỏi về taxi đến %s"
+
+#. translators: %s: place
+#: single-tp_place.php:141
+msgid "Questions about taxis from %s"
+msgstr "Câu hỏi về taxi từ %s"
+
+#: inc/seo-plugins.php:136
+msgid ""
+"Taxi and wheelchair taxi to hospitals, airports, ferries, hotels, wineries "
+"and venues across the Mornington Peninsula and Melbourne."
+msgstr ""
+"Taxi và taxi cho xe lăn đến bệnh viện, sân bay, bến phà, khách sạn, nhà máy "
+"rượu vang và địa điểm sự kiện trên khắp Mornington Peninsula và Melbourne."

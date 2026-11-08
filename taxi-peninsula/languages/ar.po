@@ -6516,3 +6516,17 @@ msgstr "اتصل على %s."
 #: single-tp_place.php:141
 msgid "Questions about taxis to %s"
 msgstr "أسئلة حول سيارات الأجرة إلى %s"
+
+#. translators: %s: place
+#: single-tp_place.php:141
+msgid "Questions about taxis from %s"
+msgstr "أسئلة حول سيارات الأجرة من %s"
+
+#: inc/seo-plugins.php:136
+msgid ""
+"Taxi and wheelchair taxi to hospitals, airports, ferries, hotels, wineries "
+"and venues across the Mornington Peninsula and Melbourne."
+msgstr ""
+"سيارات أجرة وسيارات أجرة مجهزة للكراسي المتحركة إلى المستشفيات والمطارات "
+"والعبّارات والفنادق ومصانع النبيذ وأماكن الفعاليات في أنحاء Mornington "
+"Peninsula وMelbourne."

@@ -132,6 +132,9 @@ function tp_is_services_page() {
 add_filter(
 	'tp_meta_description',
 	static function ( $text ) {
+		if ( tp_is_places_page() && ! has_excerpt( get_queried_object_id() ) ) {
+			return __( 'Taxi and wheelchair taxi to hospitals, airports, ferries, hotels, wineries and venues across the Mornington Peninsula and Melbourne.', 'taxi-peninsula' );
+		}
 		if ( tp_is_services_page() && ! has_excerpt( get_queried_object_id() ) ) {
 			return __( 'Taxi services on the Mornington Peninsula and in Melbourne: local taxis, wheelchair accessible taxis, airport transfers, hospital trips, winery tours and groups.', 'taxi-peninsula' );
 		}

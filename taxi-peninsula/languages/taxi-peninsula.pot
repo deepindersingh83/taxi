@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-08T15:35:31+00:00\n"
+"POT-Creation-Date: 2026-11-08T15:41:50+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: taxi-peninsula\n"
@@ -8563,7 +8563,7 @@ msgstr ""
 
 #: inc/health.php:141
 #: inc/health.php:142
-#: inc/seo-plugins.php:377
+#: inc/seo-plugins.php:380
 msgid "Sitemap"
 msgstr ""
 
@@ -15419,49 +15419,53 @@ msgid "Taxi Services – Mornington Peninsula & Melbourne"
 msgstr ""
 
 #: inc/seo-plugins.php:136
+msgid "Taxi and wheelchair taxi to hospitals, airports, ferries, hotels, wineries and venues across the Mornington Peninsula and Melbourne."
+msgstr ""
+
+#: inc/seo-plugins.php:139
 #: inc/seo.php:36
 msgid "Taxi services on the Mornington Peninsula and in Melbourne: local taxis, wheelchair accessible taxis, airport transfers, hospital trips, winery tours and groups."
 msgstr ""
 
 #. translators: 1: url 2: error
-#: inc/seo-plugins.php:350
+#: inc/seo-plugins.php:353
 #, php-format
 msgid "Could not check %1$s from the server (%2$s). Open it in your browser: it should list your pages."
 msgstr ""
 
 #. translators: 1: url 2: HTTP status
-#: inc/seo-plugins.php:356
+#: inc/seo-plugins.php:359
 #, php-format
 msgid "%1$s does not work (status %2$s), so Google can’t find your pages. Go to Settings → Permalinks and press Save, then check again. With Rank Math also open Rank Math → Sitemap Settings and press Save."
 msgstr ""
 
-#: inc/seo-plugins.php:359
+#: inc/seo-plugins.php:362
 msgid "The sitemap works, but the theme’s suburb, route and council pages are not listed in it yet. Clear your caching plugin’s cache and check again."
 msgstr ""
 
 #. translators: 1: url 2: number of pages
-#: inc/seo-plugins.php:362
+#: inc/seo-plugins.php:365
 #, php-format
 msgid "%1$s works, including %2$d suburb, route and council pages. Submit it once in Google Search Console → Sitemaps."
 msgstr ""
 
-#: inc/seo-plugins.php:371
+#: inc/seo-plugins.php:374
 msgid "An SEO plugin"
 msgstr ""
 
 #. translators: %s: plugin
-#: inc/seo-plugins.php:374
-#: inc/seo-plugins.php:375
+#: inc/seo-plugins.php:377
+#: inc/seo-plugins.php:378
 msgid "SEO plugin"
 msgstr ""
 
 #. translators: %s: plugin
-#: inc/seo-plugins.php:374
+#: inc/seo-plugins.php:377
 #, php-format
 msgid "%s writes titles and the sitemap; the theme gives it the right details for its own pages (suburb, route and council pages) and your home and suburb titles unless you wrote your own there."
 msgstr ""
 
-#: inc/seo-plugins.php:375
+#: inc/seo-plugins.php:378
 msgid "None — the theme writes titles, descriptions and the sitemap itself. You don’t need an SEO plugin."
 msgstr ""
 
@@ -19166,6 +19170,12 @@ msgstr ""
 #: single-tp_place.php:125
 #, php-format
 msgid "How long does it take to get to %s?"
+msgstr ""
+
+#. translators: %s: place
+#: single-tp_place.php:141
+#, php-format
+msgid "Questions about taxis from %s"
 msgstr ""
 
 #. translators: %s: place

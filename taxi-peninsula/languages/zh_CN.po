@@ -5997,3 +5997,14 @@ msgstr "请致电 %s。"
 #: single-tp_place.php:141
 msgid "Questions about taxis to %s"
 msgstr "关于前往 %s 的出租车的常见问题"
+
+#. translators: %s: place
+#: single-tp_place.php:141
+msgid "Questions about taxis from %s"
+msgstr "关于从%s出发的出租车的问题"
+
+#: inc/seo-plugins.php:136
+msgid ""
+"Taxi and wheelchair taxi to hospitals, airports, ferries, hotels, wineries "
+"and venues across the Mornington Peninsula and Melbourne."
+msgstr "前往 Mornington Peninsula 和 Melbourne 各地医院、机场、渡轮码头、酒店、酒庄和场馆的出租车及轮椅出租车。"

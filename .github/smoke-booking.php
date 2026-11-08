@@ -168,7 +168,7 @@ if ( ! tp_route_parse( 'frankston-to-ci-hospital' ) || tp_route_parse( 'nowhere-
 list( $added ) = tp_pack_import();
 $again         = tp_pack_import();
 $red_hill      = get_page_by_path( 'red-hill', OBJECT, 'tp_area' );
-if ( $added < 40 || $again[0] || ! $red_hill || ! get_post_meta( $red_hill->ID, '_tp_local_faq', true ) || array_sum( tp_pack_pending() ) ) {
+if ( $added < 120 || $again[0] || ! $red_hill || ! get_post_meta( $red_hill->ID, '_tp_local_faq', true ) || array_sum( tp_pack_pending() ) ) {
 	WP_CLI::error( 'Content pack import is wrong: ' . wp_json_encode( array( $added, $again, (bool) $red_hill ) ) );
 }
 $winery = get_page_by_path( 'winery-tours', OBJECT, 'tp_service' );
