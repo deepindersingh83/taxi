@@ -135,7 +135,7 @@ foreach ( array( 'type' => 'hospital', 'lat' => '-38.151', 'lng' => '145.131', '
 	update_post_meta( $pid, '_tp_p_' . $k, $v );
 }
 $routes = tp_place_routes( $pid );
-if ( ! $routes || false === strpos( tp_route_url( $pid, $routes[0][0] ), '/wheelchair-taxi-to/ci-hospital/from-' ) ) {
+if ( ! $routes || ! preg_match( '#/routes/[a-z-]+-to-ci-hospital/$#', tp_route_url( $pid, $routes[0][0] ) ) ) {
 	WP_CLI::error( 'Route pages were not made: ' . wp_json_encode( $routes ) );
 }
 tp_calls_to_follow(); // The follow-up query runs on this database.
@@ -146,3 +146,34 @@ if ( count( tp_generated_urls() ) < 1 || 0 !== strpos( tp_generated_sitemap_url(
 	WP_CLI::error( 'The sitemap of generated pages is empty.' );
 }
 WP_CLI::success( 'Generated pages sitemap OK (' . count( tp_generated_urls() ) . ' pages).' );
+
+// v2.14: old addresses map to the new folders, and the content pack adds pages once.
+$moves = array(
+	'wheelchair-taxi/rye/'                            => 'locations/rye/',
+	'wheelchair-taxi/rye/airport-transfers'           => 'locations/rye/airport-transfers/',
+	'council/frankston-city/'                         => 'locations/council/frankston-city/',
+	'wheelchair-taxi-to/frankston-hospital/'          => 'places/frankston-hospital/',
+	'wheelchair-taxi-to/frankston-hospital/from-rye/' => 'routes/rye-to-frankston-hospital/',
+	'wheelchair-taxi-from/frankston-station/to-rye/'  => 'routes/frankston-station-to-rye/',
+	'council-news/'                                   => '',
+);
+foreach ( $moves as $old => $want ) {
+	if ( tp_moved_path( $old ) !== $want ) {
+		WP_CLI::error( "Old address $old maps to '" . tp_moved_path( $old ) . "', not '$want'." );
+	}
+}
+if ( ! tp_route_parse( 'frankston-to-ci-hospital' ) || tp_route_parse( 'nowhere-to-anywhere' ) ) {
+	WP_CLI::error( 'Route addresses are not read correctly.' );
+}
+list( $added ) = tp_pack_import();
+$again         = tp_pack_import();
+$red_hill      = get_page_by_path( 'red-hill', OBJECT, 'tp_area' );
+if ( $added < 40 || $again[0] || ! $red_hill || ! get_post_meta( $red_hill->ID, '_tp_local_faq', true ) || array_sum( tp_pack_pending() ) ) {
+	WP_CLI::error( 'Content pack import is wrong: ' . wp_json_encode( array( $added, $again, (bool) $red_hill ) ) );
+}
+$winery = get_page_by_path( 'winery-tours', OBJECT, 'tp_service' );
+$airport = get_page_by_path( 'melbourne-airport', OBJECT, 'tp_place' );
+if ( ! $winery || tp_local_pair_ok( $red_hill, $winery ) || ( $airport && false === strpos( tp_place_seo_title( $airport->ID ), 'Taxi' ) ) ) {
+	WP_CLI::error( 'New suburbs and services must not get combined pages.' );
+}
+WP_CLI::success( "New addresses and content pack OK ($added pages)." );

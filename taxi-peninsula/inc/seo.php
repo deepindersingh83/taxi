@@ -24,15 +24,18 @@ function tp_meta_description() {
 		$text = tp_opt( 'hero_text' );
 	} elseif ( is_singular() ) {
 		$post = get_queried_object();
-		$text = has_excerpt( $post ) ? $post->post_excerpt : wp_strip_all_tags( strip_shortcodes( $post->post_content ) );
+		$text = trim( (string) get_post_meta( $post->ID, '_tp_meta_desc', true ) );
+		if ( '' === $text ) {
+			$text = has_excerpt( $post ) ? $post->post_excerpt : wp_strip_all_tags( strip_shortcodes( $post->post_content ) );
+		}
 		if ( '' === trim( $text ) && 'tp_area' === $post->post_type ) {
 			/* translators: 1: area, 2: phone */
-			$text = sprintf( __( 'Wheelchair accessible taxi in %1$s. Ramp and hoist vehicles, trained drivers, door-to-door. Book online or call %2$s.', 'taxi-peninsula' ), $post->post_title, tp_opt( 'phone_display' ) );
+			$text = sprintf( __( 'Taxi and wheelchair accessible taxi in %1$s, 24/7. Door-to-door, ramp and hoist vans, trained drivers. Book online or call %2$s.', 'taxi-peninsula' ), $post->post_title, tp_opt( 'phone_display' ) );
 		}
 	} elseif ( is_post_type_archive( 'tp_service' ) ) {
-		$text = __( 'Wheelchair accessible taxi services in Melbourne: hospital and medical trips, airport transfers, NDIS and aged-care transport, group travel and events.', 'taxi-peninsula' );
+		$text = __( 'Taxi services on the Mornington Peninsula and in Melbourne: local taxis, wheelchair accessible taxis, airport transfers, hospital trips, winery tours and groups.', 'taxi-peninsula' );
 	} elseif ( is_post_type_archive( 'tp_area' ) ) {
-		$text = __( 'Suburbs we cover with wheelchair accessible taxis across Melbourne and the Mornington Peninsula.', 'taxi-peninsula' );
+		$text = __( 'Every suburb and town we cover with taxis and wheelchair accessible taxis, from Portsea and Flinders to Frankston, Dandenong and Melbourne.', 'taxi-peninsula' );
 	} elseif ( is_home() ) {
 		$text = __( 'News and travel tips for passengers using wheelchair accessible taxis in Melbourne.', 'taxi-peninsula' );
 	} elseif ( is_archive() ) {
@@ -50,8 +53,17 @@ function tp_meta_description() {
 	 *
 	 * @param string $text Description.
 	 */
-	$text = (string) apply_filters( 'tp_meta_description', $text );
-	return $text ? wp_html_excerpt( $text, 155, '…' ) : '';
+	$text  = (string) apply_filters( 'tp_meta_description', $text );
+	$phone = trim( wp_strip_all_tags( (string) tp_opt( 'phone_display' ) ) );
+	// Searchers can ring straight from the result: add the number when it fits.
+	if ( $text && $phone && false === strpos( $text, $phone ) ) {
+		/* translators: %s: phone */
+		$call = ' ' . sprintf( __( 'Call %s.', 'taxi-peninsula' ), $phone );
+		if ( mb_strlen( rtrim( $text, ' .' ) . '.' . $call ) <= 158 ) {
+			$text = rtrim( $text, ' .' ) . '.' . $call;
+		}
+	}
+	return $text ? wp_html_excerpt( $text, 158, '…' ) : '';
 }
 
 function tp_share_image() {
@@ -187,7 +199,7 @@ function tp_output_schema() {
 			'@type'       => 'Service',
 			'name'        => 'tp_area' === $post->post_type
 				/* translators: %s: area */
-				? sprintf( __( 'Wheelchair taxi %s', 'taxi-peninsula' ), $post->post_title )
+				? sprintf( __( 'Taxi & wheelchair taxi in %s', 'taxi-peninsula' ), $post->post_title )
 				: $post->post_title,
 			'url'         => get_permalink( $post ),
 			'description' => tp_meta_description(),
@@ -235,7 +247,7 @@ function tp_output_schema() {
 add_filter( 'document_title_parts', static function ( $parts ) {
 	if ( is_singular( 'tp_area' ) ) {
 		/* translators: %s: suburb */
-		$parts['title'] = sprintf( __( 'Wheelchair taxi %s', 'taxi-peninsula' ), single_post_title( '', false ) );
+		$parts['title'] = sprintf( __( 'Taxi & wheelchair taxi in %s', 'taxi-peninsula' ), single_post_title( '', false ) );
 	} elseif ( is_post_type_archive( 'tp_area' ) ) {
 		$parts['title'] = __( 'Areas we cover', 'taxi-peninsula' );
 	} elseif ( is_post_type_archive( 'tp_service' ) ) {

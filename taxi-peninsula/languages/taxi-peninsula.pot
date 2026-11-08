@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.13.0\n"
+"Project-Id-Version: Taxi Peninsula 2.14.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/taxi-peninsula\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-07T06:16:57+00:00\n"
+"POT-Creation-Date: 2026-11-08T15:35:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: taxi-peninsula\n"
@@ -52,7 +52,7 @@ msgstr ""
 #: 404.php:14
 #: archive-tp_service.php:13
 #: inc/home.php:21
-#: inc/seo.php:242
+#: inc/seo.php:254
 #: page-templates/services.php:29
 #: patterns/services-grid.php:15
 msgid "Our services"
@@ -87,7 +87,7 @@ msgstr ""
 #: inc/home.php:28
 #: inc/local-seo.php:34
 #: inc/local-seo.php:56
-#: inc/seo.php:240
+#: inc/seo.php:252
 #: inc/starter-content.php:463
 #: patterns/areas.php:15
 msgid "Areas we cover"
@@ -98,18 +98,20 @@ msgid "Wheelchair accessible taxis across Melbourne and the Mornington Peninsula
 msgstr ""
 
 #. translators: %s: suburb
+#. translators: %s: council name
 #. translators: %s: area
 #: archive-tp_area.php:30
+#: inc/councils.php:168
 #: inc/local-seo.php:36
 #: inc/search.php:243
-#: inc/seo.php:190
-#: inc/seo.php:238
+#: inc/seo.php:202
+#: inc/seo.php:250
 #: local-service.php:121
 #: single-tp_area.php:18
-#: single-tp_place.php:167
+#: single-tp_place.php:166
 #: template-parts/related-posts.php:16
 #, php-format
-msgid "Wheelchair taxi %s"
+msgid "Taxi & wheelchair taxi in %s"
 msgstr ""
 
 #: archive-tp_event.php:13
@@ -205,12 +207,12 @@ msgstr ""
 
 #. translators: %d: minutes
 #: council.php:83
-#: inc/place-routes.php:313
+#: inc/place-routes.php:375
 #: local-service.php:77
 #: place-route.php:36
 #: place-route.php:110
 #: single-tp_area.php:64
-#: single-tp_place.php:133
+#: single-tp_place.php:132
 #, php-format
 msgid "about %d min"
 msgstr ""
@@ -218,7 +220,7 @@ msgstr ""
 #: council.php:86
 #: local-service.php:80
 #: single-tp_area.php:67
-#: single-tp_place.php:136
+#: single-tp_place.php:135
 msgid "A rough guide without traffic. We allow extra time for loading your wheelchair."
 msgstr ""
 
@@ -243,7 +245,7 @@ msgstr ""
 #: patterns/hero.php:25
 #: place-route.php:120
 #: sidebar.php:13
-#: single-tp_place.php:156
+#: single-tp_place.php:155
 #: template-parts/cta.php:17
 msgid "Book online"
 msgstr ""
@@ -1101,7 +1103,7 @@ msgstr ""
 #: inc/accounts.php:860
 #: inc/privacy.php:318
 #: place-route.php:79
-#: single-tp_place.php:83
+#: single-tp_place.php:82
 msgid "Address"
 msgstr ""
 
@@ -1349,9 +1351,9 @@ msgstr ""
 #: inc/accounts.php:1448
 #: inc/councils.php:219
 #: inc/ndis-invoices.php:96
-#: inc/places.php:498
+#: inc/places.php:518
 #: inc/search.php:216
-#: inc/seo.php:195
+#: inc/seo.php:207
 msgid "Wheelchair accessible taxi"
 msgstr ""
 
@@ -2830,54 +2832,54 @@ msgstr ""
 msgid "Taxis driving along the top of the footer"
 msgstr ""
 
-#: inc/area-map.php:194
+#: inc/area-map.php:206
 msgid "Map of the areas we cover"
 msgstr ""
 
 #. translators: %s: list of suburbs
-#: inc/area-map.php:198
+#: inc/area-map.php:210
 #, php-format
 msgid "Port Phillip Bay and the Mornington Peninsula, with these places marked: %s."
 msgstr ""
 
-#: inc/area-map.php:208
+#: inc/area-map.php:220
 msgid "Port Phillip Bay"
 msgstr ""
 
-#: inc/area-map.php:209
+#: inc/area-map.php:221
 msgid "Western Port"
 msgstr ""
 
-#: inc/area-map.php:210
+#: inc/area-map.php:222
 msgid "Bass Strait"
 msgstr ""
 
-#: inc/area-map.php:211
+#: inc/area-map.php:223
 msgid "Mornington Peninsula"
 msgstr ""
 
-#: inc/area-map.php:216
+#: inc/area-map.php:228
 msgid "A guide only, not to scale. Not on the map? Ask us — we travel further on request."
 msgstr ""
 
-#: inc/area-map.php:236
+#: inc/area-map.php:248
 msgid "Melbourne CBD"
 msgstr ""
 
-#: inc/area-map.php:237
-#: inc/local-pages.php:244
+#: inc/area-map.php:249
+#: inc/local-pages.php:253
 msgid "Melbourne Airport"
 msgstr ""
 
-#: inc/area-map.php:238
+#: inc/area-map.php:250
 msgid "Frankston Hospital"
 msgstr ""
 
-#: inc/area-map.php:239
+#: inc/area-map.php:251
 msgid "Monash Medical Centre"
 msgstr ""
 
-#: inc/area-map.php:240
+#: inc/area-map.php:252
 msgid "Rosebud Hospital"
 msgstr ""
 
@@ -3049,8 +3051,8 @@ msgstr ""
 #: inc/incidents.php:296
 #: inc/lost-property.php:469
 #: inc/partner-sections.php:237
-#: inc/places.php:225
-#: inc/places.php:306
+#: inc/places.php:244
+#: inc/places.php:326
 #: inc/quotes.php:280
 #: inc/quotes.php:406
 #: inc/search-data.php:1031
@@ -4713,6 +4715,26 @@ msgstr ""
 msgid "What can we help with?"
 msgstr ""
 
+#. translators: 1: pages added 2: pages filled in
+#: inc/content-pack.php:330
+#, php-format
+msgid "Done: %1$d new pages published, %2$d existing pages filled in where they were empty. Next: in Google Search Console, submit your sitemap again."
+msgstr ""
+
+#: inc/content-pack.php:349
+msgid "New pages are ready to add"
+msgstr ""
+
+#. translators: 1: suburbs 2: places 3: services
+#: inc/content-pack.php:353
+#, php-format
+msgid "Written for your site: %1$d suburb and town pages, %2$d pages for hospitals, airports, ferries, stations, hotels, wineries and venues, and %3$d service pages. Your own pages are never overwritten — existing ones only get the parts that are still empty."
+msgstr ""
+
+#: inc/content-pack.php:359
+msgid "Add the new pages"
+msgstr ""
+
 #: inc/content-plan.php:59
 msgid "Australian Open (mid–late January)"
 msgstr ""
@@ -5514,20 +5536,14 @@ msgstr ""
 msgid "Filled in automatically: the map and travel times, the list of services, blog guides that mention this suburb, place pages in this suburb, and the standard questions about wheelchairs, carers and paying."
 msgstr ""
 
-#. translators: %s: council name
-#: inc/councils.php:168
-#, php-format
-msgid "Wheelchair taxi in %s"
-msgstr ""
-
 #: inc/councils.php:191
-msgid "Wheelchair accessible taxis in every council area we cover across Melbourne and the Mornington Peninsula."
+msgid "Taxis and wheelchair accessible taxis in every council area we cover across Melbourne and the Mornington Peninsula, 24/7."
 msgstr ""
 
 #. translators: 1: council 2: suburbs 3: phone
 #: inc/councils.php:194
 #, php-format
-msgid "Wheelchair accessible taxis across %1$s: %2$s. Ramp and hoist vans, trained drivers. Book online or call %3$s."
+msgid "Taxis and wheelchair accessible taxis across %1$s, 24/7: %2$s. Book online or call %3$s."
 msgstr ""
 
 #. translators: 1: council 2: suburbs
@@ -7357,13 +7373,13 @@ msgid "Fares depend on distance and waiting time; MPTP, NDIS and aged-care accou
 msgstr ""
 
 #: inc/eeat.php:89
-#: single-tp_place.php:33
+#: single-tp_place.php:32
 #: single-tp_term.php:25
 msgid "In short"
 msgstr ""
 
 #: inc/eeat.php:99
-#: inc/places.php:181
+#: inc/places.php:197
 msgid "Quick answer (for Google and AI assistants)"
 msgstr ""
 
@@ -7494,7 +7510,7 @@ msgid "Yes. Most manual and power wheelchairs fit, and you stay seated in your c
 msgstr ""
 
 #: inc/eeat.php:441
-#: inc/place-routes.php:239
+#: inc/place-routes.php:301
 msgid "Can a carer or family member come too?"
 msgstr ""
 
@@ -8547,7 +8563,7 @@ msgstr ""
 
 #: inc/health.php:141
 #: inc/health.php:142
-#: inc/seo-plugins.php:308
+#: inc/seo-plugins.php:377
 msgid "Sitemap"
 msgstr ""
 
@@ -8668,7 +8684,7 @@ msgid "Wheelchair accessible taxis · Melbourne"
 msgstr ""
 
 #: inc/helpers.php:21
-msgid "Accessible rides, booked in minutes."
+msgid "Mornington Peninsula taxi & wheelchair taxi, 24/7"
 msgstr ""
 
 #: inc/helpers.php:22
@@ -10041,60 +10057,60 @@ msgid "Pages are listed in the sitemap. Add your own text to each area (Areas �
 msgstr ""
 
 #. translators: 1: service, e.g. "Airport transfers" 2: suburb
-#: inc/local-pages.php:102
+#: inc/local-pages.php:111
 #, php-format
 msgid "%1$s from %2$s"
 msgstr ""
 
 #. translators: 1: page title 2: suburb 3: phone
-#: inc/local-pages.php:156
+#: inc/local-pages.php:165
 #, php-format
-msgid "%1$s by wheelchair accessible taxi. Ramp and hoist vans, trained drivers, door-to-door from anywhere in %2$s. Book online or call %3$s."
+msgid "%1$s by taxi or wheelchair accessible taxi, 24/7. Door-to-door from anywhere in %2$s. Book online or call %3$s."
 msgstr ""
 
 #. translators: 1: suburb 2: destination
-#: inc/local-pages.php:208
+#: inc/local-pages.php:217
 #, php-format
 msgid "How long does it take from %1$s to %2$s?"
 msgstr ""
 
 #. translators: %d: minutes
-#: inc/local-pages.php:210
+#: inc/local-pages.php:219
 #, php-format
 msgid "About %d minutes without traffic. We add time for loading and securing your wheelchair, and for peak-hour traffic, when we plan your pick-up."
 msgstr ""
 
 #. translators: 1: service 2: suburb
-#: inc/local-pages.php:218
+#: inc/local-pages.php:227
 #, php-format
 msgid "How much does it cost for %1$s from %2$s?"
 msgstr ""
 
 #. translators: %s: price
-#: inc/local-pages.php:221
+#: inc/local-pages.php:230
 #, php-format
 msgid "Fares start from %s and depend on distance, time of day and waiting time. The booking form shows an estimate, or ask us for a fixed quote."
 msgstr ""
 
-#: inc/local-pages.php:222
+#: inc/local-pages.php:231
 msgid "Fares depend on distance, time of day and waiting time. The booking form shows an estimate, or ask us for a fixed quote."
 msgstr ""
 
 #. translators: %s: suburb
-#: inc/local-pages.php:226
+#: inc/local-pages.php:235
 #, php-format
 msgid "Can you pick me up from my home, a hospital or an aged-care home in %s?"
 msgstr ""
 
-#: inc/local-pages.php:227
+#: inc/local-pages.php:236
 msgid "Yes. We pick up from any address — homes, hospitals, clinics, aged-care homes and day programs — and help you from the door to the vehicle."
 msgstr ""
 
-#: inc/local-pages.php:231
+#: inc/local-pages.php:240
 msgid "What if my flight is late?"
 msgstr ""
 
-#: inc/local-pages.php:232
+#: inc/local-pages.php:241
 msgid "Add your flight number when you book. We watch the flight and move your pick-up if it lands early or late."
 msgstr ""
 
@@ -12592,98 +12608,98 @@ msgstr ""
 msgid "Avoid number plates of other cars and hospital signage that identifies a specific clinic a passenger attends."
 msgstr ""
 
-#: inc/place-routes.php:27
+#: inc/place-routes.php:28
 msgid "Create route pages (suburb → hospital, station…)"
 msgstr ""
 
-#: inc/place-routes.php:27
+#: inc/place-routes.php:28
 msgid "e.g. “Wheelchair taxi from Frankston to Monash Medical Centre”, for the 8 nearest suburbs of each place page that has a map position."
 msgstr ""
 
 #. translators: 1: place, e.g. Frankston Station 2: suburb
 #. translators: 1: suburb 2: place, e.g. Frankston Hospital
-#: inc/place-routes.php:100
-#: inc/place-routes.php:102
+#: inc/place-routes.php:157
+#: inc/place-routes.php:159
 #, php-format
-msgid "Wheelchair taxi from %1$s to %2$s"
+msgid "Taxi from %1$s to %2$s"
 msgstr ""
 
 #. translators: 1: route title 2: minutes 3: km
-#: inc/place-routes.php:152
+#: inc/place-routes.php:214
 #, php-format
 msgid "%1$s: about %2$d minutes and %3$s km."
 msgstr ""
 
 #. translators: %s: fare range
-#: inc/place-routes.php:155
+#: inc/place-routes.php:217
 #, php-format
 msgid "Fare about %s."
 msgstr ""
 
 #. translators: %s: phone
-#: inc/place-routes.php:158
+#: inc/place-routes.php:220
 #, php-format
 msgid "Ramp and hoist vans, door to door. Book online or call %s."
 msgstr ""
 
 #. translators: 1: from 2: to
-#: inc/place-routes.php:211
+#: inc/place-routes.php:273
 #, php-format
-msgid "How much is a wheelchair taxi from %1$s to %2$s?"
+msgid "How much is a taxi from %1$s to %2$s?"
 msgstr ""
 
 #. translators: 1: fare range 2: phone
-#: inc/place-routes.php:214
+#: inc/place-routes.php:276
 #, php-format
-msgid "Usually about %1$s for a wheelchair accessible taxi, depending on the exact address, traffic and time of day. MPTP members pay half (up to the subsidy limit), and NDIS and aged-care accounts can be invoiced. Call %2$s for a firm price."
+msgid "Usually about %1$s, depending on the exact address, traffic and time of day. MPTP members pay half (up to the subsidy limit), and NDIS and aged-care accounts can be invoiced. Call %2$s for a firm price."
 msgstr ""
 
 #. translators: %s: phone
-#: inc/place-routes.php:216
+#: inc/place-routes.php:278
 #, php-format
 msgid "It depends on the exact address and time of day — call %s for a price. MPTP members pay half (up to the subsidy limit), and NDIS and aged-care accounts can be invoiced."
 msgstr ""
 
 #. translators: 1: from 2: to
-#: inc/place-routes.php:220
+#: inc/place-routes.php:282
 #, php-format
 msgid "How long does the trip from %1$s to %2$s take?"
 msgstr ""
 
 #. translators: 1: minutes 2: km
-#: inc/place-routes.php:222
+#: inc/place-routes.php:284
 #, php-format
 msgid "About %1$d minutes for the %2$s km without traffic. We allow a few extra minutes to load and secure your wheelchair."
 msgstr ""
 
 #. translators: %s: place
-#: inc/place-routes.php:227
+#: inc/place-routes.php:289
 #, php-format
 msgid "Where do you pick up at %s?"
 msgstr ""
 
 #. translators: %s: place
-#: inc/place-routes.php:227
+#: inc/place-routes.php:289
 #, php-format
 msgid "Where do you drop off at %s?"
 msgstr ""
 
 #. translators: %s: area
-#: inc/place-routes.php:234
+#: inc/place-routes.php:296
 #, php-format
 msgid "Can you take me home to %s when I’m discharged?"
 msgstr ""
 
-#: inc/place-routes.php:235
+#: inc/place-routes.php:297
 msgid "Yes. Book a “pick up when ready” trip: choose the day, then tap “I’m ready” on your booking page or call us when the ward lets you go, and we send the driver."
 msgstr ""
 
-#: inc/place-routes.php:240
+#: inc/place-routes.php:302
 msgid "Yes. Tell us how many people are travelling when you book; carers travel at no extra charge."
 msgstr ""
 
 #. translators: %s: suburb
-#: inc/place-routes.php:310
+#: inc/place-routes.php:372
 #, php-format
 msgid "Popular trips from %s"
 msgstr ""
@@ -12705,432 +12721,496 @@ msgid "Venue or attraction"
 msgstr ""
 
 #: inc/places.php:29
-msgid "Aged care or day program"
+msgid "Hotel or resort"
 msgstr ""
 
 #: inc/places.php:30
-msgid "Railway station"
+msgid "Winery, brewery or distillery"
 msgstr ""
 
 #: inc/places.php:31
+msgid "Ferry terminal or cruise pier"
+msgstr ""
+
+#: inc/places.php:32
+msgid "Aged care or day program"
+msgstr ""
+
+#: inc/places.php:33
+msgid "Railway station"
+msgstr ""
+
+#: inc/places.php:34
 msgid "Shopping centre"
 msgstr ""
 
 #. translators: %s: place
-#. translators: %s: partner name
-#: inc/places.php:60
-#: single-tp_venue.php:26
+#: inc/places.php:66
 #, php-format
-msgid "Wheelchair taxi from %s"
+msgid "Taxi & wheelchair taxi from %s"
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:62
+#: inc/places.php:70
 #, php-format
-msgid "Wheelchair taxi to %s"
+msgid "Taxi & wheelchair taxi to %s"
 msgstr ""
 
+#. translators: %s: place
 #: inc/places.php:72
+#, php-format
+msgid "Taxi to %s"
+msgstr ""
+
+#. translators: %s: airport
+#: inc/places.php:85
+#, php-format
+msgid "%s Taxi & Transfers from the Peninsula"
+msgstr ""
+
+#. translators: %s: hotel
+#: inc/places.php:88
+#, php-format
+msgid "%s Taxi – Airport & Local Transfers"
+msgstr ""
+
+#. translators: %s: winery
+#: inc/places.php:91
+#, php-format
+msgid "%s Taxi – Winery Transfers & Tours"
+msgstr ""
+
+#. translators: %s: venue
+#: inc/places.php:95
+#, php-format
+msgid "%s Taxi – Drop-off & Return Trips"
+msgstr ""
+
+#. translators: %s: place
+#: inc/places.php:98
+#, php-format
+msgid "%s Taxi & Wheelchair Taxi"
+msgstr ""
+
+#: inc/places.php:109
 msgid "Place pages"
 msgstr ""
 
-#: inc/places.php:73
+#: inc/places.php:110
 msgid "Place page"
 msgstr ""
 
-#: inc/places.php:74
+#: inc/places.php:111
 msgid "Add place"
 msgstr ""
 
-#: inc/places.php:75
+#: inc/places.php:112
 msgid "Add a hospital, station or other place"
 msgstr ""
 
-#: inc/places.php:76
+#: inc/places.php:113
 msgid "Edit place page"
 msgstr ""
 
-#: inc/places.php:77
+#: inc/places.php:114
 msgid "View place page"
 msgstr ""
 
 #. translators: 1: place 2: phone
-#: inc/places.php:156
+#: inc/places.php:172
 #, php-format
-msgid "Wheelchair accessible taxi pick-ups from %1$s: where to wait, step-free access and how to book. Ramp and hoist vans. Call %2$s."
+msgid "Taxi and wheelchair taxi pick-ups from %1$s, 24/7: where to wait, step-free access and how to book. Call %2$s."
 msgstr ""
 
 #. translators: 1: place 2: phone
-#: inc/places.php:158
+#: inc/places.php:174
 #, php-format
-msgid "Wheelchair accessible taxi to %1$s: the accessible entrance, where we drop you off, parking and how to book. Ramp and hoist vans. Call %2$s."
+msgid "Taxi and wheelchair taxi to %1$s, 24/7: where we drop you off, step-free access and how to book. Call %2$s."
 msgstr ""
 
-#: inc/places.php:168
+#: inc/places.php:184
 msgid "Places we go"
 msgstr ""
 
-#: inc/places.php:180
+#: inc/places.php:196
 msgid "Place details"
 msgstr ""
 
 #. translators: 1: business 2: place
-#: inc/places.php:195
+#: inc/places.php:211
+#, php-format
+msgid "%1$s runs taxis, wheelchair accessible taxis and maxi vans to and from %2$s, 24/7, with door-to-door help from the driver."
+msgstr ""
+
+#. translators: 1: business 2: place
+#: inc/places.php:214
 #, php-format
 msgid "%1$s picks up wheelchair users from %2$s in ramp and hoist vans, with the driver meeting you at the pick-up point and helping you on board."
 msgstr ""
 
 #. translators: 1: business 2: place
-#: inc/places.php:197
+#: inc/places.php:216
 #, php-format
 msgid "%1$s takes wheelchair users to %2$s in ramp and hoist vans and drops you at the accessible entrance, with help from the driver."
 msgstr ""
 
-#: inc/places.php:198
+#: inc/places.php:217
 msgid "Pick-up point:"
 msgstr ""
 
-#: inc/places.php:198
+#: inc/places.php:217
 msgid "Drop-off point:"
 msgstr ""
 
 #. translators: %s: phone
-#: inc/places.php:200
+#: inc/places.php:219
 #, php-format
 msgid "Book online in about two minutes or call %s; carers travel with you and MPTP, NDIS and aged-care accounts are accepted."
 msgstr ""
 
-#: inc/places.php:220
+#: inc/places.php:239
 msgid "The title is the place name, e.g. \"Frankston Hospital\". The page heading becomes \"Wheelchair taxi to Frankston Hospital\" (or \"from\" for stations and shopping centres). Use the editor for anything else worth knowing, and the featured image for a real photo of the entrance."
 msgstr ""
 
-#: inc/places.php:222
+#: inc/places.php:241
 msgid "This suggestion includes [CONFIRM] notes. Check each detail on site (or with the venue) and remove the notes before publishing."
 msgstr ""
 
-#: inc/places.php:228
+#: inc/places.php:247
 msgid "pick-ups from"
 msgstr ""
 
-#: inc/places.php:228
+#: inc/places.php:247
 msgid "trips to"
 msgstr ""
 
-#: inc/places.php:232
+#: inc/places.php:251
 #: inc/search.php:44
 msgid "Street address"
 msgstr ""
 
-#: inc/places.php:232
+#: inc/places.php:251
 msgid "Filled in on the booking form."
 msgstr ""
 
-#: inc/places.php:233
+#: inc/places.php:252
 #: inc/search.php:45
-#: single-tp_place.php:166
+#: single-tp_place.php:165
 msgid "Suburb"
 msgstr ""
 
-#: inc/places.php:233
+#: inc/places.php:252
 msgid "Links the page to that suburb’s page."
 msgstr ""
 
-#: inc/places.php:234
+#: inc/places.php:253
 #: inc/search.php:47
 msgid "Latitude"
 msgstr ""
 
-#: inc/places.php:234
+#: inc/places.php:253
 msgid "Optional, e.g. -38.151. Used for travel times from nearby suburbs."
 msgstr ""
 
-#: inc/places.php:235
+#: inc/places.php:254
 #: inc/search.php:48
 msgid "Longitude"
 msgstr ""
 
-#: inc/places.php:236
+#: inc/places.php:255
 #: place-route.php:76
-#: single-tp_place.php:74
+#: single-tp_place.php:73
 msgid "Accessible entrance"
 msgstr ""
 
-#: inc/places.php:236
+#: inc/places.php:255
 msgid "e.g. \"Main entrance on Hastings Rd — level access, automatic doors, wheelchairs to borrow at reception.\""
 msgstr ""
 
-#: inc/places.php:237
+#: inc/places.php:256
 msgid "Where we drop off / pick up"
 msgstr ""
 
-#: inc/places.php:237
+#: inc/places.php:256
 msgid "The exact spot drivers use, e.g. \"Set-down bay outside the main entrance (2 minutes)\"."
 msgstr ""
 
-#: inc/places.php:238
-#: single-tp_place.php:77
+#: inc/places.php:257
+#: single-tp_place.php:76
 msgid "Parking & waiting"
 msgstr ""
 
-#: inc/places.php:239
+#: inc/places.php:258
 msgid "Tips for passengers"
 msgstr ""
 
-#: inc/places.php:239
+#: inc/places.php:258
 msgid "One per line."
 msgstr ""
 
-#: inc/places.php:240
-#: single-tp_place.php:80
+#: inc/places.php:259
+#: single-tp_place.php:79
 msgid "Accessibility"
 msgstr ""
 
-#: inc/places.php:240
+#: inc/places.php:259
 msgid "e.g. \"Wheelchairs to borrow at reception, accessible toilets near the entrance, lifts to all floors, hearing loop at the front desk.\""
 msgstr ""
 
-#: inc/places.php:242
+#: inc/places.php:260
+msgid "Questions about this place"
+msgstr ""
+
+#: inc/places.php:260
+msgid "Question on the first line, answer below it, a blank line between questions."
+msgstr ""
+
+#: inc/places.php:262
 msgid "Going home (hospitals, clinics and care)"
 msgstr ""
 
-#: inc/places.php:244
+#: inc/places.php:264
 msgid "Pick-up point for the trip home"
 msgstr ""
 
-#: inc/places.php:244
+#: inc/places.php:264
 msgid "Where patients wait to be picked up, if different from the drop-off, e.g. \"Discharge lounge, ground floor — drivers come inside to meet you.\""
 msgstr ""
 
-#: inc/places.php:245
-#: single-tp_place.php:102
+#: inc/places.php:265
+#: single-tp_place.php:101
 msgid "Discharge tips"
 msgstr ""
 
-#: inc/places.php:245
+#: inc/places.php:265
 msgid "One per line, e.g. \"The discharge lounge is open 8am–6pm weekdays.\" Leave empty to show our general tips."
 msgstr ""
 
-#: inc/places.php:246
+#: inc/places.php:266
 msgid "Official website"
 msgstr ""
 
-#: inc/places.php:246
+#: inc/places.php:266
 msgid "For visiting hours and maps."
 msgstr ""
 
-#: inc/places.php:294
+#: inc/places.php:314
 msgid "Saved as a draft: remove every [CONFIRM] note once you have checked the details, then publish."
 msgstr ""
 
-#: inc/places.php:306
+#: inc/places.php:326
 msgid "Page address"
 msgstr ""
 
-#: inc/places.php:326
+#: inc/places.php:346
 msgid "[CONFIRM on site]"
 msgstr ""
 
-#: inc/places.php:327
+#: inc/places.php:347
 msgid "[CONFIRM] Which entrance has level access, and where are wheelchairs to borrow?"
 msgstr ""
 
-#: inc/places.php:328
+#: inc/places.php:348
 msgid "[CONFIRM] Where exactly do drivers drop off and pick up?"
 msgstr ""
 
-#: inc/places.php:329
+#: inc/places.php:349
 msgid "[CONFIRM] Where exactly do passengers wait for the taxi?"
 msgstr ""
 
-#: inc/places.php:331
+#: inc/places.php:351
 msgid "Main entrance on Hastings Road, with level access and automatic doors."
 msgstr ""
 
-#: inc/places.php:331
+#: inc/places.php:351
 msgid "Set-down bay in front of the main entrance."
 msgstr ""
 
-#: inc/places.php:332
+#: inc/places.php:352
 msgid "Main entrance off Point Nepean Road."
 msgstr ""
 
-#: inc/places.php:332
+#: inc/places.php:352
 msgid "Drop-off zone at the main entrance."
 msgstr ""
 
-#: inc/places.php:333
+#: inc/places.php:353
 msgid "Main entrance on Clayton Road."
 msgstr ""
 
-#: inc/places.php:333
+#: inc/places.php:353
 msgid "Taxi set-down at the main entrance."
 msgstr ""
 
-#: inc/places.php:334
+#: inc/places.php:354
 msgid "Main entrance on Commercial Road."
 msgstr ""
 
-#: inc/places.php:334
+#: inc/places.php:354
 msgid "Set-down area outside the main entrance."
 msgstr ""
 
-#: inc/places.php:335
+#: inc/places.php:355
 msgid "Every terminal has level access from the forecourt."
 msgstr ""
 
-#: inc/places.php:335
+#: inc/places.php:355
 msgid "Departures: the kerb outside your airline. Arrivals: we meet you at the arrivals hall and walk you to the van."
 msgstr ""
 
-#: inc/places.php:336
+#: inc/places.php:356
 msgid "Step-free access from the platforms to Young Street."
 msgstr ""
 
-#: inc/places.php:336
+#: inc/places.php:356
 msgid "The taxi rank and pick-up zone on Young Street, outside the station entrance."
 msgstr ""
 
-#: inc/places.php:337
+#: inc/places.php:357
 msgid "Ground-floor entrances with automatic doors."
 msgstr ""
 
-#: inc/places.php:337
+#: inc/places.php:357
 msgid "The taxi rank closest to the main entrance — tell us which entrance when you book."
 msgstr ""
 
-#: inc/places.php:338
+#: inc/places.php:358
 msgid "Level entrances from the car park."
 msgstr ""
 
-#: inc/places.php:338
+#: inc/places.php:358
 msgid "The taxi rank near the main entrance."
 msgstr ""
 
-#: inc/places.php:339
+#: inc/places.php:359
 msgid "Accessible entrances on every level from the car park."
 msgstr ""
 
-#: inc/places.php:339
+#: inc/places.php:359
 msgid "The taxi rank on the ground floor."
 msgstr ""
 
-#: inc/places.php:390
+#: inc/places.php:410
 msgid "[CONFIRM] Where exactly do drivers drop off?"
 msgstr ""
 
-#: inc/places.php:394
+#: inc/places.php:414
 msgid "[CONFIRM] Add one or two tips from your drivers."
 msgstr ""
 
 #. translators: %d: number
-#: inc/places.php:398
+#: inc/places.php:418
 #, php-format
 msgid "%d draft place page added."
 msgid_plural "%d draft place pages added."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/places.php:413
+#: inc/places.php:433
 msgid "Place pages answer searches such as \"wheelchair taxi to Frankston Hospital\" or \"accessible taxi from Frankston Station\". Add the places your passengers go most — a real photo of the entrance and the exact drop-off spot make them far more useful than a generic page."
 msgstr ""
 
-#: inc/places.php:417
+#: inc/places.php:437
 msgid "Add suggested hospitals, stations and shopping centres (drafts)"
 msgstr ""
 
-#: inc/places.php:418
+#: inc/places.php:438
 msgid "Add drafts from Popular destinations"
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:460
+#: inc/places.php:480
 #, php-format
 msgid "Where do I wait for my taxi at %s?"
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:460
+#: inc/places.php:480
 msgid "Tell us where you will be when you book and the driver will meet you there. We text you when the driver is on the way and when they arrive."
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:462
+#: inc/places.php:482
 #, php-format
 msgid "Can you pick me up from %s straight after my train or shopping?"
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:462
+#: inc/places.php:482
 msgid "Yes. Book a time, or call us when you are ready. If your train is running late, just let us know and we will adjust the pick-up."
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:465
+#: inc/places.php:485
 #, php-format
 msgid "Where will you drop me off at %s?"
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:465
+#: inc/places.php:485
 msgid "At the most accessible entrance, as close to the door as the driver can safely stop. Tell us your department or appointment location when you book."
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:467
+#: inc/places.php:487
 #, php-format
 msgid "Can you wait or pick me up after my appointment at %s?"
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:467
+#: inc/places.php:487
 msgid "Yes. Book a return trip with an approximate time, then call or text us when you are ready. Appointments often run late, so we keep return pick-ups flexible."
 msgstr ""
 
 #. translators: %s: place
-#: inc/places.php:471
+#: inc/places.php:491
 #, php-format
 msgid "Is there step-free access at %s?"
 msgstr ""
 
 #. translators: %s: suburb
-#: inc/places.php:515
+#: inc/places.php:535
 #, php-format
 msgid "Hospitals, stations and places in %s"
 msgstr ""
 
-#: inc/places.php:533
-msgid "Hospitals, clinics, airports and venues"
+#: inc/places.php:562
+msgid "Hospitals, clinics and airports"
 msgstr ""
 
-#: inc/places.php:534
+#: inc/places.php:563
+msgid "Hotels, wineries and venues"
+msgstr ""
+
+#: inc/places.php:564
 msgid "Railway stations and shopping centres"
 msgstr ""
 
-#: inc/places.php:577
+#: inc/places.php:607
 msgid "Places We Go"
 msgstr ""
 
-#: inc/places.php:578
+#: inc/places.php:608
 msgid "Accessible entrances, drop-off points and tips for the hospitals, stations and shopping centres our passengers travel to most."
 msgstr ""
 
-#: inc/places.php:589
+#: inc/places.php:619
 msgid "Hospitals & stations"
 msgstr ""
 
-#: inc/places.php:601
+#: inc/places.php:631
 msgid "Book a “pick up when ready” trip ahead: choose the day, then tap “I’m ready” on your booking page (or call us) when the ward lets you go."
 msgstr ""
 
-#: inc/places.php:602
+#: inc/places.php:632
 msgid "Discharge often takes longer than planned — waiting for medicines, a doctor’s sign-off or transport letters is normal. We only send the car when you are ready."
 msgstr ""
 
-#: inc/places.php:603
+#: inc/places.php:633
 msgid "Have your discharge letter, medicines and any walking aids with you, and tell us if you need help from the ward to the car."
 msgstr ""
 
-#: inc/places.php:604
+#: inc/places.php:634
 msgid "Travelling with a wheelchair or a carer? Say so when you book so we send the right vehicle."
 msgstr ""
 
@@ -15314,70 +15394,101 @@ msgstr ""
 msgid "%s is the suburb, e.g. “Frankston Taxi & Wheelchair Accessible Taxi”. Many more people search “Frankston taxi” than “wheelchair taxi Frankston”, so naming both brings more visitors."
 msgstr ""
 
+#. translators: %s: service, e.g. Airport transfers
+#: inc/seo-plugins.php:111
+#, php-format
+msgid "%s – Mornington Peninsula & Melbourne"
+msgstr ""
+
+#. translators: %s: service
+#: inc/seo-plugins.php:113
+#, php-format
+msgid "%s – Mornington Peninsula"
+msgstr ""
+
+#: inc/seo-plugins.php:115
+msgid "Taxi Service Areas – Mornington Peninsula & Melbourne"
+msgstr ""
+
+#: inc/seo-plugins.php:117
+msgid "Taxi to Hospitals, Airports, Hotels & Wineries"
+msgstr ""
+
+#: inc/seo-plugins.php:119
+msgid "Taxi Services – Mornington Peninsula & Melbourne"
+msgstr ""
+
+#: inc/seo-plugins.php:136
+#: inc/seo.php:36
+msgid "Taxi services on the Mornington Peninsula and in Melbourne: local taxis, wheelchair accessible taxis, airport transfers, hospital trips, winery tours and groups."
+msgstr ""
+
 #. translators: 1: url 2: error
-#: inc/seo-plugins.php:281
+#: inc/seo-plugins.php:350
 #, php-format
 msgid "Could not check %1$s from the server (%2$s). Open it in your browser: it should list your pages."
 msgstr ""
 
 #. translators: 1: url 2: HTTP status
-#: inc/seo-plugins.php:287
+#: inc/seo-plugins.php:356
 #, php-format
 msgid "%1$s does not work (status %2$s), so Google can’t find your pages. Go to Settings → Permalinks and press Save, then check again. With Rank Math also open Rank Math → Sitemap Settings and press Save."
 msgstr ""
 
-#: inc/seo-plugins.php:290
+#: inc/seo-plugins.php:359
 msgid "The sitemap works, but the theme’s suburb, route and council pages are not listed in it yet. Clear your caching plugin’s cache and check again."
 msgstr ""
 
 #. translators: 1: url 2: number of pages
-#: inc/seo-plugins.php:293
+#: inc/seo-plugins.php:362
 #, php-format
 msgid "%1$s works, including %2$d suburb, route and council pages. Submit it once in Google Search Console → Sitemaps."
 msgstr ""
 
-#: inc/seo-plugins.php:302
+#: inc/seo-plugins.php:371
 msgid "An SEO plugin"
 msgstr ""
 
 #. translators: %s: plugin
-#: inc/seo-plugins.php:305
-#: inc/seo-plugins.php:306
+#: inc/seo-plugins.php:374
+#: inc/seo-plugins.php:375
 msgid "SEO plugin"
 msgstr ""
 
 #. translators: %s: plugin
-#: inc/seo-plugins.php:305
+#: inc/seo-plugins.php:374
 #, php-format
 msgid "%s writes titles and the sitemap; the theme gives it the right details for its own pages (suburb, route and council pages) and your home and suburb titles unless you wrote your own there."
 msgstr ""
 
-#: inc/seo-plugins.php:306
+#: inc/seo-plugins.php:375
 msgid "None — the theme writes titles, descriptions and the sitemap itself. You don’t need an SEO plugin."
 msgstr ""
 
 #. translators: 1: area, 2: phone
-#: inc/seo.php:30
-#, php-format
-msgid "Wheelchair accessible taxi in %1$s. Ramp and hoist vehicles, trained drivers, door-to-door. Book online or call %2$s."
-msgstr ""
-
 #: inc/seo.php:33
-msgid "Wheelchair accessible taxi services in Melbourne: hospital and medical trips, airport transfers, NDIS and aged-care transport, group travel and events."
+#, php-format
+msgid "Taxi and wheelchair accessible taxi in %1$s, 24/7. Door-to-door, ramp and hoist vans, trained drivers. Book online or call %2$s."
 msgstr ""
 
-#: inc/seo.php:35
-msgid "Suburbs we cover with wheelchair accessible taxis across Melbourne and the Mornington Peninsula."
+#: inc/seo.php:38
+msgid "Every suburb and town we cover with taxis and wheelchair accessible taxis, from Portsea and Flinders to Frankston, Dandenong and Melbourne."
 msgstr ""
 
-#: inc/seo.php:37
+#: inc/seo.php:40
 msgid "News and travel tips for passengers using wheelchair accessible taxis in Melbourne."
 msgstr ""
 
 #. translators: 1: site name, 2: phone
-#: inc/seo.php:46
+#: inc/seo.php:49
 #, php-format
 msgid "%1$s — wheelchair accessible taxis in Melbourne and the Mornington Peninsula. Book online or call %2$s."
+msgstr ""
+
+#. translators: %s: phone
+#: inc/seo.php:61
+#, php-format
+msgid "Call %s."
 msgstr ""
 
 #: inc/settings-tabs.php:20
@@ -17497,6 +17608,24 @@ msgstr ""
 msgid "%1$s: %2$s has arrived at %3$s."
 msgstr ""
 
+#. translators: %d: number
+#: inc/url-moves.php:200
+#: inc/url-moves.php:201
+msgid "Old page addresses"
+msgstr ""
+
+#. translators: %d: number
+#: inc/url-moves.php:200
+#, php-format
+msgid "%d post or menu link still uses an old address (e.g. /wheelchair-taxi/…). It still works — visitors are sent to the new page and links are updated when shown — but update it when convenient."
+msgid_plural "%d posts or menu links still use an old address (e.g. /wheelchair-taxi/…). They still work — visitors are sent to the new pages and links are updated when shown — but update them when convenient."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/url-moves.php:201
+msgid "Suburb, place and route pages use the new addresses (/locations/, /places/, /routes/). Old addresses redirect permanently."
+msgstr ""
+
 #: inc/venues.php:23
 msgid "Aged-care home"
 msgstr ""
@@ -17744,7 +17873,7 @@ msgid "More from %s"
 msgstr ""
 
 #. translators: %s: service
-#: local-service.php:131
+#: local-service.php:133
 #, php-format
 msgid "%s from other areas"
 msgstr ""
@@ -18828,13 +18957,13 @@ msgid "Arriving at %s"
 msgstr ""
 
 #: place-route.php:73
-#: single-tp_place.php:71
-#: single-tp_place.php:100
+#: single-tp_place.php:70
+#: single-tp_place.php:99
 msgid "Pick-up point"
 msgstr ""
 
 #: place-route.php:73
-#: single-tp_place.php:71
+#: single-tp_place.php:70
 msgid "Drop-off point"
 msgstr ""
 
@@ -18856,13 +18985,13 @@ msgid "Not sure when you will be discharged? Book a “pick up when ready” tri
 msgstr ""
 
 #: place-route.php:89
-#: single-tp_place.php:109
+#: single-tp_place.php:108
 msgid "Book the trip home — pick up when ready"
 msgstr ""
 
 #. translators: %s: phone
 #: place-route.php:90
-#: single-tp_place.php:110
+#: single-tp_place.php:109
 #, php-format
 msgid "Ready now? Call %s"
 msgstr ""
@@ -18988,74 +19117,74 @@ msgid "More events"
 msgstr ""
 
 #. translators: %s: place
-#: single-tp_place.php:48
+#: single-tp_place.php:47
 #, php-format
 msgid "Book a pick-up from %s"
 msgstr ""
 
 #. translators: %s: place
-#: single-tp_place.php:50
+#: single-tp_place.php:49
 #, php-format
 msgid "Book a trip to %s"
 msgstr ""
 
 #. translators: %s: place
-#: single-tp_place.php:63
+#: single-tp_place.php:62
 #, php-format
 msgid "Where do we pick you up at %s?"
 msgstr ""
 
 #. translators: %s: place
-#: single-tp_place.php:65
+#: single-tp_place.php:64
 #, php-format
 msgid "Where do we drop you off at %s?"
 msgstr ""
 
 #. translators: %s: place
-#: single-tp_place.php:88
+#: single-tp_place.php:87
 #, php-format
 msgid "Tips from our drivers for %s"
 msgstr ""
 
 #. translators: %s: place
-#: single-tp_place.php:98
+#: single-tp_place.php:97
 #, php-format
 msgid "Going home from %s"
 msgstr ""
 
-#: single-tp_place.php:100
+#: single-tp_place.php:99
 msgid "At the main entrance. Tell us your ward or clinic and the driver will meet you there if you need help."
 msgstr ""
 
 #. translators: %s: place
-#: single-tp_place.php:124
+#: single-tp_place.php:123
 #, php-format
 msgid "How long is the trip home from %s?"
 msgstr ""
 
 #. translators: %s: place
-#: single-tp_place.php:126
+#: single-tp_place.php:125
 #, php-format
 msgid "How long does it take to get to %s?"
 msgstr ""
 
 #. translators: %s: place
-#: single-tp_place.php:142
+#: single-tp_place.php:141
 #, php-format
-msgid "Questions about wheelchair taxis and %s"
+msgid "Questions about taxis to %s"
 msgstr ""
 
 #. translators: %s: place
-#: single-tp_place.php:151
+#: single-tp_place.php:150
 #, php-format
 msgid "Visiting hours, maps and contacts for %s (official website)"
 msgstr ""
 
-#: single-tp_place.php:163
+#: single-tp_place.php:162
 msgid "Other places"
 msgstr ""
 
-#: single-tp_place.php:172
+#: single-tp_place.php:171
 msgid "Other places we go"
 msgstr ""
 
@@ -19074,6 +19203,12 @@ msgstr ""
 #: single-tp_term.php:38
 #: single-tp_term.php:40
 msgid "More terms"
+msgstr ""
+
+#. translators: %s: partner name
+#: single-tp_venue.php:26
+#, php-format
+msgid "Wheelchair taxi from %s"
 msgstr ""
 
 #: single-tp_venue.php:29

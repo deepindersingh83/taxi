@@ -33,7 +33,7 @@ function tp_breadcrumb_trail() {
 	} elseif ( is_singular( 'tp_area' ) ) {
 		$trail[] = array( __( 'Areas we cover', 'taxi-peninsula' ), get_post_type_archive_link( 'tp_area' ) );
 		/* translators: %s: suburb */
-		$trail[] = array( sprintf( __( 'Wheelchair taxi %s', 'taxi-peninsula' ), single_post_title( '', false ) ), get_permalink() );
+		$trail[] = array( sprintf( __( 'Taxi & wheelchair taxi in %s', 'taxi-peninsula' ), single_post_title( '', false ) ), get_permalink() );
 	} elseif ( is_singular( 'post' ) ) {
 		if ( $blog ) {
 			$trail[] = $blog;

@@ -1,7 +1,7 @@
 <?php
 /**
  * Generated local page: a service in an area, e.g.
- * /wheelchair-taxi/mornington/airport-transfers/ (see inc/local-pages.php).
+ * /locations/mornington/airport-transfers/ (see inc/local-pages.php).
  *
  * @package TaxiPeninsula
  */
@@ -118,9 +118,11 @@ get_template_part(
 				?>
 			</h2>
 			<ul class="service-links">
-				<li><?php tp_the_icon( 'pin' ); ?><a href="<?php echo esc_url( get_permalink( $tp_area ) ); ?>"><?php /* translators: %s: suburb */ echo esc_html( sprintf( __( 'Wheelchair taxi %s', 'taxi-peninsula' ), $tp_a ) ); ?></a></li>
+				<li><?php tp_the_icon( 'pin' ); ?><a href="<?php echo esc_url( get_permalink( $tp_area ) ); ?>"><?php /* translators: %s: suburb */ echo esc_html( sprintf( __( 'Taxi & wheelchair taxi in %s', 'taxi-peninsula' ), $tp_a ) ); ?></a></li>
 				<?php foreach ( get_posts( array( 'post_type' => 'tp_service', 'numberposts' => 12, 'exclude' => array( $tp_service->ID ), 'orderby' => 'menu_order', 'order' => 'ASC' ) ) as $tp_s ) : ?>
-					<li><?php tp_the_icon( get_post_meta( $tp_s->ID, '_tp_icon', true ) ?: 'wheelchair' ); ?><a href="<?php echo esc_url( tp_local_url( $tp_area, $tp_s ) ); ?>"><?php echo esc_html( tp_local_title( $tp_area, $tp_s ) ); ?></a></li>
+					<?php if ( tp_local_pair_ok( $tp_area, $tp_s ) ) : ?>
+						<li><?php tp_the_icon( get_post_meta( $tp_s->ID, '_tp_icon', true ) ?: 'wheelchair' ); ?><a href="<?php echo esc_url( tp_local_url( $tp_area, $tp_s ) ); ?>"><?php echo esc_html( tp_local_title( $tp_area, $tp_s ) ); ?></a></li>
+					<?php endif; ?>
 				<?php endforeach; ?>
 			</ul>
 		</section>
@@ -133,7 +135,9 @@ get_template_part(
 			</h2>
 			<ul class="chips chips--sm">
 				<?php foreach ( get_posts( array( 'post_type' => 'tp_area', 'numberposts' => 40, 'exclude' => array( $tp_area->ID ), 'orderby' => 'menu_order', 'order' => 'ASC' ) ) as $tp_other ) : ?>
-					<li><a class="chip" href="<?php echo esc_url( tp_local_url( $tp_other, $tp_service ) ); ?>"><?php echo esc_html( get_the_title( $tp_other ) ); ?></a></li>
+					<?php if ( tp_local_pair_ok( $tp_other, $tp_service ) ) : ?>
+						<li><a class="chip" href="<?php echo esc_url( tp_local_url( $tp_other, $tp_service ) ); ?>"><?php echo esc_html( get_the_title( $tp_other ) ); ?></a></li>
+					<?php endif; ?>
 				<?php endforeach; ?>
 			</ul>
 		</section>

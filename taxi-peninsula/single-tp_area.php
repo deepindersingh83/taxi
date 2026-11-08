@@ -1,6 +1,6 @@
 <?php
 /**
- * Single area page, e.g. /wheelchair-taxi/frankston/.
+ * Single area page, e.g. /locations/frankston/.
  *
  * @package TaxiPeninsula
  */
@@ -15,7 +15,7 @@ while ( have_posts() ) :
 		null,
 		array(
 			/* translators: %s: suburb */
-			'title' => esc_html( sprintf( __( 'Wheelchair taxi %s', 'taxi-peninsula' ), $area ) ),
+			'title' => esc_html( sprintf( __( 'Taxi & wheelchair taxi in %s', 'taxi-peninsula' ), $area ) ),
 			'lead'  => has_excerpt() ? esc_html( get_the_excerpt() ) : '',
 		)
 	);

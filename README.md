@@ -8,9 +8,45 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### New in v2.14 — clearer page addresses and 140+ new pages
+**One folder for each kind of page.** Old addresses redirect permanently (301) in one step, so rankings, shared links and printed QR codes keep working.
+
+| Page | Old address | New address |
+|---|---|---|
+| Suburb | `/wheelchair-taxi/sorrento/` | `/locations/sorrento/` |
+| Suburb + service | `/wheelchair-taxi/sorrento/airport-transfers/` | `/locations/sorrento/airport-transfers/` |
+| Council area | `/council/frankston-city/` | `/locations/council/frankston-city/` |
+| Hospital, airport, hotel… | `/wheelchair-taxi-to/frankston-hospital/` | `/places/frankston-hospital/` |
+| Route | `/wheelchair-taxi-to/frankston-hospital/from-rye/` | `/routes/rye-to-frankston-hospital/` |
+| Lists | `/our-services/`, `/places-we-go/` | `/services/`, `/places/` |
+
+- **Old links in your posts, pages and menus** are rewritten as the page is shown; nothing in the database changes.
+- **Test & troubleshoot** (Marketing & SEO) counts posts and menu links that still use an old address.
+
+**Content pack: pages written for your site**
+- **Dashboard → "Add the new pages"** (also on the Areas, Place pages and Services screens) publishes them in one click.
+- **43 suburbs and towns**, including every Southern Peninsula and Western Port town (Capel Sound, McCrae, Blairgowrie, Red Hill, Main Ridge, Flinders, Balnarring, Crib Point…). Each has about 300 words of local introduction, getting-around notes, places people travel to and three local questions. Your existing 16 suburb pages get the same, wherever they were still empty.
+- **Places:** public and private hospitals across the Peninsula and Melbourne (Royal Victorian Eye and Ear, Peter Mac, The Alfred, Monash…), airports (Melbourne, Avalon, Moorabbin, Essendon Fields), ferry terminals and Station Pier, stations, shopping centres, hotels and resorts, wineries and breweries, and venues (Peninsula Hot Springs, MCG, Flemington…).
+- **Services:** richer pages for the six existing services, plus Local taxi service, Winery tours, Hotel & resort transfers and Weddings. Parcel delivery and Pet transport are added as drafts — publish them only if you offer them.
+- **Nothing you wrote is overwritten.** Existing pages only get the parts that are still empty. Place drafts that still have [CONFIRM] notes from the old suggestions are filled in and published.
+- **No near-duplicate pages:** new suburbs and services don't get combined "service from suburb" pages. Route pages are made only for hospitals, clinics, airports, stations and shopping centres.
+
+**Titles and headings people search for**
+- **Headings:**
+  - The home page says "Mornington Peninsula taxi & wheelchair taxi, 24/7" (if you haven't changed it).
+  - Suburb pages say "Taxi & wheelchair taxi in Sorrento".
+  - Place pages say "Taxi & wheelchair taxi to Frankston Hospital" or "Taxi to Montalto".
+- **Titles in Google:**
+  - "Frankston Hospital Taxi & Wheelchair Taxi"
+  - "Melbourne Airport Taxi & Transfers from the Peninsula"
+  - "Montalto Taxi – Winery Transfers & Tours"
+  - "Airport transfers – Mornington Peninsula & Melbourne"
+- **Descriptions** end with "Call 0468 323 211." when it fits.
+- **Share picture:** with Rank Math or Yoast active, pages without a picture use your hero image or logo when shared on Facebook, WhatsApp or LinkedIn.
+
 ### v2.13.1 — working properly with Rank Math and Yoast SEO
 When an SEO plugin such as Rank Math is active, it writes the titles, descriptions, canonical links and the sitemap, and WordPress's own sitemap is switched off. It didn't know the pages this theme builds itself. On a site running Rank Math:
-- **Suburb + service pages** (e.g. /wheelchair-taxi/frankston/airport-transfers/) were titled "Blog" and told Google they were a copy of /blog/.
+- **Suburb + service pages** (e.g. /locations/frankston/airport-transfers/) were titled "Blog" and told Google they were a copy of /blog/.
 - **Route pages** pointed to their place page.
 - **None of these pages were in the sitemap.**
 - The home page was titled "Home" and suburb pages just "Frankston".
@@ -51,7 +87,7 @@ Now:
 - **Phone taps to follow up:** when someone taps your number but no booking comes from the same browser within 30 minutes, the tap is listed with its time, page and source, and the menu shows a count. Match it with missed calls on the phone and call back.
 
 **SEO**
-- **Route pages**, such as `/wheelchair-taxi-to/frankston-hospital/from-mornington/` ("Wheelchair taxi from Mornington to Frankston Hospital"):
+- **Route pages**, such as `/routes/mornington-to-frankston-hospital/` ("Taxi from Mornington to Frankston Hospital"):
   - Every place page that has a map position gets one for each of its 8 nearest suburbs.
   - Each has its own travel time, distance and usual fare from your rates, the drop-off details, a booking card, questions (with FAQ data for Google), a "going home" section for hospitals, and links to other routes.
   - They are in the XML sitemap and linked from the place page's travel times and from each suburb page ("Popular trips from …").
@@ -326,8 +362,8 @@ Reports → Search performance now offers three ways to get your Google Search C
 ### New in v2.7
 **More pages that rank**
 - **Place pages:**
-  - "Going to" pages for hospitals, clinics, airports and venues at `/wheelchair-taxi-to/{place}/`, for searches like "wheelchair taxi to Frankston Hospital"
-  - "Picking up from" pages for railway stations and shopping centres at `/wheelchair-taxi-from/{place}/`
+  - "Going to" pages for hospitals, clinics, airports, hotels, wineries and venues at `/places/{place}/`, for searches like "taxi to Frankston Hospital"
+  - "Picking up from" pages for railway stations and shopping centres, also at `/places/{place}/`
   - Each page has the accessible entrance, the exact drop-off or pick-up spot, parking, driver tips, a booking card with the address filled in, travel times from nearby suburbs, questions and answers, reviews and business data for Google.
   - Manage them under Website content → Place pages. One click adds suggested hospitals, stations and shopping centres as drafts, or drafts from Popular destinations.
   - A page with [CONFIRM] notes stays a draft until you remove them.
@@ -553,7 +589,7 @@ Reports → Search performance now offers three ways to get your Google Search C
   - messages go out in batches from Bookings → News & offers, which also lists subscribers and exports a CSV with consent records
   - sign-ups are included in privacy export and erase
 - **Local service pages**:
-  - `/wheelchair-taxi/{area}/{service}/`, e.g. "Airport transfers from Mornington"
+  - `/locations/{area}/{service}/`, e.g. "Airport transfers from Mornington"
   - each page has travel times, a map, the service's steps and fares, local questions with FAQ schema, and a booking card with the suburb filled in
   - pages are listed in the XML sitemap
   - turn them off, or set noindex, under Bookings → Settings → Local pages
@@ -582,7 +618,7 @@ Reports → Search performance now offers three ways to get your Google Search C
   - pay an outstanding deposit
   - ask to change or cancel a trip, or all remaining trips in a repeat series
 - **Pages:** FAQ (grouped accordion), Our Fleet, NDIS & Aged Care, and Contact (enquiries are saved in the admin).
-- **Service pages** such as `/services/airport-transfers/`, and a **page per suburb** such as `/wheelchair-taxi/frankston/`.
+- **Service pages** such as `/services/airport-transfers/`, and a **page per suburb** such as `/locations/frankston/`.
 - A **testimonials** section and Google rating badge on the home page. It stays hidden until you add real testimonials or a rating.
 - **Accessibility and dynamic type:**
   - fluid text sizes that follow the visitor's own device settings (text size, zoom, dark mode, high contrast, reduced motion)

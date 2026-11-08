@@ -1,6 +1,6 @@
 <?php
 /**
- * Route page, e.g. /wheelchair-taxi-to/frankston-hospital/from-frankston/.
+ * Route page, e.g. /routes/frankston-to-frankston-hospital/.
  * See inc/place-routes.php.
  *
  * @package TaxiPeninsula

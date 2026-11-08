@@ -55,7 +55,7 @@ function tp_generated_view_url() {
 
 /** Views where the theme knows a better title and description than the plugin's default. */
 function tp_theme_seo_view() {
-	return is_front_page() || is_singular( array( 'tp_area', 'tp_place', 'tp_service', 'tp_term', 'tp_event' ) ) || is_post_type_archive( array( 'tp_area', 'tp_service', 'tp_term' ) ) || '' !== tp_generated_view_url();
+	return is_front_page() || is_singular( array( 'tp_area', 'tp_place', 'tp_service', 'tp_term', 'tp_event' ) ) || is_post_type_archive( array( 'tp_area', 'tp_service', 'tp_term' ) ) || tp_is_places_page() || tp_is_services_page() || '' !== tp_generated_view_url();
 }
 
 /** Did someone write a title / description for this page in the SEO plugin? */
@@ -100,6 +100,54 @@ add_filter(
 	15
 );
 
+// Services, the suburb list and the places list: name the region people search for.
+add_filter(
+	'document_title_parts',
+	static function ( $parts ) {
+		if ( is_singular( 'tp_service' ) ) {
+			$name           = single_post_title( '', false );
+			$parts['title'] = mb_strlen( $name ) <= 26
+				/* translators: %s: service, e.g. Airport transfers */
+				? sprintf( __( '%s – Mornington Peninsula & Melbourne', 'taxi-peninsula' ), $name )
+				/* translators: %s: service */
+				: sprintf( __( '%s – Mornington Peninsula', 'taxi-peninsula' ), $name );
+		} elseif ( is_post_type_archive( 'tp_area' ) ) {
+			$parts['title'] = __( 'Taxi Service Areas – Mornington Peninsula & Melbourne', 'taxi-peninsula' );
+		} elseif ( tp_is_places_page() ) {
+			$parts['title'] = __( 'Taxi to Hospitals, Airports, Hotels & Wineries', 'taxi-peninsula' );
+		} elseif ( tp_is_services_page() ) {
+			$parts['title'] = __( 'Taxi Services – Mornington Peninsula & Melbourne', 'taxi-peninsula' );
+		}
+		return $parts;
+	},
+	15
+);
+
+/** Is this the services list page? */
+function tp_is_services_page() {
+	return is_page() && 'page-templates/services.php' === get_page_template_slug( get_queried_object_id() );
+}
+
+// The services list page: describe what is on it.
+add_filter(
+	'tp_meta_description',
+	static function ( $text ) {
+		if ( tp_is_services_page() && ! has_excerpt( get_queried_object_id() ) ) {
+			return __( 'Taxi services on the Mornington Peninsula and in Melbourne: local taxis, wheelchair accessible taxis, airport transfers, hospital trips, winery tours and groups.', 'taxi-peninsula' );
+		}
+		return $text;
+	}
+);
+
+/** Is this the "Places we go" list page? */
+function tp_is_places_page() {
+	if ( ! is_page() ) {
+		return false;
+	}
+	$url = tp_page_url_by_template( 'places' );
+	return $url && (int) url_to_postid( $url ) === get_queried_object_id();
+}
+
 // Home page title without an SEO plugin.
 add_filter(
 	'document_title_parts',
@@ -143,6 +191,27 @@ foreach ( array( 'rank_math/frontend/description', 'rank_math/opengraph/facebook
 foreach ( array( 'rank_math/frontend/canonical', 'rank_math/opengraph/url', 'wpseo_canonical', 'wpseo_opengraph_url' ) as $tp_hook ) {
 	add_filter( $tp_hook, $tp_seo_url, 20 );
 }
+
+// A picture for links shared on Facebook, WhatsApp, LinkedIn and X when the
+// page has none and no default image is set in the SEO plugin.
+foreach ( array( 'facebook', 'twitter' ) as $tp_net ) {
+	add_action(
+		'rank_math/opengraph/' . $tp_net . '/add_additional_images',
+		static function ( $image ) {
+			if ( method_exists( $image, 'has_images' ) && ! $image->has_images() && ! \RankMath\Helper::get_settings( 'titles.open_graph_image_id' ) ) {
+				$image->add_image( tp_share_image() );
+			}
+		}
+	);
+}
+add_action(
+	'wpseo_add_opengraph_images',
+	static function ( $images ) {
+		if ( method_exists( $images, 'has_images' ) && ! $images->has_images() ) {
+			$images->add_image( tp_share_image() );
+		}
+	}
+);
 
 // Generated pages are never "the blog": no "noindex" the plugin may have set for that view.
 add_filter(

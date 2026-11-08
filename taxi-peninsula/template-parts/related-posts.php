@@ -13,7 +13,7 @@ $related = tp_related_posts( null, 3 );
 		<p><strong><?php esc_html_e( 'Travelling in this area?', 'taxi-peninsula' ); ?></strong></p>
 		<ul class="chips chips--sm">
 			<?php foreach ( $areas as $a ) : ?>
-				<li><a class="chip" href="<?php echo esc_url( get_permalink( $a ) ); ?>"><?php tp_the_icon( 'pin' ); ?><?php echo esc_html( sprintf( /* translators: %s: suburb */ __( 'Wheelchair taxi %s', 'taxi-peninsula' ), get_the_title( $a ) ) ); ?></a></li>
+				<li><a class="chip" href="<?php echo esc_url( get_permalink( $a ) ); ?>"><?php tp_the_icon( 'pin' ); ?><?php echo esc_html( sprintf( /* translators: %s: suburb */ __( 'Taxi & wheelchair taxi in %s', 'taxi-peninsula' ), get_the_title( $a ) ) ); ?></a></li>
 			<?php endforeach; ?>
 		</ul>
 	</aside>

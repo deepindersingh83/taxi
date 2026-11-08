@@ -3,10 +3,10 @@
  * Place pages for searches like "wheelchair taxi to Frankston Hospital" and
  * "wheelchair taxi from Frankston Station":
  *
- * - "Going to" places (hospitals, clinics, airports, venues):
- *   /wheelchair-taxi-to/{slug}/
- * - "Picking up from" places (railway stations, shopping centres):
- *   /wheelchair-taxi-from/{slug}/
+ * - "Going to" places (hospitals, clinics, airports, hotels, wineries, venues)
+ * - "Picking up from" places (railway stations, shopping centres)
+ *
+ * All live at /places/{slug}/.
  *
  * Each page has the accessible entrance, the exact drop-off or pick-up spot,
  * parking and tips, a booking card with the address filled in, travel times
@@ -18,7 +18,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const TP_PLACES_RW = 1;
+const TP_PLACES_RW = 2;
 
 function tp_place_types() {
 	return array(
@@ -26,6 +26,9 @@ function tp_place_types() {
 		'clinic'   => array( __( 'Clinic or medical centre', 'taxi-peninsula' ), 'to' ),
 		'airport'  => array( __( 'Airport', 'taxi-peninsula' ), 'to' ),
 		'venue'    => array( __( 'Venue or attraction', 'taxi-peninsula' ), 'to' ),
+		'hotel'    => array( __( 'Hotel or resort', 'taxi-peninsula' ), 'to' ),
+		'winery'   => array( __( 'Winery, brewery or distillery', 'taxi-peninsula' ), 'to' ),
+		'transport' => array( __( 'Ferry terminal or cruise pier', 'taxi-peninsula' ), 'to' ),
 		'care'     => array( __( 'Aged care or day program', 'taxi-peninsula' ), 'to' ),
 		'station'  => array( __( 'Railway station', 'taxi-peninsula' ), 'from' ),
 		'shopping' => array( __( 'Shopping centre', 'taxi-peninsula' ), 'from' ),
@@ -34,7 +37,7 @@ function tp_place_types() {
 
 function tp_place_meta( $id ) {
 	$m = array();
-	foreach ( array( 'type', 'address', 'lat', 'lng', 'area', 'entrance', 'spot', 'parking', 'tips', 'official', 'pickup', 'discharge', 'access' ) as $k ) {
+	foreach ( array( 'type', 'address', 'lat', 'lng', 'area', 'entrance', 'spot', 'parking', 'tips', 'official', 'pickup', 'discharge', 'access', 'faq' ) as $k ) {
 		$m[ $k ] = (string) get_post_meta( $id, '_tp_p_' . $k, true );
 	}
 	$m['type'] = isset( tp_place_types()[ $m['type'] ] ) ? $m['type'] : 'hospital';
@@ -52,14 +55,48 @@ function tp_place_kind( $id ) {
 }
 
 /**
- * "Wheelchair taxi to Frankston Hospital" / "Wheelchair taxi from Frankston Station".
+ * The page heading: "Taxi & wheelchair taxi to Frankston Hospital",
+ * "Taxi to Montalto", "Taxi & wheelchair taxi from Frankston Station".
  */
 function tp_place_title( $id ) {
-	return 'from' === tp_place_kind( $id )
+	$m    = tp_place_meta( $id );
+	$name = get_the_title( $id );
+	if ( 'from' === $m['kind'] ) {
 		/* translators: %s: place */
-		? sprintf( __( 'Wheelchair taxi from %s', 'taxi-peninsula' ), get_the_title( $id ) )
+		return sprintf( __( 'Taxi & wheelchair taxi from %s', 'taxi-peninsula' ), $name );
+	}
+	return tp_place_is_medical( $m ) || 'airport' === $m['type']
 		/* translators: %s: place */
-		: sprintf( __( 'Wheelchair taxi to %s', 'taxi-peninsula' ), get_the_title( $id ) );
+		? sprintf( __( 'Taxi & wheelchair taxi to %s', 'taxi-peninsula' ), $name )
+		/* translators: %s: place */
+		: sprintf( __( 'Taxi to %s', 'taxi-peninsula' ), $name );
+}
+
+/**
+ * The title in search results, written the way people search:
+ * "Frankston Hospital Taxi & Wheelchair Taxi", "Montalto Taxi – Winery Transfers & Tours".
+ */
+function tp_place_seo_title( $id ) {
+	$m    = tp_place_meta( $id );
+	$name = get_the_title( $id );
+	switch ( $m['type'] ) {
+		case 'airport':
+			/* translators: %s: airport */
+			return sprintf( __( '%s Taxi & Transfers from the Peninsula', 'taxi-peninsula' ), $name );
+		case 'hotel':
+			/* translators: %s: hotel */
+			return sprintf( __( '%s Taxi – Airport & Local Transfers', 'taxi-peninsula' ), $name );
+		case 'winery':
+			/* translators: %s: winery */
+			return sprintf( __( '%s Taxi – Winery Transfers & Tours', 'taxi-peninsula' ), $name );
+		case 'venue':
+		case 'transport':
+			/* translators: %s: venue */
+			return sprintf( __( '%s Taxi – Drop-off & Return Trips', 'taxi-peninsula' ), $name );
+		default:
+			/* translators: %s: place */
+			return sprintf( __( '%s Taxi & Wheelchair Taxi', 'taxi-peninsula' ), $name );
+	}
 }
 
 add_action(
@@ -87,7 +124,7 @@ add_action(
 				'exclude_from_search' => false,
 			)
 		);
-		add_rewrite_rule( '^wheelchair-taxi-(to|from)/([^/]+)/?$', 'index.php?tp_place=$matches[2]&tp_place_kind=$matches[1]', 'top' );
+		add_rewrite_rule( '^places/([^/]+)/?$', 'index.php?tp_place=$matches[1]', 'top' );
 		if ( (int) get_option( 'tp_places_rw' ) !== TP_PLACES_RW ) {
 			tp_flush_rewrites_soon(); // After every plugin has added its rules (see inc/seo-plugins.php).
 			update_option( 'tp_places_rw', TP_PLACES_RW, false );
@@ -97,46 +134,22 @@ add_action(
 );
 
 add_filter(
-	'query_vars',
-	static function ( $v ) {
-		$v[] = 'tp_place_kind';
-		return $v;
-	}
-);
-
-add_filter(
 	'post_type_link',
 	static function ( $link, $post ) {
 		if ( 'tp_place' !== $post->post_type || ! $post->post_name || in_array( $post->post_status, array( 'draft', 'pending', 'auto-draft' ), true ) ) {
 			return $link;
 		}
-		return home_url( user_trailingslashit( 'wheelchair-taxi-' . tp_place_kind( $post->ID ) . '/' . $post->post_name ) );
+		return home_url( user_trailingslashit( 'places/' . $post->post_name ) );
 	},
 	10,
 	2
-);
-
-// /wheelchair-taxi-to/frankston-station/ → /wheelchair-taxi-from/frankston-station/.
-add_action(
-	'template_redirect',
-	static function () {
-		if ( ! is_singular( 'tp_place' ) ) {
-			return;
-		}
-		$want = tp_place_kind( get_queried_object_id() );
-		$got  = get_query_var( 'tp_place_kind' );
-		if ( $got && $got !== $want ) {
-			wp_safe_redirect( get_permalink( get_queried_object_id() ), 301 );
-			exit;
-		}
-	}
 );
 
 add_filter(
 	'document_title_parts',
 	static function ( $parts ) {
 		if ( is_singular( 'tp_place' ) ) {
-			$parts['title'] = tp_place_title( get_queried_object_id() );
+			$parts['title'] = tp_place_seo_title( get_queried_object_id() );
 		}
 		return $parts;
 	},
@@ -151,11 +164,14 @@ add_filter(
 		}
 		$id = get_queried_object_id();
 		$m  = tp_place_meta( $id );
+		if ( get_post_meta( $id, '_tp_meta_desc', true ) ) {
+			return $text;
+		}
 		return 'from' === $m['kind']
 			/* translators: 1: place 2: phone */
-			? sprintf( __( 'Wheelchair accessible taxi pick-ups from %1$s: where to wait, step-free access and how to book. Ramp and hoist vans. Call %2$s.', 'taxi-peninsula' ), get_the_title( $id ), wp_strip_all_tags( tp_opt( 'phone_display' ) ) )
+			? sprintf( __( 'Taxi and wheelchair taxi pick-ups from %1$s, 24/7: where to wait, step-free access and how to book. Call %2$s.', 'taxi-peninsula' ), get_the_title( $id ), wp_strip_all_tags( tp_opt( 'phone_display' ) ) )
 			/* translators: 1: place 2: phone */
-			: sprintf( __( 'Wheelchair accessible taxi to %1$s: the accessible entrance, where we drop you off, parking and how to book. Ramp and hoist vans. Call %2$s.', 'taxi-peninsula' ), get_the_title( $id ), wp_strip_all_tags( tp_opt( 'phone_display' ) ) );
+			: sprintf( __( 'Taxi and wheelchair taxi to %1$s, 24/7: where we drop you off, step-free access and how to book. Call %2$s.', 'taxi-peninsula' ), get_the_title( $id ), wp_strip_all_tags( tp_opt( 'phone_display' ) ) );
 	}
 );
 
@@ -190,11 +206,14 @@ function tp_place_quick_answer( $id ) {
 	$m    = tp_place_meta( $id );
 	$name = get_the_title( $id );
 	$site = get_bloginfo( 'name' );
-	$a    = 'from' === $m['kind']
+	$a    = ! tp_place_is_medical( $m ) && 'to' === $m['kind']
+		/* translators: 1: business 2: place */
+		? sprintf( __( '%1$s runs taxis, wheelchair accessible taxis and maxi vans to and from %2$s, 24/7, with door-to-door help from the driver.', 'taxi-peninsula' ), $site, $name )
+		: ( 'from' === $m['kind']
 		/* translators: 1: business 2: place */
 		? sprintf( __( '%1$s picks up wheelchair users from %2$s in ramp and hoist vans, with the driver meeting you at the pick-up point and helping you on board.', 'taxi-peninsula' ), $site, $name )
 		/* translators: 1: business 2: place */
-		: sprintf( __( '%1$s takes wheelchair users to %2$s in ramp and hoist vans and drops you at the accessible entrance, with help from the driver.', 'taxi-peninsula' ), $site, $name );
+		: sprintf( __( '%1$s takes wheelchair users to %2$s in ramp and hoist vans and drops you at the accessible entrance, with help from the driver.', 'taxi-peninsula' ), $site, $name ) );
 	$b = $m['spot'] ? ( 'from' === $m['kind'] ? __( 'Pick-up point:', 'taxi-peninsula' ) : __( 'Drop-off point:', 'taxi-peninsula' ) ) . ' ' . rtrim( $m['spot'], '. ' ) . '.' : '';
 	/* translators: %s: phone */
 	$c = sprintf( __( 'Book online in about two minutes or call %s; carers travel with you and MPTP, NDIS and aged-care accounts are accepted.', 'taxi-peninsula' ), wp_strip_all_tags( tp_opt( 'phone_display' ) ) );
@@ -238,6 +257,7 @@ function tp_render_place_box( $post ) {
 		$row( 'parking', __( 'Parking & waiting', 'taxi-peninsula' ), 'textarea' );
 		$row( 'tips', __( 'Tips for passengers', 'taxi-peninsula' ), 'textarea', __( 'One per line.', 'taxi-peninsula' ) );
 		$row( 'access', __( 'Accessibility', 'taxi-peninsula' ), 'textarea', __( 'e.g. "Wheelchairs to borrow at reception, accessible toilets near the entrance, lifts to all floors, hearing loop at the front desk."', 'taxi-peninsula' ) );
+		$row( 'faq', __( 'Questions about this place', 'taxi-peninsula' ), 'textarea', __( 'Question on the first line, answer below it, a blank line between questions.', 'taxi-peninsula' ) );
 		?>
 		<tr><th colspan="2"><h3 style="margin:0"><?php esc_html_e( 'Going home (hospitals, clinics and care)', 'taxi-peninsula' ); ?></h3></th></tr>
 		<?php
@@ -264,7 +284,7 @@ add_action(
 			$v = trim( (string) ( $in[ $k ] ?? '' ) );
 			update_post_meta( $post_id, '_tp_p_' . $k, is_numeric( $v ) ? (string) round( (float) $v, 6 ) : '' );
 		}
-		foreach ( array( 'entrance', 'spot', 'parking', 'tips', 'pickup', 'discharge', 'access' ) as $k ) {
+		foreach ( array( 'entrance', 'spot', 'parking', 'tips', 'pickup', 'discharge', 'access', 'faq' ) as $k ) {
 			update_post_meta( $post_id, '_tp_p_' . $k, sanitize_textarea_field( $in[ $k ] ?? '' ) );
 		}
 		update_post_meta( $post_id, '_tp_p_official', esc_url_raw( $in['official'] ?? '' ) );
@@ -312,7 +332,7 @@ add_action(
 		if ( 'tp_type' === $col ) {
 			echo esc_html( tp_place_types()[ tp_place_meta( $id )['type'] ][0] );
 		} elseif ( 'tp_url' === $col ) {
-			echo '<code>/wheelchair-taxi-' . esc_html( tp_place_kind( $id ) . '/' . get_post_field( 'post_name', $id ) ) . '/</code>';
+			echo '<code>/places/' . esc_html( get_post_field( 'post_name', $id ) ) . '/</code>';
 		}
 	},
 	10,
@@ -470,7 +490,7 @@ function tp_place_faq( $id ) {
 		/* translators: %s: place */
 		$faq[] = array( sprintf( __( 'Is there step-free access at %s?', 'taxi-peninsula' ), $name ), $m['entrance'] );
 	}
-	return array_merge( $faq, tp_access_faq() );
+	return array_merge( tp_parse_local_faq( $m['faq'] ), $faq, tp_access_faq() );
 }
 
 add_filter(
@@ -521,6 +541,15 @@ add_action(
 	12
 );
 
+/** List group: "to" (medical, airports, transport), "stay" (hotels, wineries, venues) or "from". */
+function tp_place_group( $id ) {
+	$m = tp_place_meta( $id );
+	if ( 'from' === $m['kind'] ) {
+		return 'from';
+	}
+	return in_array( $m['type'], array( 'hotel', 'winery', 'venue' ), true ) ? 'stay' : 'to';
+}
+
 /* -------------------------------------------------------------------------
  * [tp_places] list and starter page.
  * ---------------------------------------------------------------------- */
@@ -530,7 +559,8 @@ add_shortcode(
 	static function ( $atts ) {
 		$atts   = shortcode_atts( array( 'kind' => '' ), $atts );
 		$groups = array(
-			'to'   => __( 'Hospitals, clinics, airports and venues', 'taxi-peninsula' ),
+			'to'   => __( 'Hospitals, clinics and airports', 'taxi-peninsula' ),
+			'stay' => __( 'Hotels, wineries and venues', 'taxi-peninsula' ),
 			'from' => __( 'Railway stations and shopping centres', 'taxi-peninsula' ),
 		);
 		$ids    = get_posts( array( 'post_type' => 'tp_place', 'numberposts' => 200, 'fields' => 'ids', 'orderby' => 'title', 'order' => 'ASC' ) );
@@ -540,7 +570,7 @@ add_shortcode(
 			if ( $atts['kind'] && $atts['kind'] !== $kind ) {
 				continue;
 			}
-			$mine = array_filter( $ids, static fn( $id ) => tp_place_kind( $id ) === $kind );
+			$mine = array_filter( $ids, static fn( $id ) => tp_place_group( $id ) === $kind );
 			if ( ! $mine ) {
 				continue;
 			}

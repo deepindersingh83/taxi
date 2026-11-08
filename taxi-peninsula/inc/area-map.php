@@ -14,6 +14,18 @@ defined( 'ABSPATH' ) || exit;
  * Known places: lower-case name => [lat, lng].
  */
 function tp_map_places() {
+	static $places = null;
+	if ( null !== $places ) {
+		return $places;
+	}
+	/**
+	 * Known suburb positions: lower-case name => [lat, lng].
+	 */
+	$places = apply_filters( 'tp_map_places', tp_map_places_builtin() );
+	return $places;
+}
+
+function tp_map_places_builtin() {
 	return array(
 		'melbourne cbd'     => array( -37.814, 144.963 ),
 		'melbourne'         => array( -37.814, 144.963 ),

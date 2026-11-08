@@ -1,6 +1,6 @@
 <?php
 /**
- * Areas listing: /wheelchair-taxi/.
+ * Areas listing: /locations/.
  *
  * @package TaxiPeninsula
  */
@@ -27,7 +27,7 @@ $areas = get_posts( array( 'post_type' => 'tp_area', 'numberposts' => 200, 'orde
 						<span>
 							<?php
 							/* translators: %s: suburb */
-							echo esc_html( sprintf( __( 'Wheelchair taxi %s', 'taxi-peninsula' ), get_the_title( $a ) ) );
+							echo esc_html( sprintf( __( 'Taxi & wheelchair taxi in %s', 'taxi-peninsula' ), get_the_title( $a ) ) );
 							?>
 						</span>
 					</a>

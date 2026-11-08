@@ -26,7 +26,7 @@ function tp_council_map() {
 		'tp_council_map',
 		array(
 			'frankston-city'            => array( 'Frankston City', array( 'Frankston', 'Frankston South', 'Frankston North', 'Seaford', 'Carrum Downs', 'Langwarrin', 'Langwarrin South', 'Skye', 'Karingal', 'Sandhurst' ) ),
-			'mornington-peninsula-shire' => array( 'Mornington Peninsula Shire', array( 'Mornington', 'Mount Martha', 'Mount Eliza', 'Dromana', 'Safety Beach', 'Rosebud', 'Capel Sound', 'Tootgarook', 'Rye', 'Blairgowrie', 'Sorrento', 'Portsea', 'Red Hill', 'Main Ridge', 'Flinders', 'Shoreham', 'Balnarring', 'Merricks', 'Somers', 'Hastings', 'Crib Point', 'Bittern', 'Tyabb', 'Somerville', 'Baxter', 'Pearcedale', 'Moorooduc', 'Arthurs Seat', 'McCrae', 'Boneo', 'Fingal', 'St Andrews Beach' ) ),
+			'mornington-peninsula-shire' => array( 'Mornington Peninsula Shire', array( 'Mornington', 'Mount Martha', 'Mount Eliza', 'Dromana', 'Safety Beach', 'Rosebud', 'Capel Sound', 'Tootgarook', 'Rye', 'Blairgowrie', 'Sorrento', 'Portsea', 'Red Hill', 'Main Ridge', 'Flinders', 'Shoreham', 'Balnarring', 'Merricks', 'Somers', 'Hastings', 'Crib Point', 'Bittern', 'Tyabb', 'Somerville', 'Baxter', 'Pearcedale', 'Moorooduc', 'Arthurs Seat', 'McCrae', 'Boneo', 'Fingal', 'St Andrews Beach', 'Cape Schanck', 'Red Hill South', 'Merricks North', 'Merricks Beach', 'Point Leo', 'HMAS Cerberus', 'Rosebud West' ) ),
 			'kingston-city'             => array( 'City of Kingston', array( 'Mordialloc', 'Mentone', 'Cheltenham', 'Parkdale', 'Aspendale', 'Aspendale Gardens', 'Edithvale', 'Chelsea', 'Chelsea Heights', 'Bonbeach', 'Carrum', 'Patterson Lakes', 'Dingley Village', 'Braeside', 'Waterways', 'Moorabbin', 'Clarinda', 'Clayton South', 'Heatherton', 'Highett' ) ),
 			'greater-dandenong'         => array( 'City of Greater Dandenong', array( 'Dandenong', 'Dandenong North', 'Dandenong South', 'Noble Park', 'Noble Park North', 'Springvale', 'Springvale South', 'Keysborough', 'Bangholme' ) ),
 			'casey-city'                => array( 'City of Casey', array( 'Cranbourne', 'Cranbourne North', 'Cranbourne East', 'Cranbourne West', 'Berwick', 'Narre Warren', 'Narre Warren South', 'Hampton Park', 'Hallam', 'Doveton', 'Endeavour Hills', 'Lynbrook', 'Lyndhurst', 'Clyde', 'Clyde North', 'Botanic Ridge' ) ),
@@ -83,14 +83,14 @@ function tp_councils() {
 }
 
 function tp_council_url( $slug = '' ) {
-	return home_url( user_trailingslashit( 'council' . ( $slug ? '/' . $slug : '' ) ) );
+	return home_url( user_trailingslashit( 'locations/council' . ( $slug ? '/' . $slug : '' ) ) );
 }
 
 add_action(
 	'init',
 	static function () {
-		add_rewrite_rule( '^council/([^/]+)/?$', 'index.php?tp_council=$matches[1]', 'top' );
-		add_rewrite_rule( '^council/?$', 'index.php?tp_council=_all', 'top' );
+		add_rewrite_rule( '^locations/council/([^/]+)/?$', 'index.php?tp_council=$matches[1]', 'top' );
+		add_rewrite_rule( '^locations/council/?$', 'index.php?tp_council=_all', 'top' );
 		if ( (int) get_option( 'tp_council_rw' ) !== TP_COUNCIL_RW ) {
 			tp_flush_rewrites_soon(); // After every plugin has added its rules (see inc/seo-plugins.php).
 			update_option( 'tp_council_rw', TP_COUNCIL_RW, false );
@@ -165,7 +165,7 @@ add_filter(
 
 function tp_council_title( $name ) {
 	/* translators: %s: council name */
-	return sprintf( __( 'Wheelchair taxi in %s', 'taxi-peninsula' ), $name );
+	return sprintf( __( 'Taxi & wheelchair taxi in %s', 'taxi-peninsula' ), $name );
 }
 
 add_filter(
@@ -188,10 +188,10 @@ add_filter(
 			return $text;
 		}
 		if ( '_all' === $c[0] ) {
-			return __( 'Wheelchair accessible taxis in every council area we cover across Melbourne and the Mornington Peninsula.', 'taxi-peninsula' );
+			return __( 'Taxis and wheelchair accessible taxis in every council area we cover across Melbourne and the Mornington Peninsula, 24/7.', 'taxi-peninsula' );
 		}
 		/* translators: 1: council 2: suburbs 3: phone */
-		return sprintf( __( 'Wheelchair accessible taxis across %1$s: %2$s. Ramp and hoist vans, trained drivers. Book online or call %3$s.', 'taxi-peninsula' ), $c[1], implode( ', ', array_slice( wp_list_pluck( $c[2], 'post_title' ), 0, 6 ) ), wp_strip_all_tags( tp_opt( 'phone_display' ) ) );
+		return sprintf( __( 'Taxis and wheelchair accessible taxis across %1$s, 24/7: %2$s. Book online or call %3$s.', 'taxi-peninsula' ), $c[1], implode( ', ', array_slice( wp_list_pluck( $c[2], 'post_title' ), 0, 6 ) ), wp_strip_all_tags( tp_opt( 'phone_display' ) ) );
 	}
 );
 

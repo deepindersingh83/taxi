@@ -240,7 +240,7 @@ add_action(
 		echo '<div><h2 class="site-footer__heading">' . esc_html__( 'Suburbs we cover', 'taxi-peninsula' ) . '</h2><ul class="footer-menu footer-areas">';
 		foreach ( $areas as $a ) {
 			/* translators: %s: suburb */
-			printf( '<li><a href="%1$s">%2$s</a></li>', esc_url( get_permalink( $a ) ), esc_html( sprintf( __( 'Wheelchair taxi %s', 'taxi-peninsula' ), get_the_title( $a ) ) ) );
+			printf( '<li><a href="%1$s">%2$s</a></li>', esc_url( get_permalink( $a ) ), esc_html( sprintf( __( 'Taxi & wheelchair taxi in %s', 'taxi-peninsula' ), get_the_title( $a ) ) ) );
 		}
 		$all = get_post_type_archive_link( 'tp_area' );
 		if ( $all ) {
@@ -570,6 +570,9 @@ function tp_all_public_urls() {
 		$services = get_posts( array( 'post_type' => 'tp_service', 'numberposts' => 30 ) );
 		foreach ( get_posts( array( 'post_type' => 'tp_area', 'numberposts' => 200 ) ) as $a ) {
 			foreach ( $services as $s ) {
+				if ( ! tp_local_pair_ok( $a, $s ) ) {
+					continue;
+				}
 				$urls[] = tp_local_url( $a, $s );
 			}
 		}

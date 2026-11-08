@@ -18,7 +18,7 @@ function tp_defaults() {
 		'location'        => __( 'Melbourne & the Mornington Peninsula, VIC', 'taxi-peninsula' ),
 		'hours'           => __( 'Open 24 hours, 7 days — bookings recommended', 'taxi-peninsula' ),
 		'hero_eyebrow'    => __( 'Wheelchair accessible taxis · Melbourne', 'taxi-peninsula' ),
-		'hero_title'      => __( 'Accessible rides, booked in minutes.', 'taxi-peninsula' ),
+		'hero_title'      => __( 'Mornington Peninsula taxi & wheelchair taxi, 24/7', 'taxi-peninsula' ),
 		'hero_text'       => __( 'Ramp and hoist equipped taxis with trained, patient drivers. Door-to-door across Melbourne and the Mornington Peninsula, including hospital, airport and NDIS trips.', 'taxi-peninsula' ),
 		'hero_image'      => '',
 		'service_areas'   => "Melbourne CBD\nFrankston\nMornington\nMount Martha\nMount Eliza\nDromana\nRosebud\nRye\nSorrento\nPortsea\nHastings\nSomerville\nTyabb\nCarrum Downs\nSeaford\nDandenong\nMelbourne Airport\nAvalon Airport",

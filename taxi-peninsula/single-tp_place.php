@@ -1,7 +1,6 @@
 <?php
 /**
- * Place page, e.g. /wheelchair-taxi-to/frankston-hospital/ or
- * /wheelchair-taxi-from/frankston-station/. See inc/places.php.
+ * Place page, e.g. /places/frankston-hospital/. See inc/places.php.
  *
  * @package TaxiPeninsula
  */
@@ -139,7 +138,7 @@ while ( have_posts() ) :
 
 				<?php echo tp_review_widget( array_filter( array( $tp_name, $tp_m['area'] ) ), $tp_m['area'] ?: $tp_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper. ?>
 
-				<h2><?php /* translators: %s: place */ echo esc_html( sprintf( __( 'Questions about wheelchair taxis and %s', 'taxi-peninsula' ), $tp_name ) ); ?></h2>
+				<h2><?php /* translators: %s: place */ echo esc_html( sprintf( __( 'Questions about taxis to %s', 'taxi-peninsula' ), $tp_name ) ); ?></h2>
 				<div class="faq">
 					<?php foreach ( $tp_faq as $qa ) : ?>
 						<?php tp_faq_schema_items( array( 'q' => $qa[0], 'a' => $qa[1] ) ); ?>
@@ -164,7 +163,7 @@ while ( have_posts() ) :
 			<?php if ( $tp_m['area'] && get_page_by_path( sanitize_title( $tp_m['area'] ), OBJECT, 'tp_area' ) ) : ?>
 				<section class="widget">
 					<h2 class="widget-title"><?php esc_html_e( 'Suburb', 'taxi-peninsula' ); ?></h2>
-					<ul class="link-list"><li><a href="<?php echo esc_url( get_permalink( get_page_by_path( sanitize_title( $tp_m['area'] ), OBJECT, 'tp_area' ) ) ); ?>"><?php /* translators: %s: suburb */ echo esc_html( sprintf( __( 'Wheelchair taxi %s', 'taxi-peninsula' ), $tp_m['area'] ) ); ?></a></li></ul>
+					<ul class="link-list"><li><a href="<?php echo esc_url( get_permalink( get_page_by_path( sanitize_title( $tp_m['area'] ), OBJECT, 'tp_area' ) ) ); ?>"><?php /* translators: %s: suburb */ echo esc_html( sprintf( __( 'Taxi & wheelchair taxi in %s', 'taxi-peninsula' ), $tp_m['area'] ) ); ?></a></li></ul>
 				</section>
 			<?php endif; ?>
 			<?php if ( $tp_others ) : ?>
@@ -172,7 +171,7 @@ while ( have_posts() ) :
 					<h2 class="widget-title"><?php esc_html_e( 'Other places we go', 'taxi-peninsula' ); ?></h2>
 					<ul class="link-list">
 						<?php foreach ( $tp_others as $o ) : ?>
-							<li><a href="<?php echo esc_url( get_permalink( $o ) ); ?>"><?php echo esc_html( tp_place_title( $o->ID ) ); ?></a></li>
+							<li><a href="<?php echo esc_url( get_permalink( $o ) ); ?>"><?php echo esc_html( get_the_title( $o ) ); ?></a></li>
 						<?php endforeach; ?>
 					</ul>
 				</section>

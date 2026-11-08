@@ -3,7 +3,7 @@
  * Content types managed in wp-admin:
  * - Fleet (tp_fleet)             vehicles shown on the Fleet page and assignable to bookings
  * - Services (tp_service)        /services/airport-transfers/
- * - Areas (tp_area)              /wheelchair-taxi/frankston/
+ * - Areas (tp_area)              /locations/frankston/
  * - FAQs (tp_faq + topics)       shown by [tp_faq]
  * - Testimonials (tp_testimonial) shown on the home page
  * - Enquiries (tp_message)       saved from the contact form
@@ -13,7 +13,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const TP_REWRITE_VERSION = 2;
+const TP_REWRITE_VERSION = 3;
 
 add_action( 'init', 'tp_register_content_types' );
 function tp_register_content_types() {
@@ -56,7 +56,7 @@ function tp_register_content_types() {
 		array(
 			'labels'       => $labels( __( 'Services', 'taxi-peninsula' ), __( 'Service', 'taxi-peninsula' ) ),
 			'public'       => true,
-			'has_archive'  => 'services',
+			'has_archive'  => tp_services_page_at_root() ? false : 'services',
 			'rewrite'      => array( 'slug' => 'services', 'with_front' => false ),
 			'show_in_rest' => true,
 			'menu_icon'    => 'dashicons-heart',
@@ -71,8 +71,8 @@ function tp_register_content_types() {
 		array(
 			'labels'       => $labels( __( 'Areas', 'taxi-peninsula' ), __( 'Area', 'taxi-peninsula' ) ),
 			'public'       => true,
-			'has_archive'  => 'wheelchair-taxi',
-			'rewrite'      => array( 'slug' => 'wheelchair-taxi', 'with_front' => false ),
+			'has_archive'  => 'locations',
+			'rewrite'      => array( 'slug' => 'locations', 'with_front' => false ),
 			'show_in_rest' => true,
 			'menu_icon'    => 'dashicons-location',
 			'menu_position' => 23,

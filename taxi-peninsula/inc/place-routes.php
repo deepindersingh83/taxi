@@ -1,10 +1,11 @@
 <?php
 /**
- * Route pages: "Wheelchair taxi from Frankston to Monash Medical Centre".
+ * Route pages: "Taxi from Frankston to Monash Medical Centre".
  *
- * Every place page gets one route page for each of its nearest suburbs:
- *   /wheelchair-taxi-to/{place}/from-{suburb}/
- *   /wheelchair-taxi-from/{place}/to-{suburb}/   (stations, shopping centres)
+ * Hospital, clinic, care, airport, station and shopping-centre pages get one
+ * route page for each of their nearest suburbs:
+ *   /routes/{suburb}-to-{place}/
+ *   /routes/{place}-to-{suburb}/   (stations, shopping centres)
  *
  * Each has its own numbers (distance, travel time, a fare range from your
  * rates), the drop-off or pick-up details of the place, a booking card,
@@ -18,7 +19,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const TP_ROUTES_RW    = 1;
+const TP_ROUTES_RW    = 2;
 const TP_ROUTES_EACH  = 8;
 
 add_filter(
@@ -32,7 +33,7 @@ add_filter(
 add_action(
 	'init',
 	static function () {
-		add_rewrite_rule( '^wheelchair-taxi-(to|from)/([^/]+)/(from|to)-([^/]+)/?$', 'index.php?tp_place=$matches[2]&tp_place_kind=$matches[1]&tp_route=$matches[4]', 'top' );
+		add_rewrite_rule( '^routes/([^/]+)/?$', 'index.php?tp_route_slug=$matches[1]', 'top' );
 		if ( (int) get_option( 'tp_routes_rw' ) !== TP_ROUTES_RW ) {
 			tp_flush_rewrites_soon(); // After every plugin has added its rules (see inc/seo-plugins.php).
 			update_option( 'tp_routes_rw', TP_ROUTES_RW, false );
@@ -45,20 +46,76 @@ add_filter(
 	'query_vars',
 	static function ( $v ) {
 		$v[] = 'tp_route';
+		$v[] = 'tp_route_slug';
 		return $v;
 	}
 );
 
 /**
+ * Split "rosebud-to-frankston-hospital" into a place and a suburb.
+ *
+ * @return array|null [ place ID, suburb slug ]
+ */
+function tp_route_parse( $slug ) {
+	$slug  = sanitize_title( $slug );
+	$parts = explode( '-to-', $slug );
+	for ( $i = 1; $i < count( $parts ); $i++ ) { // phpcs:ignore Generic.CodeAnalysis.ForLoopWithTestFunctionCall
+		$left  = implode( '-to-', array_slice( $parts, 0, $i ) );
+		$right = implode( '-to-', array_slice( $parts, $i ) );
+		foreach ( array( array( $right, $left ), array( $left, $right ) ) as $try ) {
+			$place = get_page_by_path( $try[0], OBJECT, 'tp_place' );
+			if ( $place && 'publish' === $place->post_status ) {
+				return array( $place->ID, $try[1] );
+			}
+		}
+	}
+	return null;
+}
+
+// /routes/{slug}/ → the place page query with the suburb attached.
+add_filter(
+	'request',
+	static function ( $vars ) {
+		if ( empty( $vars['tp_route_slug'] ) ) {
+			return $vars;
+		}
+		$hit = tp_route_parse( $vars['tp_route_slug'] );
+		if ( ! $hit ) {
+			return array( 'error' => '404' );
+		}
+		return array(
+			'tp_place'      => get_post_field( 'post_name', $hit[0] ),
+			'post_type'     => 'tp_place',
+			'name'          => get_post_field( 'post_name', $hit[0] ),
+			'tp_route'      => $hit[1],
+			'tp_route_slug' => $vars['tp_route_slug'],
+		);
+	}
+);
+
+/** Place types that get route pages. */
+function tp_route_place_types() {
+	return apply_filters( 'tp_route_place_types', array( 'hospital', 'clinic', 'care', 'airport', 'station', 'shopping' ) );
+}
+
+/**
  * The suburbs a place has route pages for: [ name, minutes, straight km ].
  */
 function tp_place_routes( $place_id ) {
-	return tp_setting( 'route_pages' ) ? tp_place_travel_times( $place_id, TP_ROUTES_EACH ) : array();
+	if ( ! tp_setting( 'route_pages' ) || ! in_array( tp_place_meta( $place_id )['type'], tp_route_place_types(), true ) ) {
+		return array();
+	}
+	return tp_place_travel_times( $place_id, TP_ROUTES_EACH );
 }
 
 function tp_route_url( $place_id, $area ) {
-	$kind = tp_place_kind( $place_id );
-	return home_url( user_trailingslashit( 'wheelchair-taxi-' . $kind . '/' . get_post_field( 'post_name', $place_id ) . '/' . ( 'from' === $kind ? 'to-' : 'from-' ) . sanitize_title( $area ) ) );
+	return home_url( user_trailingslashit( 'routes/' . tp_route_slug( $place_id, $area ) ) );
+}
+
+/** "rosebud-to-frankston-hospital", or "frankston-station-to-rosebud" for pick-up places. */
+function tp_route_slug( $place_id, $area ) {
+	$place = get_post_field( 'post_name', $place_id );
+	return 'from' === tp_place_kind( $place_id ) ? $place . '-to-' . sanitize_title( $area ) : sanitize_title( $area ) . '-to-' . $place;
 }
 
 /**
@@ -97,9 +154,9 @@ function tp_route_title( array $route ) {
 	$place = get_the_title( $route[0] );
 	return 'from' === tp_place_kind( $route[0] )
 		/* translators: 1: place, e.g. Frankston Station 2: suburb */
-		? sprintf( __( 'Wheelchair taxi from %1$s to %2$s', 'taxi-peninsula' ), $place, $route[1] )
+		? sprintf( __( 'Taxi from %1$s to %2$s', 'taxi-peninsula' ), $place, $route[1] )
 		/* translators: 1: suburb 2: place, e.g. Frankston Hospital */
-		: sprintf( __( 'Wheelchair taxi from %1$s to %2$s', 'taxi-peninsula' ), $route[1], $place );
+		: sprintf( __( 'Taxi from %1$s to %2$s', 'taxi-peninsula' ), $route[1], $place );
 }
 
 // Unknown suburb for this place: send people to the place page.
@@ -109,8 +166,13 @@ add_action(
 		if ( ! get_query_var( 'tp_route' ) || ! is_singular( 'tp_place' ) ) {
 			return;
 		}
-		if ( ! tp_route_current() ) {
+		$r = tp_route_current();
+		if ( ! $r ) {
 			wp_safe_redirect( get_permalink( get_queried_object_id() ), 301 );
+			exit;
+		}
+		if ( get_query_var( 'tp_route_slug' ) !== tp_route_slug( $r[0], $r[1] ) ) {
+			wp_safe_redirect( tp_route_url( $r[0], $r[1] ), 301 );
 			exit;
 		}
 	},
@@ -208,10 +270,10 @@ function tp_route_faq( array $route ) {
 	$out   = array();
 	$out[] = array(
 		/* translators: 1: from 2: to */
-		sprintf( __( 'How much is a wheelchair taxi from %1$s to %2$s?', 'taxi-peninsula' ), $a, $b ),
+		sprintf( __( 'How much is a taxi from %1$s to %2$s?', 'taxi-peninsula' ), $a, $b ),
 		$fare
 			/* translators: 1: fare range 2: phone */
-			? sprintf( __( 'Usually about %1$s for a wheelchair accessible taxi, depending on the exact address, traffic and time of day. MPTP members pay half (up to the subsidy limit), and NDIS and aged-care accounts can be invoiced. Call %2$s for a firm price.', 'taxi-peninsula' ), $fare, $phone )
+			? sprintf( __( 'Usually about %1$s, depending on the exact address, traffic and time of day. MPTP members pay half (up to the subsidy limit), and NDIS and aged-care accounts can be invoiced. Call %2$s for a firm price.', 'taxi-peninsula' ), $fare, $phone )
 			/* translators: %s: phone */
 			: sprintf( __( 'It depends on the exact address and time of day — call %s for a price. MPTP members pay half (up to the subsidy limit), and NDIS and aged-care accounts can be invoiced.', 'taxi-peninsula' ), $phone ),
 	);

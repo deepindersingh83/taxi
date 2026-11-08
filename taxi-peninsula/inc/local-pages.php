@@ -1,7 +1,7 @@
 <?php
 /**
  * Generated local pages: one page for every service in every area,
- * e.g. /wheelchair-taxi/mornington/airport-transfers/ — "Airport transfers
+ * e.g. /locations/mornington/airport-transfers/ — "Airport transfers
  * from Mornington" with travel times, a map, the service's fares and
  * steps, local questions and a booking card with the suburb filled in.
  *
@@ -14,7 +14,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const TP_LOCAL_RW = 1;
+const TP_LOCAL_RW = 2;
 
 add_filter(
 	'tp_settings_sections',
@@ -36,16 +36,25 @@ function tp_local_enabled() {
 	return (bool) tp_setting( 'local_pages' );
 }
 
+/**
+ * Whether an area and service get a combined page. Areas and services added
+ * by the v2.14 content pack are left out (their own pages carry the detail),
+ * so search engines don't see hundreds of near-identical pages.
+ */
+function tp_local_pair_ok( $area, $service ) {
+	return ! get_post_meta( $area->ID, '_tp_no_local', true ) && ! get_post_meta( $service->ID, '_tp_no_local', true );
+}
+
 function tp_local_url( $area, $service ) {
 	$a = is_object( $area ) ? $area->post_name : (string) $area;
 	$s = is_object( $service ) ? $service->post_name : (string) $service;
-	return home_url( user_trailingslashit( 'wheelchair-taxi/' . $a . '/' . $s ) );
+	return home_url( user_trailingslashit( 'locations/' . $a . '/' . $s ) );
 }
 
 add_action(
 	'init',
 	static function () {
-		add_rewrite_rule( '^wheelchair-taxi/([^/]+)/([^/]+)/?$', 'index.php?tp_local_area=$matches[1]&tp_local_service=$matches[2]', 'top' );
+		add_rewrite_rule( '^locations/(?!council/)([^/]+)/([^/]+)/?$', 'index.php?tp_local_area=$matches[1]&tp_local_service=$matches[2]', 'top' );
 		if ( (int) get_option( 'tp_local_rw' ) !== TP_LOCAL_RW ) {
 			tp_flush_rewrites_soon(); // After every plugin has added its rules (see inc/seo-plugins.php).
 			update_option( 'tp_local_rw', TP_LOCAL_RW, false );
@@ -91,7 +100,7 @@ function tp_local_current() {
 	}
 	$area    = get_page_by_path( sanitize_title( $a ), OBJECT, 'tp_area' );
 	$service = get_page_by_path( sanitize_title( $s ), OBJECT, 'tp_service' );
-	if ( $area && $service && 'publish' === $area->post_status && 'publish' === $service->post_status ) {
+	if ( $area && $service && 'publish' === $area->post_status && 'publish' === $service->post_status && tp_local_pair_ok( $area, $service ) ) {
 		$cur = array( $area, $service );
 	}
 	return $cur;
@@ -153,7 +162,7 @@ add_filter(
 			return $text;
 		}
 		/* translators: 1: page title 2: suburb 3: phone */
-		return sprintf( __( '%1$s by wheelchair accessible taxi. Ramp and hoist vans, trained drivers, door-to-door from anywhere in %2$s. Book online or call %3$s.', 'taxi-peninsula' ), tp_local_title( $cur[0], $cur[1] ), get_the_title( $cur[0] ), wp_strip_all_tags( tp_opt( 'phone_display' ) ) );
+		return sprintf( __( '%1$s by taxi or wheelchair accessible taxi, 24/7. Door-to-door from anywhere in %2$s. Book online or call %3$s.', 'taxi-peninsula' ), tp_local_title( $cur[0], $cur[1] ), get_the_title( $cur[0] ), wp_strip_all_tags( tp_opt( 'phone_display' ) ) );
 	}
 );
 
@@ -254,7 +263,7 @@ add_filter(
 			return $url;
 		}
 		$service = url_to_postid( $service_url );
-		return $service && 'tp_service' === get_post_type( $service ) ? tp_local_url( get_post( $area_id ), get_post( $service ) ) : $url;
+		return $service && 'tp_service' === get_post_type( $service ) && tp_local_pair_ok( get_post( $area_id ), get_post( $service ) ) ? tp_local_url( get_post( $area_id ), get_post( $service ) ) : $url;
 	},
 	10,
 	3
@@ -287,6 +296,9 @@ add_action(
 					$services = get_posts( array( 'post_type' => 'tp_service', 'numberposts' => 30 ) );
 					foreach ( get_posts( array( 'post_type' => 'tp_area', 'numberposts' => 200 ) ) as $area ) {
 						foreach ( $services as $s ) {
+							if ( ! tp_local_pair_ok( $area, $s ) ) {
+								continue;
+							}
 							$out[] = array( 'loc' => tp_local_url( $area, $s ) );
 						}
 					}
