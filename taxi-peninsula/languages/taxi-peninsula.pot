@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-08T16:09:35+00:00\n"
+"POT-Creation-Date: 2026-11-08T16:35:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: taxi-peninsula\n"
@@ -208,6 +208,7 @@ msgstr ""
 #. translators: %d: minutes
 #: council.php:83
 #: inc/place-routes.php:375
+#: inc/route-guides.php:96
 #: local-service.php:77
 #: place-route.php:36
 #: place-route.php:110
@@ -693,6 +694,7 @@ msgstr ""
 #: inc/accounts.php:430
 #: inc/ai-search.php:103
 #: inc/finance.php:141
+#: inc/partner-outreach.php:124
 msgid "Saved."
 msgstr ""
 
@@ -1067,6 +1069,7 @@ msgstr ""
 #: inc/ai-search.php:186
 #: inc/dispatch.php:409
 #: inc/finance.php:227
+#: inc/partner-outreach.php:242
 msgid "Save"
 msgstr ""
 
@@ -1946,6 +1949,7 @@ msgstr ""
 #: inc/admin-tools.php:253
 #: inc/bookings-cpt.php:710
 #: inc/callbacks.php:285
+#: inc/partner-outreach.php:198
 #: inc/search-data.php:1115
 msgid "Notes"
 msgstr ""
@@ -3319,6 +3323,7 @@ msgstr ""
 #: inc/marketing.php:690
 #: inc/marketing.php:806
 #: inc/ndis-log.php:418
+#: inc/partner-outreach.php:196
 #: inc/partner-portal.php:228
 #: inc/privacy.php:82
 #: inc/quotes.php:332
@@ -4521,6 +4526,7 @@ msgid "Suburb or postcode"
 msgstr ""
 
 #: inc/components.php:299
+#: inc/partner-outreach.php:235
 #: inc/settings-tabs.php:295
 #: inc/settings-tabs.php:468
 msgid "Check"
@@ -4716,22 +4722,22 @@ msgid "What can we help with?"
 msgstr ""
 
 #. translators: 1: pages added 2: pages filled in
-#: inc/content-pack.php:332
+#: inc/content-pack.php:333
 #, php-format
 msgid "Done: %1$d new pages published, %2$d existing pages filled in where they were empty. Next: in Google Search Console, submit your sitemap again."
 msgstr ""
 
-#: inc/content-pack.php:351
+#: inc/content-pack.php:352
 msgid "New pages are ready to add"
 msgstr ""
 
 #. translators: 1: suburbs 2: places 3: services
-#: inc/content-pack.php:355
+#: inc/content-pack.php:356
 #, php-format
-msgid "Written for your site: %1$d suburb and town pages, %2$d pages for hospitals, airports, ferries, stations, hotels, wineries and venues, %3$d service pages and %4$d legal pages (terms, privacy, cancellations, accessibility, complaints). Your own pages are never overwritten — existing ones only get the parts that are still empty."
+msgid "Written for your site: %1$d suburb and town pages, %2$d pages for hospitals, airports, ferries, stations, hotels, wineries and venues, %3$d service pages, %4$d legal pages (terms, privacy, cancellations, accessibility, complaints) and %5$d fare and route guides for the blog (four now, then one a week). Your own pages are never overwritten — existing ones only get the parts that are still empty."
 msgstr ""
 
-#: inc/content-pack.php:361
+#: inc/content-pack.php:362
 msgid "Add the new pages"
 msgstr ""
 
@@ -9376,6 +9382,7 @@ msgid "Incident \"%1$s\": %2$s"
 msgstr ""
 
 #: inc/incidents.php:250
+#: inc/partner-outreach.php:28
 msgid "Follow up"
 msgstr ""
 
@@ -11872,6 +11879,175 @@ msgstr ""
 msgid "Print certificate"
 msgstr ""
 
+#: inc/partner-outreach.php:26
+#: inc/search-data.php:770
+msgid "Not asked yet"
+msgstr ""
+
+#: inc/partner-outreach.php:27
+#: inc/search-data.php:771
+msgid "Asked"
+msgstr ""
+
+#: inc/partner-outreach.php:29
+#: inc/search-data.php:772
+msgid "Linked"
+msgstr ""
+
+#: inc/partner-outreach.php:30
+#: inc/quotes.php:32
+#: inc/search-data.php:773
+msgid "Declined"
+msgstr ""
+
+#. translators: %s: business name
+#: inc/partner-outreach.php:53
+#, php-format
+msgid "Getting here by taxi — %s"
+msgstr ""
+
+#: inc/partner-outreach.php:63
+msgid "your guests"
+msgstr ""
+
+#: inc/partner-outreach.php:63
+msgid "your visitors"
+msgstr ""
+
+#. translators: %s: place
+#: inc/partner-outreach.php:65
+#, php-format
+msgid "A free “Getting here by taxi” page for %s"
+msgstr ""
+
+#: inc/partner-outreach.php:67
+msgid "Hi there,"
+msgstr ""
+
+#. translators: 1: business 2: place 3: guests/visitors
+#: inc/partner-outreach.php:70
+#, php-format
+msgid "I’m with %1$s, a local taxi and wheelchair accessible taxi service on the Mornington Peninsula, open 24/7. Many of our passengers travel to and from %2$s, so we have made a page just for %3$s:"
+msgstr ""
+
+#: inc/partner-outreach.php:74
+msgid "It shows where we drop off and pick up, rough travel times from nearby towns, and lets people book a taxi, a wheelchair accessible taxi or a maxi for groups in about two minutes — including a set time to be collected at the end of the day."
+msgstr ""
+
+#. translators: 1: place
+#: inc/partner-outreach.php:77
+#, php-format
+msgid "Would you be happy to link to it from the “Getting here”, “Contact” or “Plan your visit” page of %1$s? Something like “Getting here by taxi” is perfect. Here is the code if it helps:"
+msgstr ""
+
+#: inc/partner-outreach.php:81
+msgid "If it suits you, we can also set up a booking page for your front desk, with a printable QR code so guests can book a taxi from their phone. There is no cost for any of this."
+msgstr ""
+
+#. translators: %s: phone
+#: inc/partner-outreach.php:84
+#, php-format
+msgid "Thanks very much — happy to chat on %s."
+msgstr ""
+
+#. translators: %d: HTTP status
+#: inc/partner-outreach.php:102
+#, php-format
+msgid "Their page answered with error %d."
+msgstr ""
+
+#: inc/partner-outreach.php:111
+#: inc/partner-outreach.php:178
+msgid "Link partners"
+msgstr ""
+
+#: inc/partner-outreach.php:143
+msgid "Add the address of their page first."
+msgstr ""
+
+#. translators: %s: place
+#: inc/partner-outreach.php:152
+#, php-format
+msgid "Found a link to your site on the %s page — marked as linked."
+msgstr ""
+
+#. translators: %s: place
+#: inc/partner-outreach.php:155
+#, php-format
+msgid "No link to your site on that %s page yet. If they put it on another page (e.g. \"Getting here\"), paste that page’s address and check again."
+msgstr ""
+
+#: inc/partner-outreach.php:179
+msgid "Each hotel, winery and venue below has its own page on your site. Ask them to link to it as “Getting here by taxi” — a link from a local business tells Google you really serve that place, and brings you their visitors. Send the email yourself, then set the status so you know who to follow up."
+msgstr ""
+
+#. translators: 1: linked 2: asked 3: not asked
+#: inc/partner-outreach.php:183
+#, php-format
+msgid "Linked: %1$d · Asked: %2$d · Not asked yet: %3$d"
+msgstr ""
+
+#: inc/partner-outreach.php:187
+msgid "No hotel, winery or venue pages yet. Add them from the Dashboard (“Add the new pages”) or under Place pages."
+msgstr ""
+
+#: inc/partner-outreach.php:194
+msgid "Place"
+msgstr ""
+
+#: inc/partner-outreach.php:195
+msgid "Ask them"
+msgstr ""
+
+#: inc/partner-outreach.php:197
+msgid "Their page with the link"
+msgstr ""
+
+#: inc/partner-outreach.php:215
+msgid "Their website"
+msgstr ""
+
+#: inc/partner-outreach.php:219
+msgid "Open email"
+msgstr ""
+
+#: inc/partner-outreach.php:220
+msgid "Copy email"
+msgstr ""
+
+#: inc/partner-outreach.php:221
+msgid "Copy link code"
+msgstr ""
+
+#: inc/partner-outreach.php:237
+msgid "e.g. emailed events manager"
+msgstr ""
+
+#: inc/partner-outreach.php:244
+msgid "Tips"
+msgstr ""
+
+#: inc/partner-outreach.php:246
+msgid "Find the right person: the events, functions or guest-services manager rather than a general inbox."
+msgstr ""
+
+#: inc/partner-outreach.php:247
+msgid "Ask five a week. Follow up once after a fortnight; most links come from the second email or a quick call."
+msgstr ""
+
+#: inc/partner-outreach.php:248
+msgid "Add a real photo of their entrance to their place page first — it shows you have been there and makes them happier to link."
+msgstr ""
+
+#: inc/partner-outreach.php:249
+msgid "Offer a front-desk booking page with a QR code (Bookings → Partner pages) to hotels and wineries that say yes."
+msgstr ""
+
+#: inc/partner-outreach.php:258
+#: inc/referrals.php:344
+msgid "Copied"
+msgstr ""
+
 #: inc/partner-portal.php:51
 #: inc/partner-portal.php:57
 msgid "Portal users"
@@ -14078,11 +14254,6 @@ msgstr ""
 msgid "Booked"
 msgstr ""
 
-#: inc/quotes.php:32
-#: inc/search-data.php:773
-msgid "Declined"
-msgstr ""
-
 #: inc/quotes.php:33
 #: inc/referrals.php:372
 msgid "Expired"
@@ -14256,6 +14427,7 @@ msgid "Thanks for asking. Our price for this trip is %1$s including GST. This qu
 msgstr ""
 
 #: inc/quotes.php:383
+#: inc/route-guides.php:105
 #: single-tp_service.php:37
 #: single-tp_service.php:43
 #: template-parts/service-card.php:36
@@ -14370,10 +14542,6 @@ msgstr ""
 
 #: inc/referrals.php:342
 msgid "Your code"
-msgstr ""
-
-#: inc/referrals.php:344
-msgid "Copied"
 msgstr ""
 
 #: inc/referrals.php:344
@@ -14623,6 +14791,54 @@ msgstr ""
 
 #: inc/review-widgets.php:114
 msgid "Google review"
+msgstr ""
+
+#. translators: 1: from 2: to
+#: inc/route-guides.php:83
+#, php-format
+msgid "%1$s to %2$s at a glance"
+msgstr ""
+
+#. translators: %d: minutes
+#: inc/route-guides.php:87
+#: place-route.php:37
+msgid "Distance"
+msgstr ""
+
+#. translators: %d: km
+#: inc/route-guides.php:90
+#, php-format
+msgid "about %d km"
+msgstr ""
+
+#: inc/route-guides.php:93
+msgid "Drive"
+msgstr ""
+
+#: inc/route-guides.php:100
+msgid "Fare estimate"
+msgstr ""
+
+#: inc/route-guides.php:103
+msgid "A guide without traffic, from our current rates. The fare depends on the exact addresses, time of day, waiting and tolls — ask for a fixed quote when you book."
+msgstr ""
+
+#. translators: %s: place
+#: inc/route-guides.php:108
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: inc/route-guides.php:123
+msgid "Fare & route guides"
+msgstr ""
+
+#: inc/route-guides.php:123
+msgid "Taxi fares, travel times and tips for trips to and from the Mornington Peninsula."
+msgstr ""
+
+#: inc/route-guides.php:136
+msgid "Questions people ask"
 msgstr ""
 
 #: inc/saved-trips.php:62
@@ -15018,18 +15234,6 @@ msgstr ""
 
 #: inc/search-data.php:651
 msgid "Bing data updated."
-msgstr ""
-
-#: inc/search-data.php:770
-msgid "Not asked yet"
-msgstr ""
-
-#: inc/search-data.php:771
-msgid "Asked"
-msgstr ""
-
-#: inc/search-data.php:772
-msgid "Linked"
 msgstr ""
 
 #: inc/search-data.php:809
@@ -18932,11 +19136,6 @@ msgstr ""
 
 #: place-route.php:36
 msgid "Travel time"
-msgstr ""
-
-#. translators: %d: minutes
-#: place-route.php:37
-msgid "Distance"
 msgstr ""
 
 #: place-route.php:39

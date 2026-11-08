@@ -6686,3 +6686,36 @@ msgid ""
 msgstr ""
 "Taxi e taxi per sedie a rotelle verso ospedali, aeroporti, traghetti, hotel,"
 " cantine e locali in tutta la Mornington Peninsula e Melbourne."
+
+#. translators: 1: from 2: to
+#: inc/route-guides.php:83
+msgid "%1$s to %2$s at a glance"
+msgstr "Da %1$s a %2$s in breve"
+
+#. translators: %d: km
+#: inc/route-guides.php:90
+msgid "about %d km"
+msgstr "circa %d km"
+
+#: inc/route-guides.php:93
+msgid "Drive"
+msgstr "Tragitto"
+
+#: inc/route-guides.php:100
+msgid "Fare estimate"
+msgstr "Stima della tariffa"
+
+#: inc/route-guides.php:103
+msgid ""
+"A guide without traffic, from our current rates. The fare depends on the "
+"exact addresses, time of day, waiting and tolls — ask for a fixed quote when"
+" you book."
+msgstr ""
+"Indicativo senza traffico, secondo le nostre tariffe attuali. La tariffa "
+"dipende dagli indirizzi esatti, dall’orario, dall’attesa e dai pedaggi: "
+"chiedi un prezzo fisso quando prenoti."
+
+#. translators: %s: place
+#: inc/route-guides.php:108
+msgid "About %s"
+msgstr "Informazioni su %s"

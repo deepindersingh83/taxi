@@ -8,6 +8,26 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### New in v2.15 — fare and route guides, Link partners
+**24 written fare and route guides for the blog** (added with the Dashboard's "Add the new pages" button)
+- **Trips:**
+  - Airports: Rye, Sorrento, Rosebud, Mornington, Frankston and RACV Cape Schanck to Melbourne Airport; the Peninsula to Avalon.
+  - Places: Peninsula Hot Springs, a Red Hill winery day, Arthurs Seat Eagle, the Sorrento–Queenscliff and Stony Point ferries.
+  - Hospitals: Frankston Hospital, cataract surgery at the Eye and Ear, Peter Mac, Monash Medical Centre.
+  - Events: race day at Mornington, footy at the MCG, cruises from Station Pier.
+- **Guides:** going home from hospital, MPTP explained, wheelchair taxi or standard taxi, maxi taxis for groups, late-night taxis home.
+- **Schedule:** four are published straight away, then one every week at 9am, so the blog keeps getting fresh posts. They go in a new "Fare & route guides" category; change any dates under Posts.
+- **Trip-facts box:** each trip guide has a box with the distance, drive time and a **fare estimate from your own rates** (Bookings → Settings → Fares), plus a "Book this trip" button with both addresses filled in. The numbers update when your rates change.
+  - Use it anywhere: `[tp_trip_facts from="Rye" to="Melbourne Airport"]`. `from` and `to` can be a suburb or a place page name.
+
+**Marketing → Link partners**
+- **Every hotel, winery, venue and ferry page** in one list, with:
+  - a ready-written email asking them to link to their page as "Getting here by taxi" (**Open email** opens your email app, or **Copy email**);
+  - the link code to paste on their site;
+  - a status (not asked, asked, follow up, linked, declined) and notes;
+  - **Check**, which looks for your link on their page and marks it as linked.
+- **Nothing is sent from the website:** you send the emails yourself.
+
 ### New in v2.14 — clearer page addresses, 150+ new pages and legal pages (v2.14.1)
 **One folder for each kind of page.** Old addresses redirect permanently (301) in one step, so rankings, shared links and printed QR codes keep working.
 

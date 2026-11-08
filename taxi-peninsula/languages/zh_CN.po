@@ -6008,3 +6008,33 @@ msgid ""
 "Taxi and wheelchair taxi to hospitals, airports, ferries, hotels, wineries "
 "and venues across the Mornington Peninsula and Melbourne."
 msgstr "前往 Mornington Peninsula 和 Melbourne 各地医院、机场、渡轮码头、酒店、酒庄和场馆的出租车及轮椅出租车。"
+
+#. translators: 1: from 2: to
+#: inc/route-guides.php:83
+msgid "%1$s to %2$s at a glance"
+msgstr "%1$s 至 %2$s 一览"
+
+#. translators: %d: km
+#: inc/route-guides.php:90
+msgid "about %d km"
+msgstr "约 %d 公里"
+
+#: inc/route-guides.php:93
+msgid "Drive"
+msgstr "车程"
+
+#: inc/route-guides.php:100
+msgid "Fare estimate"
+msgstr "车费估算"
+
+#: inc/route-guides.php:103
+msgid ""
+"A guide without traffic, from our current rates. The fare depends on the "
+"exact addresses, time of day, waiting and tolls — ask for a fixed quote when"
+" you book."
+msgstr "按我们当前的收费标准、在不堵车的情况下估算。车费取决于具体地址、时段、等候时间和过路费——预订时可要求固定报价。"
+
+#. translators: %s: place
+#: inc/route-guides.php:108
+msgid "About %s"
+msgstr "关于%s"

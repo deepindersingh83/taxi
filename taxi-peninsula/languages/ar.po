@@ -6530,3 +6530,35 @@ msgstr ""
 "سيارات أجرة وسيارات أجرة مجهزة للكراسي المتحركة إلى المستشفيات والمطارات "
 "والعبّارات والفنادق ومصانع النبيذ وأماكن الفعاليات في أنحاء Mornington "
 "Peninsula وMelbourne."
+
+#. translators: 1: from 2: to
+#: inc/route-guides.php:83
+msgid "%1$s to %2$s at a glance"
+msgstr "من %1$s إلى %2$s باختصار"
+
+#. translators: %d: km
+#: inc/route-guides.php:90
+msgid "about %d km"
+msgstr "حوالي %d كم"
+
+#: inc/route-guides.php:93
+msgid "Drive"
+msgstr "مدة القيادة"
+
+#: inc/route-guides.php:100
+msgid "Fare estimate"
+msgstr "تقدير الأجرة"
+
+#: inc/route-guides.php:103
+msgid ""
+"A guide without traffic, from our current rates. The fare depends on the "
+"exact addresses, time of day, waiting and tolls — ask for a fixed quote when"
+" you book."
+msgstr ""
+"تقدير دون ازدحام وفق أسعارنا الحالية. تعتمد الأجرة على العناوين الدقيقة ووقت"
+" اليوم والانتظار ورسوم الطرق — اطلب سعرًا ثابتًا عند الحجز."
+
+#. translators: %s: place
+#: inc/route-guides.php:108
+msgid "About %s"
+msgstr "عن %s"

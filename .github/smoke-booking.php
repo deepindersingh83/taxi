@@ -179,4 +179,8 @@ if ( ! $winery || tp_local_pair_ok( $red_hill, $winery ) || ( $airport && false 
 if ( ! tp_terms_url() || 'publish' !== get_post_status( (int) get_option( 'wp_page_for_privacy_policy' ) ) || false !== strpos( get_post_field( 'post_content', get_page_by_path( 'terms-and-conditions' ) ), '[CONFIRM' ) ) {
 	WP_CLI::error( 'Legal pages were not published.' );
 }
-WP_CLI::success( "New addresses, content pack and legal pages OK ($added pages)." );
+$guides = get_posts( array( 'post_type' => 'post', 'post_status' => array( 'publish', 'future' ), 'category_name' => 'fare-route-guides', 'numberposts' => 50, 'fields' => 'ids' ) );
+if ( count( $guides ) < 20 || ! function_exists( 'tp_outreach_email' ) || false === strpos( do_shortcode( '[tp_trip_facts from="Rye" to="Melbourne Airport"]' ), 'about' ) ) {
+	WP_CLI::error( 'Guides or trip facts are missing: ' . count( $guides ) );
+}
+WP_CLI::success( "New addresses, content pack, legal pages and guides OK ($added pages)." );

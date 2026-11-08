@@ -6751,3 +6751,36 @@ msgstr ""
 "Ταξί και ταξί για αμαξίδια προς νοσοκομεία, αεροδρόμια, πορθμεία, "
 "ξενοδοχεία, οινοποιεία και χώρους εκδηλώσεων σε όλη τη Mornington Peninsula "
 "και τη Melbourne."
+
+#. translators: 1: from 2: to
+#: inc/route-guides.php:83
+msgid "%1$s to %2$s at a glance"
+msgstr "%1$s προς %2$s με μια ματιά"
+
+#. translators: %d: km
+#: inc/route-guides.php:90
+msgid "about %d km"
+msgstr "περίπου %d χλμ."
+
+#: inc/route-guides.php:93
+msgid "Drive"
+msgstr "Διαδρομή"
+
+#: inc/route-guides.php:100
+msgid "Fare estimate"
+msgstr "Εκτίμηση ναύλου"
+
+#: inc/route-guides.php:103
+msgid ""
+"A guide without traffic, from our current rates. The fare depends on the "
+"exact addresses, time of day, waiting and tolls — ask for a fixed quote when"
+" you book."
+msgstr ""
+"Ενδεικτικά χωρίς κίνηση, με τις τρέχουσες τιμές μας. Ο ναύλος εξαρτάται από "
+"τις ακριβείς διευθύνσεις, την ώρα, την αναμονή και τα διόδια — ζητήστε "
+"σταθερή τιμή όταν κάνετε κράτηση."
+
+#. translators: %s: place
+#: inc/route-guides.php:108
+msgid "About %s"
+msgstr "Σχετικά με %s"

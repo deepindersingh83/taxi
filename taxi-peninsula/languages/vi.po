@@ -6644,3 +6644,36 @@ msgid ""
 msgstr ""
 "Taxi và taxi cho xe lăn đến bệnh viện, sân bay, bến phà, khách sạn, nhà máy "
 "rượu vang và địa điểm sự kiện trên khắp Mornington Peninsula và Melbourne."
+
+#. translators: 1: from 2: to
+#: inc/route-guides.php:83
+msgid "%1$s to %2$s at a glance"
+msgstr "%1$s đến %2$s: thông tin nhanh"
+
+#. translators: %d: km
+#: inc/route-guides.php:90
+msgid "about %d km"
+msgstr "khoảng %d km"
+
+#: inc/route-guides.php:93
+msgid "Drive"
+msgstr "Lái xe"
+
+#: inc/route-guides.php:100
+msgid "Fare estimate"
+msgstr "Giá cước ước tính"
+
+#: inc/route-guides.php:103
+msgid ""
+"A guide without traffic, from our current rates. The fare depends on the "
+"exact addresses, time of day, waiting and tolls — ask for a fixed quote when"
+" you book."
+msgstr ""
+"Ước tính khi không kẹt xe, theo biểu giá hiện tại của chúng tôi. Giá cước "
+"phụ thuộc vào địa chỉ cụ thể, thời gian trong ngày, thời gian chờ và phí cầu"
+" đường — hãy hỏi giá cố định khi đặt xe."
+
+#. translators: %s: place
+#: inc/route-guides.php:108
+msgid "About %s"
+msgstr "Về %s"
