@@ -5817,3 +5817,183 @@ msgstr "出租车与无障碍轮椅出租车 — 莫宁顿半岛和墨尔本"
 
 msgid "%s Taxi & Wheelchair Accessible Taxi"
 msgstr "%s出租车与无障碍轮椅出租车"
+
+#. translators: %s: suburb
+#. translators: %s: council name
+#. translators: %s: area
+#: archive-tp_area.php:30 inc/councils.php:168 inc/local-seo.php:36
+#: inc/search.php:243 inc/seo.php:202 inc/seo.php:250 local-service.php:121
+#: single-tp_area.php:18 single-tp_place.php:166
+#: template-parts/related-posts.php:16
+msgid "Taxi & wheelchair taxi in %s"
+msgstr "%s 出租车和轮椅出租车"
+
+#: inc/councils.php:191
+msgid ""
+"Taxis and wheelchair accessible taxis in every council area we cover across "
+"Melbourne and the Mornington Peninsula, 24/7."
+msgstr ""
+"我们覆盖 Melbourne 和 Mornington Peninsula 的每个市政区，提供出租车和无障碍轮椅出租车服务，24/7 全天候。"
+
+#. translators: 1: council 2: suburbs 3: phone
+#: inc/councils.php:194
+msgid ""
+"Taxis and wheelchair accessible taxis across %1$s, 24/7: %2$s. Book online "
+"or call %3$s."
+msgstr "%1$s 全区出租车和无障碍轮椅出租车，24/7：%2$s。在线预约或致电 %3$s。"
+
+#: inc/helpers.php:21
+msgid "Mornington Peninsula taxi & wheelchair taxi, 24/7"
+msgstr "Mornington Peninsula 出租车和轮椅出租车，24/7"
+
+#. translators: 1: page title 2: suburb 3: phone
+#: inc/local-pages.php:165
+msgid ""
+"%1$s by taxi or wheelchair accessible taxi, 24/7. Door-to-door from anywhere"
+" in %2$s. Book online or call %3$s."
+msgstr "%1$s：乘坐出租车或无障碍轮椅出租车，24/7。可从 %2$s 任意地点门到门接送。在线预约或致电 %3$s。"
+
+#. translators: 1: place, e.g. Frankston Station 2: suburb
+#. translators: 1: suburb 2: place, e.g. Frankston Hospital
+#: inc/place-routes.php:157 inc/place-routes.php:159
+msgid "Taxi from %1$s to %2$s"
+msgstr "从 %1$s 到 %2$s 的出租车"
+
+#. translators: 1: from 2: to
+#: inc/place-routes.php:273
+msgid "How much is a taxi from %1$s to %2$s?"
+msgstr "从 %1$s 到 %2$s 的出租车要多少钱？"
+
+#. translators: 1: fare range 2: phone
+#: inc/place-routes.php:276
+msgid ""
+"Usually about %1$s, depending on the exact address, traffic and time of day."
+" MPTP members pay half (up to the subsidy limit), and NDIS and aged-care "
+"accounts can be invoiced. Call %2$s for a firm price."
+msgstr ""
+"通常约 %1$s，具体取决于确切地址、交通状况和时段。MPTP 会员只需支付一半（不超过补贴上限），NDIS "
+"和养老服务账户可开具发票。如需确切价格，请致电 %2$s。"
+
+#. translators: %s: place
+#: inc/places.php:66
+msgid "Taxi & wheelchair taxi from %s"
+msgstr "从 %s 出发的出租车和轮椅出租车"
+
+#. translators: %s: place
+#: inc/places.php:70
+msgid "Taxi & wheelchair taxi to %s"
+msgstr "前往 %s 的出租车和轮椅出租车"
+
+#. translators: %s: place
+#: inc/places.php:72
+msgid "Taxi to %s"
+msgstr "前往 %s 的出租车"
+
+#. translators: %s: airport
+#: inc/places.php:85
+msgid "%s Taxi & Transfers from the Peninsula"
+msgstr "从半岛前往 %s 的出租车和接送服务"
+
+#. translators: %s: hotel
+#: inc/places.php:88
+msgid "%s Taxi – Airport & Local Transfers"
+msgstr "%s 出租车 – 机场及本地接送"
+
+#. translators: %s: winery
+#: inc/places.php:91
+msgid "%s Taxi – Winery Transfers & Tours"
+msgstr "%s 出租车 – 酒庄接送及游览"
+
+#. translators: %s: venue
+#: inc/places.php:95
+msgid "%s Taxi – Drop-off & Return Trips"
+msgstr "%s 出租车 – 送达及返程"
+
+#. translators: %s: place
+#: inc/places.php:98
+msgid "%s Taxi & Wheelchair Taxi"
+msgstr "%s 出租车和轮椅出租车"
+
+#. translators: 1: place 2: phone
+#: inc/places.php:172
+msgid ""
+"Taxi and wheelchair taxi pick-ups from %1$s, 24/7: where to wait, step-free "
+"access and how to book. Call %2$s."
+msgstr "在 %1$s 乘坐出租车和轮椅出租车，24/7：在哪里等候、无台阶通道及如何预约。请致电 %2$s。"
+
+#. translators: 1: place 2: phone
+#: inc/places.php:174
+msgid ""
+"Taxi and wheelchair taxi to %1$s, 24/7: where we drop you off, step-free "
+"access and how to book. Call %2$s."
+msgstr "前往 %1$s 的出租车和轮椅出租车，24/7：下车地点、无台阶通道及如何预约。请致电 %2$s。"
+
+#. translators: 1: business 2: place
+#: inc/places.php:211
+msgid ""
+"%1$s runs taxis, wheelchair accessible taxis and maxi vans to and from %2$s,"
+" 24/7, with door-to-door help from the driver."
+msgstr "%1$s 提供往返 %2$s 的出租车、无障碍轮椅出租车和大型商务车，24/7，司机提供门到门协助。"
+
+#: inc/places.php:562
+msgid "Hospitals, clinics and airports"
+msgstr "医院、诊所和机场"
+
+#: inc/places.php:563
+msgid "Hotels, wineries and venues"
+msgstr "酒店、酒庄和活动场所"
+
+#. translators: %s: service, e.g. Airport transfers
+#: inc/seo-plugins.php:111
+msgid "%s – Mornington Peninsula & Melbourne"
+msgstr "%s – Mornington Peninsula & Melbourne"
+
+#. translators: %s: service
+#: inc/seo-plugins.php:113
+msgid "%s – Mornington Peninsula"
+msgstr "%s – Mornington Peninsula"
+
+#: inc/seo-plugins.php:115
+msgid "Taxi Service Areas – Mornington Peninsula & Melbourne"
+msgstr "出租车服务区域 – Mornington Peninsula & Melbourne"
+
+#: inc/seo-plugins.php:117
+msgid "Taxi to Hospitals, Airports, Hotels & Wineries"
+msgstr "前往医院、机场、酒店和酒庄的出租车"
+
+#: inc/seo-plugins.php:119
+msgid "Taxi Services – Mornington Peninsula & Melbourne"
+msgstr "出租车服务 – Mornington Peninsula & Melbourne"
+
+#: inc/seo-plugins.php:136 inc/seo.php:36
+msgid ""
+"Taxi services on the Mornington Peninsula and in Melbourne: local taxis, "
+"wheelchair accessible taxis, airport transfers, hospital trips, winery tours"
+" and groups."
+msgstr ""
+"Mornington Peninsula 和 Melbourne 的出租车服务：本地出租车、无障碍轮椅出租车、机场接送、医院往返、酒庄游览及团体出行。"
+
+#. translators: 1: area, 2: phone
+#: inc/seo.php:33
+msgid ""
+"Taxi and wheelchair accessible taxi in %1$s, 24/7. Door-to-door, ramp and "
+"hoist vans, trained drivers. Book online or call %2$s."
+msgstr "%1$s 出租车和无障碍轮椅出租车，24/7。门到门服务，配备坡道和升降机的车辆，司机经过专业培训。在线预约或致电 %2$s。"
+
+#: inc/seo.php:38
+msgid ""
+"Every suburb and town we cover with taxis and wheelchair accessible taxis, "
+"from Portsea and Flinders to Frankston, Dandenong and Melbourne."
+msgstr ""
+"我们提供出租车和无障碍轮椅出租车服务的所有区和镇，从 Portsea、Flinders 到 Frankston、Dandenong 和 "
+"Melbourne。"
+
+#. translators: %s: phone
+#: inc/seo.php:61
+msgid "Call %s."
+msgstr "请致电 %s。"
+
+#. translators: %s: place
+#: single-tp_place.php:141
+msgid "Questions about taxis to %s"
+msgstr "关于前往 %s 的出租车的常见问题"

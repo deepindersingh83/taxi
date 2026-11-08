@@ -6475,3 +6475,201 @@ msgstr "Taxi e taxi per sedia a rotelle — Mornington Peninsula e Melbourne"
 
 msgid "%s Taxi & Wheelchair Accessible Taxi"
 msgstr "Taxi %s e taxi per sedia a rotelle"
+
+#. translators: %s: suburb
+#. translators: %s: council name
+#. translators: %s: area
+#: archive-tp_area.php:30 inc/councils.php:168 inc/local-seo.php:36
+#: inc/search.php:243 inc/seo.php:202 inc/seo.php:250 local-service.php:121
+#: single-tp_area.php:18 single-tp_place.php:166
+#: template-parts/related-posts.php:16
+msgid "Taxi & wheelchair taxi in %s"
+msgstr "Taxi e taxi per sedia a rotelle a %s"
+
+#: inc/councils.php:191
+msgid ""
+"Taxis and wheelchair accessible taxis in every council area we cover across "
+"Melbourne and the Mornington Peninsula, 24/7."
+msgstr ""
+"Taxi e taxi accessibili in sedia a rotelle in ogni area comunale che "
+"serviamo tra Melbourne e la Mornington Peninsula, 24/7."
+
+#. translators: 1: council 2: suburbs 3: phone
+#: inc/councils.php:194
+msgid ""
+"Taxis and wheelchair accessible taxis across %1$s, 24/7: %2$s. Book online "
+"or call %3$s."
+msgstr ""
+"Taxi e taxi accessibili in sedia a rotelle in tutta l’area di %1$s, 24/7: "
+"%2$s. Prenoti online o chiami il %3$s."
+
+#: inc/helpers.php:21
+msgid "Mornington Peninsula taxi & wheelchair taxi, 24/7"
+msgstr "Taxi e taxi per sedia a rotelle nella Mornington Peninsula, 24/7"
+
+#. translators: 1: page title 2: suburb 3: phone
+#: inc/local-pages.php:165
+msgid ""
+"%1$s by taxi or wheelchair accessible taxi, 24/7. Door-to-door from anywhere"
+" in %2$s. Book online or call %3$s."
+msgstr ""
+"%1$s in taxi o in taxi accessibile in sedia a rotelle, 24/7. Porta a porta "
+"da qualsiasi punto di %2$s. Prenoti online o chiami il %3$s."
+
+#. translators: 1: place, e.g. Frankston Station 2: suburb
+#. translators: 1: suburb 2: place, e.g. Frankston Hospital
+#: inc/place-routes.php:157 inc/place-routes.php:159
+msgid "Taxi from %1$s to %2$s"
+msgstr "Taxi da %1$s a %2$s"
+
+#. translators: 1: from 2: to
+#: inc/place-routes.php:273
+msgid "How much is a taxi from %1$s to %2$s?"
+msgstr "Quanto costa un taxi da %1$s a %2$s?"
+
+#. translators: 1: fare range 2: phone
+#: inc/place-routes.php:276
+msgid ""
+"Usually about %1$s, depending on the exact address, traffic and time of day."
+" MPTP members pay half (up to the subsidy limit), and NDIS and aged-care "
+"accounts can be invoiced. Call %2$s for a firm price."
+msgstr ""
+"Di solito circa %1$s, a seconda dell’indirizzo esatto, del traffico e "
+"dell’ora. Gli iscritti MPTP pagano la metà (fino al limite del contributo) e"
+" per i conti NDIS e di assistenza anziani possiamo emettere fattura. Chiami "
+"il numero %2$s per un prezzo sicuro."
+
+#. translators: %s: place
+#: inc/places.php:66
+msgid "Taxi & wheelchair taxi from %s"
+msgstr "Taxi e taxi per sedia a rotelle da %s"
+
+#. translators: %s: place
+#: inc/places.php:70
+msgid "Taxi & wheelchair taxi to %s"
+msgstr "Taxi e taxi per sedia a rotelle per %s"
+
+#. translators: %s: place
+#: inc/places.php:72
+msgid "Taxi to %s"
+msgstr "Taxi per %s"
+
+#. translators: %s: airport
+#: inc/places.php:85
+msgid "%s Taxi & Transfers from the Peninsula"
+msgstr "Taxi e transfer per %s dalla Peninsula"
+
+#. translators: %s: hotel
+#: inc/places.php:88
+msgid "%s Taxi – Airport & Local Transfers"
+msgstr "Taxi %s – Transfer aeroportuali e locali"
+
+#. translators: %s: winery
+#: inc/places.php:91
+msgid "%s Taxi – Winery Transfers & Tours"
+msgstr "Taxi %s – Transfer e tour in cantina"
+
+#. translators: %s: venue
+#: inc/places.php:95
+msgid "%s Taxi – Drop-off & Return Trips"
+msgstr "Taxi %s – Andata e ritorno"
+
+#. translators: %s: place
+#: inc/places.php:98
+msgid "%s Taxi & Wheelchair Taxi"
+msgstr "Taxi e taxi per sedia a rotelle %s"
+
+#. translators: 1: place 2: phone
+#: inc/places.php:172
+msgid ""
+"Taxi and wheelchair taxi pick-ups from %1$s, 24/7: where to wait, step-free "
+"access and how to book. Call %2$s."
+msgstr ""
+"Taxi e taxi per sedia a rotelle con partenza da %1$s, 24/7: dove aspettare, "
+"accesso senza gradini e come prenotare. Chiami il %2$s."
+
+#. translators: 1: place 2: phone
+#: inc/places.php:174
+msgid ""
+"Taxi and wheelchair taxi to %1$s, 24/7: where we drop you off, step-free "
+"access and how to book. Call %2$s."
+msgstr ""
+"Taxi e taxi per sedia a rotelle per %1$s, 24/7: dove La lasciamo, accesso "
+"senza gradini e come prenotare. Chiami il %2$s."
+
+#. translators: 1: business 2: place
+#: inc/places.php:211
+msgid ""
+"%1$s runs taxis, wheelchair accessible taxis and maxi vans to and from %2$s,"
+" 24/7, with door-to-door help from the driver."
+msgstr ""
+"%1$s offre taxi, taxi accessibili in sedia a rotelle e maxi van da e per "
+"%2$s, 24/7, con assistenza porta a porta da parte dell’autista."
+
+#: inc/places.php:562
+msgid "Hospitals, clinics and airports"
+msgstr "Ospedali, cliniche e aeroporti"
+
+#: inc/places.php:563
+msgid "Hotels, wineries and venues"
+msgstr "Hotel, cantine e locali"
+
+#. translators: %s: service, e.g. Airport transfers
+#: inc/seo-plugins.php:111
+msgid "%s – Mornington Peninsula & Melbourne"
+msgstr "%s – Mornington Peninsula & Melbourne"
+
+#. translators: %s: service
+#: inc/seo-plugins.php:113
+msgid "%s – Mornington Peninsula"
+msgstr "%s – Mornington Peninsula"
+
+#: inc/seo-plugins.php:115
+msgid "Taxi Service Areas – Mornington Peninsula & Melbourne"
+msgstr "Zone servite dai taxi – Mornington Peninsula & Melbourne"
+
+#: inc/seo-plugins.php:117
+msgid "Taxi to Hospitals, Airports, Hotels & Wineries"
+msgstr "Taxi per ospedali, aeroporti, hotel e cantine"
+
+#: inc/seo-plugins.php:119
+msgid "Taxi Services – Mornington Peninsula & Melbourne"
+msgstr "Servizi taxi – Mornington Peninsula & Melbourne"
+
+#: inc/seo-plugins.php:136 inc/seo.php:36
+msgid ""
+"Taxi services on the Mornington Peninsula and in Melbourne: local taxis, "
+"wheelchair accessible taxis, airport transfers, hospital trips, winery tours"
+" and groups."
+msgstr ""
+"Servizi taxi nella Mornington Peninsula e a Melbourne: taxi locali, taxi "
+"accessibili in sedia a rotelle, transfer aeroportuali, corse in ospedale, "
+"tour delle cantine e gruppi."
+
+#. translators: 1: area, 2: phone
+#: inc/seo.php:33
+msgid ""
+"Taxi and wheelchair accessible taxi in %1$s, 24/7. Door-to-door, ramp and "
+"hoist vans, trained drivers. Book online or call %2$s."
+msgstr ""
+"Taxi e taxi accessibili in sedia a rotelle a %1$s, 24/7. Porta a porta, "
+"veicoli con rampa e pedana elevatrice, autisti formati. Prenoti online o "
+"chiami il %2$s."
+
+#: inc/seo.php:38
+msgid ""
+"Every suburb and town we cover with taxis and wheelchair accessible taxis, "
+"from Portsea and Flinders to Frankston, Dandenong and Melbourne."
+msgstr ""
+"Tutti i sobborghi e le località che serviamo con taxi e taxi accessibili in "
+"sedia a rotelle, da Portsea e Flinders a Frankston, Dandenong e Melbourne."
+
+#. translators: %s: phone
+#: inc/seo.php:61
+msgid "Call %s."
+msgstr "Chiami il %s."
+
+#. translators: %s: place
+#: single-tp_place.php:141
+msgid "Questions about taxis to %s"
+msgstr "Domande sui taxi per %s"
