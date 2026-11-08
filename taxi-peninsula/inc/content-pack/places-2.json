@@ -30,7 +30,7 @@
    },
    {
     "q": "We are going to a wedding at the resort. Can you get guests home afterwards?",
-    "a": "We can. Book the return times in advance, ideally a little after the reception is due to finish, and give us the addresses guests are heading to. For bigger groups the Maxi WAT seats up to eight, or six seated plus two wheelchairs, which suits guests sharing a ride back to the same town."
+    "a": "We can. Book the return times in advance, ideally a little after the reception is due to finish, and give us the addresses guests are heading to. For bigger groups the Maxi WAT takes six seated passengers plus two wheelchairs, which suits guests sharing a ride back to the same town."
    }
   ]
  },
@@ -135,7 +135,7 @@
    },
    {
     "q": "Do you have vehicles big enough for a golf group?",
-    "a": "Our Maxi WAT carries up to eight seated passengers, or fewer with wheelchairs on board, and sedans suit smaller groups. Tell us how many players and golf bags you have when booking, and we will suggest the best combination of vehicles so clubs and passengers fit comfortably."
+    "a": "Our Maxi WAT carries six seated passengers plus up to two wheelchairs, and sedans suit smaller groups. Tell us how many players and golf bags you have when booking, and we will suggest the best combination of vehicles so clubs and passengers fit comfortably."
    }
   ]
  },
@@ -196,7 +196,7 @@
   "about": [
    "Hotel Sorrento is a long-standing limestone hotel on Hotham Road, overlooking Port Phillip just above the Sorrento foreshore. It combines a pub and dining room with accommodation, and it is a favourite for long lunches, birthdays and summer evenings watching the bay.",
    "We take locals and visitors to the hotel from across the southern peninsula, from Rye and Blairgowrie to Portsea, and bring them home at closing time. Guests staying overnight book us for Melbourne Airport transfers, rides to the back beaches and trips to wineries further inland. We also handle pick-ups for people arriving on the Queenscliff ferry. In the cooler months the hotel is quieter, and locals from Sorrento and Portsea book us for a weekend meal or a midweek catch-up. The southern end of the peninsula has fewer taxis than the city, so a set pick-up time is the surest way to get home when you want to.",
-   "For travellers who use a wheelchair, our ramp-equipped van and Maxi WAT both have four-point restraints and air-conditioning, and our drivers help door to door. Groups of up to eight can share the Maxi WAT. MPTP cards are accepted for eligible passengers."
+   "For travellers who use a wheelchair, our ramp-equipped van and Maxi WAT both have four-point restraints and air-conditioning, and our drivers help door to door. Larger groups can share the Maxi WAT. MPTP cards are accepted for eligible passengers."
   ],
   "faq": [
    {
@@ -266,7 +266,7 @@
   "about": [
    "The Royal Hotel is one of Mornington’s historic hotels, standing on the Esplanade at the top of Main Street with views over the harbour and Port Phillip. It is a popular spot for celebrations, Friday drinks and long weekend lunches.",
    "We bring diners in from Mount Martha, Mornington, Frankston and the hinterland and take them home when they are done, which means nobody in the group has to stay on lemonade. Visitors staying in the hotel book us for transfers to and from Melbourne Airport and Frankston station, and for day trips to wineries and the hot springs. Market days and summer weekends bring heavy traffic to the top of Main Street, and a taxi to the door means you arrive in time for your booking without circling for a park.",
-   "Our wheelchair accessible van and Maxi WAT carry passengers in their own chairs with four-point restraints, and carers travel along with them. MPTP cards and NDIS accounts are accepted. For larger family groups, the Maxi WAT seats up to eight. Friday and Saturday nights are our busiest times in Mornington."
+   "Our wheelchair accessible van and Maxi WAT carry passengers in their own chairs with four-point restraints, and carers travel along with them. MPTP cards and NDIS accounts are accepted. For larger family groups, the Maxi WAT takes six seated passengers plus two wheelchairs. Friday and Saturday nights are our busiest times in Mornington."
   ],
   "faq": [
    {
@@ -294,7 +294,7 @@
   "access": "Let us know if you need the wheelchair van or help getting in and out; our drivers assist door to door.",
   "tips": [
    "Book a set pick-up time for late nights; Main Street gets busy around closing.",
-   "For birthday groups, the Maxi WAT can take up to eight seated passengers together.",
+   "For birthday groups, the Maxi WAT can take six seated passengers plus two wheelchairs together.",
    "If you are heading to another venue afterwards, tell us when you book so we can plan the route."
   ],
   "pickup": "",
@@ -310,7 +310,7 @@
    },
    {
     "q": "Can a group of friends travel together from the pub?",
-    "a": "For groups of up to four, a sedan is usually fine. Larger groups can book the Maxi WAT, which seats up to eight when no wheelchairs are on board, or we can send two cars if people are going to different suburbs. Mention the drop-off addresses when booking."
+    "a": "For groups of up to four, a sedan is usually fine. Larger groups can book the Maxi WAT, which takes six seated passengers plus two wheelchairs when no wheelchairs are on board, or we can send two cars if people are going to different suburbs. Mention the drop-off addresses when booking."
    }
   ]
  },
@@ -345,7 +345,7 @@
    },
    {
     "q": "Is there a taxi for a group going from Hotel Rye to Sorrento?",
-    "a": "Yes. Sedans carry up to four passengers, and the Maxi WAT seats up to eight when no wheelchairs are aboard. Let us know your group size and destination, and we will suggest the best option. Booking ahead is wise on summer evenings when Point Nepean Road is busy."
+    "a": "Yes. Sedans carry up to four passengers, and the Maxi WAT takes six seated passengers plus two wheelchairs. Let us know your group size and destination, and we will suggest the best option. Booking ahead is wise on summer evenings when Point Nepean Road is busy."
    }
   ]
  },
@@ -470,7 +470,7 @@
   "tips": [
    "Plan a ride up the Arthurs Seat Eagle earlier in the day, then dinner at the hotel.",
    "Book returns ahead on summer weekends and public holidays.",
-   "Bigger family groups can travel together in the Maxi WAT, which seats eight."
+   "Bigger family groups can travel together in the Maxi WAT, which takes six seated passengers plus two wheelchairs."
   ],
   "pickup": "",
   "about": [
@@ -590,7 +590,7 @@
    },
    {
     "q": "Can you bring wedding guests from the peninsula to Park Hyatt?",
-    "a": "Yes. Let us know how many guests, their pick-up locations and the event start and finish times. We can schedule sedans, the wheelchair accessible van or the Maxi WAT, which seats up to eight, so guests arrive together and get home safely."
+    "a": "Yes. Let us know how many guests, their pick-up locations and the event start and finish times. We can schedule sedans, the wheelchair accessible van or the Maxi WAT, which takes six seated passengers plus two wheelchairs, so guests arrive together and get home safely."
    }
   ]
  },
@@ -721,7 +721,7 @@
   "about": [
    "Port Phillip Estate is a Red Hill South winery known for its striking rammed-earth building on the ridge, which houses a cellar door, a restaurant and a small number of guest suites. The estate produces wines under its own label and the Kooyong label, with pinot noir and chardonnay at the heart of the range.",
    "Most of our passengers come for a long lunch or a tasting, often as part of a day visiting several cellar doors along Red Hill Road and Shoreham Road. Taking a taxi means nobody has to count glasses or tackle the hill roads afterwards. Guests staying in the suites also book us for transfers from Melbourne Airport or Frankston station.",
-   "We can bring couples in a sedan or a larger group in the Maxi WAT, which seats up to eight. If someone in your party uses a wheelchair, the accessible van and Maxi WAT both have four-point restraints, and the driver helps from your door to the estate’s entrance. Weekends book out early in spring and summer."
+   "We can bring couples in a sedan or a larger group in the Maxi WAT, which takes six seated passengers plus two wheelchairs. If someone in your party uses a wheelchair, the accessible van and Maxi WAT both have four-point restraints, and the driver helps from your door to the estate’s entrance. Weekends book out early in spring and summer."
   ],
   "faq": [
    {
@@ -756,7 +756,7 @@
   "about": [
    "Montalto is a well-known vineyard on Shoreham Road in Red Hill South, with a cellar door, a restaurant and areas for casual dining among the vines. It is also known for its sculpture trail, which winds through the property past outdoor artworks and wetlands.",
    "People book us for Montalto when they want to make a full day of it: tasting, a long lunch and a stroll around the sculptures, without worrying about the drive home. It is a frequent stop on wine-touring days, and the cluster of cellar doors on Shoreham Road makes it easy to add one or two more. We also carry wedding and function guests to and from events here. Locals also choose Montalto to celebrate milestones, booking a table for the family and leaving the transport to us so the guest of honour does not need to drive.",
-   "Couples usually travel in a sedan, while groups of up to eight can share the Maxi WAT. For passengers in wheelchairs, the accessible van has a rear ramp and the Maxi WAT has a hydraulic hoist. Drivers help door to door, and carers travel with the passenger."
+   "Couples usually travel in a sedan, while larger groups can share the Maxi WAT. For passengers in wheelchairs, the accessible van has a rear ramp and the Maxi WAT has a hydraulic hoist. Drivers help door to door, and carers travel with the passenger."
   ],
   "faq": [
    {
@@ -826,7 +826,7 @@
   "about": [
    "Tuck’s, long known as Tuck’s Ridge, is a winery on Shoreham Road in Red Hill South, with a cellar door and dining space overlooking the vines. It is part of the tight cluster of wineries along Shoreham Road that make the area so easy to explore in a single day.",
    "Our passengers often visit Tuck’s alongside Montalto and Red Hill Estate, moving from tasting to lunch to a final stop without anyone needing to stay sober to drive. Friends celebrating birthdays and couples on weekends away make up much of our trade here. Because the Shoreham Road wineries sit so close together, a taxi day here does not need to be long. Some groups visit just two venues, tasting at one and lunching at the other, then head home by mid-afternoon. Others make a full day of it, and we fit around either plan.",
-   "Our sedans suit small groups, while the Maxi WAT takes up to eight seated passengers. For guests with mobility needs, our wheelchair accessible van and Maxi WAT are fitted with four-point restraints, and drivers help passengers from the car to the cellar door. Eligible passengers can pay part of the fare with an MPTP card."
+   "Our sedans suit small groups, while the Maxi WAT takes six seated passengers plus two wheelchairs. For guests with mobility needs, our wheelchair accessible van and Maxi WAT are fitted with four-point restraints, and drivers help passengers from the car to the cellar door. Eligible passengers can pay part of the fare with an MPTP card."
   ],
   "faq": [
    {
@@ -834,8 +834,8 @@
     "a": "Yes. All three sit along Shoreham Road in Red Hill South, so trips between them are short. Tell us the order you would like to visit them and your approximate timings, and we can book each leg so you are collected when you are ready."
    },
    {
-    "q": "Can we book a taxi for a group of eight to Tuck’s?",
-    "a": "Yes. Our Maxi WAT seats up to eight when no wheelchairs are on board, so your whole group can travel together. Book in advance, especially for summer weekends, and let us know your return time so we can have the vehicle there when you finish."
+    "q": "Can we book a taxi for a group of six to Tuck’s?",
+    "a": "Yes. Our Maxi WAT takes six seated passengers plus two wheelchairs, so your whole group can travel together. Book in advance, especially for summer weekends, and let us know your return time so we can have the vehicle there when you finish."
    }
   ]
  },
@@ -931,7 +931,7 @@
   "about": [
    "Paringa Estate is a family-run winery on Paringa Road in Red Hill South, known for its pinot noir, chardonnay and shiraz. It has a cellar door and a restaurant that looks over the vineyard, and it is a regular stop for visitors exploring the wineries around Red Hill.",
    "Our customers often visit Paringa as one stop on a wine-tasting day, or book a long lunch and let us handle the journey there and back. Because so many cellar doors sit close together in this part of the peninsula, it is easy to plan a day that takes in two or three without the need for a driver. Wine enthusiasts who come specifically for Paringa’s reds often plan a slower visit, with a tasting followed by a meal, so it pays to set a generous return time or call us when you are ready.",
-   "Sedans suit couples and small groups, while the Maxi WAT seats up to eight. For passengers who use wheelchairs, the accessible van has a rear ramp and the Maxi WAT has a hydraulic hoist. All our accessible vehicles carry four-point restraints, and drivers assist door to door."
+   "Sedans suit couples and small groups, while the Maxi WAT takes six seated passengers plus two wheelchairs. For passengers who use wheelchairs, the accessible van has a rear ramp and the Maxi WAT has a hydraulic hoist. All our accessible vehicles carry four-point restraints, and drivers assist door to door."
   ],
   "faq": [
    {
@@ -1006,7 +1006,7 @@
   "faq": [
    {
     "q": "Is Foxeys Hangout good for a group visit?",
-    "a": "Many groups visit for a relaxed afternoon of tasting and shared food. Book your table with the winery, then book our Maxi WAT, which seats up to eight, or several sedans. Set a return time so we are there when you finish."
+    "a": "Many groups visit for a relaxed afternoon of tasting and shared food. Book your table with the winery, then book our Maxi WAT, which takes six seated passengers plus two wheelchairs, or several sedans. Set a return time so we are there when you finish."
    },
    {
     "q": "Can you take us from Foxeys Hangout to other wineries nearby?",
@@ -1036,7 +1036,7 @@
   "about": [
    "Polperro is a winery on Red Hill Road with a cellar door, a bistro and vineyard accommodation. It produces wines from its own vineyards around Red Hill, and its relaxed dining room makes it a popular place for long weekend lunches.",
    "We drive guests to Polperro for lunch, tastings and overnight stays. Since Red Hill Road is lined with other cellar doors, it is easy to visit two or three in a day while we take care of the driving. Guests staying in the villas often book us for transfers from Melbourne Airport or Frankston station. The villas suit couples on a weekend escape, and many guests ask us to collect them from Frankston station or the airport on arrival. Others come only for lunch and leave the car at home, which makes the bistro’s wine list much easier to enjoy.",
-   "Our sedans carry up to four passengers, and the Maxi WAT seats up to eight or carries two wheelchairs plus six passengers. All our wheelchair vehicles have four-point restraints and lap-sash seatbelts, and drivers help from the car to the door. MPTP cardholders are welcome on any of these trips."
+   "Our sedans carry up to four passengers, and the Maxi WAT takes six seated passengers plus two wheelchairs or carries two wheelchairs plus six passengers. All our wheelchair vehicles have four-point restraints and lap-sash seatbelts, and drivers help from the car to the door. MPTP cardholders are welcome on any of these trips."
   ],
   "faq": [
    {
@@ -1141,7 +1141,7 @@
   "about": [
    "Willow Creek Vineyard sits on Balnarring Road at Merricks North, sharing its property with Jackalope Hotel. It has a cellar door and a restaurant, and is a popular place for a long, relaxed lunch among the vines.",
    "We take visitors to Willow Creek for tastings, lunches and celebrations, and pick them up again when they are ready. Hotel guests at Jackalope also walk over for a tasting, and we can run them to other cellar doors in Red Hill or Merricks afterwards. Balnarring Road is rural, so a booked taxi is the easiest way to get home. Many visitors come for a long weekend lunch, sharing a bottle and taking in the view across the vines. With a booked taxi, you can stay as long as you like and head home when you are ready. We also collect guests staying in Mornington, Mount Martha or Flinders.",
-   "Groups of up to eight can travel together in the Maxi WAT. For passengers who use wheelchairs, our accessible van and Maxi WAT both have four-point restraints, and drivers assist from door to door. MPTP cards and NDIS accounts can be used for vineyard outings too."
+   "Larger groups can travel together in the Maxi WAT. For passengers who use wheelchairs, our accessible van and Maxi WAT both have four-point restraints, and drivers assist from door to door. MPTP cards and NDIS accounts can be used for vineyard outings too."
   ],
   "faq": [
    {
@@ -1176,7 +1176,7 @@
   "about": [
    "Merricks Estate is a family-owned winery in Merricks, among the vineyards that run down towards Western Port. It is a smaller producer with a cellar door where visitors can taste the estate’s wines in a quiet country setting.",
    "People book us to visit Merricks Estate as part of a tour of the quieter eastern side of the peninsula, often alongside Stonier and Pt. Leo Estate. Because the area is rural and roads between wineries are long and winding, a taxi lets everyone taste without having to drive. The wineries around Merricks are fewer and further apart than in Red Hill, so planning the route matters. Tell us which cellar doors you want to visit, check their opening days, and we will build the day around them. A smaller winery often means an unhurried tasting and time to talk about the wines.",
-   "Our sedans suit couples and small groups, and the Maxi WAT seats up to eight. Passengers in wheelchairs can travel in our accessible van or Maxi WAT, which are fitted with four-point restraints and air-conditioning. Drivers help you from the car to the cellar door."
+   "Our sedans suit couples and small groups, and the Maxi WAT takes six seated passengers plus two wheelchairs. Passengers in wheelchairs can travel in our accessible van or Maxi WAT, which are fitted with four-point restraints and air-conditioning. Drivers help you from the car to the cellar door."
   ],
   "faq": [
    {
@@ -1255,7 +1255,7 @@
    },
    {
     "q": "Can you take a group of friends to Yabby Lake for lunch?",
-    "a": "Yes. Up to eight can ride together in the Maxi WAT, or we can send a pair of sedans. Book your table with the winery, then book us for a drop-off just before your reservation and a return time after lunch. Weekends are busy, so reserve both early."
+    "a": "Yes. Six passengers plus two wheelchairs can ride together in the Maxi WAT, or we can send a pair of sedans. Book your table with the winery, then book us for a drop-off just before your reservation and a return time after lunch. Weekends are busy, so reserve both early."
    }
   ]
  },
@@ -1281,7 +1281,7 @@
   "about": [
    "Moorooduc Estate is a family winery on Derril Road at Moorooduc, It is known for its chardonnay and pinot noir, and its cellar door is a quiet place to taste close to Mornington.",
    "Because it is so close to Mornington and Frankston, it is a short taxi trip for a tasting or a weekend lunch. Visitors from Melbourne often start their wine day here before heading south, and we can help with each leg of the trip. Being so close to town, it is an easy option when you only have an afternoon free. Locals from Mount Martha and Mornington book a quick tasting before dinner, and visitors arriving at Frankston station can be at the cellar door soon after stepping off the train. Check the winery’s opening days before you book.",
-   "A sedan works well for two to four people, while the Maxi WAT takes groups of up to eight. For passengers who use wheelchairs, the accessible van and Maxi WAT have four-point restraints and air-conditioning. MPTP cards, NDIS and aged-care accounts are accepted, and carers travel with the passenger."
+   "A sedan works well for two to four people, while the Maxi WAT takes larger groups. For passengers who use wheelchairs, the accessible van and Maxi WAT have four-point restraints and air-conditioning. MPTP cards, NDIS and aged-care accounts are accepted, and carers travel with the passenger."
   ],
   "faq": [
    {
@@ -1309,7 +1309,7 @@
   "access": "Let us know if you need the wheelchair van or help from the car.",
   "tips": [
    "Book your return trip before you arrive on Friday and Saturday nights.",
-   "A crew of up to eight fits in the Maxi WAT.",
+   "A crew of six, plus two wheelchairs, fits in the Maxi WAT.",
    "Combine with dinner in Mornington’s Main Street."
   ],
   "pickup": "",
@@ -1351,7 +1351,7 @@
   "about": [
    "Peninsula Hot Springs in Fingal is a large bathing and spa venue fed by natural geothermal mineral waters. Visitors move between pools of different temperatures, including a hilltop pool with views over the peninsula, and many book spa treatments as part of their day.",
    "We take guests here from across Melbourne and the peninsula, often for birthdays, hens days and relaxing days off. A taxi means you can arrive without the drive and leave feeling rested rather than fighting traffic. Guests staying at nearby resorts like Peppers Moonah Links or RACV Cape Schanck use us for the short hop across. Some visitors book an early session and arrive as the pools open, while others prefer the late afternoon and evening. Whatever time you choose, we can collect you from your accommodation and return you when you finish, so you do not need to drive after a long, warm soak.",
-   "For groups, the Maxi WAT seats up to eight, and for guests with mobility needs, our accessible van and Maxi WAT both have four-point restraints and air-conditioning. Drivers help from door to door, and carers travel with the passenger."
+   "For groups, the Maxi WAT takes six seated passengers plus two wheelchairs, and for guests with mobility needs, our accessible van and Maxi WAT both have four-point restraints and air-conditioning. Drivers help from door to door, and carers travel with the passenger."
   ],
   "faq": [
    {
@@ -1360,7 +1360,7 @@
    },
    {
     "q": "Can you bring a group from Melbourne to the hot springs?",
-    "a": "Yes. We travel anywhere in Melbourne. The Maxi WAT seats up to eight, or we can send several sedans. Book drop-off and return times together, and you can ask for a fixed quote for a longer trip like this. Mention any wheelchair users too."
+    "a": "Yes. We travel anywhere in Melbourne. The Maxi WAT takes six seated passengers plus two wheelchairs, or we can send several sedans. Book drop-off and return times together, and you can ask for a fixed quote for a longer trip like this. Mention any wheelchair users too."
    }
   ]
  },
@@ -1386,7 +1386,7 @@
   "about": [
    "Alba Thermal Springs and Spa opened in Fingal in 2023, offering thermal mineral pools set among landscaped gardens, along with spa treatments and dining. It has quickly become a popular choice for relaxing days out on the southern peninsula.",
    "Visitors book us to make a day at Alba stress free, often as a birthday treat or a getaway with friends. Without needing to drive, you can enjoy a full session, lunch and a drink, then head home relaxed. Guests staying in Rye, Sorrento and Cape Schanck use us for the short trip across. With a restaurant on site, many visitors plan a long day of bathing and a meal, perhaps with a glass of wine at lunch, which is another reason to leave the car at home. If you are not sure when you will finish, choose a later pick-up or call us when you are ready.",
-   "Our sedans suit couples, and groups of up to eight can share the Maxi WAT. Wheelchair passengers can travel in the accessible van or Maxi WAT, with four-point restraints and lap-sash seatbelts. Weekends and holidays are popular, so book early."
+   "Our sedans suit couples, and larger groups can share the Maxi WAT. Wheelchair passengers can travel in the accessible van or Maxi WAT, with four-point restraints and lap-sash seatbelts. Weekends and holidays are popular, so book early."
   ],
   "faq": [
    {
@@ -1465,7 +1465,7 @@
    },
    {
     "q": "Can you take a family group to Ashcombe Maze?",
-    "a": "Yes. Our Maxi WAT seats up to eight, or we can send several sedans. Book drop-off and return times together, and let us know about prams or mobility aids so we send a vehicle with enough room. Weekends and school holidays are busiest."
+    "a": "Yes. Our Maxi WAT takes six seated passengers plus two wheelchairs, or we can send several sedans. Book drop-off and return times together, and let us know about prams or mobility aids so we send a vehicle with enough room. Weekends and school holidays are busiest."
    }
   ]
  },
@@ -1491,7 +1491,7 @@
   "about": [
    "The Enchanted Adventure Garden sits near the summit of Arthurs Seat, offering hedge mazes, gardens, tube slides and tree surfing courses through the canopy. It is a popular family day out, especially during school holidays.",
    "Families book us so the adults can relax rather than tackle the drive up Arthurs Seat. We also bring school and birthday groups, and visitors staying in Dromana, Rosebud and McCrae who would rather not move the car. With the Arthurs Seat Eagle close by, it is easy to combine both in one day. Tree surfing and the larger mazes appeal to older children and teenagers, while the gardens suit younger kids and grandparents. Groups often finish at different times, so tell us when you book if you need more than one pick-up. We can also take you down to Dromana or Rosebud for lunch afterwards.",
-   "For wheelchair users, our accessible van and Maxi WAT have four-point restraints, lap-sash seatbelts and air-conditioning. The Maxi WAT seats up to eight passengers without wheelchairs, ideal for families. Our drivers will help passengers from the front door to the garden entrance."
+   "For wheelchair users, our accessible van and Maxi WAT have four-point restraints, lap-sash seatbelts and air-conditioning. The Maxi WAT takes six seated passengers plus two wheelchairs without wheelchairs, ideal for families. Our drivers will help passengers from the front door to the garden entrance."
   ],
   "faq": [
    {
@@ -1500,7 +1500,7 @@
    },
    {
     "q": "Do you have vehicles for large families going to the Enchanted Adventure Garden?",
-    "a": "Yes. The Maxi WAT seats up to eight without wheelchairs on board, or we can send several sedans. Let us know your group size and any prams or mobility aids when booking. If part of your group is leaving early, we can arrange two pick-ups at different times so nobody has to wait around."
+    "a": "Yes. The Maxi WAT takes six seated passengers plus two wheelchairs without wheelchairs on board, or we can send several sedans. Let us know your group size and any prams or mobility aids when booking. If part of your group is leaving early, we can arrange two pick-ups at different times so nobody has to wait around."
    }
   ]
  },
@@ -1519,7 +1519,7 @@
   "access": "Let us know if you need the wheelchair van or help from the car, and ask the racecourse about accessible viewing areas.",
   "tips": [
    "Book your return trip before race day, as everyone leaves after the last race.",
-   "Race-day groups of up to eight can ride together in the Maxi WAT.",
+   "Race-day larger groups can ride together in the Maxi WAT.",
    "Tell us if you are attending a function so we drop you at the right entrance."
   ],
   "pickup": "",
@@ -1596,7 +1596,7 @@
   "about": [
    "The National Golf Club is a private members’ club at Cape Schanck with several courses set among the dunes and coastal scrub of the southern peninsula. It is well regarded among golfers and hosts members, guests and tournaments.",
    "Golfers book us to reach The National for rounds and events, especially when a post-game drink is on the cards. We also bring guests from nearby resorts and holiday homes, and run players to Melbourne Airport afterwards. Visiting players often come down from Melbourne for a day of golf, and many book us for the full return trip so they can enjoy a drink in the clubhouse. As it is a private members’ club, make sure your round is confirmed with the club before you book your taxi. We can also link your round with a stay at a nearby resort.",
-   "Our sedans suit small groups, and the Maxi WAT seats up to eight, with room for golf bags depending on numbers. For passengers using wheelchairs, the accessible van and Maxi WAT both have four-point restraints. Drivers help door to door."
+   "Our sedans suit small groups, and the Maxi WAT takes six seated passengers plus two wheelchairs, with room for golf bags depending on numbers. For passengers using wheelchairs, the accessible van and Maxi WAT both have four-point restraints. Drivers help door to door."
   ],
   "faq": [
    {
@@ -1631,7 +1631,7 @@
   "about": [
    "Moonah Links is a golf complex at Fingal with two championship courses, the Open Course and the Legends Course, set among coastal dunes. The Open Course has hosted the Australian Open, and the complex sits alongside Peppers Moonah Links Resort.",
    "Golfers book us for social rounds, corporate days and tournaments, so that the whole group can enjoy the clubhouse afterwards. We also carry visitors staying in Rye and Sorrento, and run players to Melbourne Airport at the end of a golf trip. Corporate golf days are common here, with groups arriving in the morning and finishing with dinner or drinks. We can stagger pick-ups for players leaving at different times, and send the Maxi WAT for those heading the same way. Guests at the neighbouring resort also book us for the hot springs, the back beaches and the wineries.",
-   "Our sedans carry up to four passengers, and the Maxi WAT seats up to eight. For passengers using wheelchairs, the accessible van and Maxi WAT both have four-point restraints and air-conditioning. Book early on weekends and during tournaments."
+   "Our sedans carry up to four passengers, and the Maxi WAT takes six seated passengers plus two wheelchairs. For passengers using wheelchairs, the accessible van and Maxi WAT both have four-point restraints and air-conditioning. Book early on weekends and during tournaments."
   ],
   "faq": [
    {
@@ -1730,7 +1730,7 @@
   "tips": [
    "Book your return trip before the game, and agree a pick-up point away from the main crowds.",
    "Allow extra time for traffic before big games and concerts.",
-   "Footy groups of up to eight can share the Maxi WAT to the ground."
+   "Footy larger groups can share the Maxi WAT to the ground."
   ],
   "pickup": "",
   "about": [
@@ -1765,7 +1765,7 @@
   "tips": [
    "Book your return trip before the event, and agree a pick-up point.",
    "Allow extra time before big games and concerts.",
-   "The Maxi WAT takes up to eight fans in one vehicle."
+   "The Maxi WAT takes six seated passengers plus two wheelchairs fans in one vehicle."
   ],
   "pickup": "",
   "about": [
@@ -1780,7 +1780,7 @@
    },
    {
     "q": "Can you take a group of friends to Marvel Stadium?",
-    "a": "Yes. A group of up to eight can travel together in the Maxi WAT, or we can split you across sedans. Book drop-off and return times together, and let us know your pick-up addresses. Agree a meeting point for after the event, as Docklands streets get crowded when everyone leaves at once."
+    "a": "Yes. A group of six, plus two wheelchairs, can travel together in the Maxi WAT, or we can split you across sedans. Book drop-off and return times together, and let us know your pick-up addresses. Agree a meeting point for after the event, as Docklands streets get crowded when everyone leaves at once."
    }
   ]
  },
@@ -1800,7 +1800,7 @@
   "tips": [
    "Book your return trip before the show, and agree a pick-up point.",
    "During the Australian Open, allow extra time for traffic and crowds.",
-   "Concert groups of up to eight can share the Maxi WAT."
+   "Concert larger groups can share the Maxi WAT."
   ],
   "pickup": "",
   "about": [
@@ -1835,7 +1835,7 @@
   "tips": [
    "Book your return trip well before Melbourne Cup week, when demand is high.",
    "Agree a pick-up point and time before you arrive.",
-   "Up to eight racegoers can travel together in the Maxi WAT."
+   "Six racegoers, plus two wheelchairs, can travel together in the Maxi WAT."
   ],
   "pickup": "",
   "about": [
