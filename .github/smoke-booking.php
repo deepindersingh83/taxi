@@ -176,4 +176,7 @@ $airport = get_page_by_path( 'melbourne-airport', OBJECT, 'tp_place' );
 if ( ! $winery || tp_local_pair_ok( $red_hill, $winery ) || ( $airport && false === strpos( tp_place_seo_title( $airport->ID ), 'Taxi' ) ) ) {
 	WP_CLI::error( 'New suburbs and services must not get combined pages.' );
 }
-WP_CLI::success( "New addresses and content pack OK ($added pages)." );
+if ( ! tp_terms_url() || 'publish' !== get_post_status( (int) get_option( 'wp_page_for_privacy_policy' ) ) || false !== strpos( get_post_field( 'post_content', get_page_by_path( 'terms-and-conditions' ) ), '[CONFIRM' ) ) {
+	WP_CLI::error( 'Legal pages were not published.' );
+}
+WP_CLI::success( "New addresses, content pack and legal pages OK ($added pages)." );

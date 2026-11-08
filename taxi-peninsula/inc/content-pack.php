@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const TP_PACK_VERSION = 1;
+const TP_PACK_VERSION = 2;
 
 /**
  * Pack items of one kind: suburbs, places or services.
@@ -140,7 +140,7 @@ function tp_pack_pending() {
 	if ( is_array( $n ) ) {
 		return $n;
 	}
-	$n = array( 0, 0, 0 );
+	$n = array( 0, 0, 0, tp_legal_pending() );
 	foreach ( tp_pack_data( 'suburbs' ) as $s ) {
 		$n[0] += tp_pack_find( 'tp_area', $s['name'] ) ? 0 : 1;
 	}
@@ -309,6 +309,8 @@ function tp_pack_import() {
 		tp_pack_fill_meta( $id, '_tp_meta_desc', $s['description'] ?? '' );
 	}
 
+	$added += tp_legal_import();
+
 	wp_defer_term_counting( false );
 	update_option( 'tp_pack_done', TP_PACK_VERSION, false );
 	delete_transient( 'tp_pack_pending' );
@@ -337,7 +339,7 @@ add_action(
 	'admin_notices',
 	static function () {
 		$screen = get_current_screen();
-		if ( (int) get_option( 'tp_pack_done' ) >= TP_PACK_VERSION || ! current_user_can( 'edit_pages' ) || ! $screen || ! in_array( $screen->id, array( 'dashboard', 'edit-tp_area', 'edit-tp_place', 'edit-tp_service' ), true ) ) {
+		if ( (int) get_option( 'tp_pack_done' ) >= TP_PACK_VERSION || ! current_user_can( 'edit_pages' ) || ! $screen || ! in_array( $screen->id, array( 'dashboard', 'edit-tp_area', 'edit-tp_place', 'edit-tp_service', 'edit-page' ), true ) ) {
 			return;
 		}
 		$n = tp_pack_pending();
@@ -350,7 +352,7 @@ add_action(
 			<p>
 				<?php
 				/* translators: 1: suburbs 2: places 3: services */
-				echo esc_html( sprintf( __( 'Written for your site: %1$d suburb and town pages, %2$d pages for hospitals, airports, ferries, stations, hotels, wineries and venues, and %3$d service pages. Your own pages are never overwritten — existing ones only get the parts that are still empty.', 'taxi-peninsula' ), $n[0], $n[1], $n[2] ) );
+				echo esc_html( sprintf( __( 'Written for your site: %1$d suburb and town pages, %2$d pages for hospitals, airports, ferries, stations, hotels, wineries and venues, %3$d service pages and %4$d legal pages (terms, privacy, cancellations, accessibility, complaints). Your own pages are never overwritten — existing ones only get the parts that are still empty.', 'taxi-peninsula' ), $n[0], $n[1], $n[2], $n[3] ?? 0 ) );
 				?>
 			</p>
 			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" style="margin-bottom:8px">

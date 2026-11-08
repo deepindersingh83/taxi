@@ -8,7 +8,7 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
-### New in v2.14 — clearer page addresses and 140+ new pages
+### New in v2.14 — clearer page addresses, 150+ new pages and legal pages (v2.14.1)
 **One folder for each kind of page.** Old addresses redirect permanently (301) in one step, so rankings, shared links and printed QR codes keep working.
 
 | Page | Old address | New address |
@@ -30,6 +30,15 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 - **Services:** richer pages for the six existing services, plus Local taxi service, Winery tours, Hotel & resort transfers and Weddings. Parcel delivery and Pet transport are added as drafts — publish them only if you offer them.
 - **Nothing you wrote is overwritten.** Existing pages only get the parts that are still empty. Place drafts that still have [CONFIRM] notes from the old suggestions are filled in and published.
 - **No near-duplicate pages:** new suburbs and services don't get combined "service from suburb" pages. Route pages are made only for hospitals, clinics, airports, stations and shopping centres.
+
+**Legal pages, ready to publish** (added with the same button)
+- **Terms & Conditions** (`/terms-and-conditions/`), **Privacy Policy**, **Cancellation Policy** (`/cancellation-policy/`), **Accessibility Statement** (`/accessibility/`) and **Complaints & Feedback** (`/complaints/`).
+- **Always match your settings:** fees, free-cancellation hours, free waiting time and ways to pay come from Bookings → Settings rather than being typed into the text.
+- **Booking form:** once the terms page is published, customers tick "I accept the terms" when they book.
+- **Your drafts and pages:**
+  - Starter drafts that still have [CONFIRM] notes, and WordPress's sample privacy page, are replaced and published.
+  - Pages you published yourself are left alone.
+- **Footer:** links to all five pages.
 
 **Titles and headings people search for**
 - **Headings:**

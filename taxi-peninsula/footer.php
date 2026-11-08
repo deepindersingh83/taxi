@@ -73,7 +73,9 @@
 			<div class="site-footer__business"><?php tp_footer_nap(); ?></div>
 		<?php endif; ?>
 		<p><?php echo tp_copyright_text(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- kses'd in helper. ?></p>
-		<?php if ( function_exists( 'the_privacy_policy_link' ) ) : ?>
+		<?php if ( function_exists( 'tp_legal_footer_links' ) ) : ?>
+			<?php tp_legal_footer_links(); ?>
+		<?php elseif ( function_exists( 'the_privacy_policy_link' ) ) : ?>
 			<p><?php the_privacy_policy_link(); ?></p>
 		<?php endif; ?>
 		<?php tp_cookie_settings_link(); ?>
