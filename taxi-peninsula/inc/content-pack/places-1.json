@@ -1,0 +1,1524 @@
+[
+ {
+  "name": "Frankston Hospital",
+  "type": "hospital",
+  "address": "2 Hastings Road, Frankston VIC 3199",
+  "area": "Frankston",
+  "lat": -38.152,
+  "lng": 145.129,
+  "official": "https://www.peninsulahealth.org.au/",
+  "description": "Taxi and wheelchair taxi to Frankston Hospital for appointments, visits, admissions and discharge. Door-to-door help, 24/7, MPTP cards accepted.",
+  "entrance": "Frankston Hospital has more than one public entrance, and building works have changed access points over time. Tell us which department you are visiting and we will aim for the closest step-free entrance to it.",
+  "spot": "We set down as close to your entrance as the hospital’s drop-off area allows. If you are heading to a particular clinic, ward or the emergency department, mention it when you book so the driver knows where to go.",
+  "parking": "Parking around the hospital is busy most of the day, so many families prefer to be dropped off rather than circle for a space. Our driver waits only in permitted set-down zones and will call you if they need to move.",
+  "access": "Main entrances are step-free, with lifts to upper floors. Our drivers can help with the walk from the taxi to reception if you need an arm or a wheelchair pushed.",
+  "tips": [
+   "Mention the department or ward when you book, as the site is large and has been undergoing redevelopment.",
+   "For discharge, book with “pick up when ready” and tap “I’m ready” once the ward has released you.",
+   "Bring your Medicare card and any referral letters in a bag you can carry on your lap.",
+   "If you use a power chair, choose the Maxi WAT so it travels on the hoist rather than a ramp."
+  ],
+  "pickup": "Most patients going home meet the taxi near the main entrance. Tell us your ward when you book and we will confirm the meeting point by phone or SMS.",
+  "about": [
+   "Frankston Hospital is the main public hospital for Frankston and the Mornington Peninsula, run by Peninsula Health. It has a busy emergency department and a wide range of inpatient wards, outpatient clinics and specialist services, and it has been through a major redevelopment to expand its capacity.",
+   "People travel here from right across the Peninsula, from Sorrento and Rosebud to Mornington, Hastings and the Frankston suburbs. Some come for a short outpatient appointment, others for day surgery, scans, or to visit a family member on the wards. Many are not able to drive afterwards, and the hospital car parks can be a slow, stressful start to an appointment.",
+   "Taxi Peninsula takes the parking out of the equation. Book a sedan for a straightforward trip, or a wheelchair accessible van or Maxi WAT if you travel in your own chair. Our drivers help from the front door to the hospital entrance, and the “pick up when ready” option suits discharge days, when the exact time you will be released is hard to predict. MPTP cards, NDIS and aged-care accounts are all accepted."
+  ],
+  "faq": [
+   {
+    "q": "Can you pick me up from Frankston Hospital when I’m discharged?",
+    "a": "Yes. Book a trip with the “pick up when ready” option and leave the time open. When the ward has finished your discharge paperwork and medications, tap “I’m ready” in your confirmation or call us, and we will send the nearest suitable vehicle. If you need a wheelchair taxi, choose that vehicle type when you book."
+   },
+   {
+    "q": "Can a family member come with me to my appointment?",
+    "a": "Yes. Carers and family members can travel with you at no extra hassle. Our wheelchair accessible van carries one wheelchair plus four seated passengers, and the Maxi WAT carries two wheelchairs plus six seated passengers, so there is usually room for whoever is coming along to support you on the day."
+   }
+  ]
+ },
+ {
+  "name": "Rosebud Hospital",
+  "type": "hospital",
+  "address": "1527 Point Nepean Road, Rosebud VIC 3939",
+  "area": "Rosebud",
+  "lat": -38.36,
+  "lng": 144.905,
+  "official": "https://www.peninsulahealth.org.au/",
+  "description": "Book a taxi or wheelchair taxi to Rosebud Hospital from anywhere on the southern Peninsula. Help door to door, 24/7, MPTP and NDIS accepted.",
+  "entrance": "The hospital’s main entrance is step-free. If your appointment is in a separate clinic building, tell us its name and we will drop you as near to it as we can.",
+  "spot": "Our driver pulls into the hospital’s set-down area closest to your entrance. For the emergency department, say so when booking so we head straight to the right door.",
+  "parking": "Parking on site is limited and fills quickly in summer when the coastal population swells. Being dropped at the door saves a companion hunting for a space along Point Nepean Road.",
+  "access": "Ground-level entry and level paths make the site manageable for walkers and wheelchairs. Our drivers will help you from the vehicle to reception if needed.",
+  "tips": [
+   "Summer holiday traffic along Point Nepean Road is heavy, so allow a little extra time when booking in December and January.",
+   "If you are a holiday visitor staying in Rye, Blairgowrie or Sorrento, give us the exact accommodation address so we can find you.",
+   "Ask for a wheelchair accessible van if you are bringing a folding wheelchair and want it to travel with you safely restrained.",
+   "For day procedures, book your trip home at the same time as the trip in."
+  ],
+  "pickup": "Patients going home usually meet their taxi at the main entrance. Let us know the ward or clinic and we will confirm the spot when we are close.",
+  "about": [
+   "Rosebud Hospital is a public hospital run by Peninsula Health and the main hospital for the southern Mornington Peninsula. It has an emergency department and provides care for residents of towns such as Rosebud, Rye, Dromana, McCrae, Capel Sound, Tootgarook, Blairgowrie and Sorrento, along with the many holiday visitors who stay on this stretch of coast.",
+   "For people living at the southern end of the Peninsula, Rosebud is often the first stop for urgent care, outpatient appointments and procedures, with more specialised treatment sometimes arranged at Frankston. Public transport along the coast can be slow and infrequent, and many older residents no longer drive, so a reliable taxi makes a real difference.",
+   "Taxi Peninsula runs sedans and wheelchair accessible vehicles across the southern Peninsula day and night. We can take you to an early appointment, wait for a call when you are ready to come home, or move you between Rosebud and Frankston if your care continues there. Drivers help door to door, and we accept MPTP cards as well as NDIS and aged-care accounts. If you are a visitor staying on the southern Peninsula for the holidays and need care unexpectedly, we can collect you from your accommodation too."
+  ],
+  "faq": [
+   {
+    "q": "Can you take me from Rosebud Hospital to Frankston Hospital?",
+    "a": "Yes. If you are attending an appointment at Frankston after seeing someone at Rosebud, or a family member has been moved between the two hospitals, we can take you directly. For patient transfers that need medical supervision the hospital arranges patient transport; we take patients and visitors who can travel seated or in their own wheelchair."
+   },
+   {
+    "q": "Do you service holiday visitors staying near Rosebud?",
+    "a": "Yes. We pick up from holiday houses, caravan parks and accommodation along the southern Peninsula. Give us the full street address, plus a site or unit number if you are staying in a park, so the driver can find you quickly. This matters most at night, when house numbers can be hard to spot."
+   }
+  ]
+ },
+ {
+  "name": "The Mornington Centre",
+  "type": "hospital",
+  "address": "Mornington VIC 3931",
+  "area": "Mornington",
+  "lat": -38.225,
+  "lng": 145.05,
+  "official": "https://www.peninsulahealth.org.au/",
+  "description": "Taxi and wheelchair taxi to The Mornington Centre for rehab sessions, visits and going home. Door-to-door help, 24/7, MPTP and NDIS accepted.",
+  "entrance": "The centre is a single site with a main reception entrance that is step-free. If you are visiting a particular ward or therapy area, tell us and we will drop you at the most suitable door.",
+  "spot": "We set down at the front entrance near reception. If you are being collected after a stay, let us know the ward so the driver can meet you there or at reception.",
+  "parking": "There is on-site parking for visitors, but it is limited at busy visiting times. A drop-off means family can go straight in without worrying about where to leave the car.",
+  "access": "As a rehabilitation and aged-care facility the centre is designed for people with limited mobility, with level access and lifts where needed.",
+  "tips": [
+   "Bring any walking frame or wheelchair you have been using in rehab, and let us know so we send the right vehicle.",
+   "For a discharge home, ask staff roughly when you will be ready and use “pick up when ready” for the trip.",
+   "Visitors coming from Frankston or the southern Peninsula can book a return trip with a set pick-up time."
+  ],
+  "pickup": "Patients going home usually meet the taxi at main reception. Tell us your ward and we will call when we arrive.",
+  "about": [
+   "The Mornington Centre is a Peninsula Health facility in Mornington that focuses on subacute care: rehabilitation, care for older people recovering from illness or surgery, and palliative care. Many patients come here after a stay at Frankston Hospital, to regain strength and confidence before returning home.",
+   "Because stays are often longer, the centre sees a steady flow of visitors: partners, children and friends coming from Mornington, Mount Martha, Mount Eliza, Frankston and further down the Peninsula. Some patients also come back after discharge for outpatient therapy. A lot of these trips involve people who cannot drive, either because of their condition or because their usual driver is the person in care. For many families, getting a loved one home safely at the end of a rehabilitation stay is just as important as getting there.",
+   "Taxi Peninsula helps on every side of that journey. We can bring a spouse in to visit each afternoon, take a patient home in a wheelchair accessible van when they are discharged with new mobility aids, or run regular trips to follow-up therapy. Our drivers are used to helping people who are still getting their strength back, and we accept MPTP cards, NDIS and aged-care accounts."
+  ],
+  "faq": [
+   {
+    "q": "I’m being discharged from rehab with a new walker. Can it come in the taxi?",
+    "a": "Yes. Walking frames fold and travel in the boot of a sedan or in the back of a wheelchair van. If you are going home in a wheelchair, book a wheelchair accessible van so you can stay seated in it, secured with four-point restraints and a lap-sash seatbelt. Tell us about the equipment when you book."
+   },
+   {
+    "q": "Can you do a regular visiting trip for my partner?",
+    "a": "Yes. Many people book the same trip several times a week to visit someone at The Mornington Centre. Book each trip online, or call and ask us to set up regular bookings. MPTP cards can be used on each trip for eligible passengers, which helps keep regular travel affordable."
+   }
+  ]
+ },
+ {
+  "name": "The Bays Hospital",
+  "type": "hospital",
+  "address": "Mornington VIC 3931",
+  "area": "Mornington",
+  "lat": -38.223,
+  "lng": 145.043,
+  "official": "",
+  "description": "Taxi to The Bays Hospital in Mornington for surgery, specialist rooms and maternity. Wheelchair taxis available, 24/7, door-to-door help.",
+  "entrance": "The hospital has a main reception entrance with step-free access. Specialist rooms and day units can have their own doors, so tell us where your appointment is when you book.",
+  "spot": "We drop you at the main entrance or the nearest set-down point to your clinic. For early surgical admissions, give us the admission time so we arrive with time to spare.",
+  "parking": "Parking near the hospital and in the surrounding streets of central Mornington can be tight on weekdays. A taxi drop-off avoids time limits and searching for a spot.",
+  "access": "Main entrances are step-free, with lifts inside. Our drivers can walk you to reception and carry a small overnight bag.",
+  "tips": [
+   "After day surgery you generally cannot drive, so book your trip home in advance or use “pick up when ready”.",
+   "If you are going in for a planned birth or maternity stay, book the trip home once you know your discharge day.",
+   "Bring your admission paperwork and health fund details in your hand luggage."
+  ],
+  "pickup": "Most patients are collected from the main entrance after discharge. Let us know the ward or day unit when you book.",
+  "about": [
+   "The Bays Hospital is a not-for-profit private hospital in Mornington, owned by the local community. It has a long history on the Peninsula and offers surgery, day procedures, maternity care and specialist consulting, making it a familiar name for many families in Mornington, Mount Martha and the surrounding towns.",
+   "Patients come from across the Peninsula for planned procedures and specialist appointments. A large share of trips are day surgery, where you are told not to drive after an anaesthetic and need someone to get you home safely. Others are new parents heading home with a baby, or older patients attending regular consultations. Specialist appointments before and after surgery add more trips, and for older patients each one can mean relying on a neighbour or adult child for a lift.",
+   "Taxi Peninsula is a practical alternative to asking a friend to take a day off work. Book a sedan for an early admission, set the trip home to “pick up when ready” so you are not watching the clock, or choose a wheelchair accessible vehicle if you or a family member use a chair. Drivers help door to door, and fare estimates are shown when you book."
+  ],
+  "faq": [
+   {
+    "q": "Can you bring a baby capsule for the trip home from maternity?",
+    "a": "Please bring your own fitted baby capsule or car seat. Our drivers will help you load bags and give you time to install the capsule safely before setting off. Let us know when booking that you are travelling with a newborn so the driver can allow extra time at pick-up."
+   },
+   {
+    "q": "I have an early surgery admission. Can you get me there on time?",
+    "a": "Yes. We run 24 hours a day, so early admissions are no problem. Book the night before at the latest, enter the time you need to be at the hospital, and you will receive a confirmation by SMS or email. Leave a small buffer for checking in at reception."
+   }
+  ]
+ },
+ {
+  "name": "Beleura Private Hospital",
+  "type": "hospital",
+  "address": "Mornington VIC 3931",
+  "area": "Mornington",
+  "lat": -38.236,
+  "lng": 145.056,
+  "official": "",
+  "description": "Taxi and wheelchair taxi to Beleura Private Hospital in Mornington for surgery, rehab and appointments. 24/7 bookings, door-to-door help.",
+  "entrance": "Beleura has a main entrance with reception just inside. Step-free access is available; if you are heading to a specific unit, mention it and we will drop you as close as possible.",
+  "spot": "We pull into the set-down area at the front of the hospital. For a rehabilitation day program or a specialist room, tell us the name so the driver can find the right door.",
+  "parking": "On-site parking is available but can fill on busy surgery days. Being dropped off is easier for patients who have been told not to drive afterwards.",
+  "access": "Level access and lifts help patients with walkers or wheelchairs. Our drivers will help with doors and bags.",
+  "tips": [
+   "Patients attending a rehabilitation day program may find a regular booked trip simpler than arranging lifts each week.",
+   "Bring your admission letter and health fund card when going in for surgery.",
+   "If you have just had joint surgery, a wheelchair van can be more comfortable than climbing into a sedan."
+  ],
+  "pickup": "Patients being discharged usually meet the taxi at the main entrance. Let us know the ward and we will confirm by SMS or phone.",
+  "about": [
+   "Beleura Private Hospital is a private hospital in Mornington, close to the Nepean Highway. It provides surgery, inpatient care and rehabilitation, and it is a common choice for Peninsula residents with private health insurance who prefer to be treated close to home.",
+   "Many trips to Beleura are linked to planned procedures such as orthopaedic or general surgery, followed by a stay or rehabilitation. Patients often arrive on crutches or with a frame, and it can be weeks before they are cleared to drive. Family members also travel in to visit, often from Mount Eliza, Mount Martha, Dromana and the Frankston area. For those patients, a vehicle that is easy to get in and out of, and a driver who is not in a hurry, makes the trip home much more comfortable.",
+   "Taxi Peninsula can handle the whole cycle. Book a sedan for your admission day, a wheelchair accessible van for the trip home if you are not yet steady on your feet, and regular trips for rehabilitation or follow-up appointments afterwards. The drivers help you in and out of the vehicle and carry your bag to the door. NDIS and aged-care accounts and MPTP cards are accepted."
+  ],
+  "faq": [
+   {
+    "q": "I’ve had a knee or hip replacement. Which vehicle should I book home?",
+    "a": "If you can manage a car seat, a sedan works, and the front seat can be moved back for extra leg room. If bending is difficult or you will be using a wheelchair for a while, book a wheelchair accessible van so you can be rolled up the rear ramp and stay seated, secured with four-point restraints."
+   },
+   {
+    "q": "Can you take me to rehab sessions after I’ve gone home?",
+    "a": "Yes. If you are attending outpatient or day rehabilitation, book each trip online or ask us to arrange regular bookings. Let us know about any walking aid you use, and the driver will help you to the entrance and, where needed, back to your front door afterwards."
+   }
+  ]
+ },
+ {
+  "name": "Peninsula Private Hospital",
+  "type": "hospital",
+  "address": "525 McClelland Drive, Langwarrin VIC 3910",
+  "area": "Langwarrin",
+  "lat": -38.156,
+  "lng": 145.155,
+  "official": "",
+  "description": "Taxi to Peninsula Private Hospital in Langwarrin for surgery, cancer care and specialist visits. Wheelchair taxis too, 24/7, door to door.",
+  "entrance": "The main entrance and reception have step-free access. Separate buildings on the campus house some specialist services, so tell us where you are headed.",
+  "spot": "We drop off at the main entrance set-down area or the nearest point to your building. If you are unsure which building you need, your appointment letter usually says.",
+  "parking": "The campus has visitor parking, though it gets busy on weekdays. A taxi saves you working out which car park is closest to your clinic.",
+  "access": "Main entrances are step-free with lifts. Our drivers can help with wheelchairs, walkers and bags between the vehicle and the door.",
+  "tips": [
+   "Check your appointment letter for the building or suite name and include it in your booking notes.",
+   "If you are attending a series of treatments, booking each trip in advance gives you one less thing to organise.",
+   "After a procedure under sedation, use “pick up when ready” so the nurses can release you in their own time."
+  ],
+  "pickup": "Discharged patients generally wait for us at the main entrance. Tell us your ward or day unit and we will confirm the pick-up point.",
+  "about": [
+   "Peninsula Private Hospital is a private hospital on McClelland Drive in Langwarrin, near Frankston, operated by Ramsay Health Care. The campus includes surgical and medical services, along with specialist consulting suites, and it serves privately insured patients from Frankston and right across the Mornington Peninsula.",
+   "Trips here are often part of a longer course of care: surgery and a stay, a run of specialist appointments, or regular treatment visits. Many patients cannot drive afterwards, and even those who can may prefer not to after a long or tiring treatment. Families coming to visit also appreciate not having to search for parking on a busy campus. For patients from the southern Peninsula in particular, the trip to Langwarrin is long enough that relying on friends for every visit quickly becomes difficult.",
+   "Taxi Peninsula provides sedans for quick trips and wheelchair accessible vehicles for passengers who use a chair. We will take you in for an early admission, wait for your call when you are ready to go home, and run repeat trips for ongoing treatment. Drivers help door to door. We accept NDIS and aged-care accounts, and MPTP cards for eligible passengers."
+  ],
+  "faq": [
+   {
+    "q": "I have regular treatment at Peninsula Private. Can you take me each time?",
+    "a": "Yes. Book each trip online in about two minutes, or call and we can help set up your bookings. If treatment leaves you tired, let us know in the booking notes and the driver will give you extra time and help to the door. Fixed quotes are available on request for repeat trips."
+   },
+   {
+    "q": "Where on the campus will you drop me?",
+    "a": "We drop you at the main entrance unless you tell us otherwise. If your appointment is in a specialist suite or a separate building, add its name to your booking and we will take you as close to that door as the campus roads and set-down areas allow."
+   }
+  ]
+ },
+ {
+  "name": "Frankston Private Hospital",
+  "type": "hospital",
+  "address": "Frankston VIC 3199",
+  "area": "Frankston",
+  "lat": -38.15,
+  "lng": 145.131,
+  "official": "",
+  "description": "Taxi and wheelchair taxi to Frankston Private Hospital for day procedures and specialist care. 24/7 bookings, door-to-door driver help.",
+  "entrance": "The hospital has a main entrance with reception. Step-free access is available; tell us which unit you are attending and we will drop you at the most convenient door.",
+  "spot": "Our driver uses the hospital’s set-down area at the front entrance. Add your unit or specialist’s name to the booking notes if your appointment is elsewhere on the site.",
+  "parking": "Parking in this part of Frankston is shared with the nearby public hospital and medical suites, so it is often busy. A drop-off avoids the search.",
+  "access": "The entrance is step-free with lifts inside. Drivers will help with your bag and walk with you to reception if you would like.",
+  "tips": [
+   "Frankston Private and Frankston Hospital are close to each other, so state the full hospital name when booking.",
+   "Day procedure patients are usually told not to drive for the rest of the day, so pre-book your ride home.",
+   "Note your admission time, not your procedure time, when choosing a pick-up time."
+  ],
+  "pickup": "After a day procedure, most patients are walked to the front entrance to meet the driver. We will message or call when the driver arrives.",
+  "about": [
+   "Frankston Private Hospital is a private hospital in Frankston, in the medical precinct around Frankston Hospital. It offers day surgery, procedures and specialist services for privately insured patients from Frankston and the Mornington Peninsula.",
+   "Because so much of its work is planned day procedures, a typical patient arrives in the morning, has a procedure, and is ready to go home by the afternoon, often still drowsy and not allowed to drive. Getting home safely matters, and it is not always easy to find someone free to wait around for a few hours. Patients are commonly told they need a responsible adult to accompany them home, so having a booked ride arranged before admission removes one worry from the day. Some patients also return for follow-up consultations with their specialist in the weeks that follow.",
+   "Taxi Peninsula fits neatly around a day procedure. Book a sedan for the trip in, then a “pick up when ready” trip home, and tap “I’m ready” once the nurses have discharged you. If you use a wheelchair, choose a wheelchair accessible van or a Maxi WAT. Our drivers help door to door, and we accept MPTP cards, NDIS and aged-care accounts."
+  ],
+  "faq": [
+   {
+    "q": "Is Frankston Private Hospital the same as Frankston Hospital?",
+    "a": "No. They are separate hospitals near each other in Frankston. Frankston Hospital is the large public hospital run by Peninsula Health, while Frankston Private Hospital is a private hospital. Check your letter and give us the exact name when you book, so the driver heads to the right entrance."
+   },
+   {
+    "q": "Can someone wait with me and travel home too?",
+    "a": "Yes. A partner or friend can ride with you both ways at no extra arrangement. If they are waiting at the hospital while you have your procedure, they can tap “I’m ready” on the booking when you are discharged, or call us, and we will send the vehicle."
+   }
+  ]
+ },
+ {
+  "name": "Golf Links Road Rehabilitation Centre",
+  "type": "hospital",
+  "address": "Frankston VIC 3199",
+  "area": "Frankston",
+  "lat": -38.164,
+  "lng": 145.15,
+  "official": "https://www.peninsulahealth.org.au/",
+  "description": "Taxi and wheelchair taxi to Golf Links Road Rehabilitation Centre, Frankston. Rehab sessions, visits and discharge, 24/7, MPTP accepted.",
+  "entrance": "The centre has a main reception entrance with level access. If you are visiting a particular ward or attending a therapy session, mention it so we can drop you at the right door.",
+  "spot": "We set down at the main entrance by reception. For outpatient therapy, tell us the program name if your letter gives one.",
+  "parking": "Visitor parking is on site but can be limited at popular visiting times. A drop-off is easier for older visitors who prefer not to walk across a car park.",
+  "access": "As a rehabilitation and aged-care site, it is set up for people using walkers and wheelchairs, with level paths and accessible entrances.",
+  "tips": [
+   "If your rehab program runs several days a week, ask us about regular bookings.",
+   "Let us know if you will be travelling in a wheelchair for the first time, and we will send a wheelchair accessible van.",
+   "Bring any new equipment the therapists have given you, such as a walking stick or frame, so it travels with you."
+  ],
+  "pickup": "On discharge day, most patients wait for the driver in the reception area. We will call or message on arrival.",
+  "about": [
+   "Golf Links Road Rehabilitation Centre is a Peninsula Health facility in Frankston that provides rehabilitation and care for older people. It is one of the places patients may move to after an acute stay in hospital, to work on strength, mobility and independence before going home.",
+   "Patients and visitors come from Frankston, Langwarrin, Carrum Downs, Seaford and across the Peninsula. Stays can last several weeks, so partners and family often make the trip many times, and patients may return for outpatient therapy once they are home. A good share of these passengers do not drive, and some are adjusting to a wheelchair or walking aid for the first time. Getting the vehicle right for that first trip home, with the chair or frame they have been practising with, helps patients settle back in with confidence.",
+   "Taxi Peninsula’s wheelchair accessible vans and Maxi WATs suit these trips well, with ramps or hoists, four-point wheelchair restraints and room for a carer. Sedans are there for visitors and patients who can manage a car seat. Our drivers help from the door of your home to the centre’s reception, and we accept MPTP cards, NDIS and aged-care accounts."
+  ],
+  "faq": [
+   {
+    "q": "Can you take my husband home from rehab in his wheelchair?",
+    "a": "Yes. Book a wheelchair accessible van, which has a rear ramp and room for one wheelchair plus four seated passengers, so you can ride together. If his chair is a heavy power chair, choose the Maxi WAT, which uses a hydraulic hoist. Add any details about the chair in the booking notes."
+   },
+   {
+    "q": "Can I use my MPTP card for rehab trips?",
+    "a": "Yes. If you hold a Multi Purpose Taxi Program card, show it to the driver and the subsidy is applied to your fare. MPTP can be used for trips in our sedans and our wheelchair accessible vehicles, including regular trips to therapy and visiting a family member at the centre."
+   }
+  ]
+ },
+ {
+  "name": "Monash Medical Centre Clayton",
+  "type": "hospital",
+  "address": "246 Clayton Road, Clayton VIC 3168",
+  "area": "Clayton",
+  "lat": -37.921,
+  "lng": 145.123,
+  "official": "https://monashhealth.org/",
+  "description": "Taxi from the Peninsula to Monash Medical Centre Clayton for specialist care, dialysis and visits. Wheelchair taxis available 24/7.",
+  "entrance": "Monash Medical Centre is a large campus with several entrances. Tell us your department or clinic and we will aim for the closest step-free entrance to it.",
+  "spot": "We drop off at the set-down area nearest your entrance. With a site this size, the building or clinic name on your letter helps the driver choose the right spot.",
+  "parking": "Car parks on the campus are busy and walking distances can be long, which is hard on older patients. A door drop-off removes the walk from a distant parking space.",
+  "access": "Main entrances are step-free with lifts throughout. Our drivers can push a manual wheelchair to the entrance and help with doors.",
+  "tips": [
+   "Write the clinic or building name from your appointment letter into the booking notes.",
+   "Allow extra time for weekday traffic through the south-eastern suburbs.",
+   "Monash Children’s Hospital and the Victorian Heart Hospital are nearby but separate, so name your hospital clearly.",
+   "For long appointments, use “pick up when ready” rather than guessing a finish time."
+  ],
+  "pickup": "Patients usually meet the taxi at the main entrance they came in by. Tell us your ward when booking and we will confirm the meeting point.",
+  "about": [
+   "Monash Medical Centre in Clayton is one of Melbourne’s major public teaching hospitals and the largest campus of Monash Health. It provides a wide range of specialist services, from complex surgery and cancer care to renal services and maternity, and treats patients referred from across the south-east.",
+   "Peninsula and Frankston residents are often referred to Clayton for care that is not available closer to home, or for specialist reviews linked to ongoing treatment. That can mean a long trip up the freeways for a short appointment, sometimes several times a month. Patients who need regular treatment such as dialysis, and those who have just had surgery, are rarely in a position to drive.",
+   "Taxi Peninsula takes you from your door on the Peninsula straight to the hospital entrance and back again. Book a sedan for a simple trip, or a wheelchair accessible van or Maxi WAT if you travel in your chair. For appointments with an unknown finish time, “pick up when ready” lets you call us when you are done. Fixed quotes are available on request, and MPTP, NDIS and aged-care accounts are accepted."
+  ],
+  "faq": [
+   {
+    "q": "Is it practical to take a taxi from Mornington or Rosebud to Clayton?",
+    "a": "Yes, many of our passengers do. It is a longer trip, so we show a fare estimate on the booking form and can give a fixed quote on request. Travelling door to door means no parking, no changing trains and no long walk across the campus, which suits people who are unwell or tired after treatment."
+   },
+   {
+    "q": "Can you take me to regular dialysis at Clayton?",
+    "a": "Yes. If you attend dialysis on set days, we can take you each time. Book each session online or call us to set up regular bookings, and let us know if you use a wheelchair. For the trip home, “pick up when ready” helps when sessions finish a little earlier or later than planned."
+   }
+  ]
+ },
+ {
+  "name": "Victorian Heart Hospital",
+  "type": "hospital",
+  "address": "Clayton VIC 3168",
+  "area": "Clayton",
+  "lat": -37.913,
+  "lng": 145.13,
+  "official": "",
+  "description": "Taxi and wheelchair taxi to the Victorian Heart Hospital in Clayton for cardiac appointments, procedures and discharge. Book 24/7 online.",
+  "entrance": "The hospital is a single modern building with a main entrance that is step-free. If your letter mentions a particular clinic or level, add it to your booking notes.",
+  "spot": "We drop you at the main entrance set-down area. The hospital sits on the Monash University Clayton campus, so give the full hospital name when you book.",
+  "parking": "Parking is shared with a busy university precinct and can be hard to find. Many patients find a drop-off much simpler, especially after a cardiac procedure.",
+  "access": "As a newer building, it has level access, wide doors and lifts. Our drivers will walk with you to the entrance if you would like support.",
+  "tips": [
+   "Patients are often told not to drive for a period after cardiac procedures, so pre-book the trip home.",
+   "Bring your medication list and any referral letters.",
+   "Do not confuse this hospital with Monash Medical Centre, which is on Clayton Road nearby."
+  ],
+  "pickup": "Patients going home usually meet the taxi at the main entrance. Your driver will call or send a message on arrival.",
+  "about": [
+   "The Victorian Heart Hospital is a dedicated public cardiac hospital in Clayton, run by Monash Health on the Monash University campus. It brings heart care, research and training together in one purpose-built building and treats patients from across Victoria for heart conditions, from diagnostic tests through to procedures and inpatient care.",
+   "Peninsula patients may be referred here for cardiology appointments, investigations or procedures, and some return regularly for follow-up. After many heart procedures you will be advised not to drive for a while, and stress about getting there on time is the last thing anyone needs before a cardiac test. Patients coming for a procedure may also have been asked to bring a support person, who then needs a way to get there and back as well. A single booking can carry you both.",
+   "Taxi Peninsula offers calm, door-to-door transport between home and the hospital entrance. Choose a sedan, a wheelchair accessible van or a Maxi WAT depending on your mobility, and let a family member come along for support. The “pick up when ready” option suits discharge or long test days, and we can provide a fixed quote on request for this longer trip from the Peninsula."
+  ],
+  "faq": [
+   {
+    "q": "I can’t drive after my heart procedure. Can you take me home?",
+    "a": "Yes. Book your trip home ahead of time and choose “pick up when ready”. When the team has discharged you, tap “I’m ready” or call us and the nearest suitable vehicle will come to the main entrance. A family member can travel with you, and the driver will help with your bag."
+   },
+   {
+    "q": "Where is the Victorian Heart Hospital?",
+    "a": "It is in Clayton on the Monash University campus, a short distance from Monash Medical Centre. Because the two are close and both run by Monash Health, please state the Victorian Heart Hospital clearly in your booking so your driver goes straight to the right building and entrance."
+   }
+  ]
+ },
+ {
+  "name": "Moorabbin Hospital",
+  "type": "hospital",
+  "address": "Centre Road, Bentleigh East VIC 3165",
+  "area": "Bentleigh East",
+  "lat": -37.926,
+  "lng": 145.073,
+  "official": "https://monashhealth.org/",
+  "description": "Taxi to Moorabbin Hospital in Bentleigh East for cancer care, day procedures and clinics. Wheelchair taxis available, door-to-door help.",
+  "entrance": "The hospital has a main entrance with step-free access. Some services are in separate areas of the site, so tell us where your appointment is.",
+  "spot": "We drop you at the main entrance or the set-down point closest to your treatment area. Treatment centre names from your letter help the driver.",
+  "parking": "Car parking on the site is in demand on weekdays. For regular treatment visits, a drop-off saves daily parking hassles.",
+  "access": "Entrances are step-free and the hospital is used to patients arriving in wheelchairs and with walkers. Drivers can help you through the door.",
+  "tips": [
+   "If you are having a course of treatment, booking all your trips at the start can make the weeks ahead easier.",
+   "Treatment can be tiring, so note in your booking if you would like the driver to walk you to the door at home.",
+   "Use “pick up when ready” if your treatment time often runs over."
+  ],
+  "pickup": "Patients usually meet their taxi at the main entrance. Tell us your treatment area and we will confirm the pick-up spot.",
+  "about": [
+   "Moorabbin Hospital is a Monash Health public hospital in Bentleigh East. It is known particularly for cancer services, and also provides day procedures and outpatient clinics for the south-eastern suburbs.",
+   "Many Peninsula and Frankston residents come here for a course of cancer treatment, which can mean frequent visits over several weeks. Those trips add up quickly, and tiredness from treatment makes driving yourself difficult. Partners and family are not always free every day to provide lifts. Some patients come in daily for a period, while others attend every few weeks for reviews and infusions. Either way, the travel becomes part of the routine, and a reliable driver who knows where to drop you helps make each visit a little less tiring. Partners and adult children can also save their leave for the days that matter most.",
+   "Taxi Peninsula can run each of those trips door to door. Book a sedan or, if you use a wheelchair, a wheelchair accessible van or Maxi WAT. Carers ride with you, drivers help with bags and doors, and fare estimates appear on the booking form, with fixed quotes on request. MPTP cards and NDIS or aged-care accounts are accepted."
+  ],
+  "faq": [
+   {
+    "q": "Can you take me to all my treatment sessions at Moorabbin?",
+    "a": "Yes. Book each session online, or call us and we can help you set up the full series. If a session is moved, simply update or cancel that booking. For trips home, “pick up when ready” lets you leave as soon as you are finished, rather than waiting for a fixed time."
+   },
+   {
+    "q": "Can a support person come with me?",
+    "a": "Yes. A family member, friend or carer can ride with you. Our sedans seat several passengers, and our wheelchair accessible vans carry one wheelchair plus four seated passengers, so a support person is easy to accommodate. Just mention how many are travelling when you book."
+   }
+  ]
+ },
+ {
+  "name": "Casey Hospital",
+  "type": "hospital",
+  "address": "62-70 Kangan Drive, Berwick VIC 3806",
+  "area": "Berwick",
+  "lat": -38.042,
+  "lng": 145.346,
+  "official": "https://monashhealth.org/",
+  "description": "Taxi and wheelchair taxi to Casey Hospital in Berwick for emergencies, appointments and visits. Door-to-door help, 24/7, MPTP accepted.",
+  "entrance": "Casey Hospital has a main entrance and a separate emergency department entrance, both step-free. Tell us which you need so we take you to the right one.",
+  "spot": "We drop off in the set-down area by the entrance you need. For outpatient clinics, the clinic name from your letter helps us choose the best spot.",
+  "parking": "The hospital has visitor car parks, but they fill at busy times. A drop-off is easier for older visitors and people who would rather not drive in an unfamiliar area.",
+  "access": "Entrances are step-free with lifts to upper floors. Our drivers will help you from the vehicle to the door.",
+  "tips": [
+   "Casey is in Berwick, a fair way from most of the Peninsula, so allow time for the trip.",
+   "Tell us if you are visiting someone in a particular ward, so we can drop you at the main entrance.",
+   "Request a fixed quote on longer trips if you prefer a set price."
+  ],
+  "pickup": "Patients going home usually meet the taxi near the main entrance. We will call when we arrive.",
+  "about": [
+   "Casey Hospital in Berwick is a public hospital run by Monash Health. It serves the fast-growing City of Casey and surrounding areas, with an emergency department, inpatient wards, maternity services and outpatient clinics.",
+   "Peninsula residents end up at Casey for a range of reasons: a family member who lives nearby, a referral to a clinic with a shorter wait, or a relative admitted while visiting. Those living on the eastern side of the Peninsula or in towns like Pearcedale and Cranbourne can find Casey a convenient option, although the trip across can still be long without a car. For residents of the eastern Peninsula, such as those in Somerville, Tyabb or Hastings, Berwick can be reached without going through the city, but there is no simple public transport route. Visiting a new baby or a relative recovering after surgery is much easier with a direct, door-to-door ride.",
+   "Taxi Peninsula takes passengers to Casey Hospital from anywhere on the Peninsula and Frankston. Choose a sedan for a quick trip, or a wheelchair accessible vehicle if you use a chair. We run 24 hours, accept MPTP cards, NDIS and aged-care accounts, and drivers help door to door."
+  ],
+  "faq": [
+   {
+    "q": "Can you take me to Casey Hospital from the Mornington Peninsula?",
+    "a": "Yes. We travel anywhere in Melbourne, including Berwick. Book online and the fare estimate will appear before you confirm, or ask us for a fixed quote. Our drivers will drop you at the main entrance or emergency department, and you can book the return trip with a set time or “pick up when ready”."
+   },
+   {
+    "q": "I’m visiting a relative at Casey. Can you wait and bring me back?",
+    "a": "We generally book the return as a separate trip. Choose a pick-up time that suits the end of your visit, or use “pick up when ready” and tap “I’m ready” when you are leaving. That way you are not paying for waiting time while you spend time with your relative."
+   }
+  ]
+ },
+ {
+  "name": "Dandenong Hospital",
+  "type": "hospital",
+  "address": "David Street, Dandenong VIC 3175",
+  "area": "Dandenong",
+  "lat": -37.979,
+  "lng": 145.217,
+  "official": "https://monashhealth.org/",
+  "description": "Taxi and wheelchair taxi to Dandenong Hospital for appointments, mental health visits and discharge. Door-to-door help, 24/7 bookings.",
+  "entrance": "Dandenong Hospital has a main entrance and a separate emergency department entrance. Tell us where you need to go and we will take you to the nearest step-free door.",
+  "spot": "We set down as close to your entrance as the hospital’s drop-off zone allows. Let us know your clinic or ward when booking.",
+  "parking": "Parking around the hospital is busy and some nearby street parking is time-limited. A drop-off saves time and walking for visitors.",
+  "access": "Main entrances are step-free with lifts. Our drivers help with wheelchairs and walkers to the entrance.",
+  "tips": [
+   "Name the clinic or ward on your letter in your booking notes.",
+   "Weekday peak traffic through Dandenong can be slow; book a little earlier for morning appointments.",
+   "If you are collecting someone after discharge, use “pick up when ready” so you are not waiting outside."
+  ],
+  "pickup": "Patients usually meet the taxi near the main entrance. Tell us the ward and we will confirm the pick-up point.",
+  "about": [
+   "Dandenong Hospital is a public hospital run by Monash Health, serving Dandenong and the surrounding south-eastern suburbs. It has an emergency department, general medical and surgical wards, mental health services and outpatient clinics.",
+   "Peninsula and Frankston residents may be sent to Dandenong for a particular clinic, or have family admitted there. Others are referred for specialist services or need to visit someone in hospital away from their usual area. Without a car, the trip involves several connections on public transport. Some trips involve visiting a family member during a mental health admission, where a calm, private ride without crowds or connections can be a real relief. Others involve collecting a relative after discharge and getting them home to the Peninsula safely, along with their bags and any medication they have been sent home with.",
+   "Taxi Peninsula takes the guesswork out of the journey. Our sedans and wheelchair accessible vans run 24 hours, drivers help door to door, and carers travel with the passenger. Book online in about two minutes, see the fare estimate before you confirm, and use MPTP cards, NDIS or aged-care accounts."
+  ],
+  "faq": [
+   {
+    "q": "Can you take me from Frankston to Dandenong Hospital?",
+    "a": "Yes. We regularly travel from Frankston and the Peninsula into the south-eastern suburbs. Book online, enter Dandenong Hospital as your destination and add your clinic or ward in the notes. The fare estimate appears before you confirm, and fixed quotes are available on request."
+   },
+   {
+    "q": "Can you pick up a family member being discharged from Dandenong Hospital?",
+    "a": "Yes. Book a “pick up when ready” trip with Dandenong Hospital as the pick-up point and their home as the destination. When the ward is ready to discharge them, you or they can tap “I’m ready” or call us. Choose a wheelchair accessible vehicle if they will be leaving in a wheelchair."
+   }
+  ]
+ },
+ {
+  "name": "Kingston Centre",
+  "type": "hospital",
+  "address": "Warrigal Road, Cheltenham VIC 3192",
+  "area": "Cheltenham",
+  "lat": -37.951,
+  "lng": 145.071,
+  "official": "https://monashhealth.org/",
+  "description": "Taxi and wheelchair taxi to Kingston Centre in Cheltenham for rehab, aged care and visits. Door-to-door help, 24/7, MPTP and NDIS accepted.",
+  "entrance": "Kingston Centre is spread across a large site with several buildings. Tell us the ward, unit or program you are visiting so we can drop you at the right step-free entrance.",
+  "spot": "We drop off at the main reception unless you ask for a specific building. Unit names on your paperwork make this much easier.",
+  "parking": "The site has visitor parking, but the layout can be confusing for first-time visitors. A drop-off at the right door is often quicker.",
+  "access": "The centre caters to older people and people in rehabilitation, so it has level access and accessible entrances. Drivers can help you all the way to reception.",
+  "tips": [
+   "Ask staff which building your ward is in before you book.",
+   "Regular visitors can book recurring trips for set visiting days.",
+   "If the person you are visiting uses a wheelchair and is allowed an outing, a wheelchair accessible van makes it possible."
+  ],
+  "pickup": "Patients usually meet the taxi at main reception or the entrance of their unit. Let us know which when booking.",
+  "about": [
+   "Kingston Centre in Cheltenham is a Monash Health facility focused on care for older people. It provides rehabilitation, geriatric medicine, aged-care services and related outpatient programs, helping people recover after illness or surgery and plan for life back at home or in care.",
+   "Many Kingston Centre patients have come from an acute hospital, and stays can last weeks. Their partners are often older too, and may no longer drive, which makes regular visits from Frankston or the Peninsula difficult. Patients attending outpatient programs also need a dependable way to get there and home. Families can also find the site itself a little confusing on the first visit, with different programs located in different buildings. A driver who drops you at the right door and waits while you get your bearings can make the first few visits much easier for an older partner travelling alone.",
+   "Taxi Peninsula is well suited to these trips. Our wheelchair accessible vans and Maxi WATs carry passengers in their chairs with four-point restraints, and our sedans suit visitors who can manage a car seat. Drivers are patient and help door to door, and we accept MPTP cards as well as NDIS and aged-care accounts."
+  ],
+  "faq": [
+   {
+    "q": "How do I find the right building at Kingston Centre?",
+    "a": "Ask the ward or your care team which building or unit you need, then add it to your booking notes. Our driver will take you to that entrance where the site roads allow. If you are not sure, we will drop you at main reception, where staff can direct you."
+   },
+   {
+    "q": "Can you take my mother out from Kingston Centre in her wheelchair?",
+    "a": "If the care team is happy for her to have an outing, yes. Book a wheelchair accessible van so she can stay in her chair, secured with four-point restraints and a lap-sash seatbelt. You can travel with her, and we can bring her back at a set time or when you call."
+   }
+  ]
+ },
+ {
+  "name": "Caulfield Hospital",
+  "type": "hospital",
+  "address": "260 Kooyong Road, Caulfield VIC 3162",
+  "area": "Caulfield",
+  "lat": -37.882,
+  "lng": 145.017,
+  "official": "https://www.alfredhealth.org.au/",
+  "description": "Taxi and wheelchair taxi to Caulfield Hospital for rehab, aged care and clinics. Door-to-door help from the Peninsula, 24/7 bookings.",
+  "entrance": "Caulfield Hospital has a main entrance with step-free access. Several services are in separate buildings on the site, so let us know which one you need.",
+  "spot": "We drop off at the main entrance or as close as possible to your building. The unit or clinic name on your letter is very helpful.",
+  "parking": "Street parking around the hospital is limited and often time-restricted. A taxi drop-off spares visitors the search.",
+  "access": "The hospital specialises in rehabilitation and aged care, so access is generally level, with ramps and lifts where needed.",
+  "tips": [
+   "Name the building, ward or program in your booking notes.",
+   "If you are visiting regularly, book your trips in advance for set visiting days.",
+   "Ask about a wheelchair accessible van if the patient will be travelling home in a wheelchair."
+  ],
+  "pickup": "Going home, most patients are brought down to the main entrance to meet the driver. Tell us the ward and we will confirm when we arrive.",
+  "about": [
+   "Caulfield Hospital is part of Alfred Health and specialises in rehabilitation, aged care and aged mental health, along with a range of community and outpatient programs. Many patients are transferred here from The Alfred to continue their recovery.",
+   "Peninsula families often find themselves visiting Caulfield after a relative has been treated at The Alfred. Stays may be long, and the trip up the Nepean Highway or the freeway is not one every visitor wants to drive several times a week. Patients also come back for outpatient therapy after going home. Some patients are cleared for short outings or weekend leave before they finally go home, and others attend day programs and clinics on the site after discharge. Each of those trips needs a vehicle that suits their mobility at that stage of recovery, whether that is a sedan or a wheelchair taxi.",
+   "Taxi Peninsula provides sedans for visitors and wheelchair accessible vehicles for patients who travel in their chairs. We can bring a patient home to the Peninsula on discharge, run regular visiting trips, or take people to outpatient sessions. Drivers help door to door, and MPTP cards, NDIS and aged-care accounts are accepted."
+  ],
+  "faq": [
+   {
+    "q": "My father is moving from The Alfred to Caulfield Hospital. Can you transport him?",
+    "a": "Transfers between hospitals for admitted patients are normally arranged by the hospital. Once he is settled, we can bring family in to visit, and when he is discharged we can take him home to the Peninsula in a sedan or wheelchair accessible vehicle, depending on his mobility."
+   },
+   {
+    "q": "Is there room for a carer in the wheelchair taxi?",
+    "a": "Yes. Our wheelchair accessible van carries one wheelchair plus four seated passengers, and the Maxi WAT carries two wheelchairs plus six seated passengers. Carers ride with the passenger, so you can stay together for the whole trip between Caulfield and home."
+   }
+  ]
+ },
+ {
+  "name": "Sandringham Hospital",
+  "type": "hospital",
+  "address": "193 Bluff Road, Sandringham VIC 3191",
+  "area": "Sandringham",
+  "lat": -37.951,
+  "lng": 145.011,
+  "official": "https://www.alfredhealth.org.au/",
+  "description": "Taxi and wheelchair taxi to Sandringham Hospital on Bluff Road for emergency, clinics and visits. Door-to-door help, 24/7 bookings.",
+  "entrance": "Sandringham Hospital is a compact site with a main entrance and a separate emergency entrance. Both are accessible; tell us which you need.",
+  "spot": "We drop you at the main entrance or the emergency department set-down, depending on your booking.",
+  "parking": "Parking close to the hospital is limited and can be busy. A drop-off saves walking from a distant spot.",
+  "access": "The main entrance is step-free and the hospital is relatively easy to navigate, which suits older patients.",
+  "tips": [
+   "Tell us whether you need the emergency department or the main entrance.",
+   "Bayside traffic can slow on summer weekends, so allow a little extra time.",
+   "For outpatient appointments, bring your referral letter and list of medications."
+  ],
+  "pickup": "The front entrance is the usual meeting point for patients heading home. We will call or message on arrival.",
+  "about": [
+   "Sandringham Hospital is a community hospital in Melbourne’s bayside suburbs, run by Alfred Health. It has an emergency department, general medical care and outpatient services, and serves residents from Sandringham, Black Rock, Beaumaris, Hampton and nearby areas.",
+   "Residents of Frankston and the upper Peninsula sometimes visit Sandringham to see family admitted there, or are referred to clinics on the site. Its smaller scale makes it less daunting than the large city hospitals, but getting there without a car still takes some planning. Visitors from Frankston, Seaford or Carrum often prefer to skip the drive up the Nepean Highway and the hunt for a park in the surrounding residential streets. Patients attending outpatient clinics or being discharged after a short stay also tend to appreciate a direct ride home. For older visitors who no longer drive, a taxi can be the difference between seeing a relative regularly and only now and then, and a familiar driver on a regular run makes the trips easier still.",
+   "Taxi Peninsula provides straightforward door-to-door trips along the bay to Sandringham. Choose a sedan, a wheelchair accessible van or a Maxi WAT depending on your needs. Carers ride along, drivers help with doors and bags, and we accept MPTP cards, NDIS and aged-care accounts."
+  ],
+  "faq": [
+   {
+    "q": "Can you take me to Sandringham Hospital’s emergency department?",
+    "a": "Yes, if your situation is not life-threatening and you can travel seated or in your own wheelchair. Tell us it is the emergency department and we will take you to that entrance. For a medical emergency, call Triple Zero (000) for an ambulance rather than booking a taxi."
+   },
+   {
+    "q": "I’m visiting a relative. Can I book a set return time?",
+    "a": "Yes. Book a return trip with a pick-up time that suits the end of visiting hours, or choose “pick up when ready” and let us know when you are leaving. The driver will meet you at the main entrance and can help you into the vehicle if you need a hand."
+   }
+  ]
+ },
+ {
+  "name": "Monash Children’s Hospital",
+  "type": "hospital",
+  "address": "246 Clayton Road, Clayton VIC 3168",
+  "area": "Clayton",
+  "lat": -37.92,
+  "lng": 145.121,
+  "official": "",
+  "description": "Taxi and wheelchair taxi to Monash Children’s Hospital in Clayton for paediatric appointments and admissions. Book 24/7 with help to the door.",
+  "entrance": "Monash Children’s Hospital has its own entrance, separate from the main Monash Medical Centre entrance. It is step-free and suitable for prams and wheelchairs.",
+  "spot": "We drop off at the Monash Children’s Hospital entrance set-down area. Tell us the clinic or ward so we can confirm the right spot.",
+  "parking": "The Clayton campus car parks are busy throughout the day. Being dropped at the door means parents can focus on their child rather than parking.",
+  "access": "The building is designed for children and families, with level access, lifts and space for prams and wheelchairs.",
+  "tips": [
+   "Make sure you say Monash Children’s Hospital, not Monash Medical Centre, when booking.",
+   "Bring your own child car seat or booster appropriate for your child’s age and size.",
+   "Children who use a wheelchair can travel in it in our wheelchair accessible van or Maxi WAT.",
+   "Pack snacks and something to do in case the appointment runs long."
+  ],
+  "pickup": "Families usually meet the taxi at the children’s hospital entrance. Tell us the ward when you book.",
+  "about": [
+   "Monash Children’s Hospital is a public paediatric hospital on the Monash Medical Centre site in Clayton, run by Monash Health. It cares for babies, children and teenagers from across south-east Melbourne, with specialist clinics, inpatient wards and neonatal care.",
+   "Families from Frankston and the Mornington Peninsula are often referred here for specialist paediatric care. Appointments can be frequent, and a sick or anxious child makes a long drive and a hunt for parking much harder. Some families do not have a car available on weekdays. Some children have regular clinic visits for ongoing conditions, while others are admitted for surgery or a period of treatment. Parents often need to juggle work, siblings and school pick-ups at the same time, so a booked ride that turns up on time and waits for the right moment to load a child, their chair and their equipment is a real help.",
+   "Taxi Peninsula provides door-to-door trips for the whole family. Children who use a wheelchair can travel seated in their chair with four-point restraints, and siblings and parents can come along. Bring your child’s car seat and the driver will give you time to fit it. We accept NDIS accounts, and fixed quotes are available on request."
+  ],
+  "faq": [
+   {
+    "q": "Do you provide child car seats?",
+    "a": "Please bring your own car seat or booster suitable for your child’s age and size. Our drivers will help you load it and allow time to fit it properly before setting off. If your child travels in their own wheelchair, book a wheelchair accessible van and they can stay in their chair, secured with four-point restraints."
+   },
+   {
+    "q": "Can we use NDIS funding for trips to Monash Children’s?",
+    "a": "We accept NDIS accounts. If your child’s plan includes transport funding, let us know when you book and we will make sure the trip is recorded correctly. If you are not sure what your plan covers, check with your plan manager or support coordinator before you travel."
+   }
+  ]
+ },
+ {
+  "name": "Cabrini Malvern",
+  "type": "hospital",
+  "address": "181-183 Wattletree Road, Malvern VIC 3144",
+  "area": "Malvern",
+  "lat": -37.862,
+  "lng": 145.034,
+  "official": "https://www.cabrini.com.au/",
+  "description": "Taxi from the Peninsula to Cabrini Malvern for surgery, specialist rooms and maternity. Wheelchair taxis too, door to door, 24/7 bookings.",
+  "entrance": "Cabrini Malvern has a main entrance with reception and several other entry points to wings and consulting suites. Tell us where you are going and we will aim for the nearest step-free entrance.",
+  "spot": "We set down at the main entrance or the closest drop-off to your consulting suite. The suite or building name on your appointment letter helps.",
+  "parking": "Street parking in the surrounding residential streets is limited and time-restricted. A taxi avoids both the search and the risk of a ticket while you are inside.",
+  "access": "The main entrance has step-free access, and lifts serve the wards and suites. Our drivers will help you to reception with your bag.",
+  "tips": [
+   "Specialist suites can be in separate buildings, so check your letter for the exact location.",
+   "For surgery, book the trip home with “pick up when ready” as discharge times vary.",
+   "Peak-hour traffic on the way into Malvern can be slow, so leave buffer time for morning admissions."
+  ],
+  "pickup": "Most patients wait for the taxi just inside the main entrance. Tell us your ward when you book and we will confirm the spot.",
+  "about": [
+   "Cabrini Malvern is a not-for-profit Catholic private hospital in Melbourne’s inner south-east, run by Cabrini Health. It offers a broad range of surgical, medical and maternity services, and many specialists consult from rooms on or near the site.",
+   "Peninsula patients often choose Cabrini because their surgeon or specialist works there, which can mean a long trip for a pre-admission visit, the surgery itself and follow-up appointments. Most are not allowed to drive after a procedure, and family may not be able to take a full day off to drive them up and back. Expectant parents booked in for maternity care at Cabrini also make several trips before and after the birth, and many prefer not to drive in the final weeks of pregnancy or home again with a newborn.",
+   "Taxi Peninsula can take you from your home on the Peninsula to the hospital door, and bring you home again when you are discharged. Book a sedan, or a wheelchair accessible van or Maxi WAT if you use a chair. Ask for a fixed quote for the longer trip, and use “pick up when ready” so you leave the moment the nurses are happy for you to go."
+  ],
+  "faq": [
+   {
+    "q": "Is a taxi from the Peninsula to Cabrini Malvern a sensible option?",
+    "a": "For many patients, yes. It saves a family member a long drive and a parking search, and you travel door to door straight after discharge. We show a fare estimate before you book and offer fixed quotes on request, so you know what to expect for the trip up and back."
+   },
+   {
+    "q": "Can you pick me up from my specialist’s rooms rather than the hospital?",
+    "a": "Yes. Enter the specific address of the consulting rooms as your pick-up point, or add the building name in the booking notes. Our driver will meet you at that entrance. If you are not sure when your appointment will finish, choose “pick up when ready” and let us know when you are done."
+   }
+  ]
+ },
+ {
+  "name": "Epworth Richmond",
+  "type": "hospital",
+  "address": "89 Bridge Road, Richmond VIC 3121",
+  "area": "Richmond",
+  "lat": -37.81,
+  "lng": 144.987,
+  "official": "https://www.epworth.org.au/",
+  "description": "Taxi and wheelchair taxi from the Peninsula to Epworth Richmond on Bridge Road for surgery, rehab and specialists. Door to door, 24/7.",
+  "entrance": "Epworth Richmond’s main entrance is on Bridge Road and is step-free. The campus has several buildings, so tell us which one your appointment is in.",
+  "spot": "We drop off at the main entrance or the nearest set-down point to your building. Bridge Road is busy, so the driver will stop wherever it is safe and permitted.",
+  "parking": "Parking in this part of Richmond is expensive and hard to find, and Bridge Road has trams and clearways. A drop-off is far simpler.",
+  "access": "Entrances are step-free with lifts throughout. Drivers can help with your bag and walk you inside.",
+  "tips": [
+   "Check which building your surgeon or clinic is in before booking.",
+   "Bridge Road traffic is slow at peak times; allow extra time for early admissions.",
+   "Use “pick up when ready” after surgery so you are not watching the clock.",
+   "If you are attending rehab sessions as an outpatient, consider booking regular trips."
+  ],
+  "pickup": "Patients usually meet the taxi at the main entrance on Bridge Road. We will confirm the meeting point by SMS or phone.",
+  "about": [
+   "Epworth Richmond is the flagship hospital of Epworth HealthCare, a not-for-profit private hospital group. Located on Bridge Road, it is one of Melbourne’s major private hospitals, with a large range of surgical and medical specialties, cancer care and rehabilitation.",
+   "Peninsula patients are often referred to Epworth Richmond because a particular surgeon or specialist operates there. That can mean a pre-admission visit, an early admission, a hospital stay and a series of follow-ups. The drive into Richmond, combined with inner-city parking, is a lot to ask of a family member, and patients are usually told not to drive themselves after surgery. Patients attending rehabilitation after surgery may also need regular trips for several weeks. For many, the combination of a long drive, inner-city traffic and expensive parking makes a direct ride from home the simplest choice, particularly when a family member would otherwise lose a full working day.",
+   "Taxi Peninsula offers a door-to-door alternative from anywhere on the Peninsula or Frankston. Book a sedan or a wheelchair accessible vehicle, add your building or ward to the notes, and ask for a fixed quote if you would like a set price. We run 24 hours, so very early admissions are no problem."
+  ],
+  "faq": [
+   {
+    "q": "Can you get me to an early admission at Epworth Richmond?",
+    "a": "Yes. We operate 24 hours a day, seven days a week, so early starts are routine for us. Book ahead, enter your admission time, and you will receive a confirmation by SMS or email. We recommend leaving a buffer for traffic into Richmond and for checking in at reception."
+   },
+   {
+    "q": "Where will the taxi stop on Bridge Road?",
+    "a": "Our driver will stop as close to the main entrance as is safe and permitted, keeping clear of tram stops and clearways. If you are going to a different building on the campus, include its name in your booking and we will drop you as close to that door as we can."
+   }
+  ]
+ },
+ {
+  "name": "Peter MacCallum Cancer Centre",
+  "type": "hospital",
+  "address": "305 Grattan Street, Melbourne VIC 3000",
+  "area": "Parkville",
+  "lat": -37.799,
+  "lng": 144.957,
+  "official": "https://www.petermac.org/",
+  "description": "Taxi from the Peninsula to Peter MacCallum Cancer Centre in Parkville for treatment and appointments. Wheelchair taxis too, 24/7, door to door.",
+  "entrance": "Peter Mac is in a large building that it shares with other cancer services. The main entrance is step-free; let us know your clinic or treatment area.",
+  "spot": "We drop off at the main entrance set-down area, or as close as traffic and works in the Parkville precinct allow.",
+  "parking": "Parking in Parkville is scarce and expensive, and the surrounding streets are busy with hospitals, the university and trams. A taxi drop-off is the easiest way in.",
+  "access": "The building is modern, with level access and lifts. Our drivers can help with a wheelchair or walker to the door.",
+  "tips": [
+   "Treatment schedules can change, so update your booking if your appointment time moves.",
+   "Bring a warm layer and a water bottle for long treatment days.",
+   "Use “pick up when ready” if your appointment involves waiting for test results.",
+   "Peter Mac, The Royal Melbourne Hospital and The Royal Women’s are close together, so name your hospital clearly."
+  ],
+  "pickup": "Most patients meet their driver at the front entrance after treatment. Tell us when you book and we will confirm by SMS or phone.",
+  "about": [
+   "Peter MacCallum Cancer Centre is Australia’s only public hospital solely dedicated to cancer treatment, research and education. It is located in the Parkville health precinct, in a building it shares with other cancer services, and treats patients from all over Victoria.",
+   "Peninsula patients may be referred to Peter Mac for specialist treatment, surgery, clinical trials or second opinions. Treatment often involves repeated visits, and the drive into Parkville, combined with city parking, can be exhausting for patients who are already tired from their therapy. Family members are not always able to take time off for every appointment. Some patients also take part in clinical trials or have scans and consultations on separate days. Keeping track of all those trips is easier when the travel is simply booked, confirmed by SMS or email, and taken care of on the day.",
+   "Taxi Peninsula provides door-to-door trips from home to the Peter Mac entrance and back. Carers are welcome to come along, and passengers who use a wheelchair can travel in it in our wheelchair accessible vans or Maxi WAT. We show a fare estimate when you book, give fixed quotes on request, and accept NDIS and aged-care accounts and MPTP cards."
+  ],
+  "faq": [
+   {
+    "q": "Is a taxi from the Peninsula to Peter Mac too far?",
+    "a": "Not at all. We travel anywhere in Melbourne and regularly take patients from the Peninsula into the Parkville hospitals. The fare estimate is shown when you book, and fixed quotes are available on request. Many patients find the cost worth it to avoid driving and parking on treatment days."
+   },
+   {
+    "q": "I feel unwell after treatment. Will the driver help?",
+    "a": "Yes. Our drivers help door to door, including with bags and walking you to your front door. Add a note to your booking if you would like extra support. If you would rather lie back or have more room, let us know, and remember a carer can travel with you."
+   }
+  ]
+ },
+ {
+  "name": "The Royal Melbourne Hospital",
+  "type": "hospital",
+  "address": "300 Grattan Street, Parkville VIC 3050",
+  "area": "Parkville",
+  "lat": -37.799,
+  "lng": 144.956,
+  "official": "https://www.thermh.org.au/",
+  "description": "Taxi and wheelchair taxi from the Peninsula to The Royal Melbourne Hospital, Parkville. Specialist visits, discharge and visiting, 24/7.",
+  "entrance": "The Royal Melbourne Hospital is a large site with a main entrance on Grattan Street and several other entries. Tell us your department so we can drop you at the closest step-free door.",
+  "spot": "We drop off at the main Grattan Street set-down area, or nearer to your clinic where that is possible. Building works in the Parkville precinct mean set-down points can change over time.",
+  "parking": "Parking in Parkville is limited and costly. Street parking nearby is heavily restricted, so being dropped off is the most reliable option.",
+  "access": "Main entrances are step-free with lifts. Our drivers will help with wheelchairs, walkers and bags.",
+  "tips": [
+   "Write your department and clinic name in the booking notes.",
+   "Major works in the Parkville precinct can change access, so allow extra time.",
+   "If a relative is being discharged, use “pick up when ready” rather than a fixed time."
+  ],
+  "pickup": "Patients usually meet the taxi at the main entrance on Grattan Street. Let us know the ward and we will confirm the meeting point.",
+  "about": [
+   "The Royal Melbourne Hospital is a major public teaching hospital in Parkville. It is one of Victoria’s major trauma centres and provides a very wide range of specialist services, from neurosciences to infectious diseases, for patients from right across the state.",
+   "Peninsula residents can be referred to The Royal Melbourne for specialist care that is not available locally, or may have a family member admitted after an accident or serious illness. That can mean long days of visiting, specialist appointments with an uncertain finish time, and eventually a discharge with a long trip home. Families visiting a patient in intensive care or a specialist ward may make the trip every day for weeks. Without a car, the journey from the Peninsula involves a train into the city and then a tram to Parkville, which is exhausting after a long day at a bedside.",
+   "Taxi Peninsula makes these trips easier. We pick up from your home on the Peninsula, drop you at the hospital entrance, and come back when you call. Book a sedan, or a wheelchair accessible van or Maxi WAT for passengers in wheelchairs. We run 24 hours, show a fare estimate before you book and offer fixed quotes on request."
+  ],
+  "faq": [
+   {
+    "q": "A relative is in The Royal Melbourne after an accident. Can you get us there?",
+    "a": "Yes. We run 24 hours, so we can take family members up from the Peninsula at short notice, although booking ahead is recommended. A group can travel together in a sedan or, for larger families or anyone in a wheelchair, in our wheelchair accessible vehicles, which seat up to six plus two wheelchairs in the Maxi WAT."
+   },
+   {
+    "q": "Can you bring a patient home to the Peninsula from The Royal Melbourne?",
+    "a": "Yes. Book a “pick up when ready” trip from the hospital to their home and tap “I’m ready” when discharge is complete. If they will travel in a wheelchair, choose a wheelchair accessible van, or the Maxi WAT for a heavier power chair. A carer can ride with them."
+   }
+  ]
+ },
+ {
+  "name": "The Royal Children’s Hospital",
+  "type": "hospital",
+  "address": "50 Flemington Road, Parkville VIC 3052",
+  "area": "Parkville",
+  "lat": -37.794,
+  "lng": 144.95,
+  "official": "https://www.rch.org.au/",
+  "description": "Taxi from the Peninsula to The Royal Children’s Hospital in Parkville. Child-friendly, wheelchair accessible taxis, 24/7 door-to-door help.",
+  "entrance": "The Royal Children’s Hospital has a main entrance on Flemington Road that is step-free and suitable for prams and wheelchairs.",
+  "spot": "Our driver stops in the set-down area by the main entrance. If your child is booked into a particular clinic or ward, add it to your notes.",
+  "parking": "Hospital parking is busy and costly, and nearby streets are restricted. A taxi lets parents walk straight in with their child rather than circling for a space.",
+  "access": "The building has level access, wide corridors and lifts, designed with children, families and wheelchair users in mind.",
+  "tips": [
+   "Bring your own car seat or booster for your child.",
+   "Children who use a wheelchair can travel in it in a wheelchair accessible van.",
+   "Allow extra time for traffic into Parkville, especially on weekday mornings.",
+   "Pack spare clothes and snacks in case appointments run long."
+  ],
+  "pickup": "Families usually meet the taxi at the main entrance on Flemington Road. Let us know the ward or clinic when booking.",
+  "about": [
+   "The Royal Children’s Hospital in Parkville is Victoria’s major specialist paediatric hospital. It treats babies, children and adolescents from across the state, including those with complex and rare conditions, and runs a wide range of specialist clinics alongside its emergency department and wards.",
+   "Families from the Mornington Peninsula and Frankston often travel to The Royal Children’s for specialist care. Appointments can be frequent, and a long drive into the city with an unwell child, followed by a search for parking, is hard on everyone. Some families need to bring siblings, a wheelchair or a lot of equipment. When a child is admitted, parents often travel back and forth between home and the hospital to care for siblings, collect clothes or relieve each other at the bedside. Having a dependable way to make those trips, at any hour, takes some of the pressure off a stressful time for the whole family.",
+   "Taxi Peninsula provides family-friendly, door-to-door trips. Children who travel in a wheelchair can stay in their chair, secured with four-point restraints, in our wheelchair accessible vans and Maxi WAT, and there is room for parents and siblings. We accept NDIS accounts and can give a fixed quote for the trip on request."
+  ],
+  "faq": [
+   {
+    "q": "Can my child travel in their wheelchair?",
+    "a": "Yes. Book a wheelchair accessible van, which has a rear ramp and four-point wheelchair restraints, plus a lap-sash seatbelt for your child. If they use a heavy power chair, choose the Maxi WAT with its hydraulic hoist. Parents and siblings can travel in the seats alongside."
+   },
+   {
+    "q": "Can you bring the whole family to the hospital?",
+    "a": "Yes. Let us know the number of passengers and car seats when booking. A sedan suits a small family, while our Maxi WAT carries up to six seated passengers plus two wheelchairs, which is useful if you have several children or a lot of equipment. Bring car seats for younger children."
+   }
+  ]
+ },
+ {
+  "name": "The Royal Women’s Hospital",
+  "type": "hospital",
+  "address": "Corner Grattan Street and Flemington Road, Parkville VIC 3052",
+  "area": "Parkville",
+  "lat": -37.798,
+  "lng": 144.955,
+  "official": "https://www.thewomens.org.au/",
+  "description": "Taxi from the Peninsula to The Royal Women’s Hospital in Parkville for pregnancy care, birth and clinics. Wheelchair taxis too, 24/7.",
+  "entrance": "The Royal Women’s main entrance is step-free and suitable for prams. Tell us which clinic or area you are visiting so the driver knows where to go.",
+  "spot": "The driver pulls into the drop-off area at the main entrance. The Royal Women’s, Royal Melbourne and Peter Mac are close together, so be specific in your booking.",
+  "parking": "Parking in Parkville is limited and expensive. A drop-off avoids having to leave a partner or new parent alone while the car is parked.",
+  "access": "The building has level access, lifts and space for prams and wheelchairs.",
+  "tips": [
+   "For the trip home with a newborn, bring your fitted baby capsule.",
+   "Clinic times can run late, so use “pick up when ready” for the return.",
+   "Name The Royal Women’s Hospital clearly, as several hospitals share the precinct."
+  ],
+  "pickup": "Families usually meet the taxi at the main entrance. Tell us the ward when you book and we will confirm the pick-up point.",
+  "about": [
+   "The Royal Women’s Hospital in Parkville is Australia’s largest specialist hospital dedicated to women and newborns. It provides maternity care, specialist women’s health services, gynaecology and care for newborn babies who need extra support.",
+   "Women from the Peninsula and Frankston may be referred to The Women’s for specialist pregnancy care, complex births or gynaecological treatment. That can mean many trips into the city over a pregnancy, often at times when driving is uncomfortable or not advised. Partners and family members also travel up to visit, and new parents need a safe way home. When a baby needs care in the newborn intensive or special care nursery, parents may travel to the hospital daily for weeks. Having a dependable ride from the Peninsula at any hour helps parents spend as much time with their baby as possible, without worrying about the drive or parking at the end of it.",
+   "Taxi Peninsula offers door-to-door trips for antenatal appointments, admissions, visits and the journey home. Bring your own baby capsule and the driver will give you time to fit it. Choose a wheelchair accessible vehicle if you use a wheelchair, and ask for a fixed quote for the longer trip from the Peninsula."
+  ],
+  "faq": [
+   {
+    "q": "Can I take a taxi home from The Royal Women’s with my new baby?",
+    "a": "Yes. Bring your own fitted baby capsule or car seat, and the driver will help with bags and give you time to install it safely. Book with “pick up when ready” so you can leave once discharge is complete, and tell us in the notes that you are travelling with a newborn."
+   },
+   {
+    "q": "I’m heavily pregnant and can’t drive. Can you take me to my appointments?",
+    "a": "Yes. We can take you to each appointment and bring you home, with a partner or support person travelling with you. Book online or call us. If you are in labour and need urgent care, call the hospital or Triple Zero (000) for advice rather than relying on a booked taxi."
+   }
+  ]
+ },
+ {
+  "name": "Royal Victorian Eye and Ear Hospital",
+  "type": "hospital",
+  "address": "32 Gisborne Street, East Melbourne VIC 3002",
+  "area": "East Melbourne",
+  "lat": -37.81,
+  "lng": 144.975,
+  "official": "https://www.eyeandear.org.au/",
+  "description": "Taxi from the Peninsula to the Royal Victorian Eye and Ear Hospital in East Melbourne. Help to the door after eye surgery, 24/7 bookings.",
+  "entrance": "The hospital’s main entrance on Gisborne Street is step-free. If your appointment is in a particular clinic, add it to your booking notes.",
+  "spot": "We drop off at the main entrance on Gisborne Street. The driver will help you to the door if your vision is affected.",
+  "parking": "Parking in East Melbourne is tight and mostly time-limited. Patients who have had drops or surgery cannot drive afterwards anyway.",
+  "access": "The entrance is step-free with lifts inside. Our drivers are happy to guide passengers with low vision from the vehicle to reception.",
+  "tips": [
+   "You cannot drive after eye drops that dilate your pupils, so book a taxi home.",
+   "Bring sunglasses for the trip home after an eye examination.",
+   "Mention in your booking notes if you have low vision and would like guiding to the door.",
+   "Clinic times can run long, so “pick up when ready” suits the return trip."
+  ],
+  "pickup": "Patients usually meet the taxi at the main entrance on Gisborne Street. Let us know when you book and we will call on arrival.",
+  "about": [
+   "The Royal Victorian Eye and Ear Hospital in East Melbourne is a specialist public hospital for eye, ear, nose and throat conditions. It treats patients from across Victoria, runs a large number of specialist clinics and is a major teaching and research centre.",
+   "Peninsula residents are often referred to the Eye and Ear for cataract surgery, retinal treatment, glaucoma care and ear, nose and throat procedures. Many of these appointments involve dilating drops or a procedure that makes driving unsafe, sometimes for the rest of the day. Patients with low vision may not drive at all. Cataract surgery is often done one eye at a time, which means several trips over a few months, each followed by a check-up the next day or soon after.",
+   "Taxi Peninsula provides door-to-door trips with drivers who will guide you to and from the entrance. Book a sedan for most trips, or a wheelchair accessible vehicle if needed. A family member can come with you, and you can use “pick up when ready” for the trip home so you are not rushed out of the clinic. MPTP cards are accepted for eligible passengers."
+  ],
+  "faq": [
+   {
+    "q": "Can you guide me if my vision is blurry after my appointment?",
+    "a": "Yes. Our drivers help door to door. They can meet you at the hospital entrance, guide you to the vehicle and walk you to your front door at home. Add a note when you book so the driver knows to allow extra time and offer an arm."
+   },
+   {
+    "q": "Is the Eye and Ear near the other city hospitals?",
+    "a": "It is in East Melbourne, close to St Vincent’s Hospital and the city centre, but it is separate from the Parkville hospitals. Give the full name when you book so your driver takes you to the right address on Gisborne Street."
+   }
+  ]
+ },
+ {
+  "name": "St Vincent’s Hospital Melbourne",
+  "type": "hospital",
+  "address": "41 Victoria Parade, Fitzroy VIC 3065",
+  "area": "Fitzroy",
+  "lat": -37.807,
+  "lng": 144.975,
+  "official": "https://www.svhm.org.au/",
+  "description": "Taxi and wheelchair taxi from the Peninsula to St Vincent’s Hospital Melbourne in Fitzroy for clinics, surgery and visits. 24/7 bookings.",
+  "entrance": "St Vincent’s has several buildings with their own entrances around Victoria Parade and nearby streets. Tell us your department and we will head for the nearest step-free entrance.",
+  "spot": "We drop you at the main entrance on Victoria Parade or as near to your clinic building as the streets allow.",
+  "parking": "Street parking around Fitzroy and East Melbourne is scarce and time-limited. A drop-off is much easier, especially for long appointments.",
+  "access": "Main entrances are step-free with lifts. Our drivers can help with wheelchairs, walkers and bags to the door.",
+  "tips": [
+   "Check which building your clinic is in, as St Vincent’s spans several.",
+   "Victoria Parade has trams and heavy traffic, so allow extra time.",
+   "Use “pick up when ready” after day procedures."
+  ],
+  "pickup": "The usual meeting point for patients going home is the main entrance. Tell us the ward and we will confirm the meeting point by SMS or phone.",
+  "about": [
+   "St Vincent’s Hospital Melbourne is a public teaching hospital in Fitzroy, on the edge of the city centre. Part of St Vincent’s Health Australia, a Catholic not-for-profit health provider, it offers a wide range of specialist services and has a long history of caring for inner-city communities.",
+   "Peninsula residents may be referred to St Vincent’s for specialist surgery or care, attend outpatient clinics there, or visit family who have been admitted. The trip into the inner city, plus parking, is tiring, particularly for older patients or those who need to come back several times. Patients attending regular clinics for a long-term condition may make the trip many times a year. Each visit means a long drive or several train and tram connections, and once you add the wait and the appointment itself, it is easy for a single check-up to take the whole day. A direct ride home at the end helps.",
+   "Taxi Peninsula takes you door to door from the Peninsula to St Vincent’s and back. Our sedans suit most trips, and our wheelchair accessible vans and Maxi WAT carry passengers in their chairs with room for carers. Book online, see the fare estimate before you confirm, or ask for a fixed quote."
+  ],
+  "faq": [
+   {
+    "q": "St Vincent’s has several buildings. Where will I be dropped?",
+    "a": "Unless you name another building, the driver heads for the main entrance. If your letter names a particular building or clinic, add it to your booking notes and the driver will take you as close to that entrance as the surrounding streets allow."
+   },
+   {
+    "q": "Can you take me home to the Peninsula after a day procedure at St Vincent’s?",
+    "a": "Yes. Book a “pick up when ready” trip home and tap “I’m ready” or call us once you are discharged. If you have been told not to travel alone, a family member can ride with you. Our driver will help you into the vehicle and to your door at home."
+   }
+  ]
+ },
+ {
+  "name": "Austin Hospital",
+  "type": "hospital",
+  "address": "145 Studley Road, Heidelberg VIC 3084",
+  "area": "Heidelberg",
+  "lat": -37.756,
+  "lng": 145.059,
+  "official": "https://www.austin.org.au/",
+  "description": "Taxi and wheelchair taxi from the Peninsula to Austin Hospital in Heidelberg for specialist care and spinal services. Door to door, 24/7.",
+  "entrance": "The Austin has a main entrance and several other entries for different towers and services. Tell us your department and we will aim for the closest step-free door.",
+  "spot": "We drop you at the main entrance set-down area or as close as possible to your clinic. The name of your tower or service on your letter helps.",
+  "parking": "Car parks on the campus are busy and walking distances can be long. A taxi drop-off spares patients the walk.",
+  "access": "Entrances are step-free with lifts. As the home of a major spinal service, the hospital is very used to wheelchair users arriving.",
+  "tips": [
+   "The Austin is on the far side of Melbourne from the Peninsula, so ask for a fixed quote.",
+   "Add your tower or clinic name to the booking notes.",
+   "Power chair users should book the Maxi WAT for its hydraulic hoist.",
+   "Use “pick up when ready” for long specialist appointments."
+  ],
+  "pickup": "Patients usually meet the taxi at the main entrance. Tell us your ward and we will confirm the meeting point.",
+  "about": [
+   "Austin Hospital in Heidelberg is a major public teaching hospital run by Austin Health. It provides a wide range of specialist services and is home to the Victorian Spinal Cord Service, as well as cancer care and other statewide specialties.",
+   "Peninsula residents may be referred to the Austin for specialist treatment that is only available there, including spinal cord injury care and rehabilitation. It is a long trip across Melbourne, and people with spinal injuries or complex conditions usually need a vehicle that can carry them in their own wheelchair. Families also visit for long periods while a loved one goes through rehabilitation after a spinal injury, and patients often return for regular reviews after going home. Having the right vehicle, booked in advance and driven by someone who understands how to secure a chair properly, makes those many trips across the city much less stressful.",
+   "Taxi Peninsula’s wheelchair accessible vans and Maxi WAT are built for this. The Maxi WAT’s hydraulic hoist handles heavier power chairs, and every wheelchair vehicle has four-point restraints and lap-sash seatbelts. Carers travel with the passenger, and we offer fixed quotes for the long trip from the Peninsula. NDIS and aged-care accounts are accepted."
+  ],
+  "faq": [
+   {
+    "q": "Can you transport someone with a spinal injury in their power chair?",
+    "a": "Yes. Book the Maxi WAT, which has a hydraulic hoist suitable for heavier power chairs and carries two wheelchairs plus six seated passengers. The chair is secured with four-point restraints and the passenger wears a lap-sash seatbelt. Let us know the chair type and any special requirements in your booking notes."
+   },
+   {
+    "q": "Is it practical to take a taxi from the Peninsula to Heidelberg?",
+    "a": "Yes. It is a long trip across Melbourne, but door-to-door travel is much easier than several train and bus connections. We show a fare estimate before you book and offer fixed quotes on request. NDIS and aged-care accounts can be used where your plan or package covers transport."
+   }
+  ]
+ },
+ {
+  "name": "Box Hill Hospital",
+  "type": "hospital",
+  "address": "8 Arnold Street, Box Hill VIC 3128",
+  "area": "Box Hill",
+  "lat": -37.814,
+  "lng": 145.118,
+  "official": "https://www.easternhealth.org.au/",
+  "description": "Taxi and wheelchair taxi from the Peninsula to Box Hill Hospital for appointments, visits and discharge. Door-to-door help, 24/7.",
+  "entrance": "Box Hill Hospital has a main entrance on Arnold Street with step-free access. Tell us your clinic or ward so the driver can choose the best entrance.",
+  "spot": "We drop off at the main entrance set-down area. If you are going to the emergency department, tell us so we head straight there.",
+  "parking": "Parking around the hospital and Box Hill’s busy centre is limited. A drop-off saves time, especially at peak visiting hours.",
+  "access": "The main building has step-free access and lifts. Drivers are happy to push a manual chair or carry bags to the door.",
+  "tips": [
+   "Add your clinic or ward name to the booking notes.",
+   "Traffic around Box Hill’s centre can be slow; allow extra time.",
+   "Ask for a fixed quote for the trip from the Peninsula."
+  ],
+  "pickup": "Patients usually meet the taxi at the main entrance on Arnold Street. We will call or message when we arrive.",
+  "about": [
+   "Box Hill Hospital is a major public hospital in Melbourne’s east, run by Eastern Health. It has an emergency department, a wide range of medical and surgical services and specialist clinics, serving a large population across the eastern suburbs.",
+   "Peninsula residents usually come to Box Hill to visit family who live in the east, or because a relative has been admitted there. Some are referred to specialist clinics on the site. It is a long trip from Frankston or the Peninsula, and without a car it involves several changes on public transport. When a parent who lives in the eastern suburbs is admitted, adult children from the Peninsula may need to make the trip many times over a short period. Some patients are also discharged from Box Hill to stay with family on the Peninsula while they recover, which means a long ride home with bags, medication and perhaps a new walking aid. We can handle all of those trips.",
+   "Taxi Peninsula provides direct, door-to-door trips from anywhere on the Peninsula to Box Hill Hospital. Choose a sedan or a wheelchair accessible vehicle, bring a carer along, and get a fare estimate or fixed quote before you travel. We run 24 hours, every day."
+  ],
+  "faq": [
+   {
+    "q": "Can you take me from Frankston to visit a relative at Box Hill Hospital?",
+    "a": "Yes. Book online with Box Hill Hospital as your destination, and choose a return pick-up time or “pick up when ready” for the trip home. Fare estimates are shown before you confirm, and fixed quotes are available on request for this longer trip across Melbourne."
+   },
+   {
+    "q": "Can you bring a patient from Box Hill Hospital to the Peninsula after discharge?",
+    "a": "Yes. Book a “pick up when ready” trip from Box Hill Hospital to their home on the Peninsula. Choose a wheelchair accessible vehicle if they are leaving in a wheelchair. A carer can travel with them, and our driver will help them to the door at home."
+   }
+  ]
+ },
+ {
+  "name": "The Alfred",
+  "type": "hospital",
+  "address": "55 Commercial Road, Melbourne VIC 3004",
+  "area": "Melbourne",
+  "lat": -37.846,
+  "lng": 144.982,
+  "official": "https://www.alfredhealth.org.au/",
+  "description": "Taxi and wheelchair taxi from the Peninsula to The Alfred on Commercial Road for clinics, surgery, visits and discharge. Book 24/7.",
+  "entrance": "The Alfred has a main entrance on Commercial Road and several other entrances around the site. Tell us your department and we will aim for the nearest step-free door.",
+  "spot": "We drop off at the main Commercial Road set-down area, or closer to your clinic where the site allows.",
+  "parking": "Parking at The Alfred is in high demand and street parking nearby is restricted. Being dropped at the door is quicker and less stressful.",
+  "access": "Entrances at The Alfred are step-free, with lifts to all wards. Our drivers can carry bags and help you to the entrance.",
+  "tips": [
+   "Add your department, clinic or ward to the booking notes.",
+   "Commercial Road and St Kilda Road are busy at peak times; allow extra time.",
+   "If a relative is being discharged, use “pick up when ready”.",
+   "Patients moving on to Caulfield Hospital for rehab can book us for later visiting trips."
+  ],
+  "pickup": "Patients usually meet the taxi at the main entrance on Commercial Road. Tell us your ward and we will confirm by SMS or phone.",
+  "about": [
+   "The Alfred is a major public teaching hospital in Melbourne, run by Alfred Health. It is home to one of Victoria’s major trauma centres and the statewide adult burns service, along with heart and lung transplant services and a broad range of other specialties.",
+   "Peninsula residents are often taken to The Alfred after a serious accident, or referred for specialist care. Family members may need to visit for weeks, and patients may return regularly for follow-up clinics after going home. The drive up the Nepean Highway and into the city, with limited parking at the end, is draining when you are already worried about a loved one. Patients transferred to Caulfield Hospital for rehabilitation, or discharged home with ongoing care, often need several trips back for clinics and reviews.",
+   "Taxi Peninsula takes you directly from home to The Alfred’s entrance. Choose a sedan, a wheelchair accessible van or a Maxi WAT, travel with a carer, and book a return at a set time or when you are ready. Fixed quotes are available on request, and NDIS and aged-care accounts and MPTP cards are accepted."
+  ],
+  "faq": [
+   {
+    "q": "A family member was taken to The Alfred after an accident. Can you get us there?",
+    "a": "Yes. We run 24 hours, so we can bring family members up from the Peninsula day or night, though booking ahead is recommended when possible. Several people can travel together, and our Maxi WAT seats up to six plus two wheelchairs if you need a larger vehicle."
+   },
+   {
+    "q": "Can I book regular trips for follow-up clinics at The Alfred?",
+    "a": "Yes. Book each appointment online, or call us to set up several bookings at once. Add the clinic name to the notes so the driver drops you at the right entrance. For the trip home, “pick up when ready” helps when clinic times run over."
+   }
+  ]
+ },
+ {
+  "name": "Melbourne Airport",
+  "type": "airport",
+  "address": "Melbourne Airport VIC 3045",
+  "area": "Tullamarine",
+  "lat": -37.669,
+  "lng": 144.841,
+  "official": "https://www.melbourneairport.com.au/",
+  "description": "Taxi and maxi taxi between the Mornington Peninsula and Melbourne Airport. Flight tracking, early starts, luggage help, 24/7 bookings.",
+  "entrance": "Each terminal has step-free access from the forecourt into check-in and arrivals, with lifts and ramps between levels. Tell us your airline so we head to the right terminal.",
+  "spot": "For departures we drop you at your terminal’s departures forecourt. For arrivals, we confirm the pick-up area by SMS or phone, as airport pick-up zones are separate from the terminal doors and can change.",
+  "parking": "Waiting at the kerb is not permitted, so drivers wait in the designated area until you have collected your bags. Adding your flight number lets us time this around your actual landing.",
+  "access": "Terminals have lifts, accessible toilets and assistance available through your airline. If you need wheelchair assistance inside the terminal, arrange it with your airline when you book your flight.",
+  "tips": [
+   "Add your flight number when booking so we track delays and early arrivals.",
+   "Tell us your airline and whether the flight is domestic or international; international flights use Terminal 2.",
+   "Groups and families with lots of luggage should book the Maxi WAT.",
+   "Book early-morning departures the day before, with time for check-in and security."
+  ],
+  "pickup": "",
+  "about": [
+   "Melbourne Airport at Tullamarine is the city’s main airport, handling both international flights and the majority of domestic services. It has four terminals, with international flights operating from Terminal 2 and domestic flights spread across the other terminals by airline.",
+   "For people on the Mornington Peninsula and in Frankston, Tullamarine is on the far side of Melbourne, and getting there with luggage before a dawn flight is a real hassle. Long-term parking adds up over a holiday, and asking a friend to drive across the city at 4am is a big favour. Coming home after a long-haul flight, few people feel like driving. Families heading away for school holidays also need room for suitcases, prams and car seats.",
+   "Taxi Peninsula runs airport transfers 24 hours a day. Add your flight number and we track your flight, so your driver is ready when you land, even if you are early or delayed. Our drivers help with bags, sedans suit couples and solo travellers, and the Maxi WAT carries larger groups or wheelchair users with their luggage. You will see a fare estimate when booking, and fixed quotes are available on request."
+  ],
+  "faq": [
+   {
+    "q": "What happens if my flight into Melbourne Airport is delayed?",
+    "a": "Add your flight number when you book and we track your flight. If it lands late, your pick-up moves with it, and if it lands early, we adjust where possible. Once you have your bags, call or reply to your confirmation and we will direct you to the driver in the airport pick-up area."
+   },
+   {
+    "q": "Can you take a family with lots of luggage to the airport?",
+    "a": "Yes. Tell us how many people are travelling and how much luggage you have. A sedan suits smaller groups, while our Maxi WAT carries up to six seated passengers plus luggage, or wheelchairs and their users. Drivers load and unload your bags at both ends."
+   }
+  ]
+ },
+ {
+  "name": "Avalon Airport",
+  "type": "airport",
+  "address": "Avalon VIC 3212",
+  "area": "Avalon",
+  "lat": -38.039,
+  "lng": 144.469,
+  "official": "https://www.avalonairport.com.au/",
+  "description": "Taxi from the Mornington Peninsula and Frankston to Avalon Airport near Geelong. Flight tracking, luggage help, maxi for groups, 24/7.",
+  "entrance": "Avalon has a single, compact terminal with step-free access from the forecourt into check-in and arrivals.",
+  "spot": "We drop you right at the terminal’s departure area. For arrivals, we will confirm the pick-up spot when you land, as it is separate from the terminal door.",
+  "parking": "The terminal is small, so walking distances are short. Drivers wait in the permitted pick-up area, and we track your flight so waiting is kept to a minimum.",
+  "access": "The terminal is compact, which keeps walking short for travellers with limited mobility. Arrange any assistance at the gate directly with your airline.",
+  "tips": [
+   "Check whether your flight departs from Avalon or Melbourne Airport; it is easy to mix them up.",
+   "Add your flight number so we can track your arrival.",
+   "Avalon is between Melbourne and Geelong, so allow plenty of time for the trip around the bay.",
+   "Ask for a fixed quote if you prefer a set price for the longer trip."
+  ],
+  "pickup": "",
+  "about": [
+   "Avalon Airport is a smaller airport between Melbourne and Geelong, near the town of Lara. It handles a limited number of domestic flights, mostly with low-cost airlines, and is popular with travellers from Geelong and the west who want a quicker, simpler terminal experience.",
+   "For Peninsula residents, Avalon sometimes offers a cheaper fare or a better flight time, but it is a long way around the bay by road. Public transport options to the airport are limited, especially for early or late flights, and parking for several days adds to the cost of the trip. From the Peninsula, the route runs around the top of the bay and through the western suburbs, so the drive takes some planning, particularly for an early departure. Coming home late in the evening, a booked ride waiting at the terminal is much easier than finding your car in a dark car park and making the long drive back to the Peninsula yourself.",
+   "Taxi Peninsula can take you to Avalon from anywhere on the Peninsula or in Frankston, at any hour. Add your flight number for the trip home and we will track your landing. Sedans suit most travellers, and the Maxi WAT takes groups, wheelchair users and bulky luggage. Fixed quotes are available on request."
+  ],
+  "faq": [
+   {
+    "q": "Is Avalon Airport the same as Melbourne Airport?",
+    "a": "No. Avalon is a separate airport between Melbourne and Geelong, while Melbourne Airport is at Tullamarine in the north-west. Check your booking confirmation to see which one your flight uses, and enter the correct airport when you book your taxi so we plan the right route and timing."
+   },
+   {
+    "q": "Can you pick me up from Avalon Airport late at night?",
+    "a": "Yes. We run 24 hours a day. Add your flight number to the booking and we track your flight, so the driver is there when you land, even if your flight is delayed. Once you have your bags, call us or reply to your confirmation and we will direct you to the driver."
+   }
+  ]
+ },
+ {
+  "name": "Moorabbin Airport",
+  "type": "airport",
+  "address": "Moorabbin Airport VIC 3194",
+  "area": "Moorabbin Airport",
+  "lat": -37.976,
+  "lng": 145.102,
+  "official": "",
+  "description": "Taxi to Moorabbin Airport for flight lessons, charter flights and aviation work. Easy trips from Frankston and the Peninsula, 24/7.",
+  "entrance": "Moorabbin Airport is spread out, with many separate buildings, hangars and flying schools rather than a single terminal. Tell us the business or building you are heading to.",
+  "spot": "We drop you at the address of your flying school, charter operator or business. A street number or business name in your booking notes is essential.",
+  "parking": "Parking is generally available near the businesses on site, but a taxi is handy if you are leaving a car elsewhere or flying out on a charter.",
+  "access": "Access varies building by building. Let us know if you need a step-free entrance and we will help you find the closest door.",
+  "tips": [
+   "Give us the exact business name or street address on the airport site, not just “Moorabbin Airport”.",
+   "If you are flying out on a charter, tell us the departure time so we allow enough time.",
+   "Student pilots can book regular trips to lessons."
+  ],
+  "pickup": "",
+  "about": [
+   "Moorabbin Airport is a busy general aviation airport in Melbourne’s south-east. It is known for flight training, with many flying schools on site, along with charter operators, aircraft maintenance businesses and other aviation services.",
+   "People from Frankston and the Peninsula travel to Moorabbin Airport for flying lessons, charter or private flights, and work at the many aviation businesses on the site. Others visit for business meetings or to collect someone arriving on a private flight. Without a single terminal, it is easy for a first-time visitor to end up at the wrong building. Student pilots in particular often have early lessons and may be too young to drive or not have a car. Charter passengers and people collecting aircraft also need a reliable way to reach a specific hangar on time, particularly when flights are timed around weather and daylight.",
+   "Taxi Peninsula takes you directly to the business or building you need. Add the exact address or business name to your booking, and our driver will find the right entrance. Sedans suit most trips, and we can send a wheelchair accessible vehicle where needed. We run 24 hours, so early lessons and late returns are not a problem."
+  ],
+  "faq": [
+   {
+    "q": "Moorabbin Airport doesn’t have one terminal. Where will you drop me?",
+    "a": "We drop you at the specific business or building you tell us. Include the flying school, charter company or street address in your booking notes, and the driver will take you there. If you are being picked up, tell us the same details so the driver can find you quickly."
+   },
+   {
+    "q": "Can you take me to regular flying lessons?",
+    "a": "Yes. Many student pilots need reliable transport for early lessons or when they cannot drive. Book each trip online, or call us to arrange several bookings. Remember that lessons may be cancelled due to weather, so update or cancel your booking if your instructor reschedules."
+   }
+  ]
+ },
+ {
+  "name": "Essendon Fields Airport",
+  "type": "airport",
+  "address": "Essendon Fields VIC 3041",
+  "area": "Essendon Fields",
+  "lat": -37.728,
+  "lng": 144.902,
+  "official": "https://www.essendonfields.com.au/",
+  "description": "Taxi from the Peninsula to Essendon Fields Airport for charter, business jet and regional flights. Flight tracking, 24/7 bookings.",
+  "entrance": "Different operators at Essendon Fields use different terminal buildings. Tell us your operator and we will take you to the right entrance.",
+  "spot": "We drop you at your operator’s terminal or building. The operator’s name and any address details on your itinerary help the driver.",
+  "parking": "Parking is available on the airport precinct, but a taxi avoids leaving a car for the length of your trip.",
+  "access": "Access depends on the operator’s building. Let us know if you need a step-free entrance and we will help you find it.",
+  "tips": [
+   "Bring your operator’s name and departure details when you book.",
+   "Add your flight number or tail number for pick-ups if you have one.",
+   "Allow for traffic across the city, particularly on the freeways at peak times."
+  ],
+  "pickup": "",
+  "about": [
+   "Essendon Fields Airport is in Melbourne’s north-west, close to Essendon and Strathmore. Once Melbourne’s main airport, it now handles mainly business and private aviation, charter flights, and some regional services.",
+   "Peninsula residents fly from Essendon Fields for charter flights, business trips, regional connections and private flights. It is a long trip across the city from Frankston or the Mornington Peninsula, and charter departures are often early in the morning. Business travellers heading to meetings interstate often fly from here to save time, and regional services attract passengers who prefer its smaller scale. Without a car, getting there from the south-east involves a train into the city and another connection out again, which is impractical for an early departure with luggage. A direct taxi is far simpler, and you can be dropped at your operator’s door.",
+   "Taxi Peninsula provides 24-hour transfers between your home and Essendon Fields. We drop you at your operator’s building, help with luggage, and track your flight for return pick-ups where possible. Choose a sedan or, for larger groups or wheelchair users, our Maxi WAT. Fixed quotes are available on request."
+  ],
+  "faq": [
+   {
+    "q": "Is Essendon Fields the same as Melbourne Airport?",
+    "a": "No. Essendon Fields is a separate airport closer to the city, used mainly for business jets, charter and some regional flights. Melbourne Airport at Tullamarine handles most commercial flights. Check your itinerary and enter the correct airport when you book."
+   },
+   {
+    "q": "Can you meet me after a charter flight into Essendon Fields?",
+    "a": "Yes. Book a pick-up and include your operator’s name and expected arrival time, plus a flight number if you have one. We will confirm the meeting point by SMS or phone once you land, and the driver will help with your bags and take you straight home to the Peninsula."
+   }
+  ]
+ },
+ {
+  "name": "Searoad Ferries Sorrento",
+  "type": "transport",
+  "address": "Sorrento VIC 3943",
+  "area": "Sorrento",
+  "lat": -38.338,
+  "lng": 144.743,
+  "official": "https://www.searoad.com.au/",
+  "description": "Taxi to the Searoad Ferries terminal in Sorrento for the crossing to Queenscliff. Luggage help and wheelchair taxis, 24/7 bookings.",
+  "entrance": "The Searoad terminal at Sorrento has step-free access for foot passengers. Our driver will drop you as close as the terminal’s set-down area allows.",
+  "spot": "We drop off outside the terminal, where foot passengers can walk straight in. Tell us if you have bikes, prams or a lot of luggage.",
+  "parking": "The terminal car park and Sorrento streets are very busy in summer. Being dropped off avoids leaving a car for the day.",
+  "access": "Foot passenger access to the terminal and ferry is generally step-free. Check with Searoad if you need assistance boarding with a wheelchair.",
+  "tips": [
+   "Check Searoad’s timetable before booking and allow time to buy your ticket.",
+   "Summer weekends and school holidays are busy; book your taxi ahead.",
+   "If you are going on to Geelong or Torquay, arrange onward transport from Queenscliff before you cross.",
+   "Tell us if you have a wheelchair so we send a wheelchair accessible vehicle."
+  ],
+  "pickup": "",
+  "about": [
+   "Searoad Ferries runs the car and passenger ferry across the mouth of Port Phillip between Sorrento and Queenscliff. The crossing links the Mornington Peninsula with the Bellarine Peninsula, Geelong and the Great Ocean Road, and is a popular day trip in its own right, with views of the heads and sometimes dolphins.",
+   "Many people cross as foot passengers, whether they are visiting Queenscliff for the day, connecting to Geelong or heading further west. Others are holidaymakers staying in Sorrento, Rye or Blairgowrie who want to see the Bellarine without bringing their car. Getting to the terminal without driving is easy with a taxi, particularly in summer when parking is scarce. Groups of friends, cyclists and families with young children all use the ferry, and getting everyone to the terminal on time is easier when nobody has to worry about where to leave the car.",
+   "Taxi Peninsula can take you to the Sorrento terminal from anywhere on the Peninsula, and pick you up again when you return. Our drivers help with luggage, and our wheelchair accessible vehicles carry passengers in their chairs. Check the ferry timetable, choose a pick-up time with plenty of leeway, and book online or by phone."
+  ],
+  "faq": [
+   {
+    "q": "Can you pick me up when I come back on the ferry?",
+    "a": "Yes. Book a pick-up from the Searoad terminal in Sorrento for the time your return ferry is due. If you are not sure which crossing you will catch, choose “pick up when ready” and call us or tap “I’m ready” once you know. The driver will meet you near the terminal."
+   },
+   {
+    "q": "How early should I arrive for the ferry?",
+    "a": "Check Searoad Ferries’ own advice for foot passengers, as it can vary with the season. As a general rule, allow time to buy a ticket and walk on, and give yourself extra leeway on summer weekends when traffic around Sorrento is slow. We will plan your pick-up time accordingly."
+   }
+  ]
+ },
+ {
+  "name": "Stony Point Ferry Terminal",
+  "type": "transport",
+  "address": "Stony Point VIC",
+  "area": "Stony Point",
+  "lat": -38.373,
+  "lng": 145.223,
+  "official": "",
+  "description": "Taxi to Stony Point Ferry Terminal for ferries to French Island and Phillip Island. Luggage help, wheelchair taxis, 24/7 bookings.",
+  "entrance": "The terminal is at the end of the Stony Point jetty area. Access to the waiting area is generally level, though the pier and gangways can vary with the tide.",
+  "spot": "We drop you near the ferry terminal entrance, as close to the jetty as vehicles are allowed. Tell us if you have bikes or bulky luggage.",
+  "parking": "Parking is available near the terminal, but a taxi saves leaving a car behind while you are on the islands.",
+  "access": "Boarding can involve ramps or gangways that vary with tides. If you use a wheelchair, check with the ferry operator about boarding before you travel.",
+  "tips": [
+   "Check the ferry timetable before booking your taxi.",
+   "If you are staying on French Island or Phillip Island, book your return pick-up in advance.",
+   "Bring a jacket, as the jetty can be windy and cold."
+  ],
+  "pickup": "",
+  "about": [
+   "Stony Point Ferry Terminal is on Western Port, at the end of the road through Crib Point. Passenger ferries run from here to Tankerton on French Island and to Cowes on Phillip Island, making Stony Point the main gateway between the Mornington Peninsula and the Western Port islands.",
+   "People catch the ferry for day trips to French Island’s walking and cycling tracks, for visits to Cowes, or to commute to work on the islands. The terminal sits next to Stony Point railway station, but trains on this line are infrequent, so many travellers prefer a direct taxi. French Island has very limited roads and services, so visitors often travel light and on foot or by bike. Residents of the islands also cross to the mainland for appointments, shopping and to connect with trains, and need a reliable ride from the jetty to wherever they are going on the Peninsula or in Frankston.",
+   "Taxi Peninsula takes you to Stony Point from anywhere on the Peninsula or in Frankston, with help for luggage and bikes. Our wheelchair accessible vehicles carry passengers in their chairs, and you can book a return pick-up for when your ferry comes back. Check the timetable, then book online or call us."
+  ],
+  "faq": [
+   {
+    "q": "Can you meet me when the ferry comes back to Stony Point?",
+    "a": "Yes. Book a pick-up from Stony Point for the time your return ferry is due. If plans change, use “pick up when ready” and call us or tap “I’m ready” when you know your arrival time. The driver will wait near the terminal entrance."
+   },
+   {
+    "q": "Can I bring my bike in the taxi?",
+    "a": "Tell us when you book. A bike may fit in a sedan depending on its size, but a wheelchair accessible van or Maxi WAT has more room. Our drivers will help load and unload, and we will make sure it is secured for the trip."
+   }
+  ]
+ },
+ {
+  "name": "Station Pier (Port Melbourne)",
+  "type": "transport",
+  "address": "Port Melbourne VIC 3207",
+  "area": "Port Melbourne",
+  "lat": -37.845,
+  "lng": 144.931,
+  "official": "",
+  "description": "Taxi from the Peninsula to Station Pier in Port Melbourne for cruise ship departures. Luggage help, maxi for groups, 24/7 bookings.",
+  "entrance": "Station Pier has a passenger terminal with step-free access. On cruise days, the cruise line and port set up specific drop-off and check-in arrangements.",
+  "spot": "We drop you in the area set aside for cruise passengers on embarkation day. Follow signs and staff instructions to check-in.",
+  "parking": "Parking near Station Pier is limited on cruise days. A taxi saves parking a car for the length of your cruise.",
+  "access": "The terminal is step-free. If you need wheelchair assistance boarding, arrange it through your cruise line in advance.",
+  "tips": [
+   "Check your cruise line’s check-in time and book your taxi to arrive within your allotted window.",
+   "Spirit of Tasmania now departs from Geelong, not Station Pier; check where your ship leaves from.",
+   "Families with lots of luggage should book the Maxi WAT.",
+   "For your return, book a pick-up for the morning your ship docks, and confirm the time once you are back in port."
+  ],
+  "pickup": "",
+  "about": [
+   "Station Pier in Port Melbourne is Melbourne’s main cruise ship terminal. During the cruise season, large ships call here regularly, both for round trips from Melbourne and as a port of call on longer voyages.",
+   "Peninsula residents heading off on a cruise need to get themselves and their luggage to Port Melbourne for a set check-in window. Parking near the pier is limited and costly for the length of a cruise, and it is a long drive home after disembarking. Cruise passengers often travel with large suitcases and need to arrive within a specific check-in window, which makes timing important. On busy days, more than one ship can be in port and the roads around the pier get congested. Coming home, passengers disembark early in the morning and often face a long wait for other transport. For groups of friends or extended families cruising together, a single larger vehicle keeps everyone and their luggage together.",
+   "Taxi Peninsula provides direct transfers to and from Station Pier. Our drivers help with bags, sedans suit couples, and our Maxi WAT takes groups and wheelchair users with luggage. Book ahead for embarkation day, and book a pick-up for when your ship returns. Fixed quotes are available on request."
+  ],
+  "faq": [
+   {
+    "q": "When should I book my taxi to Station Pier?",
+    "a": "Check your cruise documents for your check-in time and book a pick-up that gets you there within that window, allowing for traffic. Book a few days ahead, as cruise days are busy. Add any special requirements, such as a wheelchair or lots of luggage, in your booking notes."
+   },
+   {
+    "q": "Can you pick us up from Station Pier when our cruise ends?",
+    "a": "Yes. Book a pick-up for the day your ship returns, and use “pick up when ready” if you are not sure what time you will disembark. Once you have collected your luggage, call us or tap “I’m ready” and we will direct you to the driver."
+   }
+  ]
+ },
+ {
+  "name": "Frankston Station",
+  "type": "station",
+  "address": "Frankston VIC 3199",
+  "area": "Frankston",
+  "lat": -38.143,
+  "lng": 145.126,
+  "official": "",
+  "description": "Taxi pick-ups from Frankston Station to anywhere on the Mornington Peninsula. Wheelchair taxis available, 24/7, book ahead or on arrival.",
+  "entrance": "Frankston Station has step-free access between the platforms, concourse and street, with a bus interchange alongside.",
+  "spot": "We meet you at a permitted pick-up point beside the station. The driver will confirm the exact spot by SMS or phone when they arrive.",
+  "parking": "Stopping directly outside the station is restricted, and the bus interchange is for buses only. Drivers wait in a legal pick-up area and call you when they are there.",
+  "access": "The station is accessible with ramps and lifts. If you are travelling with a wheelchair, book a wheelchair accessible taxi so we can meet you as you come off the train.",
+  "tips": [
+   "Book ahead if your train arrives late at night, so the taxi is waiting.",
+   "Tell us which train you are on, so the driver can allow for delays.",
+   "Connections to the Stony Point line are at Frankston; let us know if you have missed one and want a taxi instead.",
+   "Use the station name and our pick-up confirmation to find the driver quickly."
+  ],
+  "pickup": "",
+  "about": [
+   "Frankston Station is the end of the Frankston line and the main rail gateway to the Mornington Peninsula. It was rebuilt with a modern station building and bus interchange, and it is also where passengers change for the diesel shuttle to Stony Point.",
+   "Many people heading to the Peninsula arrive at Frankston by train and then need to get to Mornington, Mount Martha, Rosebud, Sorrento or the hinterland. Bus connections exist, but they can be slow or infrequent, especially at night and on weekends, and they are hard work with luggage or a wheelchair. Late at night, waiting for a bus after a train trip can be uncomfortable, and many passengers prefer to have a taxi booked and waiting. Others arrive with luggage after flying into Melbourne, or with a wheelchair or mobility aid, and need a vehicle that can take them directly to their door. Weekend visitors heading to the wineries or beaches also use the station as their starting point.",
+   "Taxi Peninsula picks up from Frankston Station 24 hours a day. Book ahead with your train time and the driver will meet you at the pick-up point, or call when you arrive. Sedans suit most trips, and our wheelchair accessible vans and Maxi WAT carry passengers in their chairs. MPTP cards, NDIS and aged-care accounts are accepted."
+  ],
+  "faq": [
+   {
+    "q": "Can I book a taxi to meet me at Frankston Station late at night?",
+    "a": "Yes. We run 24 hours a day. Book ahead with your expected arrival time and the driver will be waiting at the pick-up area. If your train is delayed, call us or reply to your confirmation and we will adjust. This is a good way to avoid waiting for a late bus."
+   },
+   {
+    "q": "I’ve missed the Stony Point train. Can you take me instead?",
+    "a": "Yes. If you have missed your connection at Frankston, we can take you straight to Stony Point, Hastings, Crib Point or anywhere else on the Peninsula. Book online or call us, and the driver will meet you near the station."
+   }
+  ]
+ },
+ {
+  "name": "Southern Cross Station",
+  "type": "station",
+  "address": "Spencer Street, Melbourne VIC 3000",
+  "area": "Melbourne CBD",
+  "lat": -37.818,
+  "lng": 144.953,
+  "official": "",
+  "description": "Taxi from Southern Cross Station home to Frankston or the Mornington Peninsula after V/Line, coach or SkyBus trips. Book 24/7 online.",
+  "entrance": "Southern Cross has step-free access throughout, with lifts and ramps connecting platforms, the concourse and the street.",
+  "spot": "We meet you at a permitted pick-up point near the station. The driver will confirm the spot by SMS or phone, as the station is large and has several exits.",
+  "parking": "Stopping near the station is restricted and the surrounding streets are busy. Drivers wait in a legal pick-up spot and call you when they arrive.",
+  "access": "The station is fully accessible, with lifts and level access. If you are in a wheelchair, book a wheelchair accessible taxi and tell us which exit you are near.",
+  "tips": [
+   "Tell us which service you are arriving on (V/Line, coach or SkyBus) so we can plan the meeting point.",
+   "Allow time to walk from your platform to the exit.",
+   "Ask for a fixed quote for the trip back to the Peninsula.",
+   "If you have lots of luggage, book a larger vehicle."
+  ],
+  "pickup": "",
+  "about": [
+   "Southern Cross Station on Spencer Street is Melbourne’s main hub for regional and interstate travel. It is the terminus for V/Line regional trains and coaches, interstate trains and coaches, and the SkyBus service from Melbourne Airport, as well as being a major metropolitan station.",
+   "Peninsula residents often arrive at Southern Cross after a trip to regional Victoria, an interstate train, or the SkyBus from the airport. From there, getting home to Frankston or further down the Peninsula involves a train change and possibly a bus, which is tiring with luggage, especially late at night. Travellers coming home from the airport on SkyBus often have large suitcases and may have been travelling for many hours. Those returning on V/Line from regional Victoria may arrive late in the evening, when trains to Frankston run less often. A direct taxi saves several transfers and gets you home without carrying bags up and down platforms.",
+   "Taxi Peninsula picks up from Southern Cross and takes you straight home. Book ahead with your arrival time, or call when you get in. Our drivers help with bags, and our wheelchair accessible vehicles carry passengers in their chairs. Fixed quotes are available on request for the trip down to the Peninsula."
+  ],
+  "faq": [
+   {
+    "q": "Can you pick me up at Southern Cross after a V/Line trip?",
+    "a": "Yes. Book ahead with your expected arrival time and we will meet you at a pick-up point near the station. If your train is late, call us or reply to your confirmation. We can then take you straight home to Frankston or anywhere on the Mornington Peninsula."
+   },
+   {
+    "q": "Where should I wait for my taxi at Southern Cross?",
+    "a": "Southern Cross is large with several exits. When the driver arrives, they will confirm the pick-up spot by SMS or phone. Tell us which exit you are near or which service you arrived on, and the driver will meet you as close as possible."
+   }
+  ]
+ },
+ {
+  "name": "Flinders Street Station",
+  "type": "station",
+  "address": "Corner Flinders Street and Swanston Street, Melbourne VIC 3000",
+  "area": "Melbourne CBD",
+  "lat": -37.818,
+  "lng": 144.967,
+  "official": "",
+  "description": "Taxi from Flinders Street Station to Frankston or the Peninsula after a night in the city. Wheelchair taxis available, 24/7 bookings.",
+  "entrance": "Flinders Street Station has step-free access from the main entrance on the corner of Flinders and Swanston Streets, with lifts and ramps to most platforms.",
+  "spot": "The driver collects you from a nearby street where taxis are allowed to stop. The driver will confirm the spot by SMS or phone, as streets around the station are busy and stopping is restricted.",
+  "parking": "Flinders Street and Swanston Street have trams, restricted stopping and heavy foot traffic. The driver will phone you from a nearby spot where stopping is allowed.",
+  "access": "The station has lifts and ramps to most platforms. If you are in a wheelchair, book a wheelchair accessible taxi and tell us where you are waiting.",
+  "tips": [
+   "The clocks above the main entrance are a well-known meeting point, but the driver may need to meet you nearby where stopping is permitted.",
+   "Book ahead after major events, when demand is high.",
+   "Request a fixed quote if you would like a set price for the ride home.",
+   "Tell us how many are travelling if you are in a group."
+  ],
+  "pickup": "",
+  "about": [
+   "Flinders Street Station is Melbourne’s best-known landmark station, at the corner of Flinders and Swanston Streets opposite Federation Square. It is the hub of the metropolitan train network and the start of many trips home, including on the Frankston line.",
+   "Peninsula residents often head into the city for a show, a sporting event at the MCG or Rod Laver Arena, or a night out. Getting home late can mean a long train ride to Frankston followed by a wait for a bus or a taxi. After a big event, crowds on trains can be heavy. For groups, a single taxi or Maxi WAT can be more convenient and comfortable than several people travelling separately by train and then needing a lift from Frankston. Passengers with wheelchairs or mobility aids also find a direct ride much easier than crowded late-night trains and station changes.",
+   "Taxi Peninsula can pick you up from Flinders Street and take you straight home. Book ahead with your expected time and the driver will meet you at a permitted spot nearby. Groups can travel together in our Maxi WAT, and wheelchair users are well catered for. Fixed quotes are available on request."
+  ],
+  "faq": [
+   {
+    "q": "Can you pick me up after a concert or game in the city?",
+    "a": "Yes. Book ahead with your expected finish time, or use “pick up when ready” and call us when you are ready. The driver will meet you at a permitted spot near Flinders Street Station. After big events, roads are busy, so allow a little extra time."
+   },
+   {
+    "q": "Can a group of us travel together?",
+    "a": "Yes. Let us know how many are in your group when you make the booking. Our Maxi WAT carries up to six seated passengers plus two wheelchairs, which suits groups heading home together after a night out. A sedan suits smaller groups, and everyone travels straight home without changing trains at Frankston."
+   }
+  ]
+ },
+ {
+  "name": "Stony Point Station",
+  "type": "station",
+  "address": "Stony Point VIC",
+  "area": "Stony Point",
+  "lat": -38.374,
+  "lng": 145.222,
+  "official": "",
+  "description": "Taxi from Stony Point Station to Hastings, Crib Point or anywhere on the Peninsula. Meet the ferry or train, wheelchair taxis available.",
+  "entrance": "Stony Point Station is a small station at the end of the line, beside the ferry terminal. If you need step-free access, mention it when you book and the driver will meet you at the most suitable point.",
+  "spot": "We meet you beside the station or near the ferry terminal, depending on where you are coming from. The driver will confirm by SMS or phone.",
+  "parking": "There is space to stop near the station, and our driver will wait nearby until you are ready.",
+  "access": "The station is small and quiet, with a short distance from platform to street. If you are travelling with a wheelchair, book a wheelchair accessible taxi.",
+  "tips": [
+   "Trains on the Stony Point line are infrequent, so book ahead if you need to connect with a particular train or ferry.",
+   "If you are arriving by ferry, tell us which ferry you are on.",
+   "The area is quiet late at night, so book in advance for evening pick-ups."
+  ],
+  "pickup": "",
+  "about": [
+   "Stony Point Station is the end of the Stony Point line, a diesel shuttle service that runs from Frankston through Baxter, Somerville, Hastings and Crib Point. It sits right next to the Stony Point ferry terminal, where ferries leave for French Island and Phillip Island.",
+   "Passengers arriving at Stony Point by train or ferry often need to get somewhere the train does not go, such as Balnarring, Flinders, Red Hill or back up to Mornington. Trains run only every so often, and bus options from Stony Point are very limited, so a taxi is often the most practical choice. Island residents arriving on the ferry for medical appointments in Frankston or beyond often need a direct ride, and visitors returning from a day on French Island may arrive tired and laden with bikes or bags. Locals from Crib Point and nearby areas who do not drive also rely on taxis for trips to Hastings, Frankston or Mornington. Late in the day, when trains are far apart, a booked taxi waiting at the station saves a long wait in a quiet spot.",
+   "Taxi Peninsula picks up from Stony Point Station and the ferry terminal at any hour. Book ahead with your arrival time, and we will be there when you arrive. Sedans suit most trips, and our wheelchair accessible vehicles carry passengers in their chairs."
+  ],
+  "faq": [
+   {
+    "q": "Can you meet me at Stony Point when I get off the ferry?",
+    "a": "Yes. Book a pick-up at Stony Point for the ferry’s arrival time, and the driver will meet you near the terminal or station. If the ferry is delayed, call us or reply to your confirmation. This is particularly useful for evening arrivals, when the area is quiet."
+   },
+   {
+    "q": "Is it easier to get a taxi from Stony Point than wait for a train?",
+    "a": "Often, yes. The Stony Point line runs infrequently, and the next train may be a long wait. A taxi takes you straight to your destination, anywhere on the Peninsula or further afield. Book ahead or call us when you arrive."
+   }
+  ]
+ },
+ {
+  "name": "Bayside Shopping Centre",
+  "type": "shopping",
+  "address": "Frankston VIC 3199",
+  "area": "Frankston",
+  "lat": -38.142,
+  "lng": 145.124,
+  "official": "",
+  "description": "Taxi from Bayside Shopping Centre in Frankston home with your shopping. Driver helps with bags, wheelchair taxis available, 24/7 bookings.",
+  "entrance": "Bayside Shopping Centre has several entrances to different parts of the centre. Most are step-free.",
+  "spot": "We pick you up at the entrance you choose, where stopping is permitted. Tell us which entrance and the driver will confirm by phone.",
+  "parking": "The centre has its own car parks, and stopping at the entrances is restricted. Drivers wait in a permitted pick-up spot and call you when they arrive.",
+  "access": "The centre has lifts and step-free paths between levels. Let us know if you need help with shopping bags from the entrance to the taxi.",
+  "tips": [
+   "Tell us which entrance you will be waiting at.",
+   "Use “pick up when ready” if you are not sure how long your shopping will take.",
+   "The driver will help load your shopping into the boot and carry it to your door."
+  ],
+  "pickup": "",
+  "about": [
+   "Bayside Shopping Centre is the main shopping centre in central Frankston, close to the train station and the foreshore. It has supermarkets, larger stores, specialty shops and food outlets, and is a regular stop for residents across Frankston and the northern Peninsula.",
+   "Many of our passengers use Bayside for their weekly shop, but getting home with heavy bags on the bus is hard work. Older shoppers, people with limited mobility and those without a car find a taxi home the easiest option. Some passengers combine a shopping trip with an appointment in central Frankston, a visit to the library or lunch near the foreshore, and need a ride home at the end of the day. Others have mobility aids or wheelchairs, which makes a crowded bus difficult. Having a driver help carry the bags from the centre to the kitchen bench makes the weekly shop much more manageable.",
+   "Taxi Peninsula picks up from Bayside and takes you straight home, with the driver helping load your shopping and carry it to your door. Use “pick up when ready” and call when you have finished, or book a set pick-up time. Wheelchair accessible taxis are available, and we accept MPTP cards, NDIS and aged-care accounts."
+  ],
+  "faq": [
+   {
+    "q": "Can the driver help with my shopping bags?",
+    "a": "Yes. Our drivers help door to door, including loading your shopping at the centre and carrying it to your front door. Let us know when you book if you have a lot of bags or a shopping trolley, so we can send a suitable vehicle."
+   },
+   {
+    "q": "Can I use my MPTP card for a shopping trip?",
+    "a": "Yes. If you hold a Multi Purpose Taxi Program card, show it to the driver and the subsidy will be applied to your fare. MPTP can be used for everyday trips like shopping, appointments and social outings, so a regular trip to Bayside for the weekly shop is a good use of it."
+   }
+  ]
+ },
+ {
+  "name": "Karingal Hub",
+  "type": "shopping",
+  "address": "330 Cranbourne Road, Frankston VIC 3199",
+  "area": "Frankston",
+  "lat": -38.153,
+  "lng": 145.159,
+  "official": "",
+  "description": "Taxi from Karingal Hub in Frankston home with your shopping. Driver helps with bags, wheelchair taxis available, book online 24/7.",
+  "entrance": "Karingal Hub has several entrances around the centre. Most are step-free, with level access from the car parks.",
+  "spot": "We pick up at the entrance you name, in a spot where stopping is allowed. The driver will confirm the meeting point by phone or SMS.",
+  "parking": "The centre has large car parks, and our drivers wait in a permitted area until you are ready.",
+  "access": "Main entrances have step-free access. Our drivers help with bags from the entrance to the taxi.",
+  "tips": [
+   "Tell us which entrance or which end of the centre you will be waiting at.",
+   "If you are staying for a film or a meal, use “pick up when ready” for the trip home.",
+   "Ask the driver to help with bags if you have a big shop."
+  ],
+  "pickup": "",
+  "about": [
+   "Karingal Hub is a large shopping centre on Cranbourne Road in Frankston. It has supermarkets, a range of specialty stores, food outlets and entertainment, and serves Frankston, Karingal, Langwarrin and the surrounding suburbs.",
+   "Shoppers who no longer drive, or who simply prefer not to carry heavy bags on the bus, often book a taxi home from Karingal Hub. It is also a popular spot for a film or meal, and many people would rather not drive home afterwards. Residents of Langwarrin, Carrum Downs and the surrounding suburbs also use the centre for banking, health services and everyday errands. For older shoppers, people who use a wheelchair or walker, and anyone without a car, a taxi is the simplest way to get there and back. The driver can help load the shopping into the vehicle and carry it to your front door, which saves a lot of effort, and you can come and go at whatever time suits you, including later in the evening.",
+   "Taxi Peninsula collects you from Karingal Hub and takes you home, with the driver helping with your shopping. Book a set time or use “pick up when ready”, and choose a wheelchair accessible vehicle if you need one. We accept MPTP cards, NDIS and aged-care accounts."
+  ],
+  "faq": [
+   {
+    "q": "Can I book a taxi home after a film at Karingal Hub?",
+    "a": "Yes. Use “pick up when ready” when you book, then tap “I’m ready” or call us when the film finishes. We run 24 hours, so late sessions are no problem. The driver will meet you at the entrance you choose."
+   },
+   {
+    "q": "Can you take my wheelchair and my shopping?",
+    "a": "Yes. Book a wheelchair accessible van, which has room for your wheelchair as well as your shopping bags. The driver will secure your chair with four-point restraints and a lap-sash seatbelt, and help load your bags. If you use a heavier power chair, choose the Maxi WAT with its hydraulic hoist."
+   }
+  ]
+ },
+ {
+  "name": "Westfield Southland",
+  "type": "shopping",
+  "address": "1239 Nepean Highway, Cheltenham VIC 3192",
+  "area": "Cheltenham",
+  "lat": -37.958,
+  "lng": 145.05,
+  "official": "https://www.westfield.com.au/southland",
+  "description": "Taxi from Westfield Southland in Cheltenham to Frankston or the Peninsula. Driver helps with shopping bags, wheelchair taxis, 24/7.",
+  "entrance": "Westfield Southland has many entrances around the centre, including from car parks and Southland train station. Most are step-free.",
+  "spot": "We pick you up at a permitted spot near the entrance you name. The centre is large, so tell us which entrance you will be at.",
+  "parking": "The centre has multi-level car parks, and drivers wait in permitted areas only. The driver will call you when they arrive.",
+  "access": "The centre has lifts, escalators and step-free paths between levels. Drivers help with bags from the entrance to the vehicle.",
+  "tips": [
+   "Southland is large; name your entrance or the nearest major store when booking.",
+   "Use “pick up when ready” so you are not rushing.",
+   "Ask for a fixed quote for the trip home to the Peninsula."
+  ],
+  "pickup": "",
+  "about": [
+   "Westfield Southland is one of Melbourne’s largest shopping centres, on the Nepean Highway in Cheltenham. It has department stores, supermarkets, hundreds of specialty shops, dining and a cinema, and it has its own train station on the Frankston line.",
+   "Peninsula residents make the trip to Southland for a bigger range of shops, especially before Christmas or for larger purchases. Getting home with heavy bags or bulky items on the train is hard, and some prefer not to drive in busy traffic. Some Peninsula residents take the train to Southland station and then prefer a taxi home with their purchases. Others visit with a friend or family member who uses a wheelchair, and need a vehicle that can carry both the chair and the shopping. Older shoppers may also prefer not to drive in the busy car parks and on the Nepean Highway. A single booking takes care of the whole trip home.",
+   "Taxi Peninsula picks you up from Southland and takes you home to Frankston or the Peninsula. The driver helps load your shopping and carry it to your door. Choose a sedan or a wheelchair accessible vehicle, and ask for a fixed quote for the longer trip."
+  ],
+  "faq": [
+   {
+    "q": "Southland is huge. How will the driver find me?",
+    "a": "Tell us which entrance you will be waiting at, or the nearest major store. When the driver arrives, they will confirm the exact pick-up spot by SMS or phone. If you are unsure, call us and we will help you find a suitable meeting point."
+   },
+   {
+    "q": "Can you take large purchases?",
+    "a": "Let us know what you have bought when you book. Small items fit in a sedan boot, but for larger boxes, a wheelchair accessible van or Maxi WAT has more space. The driver will help load and unload your purchases."
+   }
+  ]
+ },
+ {
+  "name": "Rosebud Plaza",
+  "type": "shopping",
+  "address": "Rosebud VIC 3939",
+  "area": "Rosebud",
+  "lat": -38.364,
+  "lng": 144.907,
+  "official": "",
+  "description": "Taxi from Rosebud Plaza home to Rosebud, Rye, Dromana or Sorrento. Driver helps with shopping bags, wheelchair taxis available, 24/7.",
+  "entrance": "Rosebud Plaza has entrances from its car parks. Most are step-free.",
+  "spot": "The driver collects you near your chosen entrance, wherever stopping is allowed. The driver will confirm by phone or SMS.",
+  "parking": "The centre has a large car park, and our driver will wait in a permitted area until you are ready.",
+  "access": "Main entrances have step-free access, and our driver can help shoppers with walkers or wheelchairs between the door and the vehicle.",
+  "tips": [
+   "Tell us which entrance you will be at.",
+   "In summer, the centre and Rosebud roads are busy, so book ahead.",
+   "Use “pick up when ready” for an unhurried shop."
+  ],
+  "pickup": "",
+  "about": [
+   "Rosebud Plaza is the main shopping centre in Rosebud, serving the southern Mornington Peninsula. It has supermarkets, specialty stores and food outlets, and is a main place for groceries and everyday shopping for residents of Rosebud, Rye, Dromana, Capel Sound and Tootgarook.",
+   "Many southern Peninsula residents, particularly older people, do not drive and find the bus home with heavy shopping difficult. In summer, holidaymakers also visit Rosebud Plaza for supplies, and parking can be busy. For residents of Rye, Tootgarook, Capel Sound, McCrae and Dromana, Rosebud Plaza is the nearest large shopping centre, but the trip without a car can involve a long walk to the bus and a wait. Older shoppers with walkers, or people in wheelchairs, find the bus particularly difficult. A taxi takes you from your door to the centre and back, and the driver helps carry the shopping inside, which turns a tiring outing into a simple one.",
+   "Taxi Peninsula collects you from Rosebud Plaza and takes you home, with the driver helping with your bags. Book a set time or use “pick up when ready”, and choose a wheelchair accessible vehicle if needed. MPTP cards, NDIS and aged-care accounts can all be used."
+  ],
+  "faq": [
+   {
+    "q": "Can I book a regular shopping trip to Rosebud Plaza?",
+    "a": "Yes. Many passengers book the same trip each week for their shopping. Book online or call us, and use “pick up when ready” for the trip home so you can shop at your own pace. MPTP cards can be used for these trips, and the driver will help carry your bags inside."
+   },
+   {
+    "q": "I’m on holiday in Rye. Can you take me to Rosebud Plaza?",
+    "a": "Yes. We pick up from holiday houses, rentals and caravan parks right across the southern Peninsula. Give us your full address and any site or unit number, and the driver will take you to the Plaza and back again with your shopping, helping to carry the bags inside when you arrive."
+   }
+  ]
+ }
+]

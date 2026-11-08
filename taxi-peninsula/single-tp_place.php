@@ -138,7 +138,7 @@ while ( have_posts() ) :
 
 				<?php echo tp_review_widget( array_filter( array( $tp_name, $tp_m['area'] ) ), $tp_m['area'] ?: $tp_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in helper. ?>
 
-				<h2><?php /* translators: %s: place */ echo esc_html( sprintf( __( 'Questions about taxis to %s', 'taxi-peninsula' ), $tp_name ) ); ?></h2>
+				<h2><?php /* translators: %s: place */ echo esc_html( $tp_from ? sprintf( /* translators: %s: place */ __( 'Questions about taxis from %s', 'taxi-peninsula' ), $tp_name ) : sprintf( __( 'Questions about taxis to %s', 'taxi-peninsula' ), $tp_name ) ); ?></h2>
 				<div class="faq">
 					<?php foreach ( $tp_faq as $qa ) : ?>
 						<?php tp_faq_schema_items( array( 'q' => $qa[0], 'a' => $qa[1] ) ); ?>
