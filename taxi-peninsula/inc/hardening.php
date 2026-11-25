@@ -214,7 +214,7 @@ function tp_real_ip() {
  * Security checks: [label, ok (bool|null for info), advice].
  */
 function tp_security_status() {
-	$secret_keys = array( 'stripe_secret_key', 'stripe_webhook_secret', 'clicksend_api_key', 'twilio_auth_token', 'captcha_secret_key', 'google_maps_key' );
+	$secret_keys = array( 'stripe_secret_key', 'stripe_webhook_secret', 'clicksend_api_key', 'twilio_auth_token', 'captcha_secret_key', 'google_maps_key', 'google_reviews_key' );
 	$in_db       = array();
 	$saved       = (array) get_option( 'tp_settings', array() );
 	foreach ( $secret_keys as $key ) {

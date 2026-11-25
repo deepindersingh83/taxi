@@ -199,7 +199,10 @@ function tp_settings_checks( $tab ) {
 				$c[]   = is_array( $cache ) && ! empty( $cache['rating'] )
 					/* translators: 1: rating 2: count */
 					? array( 'ok', __( 'Live Google reviews', 'taxi-peninsula' ), sprintf( __( 'Working: %1$s stars from %2$d reviews.', 'taxi-peninsula' ), $cache['rating'], (int) ( $cache['count'] ?? 0 ) ) )
-					: array( 'warn', __( 'Live Google reviews', 'taxi-peninsula' ), __( 'Place ID saved but no reviews loaded yet. Use "Fetch reviews now".', 'taxi-peninsula' ) );
+					: ( is_array( get_option( 'tp_google_place_error' ) )
+						/* translators: 1: Google's message 2: what to do */
+						? array( 'fail', __( 'Live Google reviews', 'taxi-peninsula' ), sprintf( __( 'Google refused: “%1$s”. %2$s Then press "Fetch reviews now".', 'taxi-peninsula' ), get_option( 'tp_google_place_error' )['msg'], tp_google_error_help( get_option( 'tp_google_place_error' )['msg'] ) ) )
+						: array( 'warn', __( 'Live Google reviews', 'taxi-peninsula' ), __( 'Place ID saved but no reviews loaded yet. Use "Fetch reviews now".', 'taxi-peninsula' ) ) );
 			}
 			$c[] = tp_setting( 'review_write_url' ) || tp_setting( 'google_reviews_url' )
 				? array( 'ok', __( 'Review invitations', 'taxi-peninsula' ), __( 'Customers are sent to your Google review link after rating a trip.', 'taxi-peninsula' ) )
@@ -415,14 +418,15 @@ function tp_settings_run_test( $test ) {
 			return array( true, sprintf( __( 'Frankston → Melbourne Airport: %1$s km, %2$d min — estimate $%3$s–$%4$s. Compare it with a real fare.', 'taxi-peninsula' ), number_format_i18n( $route[0], 1 ), (int) $route[1], $fare[0], $fare[1] ) );
 
 		case 'reviews':
-			if ( ! tp_setting( 'google_place_id' ) || ! tp_maps_available() ) {
-				return array( false, __( 'Needs the Google Maps key and a Place ID.', 'taxi-peninsula' ) );
+			if ( ! tp_setting( 'google_place_id' ) || '' === tp_google_server_key() ) {
+				return array( false, __( 'Needs a Google key (Maps & addresses tab, or "Google key for reviews") and a Place ID.', 'taxi-peninsula' ) );
 			}
 			$data = tp_fetch_google_place();
 			if ( is_wp_error( $data ) ) {
-				/* translators: %s: error */
-				return array( false, sprintf( __( 'Google refused: %s — check the Places API (New) is enabled for your key.', 'taxi-peninsula' ), $data->get_error_message() ) );
+				/* translators: 1: error 2: what to do */
+				return array( false, sprintf( __( 'Google refused: “%1$s”. %2$s', 'taxi-peninsula' ), $data->get_error_message(), tp_google_error_help( $data->get_error_message() ) ) );
 			}
+			delete_transient( 'tp_google_place_lock' );
 			update_option( 'tp_google_place_cache', $data, false );
 			/* translators: 1: rating 2: count */
 			return array( true, sprintf( __( 'Loaded: %1$s stars, %2$d reviews.', 'taxi-peninsula' ), $data['rating'] ?? '?', (int) ( $data['count'] ?? 0 ) ) );

@@ -8,6 +8,17 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### v2.16.1 — live Google reviews: clear errors and a fallback
+- **Test & troubleshoot shows Google's own reason** when reviews can't be loaded, with what to change. The causes it recognises:
+  - the key is restricted to websites or to other IP addresses;
+  - Places API (New) is not enabled for the key;
+  - the project has no billing account;
+  - the key is wrong;
+  - the Place ID is wrong.
+- **Older Places API as a fallback:** if Places API (New) isn't switched on for your key, the theme tries the older Places API.
+- **New optional "Google key for reviews"** for sites whose Maps key only works in browsers.
+- **"Find your Google Place ID"** now shows Google's error instead of "No matches".
+
 ### New in v2.16 — office-only SMS and a quick booking form
 **SMS: office alerts only** (Settings → SMS)
 - **New "Office alerts only" option:** only your office mobile(s) get texts.

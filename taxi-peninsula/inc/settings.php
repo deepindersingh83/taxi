@@ -60,6 +60,7 @@ function tp_settings_schema() {
 		'review_email'          => array( 'reviews', __( 'Also email the invitation', 'taxi-peninsula' ), 'checkbox', true, __( 'Sent at most once every 6 months to the same email address.', 'taxi-peninsula' ) ),
 		'google_reviews_live'   => array( 'reviews', __( 'Show live Google reviews', 'taxi-peninsula' ), 'checkbox', true, __( 'Needs the Google Maps key below and your Place ID (use "Find your Google Place ID" at the bottom of this page). Refreshed once a day.', 'taxi-peninsula' ) ),
 		'google_place_id'       => array( 'reviews', __( 'Google Place ID', 'taxi-peninsula' ), 'text', '', '' ),
+		'google_reviews_key'    => array( 'reviews', __( 'Google key for reviews (optional)', 'taxi-peninsula' ), 'secret', '', __( 'Only if your Maps key is restricted to websites: a key with Places API (New) enabled and no website restriction. Leave empty to use the Maps key.', 'taxi-peninsula' ) ),
 		'gbp_url'               => array( 'reviews', __( 'Google Business Profile link', 'taxi-peninsula' ), 'url', '', __( 'Your Google Maps listing, e.g. https://maps.app.goo.gl/… — added to your business details for search engines.', 'taxi-peninsula' ) ),
 		'google_logo_url'       => array( 'reviews', __( 'Google logo image (optional)', 'taxi-peninsula' ), 'url', '', __( 'Shown beside the review score. Leave empty to show the word "Google".', 'taxi-peninsula' ) ),
 
