@@ -247,11 +247,8 @@ function tp_handle_callback() {
 				sprintf( "%s\n%s\n%s: %s\n%s: %s\n\n%s\n\n%s: %s", $d['name'], $d['phone'], __( 'Best time', 'taxi-peninsula' ), $when, __( 'About', 'taxi-peninsula' ), $d['reason'], $d['notes'] ?: '—', __( 'Open call-backs', 'taxi-peninsula' ), admin_url( 'edit.php?post_type=tp_callback' ) ),
 				tp_mail_headers()
 			);
-			$office = trim( (string) tp_setting( 'sms_office_number' ) );
-			if ( $office && tp_sms_enabled() ) {
-				/* translators: 1: name, 2: phone, 3: time */
-				tp_send_sms( $office, sprintf( __( 'Call-back: %1$s %2$s (%3$s)', 'taxi-peninsula' ), $d['name'], $d['phone'], $when ) );
-			}
+			/* translators: 1: name, 2: phone, 3: time */
+			tp_sms_office( sprintf( __( 'Call-back: %1$s %2$s (%3$s)', 'taxi-peninsula' ), $d['name'], $d['phone'], $when ) );
 		}
 	);
 	if ( tp_sms_enabled() && preg_match( '/^(\+?61|0)4/', preg_replace( '/[^\d+]/', '', $d['phone'] ) ) ) {

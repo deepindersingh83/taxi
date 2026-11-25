@@ -184,3 +184,21 @@ if ( count( $guides ) < 20 || ! function_exists( 'tp_outreach_email' ) || false 
 	WP_CLI::error( 'Guides or trip facts are missing: ' . count( $guides ) );
 }
 WP_CLI::success( "New addresses, content pack, legal pages and guides OK ($added pages)." );
+
+// v2.16: office-only SMS never texts customers; the office text has the details; the quick form renders.
+$tp_s = get_option( 'tp_settings', array() );
+update_option( 'tp_settings', array_merge( $tp_s, array( 'sms_provider' => 'clicksend', 'clicksend_username' => 'ci', 'clicksend_api_key' => 'ci', 'sms_office_only' => 1, 'sms_office_number' => '0400 111 222, 0400 333 444' ) ) );
+$blocked = tp_send_sms_now( '0433 221 100', 'x' );
+if ( tp_sms_enabled() || ! is_wp_error( $blocked ) || 'tp_sms_office_only' !== $blocked->get_error_code() || 2 !== count( tp_sms_office_numbers() ) || ! tp_sms_is_office( '+61400333444' ) ) {
+	WP_CLI::error( 'Office-only SMS is not enforced.' );
+}
+$any = get_posts( array( 'post_type' => 'tp_booking', 'numberposts' => 1, 'fields' => 'ids' ) );
+if ( ! $any || false === strpos( tp_sms_office_booking_text( $any[0] ), get_post_meta( $any[0], '_tp_reference', true ) ) ) {
+	WP_CLI::error( 'Office booking text is wrong.' );
+}
+update_option( 'tp_settings', $tp_s );
+if ( false === strpos( do_shortcode( '[tp_quick_booking heading="CI"]' ), 'name="tp_quick"' ) ) {
+	WP_CLI::error( 'Quick booking form did not render.' );
+}
+WP_CLI::success( 'Office-only SMS and quick booking form OK.' );
+

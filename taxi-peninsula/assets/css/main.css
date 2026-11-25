@@ -2386,3 +2386,15 @@ html[data-contrast="high"] .pp-tile { border: 2px solid #000; }
 .trip-facts__title { margin: 0 0 var(--space-s); font-weight: 700; color: var(--c-heading); }
 .trip-facts .route-facts__note { margin-bottom: var(--space-s); }
 .trip-facts__actions { display: flex; flex-wrap: wrap; gap: var(--space-s); margin: 0; }
+
+/* Quick booking form ([tp_quick_booking]). */
+.quick-form { padding: var(--space-l); max-width: 44rem; }
+.quick-form__title { margin: 0 0 var(--space-2xs); font-size: var(--step-2); }
+.quick-form__intro { margin: 0 0 var(--space-m); color: var(--c-muted); }
+.quick-form__grid { display: grid; gap: var(--space-s) var(--space-m); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.quick-form__grid .field--wide { grid-column: 1 / -1; }
+.quick-form__grid .field { margin: 0; }
+.quick-form__submit { margin-top: var(--space-m); display: grid; gap: var(--space-xs); }
+.quick-form__submit .btn { width: 100%; justify-content: center; }
+.quick-form__alt { margin: 0; text-align: center; font-size: var(--step--1); color: var(--c-muted); }
+@media (max-width: 36em) { .quick-form { padding: var(--space-m); } .quick-form__grid { grid-template-columns: 1fr; } }

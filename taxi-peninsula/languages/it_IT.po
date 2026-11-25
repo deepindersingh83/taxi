@@ -6719,3 +6719,33 @@ msgstr ""
 #: inc/route-guides.php:108
 msgid "About %s"
 msgstr "Informazioni su %s"
+
+#: inc/quick-form.php:44
+msgid "Book a taxi in one minute"
+msgstr "Prenota un taxi in un minuto"
+
+#: inc/quick-form.php:45
+msgid "Tell us where and when — we confirm by SMS or email."
+msgstr "Dicci dove e quando: confermiamo via SMS o email."
+
+#: inc/quick-form.php:102 inc/quick-form.php:106
+msgid "Please fill this in."
+msgstr "Compila questo campo."
+
+#: inc/quick-form.php:112
+msgid "Please answer this."
+msgstr "Rispondi a questa domanda."
+
+#: inc/quick-form.php:149
+msgid "Please tick the box to book."
+msgstr "Spunta la casella per prenotare."
+
+#. translators: %s: link to the terms
+#: template-parts/booking-quick.php:167
+msgid "I accept the %s and agree to be contacted about this booking."
+msgstr ""
+"Accetto i %s e acconsento a essere contattato per questa prenotazione."
+
+#: template-parts/booking-quick.php:172
+msgid "I agree to be contacted about this booking."
+msgstr "Acconsento a essere contattato per questa prenotazione."

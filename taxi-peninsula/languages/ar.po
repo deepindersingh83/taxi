@@ -6562,3 +6562,32 @@ msgstr ""
 #: inc/route-guides.php:108
 msgid "About %s"
 msgstr "عن %s"
+
+#: inc/quick-form.php:44
+msgid "Book a taxi in one minute"
+msgstr "احجز سيارة أجرة في دقيقة"
+
+#: inc/quick-form.php:45
+msgid "Tell us where and when — we confirm by SMS or email."
+msgstr "أخبرنا بالمكان والوقت — نؤكد الحجز عبر رسالة نصية أو بريد إلكتروني."
+
+#: inc/quick-form.php:102 inc/quick-form.php:106
+msgid "Please fill this in."
+msgstr "يرجى ملء هذا الحقل."
+
+#: inc/quick-form.php:112
+msgid "Please answer this."
+msgstr "يرجى الإجابة عن هذا السؤال."
+
+#: inc/quick-form.php:149
+msgid "Please tick the box to book."
+msgstr "يرجى تحديد المربع لإتمام الحجز."
+
+#. translators: %s: link to the terms
+#: template-parts/booking-quick.php:167
+msgid "I accept the %s and agree to be contacted about this booking."
+msgstr "أوافق على %s وأوافق على التواصل معي بخصوص هذا الحجز."
+
+#: template-parts/booking-quick.php:172
+msgid "I agree to be contacted about this booking."
+msgstr "أوافق على التواصل معي بخصوص هذا الحجز."

@@ -8,6 +8,24 @@ A WordPress theme for a Melbourne wheelchair taxi service. It includes online bo
 
 ## Features
 
+### New in v2.16 — office-only SMS and a quick booking form
+**SMS: office alerts only** (Settings → SMS)
+- **New "Office alerts only" option:** only your office mobile(s) get texts.
+  - Customers and drivers get no SMS at all: no codes, confirmations, reminders or "on my way" texts. Codes and updates go by email instead.
+  - This keeps SMS costs down.
+- **Several office numbers:** separate them with commas, e.g. you and a dispatcher.
+- **More detail in the new-booking text:** wheelchairs, passengers, vehicle, the fare estimate and the first part of the notes. For example: `New booking TP-ABC123: Thu 26 Nov 10:30am, Ann Smith (0433 221 199). 2 Bay St, Frankston → Frankston Hospital. 1 wheelchair, WAT. Est $38–$48. Notes: Ward 4 West`.
+
+**Quick booking form** (Settings → Quick booking form)
+- **Everything on one short screen:** pick-up, drop-off, date and time, "wheelchair? yes / no", name, mobile, and one tick to accept the terms. Put `[tp_quick_booking]` on any page, e.g. an ad landing page, a hotel page or the sidebar.
+- **Per page** you can change the heading and fill in an address: `[tp_quick_booking heading="Airport transfer" dropoff="Melbourne Airport"]`.
+- **Edit the form in Settings:**
+  - the heading, the text under it and the button;
+  - whether email, passengers, return time, flight number and notes are hidden, optional or required;
+  - the vehicle to use when the wheelchair question is hidden;
+  - up to **three questions of your own** (e.g. "Ward or clinic?"), optional or required. The answers are added to the booking notes.
+- **Bookings from it are normal bookings:** the same checks, office SMS, emails, dispatch and reports.
+
 ### New in v2.15 — fare and route guides, Link partners
 **24 written fare and route guides for the blog** (added with the Dashboard's "Add the new pages" button)
 - **Trips:**

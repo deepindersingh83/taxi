@@ -57,10 +57,7 @@ function tp_mark_ready( $post_id, $by ) {
 					$note . "\n\n" . tp_booking_summary( $b ) . "\n" . admin_url( 'admin.php?page=tp-dispatch' ),
 					tp_mail_headers( $b['email'] )
 				);
-				$office = trim( (string) tp_setting( 'sms_office_number' ) );
-				if ( $office && tp_sms_enabled() ) {
-					tp_booking_sms( $post_id, $office, $note, 'office' );
-				}
+				tp_sms_office( $note, $post_id );
 			}
 			if ( $b['driver_id'] && tp_sms_enabled() ) {
 				/* translators: 1: reference 2: name 3: pick-up */

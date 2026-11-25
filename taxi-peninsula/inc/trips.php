@@ -154,9 +154,7 @@ function tp_decline_trip_run( $post_id, $driver_id, $reason, $note = '' ) {
 		$message . "\n\n" . tp_booking_summary( $b ) . "\n" . __( 'Dispatch board:', 'taxi-peninsula' ) . ' ' . $board,
 		tp_mail_headers()
 	);
-	if ( tp_setting( 'sms_office_number' ) ) {
-		tp_booking_sms( $post_id, tp_setting( 'sms_office_number' ), $message, 'office' );
-	}
+	tp_sms_office( $message, $post_id );
 }
 
 // Assigning a new driver clears the "needs a driver" flag.

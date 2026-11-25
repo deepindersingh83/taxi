@@ -76,7 +76,7 @@ function tp_settings_checks( $tab ) {
 				$c[] = array( 'off', __( 'Provider', 'taxi-peninsula' ), __( 'SMS is off. Choose ClickSend or Twilio to text customers and drivers.', 'taxi-peninsula' ) );
 				break;
 			}
-			$c[] = tp_sms_enabled()
+			$c[] = tp_sms_configured()
 				/* translators: %s: provider */
 				? array( 'ok', __( 'Provider', 'taxi-peninsula' ), sprintf( __( '%s details are filled in. Use "Check login" below to make sure they are right.', 'taxi-peninsula' ), 'clicksend' === $p ? 'ClickSend' : 'Twilio' ) )
 				: array( 'fail', __( 'Provider', 'taxi-peninsula' ), 'clicksend' === $p ? __( 'Enter the ClickSend username and API key (ClickSend dashboard → Developers → API Credentials).', 'taxi-peninsula' ) : __( 'Enter the Twilio Account SID, Auth Token and a "from" number (Twilio Console → Account info).', 'taxi-peninsula' ) );
@@ -92,12 +92,16 @@ function tp_settings_checks( $tab ) {
 				/* translators: %s: sender */
 				$c[] = array( 'warn', __( 'Sender', 'taxi-peninsula' ), sprintf( __( 'Texts come from "%s". Customers cannot reply to a name. Sender names may also need registering with your provider (Australian SMS Sender ID rules) or messages can be blocked or marked "unverified".', 'taxi-peninsula' ), $from ) );
 			}
-			$office = trim( (string) tp_setting( 'sms_office_number' ) );
-			if ( '' !== $office ) {
-				$c[] = tp_e164( $office )
-					/* translators: %s: number */
-					? array( 'ok', __( 'Office alerts', 'taxi-peninsula' ), sprintf( __( 'New bookings are texted to %s.', 'taxi-peninsula' ), tp_e164( $office ) ) )
-					: array( 'fail', __( 'Office alerts', 'taxi-peninsula' ), __( 'The office mobile is not a valid Australian mobile (e.g. 0412 345 678).', 'taxi-peninsula' ) );
+			$office = tp_sms_office_numbers();
+			if ( tp_setting( 'sms_office_only' ) ) {
+				$c[] = array( 'ok', __( 'Office alerts only', 'taxi-peninsula' ), __( 'Customers and drivers are not texted — they get emails. Only the office mobile(s) get texts.', 'taxi-peninsula' ) );
+			}
+			if ( $office ) {
+				$good = array_filter( array_map( 'tp_e164', $office ) );
+				$c[]  = count( $good ) === count( $office )
+					/* translators: %s: numbers */
+					? array( 'ok', __( 'Office alerts', 'taxi-peninsula' ), sprintf( __( 'New bookings are texted to %s.', 'taxi-peninsula' ), implode( ', ', $good ) ) )
+					: array( 'fail', __( 'Office alerts', 'taxi-peninsula' ), __( 'An office mobile is not a valid Australian mobile (e.g. 0412 345 678).', 'taxi-peninsula' ) );
 			}
 			$on = array_filter(
 				array(
@@ -323,7 +327,7 @@ function tp_settings_tests( $tab ) {
 function tp_settings_run_test( $test ) {
 	switch ( $test ) {
 		case 'sms_login':
-			if ( ! tp_sms_enabled() ) {
+			if ( ! tp_sms_configured() ) {
 				return array( false, __( 'SMS details are missing.', 'taxi-peninsula' ) );
 			}
 			$p = tp_setting( 'sms_provider' );
@@ -560,7 +564,7 @@ function tp_render_settings_troubleshoot( $tab ) {
 			</form>
 		<?php endforeach; ?>
 
-		<?php if ( 'sms' === $tab && tp_sms_enabled() ) : ?>
+		<?php if ( 'sms' === $tab && tp_sms_configured() ) : ?>
 			<h3><?php esc_html_e( 'Send a test text', 'taxi-peninsula' ); ?></h3>
 			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 				<input type="hidden" name="action" value="tp_test_sms">

@@ -6038,3 +6038,32 @@ msgstr "按我们当前的收费标准、在不堵车的情况下估算。车费
 #: inc/route-guides.php:108
 msgid "About %s"
 msgstr "关于%s"
+
+#: inc/quick-form.php:44
+msgid "Book a taxi in one minute"
+msgstr "一分钟预订出租车"
+
+#: inc/quick-form.php:45
+msgid "Tell us where and when — we confirm by SMS or email."
+msgstr "告诉我们地点和时间——我们会通过短信或电子邮件确认。"
+
+#: inc/quick-form.php:102 inc/quick-form.php:106
+msgid "Please fill this in."
+msgstr "请填写此项。"
+
+#: inc/quick-form.php:112
+msgid "Please answer this."
+msgstr "请回答此问题。"
+
+#: inc/quick-form.php:149
+msgid "Please tick the box to book."
+msgstr "请勾选此框以完成预订。"
+
+#. translators: %s: link to the terms
+#: template-parts/booking-quick.php:167
+msgid "I accept the %s and agree to be contacted about this booking."
+msgstr "我接受%s，并同意就此次预订与我联系。"
+
+#: template-parts/booking-quick.php:172
+msgid "I agree to be contacted about this booking."
+msgstr "我同意就此次预订与我联系。"

@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Taxi Peninsula 2.14.1\n"
+"Project-Id-Version: Taxi Peninsula 2.15.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/taxi-peninsula\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-08T16:35:20+00:00\n"
+"POT-Creation-Date: 2026-11-25T16:58:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: taxi-peninsula\n"
@@ -348,7 +348,9 @@ msgstr ""
 #: header.php:66
 #: inc/design.php:51
 #: inc/menu.php:100
+#: inc/quick-form.php:46
 #: template-parts/booking-form.php:395
+#: template-parts/booking-quick.php:33
 msgid "Book now"
 msgstr ""
 
@@ -370,8 +372,8 @@ msgstr ""
 #. translators: %s: passenger name
 #. translators: %s: name
 #: inc/account-confirm.php:85
-#: inc/bookings-form.php:326
-#: inc/bookings-form.php:384
+#: inc/bookings-form.php:333
+#: inc/bookings-form.php:391
 #: inc/contact.php:270
 #: inc/drivers.php:565
 #: inc/lost-property.php:433
@@ -383,7 +385,7 @@ msgstr ""
 #: inc/referrals.php:267
 #: inc/review-invite.php:118
 #: inc/statements.php:265
-#: inc/trips.php:266
+#: inc/trips.php:264
 #, php-format
 msgid "Hi %s,"
 msgstr ""
@@ -507,6 +509,7 @@ msgstr ""
 #: inc/accounts.php:98
 #: inc/careers.php:59
 #: template-parts/booking-form.php:172
+#: template-parts/booking-quick.php:126
 msgid "Full name"
 msgstr ""
 
@@ -649,6 +652,7 @@ msgstr ""
 #: inc/home.php:114
 #: inc/partner-leaderboard.php:148
 #: template-parts/booking-form.php:279
+#: template-parts/booking-quick.php:111
 #: template-parts/booking-status.php:91
 msgid "Passengers"
 msgstr ""
@@ -808,11 +812,13 @@ msgstr ""
 #: inc/marketing.php:806
 #: inc/ndis-invoices.php:155
 #: inc/privacy.php:925
+#: inc/quick-form.php:47
 #: inc/quotes.php:159
 #: inc/quotes.php:289
 #: inc/referrals.php:349
 #: inc/settings-tabs.php:19
 #: inc/statements.php:400
+#: template-parts/booking-quick.php:138
 msgid "Email"
 msgstr ""
 
@@ -825,6 +831,7 @@ msgstr ""
 #: inc/marketing.php:806
 #: inc/privacy.php:282
 #: template-parts/booking-form.php:178
+#: template-parts/booking-quick.php:131
 msgid "Mobile"
 msgstr ""
 
@@ -976,7 +983,7 @@ msgstr ""
 
 #: inc/accounts.php:713
 #: inc/accounts.php:716
-#: inc/trips.php:182
+#: inc/trips.php:180
 #: template-parts/booking-status.php:99
 msgid "Your driver"
 msgstr ""
@@ -1087,7 +1094,7 @@ msgstr ""
 
 #: inc/accounts.php:856
 #: inc/bookings-cpt.php:675
-#: inc/callbacks.php:329
+#: inc/callbacks.php:326
 #: inc/content-types.php:465
 #: inc/home.php:372
 #: inc/marketing.php:690
@@ -1314,6 +1321,7 @@ msgstr ""
 #: inc/statements.php:201
 #: inc/statements.php:219
 #: template-parts/booking-form.php:118
+#: template-parts/booking-quick.php:79
 #: template-parts/quickbook.php:33
 msgid "Date"
 msgstr ""
@@ -1481,7 +1489,7 @@ msgstr ""
 #: inc/activity.php:69
 #: inc/ai-search.php:171
 #: inc/alerts.php:239
-#: inc/settings.php:173
+#: inc/settings.php:174
 msgid "Settings"
 msgstr ""
 
@@ -1546,7 +1554,7 @@ msgid "Vehicle"
 msgstr ""
 
 #: inc/activity.php:217
-#: inc/lookup.php:204
+#: inc/lookup.php:200
 #: inc/privacy.php:100
 msgid "Change request"
 msgstr ""
@@ -1559,6 +1567,7 @@ msgstr ""
 #: inc/quotes.php:284
 #: inc/setup.php:227
 #: template-parts/booking-form.php:138
+#: template-parts/booking-quick.php:101
 msgid "Yes"
 msgstr ""
 
@@ -1568,6 +1577,7 @@ msgstr ""
 #: inc/lead-tools.php:106
 #: inc/quotes.php:284
 #: template-parts/booking-form.php:139
+#: template-parts/booking-quick.php:102
 msgid "No"
 msgstr ""
 
@@ -1802,8 +1812,8 @@ msgid "Overview"
 msgstr ""
 
 #: inc/admin-menus.php:56
-#: inc/settings-tabs.php:457
-#: inc/settings.php:172
+#: inc/settings-tabs.php:461
+#: inc/settings.php:173
 msgid "Booking settings"
 msgstr ""
 
@@ -1948,7 +1958,7 @@ msgstr ""
 
 #: inc/admin-tools.php:253
 #: inc/bookings-cpt.php:710
-#: inc/callbacks.php:285
+#: inc/callbacks.php:282
 #: inc/partner-outreach.php:198
 #: inc/search-data.php:1115
 msgid "Notes"
@@ -3030,8 +3040,8 @@ msgstr ""
 
 #: inc/booking-cancel.php:351
 #: inc/bookings-cpt.php:676
-#: inc/callbacks.php:282
-#: inc/callbacks.php:330
+#: inc/callbacks.php:279
+#: inc/callbacks.php:327
 #: inc/content-types.php:468
 #: inc/lead-tools.php:348
 #: inc/privacy.php:349
@@ -3297,6 +3307,7 @@ msgstr ""
 #: inc/dispatch.php:553
 #: inc/saved-trips.php:177
 #: template-parts/booking-form.php:124
+#: template-parts/booking-quick.php:84
 #: template-parts/quickbook.php:37
 msgid "Pick-up time"
 msgstr ""
@@ -3312,8 +3323,8 @@ msgstr ""
 #: inc/bookings-admin.php:326
 #: inc/bookings-admin.php:398
 #: inc/bookings-cpt.php:674
-#: inc/callbacks.php:287
-#: inc/callbacks.php:333
+#: inc/callbacks.php:284
+#: inc/callbacks.php:330
 #: inc/content-plan.php:176
 #: inc/incidents.php:164
 #: inc/incidents.php:251
@@ -3639,6 +3650,7 @@ msgstr ""
 #: inc/dispatch.php:554
 #: inc/venues.php:247
 #: template-parts/booking-form.php:95
+#: template-parts/booking-quick.php:69
 #: template-parts/quickbook.php:26
 #: template-parts/text-quote.php:24
 msgid "Pick-up address"
@@ -3647,6 +3659,7 @@ msgstr ""
 #: inc/bookings-cpt.php:182
 #: inc/dispatch.php:555
 #: template-parts/booking-form.php:102
+#: template-parts/booking-quick.php:74
 msgid "Drop-off address"
 msgstr ""
 
@@ -3674,6 +3687,7 @@ msgid "Return trip"
 msgstr ""
 
 #: inc/bookings-cpt.php:191
+#: template-parts/booking-quick.php:91
 msgid "Return pick-up time"
 msgstr ""
 
@@ -3691,6 +3705,8 @@ msgid "Passenger notes"
 msgstr ""
 
 #: inc/bookings-cpt.php:198
+#: inc/quick-form.php:52
+#: template-parts/booking-quick.php:119
 msgid "Flight number"
 msgstr ""
 
@@ -3858,8 +3874,8 @@ msgid "Pay the driver"
 msgstr ""
 
 #: inc/bookings-cpt.php:759
-#: inc/settings-tabs.php:135
-#: inc/settings-tabs.php:136
+#: inc/settings-tabs.php:139
+#: inc/settings-tabs.php:140
 #: template-parts/booking-status.php:16
 msgid "Account / invoice"
 msgstr ""
@@ -3893,122 +3909,122 @@ msgid "Sorry, we could not save your booking. Please call %s."
 msgstr ""
 
 #. translators: %d: number of trips
-#: inc/bookings-form.php:291
-#: inc/bookings-form.php:322
+#: inc/bookings-form.php:298
+#: inc/bookings-form.php:329
 #, php-format
 msgid "Repeat booking — %d trips:"
 msgstr ""
 
 #. translators: %s: language name
-#: inc/bookings-form.php:296
+#: inc/bookings-form.php:303
 #, php-format
 msgid "Booked in %s — emails and texts to the customer are sent in this language."
 msgstr ""
 
 #. translators: 1: reference, 2: pick-up time
-#: inc/bookings-form.php:302
+#: inc/bookings-form.php:309
 #, php-format
 msgid "New booking %1$s — %2$s"
 msgstr ""
 
 #. translators: 1: reference, 2: pick-up time
-#: inc/bookings-form.php:302
+#: inc/bookings-form.php:309
 msgid "(repeat)"
 msgstr ""
 
-#: inc/bookings-form.php:303
+#: inc/bookings-form.php:310
 msgid "Manage this booking:"
 msgstr ""
 
-#: inc/bookings-form.php:327
+#: inc/bookings-form.php:334
 msgid "Thanks for booking with us. We have received your request and will confirm it shortly."
 msgstr ""
 
-#: inc/bookings-form.php:329
-#: inc/bookings-form.php:403
-#: inc/trips.php:268
+#: inc/bookings-form.php:336
+#: inc/bookings-form.php:410
+#: inc/trips.php:266
 msgid "View or manage your booking:"
 msgstr ""
 
 #. translators: 1: phone, 2: email
-#: inc/bookings-form.php:333
+#: inc/bookings-form.php:340
 #, php-format
 msgid "Need to change something? Call %1$s or email %2$s and quote your reference."
 msgstr ""
 
 #. translators: 1: site name, 2: reference
-#: inc/bookings-form.php:341
+#: inc/bookings-form.php:348
 #, php-format
 msgid "%1$s booking received — %2$s"
 msgstr ""
 
-#: inc/bookings-form.php:375
+#: inc/bookings-form.php:382
 msgid "Good news — your booking is confirmed."
 msgstr ""
 
-#: inc/bookings-form.php:376
+#: inc/bookings-form.php:383
 msgid "A driver has been assigned to your booking."
 msgstr ""
 
-#: inc/bookings-form.php:377
+#: inc/bookings-form.php:384
 msgid "Thanks for travelling with us. We hope to see you again soon."
 msgstr ""
 
-#: inc/bookings-form.php:378
+#: inc/bookings-form.php:385
 msgid "Your booking has been cancelled. If this is unexpected, please call us."
 msgstr ""
 
-#: inc/bookings-form.php:379
+#: inc/bookings-form.php:386
 msgid "Our driver arrived but could not find you, so the trip was marked as a no-show. Please call us if this is a mistake or you would like to rebook."
 msgstr ""
 
-#: inc/bookings-form.php:380
+#: inc/bookings-form.php:387
 msgid "Your booking is being reviewed."
 msgstr ""
 
 #. translators: %s: driver first name
-#: inc/bookings-form.php:390
+#: inc/bookings-form.php:397
 #, php-format
 msgid "Your driver: %s"
 msgstr ""
 
 #. translators: %s: vehicle
-#: inc/bookings-form.php:394
+#: inc/bookings-form.php:401
 #, php-format
 msgid "Vehicle: %s"
 msgstr ""
 
-#: inc/bookings-form.php:401
+#: inc/bookings-form.php:408
 msgid "How did we do? Rate your trip:"
 msgstr ""
 
 #. translators: %s: phone number
 #. translators: %s: phone
-#: inc/bookings-form.php:406
+#: inc/bookings-form.php:413
 #: inc/dispatch.php:638
-#: inc/trips.php:196
+#: inc/trips.php:194
 #, php-format
 msgid "Questions? Call %s."
 msgstr ""
 
 #. translators: 1: reference, 2: status
-#: inc/bookings-form.php:411
+#: inc/bookings-form.php:418
 #, php-format
 msgid "Booking %1$s: %2$s"
 msgstr ""
 
-#: inc/bookings-form.php:440
+#: inc/bookings-form.php:447
 msgid "This calendar link is not valid."
 msgstr ""
 
 #. translators: 1: site name, 2: reference
-#: inc/bookings-form.php:454
+#: inc/bookings-form.php:461
 #, php-format
 msgid "Wheelchair taxi — %1$s (%2$s)"
 msgstr ""
 
 #. translators: %s: phone
-#: inc/bookings-form.php:457
+#: inc/bookings-form.php:464
 #, php-format
 msgid "Questions? Call %s"
 msgstr ""
@@ -4028,7 +4044,7 @@ msgid "Book"
 msgstr ""
 
 #: inc/brand.php:533
-#: inc/callbacks.php:282
+#: inc/callbacks.php:279
 msgid "Call"
 msgstr ""
 
@@ -4139,6 +4155,7 @@ msgstr ""
 #: inc/quotes.php:135
 #: inc/quotes.php:221
 #: template-parts/booking-form.php:53
+#: template-parts/booking-quick.php:60
 msgid "Please check the highlighted fields."
 msgstr ""
 
@@ -4204,14 +4221,14 @@ msgid "Call-back request: %1$s, %2$s"
 msgstr ""
 
 #: inc/callbacks.php:247
-#: inc/callbacks.php:283
-#: inc/callbacks.php:331
+#: inc/callbacks.php:280
+#: inc/callbacks.php:328
 msgid "Best time"
 msgstr ""
 
 #: inc/callbacks.php:247
-#: inc/callbacks.php:284
-#: inc/callbacks.php:332
+#: inc/callbacks.php:281
+#: inc/callbacks.php:329
 msgid "About"
 msgstr ""
 
@@ -4220,38 +4237,38 @@ msgid "Open call-backs"
 msgstr ""
 
 #. translators: 1: name, 2: phone, 3: time
-#: inc/callbacks.php:253
+#: inc/callbacks.php:251
 #, php-format
 msgid "Call-back: %1$s %2$s (%3$s)"
 msgstr ""
 
 #. translators: 1: site name, 2: time
-#: inc/callbacks.php:260
+#: inc/callbacks.php:257
 #, php-format
 msgid "%1$s: thanks, we will call you back (%2$s). Need a taxi now? Call %3$s"
 msgstr ""
 
-#: inc/callbacks.php:273
+#: inc/callbacks.php:270
 msgid "Call-back details"
 msgstr ""
 
-#: inc/callbacks.php:286
+#: inc/callbacks.php:283
 msgid "Booking made (reference)"
 msgstr ""
 
 #. translators: 1: number, 2: date
-#: inc/callbacks.php:289
+#: inc/callbacks.php:286
 #, php-format
 msgid "Call attempts: %1$d · last %2$s"
 msgstr ""
 
 #. translators: 1: name, 2: status
-#: inc/callbacks.php:318
+#: inc/callbacks.php:315
 #, php-format
 msgid "Call-back for %1$s: %2$s"
 msgstr ""
 
-#: inc/callbacks.php:334
+#: inc/callbacks.php:331
 msgid "Requested"
 msgstr ""
 
@@ -4449,8 +4466,10 @@ msgid "Open photos of %s full screen"
 msgstr ""
 
 #. translators: %d: wheelchairs
+#. translators: %d: number of wheelchairs
 #. translators: %d: wheelchair positions
 #: inc/components.php:148
+#: inc/sms.php:235
 #: template-parts/home/fleet.php:47
 #, php-format
 msgid "%d wheelchair"
@@ -4527,8 +4546,8 @@ msgstr ""
 
 #: inc/components.php:299
 #: inc/partner-outreach.php:235
-#: inc/settings-tabs.php:295
-#: inc/settings-tabs.php:468
+#: inc/settings-tabs.php:299
+#: inc/settings-tabs.php:472
 msgid "Check"
 msgstr ""
 
@@ -6590,88 +6609,88 @@ msgid "READY for pick-up now: %1$s — %2$s"
 msgstr ""
 
 #. translators: 1: reference 2: name 3: pick-up
-#: inc/discharge.php:67
+#: inc/discharge.php:64
 #, php-format
 msgid "%1$s: %2$s is ready now at %3$s."
 msgstr ""
 
-#: inc/discharge.php:84
+#: inc/discharge.php:81
 msgid "Thanks — we have let the office and your driver know you are ready. We will text you when the driver is on the way."
 msgstr ""
 
-#: inc/discharge.php:91
+#: inc/discharge.php:88
 msgid "Ready to be picked up?"
 msgstr ""
 
-#: inc/discharge.php:92
+#: inc/discharge.php:89
 msgid "Tap the button once you have been discharged or your appointment is finished. We will send the driver straight away."
 msgstr ""
 
-#: inc/discharge.php:97
+#: inc/discharge.php:94
 msgid "I’m ready"
 msgstr ""
 
 #. translators: %s: phone
-#: inc/discharge.php:99
+#: inc/discharge.php:96
 #, php-format
 msgid "Or call us on %s."
 msgstr ""
 
-#: inc/discharge.php:115
+#: inc/discharge.php:112
 msgid "This link has expired. Please call us."
 msgstr ""
 
-#: inc/discharge.php:118
+#: inc/discharge.php:115
 msgid "Please call us."
 msgstr ""
 
-#: inc/discharge.php:135
+#: inc/discharge.php:132
 msgid "Ready now"
 msgstr ""
 
-#: inc/discharge.php:150
+#: inc/discharge.php:147
 msgid "Marked as ready. The pick-up time is now, and the driver has been told."
 msgstr ""
 
-#: inc/discharge.php:150
+#: inc/discharge.php:147
 msgid "That trip is not waiting for a call."
 msgstr ""
 
-#: inc/discharge.php:160
+#: inc/discharge.php:157
 msgid "Waiting for the call (when ready)"
 msgstr ""
 
 #. translators: %s: time
-#: inc/discharge.php:163
+#: inc/discharge.php:160
 #, php-format
 msgid "READY since %s"
 msgstr ""
 
-#: inc/discharge.php:195
+#: inc/discharge.php:192
 msgid "Pick up when ready — today"
 msgstr ""
 
 #. translators: %s: time
-#: inc/discharge.php:199
+#: inc/discharge.php:196
 #, php-format
 msgid "READY %s"
 msgstr ""
 
 #. translators: %s: time
-#: inc/discharge.php:199
+#: inc/discharge.php:196
 msgid "Waiting"
 msgstr ""
 
-#: inc/discharge.php:219
+#: inc/discharge.php:216
 msgid "Pick up when ready"
 msgstr ""
 
-#: inc/discharge.php:222
+#: inc/discharge.php:219
 msgid "Waiting for the customer to call or tap \"I’m ready\"."
 msgstr ""
 
 #. translators: %s: time
-#: inc/discharge.php:225
+#: inc/discharge.php:222
 #, php-format
 msgid "Ready since %s."
 msgstr ""
@@ -7770,8 +7789,8 @@ msgstr ""
 #: inc/health.php:42
 #: inc/health.php:44
 #: inc/health.php:47
-#: inc/settings-tabs.php:158
-#: inc/settings-tabs.php:159
+#: inc/settings-tabs.php:162
+#: inc/settings-tabs.php:163
 msgid "Flight tracking"
 msgstr ""
 
@@ -8389,7 +8408,7 @@ msgstr ""
 
 #: inc/hardening.php:263
 #: inc/health.php:178
-#: inc/settings-tabs.php:468
+#: inc/settings-tabs.php:472
 msgid "Needs attention"
 msgstr ""
 
@@ -8448,10 +8467,10 @@ msgstr ""
 
 #: inc/health.php:73
 #: inc/privacy.php:649
-#: inc/settings-tabs.php:136
-#: inc/settings-tabs.php:162
-#: inc/settings-tabs.php:186
-#: inc/settings-tabs.php:244
+#: inc/settings-tabs.php:140
+#: inc/settings-tabs.php:166
+#: inc/settings-tabs.php:190
+#: inc/settings-tabs.php:248
 msgid "Off."
 msgstr ""
 
@@ -10175,16 +10194,16 @@ msgid "%1$s — %2$s"
 msgstr ""
 
 #. translators: 1: request type, 2: reference, 3: pick-up time
-#: inc/lookup.php:188
+#: inc/lookup.php:185
 #, php-format
 msgid "%1$s for %2$s (%3$s). Check email/admin."
 msgstr ""
 
-#: inc/lookup.php:202
+#: inc/lookup.php:198
 msgid "Cancellation request"
 msgstr ""
 
-#: inc/lookup.php:203
+#: inc/lookup.php:199
 msgid "Cancel all remaining repeat trips"
 msgstr ""
 
@@ -10806,7 +10825,7 @@ msgid "Send to"
 msgstr ""
 
 #: inc/mail-check.php:413
-#: inc/settings-tabs.php:570
+#: inc/settings-tabs.php:574
 msgid "Send test"
 msgstr ""
 
@@ -10860,7 +10879,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: inc/mail-check.php:465
-#: inc/settings-tabs.php:544
+#: inc/settings-tabs.php:548
 msgid "Open Email check"
 msgstr ""
 
@@ -11664,7 +11683,7 @@ msgid "Please contact us if you have any questions."
 msgstr ""
 
 #: inc/ndis-log.php:395
-#: inc/settings.php:44
+#: inc/settings.php:45
 msgid "ABN"
 msgstr ""
 
@@ -12411,7 +12430,7 @@ msgstr ""
 
 #: inc/payment-info.php:135
 #: inc/payment-info.php:162
-#: inc/settings-tabs.php:143
+#: inc/settings-tabs.php:147
 msgid "Bank transfer"
 msgstr ""
 
@@ -13526,8 +13545,8 @@ msgstr ""
 
 #. translators: %s: time
 #: inc/privacy.php:647
-#: inc/settings-tabs.php:228
-#: inc/settings-tabs.php:229
+#: inc/settings-tabs.php:232
+#: inc/settings-tabs.php:233
 msgid "Automatic clean-up"
 msgstr ""
 
@@ -14226,6 +14245,127 @@ msgstr ""
 msgid "Add to home screen"
 msgstr ""
 
+#: inc/quick-form.php:23
+#: inc/quick-form.php:31
+msgid "Quick booking form"
+msgstr ""
+
+#: inc/quick-form.php:23
+msgid "A one-screen booking form. Put [tp_quick_booking] on any page or in a widget — for example an ad landing page, a hotel page or the sidebar. Bookings from it work exactly like the main form."
+msgstr ""
+
+#: inc/quick-form.php:40
+msgid "Hide"
+msgstr ""
+
+#: inc/quick-form.php:41
+msgid "Show (optional)"
+msgstr ""
+
+#: inc/quick-form.php:42
+msgid "Show (required)"
+msgstr ""
+
+#: inc/quick-form.php:44
+msgid "Heading"
+msgstr ""
+
+#: inc/quick-form.php:44
+msgid "Book a taxi in one minute"
+msgstr ""
+
+#: inc/quick-form.php:44
+msgid "Leave empty for no heading. A page can set its own: [tp_quick_booking heading=\"Airport transfer\"]."
+msgstr ""
+
+#: inc/quick-form.php:45
+msgid "Short text under the heading"
+msgstr ""
+
+#: inc/quick-form.php:45
+msgid "Tell us where and when — we confirm by SMS or email."
+msgstr ""
+
+#: inc/quick-form.php:46
+msgid "Button text"
+msgstr ""
+
+#: inc/quick-form.php:47
+msgid "Without an email the customer gets updates by SMS only — or none at all if SMS is set to \"Office alerts only\"."
+msgstr ""
+
+#: inc/quick-form.php:48
+msgid "Ask “Is anyone travelling in a wheelchair?”"
+msgstr ""
+
+#: inc/quick-form.php:49
+msgid "Vehicle when the wheelchair question is hidden"
+msgstr ""
+
+#: inc/quick-form.php:50
+msgid "Number of passengers"
+msgstr ""
+
+#: inc/quick-form.php:51
+msgid "Return trip time"
+msgstr ""
+
+#: inc/quick-form.php:51
+msgid "Adds “Need a return trip? Pick-up time”."
+msgstr ""
+
+#: inc/quick-form.php:53
+msgid "Notes box"
+msgstr ""
+
+#: inc/quick-form.php:54
+msgid "Notes box label"
+msgstr ""
+
+#: inc/quick-form.php:54
+#: template-parts/booking-form.php:298
+#: template-parts/booking-quick.php:154
+msgid "Anything we should know?"
+msgstr ""
+
+#. translators: %d: question number
+#: inc/quick-form.php:57
+#, php-format
+msgid "Your question %d"
+msgstr ""
+
+#. translators: %d: question number
+#: inc/quick-form.php:57
+msgid "e.g. “Ward or clinic?”, “Hotel room number”, “Return pick-up time from the winery”. Leave empty to skip. Answers are added to the booking notes."
+msgstr ""
+
+#. translators: %d: question number
+#: inc/quick-form.php:59
+#, php-format
+msgid "Question %d must be answered"
+msgstr ""
+
+#: inc/quick-form.php:102
+#: inc/quick-form.php:106
+msgid "Please fill this in."
+msgstr ""
+
+#: inc/quick-form.php:112
+msgid "Please answer this."
+msgstr ""
+
+#: inc/quick-form.php:149
+msgid "Please tick the box to book."
+msgstr ""
+
+#: inc/quick-form.php:212
+msgid "How to use it"
+msgstr ""
+
+#: inc/quick-form.php:212
+msgid "Add a Shortcode block with [tp_quick_booking]. Per page you can change the heading and fill in an address: [tp_quick_booking heading=\"Airport transfer\" dropoff=\"Melbourne Airport\"]."
+msgstr ""
+
 #: inc/quotes.php:18
 msgid "Long-distance trip (Geelong, regional Victoria)"
 msgstr ""
@@ -14696,7 +14836,7 @@ msgstr ""
 #: inc/review-replies.php:71
 #: inc/review-replies.php:116
 #: inc/settings-tabs.php:23
-#: inc/settings.php:124
+#: inc/settings.php:125
 msgid "Google reviews"
 msgstr ""
 
@@ -15788,317 +15928,326 @@ msgstr ""
 msgid "Texts come from \"%s\". Customers cannot reply to a name. Sender names may also need registering with your provider (Australian SMS Sender ID rules) or messages can be blocked or marked \"unverified\"."
 msgstr ""
 
-#. translators: %s: number
-#: inc/settings-tabs.php:99
-#: inc/settings-tabs.php:100
+#: inc/settings-tabs.php:97
+#: inc/settings.php:33
+msgid "Office alerts only"
+msgstr ""
+
+#: inc/settings-tabs.php:97
+msgid "Customers and drivers are not texted — they get emails. Only the office mobile(s) get texts."
+msgstr ""
+
+#. translators: %s: numbers
+#: inc/settings-tabs.php:103
+#: inc/settings-tabs.php:104
 msgid "Office alerts"
 msgstr ""
 
-#. translators: %s: number
-#: inc/settings-tabs.php:99
+#. translators: %s: numbers
+#: inc/settings-tabs.php:103
 #, php-format
 msgid "New bookings are texted to %s."
 msgstr ""
 
-#: inc/settings-tabs.php:100
-msgid "The office mobile is not a valid Australian mobile (e.g. 0412 345 678)."
+#: inc/settings-tabs.php:104
+msgid "An office mobile is not a valid Australian mobile (e.g. 0412 345 678)."
 msgstr ""
 
-#: inc/settings-tabs.php:104
+#: inc/settings-tabs.php:108
 msgid "booking received"
 msgstr ""
 
-#: inc/settings-tabs.php:105
+#: inc/settings-tabs.php:109
 msgid "confirmed / driver / cancelled"
 msgstr ""
 
-#: inc/settings-tabs.php:106
+#: inc/settings-tabs.php:110
 msgid "on my way / arrived"
 msgstr ""
 
-#: inc/settings-tabs.php:107
+#: inc/settings-tabs.php:111
 msgid "new job (to drivers)"
 msgstr ""
 
 #. translators: %s: list
-#: inc/settings-tabs.php:111
+#: inc/settings-tabs.php:115
 msgid "Messages switched on"
 msgstr ""
 
 #. translators: %s: list
-#: inc/settings-tabs.php:111
+#: inc/settings-tabs.php:115
 #, php-format
 msgid "Texts are sent for: %s."
 msgstr ""
 
 #. translators: %s: list
-#: inc/settings-tabs.php:111
+#: inc/settings-tabs.php:115
 msgid "Every message type is switched off."
 msgstr ""
 
-#: inc/settings-tabs.php:112
-#: inc/settings-tabs.php:598
+#: inc/settings-tabs.php:116
+#: inc/settings-tabs.php:602
 msgid "Recent texts"
 msgstr ""
 
-#: inc/settings-tabs.php:121
+#: inc/settings-tabs.php:125
 msgid "Online deposits"
 msgstr ""
 
-#: inc/settings-tabs.php:121
+#: inc/settings-tabs.php:125
 msgid "Off — customers pay the driver or by invoice."
 msgstr ""
 
-#: inc/settings-tabs.php:125
-#: inc/settings-tabs.php:127
-#: inc/settings-tabs.php:128
+#: inc/settings-tabs.php:129
+#: inc/settings-tabs.php:131
+#: inc/settings-tabs.php:132
 msgid "Stripe key"
 msgstr ""
 
-#: inc/settings-tabs.php:125
+#: inc/settings-tabs.php:129
 msgid "Online deposits are on but there is no Stripe secret key, so the option is hidden."
 msgstr ""
 
-#: inc/settings-tabs.php:127
+#: inc/settings-tabs.php:131
 msgid "This is a TEST key — no real money is taken. Switch to the sk_live_ key before going live."
 msgstr ""
 
-#: inc/settings-tabs.php:128
+#: inc/settings-tabs.php:132
 msgid "A live key is saved. Use \"Check Stripe\" below to confirm it works."
 msgstr ""
 
 #. translators: %s: URL
-#: inc/settings-tabs.php:130
-#: inc/settings-tabs.php:132
+#: inc/settings-tabs.php:134
+#: inc/settings-tabs.php:136
 msgid "Stripe webhook"
 msgstr ""
 
-#: inc/settings-tabs.php:130
+#: inc/settings-tabs.php:134
 msgid "Signing secret saved. If paid deposits are not marked as paid, check the webhook in Stripe → Developers → Webhooks shows recent \"200\" responses."
 msgstr ""
 
 #. translators: %s: URL
-#: inc/settings-tabs.php:132
+#: inc/settings-tabs.php:136
 #, php-format
 msgid "No signing secret: paid deposits will not be marked as paid. In Stripe add a webhook to %s for \"checkout.session.completed\" and paste its signing secret."
 msgstr ""
 
-#: inc/settings-tabs.php:135
+#: inc/settings-tabs.php:139
 msgid "On. Receipts show your ABN, so they are valid tax invoices."
 msgstr ""
 
-#: inc/settings-tabs.php:135
+#: inc/settings-tabs.php:139
 msgid "On, but there is no ABN, so receipts are not valid tax invoices."
 msgstr ""
 
-#: inc/settings-tabs.php:138
+#: inc/settings-tabs.php:142
 msgid "bank transfer"
 msgstr ""
 
-#: inc/settings-tabs.php:140
+#: inc/settings-tabs.php:144
 msgid "\"Accept BPAY\" is ticked but there is no biller code, so BPAY is not shown."
 msgstr ""
 
-#: inc/settings-tabs.php:143
+#: inc/settings-tabs.php:147
 msgid "\"Accept bank transfer\" is ticked but the BSB or account number is missing, so it is not shown."
 msgstr ""
 
 #. translators: %s: list
-#: inc/settings-tabs.php:146
+#: inc/settings-tabs.php:150
 msgid "Ways to pay invoices"
 msgstr ""
 
 #. translators: %s: list
-#: inc/settings-tabs.php:146
+#: inc/settings-tabs.php:150
 #, php-format
 msgid "Shown on invoices: %s."
 msgstr ""
 
 #. translators: %s: list
-#: inc/settings-tabs.php:146
+#: inc/settings-tabs.php:150
 msgid "None set up."
 msgstr ""
 
-#: inc/settings-tabs.php:153
-#: inc/settings-tabs.php:154
+#: inc/settings-tabs.php:157
+#: inc/settings-tabs.php:158
 msgid "Terms page"
 msgstr ""
 
-#: inc/settings-tabs.php:153
+#: inc/settings-tabs.php:157
 msgid "Published — customers tick \"I accept\" before booking."
 msgstr ""
 
-#: inc/settings-tabs.php:154
+#: inc/settings-tabs.php:158
 msgid "No published terms page, so customers are not asked to accept terms. Finish and publish it (Pages → Terms & Cancellation Policy)."
 msgstr ""
 
-#: inc/settings-tabs.php:156
+#: inc/settings-tabs.php:160
 msgid "Cancellation fees"
 msgstr ""
 
-#: inc/settings-tabs.php:156
+#: inc/settings-tabs.php:160
 msgid "Shown on the booking form and in emails. Make sure they match your terms page."
 msgstr ""
 
-#: inc/settings-tabs.php:156
+#: inc/settings-tabs.php:160
 msgid "No fees set. The free-cancellation window is still shown."
 msgstr ""
 
-#: inc/settings-tabs.php:158
+#: inc/settings-tabs.php:162
 msgid "API key saved. Use \"Check flight data\" below."
 msgstr ""
 
-#: inc/settings-tabs.php:159
+#: inc/settings-tabs.php:163
 msgid "No API key — drivers see a live-status link only."
 msgstr ""
 
 #. translators: %s: error
 #. translators: 1: time 2: count
-#: inc/settings-tabs.php:162
-#: inc/settings-tabs.php:165
-#: inc/settings-tabs.php:167
+#: inc/settings-tabs.php:166
 #: inc/settings-tabs.php:169
+#: inc/settings-tabs.php:171
+#: inc/settings-tabs.php:173
 msgid "Weather warnings"
 msgstr ""
 
 #. translators: %s: error
-#: inc/settings-tabs.php:165
+#: inc/settings-tabs.php:169
 #, php-format
 msgid "The last check failed: %s"
 msgstr ""
 
-#: inc/settings-tabs.php:167
+#: inc/settings-tabs.php:171
 msgid "Not checked yet (it runs hourly). Use \"Check weather now\"."
 msgstr ""
 
 #. translators: 1: time 2: count
-#: inc/settings-tabs.php:169
+#: inc/settings-tabs.php:173
 #, php-format
 msgid "Last checked %1$s — %2$d warnings for your area."
 msgstr ""
 
 #. translators: %s: provider
-#: inc/settings-tabs.php:174
 #: inc/settings-tabs.php:178
-#: inc/settings-tabs.php:179
+#: inc/settings-tabs.php:182
+#: inc/settings-tabs.php:183
 msgid "Address suggestions"
 msgstr ""
 
-#: inc/settings-tabs.php:174
+#: inc/settings-tabs.php:178
 msgid "No Google Maps key or Addressfinder key — customers type addresses without suggestions."
 msgstr ""
 
 #. translators: %s: provider
-#: inc/settings-tabs.php:178
+#: inc/settings-tabs.php:182
 #, php-format
 msgid "On (%s). Use \"Test address suggestions\" below."
 msgstr ""
 
-#: inc/settings-tabs.php:179
+#: inc/settings-tabs.php:183
 msgid "A key is saved but \"Suggest addresses as customers type\" is off, or the provider you chose has no key."
 msgstr ""
 
-#: inc/settings-tabs.php:183
-#: inc/settings-tabs.php:184
-#: inc/settings-tabs.php:186
+#: inc/settings-tabs.php:187
+#: inc/settings-tabs.php:188
+#: inc/settings-tabs.php:190
 msgid "Fare estimates"
 msgstr ""
 
-#: inc/settings-tabs.php:183
+#: inc/settings-tabs.php:187
 msgid "On. Check an estimate below against a real fare."
 msgstr ""
 
-#: inc/settings-tabs.php:184
+#: inc/settings-tabs.php:188
 msgid "Switched on but hidden: it needs the Google Maps key and a rate per kilometre."
 msgstr ""
 
 #. translators: 1: rating 2: count
-#: inc/settings-tabs.php:192
-#: inc/settings-tabs.php:197
-#: inc/settings-tabs.php:198
+#: inc/settings-tabs.php:196
+#: inc/settings-tabs.php:201
+#: inc/settings-tabs.php:202
 msgid "Live Google reviews"
 msgstr ""
 
-#: inc/settings-tabs.php:192
+#: inc/settings-tabs.php:196
 msgid "No Place ID yet. Use \"Find your Google Place ID\" below."
 msgstr ""
 
-#: inc/settings-tabs.php:192
+#: inc/settings-tabs.php:196
 msgid "Needs the Google Maps key (Maps & addresses tab) and your Place ID."
 msgstr ""
 
 #. translators: 1: rating 2: count
-#: inc/settings-tabs.php:197
+#: inc/settings-tabs.php:201
 #, php-format
 msgid "Working: %1$s stars from %2$d reviews."
 msgstr ""
 
-#: inc/settings-tabs.php:198
+#: inc/settings-tabs.php:202
 msgid "Place ID saved but no reviews loaded yet. Use \"Fetch reviews now\"."
 msgstr ""
 
-#: inc/settings-tabs.php:201
-#: inc/settings-tabs.php:202
+#: inc/settings-tabs.php:205
+#: inc/settings-tabs.php:206
 msgid "Review invitations"
 msgstr ""
 
-#: inc/settings-tabs.php:201
+#: inc/settings-tabs.php:205
 msgid "Customers are sent to your Google review link after rating a trip."
 msgstr ""
 
-#: inc/settings-tabs.php:202
+#: inc/settings-tabs.php:206
 msgid "No review link, so customers are not invited to review you on Google."
 msgstr ""
 
 #. translators: %s: webhook URL
-#: inc/settings-tabs.php:208
-#: inc/settings-tabs.php:210
-#: inc/settings-tabs.php:211
-#: inc/settings.php:49
-#: inc/settings.php:123
+#: inc/settings-tabs.php:212
+#: inc/settings-tabs.php:214
+#: inc/settings-tabs.php:215
+#: inc/settings.php:50
+#: inc/settings.php:124
 msgid "Spam protection"
 msgstr ""
 
-#: inc/settings-tabs.php:208
+#: inc/settings-tabs.php:212
 msgid "Off. Forms still have hidden spam traps and rate limits; turn on Turnstile if you get spam bookings."
 msgstr ""
 
-#: inc/settings-tabs.php:210
+#: inc/settings-tabs.php:214
 msgid "On. Open the booking form and check the widget appears; if bookings are refused, the keys are for a different domain."
 msgstr ""
 
-#: inc/settings-tabs.php:211
+#: inc/settings-tabs.php:215
 msgid "A provider is chosen but a key is missing — forms may refuse every submission."
 msgstr ""
 
-#: inc/settings-tabs.php:213
+#: inc/settings-tabs.php:217
 msgid "The site uses https://."
 msgstr ""
 
-#: inc/settings-tabs.php:214
+#: inc/settings-tabs.php:218
 msgid "The site is not on https://. Ask your host for a free SSL certificate."
 msgstr ""
 
-#: inc/settings-tabs.php:219
-#: inc/settings-tabs.php:220
+#: inc/settings-tabs.php:223
+#: inc/settings-tabs.php:224
 msgid "Taxi Peninsula Core plugin"
 msgstr ""
 
-#: inc/settings-tabs.php:219
+#: inc/settings-tabs.php:223
 msgid "Active: bookings and records stay visible even if the theme is ever switched off, and Tools → Taxi data export downloads them."
 msgstr ""
 
-#: inc/settings-tabs.php:220
+#: inc/settings-tabs.php:224
 msgid "Not installed. Without it, switching themes (even by accident) hides every booking from the admin until the theme is back. Install taxi-peninsula-core.zip under Plugins → Add New → Upload."
 msgstr ""
 
 #. translators: %d: count
-#: inc/settings-tabs.php:223
+#: inc/settings-tabs.php:227
 msgid "Hardening"
 msgstr ""
 
 #. translators: %d: count
-#: inc/settings-tabs.php:223
+#: inc/settings-tabs.php:227
 #, php-format
 msgid "%d protection is switched off."
 msgid_plural "%d protections are switched off."
@@ -16106,354 +16255,354 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %d: count
-#: inc/settings-tabs.php:223
+#: inc/settings-tabs.php:227
 msgid "All recommended protections are on."
 msgstr ""
 
 #. translators: %s: time
-#: inc/settings-tabs.php:228
+#: inc/settings-tabs.php:232
 #, php-format
 msgid "On. Next run %s."
 msgstr ""
 
 #. translators: %s: time
-#: inc/settings-tabs.php:228
+#: inc/settings-tabs.php:232
 msgid "On, but not scheduled yet — it starts after the next page visit."
 msgstr ""
 
 #. translators: %s: time
-#: inc/settings-tabs.php:229
+#: inc/settings-tabs.php:233
 msgid "Off — old personal details are kept until you remove them."
 msgstr ""
 
-#: inc/settings-tabs.php:231
-#: inc/settings-tabs.php:232
-#: inc/settings.php:98
+#: inc/settings-tabs.php:235
+#: inc/settings-tabs.php:236
+#: inc/settings.php:99
 msgid "Privacy contact"
 msgstr ""
 
-#: inc/settings-tabs.php:231
+#: inc/settings-tabs.php:235
 msgid "Shown in the privacy policy."
 msgstr ""
 
-#: inc/settings-tabs.php:232
+#: inc/settings-tabs.php:236
 msgid "Not set — the policy uses the business name and main email."
 msgstr ""
 
-#: inc/settings-tabs.php:234
-#: inc/settings-tabs.php:235
+#: inc/settings-tabs.php:238
+#: inc/settings-tabs.php:239
 msgid "Data breach team"
 msgstr ""
 
-#: inc/settings-tabs.php:234
+#: inc/settings-tabs.php:238
 msgid "Listed in the data breach plan."
 msgstr ""
 
-#: inc/settings-tabs.php:235
+#: inc/settings-tabs.php:239
 msgid "Add who to call if personal information is lost or stolen."
 msgstr ""
 
 #. translators: %s: id
-#: inc/settings-tabs.php:241
+#: inc/settings-tabs.php:245
 #, php-format
 msgid "On (%s). Visits show in GA4 → Reports → Realtime within a minute — accept the cookie banner first."
 msgstr ""
 
-#: inc/settings-tabs.php:243
+#: inc/settings-tabs.php:247
 msgid "The measurement ID is not in the G-XXXXXXX format, so analytics is not loaded."
 msgstr ""
 
-#: inc/settings-tabs.php:246
+#: inc/settings-tabs.php:250
 msgid "Appearance → Customize → Taxi Peninsula → Contact details"
 msgstr ""
 
 #. translators: %s: where to set it
 #. translators: %s: link
-#: inc/settings-tabs.php:249
-#: inc/settings-tabs.php:252
-#: inc/settings-tabs.php:255
-#: inc/settings-tabs.php:258
+#: inc/settings-tabs.php:253
+#: inc/settings-tabs.php:256
+#: inc/settings-tabs.php:259
+#: inc/settings-tabs.php:262
 msgid "WhatsApp button"
 msgstr ""
 
 #. translators: %s: where to set it
-#: inc/settings-tabs.php:249
+#: inc/settings-tabs.php:253
 #, php-format
 msgid "Not shown: no WhatsApp number is set. Add it (e.g. +61 412 345 678) in %s."
 msgstr ""
 
 #. translators: %s: where to set it
-#: inc/settings-tabs.php:252
+#: inc/settings-tabs.php:256
 #, php-format
 msgid "The WhatsApp number looks too short. Check it in %s."
 msgstr ""
 
 #. translators: %s: where to set it
-#: inc/settings-tabs.php:255
+#: inc/settings-tabs.php:259
 #, php-format
 msgid "Switched off. Tick “Show the WhatsApp us button on every page” in %s."
 msgstr ""
 
 #. translators: %s: link
-#: inc/settings-tabs.php:258
+#: inc/settings-tabs.php:262
 #, php-format
 msgid "Shown at the bottom right of every page (an icon on phones), opening %s. If you can’t see it, clear your caching plugin’s cache."
 msgstr ""
 
-#: inc/settings-tabs.php:260
+#: inc/settings-tabs.php:264
 msgid "Search engines"
 msgstr ""
 
-#: inc/settings-tabs.php:260
+#: inc/settings-tabs.php:264
 msgid "See Marketing → AI & Bing search and Reports → Search performance for checks and results."
 msgstr ""
 
-#: inc/settings-tabs.php:278
+#: inc/settings-tabs.php:282
 msgid "Nothing sent yet."
 msgstr ""
 
 #. translators: 1: count 2: error
-#: inc/settings-tabs.php:284
+#: inc/settings-tabs.php:288
 #, php-format
 msgid "%1$d failed in the last 7 days. Latest error: %2$s"
 msgid_plural "%1$d failed in the last 7 days. Latest error: %2$s"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/settings-tabs.php:286
+#: inc/settings-tabs.php:290
 msgid "Every recent message was accepted."
 msgstr ""
 
-#: inc/settings-tabs.php:294
+#: inc/settings-tabs.php:298
 msgid "OK"
 msgstr ""
 
-#: inc/settings-tabs.php:296
+#: inc/settings-tabs.php:300
 msgid "Needs fixing"
 msgstr ""
 
-#: inc/settings-tabs.php:297
+#: inc/settings-tabs.php:301
 #: inc/settings.php:26
-#: inc/settings.php:58
+#: inc/settings.php:59
 msgid "Off"
 msgstr ""
 
-#: inc/settings-tabs.php:311
+#: inc/settings-tabs.php:315
 msgid "Check login"
 msgstr ""
 
-#: inc/settings-tabs.php:312
+#: inc/settings-tabs.php:316
 msgid "Check Stripe"
 msgstr ""
 
-#: inc/settings-tabs.php:313
+#: inc/settings-tabs.php:317
 msgid "Check flight data"
 msgstr ""
 
-#: inc/settings-tabs.php:313
+#: inc/settings-tabs.php:317
 msgid "Check weather now"
 msgstr ""
 
-#: inc/settings-tabs.php:314
+#: inc/settings-tabs.php:318
 msgid "Test address suggestions"
 msgstr ""
 
-#: inc/settings-tabs.php:314
+#: inc/settings-tabs.php:318
 msgid "Test a fare estimate"
 msgstr ""
 
-#: inc/settings-tabs.php:315
+#: inc/settings-tabs.php:319
 msgid "Fetch reviews now"
 msgstr ""
 
-#: inc/settings-tabs.php:327
+#: inc/settings-tabs.php:331
 msgid "SMS details are missing."
 msgstr ""
 
 #. translators: %s: error
-#: inc/settings-tabs.php:337
+#: inc/settings-tabs.php:341
 #, php-format
 msgid "Could not reach the provider: %s"
 msgstr ""
 
 #. translators: %d: status
-#: inc/settings-tabs.php:342
+#: inc/settings-tabs.php:346
 #, php-format
 msgid "The provider refused the login (%d). Copy the username/API key (or SID/token) again, with no spaces."
 msgstr ""
 
 #. translators: %s: balance
-#: inc/settings-tabs.php:347
+#: inc/settings-tabs.php:351
 msgid "Login accepted."
 msgstr ""
 
 #. translators: %s: balance
-#: inc/settings-tabs.php:347
+#: inc/settings-tabs.php:351
 #, php-format
 msgid "Account balance: %s."
 msgstr ""
 
 #. translators: %s: balance
-#: inc/settings-tabs.php:347
+#: inc/settings-tabs.php:351
 msgid "Now send a test text to your own phone."
 msgstr ""
 
-#: inc/settings-tabs.php:351
+#: inc/settings-tabs.php:355
 msgid "No Stripe secret key saved."
 msgstr ""
 
-#: inc/settings-tabs.php:359
+#: inc/settings-tabs.php:363
 msgid "Stripe accepted the key."
 msgstr ""
 
 #. translators: %d: status
-#: inc/settings-tabs.php:361
+#: inc/settings-tabs.php:365
 #, php-format
 msgid "Stripe refused the key (%d). Copy the secret key again from Stripe → Developers → API keys."
 msgstr ""
 
-#: inc/settings-tabs.php:365
+#: inc/settings-tabs.php:369
 msgid "No flight API key saved."
 msgstr ""
 
-#: inc/settings-tabs.php:370
+#: inc/settings-tabs.php:374
 msgid "The flight API key works."
 msgstr ""
 
-#: inc/settings-tabs.php:372
+#: inc/settings-tabs.php:376
 msgid "The key works but this month’s limit is used up."
 msgstr ""
 
-#: inc/settings-tabs.php:372
+#: inc/settings-tabs.php:376
 msgid "The key was refused. Check you are subscribed to AeroDataBox in RapidAPI."
 msgstr ""
 
 #. translators: %s: error
-#: inc/settings-tabs.php:372
+#: inc/settings-tabs.php:376
 #, php-format
 msgid "Could not reach the flight service (%s)."
 msgstr ""
 
 #. translators: %s: error
-#: inc/settings-tabs.php:382
+#: inc/settings-tabs.php:386
 #, php-format
 msgid "The Bureau feed could not be read: %s"
 msgstr ""
 
-#: inc/settings-tabs.php:388
+#: inc/settings-tabs.php:392
 msgid "Address suggestions are not switched on."
 msgstr ""
 
-#: inc/settings-tabs.php:396
+#: inc/settings-tabs.php:400
 msgid "No suggestions came back. Check the key is right and, for Google, that \"Places API (New)\" is enabled in Google Cloud and the key is not restricted to another website."
 msgstr ""
 
 #. translators: 1: count 2: first suggestion
-#: inc/settings-tabs.php:399
+#: inc/settings-tabs.php:403
 #, php-format
 msgid "%1$d suggestions for \"2 Hastings Road Frankston\", e.g. %2$s."
 msgstr ""
 
-#: inc/settings-tabs.php:403
+#: inc/settings-tabs.php:407
 msgid "Fare estimates need the Google Maps key, a per-kilometre rate and the switch turned on."
 msgstr ""
 
-#: inc/settings-tabs.php:407
+#: inc/settings-tabs.php:411
 msgid "Google did not return a route. Check the Routes API is enabled for your key in Google Cloud."
 msgstr ""
 
 #. translators: 1: km 2: minutes 3: low 4: high
-#: inc/settings-tabs.php:411
+#: inc/settings-tabs.php:415
 #, php-format
 msgid "Frankston → Melbourne Airport: %1$s km, %2$d min — estimate $%3$s–$%4$s. Compare it with a real fare."
 msgstr ""
 
-#: inc/settings-tabs.php:415
+#: inc/settings-tabs.php:419
 msgid "Needs the Google Maps key and a Place ID."
 msgstr ""
 
 #. translators: %s: error
-#: inc/settings-tabs.php:420
+#: inc/settings-tabs.php:424
 #, php-format
 msgid "Google refused: %s — check the Places API (New) is enabled for your key."
 msgstr ""
 
 #. translators: 1: rating 2: count
-#: inc/settings-tabs.php:424
+#: inc/settings-tabs.php:428
 #, php-format
 msgid "Loaded: %1$s stars, %2$d reviews."
 msgstr ""
 
-#: inc/settings-tabs.php:426
+#: inc/settings-tabs.php:430
 msgid "Unknown test."
 msgstr ""
 
-#: inc/settings-tabs.php:459
+#: inc/settings-tabs.php:463
 msgid "Settings sections"
 msgstr ""
 
-#: inc/settings-tabs.php:511
+#: inc/settings-tabs.php:515
 msgid "Each area of the booking system and whether it is ready. Open a tab to change its settings, run a test, or see what to fix. Contact details, hero text and service areas are under Appearance → Customize."
 msgstr ""
 
-#: inc/settings-tabs.php:532
+#: inc/settings-tabs.php:536
 msgid "Run every connection check"
 msgstr ""
 
-#: inc/settings-tabs.php:541
+#: inc/settings-tabs.php:545
 msgid "Test & troubleshoot"
 msgstr ""
 
-#: inc/settings-tabs.php:543
+#: inc/settings-tabs.php:547
 msgid "Sender checks, DNS checks, a test email and the list of recent emails are on the Email check page."
 msgstr ""
 
-#: inc/settings-tabs.php:552
+#: inc/settings-tabs.php:556
 msgid "Nothing to check here — save your changes and check the website."
 msgstr ""
 
-#: inc/settings-tabs.php:564
+#: inc/settings-tabs.php:568
 msgid "Send a test text"
 msgstr ""
 
-#: inc/settings-tabs.php:568
+#: inc/settings-tabs.php:572
 #: template-parts/booking-lookup-form.php:32
 msgid "Mobile number"
 msgstr ""
 
-#: inc/settings-tabs.php:573
+#: inc/settings-tabs.php:577
 msgid "Text not arriving?"
 msgstr ""
 
-#: inc/settings-tabs.php:575
+#: inc/settings-tabs.php:579
 msgid "\"Accepted\" above but nothing on the phone: look the message up in your ClickSend/Twilio dashboard — it shows whether the network delivered or rejected it."
 msgstr ""
 
-#: inc/settings-tabs.php:576
+#: inc/settings-tabs.php:580
 msgid "Out of credit: top up your SMS account (\"Check login\" shows the ClickSend balance)."
 msgstr ""
 
-#: inc/settings-tabs.php:577
+#: inc/settings-tabs.php:581
 msgid "Using a sender name: try your mobile number as the sender — some networks block unregistered names."
 msgstr ""
 
-#: inc/settings-tabs.php:578
+#: inc/settings-tabs.php:582
 msgid "Twilio trial accounts can only text numbers you have verified in Twilio."
 msgstr ""
 
-#: inc/settings-tabs.php:579
+#: inc/settings-tabs.php:583
 msgid "Customer replied STOP: they will not get marketing texts (trip texts still go)."
 msgstr ""
 
-#: inc/settings-tabs.php:584
+#: inc/settings-tabs.php:588
 msgid "How payment details look on an invoice"
 msgstr ""
 
-#: inc/settings-tabs.php:589
+#: inc/settings-tabs.php:593
 msgid "What customers see on the booking form"
 msgstr ""
 
-#: inc/settings-tabs.php:600
+#: inc/settings-tabs.php:604
 msgid "None sent yet."
 msgstr ""
 
@@ -16490,461 +16639,465 @@ msgid "Office mobile for new-booking alerts"
 msgstr ""
 
 #: inc/settings.php:32
-msgid "Leave empty to skip office SMS alerts."
+msgid "Every new booking is texted here. Separate several numbers with commas, e.g. you and a dispatcher. Leave empty to skip office SMS alerts."
 msgstr ""
 
 #: inc/settings.php:33
-msgid "Text customers when a booking is received"
+msgid "Only the office mobile(s) above get texts. Customers and drivers get nothing by SMS — no codes, confirmations, reminders or \"on my way\" texts; they get emails instead. Useful to keep SMS costs down."
 msgstr ""
 
 #: inc/settings.php:34
-msgid "Text customers when a booking is confirmed, a driver is assigned or it is cancelled"
+msgid "Text customers when a booking is received"
 msgstr ""
 
 #: inc/settings.php:35
-msgid "Text drivers when a job is assigned to them"
+msgid "Text customers when a booking is confirmed, a driver is assigned or it is cancelled"
 msgstr ""
 
 #: inc/settings.php:36
+msgid "Text drivers when a job is assigned to them"
+msgstr ""
+
+#: inc/settings.php:37
 msgid "Text customers when the driver taps \"On my way\" and \"Arrived\""
 msgstr ""
 
-#: inc/settings.php:39
+#: inc/settings.php:40
 msgid "Offer online deposit with Stripe"
 msgstr ""
 
-#: inc/settings.php:40
+#: inc/settings.php:41
 msgid "Stripe secret key"
 msgstr ""
 
-#: inc/settings.php:40
+#: inc/settings.php:41
 msgid "Starts with sk_live_ or sk_test_."
 msgstr ""
 
-#: inc/settings.php:41
+#: inc/settings.php:42
 msgid "Stripe webhook signing secret"
 msgstr ""
 
-#: inc/settings.php:42
+#: inc/settings.php:43
 msgid "Deposit amount (AUD)"
 msgstr ""
 
-#: inc/settings.php:43
+#: inc/settings.php:44
 msgid "Offer \"account / invoice\" for NDIS, aged care and business customers"
 msgstr ""
 
-#: inc/settings.php:44
+#: inc/settings.php:45
 msgid "Shown on receipts. With an ABN and a fare entered, receipts become tax invoices (GST shown as 1/11 of the fare)."
 msgstr ""
 
-#: inc/settings.php:45
+#: inc/settings.php:46
 msgid "Business address for invoices"
 msgstr ""
 
-#: inc/settings.php:46
+#: inc/settings.php:47
 msgid "Payment terms on account invoices"
 msgstr ""
 
-#: inc/settings.php:46
+#: inc/settings.php:47
 msgid "e.g. Payment due within 14 days. BSB 000-000, Account 00000000."
 msgstr ""
 
-#: inc/settings.php:49
+#: inc/settings.php:50
 msgid "Protects the booking, contact and booking-lookup forms."
 msgstr ""
 
-#: inc/settings.php:49
+#: inc/settings.php:50
 msgid "Off (honeypot + rate limits only)"
 msgstr ""
 
-#: inc/settings.php:50
+#: inc/settings.php:51
 msgid "Site key"
 msgstr ""
 
-#: inc/settings.php:51
+#: inc/settings.php:52
 msgid "Secret key"
 msgstr ""
 
-#: inc/settings.php:54
+#: inc/settings.php:55
 msgid "Google reviews link"
 msgstr ""
 
-#: inc/settings.php:54
+#: inc/settings.php:55
 msgid "Your Google Business Profile reviews URL."
 msgstr ""
 
-#: inc/settings.php:55
+#: inc/settings.php:56
 msgid "Google star rating"
 msgstr ""
 
-#: inc/settings.php:55
+#: inc/settings.php:56
 msgid "e.g. 4.9 — copy it from your Google profile. Leave empty to hide."
 msgstr ""
 
-#: inc/settings.php:56
+#: inc/settings.php:57
 msgid "Number of Google reviews"
 msgstr ""
 
-#: inc/settings.php:57
+#: inc/settings.php:58
 msgid "Write-a-review link"
 msgstr ""
 
-#: inc/settings.php:57
+#: inc/settings.php:58
 msgid "In Google Business Profile choose \"Ask for reviews\" and copy the link (it looks like https://g.page/r/…/review). Leave empty to use the reviews link above."
 msgstr ""
 
-#: inc/settings.php:58
+#: inc/settings.php:59
 msgid "Invite customers to review you on Google"
 msgstr ""
 
-#: inc/settings.php:58
+#: inc/settings.php:59
 msgid "Shown straight after a customer rates a trip. Note: Google’s review policy and the ACCC’s guidance on online reviews say businesses should not invite only happy customers — Google can remove reviews gathered that way. \"After any rating\" is the safest choice."
 msgstr ""
 
-#: inc/settings.php:58
+#: inc/settings.php:59
 msgid "After a 4 or 5 star rating"
 msgstr ""
 
-#: inc/settings.php:58
+#: inc/settings.php:59
 msgid "After any rating"
 msgstr ""
 
-#: inc/settings.php:59
+#: inc/settings.php:60
 msgid "Also email the invitation"
 msgstr ""
 
-#: inc/settings.php:59
+#: inc/settings.php:60
 msgid "Sent at most once every 6 months to the same email address."
 msgstr ""
 
-#: inc/settings.php:60
+#: inc/settings.php:61
 msgid "Show live Google reviews"
 msgstr ""
 
-#: inc/settings.php:60
+#: inc/settings.php:61
 msgid "Needs the Google Maps key below and your Place ID (use \"Find your Google Place ID\" at the bottom of this page). Refreshed once a day."
 msgstr ""
 
-#: inc/settings.php:61
+#: inc/settings.php:62
 msgid "Google Place ID"
 msgstr ""
 
-#: inc/settings.php:62
+#: inc/settings.php:63
 msgid "Google Business Profile link"
 msgstr ""
 
-#: inc/settings.php:62
+#: inc/settings.php:63
 msgid "Your Google Maps listing, e.g. https://maps.app.goo.gl/… — added to your business details for search engines."
 msgstr ""
 
-#: inc/settings.php:63
+#: inc/settings.php:64
 msgid "Google logo image (optional)"
 msgstr ""
 
-#: inc/settings.php:63
+#: inc/settings.php:64
 msgid "Shown beside the review score. Leave empty to show the word \"Google\"."
 msgstr ""
 
-#: inc/settings.php:66
+#: inc/settings.php:67
 msgid "Google Maps API key"
 msgstr ""
 
-#: inc/settings.php:66
+#: inc/settings.php:67
 msgid "Server-side key with Places API (New) and Routes API enabled. Restrict it to those APIs and your server IP."
 msgstr ""
 
-#: inc/settings.php:67
+#: inc/settings.php:68
 msgid "Suggest addresses as customers type"
 msgstr ""
 
-#: inc/settings.php:68
+#: inc/settings.php:69
 msgid "Address suggestions from"
 msgstr ""
 
-#: inc/settings.php:68
+#: inc/settings.php:69
 msgid "Addressfinder uses Australia Post and government address data, so unit numbers, rural roads and new estates are more accurate. Google also finds hospitals, shops and other places by name. \"Both\" shows Addressfinder addresses first, then Google places."
 msgstr ""
 
-#: inc/settings.php:68
+#: inc/settings.php:69
 msgid "Both"
 msgstr ""
 
-#: inc/settings.php:69
+#: inc/settings.php:70
 msgid "Addressfinder licence key"
 msgstr ""
 
-#: inc/settings.php:69
+#: inc/settings.php:70
 msgid "From addressfinder.com.au → Account → Credentials. Free plans include a monthly allowance."
 msgstr ""
 
-#: inc/settings.php:70
+#: inc/settings.php:71
 msgid "Addressfinder secret (optional)"
 msgstr ""
 
-#: inc/settings.php:70
+#: inc/settings.php:71
 msgid "Only needed if your key is set to require a secret."
 msgstr ""
 
-#: inc/settings.php:71
+#: inc/settings.php:72
 msgid "Show a fare estimate on the booking form"
 msgstr ""
 
-#: inc/settings.php:71
+#: inc/settings.php:72
 msgid "Needs the Google Maps key and a per-kilometre rate."
 msgstr ""
 
-#: inc/settings.php:72
+#: inc/settings.php:73
 msgid "Flagfall (AUD)"
 msgstr ""
 
-#: inc/settings.php:73
+#: inc/settings.php:74
 msgid "Rate per kilometre (AUD)"
 msgstr ""
 
-#: inc/settings.php:74
+#: inc/settings.php:75
 msgid "Rate per minute of driving (AUD)"
 msgstr ""
 
-#: inc/settings.php:75
+#: inc/settings.php:76
 msgid "Booking fee (AUD)"
 msgstr ""
 
-#: inc/settings.php:76
+#: inc/settings.php:77
 msgid "Airport fee (AUD)"
 msgstr ""
 
-#: inc/settings.php:76
+#: inc/settings.php:77
 msgid "Added when the trip starts or ends at an airport."
 msgstr ""
 
-#: inc/settings.php:77
+#: inc/settings.php:78
 msgid "Minimum fare (AUD)"
 msgstr ""
 
-#: inc/settings.php:78
+#: inc/settings.php:79
 msgid "Night / weekend surcharge (%)"
 msgstr ""
 
-#: inc/settings.php:79
+#: inc/settings.php:80
 msgid "Night rate starts (HH:MM)"
 msgstr ""
 
-#: inc/settings.php:79
+#: inc/settings.php:80
 msgid "e.g. 22:00"
 msgstr ""
 
-#: inc/settings.php:80
+#: inc/settings.php:81
 msgid "Night rate ends (HH:MM)"
 msgstr ""
 
-#: inc/settings.php:80
+#: inc/settings.php:81
 msgid "e.g. 06:00"
 msgstr ""
 
-#: inc/settings.php:81
+#: inc/settings.php:82
 msgid "Apply the surcharge all weekend"
 msgstr ""
 
-#: inc/settings.php:82
+#: inc/settings.php:83
 msgid "Show the estimate as a range of ± (%)"
 msgstr ""
 
-#: inc/settings.php:85
+#: inc/settings.php:86
 msgid "Google Analytics 4 measurement ID"
 msgstr ""
 
-#: inc/settings.php:85
+#: inc/settings.php:86
 msgid "Starts with G-. Leave empty for no analytics."
 msgstr ""
 
-#: inc/settings.php:86
+#: inc/settings.php:87
 msgid "Ask visitors before loading analytics"
 msgstr ""
 
-#: inc/settings.php:86
+#: inc/settings.php:87
 msgid "Shows an Accept / Reject banner. Analytics loads only after \"Accept\"."
 msgstr ""
 
-#: inc/settings.php:89
+#: inc/settings.php:90
 msgid "Send security headers"
 msgstr ""
 
-#: inc/settings.php:90
+#: inc/settings.php:91
 msgid "Force HTTPS in browsers (HSTS)"
 msgstr ""
 
-#: inc/settings.php:90
+#: inc/settings.php:91
 msgid "Turn on only once the whole site, including subdomains, works on HTTPS."
 msgstr ""
 
-#: inc/settings.php:91
+#: inc/settings.php:92
 msgid "Turn off the theme and plugin file editors"
 msgstr ""
 
-#: inc/settings.php:92
+#: inc/settings.php:93
 msgid "Block XML-RPC"
 msgstr ""
 
-#: inc/settings.php:92
+#: inc/settings.php:93
 msgid "Only the old WordPress mobile app and Jetpack need it."
 msgstr ""
 
-#: inc/settings.php:93
+#: inc/settings.php:94
 msgid "Hide usernames"
 msgstr ""
 
-#: inc/settings.php:94
+#: inc/settings.php:95
 msgid "Hide the WordPress version number"
 msgstr ""
 
-#: inc/settings.php:95
+#: inc/settings.php:96
 msgid "The site is behind Cloudflare"
 msgstr ""
 
-#: inc/settings.php:95
+#: inc/settings.php:96
 msgid "Uses the visitor’s real IP for rate limits, only for requests that really come from Cloudflare."
 msgstr ""
 
-#: inc/settings.php:98
+#: inc/settings.php:99
 msgid "Name or role shown in the privacy policy, e.g. \"Privacy Officer\". Leave empty to use the business name."
 msgstr ""
 
-#: inc/settings.php:99
+#: inc/settings.php:100
 msgid "Privacy email"
 msgstr ""
 
-#: inc/settings.php:99
+#: inc/settings.php:100
 msgid "Leave empty to use your main email address."
 msgstr ""
 
-#: inc/settings.php:100
+#: inc/settings.php:101
 msgid "Where your website and email are hosted"
 msgstr ""
 
-#: inc/settings.php:100
+#: inc/settings.php:101
 msgid "e.g. \"VentraIP (website, Australia) and Microsoft 365 (email, Australia)\". Shown in the privacy policy."
 msgstr ""
 
-#: inc/settings.php:101
+#: inc/settings.php:102
 msgid "Other services that handle personal information"
 msgstr ""
 
-#: inc/settings.php:101
+#: inc/settings.php:102
 msgid "One per line, e.g. \"Xero (accounting) — Australia and United States\". SMS, Stripe, Google Maps and spam protection are listed automatically when switched on."
 msgstr ""
 
-#: inc/settings.php:102
+#: inc/settings.php:103
 msgid "Remove old personal details automatically"
 msgstr ""
 
-#: inc/settings.php:102
+#: inc/settings.php:103
 msgid "Runs once a day using the periods below. See Bookings → Privacy for what is due."
 msgstr ""
 
-#: inc/settings.php:103
+#: inc/settings.php:104
 msgid "Trips: remove passenger details after (months)"
 msgstr ""
 
-#: inc/settings.php:103
+#: inc/settings.php:104
 msgid "Names, phone numbers, emails, street addresses, notes and comments are removed from trips this old. The reference, date, suburbs, fare and payment stay for your records; account invoice details are kept for 5 years for tax. 0 = never."
 msgstr ""
 
-#: inc/settings.php:104
+#: inc/settings.php:105
 msgid "Messages and driver applications: delete after (months)"
 msgstr ""
 
-#: inc/settings.php:104
 #: inc/settings.php:105
+#: inc/settings.php:106
 msgid "0 = never."
 msgstr ""
 
-#: inc/settings.php:105
+#: inc/settings.php:106
 msgid "Activity log: delete entries after (months)"
 msgstr ""
 
-#: inc/settings.php:108
+#: inc/settings.php:109
 msgid "Terms & cancellation policy page"
 msgstr ""
 
-#: inc/settings.php:108
+#: inc/settings.php:109
 msgid "Customers must tick \"I accept\" before booking. Leave as \"— Use the Setup page —\" to use the page created by Bookings → Setup."
 msgstr ""
 
-#: inc/settings.php:111
+#: inc/settings.php:112
 msgid "Allow customers to request repeat trips"
 msgstr ""
 
-#: inc/settings.php:112
+#: inc/settings.php:113
 msgid "Longest repeat period (weeks)"
 msgstr ""
 
-#: inc/settings.php:113
+#: inc/settings.php:114
 msgid "How far ahead customers can book online (months)"
 msgstr ""
 
-#: inc/settings.php:121
+#: inc/settings.php:122
 msgid "SMS notifications"
 msgstr ""
 
-#: inc/settings.php:121
+#: inc/settings.php:122
 msgid "Messages are sent through your own ClickSend or Twilio account and billed by them."
 msgstr ""
 
-#: inc/settings.php:122
+#: inc/settings.php:123
 msgid "Payments & invoicing"
 msgstr ""
 
 #. translators: %s: webhook URL
-#: inc/settings.php:122
+#: inc/settings.php:123
 #, php-format
 msgid "In Stripe, add a webhook for the \"checkout.session.completed\" event pointing to: %s"
 msgstr ""
 
-#: inc/settings.php:124
+#: inc/settings.php:125
 msgid "Shown with your testimonials on the home page."
 msgstr ""
 
-#: inc/settings.php:125
+#: inc/settings.php:126
 msgid "Maps, addresses & fare estimates"
 msgstr ""
 
-#: inc/settings.php:125
+#: inc/settings.php:126
 msgid "All requests go through your website, so keys never reach visitors’ browsers."
 msgstr ""
 
-#: inc/settings.php:126
+#: inc/settings.php:127
 msgid "Analytics & cookies"
 msgstr ""
 
-#: inc/settings.php:127
+#: inc/settings.php:128
 msgid "Security hardening"
 msgstr ""
 
-#: inc/settings.php:128
+#: inc/settings.php:129
 msgid "Privacy & data retention"
 msgstr ""
 
-#: inc/settings.php:128
+#: inc/settings.php:129
 msgid "The Australian Privacy Principles ask you to keep personal information only while you need it. Tax invoices are kept for 5 years, as the ATO requires."
 msgstr ""
 
-#: inc/settings.php:129
+#: inc/settings.php:130
 msgid "Recurring trips"
 msgstr ""
 
-#: inc/settings.php:230
+#: inc/settings.php:231
 msgid "Set in wp-config.php"
 msgstr ""
 
-#: inc/settings.php:236
+#: inc/settings.php:237
 msgid "Enabled"
 msgstr ""
 
-#: inc/settings.php:251
+#: inc/settings.php:252
 msgid "— Use the Setup page —"
 msgstr ""
 
-#: inc/settings.php:264
+#: inc/settings.php:265
 msgid "•••••••• saved — leave blank to keep"
 msgstr ""
 
@@ -17067,106 +17220,140 @@ msgstr ""
 msgid "Photo %1$d of %2$d"
 msgstr ""
 
-#: inc/sms.php:62
+#: inc/sms.php:102
 msgid "SMS is not configured."
 msgstr ""
 
-#: inc/sms.php:66
+#: inc/sms.php:105
+msgid "Not sent: SMS is set to office alerts only."
+msgstr ""
+
+#: inc/sms.php:109
 msgid "Invalid mobile number."
 msgstr ""
 
 #. translators: 1: HTTP status, 2: provider message
-#: inc/sms.php:118
+#: inc/sms.php:161
 #, php-format
 msgid "SMS failed (%1$d) %2$s"
 msgstr ""
 
-#: inc/sms.php:135
+#: inc/sms.php:178
 msgid "customer"
 msgstr ""
 
-#: inc/sms.php:136
+#: inc/sms.php:179
 msgid "driver"
 msgstr ""
 
-#: inc/sms.php:137
+#: inc/sms.php:180
 msgid "office"
 msgstr ""
 
 #. translators: 1: recipient, 2: error
-#: inc/sms.php:145
+#: inc/sms.php:188
 #, php-format
 msgid "SMS to %1$s failed: %2$s"
 msgstr ""
 
 #. translators: %s: recipient
-#: inc/sms.php:147
+#: inc/sms.php:190
 #, php-format
 msgid "SMS sent to %s"
 msgstr ""
 
 #. translators: 1: reference, 2: pick-up time, 3: name, 4: phone, 5: from, 6: to
-#: inc/sms.php:168
+#: inc/sms.php:224
 #, php-format
 msgid "New booking %1$s: %2$s, %3$s (%4$s). %5$s → %6$s"
 msgstr ""
 
+#. translators: %d: passengers
+#: inc/sms.php:239
+#, php-format
+msgid "%d passengers"
+msgstr ""
+
+#: inc/sms.php:242
+msgid "WAT"
+msgstr ""
+
+#: inc/sms.php:243
+msgid "Maxi WAT"
+msgstr ""
+
+#: inc/sms.php:244
+msgid "Sedan"
+msgstr ""
+
+#. translators: %s: fare range
+#: inc/sms.php:255
+#, php-format
+msgid "Est %s"
+msgstr ""
+
 #. translators: %d: number of trips
-#: inc/sms.php:178
+#: inc/sms.php:259
 #, php-format
 msgid "(repeat: %d trips)"
 msgstr ""
 
+#. translators: %s: notes
+#: inc/sms.php:263
+#, php-format
+msgid "Notes: %s"
+msgstr ""
+
 #. translators: 1: site, 2: reference, 3: pick-up time, 4: link
-#: inc/sms.php:196
+#: inc/sms.php:276
 #, php-format
 msgid "%1$s: we received your booking %2$s for %3$s. We will confirm shortly. Manage it: %4$s"
 msgstr ""
 
 #. translators: 1: site, 2: reference, 3: pick-up time
-#: inc/sms.php:224
+#: inc/sms.php:304
 #, php-format
 msgid "%1$s: booking %2$s is confirmed for %3$s."
 msgstr ""
 
 #. translators: 1: site, 2: reference, 3: pick-up time
-#: inc/sms.php:230
+#: inc/sms.php:310
 #, php-format
 msgid "%1$s: a driver is assigned to booking %2$s for %3$s."
 msgstr ""
 
 #. translators: %s: driver first name
-#: inc/sms.php:233
+#: inc/sms.php:313
 #, php-format
 msgid "Driver: %s."
 msgstr ""
 
 #. translators: %s: vehicle
-#: inc/sms.php:237
-#: inc/trips.php:189
+#: inc/sms.php:317
+#: inc/trips.php:187
 #, php-format
 msgid "Vehicle: %s."
 msgstr ""
 
 #. translators: 1: site, 2: reference, 3: phone
-#: inc/sms.php:242
+#: inc/sms.php:322
 #, php-format
 msgid "%1$s: booking %2$s has been cancelled. Questions? Call %3$s."
 msgstr ""
 
 #. translators: 1: reference, 2: pick-up time, 3: from, 4: to, 5: name, 6: phone
-#: inc/sms.php:262
+#: inc/sms.php:342
 #, php-format
 msgid "New job %1$s: %2$s. %3$s → %4$s. %5$s %6$s"
 msgstr ""
 
 #. translators: %s: site name
-#: inc/sms.php:284
+#: inc/sms.php:365
 #, php-format
 msgid "Test message from %s. SMS is working."
 msgstr ""
 
-#: inc/sms.php:287
+#: inc/sms.php:368
 msgid "Test SMS sent."
 msgstr ""
 
@@ -17816,13 +18003,13 @@ msgid "Dispatch board:"
 msgstr ""
 
 #. translators: 1: site, 2: driver first name, 3: reference
-#: inc/trips.php:186
+#: inc/trips.php:184
 #, php-format
 msgid "%1$s: %2$s is on the way to pick you up (booking %3$s)."
 msgstr ""
 
 #. translators: 1: site, 2: driver first name, 3: pick-up address
-#: inc/trips.php:193
+#: inc/trips.php:191
 #, php-format
 msgid "%1$s: %2$s has arrived at %3$s."
 msgstr ""
@@ -19518,6 +19705,7 @@ msgid "Put the earliest likely time above (or leave it empty). When you are read
 msgstr ""
 
 #: template-parts/booking-form.php:136
+#: template-parts/booking-quick.php:99
 msgid "Is anyone travelling in a wheelchair or scooter?"
 msgstr ""
 
@@ -19595,10 +19783,6 @@ msgstr ""
 msgid "I am a Multi Purpose Taxi Program (MPTP) member"
 msgstr ""
 
-#: template-parts/booking-form.php:298
-msgid "Anything we should know?"
-msgstr ""
-
 #: template-parts/booking-form.php:299
 msgid "e.g. wheelchair dimensions, carer travelling, assistance to the door, flight number"
 msgstr ""
@@ -19630,11 +19814,13 @@ msgid "I have read and accept the %s."
 msgstr ""
 
 #: template-parts/booking-form.php:380
+#: template-parts/booking-quick.php:168
 msgid "terms and cancellation policy"
 msgstr ""
 
 #. translators: %s: phone link
 #: template-parts/booking-form.php:400
+#: template-parts/booking-quick.php:188
 #, php-format
 msgid "Travelling in the next hour? Call %s"
 msgstr ""
@@ -19655,6 +19841,16 @@ msgstr ""
 #: template-parts/booking-lookup-form.php:45
 #, php-format
 msgid "Lost your reference? Call %s."
+msgstr ""
+
+#. translators: %s: link to the terms
+#: template-parts/booking-quick.php:167
+#, php-format
+msgid "I accept the %s and agree to be contacted about this booking."
+msgstr ""
+
+#: template-parts/booking-quick.php:172
+msgid "I agree to be contacted about this booking."
 msgstr ""
 
 #: template-parts/booking-status.php:16

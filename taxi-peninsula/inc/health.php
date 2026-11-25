@@ -69,7 +69,7 @@ function tp_health_checks() {
 
 	// SMS provider.
 	$provider = tp_setting( 'sms_provider' );
-	if ( ! tp_sms_enabled() ) {
+	if ( ! tp_sms_configured() ) {
 		$out['sms'] = array( 'none' === $provider ? 'off' : 'fail', __( 'SMS sending', 'taxi-peninsula' ), 'none' === $provider ? __( 'Off.', 'taxi-peninsula' ) : __( 'Details are missing for the chosen provider.', 'taxi-peninsula' ), 'tp-settings' );
 	} else {
 		if ( 'clicksend' === $provider ) {

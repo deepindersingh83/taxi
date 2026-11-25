@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TP_VERSION', '2.15.0' );
+define( 'TP_VERSION', '2.16.0' );
 define( 'TP_DIR', get_template_directory() );
 define( 'TP_URI', get_template_directory_uri() );
 
@@ -98,6 +98,7 @@ require TP_DIR . '/inc/url-moves.php';
 require TP_DIR . '/inc/content-pack.php';
 require TP_DIR . '/inc/legal-pages.php';
 require TP_DIR . '/inc/route-guides.php';
+require TP_DIR . '/inc/quick-form.php';
 require TP_DIR . '/inc/partner-outreach.php';
 require TP_DIR . '/inc/speed-report.php';
 require TP_DIR . '/inc/seo-plugins.php';

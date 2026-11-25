@@ -180,15 +180,11 @@ function tp_handle_booking_request() {
 				$types[ $type ] . "\n\n" . ( $message ? $message . "\n\n" : '' ) . tp_booking_summary( $b ) . "\n" . admin_url( 'post.php?post=' . $post_id . '&action=edit' ),
 				tp_mail_headers( $b['email'] )
 			);
-			if ( tp_setting( 'sms_office_number' ) ) {
-				tp_booking_sms(
-					$post_id,
-					tp_setting( 'sms_office_number' ),
-					/* translators: 1: request type, 2: reference, 3: pick-up time */
-					sprintf( __( '%1$s for %2$s (%3$s). Check email/admin.', 'taxi-peninsula' ), $types[ $type ], $b['reference'], tp_format_pickup( $b, 'D j M g:ia' ) ),
-					'office'
-				);
-			}
+			tp_sms_office(
+				/* translators: 1: request type, 2: reference, 3: pick-up time */
+				sprintf( __( '%1$s for %2$s (%3$s). Check email/admin.', 'taxi-peninsula' ), $types[ $type ], $b['reference'], tp_format_pickup( $b, 'D j M g:ia' ) ),
+				$post_id
+			);
 		}
 	);
 

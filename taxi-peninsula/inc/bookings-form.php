@@ -233,6 +233,13 @@ function tp_handle_booking() {
  */
 function tp_booking_fail( $return, array $errors, $old, $anchor = '#book' ) {
 	$old = is_array( $old ) ? $old : array();
+	/**
+	 * Filters the errors shown when a booking is sent back (the quick form merges two of them).
+	 *
+	 * @param array $errors Field => message.
+	 * @param array $old    Submitted fields.
+	 */
+	$errors = (array) apply_filters( 'tp_booking_fail_errors', $errors, $old );
 	unset( $old['_tp_nonce'], $old['_tp_return'], $old['action'], $old['tp_website'], $old['cf-turnstile-response'], $old['g-recaptcha-response'] );
 	$clean = array();
 	foreach ( $old as $k => $v ) {

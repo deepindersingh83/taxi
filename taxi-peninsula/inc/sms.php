@@ -7,7 +7,47 @@
 
 defined( 'ABSPATH' ) || exit;
 
+/**
+ * Can the site text customers and drivers? (Provider set up, and not "Office alerts only".)
+ */
 function tp_sms_enabled() {
+	return tp_sms_configured() && ! tp_setting( 'sms_office_only' );
+}
+
+/** Office mobile numbers for alerts. */
+function tp_sms_office_numbers() {
+	return array_values( array_filter( array_map( 'trim', preg_split( '/[,;\n]+/', (string) tp_setting( 'sms_office_number' ) ) ) ) );
+}
+
+/** Is this one of the office numbers? */
+function tp_sms_is_office( $to ) {
+	$e = tp_e164( $to );
+	foreach ( tp_sms_office_numbers() as $n ) {
+		if ( $e && tp_e164( $n ) === $e ) {
+			return true;
+		}
+	}
+	return false;
+}
+
+/** Text every office number. */
+function tp_sms_office( $message, $post_id = 0 ) {
+	if ( ! tp_sms_configured() ) {
+		return;
+	}
+	foreach ( tp_sms_office_numbers() as $n ) {
+		if ( $post_id ) {
+			tp_booking_sms( $post_id, $n, $message, 'office' );
+		} else {
+			tp_send_sms( $n, $message );
+		}
+	}
+}
+
+/**
+ * Is an SMS provider set up?
+ */
+function tp_sms_configured() {
 	$provider = tp_setting( 'sms_provider' );
 	if ( 'clicksend' === $provider ) {
 		return tp_setting( 'clicksend_username' ) && tp_setting( 'clicksend_api_key' );
@@ -58,8 +98,11 @@ add_action(
 );
 
 function tp_send_sms_now( $to, $message ) {
-	if ( ! tp_sms_enabled() ) {
+	if ( ! tp_sms_configured() ) {
 		return new WP_Error( 'tp_sms_disabled', __( 'SMS is not configured.', 'taxi-peninsula' ) );
+	}
+	if ( tp_setting( 'sms_office_only' ) && empty( $GLOBALS['tp_sms_force'] ) && ! tp_sms_is_office( $to ) ) {
+		return new WP_Error( 'tp_sms_office_only', __( 'Not sent: SMS is set to office alerts only.', 'taxi-peninsula' ) );
 	}
 	$to = tp_e164( $to );
 	if ( ! $to ) {
@@ -124,7 +167,7 @@ function tp_send_sms_now( $to, $message ) {
  * Send an SMS about a booking and record the outcome in its history.
  */
 function tp_booking_sms( $post_id, $to, $message, $who ) {
-	if ( ! tp_sms_enabled() || ! $to ) {
+	if ( ! tp_sms_configured() || ! $to || ( 'office' !== $who && ! tp_sms_enabled() ) ) {
 		return;
 	}
 	$result = tp_send_sms( $to, $message );
@@ -160,29 +203,66 @@ function tp_sms_on_created( $post_id, $all_ids ) {
 	$b     = tp_get_booking( $post_id );
 	$count = count( $all_ids );
 
-	if ( tp_setting( 'sms_office_number' ) ) {
+	if ( tp_sms_office_numbers() ) {
 		tp_in_site_lang(
-			static function () use ( $post_id, $b, $count ) {
-				$msg = sprintf(
-					/* translators: 1: reference, 2: pick-up time, 3: name, 4: phone, 5: from, 6: to */
-					__( 'New booking %1$s: %2$s, %3$s (%4$s). %5$s → %6$s', 'taxi-peninsula' ),
-					$b['reference'],
-					tp_format_pickup( $b, 'D j M g:ia' ),
-					$b['name'],
-					$b['phone'],
-					$b['pickup'],
-					$b['dropoff']
-				);
-				if ( $count > 1 ) {
-					/* translators: %d: number of trips */
-					$msg .= ' ' . sprintf( __( '(repeat: %d trips)', 'taxi-peninsula' ), $count );
-				}
-				tp_booking_sms( $post_id, tp_setting( 'sms_office_number' ), $msg, 'office' );
+			static function () use ( $post_id, $count ) {
+				tp_sms_office( tp_sms_office_booking_text( $post_id, $count ), $post_id );
 			}
 		);
 	}
 
 	tp_sms_booking_received_customer( $post_id );
+}
+
+/**
+ * "New booking TP-ABC123: Tue 3 Dec 9:30am, Ann Smith (0433 221 100). 2 Bay St → Rosebud Hospital. 1 wheelchair, Maxi WAT. Est $45–$55. Notes: …"
+ */
+function tp_sms_office_booking_text( $post_id, $count = 1 ) {
+	$b   = tp_get_booking( $post_id );
+	$msg = sprintf(
+		/* translators: 1: reference, 2: pick-up time, 3: name, 4: phone, 5: from, 6: to */
+		__( 'New booking %1$s: %2$s, %3$s (%4$s). %5$s → %6$s', 'taxi-peninsula' ),
+		$b['reference'],
+		tp_format_pickup( $b, 'D j M g:ia' ),
+		$b['name'],
+		$b['phone'],
+		$b['pickup'],
+		$b['dropoff']
+	);
+	$extra = array();
+	if ( ! empty( $b['wheelchairs'] ) ) {
+		/* translators: %d: number of wheelchairs */
+		$extra[] = sprintf( _n( '%d wheelchair', '%d wheelchairs', (int) $b['wheelchairs'], 'taxi-peninsula' ), (int) $b['wheelchairs'] );
+	}
+	if ( ! empty( $b['passengers'] ) && (int) $b['passengers'] > 1 ) {
+		/* translators: %d: passengers */
+		$extra[] = sprintf( __( '%d passengers', 'taxi-peninsula' ), (int) $b['passengers'] );
+	}
+	$short = array(
+		'wat'      => __( 'WAT', 'taxi-peninsula' ),
+		'maxi_wat' => __( 'Maxi WAT', 'taxi-peninsula' ),
+		'sedan'    => __( 'Sedan', 'taxi-peninsula' ),
+	);
+	if ( ! empty( $b['vehicle'] ) ) {
+		$extra[] = $short[ $b['vehicle'] ] ?? ( tp_vehicle_types()[ $b['vehicle'] ] ?? $b['vehicle'] );
+	}
+	if ( $extra ) {
+		$msg .= '. ' . implode( ', ', $extra );
+	}
+	$est = (string) get_post_meta( $post_id, '_tp_estimate', true );
+	if ( '' !== $est ) {
+		/* translators: %s: fare range */
+		$msg .= '. ' . sprintf( __( 'Est %s', 'taxi-peninsula' ), $est );
+	}
+	if ( $count > 1 ) {
+		/* translators: %d: number of trips */
+		$msg .= ' ' . sprintf( __( '(repeat: %d trips)', 'taxi-peninsula' ), $count );
+	}
+	if ( ! empty( $b['notes'] ) ) {
+		/* translators: %s: notes */
+		$msg .= '. ' . sprintf( __( 'Notes: %s', 'taxi-peninsula' ), wp_html_excerpt( preg_replace( '/\s*\R\s*/', ' / ', trim( $b['notes'] ) ), 80, '…' ) );
+	}
+	return $msg;
 }
 
 /**
@@ -281,6 +361,7 @@ function tp_handle_test_sms() {
 	}
 	check_admin_referer( 'tp_test_sms' );
 	$to     = isset( $_POST['to'] ) ? sanitize_text_field( wp_unslash( $_POST['to'] ) ) : '';
+	$GLOBALS['tp_sms_force'] = true; // A test goes to whatever number is typed.
 	$result = tp_send_sms( $to, sprintf( /* translators: %s: site name */ __( 'Test message from %s. SMS is working.', 'taxi-peninsula' ), tp_sms_site_name() ) );
 	set_transient(
 		'tp_admin_notice_' . get_current_user_id(),
